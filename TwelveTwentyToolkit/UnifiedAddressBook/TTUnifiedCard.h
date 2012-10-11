@@ -35,16 +35,51 @@
 
 - (NSString *)compositeName;
 
+/**
+NSLog(@"kABPersonFirstNameProperty: %@", [self stringForProperty:kABPersonFirstNameProperty]);
+NSLog(@"kABPersonLastNameProperty: %@", [self stringForProperty:kABPersonLastNameProperty]);
+NSLog(@"kABPersonMiddleNameProperty: %@", [self stringForProperty:kABPersonMiddleNameProperty]);
+NSLog(@"kABPersonPrefixProperty: %@", [self stringForProperty:kABPersonPrefixProperty]);
+NSLog(@"kABPersonSuffixProperty: %@", [self stringForProperty:kABPersonSuffixProperty]);
+NSLog(@"kABPersonNicknameProperty: %@", [self stringForProperty:kABPersonNicknameProperty]);
+NSLog(@"kABPersonFirstNamePhoneticProperty: %@", [self stringForProperty:kABPersonFirstNamePhoneticProperty]);
+NSLog(@"kABPersonLastNamePhoneticProperty: %@", [self stringForProperty:kABPersonLastNamePhoneticProperty]);
+NSLog(@"kABPersonMiddleNamePhoneticProperty: %@", [self stringForProperty:kABPersonMiddleNamePhoneticProperty]);
+NSLog(@"kABPersonOrganizationProperty: %@", [self stringForProperty:kABPersonOrganizationProperty]);
+NSLog(@"kABPersonJobTitleProperty: %@", [self stringForProperty:kABPersonJobTitleProperty]);
+NSLog(@"kABPersonDepartmentProperty: %@", [self stringForProperty:kABPersonDepartmentProperty]);
+NSLog(@"kABPersonNoteProperty: %@", [self stringForProperty:kABPersonNoteProperty]);
+*/
 - (NSString *)stringForProperty:(ABPropertyID)propertyID;
 
+/**
+NSLog(@"kABPersonKindProperty: %@", [self numberForProperty:kABPersonKindProperty]);
+*/
 - (NSNumber *)numberForProperty:(ABPropertyID)propertyID;
 
+/**
+NSLog(@"kABPersonBirthdayProperty: %@", [self dateForProperty:kABPersonBirthdayProperty]);
+NSLog(@"kABPersonCreationDateProperty: %@", [self dateForProperty:kABPersonCreationDateProperty]);
+NSLog(@"kABPersonModificationDateProperty: %@", [self dateForProperty:kABPersonModificationDateProperty]);
+*/
 - (NSDate *)dateForProperty:(ABPropertyID)propertyID;
+
+/**
+NSLog(@"kABPersonEmailProperty: %@", [self arrayForProperty:kABPersonEmailProperty]);
+NSLog(@"kABPersonAddressProperty: %@", [self arrayForProperty:kABPersonAddressProperty]);
+NSLog(@"kABPersonDateProperty: %@", [self arrayForProperty:kABPersonDateProperty]);
+NSLog(@"kABPersonPhoneProperty: %@", [self arrayForProperty:kABPersonPhoneProperty]);
+NSLog(@"kABPersonInstantMessageProperty: %@", [self arrayForProperty:kABPersonInstantMessageProperty]);
+NSLog(@"kABPersonURLProperty: %@", [self arrayForProperty:kABPersonURLProperty]);
+NSLog(@"kABPersonRelatedNamesProperty: %@", [self arrayForProperty:kABPersonRelatedNamesProperty]);
+NSLog(@"kABPersonSocialProfileProperty: %@", [self arrayForProperty:kABPersonSocialProfileProperty]);
+*/
+- (NSArray *)arrayForProperty:(ABPropertyID)propertyID;
 
 - (NSDictionary *)dictionaryForProperty:(ABPropertyID)propertyID;
 
-- (NSArray *)arrayForProperty:(ABPropertyID)propertyID;
-
 - (id)valueForProperty:(ABPropertyID)propertyID;
+
+- (void)print;
 
 @end
