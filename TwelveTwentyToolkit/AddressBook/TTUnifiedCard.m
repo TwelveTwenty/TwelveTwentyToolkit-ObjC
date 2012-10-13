@@ -20,22 +20,32 @@
 
 #import "TTUnifiedCard.h"
 
-
 @interface TTUnifiedCard ()
+
 @property(nonatomic) ABAddressBookRef addressBook;
 @property(nonatomic) ABRecordRef person;
 @property(nonatomic, readwrite) ABRecordID recordID;
+@property(nonatomic) CFArrayRef linkedPeople;
 
 @end
 
 @implementation TTUnifiedCard
 {
-
 }
+
 @synthesize person = _person;
 @synthesize addressBook = _addressBook;
 @synthesize recordID = _recordID;
+@synthesize linkedPeople = _linkedPeople;
 
+- (void)dealloc
+{
+    CFRelease(_person);
+    _person = NULL;
+
+    CFRelease(_addressBook);
+    _addressBook = NULL;
+}
 
 - (id)initWithRecordID:(ABRecordID)recordID
 {
@@ -67,6 +77,16 @@
     return _person;
 }
 
+- (CFArrayRef)linkedPeople
+{
+    if (!_linkedPeople)
+    {
+        _linkedPeople = ABPersonCopyArrayOfAllLinkedPeople([self person]);
+    }
+
+    return _linkedPeople;
+}
+
 - (NSString *)compositeName
 {
     NSAssert(self.addressBook, @"Use `setAddressBook:` to set a valid address book reference before calling this method.");
@@ -95,15 +115,15 @@
     return [self valueForProperty:propertyID];
 }
 
-- (NSDictionary *)dictionaryForProperty:(ABPropertyID)propertyID
-{
-    NSAssert(ABPersonGetTypeOfProperty(propertyID) == kABDictionaryPropertyType, @"Property `%i` will not result in a NSDictionary value", propertyID);
-    return [self valueForProperty:propertyID];
-}
-
 - (NSArray *)arrayForProperty:(ABPropertyID)propertyID
 {
     NSAssert(ABPersonGetTypeOfProperty(propertyID) & kABMultiValueMask, @"Property `%i` will not result in a NSArray value", propertyID);
+    return [self valueForProperty:propertyID];
+}
+
+- (NSDictionary *)dictionaryForProperty:(ABPropertyID)propertyID
+{
+    NSAssert(ABPersonGetTypeOfProperty(propertyID) == kABDictionaryPropertyType, @"Property `%i` will not result in a NSDictionary value", propertyID);
     return [self valueForProperty:propertyID];
 }
 
@@ -115,29 +135,46 @@
 
     if (propertyType & kABMultiValueMask)
     {
-        ABMultiValueRef multiValue = ABRecordCopyValue(self.person, propertyID);
-        if (multiValue)
+        NSMutableArray *valueList = [NSMutableArray array];
+        CFArrayRef linkedPeople = self.linkedPeople;
+        CFIndex linkedCount = CFArrayGetCount(linkedPeople);
+        for (CFIndex l = 0; l < linkedCount; l++)
         {
-            NSMutableArray *valueList = [NSMutableArray array];
-            CFIndex count = ABMultiValueGetCount(multiValue);
-            if (count > 0)
+            ABRecordRef linkedPerson = CFArrayGetValueAtIndex(linkedPeople, l);
+            ABMultiValueRef multiValue = ABRecordCopyValue(linkedPerson, propertyID);
+            if (multiValue)
             {
-                for (CFIndex i = 0; i < count; i++)
+                CFIndex count = ABMultiValueGetCount(multiValue);
+                if (count > 0)
                 {
-                    id bridgedValue = (__bridge_transfer id) ABMultiValueCopyValueAtIndex(multiValue, i);
-                    [valueList addObject:[self preprocessABValue:bridgedValue ofPropertyType:propertyType]];
+                    for (CFIndex i = 0; i < count; i++)
+                    {
+                        id bridgedValue = (__bridge_transfer id) ABMultiValueCopyValueAtIndex(multiValue, i);
+                        [valueList addObject:[self preprocessABValue:bridgedValue ofPropertyType:propertyType]];
+                    }
                 }
+                CFRelease(multiValue);
             }
-            CFRelease(multiValue);
-            return valueList;
         }
 
-        return nil;
+        return valueList;
     }
     else
     {
-        id bridgedValue = (__bridge_transfer id) ABRecordCopyValue(self.person, propertyID);
-        return [self preprocessABValue:bridgedValue ofPropertyType:propertyType];
+        CFArrayRef linkedPeople = self.linkedPeople;
+        CFIndex linkedCount = CFArrayGetCount(linkedPeople);
+        for (CFIndex l = 0; l < linkedCount; l++)
+        {
+            ABRecordRef linkedPerson = CFArrayGetValueAtIndex(linkedPeople, l);
+            id bridgedValue = (__bridge_transfer id) ABRecordCopyValue(linkedPerson, propertyID);
+            if (bridgedValue)
+            {
+                // As soon as a non-nil value is found in a linked card, the value is returned as *the* value of this property.
+                return [self preprocessABValue:bridgedValue ofPropertyType:propertyType];
+            }
+        }
+
+        return nil;
     }
 }
 
@@ -176,5 +213,33 @@
     return nil;
 }
 
+- (void)print
+{
+    NSLog(@"kABPersonFirstNameProperty: %@", [self stringForProperty:kABPersonFirstNameProperty]);
+    NSLog(@"kABPersonLastNameProperty: %@", [self stringForProperty:kABPersonLastNameProperty]);
+    NSLog(@"kABPersonMiddleNameProperty: %@", [self stringForProperty:kABPersonMiddleNameProperty]);
+    NSLog(@"kABPersonPrefixProperty: %@", [self stringForProperty:kABPersonPrefixProperty]);
+    NSLog(@"kABPersonSuffixProperty: %@", [self stringForProperty:kABPersonSuffixProperty]);
+    NSLog(@"kABPersonNicknameProperty: %@", [self stringForProperty:kABPersonNicknameProperty]);
+    NSLog(@"kABPersonFirstNamePhoneticProperty: %@", [self stringForProperty:kABPersonFirstNamePhoneticProperty]);
+    NSLog(@"kABPersonLastNamePhoneticProperty: %@", [self stringForProperty:kABPersonLastNamePhoneticProperty]);
+    NSLog(@"kABPersonMiddleNamePhoneticProperty: %@", [self stringForProperty:kABPersonMiddleNamePhoneticProperty]);
+    NSLog(@"kABPersonOrganizationProperty: %@", [self stringForProperty:kABPersonOrganizationProperty]);
+    NSLog(@"kABPersonJobTitleProperty: %@", [self stringForProperty:kABPersonJobTitleProperty]);
+    NSLog(@"kABPersonDepartmentProperty: %@", [self stringForProperty:kABPersonDepartmentProperty]);
+    NSLog(@"kABPersonNoteProperty: %@", [self stringForProperty:kABPersonNoteProperty]);
+    NSLog(@"kABPersonKindProperty: %@", [self numberForProperty:kABPersonKindProperty]);
+    NSLog(@"kABPersonBirthdayProperty: %@", [self dateForProperty:kABPersonBirthdayProperty]);
+    NSLog(@"kABPersonCreationDateProperty: %@", [self dateForProperty:kABPersonCreationDateProperty]);
+    NSLog(@"kABPersonModificationDateProperty: %@", [self dateForProperty:kABPersonModificationDateProperty]);
+    NSLog(@"kABPersonEmailProperty: %@", [self arrayForProperty:kABPersonEmailProperty]);
+    NSLog(@"kABPersonAddressProperty: %@", [self arrayForProperty:kABPersonAddressProperty]);
+    NSLog(@"kABPersonDateProperty: %@", [self arrayForProperty:kABPersonDateProperty]);
+    NSLog(@"kABPersonPhoneProperty: %@", [self arrayForProperty:kABPersonPhoneProperty]);
+    NSLog(@"kABPersonInstantMessageProperty: %@", [self arrayForProperty:kABPersonInstantMessageProperty]);
+    NSLog(@"kABPersonURLProperty: %@", [self arrayForProperty:kABPersonURLProperty]);
+    NSLog(@"kABPersonRelatedNamesProperty: %@", [self arrayForProperty:kABPersonRelatedNamesProperty]);
+    NSLog(@"kABPersonSocialProfileProperty: %@", [self arrayForProperty:kABPersonSocialProfileProperty]);
+}
 
 @end
