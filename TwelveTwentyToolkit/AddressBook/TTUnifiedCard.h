@@ -25,8 +25,8 @@
 @interface TTUnifiedCard : NSObject
 
 @property(nonatomic, readonly) ABRecordID recordID;
-
-- (id)initWithRecordID:(ABRecordID)recordID;
+@property(nonatomic) CGFloat position;
+- (id)initWithRecordID:(ABRecordID)recordID position:(CGFloat)position;
 
 /**
 * Call this method to set a suitable ABAddressBookRef for the current thread before calling any of the other methds.

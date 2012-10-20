@@ -4,6 +4,7 @@
 #import "_TTCDUnifiedRecord.h"
 
 const struct TTCDUnifiedRecordAttributes TTCDUnifiedRecordAttributes = {
+	.position = @"position",
 	.recordID = @"recordID",
 	.sortFieldFirstName = @"sortFieldFirstName",
 	.sortFieldLastName = @"sortFieldLastName",
@@ -42,6 +43,10 @@ const struct TTCDUnifiedRecordFetchedProperties TTCDUnifiedRecordFetchedProperti
 + (NSSet *)keyPathsForValuesAffectingValueForKey:(NSString *)key {
 	NSSet *keyPaths = [super keyPathsForValuesAffectingValueForKey:key];
 	
+	if ([key isEqualToString:@"positionValue"]) {
+		NSSet *affectingKey = [NSSet setWithObject:@"position"];
+		keyPaths = [keyPaths setByAddingObjectsFromSet:affectingKey];
+	}
 	if ([key isEqualToString:@"recordIDValue"]) {
 		NSSet *affectingKey = [NSSet setWithObject:@"recordID"];
 		keyPaths = [keyPaths setByAddingObjectsFromSet:affectingKey];
@@ -49,6 +54,32 @@ const struct TTCDUnifiedRecordFetchedProperties TTCDUnifiedRecordFetchedProperti
 
 	return keyPaths;
 }
+
+
+
+
+@dynamic position;
+
+
+
+- (float)positionValue {
+	NSNumber *result = [self position];
+	return [result floatValue];
+}
+
+- (void)setPositionValue:(float)value_ {
+	[self setPosition:[NSNumber numberWithFloat:value_]];
+}
+
+- (float)primitivePositionValue {
+	NSNumber *result = [self primitivePosition];
+	return [result floatValue];
+}
+
+- (void)setPrimitivePositionValue:(float)value_ {
+	[self setPrimitivePosition:[NSNumber numberWithFloat:value_]];
+}
+
 
 
 

@@ -5,6 +5,7 @@
 
 
 extern const struct TTCDUnifiedRecordAttributes {
+	__unsafe_unretained NSString *position;
 	__unsafe_unretained NSString *recordID;
 	__unsafe_unretained NSString *sortFieldFirstName;
 	__unsafe_unretained NSString *sortFieldLastName;
@@ -23,6 +24,7 @@ extern const struct TTCDUnifiedRecordFetchedProperties {
 
 
 
+
 @interface TTCDUnifiedRecordID : NSManagedObjectID {}
 @end
 
@@ -31,6 +33,18 @@ extern const struct TTCDUnifiedRecordFetchedProperties {
 + (NSString*)entityName;
 + (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
 - (TTCDUnifiedRecordID*)objectID;
+
+
+
+
+@property (nonatomic, strong) NSNumber* position;
+
+
+@property float positionValue;
+- (float)positionValue;
+- (void)setPositionValue:(float)value_;
+
+//- (BOOL)validatePosition:(id*)value_ error:(NSError**)error_;
 
 
 
@@ -84,6 +98,15 @@ extern const struct TTCDUnifiedRecordFetchedProperties {
 @end
 
 @interface _TTCDUnifiedRecord (CoreDataGeneratedPrimitiveAccessors)
+
+
+- (NSNumber*)primitivePosition;
+- (void)setPrimitivePosition:(NSNumber*)value;
+
+- (float)primitivePositionValue;
+- (void)setPrimitivePositionValue:(float)value_;
+
+
 
 
 - (NSNumber*)primitiveRecordID;

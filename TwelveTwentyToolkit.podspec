@@ -23,6 +23,6 @@ Pod::Spec.new do |s|
   s.subspec 'AddressBook' do |ab|
     ab.frameworks = 'AddressBook'
     ab.dependency 'TwelveTwentyToolkit/CoreData'
-    ab.source_files = 'TwelveTwentyToolkit/AddressBook/*.{h,m}', 'TwelveTwentyToolkit/AddressBook/**/*.{h,m}'
+    ab.source_files = 'TwelveTwentyToolkit/AddressBook/**/*.{h,m}'
   end
 end

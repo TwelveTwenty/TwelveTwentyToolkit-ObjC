@@ -19,6 +19,7 @@
 // THE SOFTWARE.
 
 #import "TTUnifiedCard.h"
+#import "TwelveTwentyToolkit.h"
 
 @interface TTUnifiedCard ()
 
@@ -30,29 +31,26 @@
 @end
 
 @implementation TTUnifiedCard
-{
-}
 
-@synthesize person = _person;
 @synthesize addressBook = _addressBook;
-@synthesize recordID = _recordID;
-@synthesize linkedPeople = _linkedPeople;
+@synthesize person = _person;
 
 - (void)dealloc
 {
-    CFRelease(_person);
-    _person = NULL;
+	self.person = NULL;
+	self.addressBook = NULL;
 
-    CFRelease(_addressBook);
-    _addressBook = NULL;
+	CFReleaseIfNotNULL(_linkedPeople);
+	_linkedPeople = NULL;
 }
 
-- (id)initWithRecordID:(ABRecordID)recordID
+- (id)initWithRecordID:(ABRecordID)recordID position:(CGFloat)position
 {
     self = [super init];
     if (self)
     {
         self.recordID = recordID;
+		self.position = position;
     }
 
     return self;
@@ -60,9 +58,18 @@
 
 - (void)setAddressBook:(ABAddressBookRef)addressBook
 {
+	CFRetainIfNotNULL(addressBook);
+	CFReleaseIfNotNULL(_addressBook);
     _addressBook = addressBook;
 
-    _person = NULL;
+	self.person = NULL;
+}
+
+- (void)setPerson:(ABRecordRef)person
+{
+	CFRetainIfNotNULL(person);
+	CFReleaseIfNotNULL(_person);
+	_person = person;
 }
 
 - (ABRecordRef)person
@@ -71,7 +78,7 @@
 
     if (!_person)
     {
-        _person = ABAddressBookGetPersonWithRecordID(self.addressBook, self.recordID);
+        self.person = ABAddressBookGetPersonWithRecordID(self.addressBook, self.recordID);
     }
 
     return _person;

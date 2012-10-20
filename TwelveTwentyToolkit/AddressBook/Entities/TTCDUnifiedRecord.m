@@ -60,7 +60,7 @@ NSLog(@"kABPersonSocialProfileProperty: %@", [self arrayForProperty:kABPersonSoc
 
 - (TTUnifiedCard *)personCard
 {
-    return [[TTUnifiedCard alloc] initWithRecordID:self.recordIDValue];
+    return [[TTUnifiedCard alloc] initWithRecordID:self.recordIDValue position:self.positionValue];
 }
 
 @end

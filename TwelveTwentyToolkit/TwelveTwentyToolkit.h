@@ -17,3 +17,21 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
+
+static void CFReleaseIfNotNULL (CFTypeRef ref)
+{
+	if (ref != NULL)
+	{
+		CFRelease (ref);
+	}
+}
+
+static CFTypeRef CFRetainIfNotNULL (CFTypeRef ref)
+{
+	if (ref != NULL)
+	{
+		return CFRetain (ref);
+	}
+    
+    return ref;
+}
