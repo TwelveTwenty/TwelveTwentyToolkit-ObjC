@@ -25,35 +25,44 @@
 #define LIMIT(LEFT,VALUE,RIGHT)	({ __typeof__(LEFT) __left = (LEFT); __typeof__(RIGHT) __right = (RIGHT); __typeof__(VALUE) __value = (VALUE); MAX(__left, MIN(__value, __right)); })
 #endif
 
+#ifndef CGRectWithSize
+#define CGRectWithSize(WIDTH,HEIGHT)	({ __typeof__(WIDTH) __width = (WIDTH); __typeof__(HEIGHT) __height = (HEIGHT); CGRectMake(0, 0, __width, __height); })
+#endif
+
 #define DEG2RAD (M_PI / 180.0)
 
 typedef enum {
-    kCGAlignNone                = 0,
+    CGAlignNone                     = 0,
     //
-    kCGAlignLeftEdge            = 1 << 0,
-    kCGAlignCenterHorizontally  = 1 << 1,
-    kCGAlignRightEdge           = 1 << 2,
-    kCGAlignTopEdge             = 1 << 3,
-    kCGAlignCenterVertically    = 1 << 4,
-    kCGAlignBottomEdge          = 1 << 5,
+    CGAlignLeftEdge                 = 1 << 0,
+    CGAlignCenterHorizontally       = 1 << 1,
+    CGAlignRightEdge                = 1 << 2,
+    CGAlignTopEdge                  = 1 << 3,
+    CGAlignCenterVertically         = 1 << 4,
+    CGAlignBottomEdge               = 1 << 5,
     //
-    kCGAlignPositionToTheLeft   = 1 << 6,
-    kCGAlignPositionToTheRight  = 1 << 7,
-    kCGAlignPositionAbove       = 1 << 8,
-    kCGAlignPositionBelow       = 1 << 9
+    CGAlignPositionToTheLeft        = 1 << 6,
+    CGAlignPositionToTheRight       = 1 << 7,
+    CGAlignPositionAbove            = 1 << 8,
+    CGAlignPositionBelow            = 1 << 9,
+    //
+    CGAlignPreventDevicePixelRounding = 1 << 10
 } CGAlignOption;
 
 /** Trim a CGRect from the top, counter clockwise. */
 extern CGRect CGRectTrim(CGRect rect, CGFloat top, CGFloat left, CGFloat bottom, CGFloat right);
 
-/** Align one rect to another one */
+/** The opposite of CGRectTrim */
+extern CGRect CGRectExpand(CGRect rect, CGFloat top, CGFloat left, CGFloat bottom, CGFloat right);
+
+/** Align one rect to another one. Will round to device pixels unless flagged with CGAlignPreventDevicePixelRounding */
 extern CGRect CGRectAlignToRect(CGRect rectA, CGRect rectB, CGAlignOption options);
 
-/** Align and (optionally) place a rect next to another one. */
+/** Align and (optionally) place a rect next to another one. Will round to device pixels unless flagged with CGAlignPreventDevicePixelRounding */
 extern CGRect CGRectAlignAndPositionNextToRect(CGRect rectA, CGRect rectB, CGAlignOption options, CGFloat spacing);
 
-/** Round the position and with of a rect so it matches actual pixels. Retina supported. */
-extern CGRect CGRectRoundToPixels(CGRect r);
+/** Round the position and with of a rect so it matches actual pixels on the current device. Retina displays supported. */
+extern CGRect CGRectRoundToDevicePixels(CGRect r);
 
 /** Subtract one point from another, vector style. */
 extern CGPoint CGPointSubtract(CGPoint p, CGPoint q);
@@ -67,3 +76,5 @@ extern CGFloat CGPointLengthSquare(CGPoint p);
 /** Perform the square root over the `CGPointLengthSquare` method. */
 extern CGFloat CGPointLength(CGPoint p);
 
+/** Aspect fit */
+extern CGSize CGSizeScaleToFit(CGSize sizeA, CGSize sizeB);

@@ -33,32 +33,42 @@ CGRect CGRectTrim(CGRect rect, CGFloat top, CGFloat left, CGFloat bottom, CGFloa
         return rect;
     }
 
+CGRect CGRectExpand(CGRect rect, CGFloat top, CGFloat left, CGFloat bottom, CGFloat right)
+    {
+        return CGRectTrim(rect, -top, -left, -bottom, -right);
+    }
+
 CGRect CGRectAlignToRect(CGRect rectA, CGRect rectB, CGAlignOption options)
     {
-        if (options & kCGAlignLeftEdge)
+        if (options & CGAlignLeftEdge)
         {
             rectA.origin.x = rectB.origin.x;
         }
-        else if (options & kCGAlignCenterHorizontally)
+        else if (options & CGAlignCenterHorizontally)
         {
             rectA.origin.x = rectB.origin.x + (rectB.size.width - rectA.size.width) / 2;
         }
-        else if (options & kCGAlignRightEdge)
+        else if (options & CGAlignRightEdge)
         {
             rectA.origin.x = rectB.origin.x + rectB.size.width - rectA.size.width;
         }
 
-        if (options & kCGAlignTopEdge)
+        if (options & CGAlignTopEdge)
         {
             rectA.origin.y = rectB.origin.y;
         }
-        else if (options & kCGAlignCenterVertically)
+        else if (options & CGAlignCenterVertically)
         {
             rectA.origin.y = rectB.origin.y + (rectB.size.height - rectA.size.height) / 2;
         }
-        else if (options & kCGAlignBottomEdge)
+        else if (options & CGAlignBottomEdge)
         {
             rectA.origin.y = rectB.origin.y + rectB.size.height - rectA.size.height;
+        }
+
+        if (!(options & CGAlignPreventDevicePixelRounding))
+        {
+            rectA = CGRectRoundToDevicePixels(rectA);
         }
 
         return rectA;
@@ -72,30 +82,35 @@ CGRect CGRectAlignAndPositionNextToRect(CGRect rectA, CGRect rectB, CGAlignOptio
 
         // Horizontal placement
 
-        if (options & kCGAlignPositionToTheLeft)
+        if (options & CGAlignPositionToTheLeft)
         {
             rectA.origin.x = CGRectGetMinX(rectB) - CGRectGetWidth(rectA) - spacing;
         }
-        else if (options & kCGAlignPositionToTheRight)
+        else if (options & CGAlignPositionToTheRight)
         {
             rectA.origin.x = CGRectGetMaxX(rectB) + spacing;
         }
 
         // Vertical placement
 
-        if (options & kCGAlignPositionAbove)
+        if (options & CGAlignPositionAbove)
         {
             rectA.origin.y = CGRectGetMinY(rectB) - CGRectGetHeight(rectA) - spacing;
         }
-        else if (options & kCGAlignPositionBelow)
+        else if (options & CGAlignPositionBelow)
         {
             rectA.origin.y = CGRectGetMaxY(rectB) + spacing;
+        }
+
+        if (!(options & CGAlignPreventDevicePixelRounding))
+        {
+            rectA = CGRectRoundToDevicePixels(rectA);
         }
 
         return rectA;
     }
 
-CGRect CGRectRoundToPixels(CGRect r)
+CGRect CGRectRoundToDevicePixels(CGRect r)
     {
         CGFloat scale = [UIScreen mainScreen].scale;
 
@@ -143,3 +158,11 @@ CGFloat CGPointLength(CGPoint p)
         return sqrtf(p.x * p.x + p.y * p.y);
     }
 
+CGSize CGSizeScaleToFit(CGSize sizeA, CGSize sizeB)
+{
+	CGFloat hRatio = sizeB.width / sizeA.width;
+	CGFloat vRatio = sizeB.height / sizeA.height;
+	CGFloat minRatio = MIN(hRatio, vRatio);
+	
+	return CGSizeMake(sizeA.width * minRatio, sizeA.height * minRatio);
+}

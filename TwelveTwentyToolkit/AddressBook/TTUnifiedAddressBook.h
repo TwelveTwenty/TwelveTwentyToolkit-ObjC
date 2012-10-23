@@ -28,11 +28,27 @@
 @property(nonatomic, readonly) ABAddressBookRef addressBook;
 
 + (void)accessAddressBookWithGranted:(void (^)(ABAddressBookRef))accessGrantedBlock denied:(void (^)(BOOL))accessDeniedBlock;
-
 - (id)initWithAddressBook:(ABAddressBookRef)addressBook;
-
 - (void)updateAddressBookWithCompletion:(void (^)())completion;
 
-- (void)searchCardsMatchingQuery:(NSString *)query withResults:(void (^)(NSArray *))resultsBlock;
+/**
+Get an array of all cards in the address book.
+@return an array of `TTUnifiedCard` instances.
+*/
+- (NSArray *)allCards;
+
+/**
+Synchronous search for cards matching a query.
+@param query to search for, will be used by the `ABAddressBookCopyPeopleWithName` method.
+@return an array of `TTUnifiedCard` instances.
+*/
+- (NSArray *)cardsMatchingQuery:(NSString *)query;
+
+/**
+Asynchronous search for cards matching a query.
+@param query to search for, will be used by the `ABAddressBookCopyPeopleWithName` method.
+@param resultsBlock is passed an array of `TTUnifiedCard` instances.
+*/
+- (void)cardsMatchingQuery:(NSString *)query withAsyncResults:(void (^)(NSArray *))resultsBlock;
 
 @end
