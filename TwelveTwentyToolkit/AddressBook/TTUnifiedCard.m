@@ -44,7 +44,7 @@
 	_linkedPeople = NULL;
 }
 
-- (id)initWithRecordID:(ABRecordID)recordID position:(CGFloat)position
+- (id)initWithRecordID:(ABRecordID)recordID position:(float)position
 {
     self = [super init];
     if (self)

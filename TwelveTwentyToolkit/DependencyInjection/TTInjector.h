@@ -1,6 +1,6 @@
-// Copyright (c) 2012 Twelve Twenty (http://twelvetwenty.nl/)
+// Copyright (c) 2012 Twelve Twenty (http://twelvetwenty.nl)
 //
-// Permission is hereby granted, free of charge, to any unifiedCard obtaining a copy
+// Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
 // in the Software without restriction, including without limitation the rights
 // to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
@@ -18,27 +18,34 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "TwelveTwentyToolkitTests.h"
-#import <UIKit/UIKit.h>
-#import "TTCGUtils.h"
+#import <Foundation/Foundation.h>
+#import "TTClassMapping.h"
+#import "TTObjectMapping.h"
+#import "TTSpawnMapping.h"
+#import "TTInjectable.h"
 
-@implementation TwelveTwentyToolkitTests
+@protocol TTInjectorSpawning
 
-- (void)setUp
-{
-}
+- (id)objectForClass:(Class)class;
+- (id)injectPropertiesIntoObject:(id <TTInjectable>)object;
 
-- (void)tearDown
-{
-}
+@end
 
-- (void)testTrim
-{
-    CGRect rectA = CGRectMake(10, 10, 100, 100);
-    CGRect rectB = CGRectTrim(rectA, 10, 20, 30, 40);
-    
-    NSLog(@"%@", NSStringFromCGRect(rectB));
-    STAssertTrue(CGRectEqualToRect(rectB, CGRectMake(30, 20, 40, 60)), @"Trimming from all sides results in a correct new rectangle.");
-}
+@protocol TTInjectorMapping
+
+- (id <TTClassMapping>)mapClass:(Class)class;
+- (void)unmapClass:(Class)class;
+
+@end
+
+#define Injector [TTInjector sharedInjector]
+
+@interface TTInjector : NSObject <TTInjectorSpawning, TTInjectorMapping>
+
++ (id <TTInjectorSpawning>)sharedInjector;
+
++ (id <TTInjectorMapping>)sharedMappingInjector;
+
++ (TTInjector *)setSharedInjector:(TTInjector *)injector;
 
 @end

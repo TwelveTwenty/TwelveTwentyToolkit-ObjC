@@ -1,6 +1,6 @@
-// Copyright (c) 2012 Twelve Twenty (http://twelvetwenty.nl/)
+// Copyright (c) 2012 Twelve Twenty (http://twelvetwenty.nl)
 //
-// Permission is hereby granted, free of charge, to any unifiedCard obtaining a copy
+// Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
 // in the Software without restriction, including without limitation the rights
 // to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
@@ -18,22 +18,53 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
+#import "TTSpawnMapping.h"
 
-static void CFReleaseIfNotNULL (CFTypeRef ref)
+@interface TTSpawnMapping ()
+
+@property (nonatomic, strong) Class spawnClass;
+@property (nonatomic) TTSpawnType spawnType;
+
+@end
+
+@implementation TTSpawnMapping
 {
-	if (ref != NULL)
+	dispatch_once_t onceToken;
+	id _singleton;
+}
+
+- (id)initWithParent:(id <TTInjectionMappingParent>)parent spawnClass:(Class)spawnClass spawnType:(TTSpawnType)spawnType
+{
+	self = [super initWithParent:parent object:nil];
+
+	if (self)
 	{
-		CFRelease (ref);
+		self.spawnClass = spawnClass;
+		self.spawnType = spawnType;
+	}
+
+	return self;
+}
+
+- (id)object
+{
+	switch (self.spawnType)
+	{
+		case TTSpawnTypeOnce:
+			[self.parent removeChildMapping:self];
+
+		default:
+		case TTSpawnTypeEveryTime:
+			return [[self.spawnClass alloc] init];
+
+		case TTSpawnTypeSingleton:
+			if (!_singleton)
+			{
+				dispatch_once(&onceToken, ^{_singleton = [[self.spawnClass alloc] init];});
+			}
+
+			return _singleton;
 	}
 }
 
-static CFTypeRef CFRetainIfNotNULL (CFTypeRef ref)
-{
-	if (ref != NULL)
-	{
-		return CFRetain (ref);
-	}
-    
-    return ref;
-}
+@end

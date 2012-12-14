@@ -18,22 +18,8 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
+#import <SenTestingKit/SenTestingKit.h>
 
-static void CFReleaseIfNotNULL (CFTypeRef ref)
-{
-	if (ref != NULL)
-	{
-		CFRelease (ref);
-	}
-}
+@interface TTTDependencyInjectionTestCase : SenTestCase
 
-static CFTypeRef CFRetainIfNotNULL (CFTypeRef ref)
-{
-	if (ref != NULL)
-	{
-		return CFRetain (ref);
-	}
-    
-    return ref;
-}
+@end

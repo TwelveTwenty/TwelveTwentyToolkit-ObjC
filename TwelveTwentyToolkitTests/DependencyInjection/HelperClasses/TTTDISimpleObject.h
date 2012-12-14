@@ -19,21 +19,8 @@
 // THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
+#import "TTInjectable.h"
 
-static void CFReleaseIfNotNULL (CFTypeRef ref)
-{
-	if (ref != NULL)
-	{
-		CFRelease (ref);
-	}
-}
+@interface TTTDISimpleObject : NSObject <TTInjectable>
 
-static CFTypeRef CFRetainIfNotNULL (CFTypeRef ref)
-{
-	if (ref != NULL)
-	{
-		return CFRetain (ref);
-	}
-    
-    return ref;
-}
+@end

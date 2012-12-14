@@ -1,6 +1,6 @@
-// Copyright (c) 2012 Twelve Twenty (http://twelvetwenty.nl/)
+// Copyright (c) 2012 Twelve Twenty (http://twelvetwenty.nl)
 //
-// Permission is hereby granted, free of charge, to any unifiedCard obtaining a copy
+// Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
 // in the Software without restriction, including without limitation the rights
 // to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
@@ -19,21 +19,19 @@
 // THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
+#import "TTInjectionMappingParent.h"
 
-static void CFReleaseIfNotNULL (CFTypeRef ref)
-{
-	if (ref != NULL)
-	{
-		CFRelease (ref);
-	}
-}
+@protocol TTInjectionMappingParent;
 
-static CFTypeRef CFRetainIfNotNULL (CFTypeRef ref)
-{
-	if (ref != NULL)
-	{
-		return CFRetain (ref);
-	}
-    
-    return ref;
-}
+@protocol TTObjectMapping
+@end
+
+@interface TTObjectMapping : NSObject <TTObjectMapping>
+
+@property (nonatomic, strong, readonly) id object;
+@property (nonatomic, weak, readonly) id <TTInjectionMappingParent> parent;
+
+- (id)initWithParent:(id <TTInjectionMappingParent>)parent object:(id)object;
+- (id)init NS_UNAVAILABLE;
+
+@end

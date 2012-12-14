@@ -7,263 +7,414 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		950EB11A160DF510003C3F1D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950EB119160DF510003C3F1D /* Foundation.framework */; };
-		950EB11F160DF510003C3F1D /* TwelveTwentyToolkit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 950EB11E160DF510003C3F1D /* TwelveTwentyToolkit.h */; };
-		950EB129160DF510003C3F1D /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950EB128160DF510003C3F1D /* SenTestingKit.framework */; };
-		950EB12C160DF510003C3F1D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950EB119160DF510003C3F1D /* Foundation.framework */; };
-		950EB12F160DF510003C3F1D /* libTwelveTwentyToolkit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 950EB116160DF510003C3F1D /* libTwelveTwentyToolkit.a */; };
-		950EB135160DF510003C3F1D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 950EB133160DF510003C3F1D /* InfoPlist.strings */; };
-		950EB138160DF510003C3F1D /* TwelveTwentyToolkitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 950EB137160DF510003C3F1D /* TwelveTwentyToolkitTests.m */; };
-		95600CFC1618BEFA007736B9 /* NSManagedObjectContext+TTConvenience.m in Sources */ = {isa = PBXBuildFile; fileRef = 95600CE71618BEFA007736B9 /* NSManagedObjectContext+TTConvenience.m */; };
-		95600CFD1618BEFA007736B9 /* NSManagedObjectContext+TTConvenience.m in Sources */ = {isa = PBXBuildFile; fileRef = 95600CE71618BEFA007736B9 /* NSManagedObjectContext+TTConvenience.m */; };
-		95600CFE1618BEFA007736B9 /* NSManagedObjectContext+TTUniquing.m in Sources */ = {isa = PBXBuildFile; fileRef = 95600CE91618BEFA007736B9 /* NSManagedObjectContext+TTUniquing.m */; };
-		95600CFF1618BEFA007736B9 /* NSManagedObjectContext+TTUniquing.m in Sources */ = {isa = PBXBuildFile; fileRef = 95600CE91618BEFA007736B9 /* NSManagedObjectContext+TTUniquing.m */; };
-		95600D001618BEFA007736B9 /* TTCGUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 95600CEC1618BEFA007736B9 /* TTCGUtils.m */; };
-		95600D011618BEFA007736B9 /* TTCGUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 95600CEC1618BEFA007736B9 /* TTCGUtils.m */; };
-		956C24741629BE1F00C67840 /* _TTCDLinkedRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 956C24661629BE1F00C67840 /* _TTCDLinkedRecord.m */; };
-		956C24751629BE1F00C67840 /* _TTCDLinkedRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 956C24661629BE1F00C67840 /* _TTCDLinkedRecord.m */; };
-		956C24761629BE1F00C67840 /* _TTCDUnifiedRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 956C24681629BE1F00C67840 /* _TTCDUnifiedRecord.m */; };
-		956C24771629BE1F00C67840 /* _TTCDUnifiedRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 956C24681629BE1F00C67840 /* _TTCDUnifiedRecord.m */; };
-		956C24781629BE1F00C67840 /* TTCDLinkedRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 956C246A1629BE1F00C67840 /* TTCDLinkedRecord.m */; };
-		956C24791629BE1F00C67840 /* TTCDLinkedRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 956C246A1629BE1F00C67840 /* TTCDLinkedRecord.m */; };
-		956C247A1629BE1F00C67840 /* TTCDUnifiedRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 956C246C1629BE1F00C67840 /* TTCDUnifiedRecord.m */; };
-		956C247B1629BE1F00C67840 /* TTCDUnifiedRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 956C246C1629BE1F00C67840 /* TTCDUnifiedRecord.m */; };
-		956C247D1629BE1F00C67840 /* TTUnifiedAddressBook.m in Sources */ = {isa = PBXBuildFile; fileRef = 956C246F1629BE1F00C67840 /* TTUnifiedAddressBook.m */; };
-		956C247E1629BE1F00C67840 /* TTUnifiedAddressBook.m in Sources */ = {isa = PBXBuildFile; fileRef = 956C246F1629BE1F00C67840 /* TTUnifiedAddressBook.m */; };
-		956C247F1629BE1F00C67840 /* TTUnifiedAddressBook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 956C24701629BE1F00C67840 /* TTUnifiedAddressBook.xcdatamodeld */; };
-		956C24801629BE1F00C67840 /* TTUnifiedAddressBook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 956C24701629BE1F00C67840 /* TTUnifiedAddressBook.xcdatamodeld */; };
-		956C24811629BE1F00C67840 /* TTUnifiedCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 956C24731629BE1F00C67840 /* TTUnifiedCard.m */; };
-		956C24821629BE1F00C67840 /* TTUnifiedCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 956C24731629BE1F00C67840 /* TTUnifiedCard.m */; };
-		95CD58DB160E0D970058BBDD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95CD58DA160E0D970058BBDD /* CoreGraphics.framework */; };
-		95CD58DC160E0DB10058BBDD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95CD58DA160E0D970058BBDD /* CoreGraphics.framework */; };
-		95CD58DE160E0DEE0058BBDD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95CD58DD160E0DEE0058BBDD /* UIKit.framework */; };
-		95CD58DF160E0DF70058BBDD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95CD58DD160E0DEE0058BBDD /* UIKit.framework */; };
-		95CD58F7160E164F0058BBDD /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95CD58F6160E164F0058BBDD /* AddressBook.framework */; };
-		95D777CE160F879700A80155 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95D777CD160F879700A80155 /* CoreData.framework */; };
-		E4207746FF15E4E802179AAA /* NSManagedObjectContext+TTBatchManipulation.m in Sources */ = {isa = PBXBuildFile; fileRef = E4207E4F0123C3395AF5BDC8 /* NSManagedObjectContext+TTBatchManipulation.m */; };
-		E42077A188B24DD5E788AFDE /* NSManagedObjectContext+TTBatchManipulation.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = E42070BDD1E3AF06BA794A6A /* NSManagedObjectContext+TTBatchManipulation.h */; };
-		E4207F2F2ACCF4E5985D6389 /* NSManagedObjectContext+TTBatchManipulation.m in Sources */ = {isa = PBXBuildFile; fileRef = E4207E4F0123C3395AF5BDC8 /* NSManagedObjectContext+TTBatchManipulation.m */; };
+		95934FB4167B27EE00E4ED39 /* _TTCDLinkedRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 95934F8A167B27EE00E4ED39 /* _TTCDLinkedRecord.m */; };
+		95934FB5167B27EE00E4ED39 /* _TTCDLinkedRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 95934F8A167B27EE00E4ED39 /* _TTCDLinkedRecord.m */; };
+		95934FB6167B27EE00E4ED39 /* _TTCDUnifiedRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 95934F8C167B27EE00E4ED39 /* _TTCDUnifiedRecord.m */; };
+		95934FB7167B27EE00E4ED39 /* _TTCDUnifiedRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 95934F8C167B27EE00E4ED39 /* _TTCDUnifiedRecord.m */; };
+		95934FB8167B27EE00E4ED39 /* TTCDLinkedRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 95934F8E167B27EE00E4ED39 /* TTCDLinkedRecord.m */; };
+		95934FB9167B27EE00E4ED39 /* TTCDLinkedRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 95934F8E167B27EE00E4ED39 /* TTCDLinkedRecord.m */; };
+		95934FBA167B27EE00E4ED39 /* TTCDUnifiedRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 95934F90167B27EE00E4ED39 /* TTCDUnifiedRecord.m */; };
+		95934FBB167B27EE00E4ED39 /* TTCDUnifiedRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 95934F90167B27EE00E4ED39 /* TTCDUnifiedRecord.m */; };
+		95934FBC167B27EE00E4ED39 /* generate_classes.sh in Resources */ = {isa = PBXBuildFile; fileRef = 95934F91167B27EE00E4ED39 /* generate_classes.sh */; };
+		95934FBD167B27EE00E4ED39 /* TTUnifiedAddressBook.m in Sources */ = {isa = PBXBuildFile; fileRef = 95934F93167B27EE00E4ED39 /* TTUnifiedAddressBook.m */; };
+		95934FBE167B27EE00E4ED39 /* TTUnifiedAddressBook.m in Sources */ = {isa = PBXBuildFile; fileRef = 95934F93167B27EE00E4ED39 /* TTUnifiedAddressBook.m */; };
+		95934FBF167B27EE00E4ED39 /* TTUnifiedAddressBook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 95934F94167B27EE00E4ED39 /* TTUnifiedAddressBook.xcdatamodeld */; };
+		95934FC0167B27EE00E4ED39 /* TTUnifiedAddressBook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 95934F94167B27EE00E4ED39 /* TTUnifiedAddressBook.xcdatamodeld */; };
+		95934FC1167B27EE00E4ED39 /* TTUnifiedCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 95934F97167B27EE00E4ED39 /* TTUnifiedCard.m */; };
+		95934FC2167B27EE00E4ED39 /* TTUnifiedCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 95934F97167B27EE00E4ED39 /* TTUnifiedCard.m */; };
+		95934FC3167B27EE00E4ED39 /* NSManagedObjectContext+TTBatchManipulation.m in Sources */ = {isa = PBXBuildFile; fileRef = 95934F9A167B27EE00E4ED39 /* NSManagedObjectContext+TTBatchManipulation.m */; };
+		95934FC4167B27EE00E4ED39 /* NSManagedObjectContext+TTBatchManipulation.m in Sources */ = {isa = PBXBuildFile; fileRef = 95934F9A167B27EE00E4ED39 /* NSManagedObjectContext+TTBatchManipulation.m */; };
+		95934FC5167B27EE00E4ED39 /* NSManagedObjectContext+TTConvenience.m in Sources */ = {isa = PBXBuildFile; fileRef = 95934F9C167B27EE00E4ED39 /* NSManagedObjectContext+TTConvenience.m */; };
+		95934FC6167B27EE00E4ED39 /* NSManagedObjectContext+TTConvenience.m in Sources */ = {isa = PBXBuildFile; fileRef = 95934F9C167B27EE00E4ED39 /* NSManagedObjectContext+TTConvenience.m */; };
+		95934FC7167B27EE00E4ED39 /* NSManagedObjectContext+TTUniquing.m in Sources */ = {isa = PBXBuildFile; fileRef = 95934F9E167B27EE00E4ED39 /* NSManagedObjectContext+TTUniquing.m */; };
+		95934FC8167B27EE00E4ED39 /* NSManagedObjectContext+TTUniquing.m in Sources */ = {isa = PBXBuildFile; fileRef = 95934F9E167B27EE00E4ED39 /* NSManagedObjectContext+TTUniquing.m */; };
+		95934FC9167B27EE00E4ED39 /* TTCGUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 95934FA1167B27EE00E4ED39 /* TTCGUtils.m */; };
+		95934FCA167B27EE00E4ED39 /* TTCGUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 95934FA1167B27EE00E4ED39 /* TTCGUtils.m */; };
+		95934FCB167B27EE00E4ED39 /* TTIntrospectProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 95934FA5167B27EE00E4ED39 /* TTIntrospectProperty.m */; };
+		95934FCC167B27EE00E4ED39 /* TTIntrospectProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 95934FA5167B27EE00E4ED39 /* TTIntrospectProperty.m */; };
+		95934FCD167B27EE00E4ED39 /* TTClassMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 95934FA8167B27EE00E4ED39 /* TTClassMapping.m */; };
+		95934FCE167B27EE00E4ED39 /* TTClassMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 95934FA8167B27EE00E4ED39 /* TTClassMapping.m */; };
+		95934FCF167B27EE00E4ED39 /* TTObjectMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 95934FAB167B27EE00E4ED39 /* TTObjectMapping.m */; };
+		95934FD0167B27EE00E4ED39 /* TTObjectMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 95934FAB167B27EE00E4ED39 /* TTObjectMapping.m */; };
+		95934FD1167B27EE00E4ED39 /* TTSpawnMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 95934FAD167B27EE00E4ED39 /* TTSpawnMapping.m */; };
+		95934FD2167B27EE00E4ED39 /* TTSpawnMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 95934FAD167B27EE00E4ED39 /* TTSpawnMapping.m */; };
+		95934FD3167B27EE00E4ED39 /* TTInjector.m in Sources */ = {isa = PBXBuildFile; fileRef = 95934FB0167B27EE00E4ED39 /* TTInjector.m */; };
+		95934FD4167B27EE00E4ED39 /* TTInjector.m in Sources */ = {isa = PBXBuildFile; fileRef = 95934FB0167B27EE00E4ED39 /* TTInjector.m */; };
+		95934FD5167B27EE00E4ED39 /* TTLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 95934FB3167B27EE00E4ED39 /* TTLog.m */; };
+		95934FD6167B27EE00E4ED39 /* TTLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 95934FB3167B27EE00E4ED39 /* TTLog.m */; };
+		95934FD8167B283E00E4ED39 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95934FD7167B283E00E4ED39 /* AddressBook.framework */; };
+		95934FDA167B284800E4ED39 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95934FD9167B284800E4ED39 /* CoreData.framework */; };
+		95934FDC167B285200E4ED39 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95934FDB167B285200E4ED39 /* QuartzCore.framework */; };
+		95934FDD167B287F00E4ED39 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95934FD9167B284800E4ED39 /* CoreData.framework */; };
+		95934FDE167B288400E4ED39 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95934FD7167B283E00E4ED39 /* AddressBook.framework */; };
+		95934FE0167B28B500E4ED39 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95934FDF167B28B500E4ED39 /* CoreGraphics.framework */; };
+		95934FE2167B28C800E4ED39 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95934FE1167B28C800E4ED39 /* UIKit.framework */; };
+		95934FE6167B293A00E4ED39 /* TTTCoreGraphicsTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 95934FE5167B293A00E4ED39 /* TTTCoreGraphicsTestCase.m */; };
+		95934FEA167B296600E4ED39 /* TTTDependencyInjectionTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 95934FE9167B296600E4ED39 /* TTTDependencyInjectionTestCase.m */; };
+		95934FEE167B2A0900E4ED39 /* TTTDISimpleObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 95934FED167B2A0900E4ED39 /* TTTDISimpleObject.m */; };
+		95934FF1167B2A4900E4ED39 /* TTTDIBaseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 95934FF0167B2A4900E4ED39 /* TTTDIBaseObject.m */; };
+		95934FF4167B2A5F00E4ED39 /* TTTDIConcreteObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 95934FF3167B2A5F00E4ED39 /* TTTDIConcreteObject.m */; };
+		95934FFA167B2D4D00E4ED39 /* TTTDIBaseSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 95934FF9167B2D4D00E4ED39 /* TTTDIBaseSingleton.m */; };
+		95934FFD167B2D5F00E4ED39 /* TTTDIConcreteSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 95934FFC167B2D5F00E4ED39 /* TTTDIConcreteSingleton.m */; };
+		95935000167B2D7F00E4ED39 /* TTTDISimpleSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 95934FFF167B2D7F00E4ED39 /* TTTDISimpleSingleton.m */; };
+		95935003167B318200E4ED39 /* TTTDIInjectableObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 95935002167B318100E4ED39 /* TTTDIInjectableObject.m */; };
+		95DC8FB2167B26B200AF1428 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95DC8FB1167B26B200AF1428 /* Foundation.framework */; };
+		95DC8FB7167B26B200AF1428 /* TwelveTwentyToolkit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 95DC8FB6167B26B200AF1428 /* TwelveTwentyToolkit.h */; };
+		95DC8FC1167B26B200AF1428 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95DC8FC0167B26B200AF1428 /* SenTestingKit.framework */; };
+		95DC8FC4167B26B200AF1428 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95DC8FB1167B26B200AF1428 /* Foundation.framework */; };
+		95DC8FC7167B26B200AF1428 /* libTwelveTwentyToolkit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 95DC8FAE167B26B200AF1428 /* libTwelveTwentyToolkit.a */; };
+		95DC8FCD167B26B200AF1428 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 95DC8FCB167B26B200AF1428 /* InfoPlist.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		950EB12D160DF510003C3F1D /* PBXContainerItemProxy */ = {
+		95DC8FC5167B26B200AF1428 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 950EB10D160DF510003C3F1D /* Project object */;
+			containerPortal = 95DC8FA5167B26B200AF1428 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 950EB115160DF510003C3F1D;
+			remoteGlobalIDString = 95DC8FAD167B26B200AF1428;
 			remoteInfo = TwelveTwentyToolkit;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		950EB114160DF510003C3F1D /* CopyFiles */ = {
+		95DC8FAC167B26B200AF1428 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "include/${PRODUCT_NAME}";
 			dstSubfolderSpec = 16;
 			files = (
-				950EB11F160DF510003C3F1D /* TwelveTwentyToolkit.h in CopyFiles */,
-				E42077A188B24DD5E788AFDE /* NSManagedObjectContext+TTBatchManipulation.h in CopyFiles */,
+				95DC8FB7167B26B200AF1428 /* TwelveTwentyToolkit.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		950EB116160DF510003C3F1D /* libTwelveTwentyToolkit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTwelveTwentyToolkit.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		950EB119160DF510003C3F1D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		950EB11E160DF510003C3F1D /* TwelveTwentyToolkit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TwelveTwentyToolkit.h; sourceTree = "<group>"; };
-		950EB127160DF510003C3F1D /* TwelveTwentyToolkitTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TwelveTwentyToolkitTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		950EB128160DF510003C3F1D /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		950EB132160DF510003C3F1D /* TwelveTwentyToolkitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TwelveTwentyToolkitTests-Info.plist"; sourceTree = "<group>"; };
-		950EB134160DF510003C3F1D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		950EB136160DF510003C3F1D /* TwelveTwentyToolkitTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TwelveTwentyToolkitTests.h; sourceTree = "<group>"; };
-		950EB137160DF510003C3F1D /* TwelveTwentyToolkitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TwelveTwentyToolkitTests.m; sourceTree = "<group>"; };
-		95600CE61618BEFA007736B9 /* NSManagedObjectContext+TTConvenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+TTConvenience.h"; sourceTree = "<group>"; };
-		95600CE71618BEFA007736B9 /* NSManagedObjectContext+TTConvenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+TTConvenience.m"; sourceTree = "<group>"; };
-		95600CE81618BEFA007736B9 /* NSManagedObjectContext+TTUniquing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+TTUniquing.h"; sourceTree = "<group>"; };
-		95600CE91618BEFA007736B9 /* NSManagedObjectContext+TTUniquing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+TTUniquing.m"; sourceTree = "<group>"; };
-		95600CEB1618BEFA007736B9 /* TTCGUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTCGUtils.h; sourceTree = "<group>"; };
-		95600CEC1618BEFA007736B9 /* TTCGUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTCGUtils.m; sourceTree = "<group>"; };
-		956C24651629BE1F00C67840 /* _TTCDLinkedRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _TTCDLinkedRecord.h; sourceTree = "<group>"; };
-		956C24661629BE1F00C67840 /* _TTCDLinkedRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _TTCDLinkedRecord.m; sourceTree = "<group>"; };
-		956C24671629BE1F00C67840 /* _TTCDUnifiedRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _TTCDUnifiedRecord.h; sourceTree = "<group>"; };
-		956C24681629BE1F00C67840 /* _TTCDUnifiedRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _TTCDUnifiedRecord.m; sourceTree = "<group>"; };
-		956C24691629BE1F00C67840 /* TTCDLinkedRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTCDLinkedRecord.h; sourceTree = "<group>"; };
-		956C246A1629BE1F00C67840 /* TTCDLinkedRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTCDLinkedRecord.m; sourceTree = "<group>"; };
-		956C246B1629BE1F00C67840 /* TTCDUnifiedRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTCDUnifiedRecord.h; sourceTree = "<group>"; };
-		956C246C1629BE1F00C67840 /* TTCDUnifiedRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTCDUnifiedRecord.m; sourceTree = "<group>"; };
-		956C246E1629BE1F00C67840 /* TTUnifiedAddressBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTUnifiedAddressBook.h; sourceTree = "<group>"; };
-		956C246F1629BE1F00C67840 /* TTUnifiedAddressBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTUnifiedAddressBook.m; sourceTree = "<group>"; };
-		956C24711629BE1F00C67840 /* TTUnifiedAddressBook.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TTUnifiedAddressBook.xcdatamodel; sourceTree = "<group>"; };
-		956C24721629BE1F00C67840 /* TTUnifiedCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTUnifiedCard.h; sourceTree = "<group>"; };
-		956C24731629BE1F00C67840 /* TTUnifiedCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTUnifiedCard.m; sourceTree = "<group>"; };
-		95CD58DA160E0D970058BBDD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		95CD58DD160E0DEE0058BBDD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		95CD58F6160E164F0058BBDD /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
-		95D777CD160F879700A80155 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		E42070BDD1E3AF06BA794A6A /* NSManagedObjectContext+TTBatchManipulation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+TTBatchManipulation.h"; sourceTree = "<group>"; };
-		E4207E4F0123C3395AF5BDC8 /* NSManagedObjectContext+TTBatchManipulation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+TTBatchManipulation.m"; sourceTree = "<group>"; };
+		95934F89167B27EE00E4ED39 /* _TTCDLinkedRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _TTCDLinkedRecord.h; sourceTree = "<group>"; };
+		95934F8A167B27EE00E4ED39 /* _TTCDLinkedRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _TTCDLinkedRecord.m; sourceTree = "<group>"; };
+		95934F8B167B27EE00E4ED39 /* _TTCDUnifiedRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _TTCDUnifiedRecord.h; sourceTree = "<group>"; };
+		95934F8C167B27EE00E4ED39 /* _TTCDUnifiedRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _TTCDUnifiedRecord.m; sourceTree = "<group>"; };
+		95934F8D167B27EE00E4ED39 /* TTCDLinkedRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTCDLinkedRecord.h; sourceTree = "<group>"; };
+		95934F8E167B27EE00E4ED39 /* TTCDLinkedRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTCDLinkedRecord.m; sourceTree = "<group>"; };
+		95934F8F167B27EE00E4ED39 /* TTCDUnifiedRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTCDUnifiedRecord.h; sourceTree = "<group>"; };
+		95934F90167B27EE00E4ED39 /* TTCDUnifiedRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTCDUnifiedRecord.m; sourceTree = "<group>"; };
+		95934F91167B27EE00E4ED39 /* generate_classes.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = generate_classes.sh; sourceTree = "<group>"; };
+		95934F92167B27EE00E4ED39 /* TTUnifiedAddressBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTUnifiedAddressBook.h; sourceTree = "<group>"; };
+		95934F93167B27EE00E4ED39 /* TTUnifiedAddressBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTUnifiedAddressBook.m; sourceTree = "<group>"; };
+		95934F95167B27EE00E4ED39 /* TTUnifiedAddressBook.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TTUnifiedAddressBook.xcdatamodel; sourceTree = "<group>"; };
+		95934F96167B27EE00E4ED39 /* TTUnifiedCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTUnifiedCard.h; sourceTree = "<group>"; };
+		95934F97167B27EE00E4ED39 /* TTUnifiedCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTUnifiedCard.m; sourceTree = "<group>"; };
+		95934F99167B27EE00E4ED39 /* NSManagedObjectContext+TTBatchManipulation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+TTBatchManipulation.h"; sourceTree = "<group>"; };
+		95934F9A167B27EE00E4ED39 /* NSManagedObjectContext+TTBatchManipulation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+TTBatchManipulation.m"; sourceTree = "<group>"; };
+		95934F9B167B27EE00E4ED39 /* NSManagedObjectContext+TTConvenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+TTConvenience.h"; sourceTree = "<group>"; };
+		95934F9C167B27EE00E4ED39 /* NSManagedObjectContext+TTConvenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+TTConvenience.m"; sourceTree = "<group>"; };
+		95934F9D167B27EE00E4ED39 /* NSManagedObjectContext+TTUniquing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+TTUniquing.h"; sourceTree = "<group>"; };
+		95934F9E167B27EE00E4ED39 /* NSManagedObjectContext+TTUniquing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+TTUniquing.m"; sourceTree = "<group>"; };
+		95934FA0167B27EE00E4ED39 /* TTCGUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTCGUtils.h; sourceTree = "<group>"; };
+		95934FA1167B27EE00E4ED39 /* TTCGUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTCGUtils.m; sourceTree = "<group>"; };
+		95934FA4167B27EE00E4ED39 /* TTIntrospectProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTIntrospectProperty.h; sourceTree = "<group>"; };
+		95934FA5167B27EE00E4ED39 /* TTIntrospectProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTIntrospectProperty.m; sourceTree = "<group>"; };
+		95934FA7167B27EE00E4ED39 /* TTClassMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTClassMapping.h; sourceTree = "<group>"; };
+		95934FA8167B27EE00E4ED39 /* TTClassMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTClassMapping.m; sourceTree = "<group>"; };
+		95934FA9167B27EE00E4ED39 /* TTInjectionMappingParent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTInjectionMappingParent.h; sourceTree = "<group>"; };
+		95934FAA167B27EE00E4ED39 /* TTObjectMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTObjectMapping.h; sourceTree = "<group>"; };
+		95934FAB167B27EE00E4ED39 /* TTObjectMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTObjectMapping.m; sourceTree = "<group>"; };
+		95934FAC167B27EE00E4ED39 /* TTSpawnMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTSpawnMapping.h; sourceTree = "<group>"; };
+		95934FAD167B27EE00E4ED39 /* TTSpawnMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTSpawnMapping.m; sourceTree = "<group>"; };
+		95934FAE167B27EE00E4ED39 /* TTInjectable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTInjectable.h; sourceTree = "<group>"; };
+		95934FAF167B27EE00E4ED39 /* TTInjector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTInjector.h; sourceTree = "<group>"; };
+		95934FB0167B27EE00E4ED39 /* TTInjector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTInjector.m; sourceTree = "<group>"; };
+		95934FB2167B27EE00E4ED39 /* TTLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTLog.h; sourceTree = "<group>"; };
+		95934FB3167B27EE00E4ED39 /* TTLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTLog.m; sourceTree = "<group>"; };
+		95934FD7167B283E00E4ED39 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		95934FD9167B284800E4ED39 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		95934FDB167B285200E4ED39 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		95934FDF167B28B500E4ED39 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		95934FE1167B28C800E4ED39 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		95934FE4167B293A00E4ED39 /* TTTCoreGraphicsTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTCoreGraphicsTestCase.h; sourceTree = "<group>"; };
+		95934FE5167B293A00E4ED39 /* TTTCoreGraphicsTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTCoreGraphicsTestCase.m; sourceTree = "<group>"; };
+		95934FE8167B296600E4ED39 /* TTTDependencyInjectionTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTDependencyInjectionTestCase.h; sourceTree = "<group>"; };
+		95934FE9167B296600E4ED39 /* TTTDependencyInjectionTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTDependencyInjectionTestCase.m; sourceTree = "<group>"; };
+		95934FEC167B2A0900E4ED39 /* TTTDISimpleObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTDISimpleObject.h; sourceTree = "<group>"; };
+		95934FED167B2A0900E4ED39 /* TTTDISimpleObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTDISimpleObject.m; sourceTree = "<group>"; };
+		95934FEF167B2A4900E4ED39 /* TTTDIBaseObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTDIBaseObject.h; sourceTree = "<group>"; };
+		95934FF0167B2A4900E4ED39 /* TTTDIBaseObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTDIBaseObject.m; sourceTree = "<group>"; };
+		95934FF2167B2A5F00E4ED39 /* TTTDIConcreteObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTDIConcreteObject.h; sourceTree = "<group>"; };
+		95934FF3167B2A5F00E4ED39 /* TTTDIConcreteObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTDIConcreteObject.m; sourceTree = "<group>"; };
+		95934FF8167B2D4D00E4ED39 /* TTTDIBaseSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTDIBaseSingleton.h; sourceTree = "<group>"; };
+		95934FF9167B2D4D00E4ED39 /* TTTDIBaseSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTDIBaseSingleton.m; sourceTree = "<group>"; };
+		95934FFB167B2D5E00E4ED39 /* TTTDIConcreteSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTDIConcreteSingleton.h; sourceTree = "<group>"; };
+		95934FFC167B2D5F00E4ED39 /* TTTDIConcreteSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTDIConcreteSingleton.m; sourceTree = "<group>"; };
+		95934FFE167B2D7F00E4ED39 /* TTTDISimpleSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTDISimpleSingleton.h; sourceTree = "<group>"; };
+		95934FFF167B2D7F00E4ED39 /* TTTDISimpleSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTDISimpleSingleton.m; sourceTree = "<group>"; };
+		95935001167B318100E4ED39 /* TTTDIInjectableObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTDIInjectableObject.h; sourceTree = "<group>"; };
+		95935002167B318100E4ED39 /* TTTDIInjectableObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTDIInjectableObject.m; sourceTree = "<group>"; };
+		95DC8FAE167B26B200AF1428 /* libTwelveTwentyToolkit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTwelveTwentyToolkit.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		95DC8FB1167B26B200AF1428 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		95DC8FB5167B26B200AF1428 /* TwelveTwentyToolkit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TwelveTwentyToolkit-Prefix.pch"; sourceTree = "<group>"; };
+		95DC8FB6167B26B200AF1428 /* TwelveTwentyToolkit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TwelveTwentyToolkit.h; sourceTree = "<group>"; };
+		95DC8FBF167B26B200AF1428 /* TwelveTwentyToolkitTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TwelveTwentyToolkitTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		95DC8FC0167B26B200AF1428 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		95DC8FCA167B26B200AF1428 /* TwelveTwentyToolkitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TwelveTwentyToolkitTests-Info.plist"; sourceTree = "<group>"; };
+		95DC8FCC167B26B200AF1428 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		950EB113160DF510003C3F1D /* Frameworks */ = {
+		95DC8FAB167B26B200AF1428 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95D777CE160F879700A80155 /* CoreData.framework in Frameworks */,
-				95CD58F7160E164F0058BBDD /* AddressBook.framework in Frameworks */,
-				95CD58DF160E0DF70058BBDD /* UIKit.framework in Frameworks */,
-				95CD58DB160E0D970058BBDD /* CoreGraphics.framework in Frameworks */,
-				950EB11A160DF510003C3F1D /* Foundation.framework in Frameworks */,
+				95934FDC167B285200E4ED39 /* QuartzCore.framework in Frameworks */,
+				95934FDA167B284800E4ED39 /* CoreData.framework in Frameworks */,
+				95934FD8167B283E00E4ED39 /* AddressBook.framework in Frameworks */,
+				95DC8FB2167B26B200AF1428 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		950EB123160DF510003C3F1D /* Frameworks */ = {
+		95DC8FBB167B26B200AF1428 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95CD58DE160E0DEE0058BBDD /* UIKit.framework in Frameworks */,
-				95CD58DC160E0DB10058BBDD /* CoreGraphics.framework in Frameworks */,
-				950EB129160DF510003C3F1D /* SenTestingKit.framework in Frameworks */,
-				950EB12C160DF510003C3F1D /* Foundation.framework in Frameworks */,
-				950EB12F160DF510003C3F1D /* libTwelveTwentyToolkit.a in Frameworks */,
+				95934FE2167B28C800E4ED39 /* UIKit.framework in Frameworks */,
+				95934FE0167B28B500E4ED39 /* CoreGraphics.framework in Frameworks */,
+				95934FDE167B288400E4ED39 /* AddressBook.framework in Frameworks */,
+				95934FDD167B287F00E4ED39 /* CoreData.framework in Frameworks */,
+				95DC8FC1167B26B200AF1428 /* SenTestingKit.framework in Frameworks */,
+				95DC8FC4167B26B200AF1428 /* Foundation.framework in Frameworks */,
+				95DC8FC7167B26B200AF1428 /* libTwelveTwentyToolkit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		950EB10B160DF510003C3F1D = {
+		95934F86167B27EE00E4ED39 /* AddressBook */ = {
 			isa = PBXGroup;
 			children = (
-				950EB11B160DF510003C3F1D /* TwelveTwentyToolkit */,
-				950EB130160DF510003C3F1D /* TwelveTwentyToolkitTests */,
-				950EB118160DF510003C3F1D /* Frameworks */,
-				950EB117160DF510003C3F1D /* Products */,
-			);
-			sourceTree = "<group>";
-		};
-		950EB117160DF510003C3F1D /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				950EB116160DF510003C3F1D /* libTwelveTwentyToolkit.a */,
-				950EB127160DF510003C3F1D /* TwelveTwentyToolkitTests.octest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		950EB118160DF510003C3F1D /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				95D777CD160F879700A80155 /* CoreData.framework */,
-				95CD58F6160E164F0058BBDD /* AddressBook.framework */,
-				95CD58DD160E0DEE0058BBDD /* UIKit.framework */,
-				95CD58DA160E0D970058BBDD /* CoreGraphics.framework */,
-				950EB119160DF510003C3F1D /* Foundation.framework */,
-				950EB128160DF510003C3F1D /* SenTestingKit.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		950EB11B160DF510003C3F1D /* TwelveTwentyToolkit */ = {
-			isa = PBXGroup;
-			children = (
-				956C24621629BE1F00C67840 /* AddressBook */,
-				95600CE51618BEFA007736B9 /* CoreData */,
-				95600CEA1618BEFA007736B9 /* CoreGraphics */,
-				950EB11E160DF510003C3F1D /* TwelveTwentyToolkit.h */,
-			);
-			path = TwelveTwentyToolkit;
-			sourceTree = "<group>";
-		};
-		950EB130160DF510003C3F1D /* TwelveTwentyToolkitTests */ = {
-			isa = PBXGroup;
-			children = (
-				950EB136160DF510003C3F1D /* TwelveTwentyToolkitTests.h */,
-				950EB137160DF510003C3F1D /* TwelveTwentyToolkitTests.m */,
-				950EB131160DF510003C3F1D /* Supporting Files */,
-			);
-			path = TwelveTwentyToolkitTests;
-			sourceTree = "<group>";
-		};
-		950EB131160DF510003C3F1D /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				950EB132160DF510003C3F1D /* TwelveTwentyToolkitTests-Info.plist */,
-				950EB133160DF510003C3F1D /* InfoPlist.strings */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		95600CE51618BEFA007736B9 /* CoreData */ = {
-			isa = PBXGroup;
-			children = (
-				E42070BDD1E3AF06BA794A6A /* NSManagedObjectContext+TTBatchManipulation.h */,
-				E4207E4F0123C3395AF5BDC8 /* NSManagedObjectContext+TTBatchManipulation.m */,
-				95600CE61618BEFA007736B9 /* NSManagedObjectContext+TTConvenience.h */,
-				95600CE71618BEFA007736B9 /* NSManagedObjectContext+TTConvenience.m */,
-				95600CE81618BEFA007736B9 /* NSManagedObjectContext+TTUniquing.h */,
-				95600CE91618BEFA007736B9 /* NSManagedObjectContext+TTUniquing.m */,
-			);
-			path = CoreData;
-			sourceTree = "<group>";
-		};
-		95600CEA1618BEFA007736B9 /* CoreGraphics */ = {
-			isa = PBXGroup;
-			children = (
-				95600CEB1618BEFA007736B9 /* TTCGUtils.h */,
-				95600CEC1618BEFA007736B9 /* TTCGUtils.m */,
-			);
-			path = CoreGraphics;
-			sourceTree = "<group>";
-		};
-		956C24621629BE1F00C67840 /* AddressBook */ = {
-			isa = PBXGroup;
-			children = (
-				956C24631629BE1F00C67840 /* Entities */,
-				956C246E1629BE1F00C67840 /* TTUnifiedAddressBook.h */,
-				956C246F1629BE1F00C67840 /* TTUnifiedAddressBook.m */,
-				956C24701629BE1F00C67840 /* TTUnifiedAddressBook.xcdatamodeld */,
-				956C24721629BE1F00C67840 /* TTUnifiedCard.h */,
-				956C24731629BE1F00C67840 /* TTUnifiedCard.m */,
+				95934F87167B27EE00E4ED39 /* Entities */,
+				95934F91167B27EE00E4ED39 /* generate_classes.sh */,
+				95934F92167B27EE00E4ED39 /* TTUnifiedAddressBook.h */,
+				95934F93167B27EE00E4ED39 /* TTUnifiedAddressBook.m */,
+				95934F94167B27EE00E4ED39 /* TTUnifiedAddressBook.xcdatamodeld */,
+				95934F96167B27EE00E4ED39 /* TTUnifiedCard.h */,
+				95934F97167B27EE00E4ED39 /* TTUnifiedCard.m */,
 			);
 			path = AddressBook;
 			sourceTree = "<group>";
 		};
-		956C24631629BE1F00C67840 /* Entities */ = {
+		95934F87167B27EE00E4ED39 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				956C24641629BE1F00C67840 /* Abstract */,
-				956C24691629BE1F00C67840 /* TTCDLinkedRecord.h */,
-				956C246A1629BE1F00C67840 /* TTCDLinkedRecord.m */,
-				956C246B1629BE1F00C67840 /* TTCDUnifiedRecord.h */,
-				956C246C1629BE1F00C67840 /* TTCDUnifiedRecord.m */,
+				95934F88167B27EE00E4ED39 /* Abstract */,
+				95934F8D167B27EE00E4ED39 /* TTCDLinkedRecord.h */,
+				95934F8E167B27EE00E4ED39 /* TTCDLinkedRecord.m */,
+				95934F8F167B27EE00E4ED39 /* TTCDUnifiedRecord.h */,
+				95934F90167B27EE00E4ED39 /* TTCDUnifiedRecord.m */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
 		};
-		956C24641629BE1F00C67840 /* Abstract */ = {
+		95934F88167B27EE00E4ED39 /* Abstract */ = {
 			isa = PBXGroup;
 			children = (
-				956C24651629BE1F00C67840 /* _TTCDLinkedRecord.h */,
-				956C24661629BE1F00C67840 /* _TTCDLinkedRecord.m */,
-				956C24671629BE1F00C67840 /* _TTCDUnifiedRecord.h */,
-				956C24681629BE1F00C67840 /* _TTCDUnifiedRecord.m */,
+				95934F89167B27EE00E4ED39 /* _TTCDLinkedRecord.h */,
+				95934F8A167B27EE00E4ED39 /* _TTCDLinkedRecord.m */,
+				95934F8B167B27EE00E4ED39 /* _TTCDUnifiedRecord.h */,
+				95934F8C167B27EE00E4ED39 /* _TTCDUnifiedRecord.m */,
 			);
 			path = Abstract;
+			sourceTree = "<group>";
+		};
+		95934F98167B27EE00E4ED39 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				95934F99167B27EE00E4ED39 /* NSManagedObjectContext+TTBatchManipulation.h */,
+				95934F9A167B27EE00E4ED39 /* NSManagedObjectContext+TTBatchManipulation.m */,
+				95934F9B167B27EE00E4ED39 /* NSManagedObjectContext+TTConvenience.h */,
+				95934F9C167B27EE00E4ED39 /* NSManagedObjectContext+TTConvenience.m */,
+				95934F9D167B27EE00E4ED39 /* NSManagedObjectContext+TTUniquing.h */,
+				95934F9E167B27EE00E4ED39 /* NSManagedObjectContext+TTUniquing.m */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		95934F9F167B27EE00E4ED39 /* CoreGraphics */ = {
+			isa = PBXGroup;
+			children = (
+				95934FA0167B27EE00E4ED39 /* TTCGUtils.h */,
+				95934FA1167B27EE00E4ED39 /* TTCGUtils.m */,
+			);
+			path = CoreGraphics;
+			sourceTree = "<group>";
+		};
+		95934FA2167B27EE00E4ED39 /* DependencyInjection */ = {
+			isa = PBXGroup;
+			children = (
+				95934FA3167B27EE00E4ED39 /* Introspection */,
+				95934FA6167B27EE00E4ED39 /* Mappings */,
+				95934FAE167B27EE00E4ED39 /* TTInjectable.h */,
+				95934FAF167B27EE00E4ED39 /* TTInjector.h */,
+				95934FB0167B27EE00E4ED39 /* TTInjector.m */,
+			);
+			path = DependencyInjection;
+			sourceTree = "<group>";
+		};
+		95934FA3167B27EE00E4ED39 /* Introspection */ = {
+			isa = PBXGroup;
+			children = (
+				95934FA4167B27EE00E4ED39 /* TTIntrospectProperty.h */,
+				95934FA5167B27EE00E4ED39 /* TTIntrospectProperty.m */,
+			);
+			path = Introspection;
+			sourceTree = "<group>";
+		};
+		95934FA6167B27EE00E4ED39 /* Mappings */ = {
+			isa = PBXGroup;
+			children = (
+				95934FA7167B27EE00E4ED39 /* TTClassMapping.h */,
+				95934FA8167B27EE00E4ED39 /* TTClassMapping.m */,
+				95934FA9167B27EE00E4ED39 /* TTInjectionMappingParent.h */,
+				95934FAA167B27EE00E4ED39 /* TTObjectMapping.h */,
+				95934FAB167B27EE00E4ED39 /* TTObjectMapping.m */,
+				95934FAC167B27EE00E4ED39 /* TTSpawnMapping.h */,
+				95934FAD167B27EE00E4ED39 /* TTSpawnMapping.m */,
+			);
+			path = Mappings;
+			sourceTree = "<group>";
+		};
+		95934FB1167B27EE00E4ED39 /* Logging */ = {
+			isa = PBXGroup;
+			children = (
+				95934FB2167B27EE00E4ED39 /* TTLog.h */,
+				95934FB3167B27EE00E4ED39 /* TTLog.m */,
+			);
+			path = Logging;
+			sourceTree = "<group>";
+		};
+		95934FE3167B293A00E4ED39 /* CoreGraphics */ = {
+			isa = PBXGroup;
+			children = (
+				95934FE4167B293A00E4ED39 /* TTTCoreGraphicsTestCase.h */,
+				95934FE5167B293A00E4ED39 /* TTTCoreGraphicsTestCase.m */,
+			);
+			path = CoreGraphics;
+			sourceTree = "<group>";
+		};
+		95934FE7167B294E00E4ED39 /* DependencyInjection */ = {
+			isa = PBXGroup;
+			children = (
+				95934FEB167B29EF00E4ED39 /* HelperClasses */,
+				95934FE8167B296600E4ED39 /* TTTDependencyInjectionTestCase.h */,
+				95934FE9167B296600E4ED39 /* TTTDependencyInjectionTestCase.m */,
+			);
+			path = DependencyInjection;
+			sourceTree = "<group>";
+		};
+		95934FEB167B29EF00E4ED39 /* HelperClasses */ = {
+			isa = PBXGroup;
+			children = (
+				95934FF8167B2D4D00E4ED39 /* TTTDIBaseSingleton.h */,
+				95934FF9167B2D4D00E4ED39 /* TTTDIBaseSingleton.m */,
+				95934FEC167B2A0900E4ED39 /* TTTDISimpleObject.h */,
+				95934FED167B2A0900E4ED39 /* TTTDISimpleObject.m */,
+				95934FEF167B2A4900E4ED39 /* TTTDIBaseObject.h */,
+				95934FF0167B2A4900E4ED39 /* TTTDIBaseObject.m */,
+				95934FF2167B2A5F00E4ED39 /* TTTDIConcreteObject.h */,
+				95934FF3167B2A5F00E4ED39 /* TTTDIConcreteObject.m */,
+				95934FFB167B2D5E00E4ED39 /* TTTDIConcreteSingleton.h */,
+				95934FFC167B2D5F00E4ED39 /* TTTDIConcreteSingleton.m */,
+				95934FFE167B2D7F00E4ED39 /* TTTDISimpleSingleton.h */,
+				95934FFF167B2D7F00E4ED39 /* TTTDISimpleSingleton.m */,
+				95935001167B318100E4ED39 /* TTTDIInjectableObject.h */,
+				95935002167B318100E4ED39 /* TTTDIInjectableObject.m */,
+			);
+			path = HelperClasses;
+			sourceTree = "<group>";
+		};
+		95DC8FA3167B26B200AF1428 = {
+			isa = PBXGroup;
+			children = (
+				95DC8FB3167B26B200AF1428 /* TwelveTwentyToolkit */,
+				95DC8FC8167B26B200AF1428 /* TwelveTwentyToolkitTests */,
+				95DC8FB0167B26B200AF1428 /* Frameworks */,
+				95DC8FAF167B26B200AF1428 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		95DC8FAF167B26B200AF1428 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				95DC8FAE167B26B200AF1428 /* libTwelveTwentyToolkit.a */,
+				95DC8FBF167B26B200AF1428 /* TwelveTwentyToolkitTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		95DC8FB0167B26B200AF1428 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				95934FE1167B28C800E4ED39 /* UIKit.framework */,
+				95934FDF167B28B500E4ED39 /* CoreGraphics.framework */,
+				95934FDB167B285200E4ED39 /* QuartzCore.framework */,
+				95934FD9167B284800E4ED39 /* CoreData.framework */,
+				95934FD7167B283E00E4ED39 /* AddressBook.framework */,
+				95DC8FB1167B26B200AF1428 /* Foundation.framework */,
+				95DC8FC0167B26B200AF1428 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		95DC8FB3167B26B200AF1428 /* TwelveTwentyToolkit */ = {
+			isa = PBXGroup;
+			children = (
+				95934F86167B27EE00E4ED39 /* AddressBook */,
+				95934F98167B27EE00E4ED39 /* CoreData */,
+				95934F9F167B27EE00E4ED39 /* CoreGraphics */,
+				95934FA2167B27EE00E4ED39 /* DependencyInjection */,
+				95934FB1167B27EE00E4ED39 /* Logging */,
+				95DC8FB6167B26B200AF1428 /* TwelveTwentyToolkit.h */,
+				95DC8FB4167B26B200AF1428 /* Supporting Files */,
+			);
+			path = TwelveTwentyToolkit;
+			sourceTree = "<group>";
+		};
+		95DC8FB4167B26B200AF1428 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				95DC8FB5167B26B200AF1428 /* TwelveTwentyToolkit-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		95DC8FC8167B26B200AF1428 /* TwelveTwentyToolkitTests */ = {
+			isa = PBXGroup;
+			children = (
+				95934FE3167B293A00E4ED39 /* CoreGraphics */,
+				95934FE7167B294E00E4ED39 /* DependencyInjection */,
+				95DC8FC9167B26B200AF1428 /* Supporting Files */,
+			);
+			path = TwelveTwentyToolkitTests;
+			sourceTree = "<group>";
+		};
+		95DC8FC9167B26B200AF1428 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				95DC8FCA167B26B200AF1428 /* TwelveTwentyToolkitTests-Info.plist */,
+				95DC8FCB167B26B200AF1428 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		950EB115160DF510003C3F1D /* TwelveTwentyToolkit */ = {
+		95DC8FAD167B26B200AF1428 /* TwelveTwentyToolkit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 950EB13B160DF510003C3F1D /* Build configuration list for PBXNativeTarget "TwelveTwentyToolkit" */;
+			buildConfigurationList = 95DC8FD3167B26B200AF1428 /* Build configuration list for PBXNativeTarget "TwelveTwentyToolkit" */;
 			buildPhases = (
-				950EB112160DF510003C3F1D /* Sources */,
-				950EB113160DF510003C3F1D /* Frameworks */,
-				950EB114160DF510003C3F1D /* CopyFiles */,
+				95DC8FAA167B26B200AF1428 /* Sources */,
+				95DC8FAB167B26B200AF1428 /* Frameworks */,
+				95DC8FAC167B26B200AF1428 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -271,68 +422,69 @@
 			);
 			name = TwelveTwentyToolkit;
 			productName = TwelveTwentyToolkit;
-			productReference = 950EB116160DF510003C3F1D /* libTwelveTwentyToolkit.a */;
+			productReference = 95DC8FAE167B26B200AF1428 /* libTwelveTwentyToolkit.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		950EB126160DF510003C3F1D /* TwelveTwentyToolkitTests */ = {
+		95DC8FBE167B26B200AF1428 /* TwelveTwentyToolkitTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 950EB13E160DF510003C3F1D /* Build configuration list for PBXNativeTarget "TwelveTwentyToolkitTests" */;
+			buildConfigurationList = 95DC8FD6167B26B200AF1428 /* Build configuration list for PBXNativeTarget "TwelveTwentyToolkitTests" */;
 			buildPhases = (
-				950EB122160DF510003C3F1D /* Sources */,
-				950EB123160DF510003C3F1D /* Frameworks */,
-				950EB124160DF510003C3F1D /* Resources */,
-				950EB125160DF510003C3F1D /* ShellScript */,
+				95DC8FBA167B26B200AF1428 /* Sources */,
+				95DC8FBB167B26B200AF1428 /* Frameworks */,
+				95DC8FBC167B26B200AF1428 /* Resources */,
+				95DC8FBD167B26B200AF1428 /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				950EB12E160DF510003C3F1D /* PBXTargetDependency */,
+				95DC8FC6167B26B200AF1428 /* PBXTargetDependency */,
 			);
 			name = TwelveTwentyToolkitTests;
 			productName = TwelveTwentyToolkitTests;
-			productReference = 950EB127160DF510003C3F1D /* TwelveTwentyToolkitTests.octest */;
+			productReference = 95DC8FBF167B26B200AF1428 /* TwelveTwentyToolkitTests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		950EB10D160DF510003C3F1D /* Project object */ = {
+		95DC8FA5167B26B200AF1428 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0450;
-				ORGANIZATIONNAME = "Twelve Twenty";
+				ORGANIZATIONNAME = TwelveTwenty;
 			};
-			buildConfigurationList = 950EB110160DF510003C3F1D /* Build configuration list for PBXProject "TwelveTwentyToolkit" */;
+			buildConfigurationList = 95DC8FA8167B26B200AF1428 /* Build configuration list for PBXProject "TwelveTwentyToolkit" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 950EB10B160DF510003C3F1D;
-			productRefGroup = 950EB117160DF510003C3F1D /* Products */;
+			mainGroup = 95DC8FA3167B26B200AF1428;
+			productRefGroup = 95DC8FAF167B26B200AF1428 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				950EB115160DF510003C3F1D /* TwelveTwentyToolkit */,
-				950EB126160DF510003C3F1D /* TwelveTwentyToolkitTests */,
+				95DC8FAD167B26B200AF1428 /* TwelveTwentyToolkit */,
+				95DC8FBE167B26B200AF1428 /* TwelveTwentyToolkitTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		950EB124160DF510003C3F1D /* Resources */ = {
+		95DC8FBC167B26B200AF1428 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				950EB135160DF510003C3F1D /* InfoPlist.strings in Resources */,
+				95DC8FCD167B26B200AF1428 /* InfoPlist.strings in Resources */,
+				95934FBC167B27EE00E4ED39 /* generate_classes.sh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		950EB125160DF510003C3F1D /* ShellScript */ = {
+		95DC8FBD167B26B200AF1428 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -348,58 +500,78 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		950EB112160DF510003C3F1D /* Sources */ = {
+		95DC8FAA167B26B200AF1428 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95600CFC1618BEFA007736B9 /* NSManagedObjectContext+TTConvenience.m in Sources */,
-				95600CFE1618BEFA007736B9 /* NSManagedObjectContext+TTUniquing.m in Sources */,
-				95600D001618BEFA007736B9 /* TTCGUtils.m in Sources */,
-				E4207746FF15E4E802179AAA /* NSManagedObjectContext+TTBatchManipulation.m in Sources */,
-				956C24741629BE1F00C67840 /* _TTCDLinkedRecord.m in Sources */,
-				956C24761629BE1F00C67840 /* _TTCDUnifiedRecord.m in Sources */,
-				956C24781629BE1F00C67840 /* TTCDLinkedRecord.m in Sources */,
-				956C247A1629BE1F00C67840 /* TTCDUnifiedRecord.m in Sources */,
-				956C247D1629BE1F00C67840 /* TTUnifiedAddressBook.m in Sources */,
-				956C247F1629BE1F00C67840 /* TTUnifiedAddressBook.xcdatamodeld in Sources */,
-				956C24811629BE1F00C67840 /* TTUnifiedCard.m in Sources */,
+				95934FB4167B27EE00E4ED39 /* _TTCDLinkedRecord.m in Sources */,
+				95934FB6167B27EE00E4ED39 /* _TTCDUnifiedRecord.m in Sources */,
+				95934FB8167B27EE00E4ED39 /* TTCDLinkedRecord.m in Sources */,
+				95934FBA167B27EE00E4ED39 /* TTCDUnifiedRecord.m in Sources */,
+				95934FBD167B27EE00E4ED39 /* TTUnifiedAddressBook.m in Sources */,
+				95934FBF167B27EE00E4ED39 /* TTUnifiedAddressBook.xcdatamodeld in Sources */,
+				95934FC1167B27EE00E4ED39 /* TTUnifiedCard.m in Sources */,
+				95934FC3167B27EE00E4ED39 /* NSManagedObjectContext+TTBatchManipulation.m in Sources */,
+				95934FC5167B27EE00E4ED39 /* NSManagedObjectContext+TTConvenience.m in Sources */,
+				95934FC7167B27EE00E4ED39 /* NSManagedObjectContext+TTUniquing.m in Sources */,
+				95934FC9167B27EE00E4ED39 /* TTCGUtils.m in Sources */,
+				95934FCB167B27EE00E4ED39 /* TTIntrospectProperty.m in Sources */,
+				95934FCD167B27EE00E4ED39 /* TTClassMapping.m in Sources */,
+				95934FCF167B27EE00E4ED39 /* TTObjectMapping.m in Sources */,
+				95934FD1167B27EE00E4ED39 /* TTSpawnMapping.m in Sources */,
+				95934FD3167B27EE00E4ED39 /* TTInjector.m in Sources */,
+				95934FD5167B27EE00E4ED39 /* TTLog.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		950EB122160DF510003C3F1D /* Sources */ = {
+		95DC8FBA167B26B200AF1428 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				950EB138160DF510003C3F1D /* TwelveTwentyToolkitTests.m in Sources */,
-				95600CFD1618BEFA007736B9 /* NSManagedObjectContext+TTConvenience.m in Sources */,
-				95600CFF1618BEFA007736B9 /* NSManagedObjectContext+TTUniquing.m in Sources */,
-				95600D011618BEFA007736B9 /* TTCGUtils.m in Sources */,
-				E4207F2F2ACCF4E5985D6389 /* NSManagedObjectContext+TTBatchManipulation.m in Sources */,
-				956C24751629BE1F00C67840 /* _TTCDLinkedRecord.m in Sources */,
-				956C24771629BE1F00C67840 /* _TTCDUnifiedRecord.m in Sources */,
-				956C24791629BE1F00C67840 /* TTCDLinkedRecord.m in Sources */,
-				956C247B1629BE1F00C67840 /* TTCDUnifiedRecord.m in Sources */,
-				956C247E1629BE1F00C67840 /* TTUnifiedAddressBook.m in Sources */,
-				956C24801629BE1F00C67840 /* TTUnifiedAddressBook.xcdatamodeld in Sources */,
-				956C24821629BE1F00C67840 /* TTUnifiedCard.m in Sources */,
+				95934FB5167B27EE00E4ED39 /* _TTCDLinkedRecord.m in Sources */,
+				95934FB7167B27EE00E4ED39 /* _TTCDUnifiedRecord.m in Sources */,
+				95934FB9167B27EE00E4ED39 /* TTCDLinkedRecord.m in Sources */,
+				95934FBB167B27EE00E4ED39 /* TTCDUnifiedRecord.m in Sources */,
+				95934FBE167B27EE00E4ED39 /* TTUnifiedAddressBook.m in Sources */,
+				95934FC0167B27EE00E4ED39 /* TTUnifiedAddressBook.xcdatamodeld in Sources */,
+				95934FC2167B27EE00E4ED39 /* TTUnifiedCard.m in Sources */,
+				95934FC4167B27EE00E4ED39 /* NSManagedObjectContext+TTBatchManipulation.m in Sources */,
+				95934FC6167B27EE00E4ED39 /* NSManagedObjectContext+TTConvenience.m in Sources */,
+				95934FC8167B27EE00E4ED39 /* NSManagedObjectContext+TTUniquing.m in Sources */,
+				95934FCA167B27EE00E4ED39 /* TTCGUtils.m in Sources */,
+				95934FCC167B27EE00E4ED39 /* TTIntrospectProperty.m in Sources */,
+				95934FCE167B27EE00E4ED39 /* TTClassMapping.m in Sources */,
+				95934FD0167B27EE00E4ED39 /* TTObjectMapping.m in Sources */,
+				95934FD2167B27EE00E4ED39 /* TTSpawnMapping.m in Sources */,
+				95934FD4167B27EE00E4ED39 /* TTInjector.m in Sources */,
+				95934FD6167B27EE00E4ED39 /* TTLog.m in Sources */,
+				95934FE6167B293A00E4ED39 /* TTTCoreGraphicsTestCase.m in Sources */,
+				95934FEA167B296600E4ED39 /* TTTDependencyInjectionTestCase.m in Sources */,
+				95934FEE167B2A0900E4ED39 /* TTTDISimpleObject.m in Sources */,
+				95934FF1167B2A4900E4ED39 /* TTTDIBaseObject.m in Sources */,
+				95934FF4167B2A5F00E4ED39 /* TTTDIConcreteObject.m in Sources */,
+				95934FFA167B2D4D00E4ED39 /* TTTDIBaseSingleton.m in Sources */,
+				95934FFD167B2D5F00E4ED39 /* TTTDIConcreteSingleton.m in Sources */,
+				95935000167B2D7F00E4ED39 /* TTTDISimpleSingleton.m in Sources */,
+				95935003167B318200E4ED39 /* TTTDIInjectableObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		950EB12E160DF510003C3F1D /* PBXTargetDependency */ = {
+		95DC8FC6167B26B200AF1428 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 950EB115160DF510003C3F1D /* TwelveTwentyToolkit */;
-			targetProxy = 950EB12D160DF510003C3F1D /* PBXContainerItemProxy */;
+			target = 95DC8FAD167B26B200AF1428 /* TwelveTwentyToolkit */;
+			targetProxy = 95DC8FC5167B26B200AF1428 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		950EB133160DF510003C3F1D /* InfoPlist.strings */ = {
+		95DC8FCB167B26B200AF1428 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				950EB134160DF510003C3F1D /* en */,
+				95DC8FCC167B26B200AF1428 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -407,7 +579,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		950EB139160DF510003C3F1D /* Debug */ = {
+		95DC8FD1167B26B200AF1428 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -428,12 +600,13 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
-		950EB13A160DF510003C3F1D /* Release */ = {
+		95DC8FD2167B26B200AF1428 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -447,38 +620,37 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		950EB13C160DF510003C3F1D /* Debug */ = {
+		95DC8FD4167B26B200AF1428 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DSTROOT = /tmp/TwelveTwentyToolkit.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "";
-				ONLY_ACTIVE_ARCH = YES;
+				GCC_PREFIX_HEADER = "TwelveTwentyToolkit/TwelveTwentyToolkit-Prefix.pch";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
 		};
-		950EB13D160DF510003C3F1D /* Release */ = {
+		95DC8FD5167B26B200AF1428 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DSTROOT = /tmp/TwelveTwentyToolkit.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "";
+				GCC_PREFIX_HEADER = "TwelveTwentyToolkit/TwelveTwentyToolkit-Prefix.pch";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
-		950EB13F160DF510003C3F1D /* Debug */ = {
+		95DC8FD7167B26B200AF1428 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
@@ -493,7 +665,7 @@
 			};
 			name = Debug;
 		};
-		950EB140160DF510003C3F1D /* Release */ = {
+		95DC8FD8167B26B200AF1428 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
@@ -511,29 +683,29 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		950EB110160DF510003C3F1D /* Build configuration list for PBXProject "TwelveTwentyToolkit" */ = {
+		95DC8FA8167B26B200AF1428 /* Build configuration list for PBXProject "TwelveTwentyToolkit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				950EB139160DF510003C3F1D /* Debug */,
-				950EB13A160DF510003C3F1D /* Release */,
+				95DC8FD1167B26B200AF1428 /* Debug */,
+				95DC8FD2167B26B200AF1428 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		950EB13B160DF510003C3F1D /* Build configuration list for PBXNativeTarget "TwelveTwentyToolkit" */ = {
+		95DC8FD3167B26B200AF1428 /* Build configuration list for PBXNativeTarget "TwelveTwentyToolkit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				950EB13C160DF510003C3F1D /* Debug */,
-				950EB13D160DF510003C3F1D /* Release */,
+				95DC8FD4167B26B200AF1428 /* Debug */,
+				95DC8FD5167B26B200AF1428 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		950EB13E160DF510003C3F1D /* Build configuration list for PBXNativeTarget "TwelveTwentyToolkitTests" */ = {
+		95DC8FD6167B26B200AF1428 /* Build configuration list for PBXNativeTarget "TwelveTwentyToolkitTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				950EB13F160DF510003C3F1D /* Debug */,
-				950EB140160DF510003C3F1D /* Release */,
+				95DC8FD7167B26B200AF1428 /* Debug */,
+				95DC8FD8167B26B200AF1428 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -541,17 +713,17 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		956C24701629BE1F00C67840 /* TTUnifiedAddressBook.xcdatamodeld */ = {
+		95934F94167B27EE00E4ED39 /* TTUnifiedAddressBook.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				956C24711629BE1F00C67840 /* TTUnifiedAddressBook.xcdatamodel */,
+				95934F95167B27EE00E4ED39 /* TTUnifiedAddressBook.xcdatamodel */,
 			);
-			currentVersion = 956C24711629BE1F00C67840 /* TTUnifiedAddressBook.xcdatamodel */;
+			currentVersion = 95934F95167B27EE00E4ED39 /* TTUnifiedAddressBook.xcdatamodel */;
 			path = TTUnifiedAddressBook.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
 /* End XCVersionGroup section */
 	};
-	rootObject = 950EB10D160DF510003C3F1D /* Project object */;
+	rootObject = 95DC8FA5167B26B200AF1428 /* Project object */;
 }

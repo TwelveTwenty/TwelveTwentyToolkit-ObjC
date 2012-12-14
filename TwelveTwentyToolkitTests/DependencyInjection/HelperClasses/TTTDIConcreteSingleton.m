@@ -18,22 +18,8 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
+#import "TTTDIConcreteSingleton.h"
 
-static void CFReleaseIfNotNULL (CFTypeRef ref)
-{
-	if (ref != NULL)
-	{
-		CFRelease (ref);
-	}
-}
+@implementation TTTDIConcreteSingleton
 
-static CFTypeRef CFRetainIfNotNULL (CFTypeRef ref)
-{
-	if (ref != NULL)
-	{
-		return CFRetain (ref);
-	}
-    
-    return ref;
-}
+@end
