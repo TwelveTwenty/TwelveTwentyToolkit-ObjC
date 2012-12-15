@@ -18,10 +18,44 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-@class TTObjectMapping;
+#import <Foundation/Foundation.h>
+#import "TTClassMappingParentNode.h"
 
-@protocol TTInjectionMappingParent <NSObject>
+@protocol TTClassMappingTerminator
 
-- (void)removeChildMapping:(TTObjectMapping *)mapping;
+- (void)singleServing;
+
+@end
+
+@protocol TTClassMappingTarget <TTClassMappingTerminator>
+
+- (BOOL)isAllocOnly;
+
+- (void)asSingleton;
+
+@end
+
+@protocol TTClassMappingSource <TTClassMappingTarget>
+
+- (id <TTClassMappingTarget>)toSubclass:(Class)class;
+
+- (id <TTClassMappingTerminator>)toObject:(id)object;
+
+@end
+
+typedef enum
+{
+	TTTerminationOptionNone = 0,
+	TTTerminationOptionSingleServing = 1 << 0, // unmap after calling `object` or `targetClass`.
+	TTTerminationOptionSingleton = 1 << 1, // alloc/init singleton. The opposite performs alloc/init every time.
+	TTTerminationOptionAllocOnly = 1 << 2 // object can't be called on a mapping like this.
+} TTTerminationOption;
+
+@interface TTClassMappingTarget : NSObject <TTClassMappingSource, TTClassMappingParentNode>
+
+@property (nonatomic, strong, readonly) Class targetClass;
+@property (nonatomic, strong, readonly) id targetObject;
+
+- (id)initWithParent:(id <TTClassMappingParentNode>)parent mappedClass:(Class)mappedClass options:(TTTerminationOption)options;
 
 @end

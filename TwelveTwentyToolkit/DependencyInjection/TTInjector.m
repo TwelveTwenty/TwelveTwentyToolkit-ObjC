@@ -20,20 +20,19 @@
 
 #import "TTInjector.h"
 #import "TTIntrospectProperty.h"
-#import "TTInjectable.h"
 
 static TTInjector *_sharedInjector;
 
-@interface TTInjector () <TTInjectionMappingParent>
+@interface TTInjector () <TTClassMappingParentNode>
 
-@property (nonatomic, strong) NSMutableDictionary *mappedClasses;
+@property (nonatomic, strong) NSMutableDictionary *classMappings;
 @property (nonatomic, strong) NSMutableDictionary *injections;
 
 @end
 
 @implementation TTInjector
 
-+ (id <TTInjectorSpawning>)sharedInjector
++ (TTInjector *)sharedInjector
 {
 	NSAssert(_sharedInjector != nil, @"Use `setSharedInjector:` before accessing `sharedInjector`.");
 	return _sharedInjector;
@@ -57,7 +56,7 @@ static TTInjector *_sharedInjector;
 
 	if (self)
 	{
-		self.mappedClasses = [NSMutableDictionary dictionary];
+		self.classMappings = [NSMutableDictionary dictionary];
 		self.injections = [NSMutableDictionary dictionary];
 	}
 
@@ -66,13 +65,13 @@ static TTInjector *_sharedInjector;
 
 #pragma mark - Mapping protocols and classes
 
-- (id <TTClassMapping>)mapClass:(Class)class
+- (id <TTClassMappingSource>)mapClass:(Class)class
 {
 	NSString *key = NSStringFromClass(class);
-	NSAssert([self.mappedClasses objectForKey:key] == nil, @"Attempted duplicate mapping for class %@", key);
+	NSAssert([self.classMappings objectForKey:key] == nil, @"Attempted duplicate mapping for class %@", key);
 
-	TTClassMapping *mapping = [[TTClassMapping alloc] initWithParent:self mappedClass:class];
-	self.mappedClasses[key] = mapping;
+	TTClassMappingTarget *mapping = [[TTClassMappingTarget alloc] initWithParent:self mappedClass:class options:TTTerminationOptionNone];
+	self.classMappings[key] = mapping;
 
 	return mapping;
 }
@@ -80,17 +79,17 @@ static TTInjector *_sharedInjector;
 - (void)unmapClass:(Class)class
 {
 	NSString *key = NSStringFromClass(class);
-	NSAssert([self.mappedClasses objectForKey:key] != nil, @"Can't unmap a class if there's no such mapping (%@)", key);
+	NSAssert([self.classMappings objectForKey:key] != nil, @"Can't unmap a class if there's no such mapping (%@)", key);
 
-	[self.mappedClasses removeObjectForKey:key];
+	[self.classMappings removeObjectForKey:key];
 }
 
-- (void)removeChildMapping:(TTObjectMapping *)mapping
+- (void)removeChildMapping:(TTClassMappingTarget *)mapping
 {
-	[self.mappedClasses enumerateKeysAndObjectsUsingBlock:^(NSString *key, TTObjectMapping *existingMapping, BOOL *stop) {
+	[self.classMappings enumerateKeysAndObjectsUsingBlock:^(NSString *key, TTClassMappingTarget *existingMapping, BOOL *stop) {
 		if (existingMapping == mapping)
 		{
-			[self.mappedClasses removeObjectForKey:key];
+			[self.classMappings removeObjectForKey:key];
 			*stop = YES;
 		}
 	}];
@@ -98,11 +97,24 @@ static TTInjector *_sharedInjector;
 
 #pragma mark - Retrieving objects from mapped protocols and classes
 
-- (id)objectForClass:(Class)class
+- (TTClassMappingTarget *)mappingForMappedClass:(Class)mappedClass
 {
-	NSString *key = NSStringFromClass(class);
-	NSAssert([self.mappedClasses objectForKey:key] != nil, @"No mapping found for class %@. Call `mapClass:` first.", key);
-	return [self injectPropertiesIntoObject:[(TTObjectMapping *) self.mappedClasses[key] object]];
+	NSString *key = NSStringFromClass(mappedClass);
+	NSAssert([self.classMappings objectForKey:key] != nil, @"No mapping found for class %@. Call `mapClass:` first.", key);
+	TTClassMappingTarget *mapping = self.classMappings[key];
+	return mapping;
+}
+
+- (id)objectForMappedClass:(Class)mappedClass
+{
+	TTClassMappingTarget *mapping = [self mappingForMappedClass:mappedClass];
+	return [self injectPropertiesIntoObject:[mapping targetObject]];
+}
+
+- (Class)classForMappedClass:(Class)mappedClass
+{
+	TTClassMappingTarget *mapping = [self mappingForMappedClass:mappedClass];
+	return [mapping targetClass];
 }
 
 #pragma mark - Property injection
@@ -130,7 +142,6 @@ static TTInjector *_sharedInjector;
 - (NSNumber *)performInjectionOnObject:(NSObject <TTInjectable> *)object
 {
 	NSArray *properties = [TTIntrospectProperty propertiesOfClass:[object class]];
-
 	int count = 0;
 
 	for (TTIntrospectProperty *prop in properties)
@@ -138,11 +149,26 @@ static TTInjector *_sharedInjector;
 		if (prop.isObject && [prop implementsProtocol:@protocol(TTInjectable)])
 		{
 			count++;
-			[object setValue:[self objectForClass:prop.typeClass] forKey:prop.name];
+			[object setValue:[self objectForMappedClass:prop.typeClass] forKey:prop.name];
 		}
 	}
 
 	return @(count);
+}
+
+@end
+
+@implementation NSObject (TTInjector)
+
++ (id)allocFromInjector:(TTInjector *)injector
+{
+	Class targetClass = [injector classForMappedClass:self];
+	return [targetClass alloc];
+}
+
++ (id)objectFromInjector:(TTInjector *)injector
+{
+	return [injector objectForMappedClass:self];
 }
 
 @end

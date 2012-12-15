@@ -18,30 +18,10 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
-#import "TTObjectMapping.h"
+@class TTClassMappingTarget;
 
-@protocol TTObjectMapping;
-@protocol TTSpawnMapping;
-@protocol TTClassMapping;
+@protocol TTClassMappingParentNode <NSObject>
 
-@protocol TTSubclassMapping
-
-- (void)asSingleton;
-- (void)toObject:(id)object;
-- (void)once;
-
-@end
-
-@protocol TTClassMapping <TTSubclassMapping>
-
-- (id <TTSubclassMapping>)toSubclass:(Class)class;
-
-@end
-
-@interface TTClassMapping : TTObjectMapping <TTClassMapping, TTInjectionMappingParent>
-
-- (id)initWithParent:(id <TTInjectionMappingParent>)parent mappedClass:(Class)mappedClass;
-- (id)initWithParent:(id <TTInjectionMappingParent>)parent object:(id)object NS_UNAVAILABLE;
+- (void)removeChildMapping:(TTClassMappingTarget *)mapping;
 
 @end
