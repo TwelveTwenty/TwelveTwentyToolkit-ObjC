@@ -45,7 +45,7 @@
 - (void)setUp
 {
     self.injector = [[TTInjector alloc] init];
-
+    
 	[self.injector mapClass:[TTTDISimpleObject class]];
     [[self.injector mapClass:[TTTDIBaseObject class]] toSubclass:[TTTDIConcreteObject class]];
     [[self.injector mapClass:[TTTDISimpleSingleton class]] asSingleton];

@@ -30,10 +30,6 @@
 		95934FC8167B27EE00E4ED39 /* NSManagedObjectContext+TTUniquing.m in Sources */ = {isa = PBXBuildFile; fileRef = 95934F9E167B27EE00E4ED39 /* NSManagedObjectContext+TTUniquing.m */; };
 		95934FC9167B27EE00E4ED39 /* TTCGUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 95934FA1167B27EE00E4ED39 /* TTCGUtils.m */; };
 		95934FCA167B27EE00E4ED39 /* TTCGUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 95934FA1167B27EE00E4ED39 /* TTCGUtils.m */; };
-		95934FCB167B27EE00E4ED39 /* TTIntrospectProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 95934FA5167B27EE00E4ED39 /* TTIntrospectProperty.m */; };
-		95934FCC167B27EE00E4ED39 /* TTIntrospectProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 95934FA5167B27EE00E4ED39 /* TTIntrospectProperty.m */; };
-		95934FD3167B27EE00E4ED39 /* TTInjector.m in Sources */ = {isa = PBXBuildFile; fileRef = 95934FB0167B27EE00E4ED39 /* TTInjector.m */; };
-		95934FD4167B27EE00E4ED39 /* TTInjector.m in Sources */ = {isa = PBXBuildFile; fileRef = 95934FB0167B27EE00E4ED39 /* TTInjector.m */; };
 		95934FD5167B27EE00E4ED39 /* TTLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 95934FB3167B27EE00E4ED39 /* TTLog.m */; };
 		95934FD6167B27EE00E4ED39 /* TTLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 95934FB3167B27EE00E4ED39 /* TTLog.m */; };
 		95934FD8167B283E00E4ED39 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95934FD7167B283E00E4ED39 /* AddressBook.framework */; };
@@ -58,8 +54,12 @@
 		95DC8FC4167B26B200AF1428 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95DC8FB1167B26B200AF1428 /* Foundation.framework */; };
 		95DC8FC7167B26B200AF1428 /* libTwelveTwentyToolkit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 95DC8FAE167B26B200AF1428 /* libTwelveTwentyToolkit.a */; };
 		95DC8FCD167B26B200AF1428 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 95DC8FCB167B26B200AF1428 /* InfoPlist.strings */; };
-		E42072E46301ECCB0AF76BFF /* TTClassMappingTarget.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = E42073B925BC9D38C701611B /* TTClassMappingTarget.h */; };
-		E4207B3E61E5F45AEB48F0AD /* TTClassMappingTarget.m in Sources */ = {isa = PBXBuildFile; fileRef = E42070B998713450F93969C7 /* TTClassMappingTarget.m */; };
+		95E48376167C198A0050BD3C /* TTIntrospectProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E48370167C198A0050BD3C /* TTIntrospectProperty.m */; };
+		95E48377167C198A0050BD3C /* TTIntrospectProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E48370167C198A0050BD3C /* TTIntrospectProperty.m */; };
+		95E48378167C198A0050BD3C /* TTInjectionMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E48373167C198A0050BD3C /* TTInjectionMapping.m */; };
+		95E48379167C198A0050BD3C /* TTInjectionMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E48373167C198A0050BD3C /* TTInjectionMapping.m */; };
+		95E4837A167C198A0050BD3C /* TTInjector.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E48375167C198A0050BD3C /* TTInjector.m */; };
+		95E4837B167C198A0050BD3C /* TTInjector.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E48375167C198A0050BD3C /* TTInjector.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,7 +80,6 @@
 			dstSubfolderSpec = 16;
 			files = (
 				95DC8FB7167B26B200AF1428 /* TwelveTwentyToolkit.h in CopyFiles */,
-				E42072E46301ECCB0AF76BFF /* TTClassMappingTarget.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,12 +108,6 @@
 		95934F9E167B27EE00E4ED39 /* NSManagedObjectContext+TTUniquing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+TTUniquing.m"; sourceTree = "<group>"; };
 		95934FA0167B27EE00E4ED39 /* TTCGUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTCGUtils.h; sourceTree = "<group>"; };
 		95934FA1167B27EE00E4ED39 /* TTCGUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTCGUtils.m; sourceTree = "<group>"; };
-		95934FA4167B27EE00E4ED39 /* TTIntrospectProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTIntrospectProperty.h; sourceTree = "<group>"; };
-		95934FA5167B27EE00E4ED39 /* TTIntrospectProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTIntrospectProperty.m; sourceTree = "<group>"; };
-		95934FA9167B27EE00E4ED39 /* TTClassMappingParentNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTClassMappingParentNode.h; sourceTree = "<group>"; };
-		95934FAE167B27EE00E4ED39 /* TTInjectable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTInjectable.h; sourceTree = "<group>"; };
-		95934FAF167B27EE00E4ED39 /* TTInjector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTInjector.h; sourceTree = "<group>"; };
-		95934FB0167B27EE00E4ED39 /* TTInjector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTInjector.m; sourceTree = "<group>"; };
 		95934FB2167B27EE00E4ED39 /* TTLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTLog.h; sourceTree = "<group>"; };
 		95934FB3167B27EE00E4ED39 /* TTLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTLog.m; sourceTree = "<group>"; };
 		95934FD7167B283E00E4ED39 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
@@ -148,8 +141,12 @@
 		95DC8FC0167B26B200AF1428 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		95DC8FCA167B26B200AF1428 /* TwelveTwentyToolkitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TwelveTwentyToolkitTests-Info.plist"; sourceTree = "<group>"; };
 		95DC8FCC167B26B200AF1428 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		E42070B998713450F93969C7 /* TTClassMappingTarget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTClassMappingTarget.m; sourceTree = "<group>"; };
-		E42073B925BC9D38C701611B /* TTClassMappingTarget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTClassMappingTarget.h; sourceTree = "<group>"; };
+		95E4836F167C198A0050BD3C /* TTIntrospectProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTIntrospectProperty.h; sourceTree = "<group>"; };
+		95E48370167C198A0050BD3C /* TTIntrospectProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTIntrospectProperty.m; sourceTree = "<group>"; };
+		95E48372167C198A0050BD3C /* TTInjectionMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTInjectionMapping.h; sourceTree = "<group>"; };
+		95E48373167C198A0050BD3C /* TTInjectionMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTInjectionMapping.m; sourceTree = "<group>"; };
+		95E48374167C198A0050BD3C /* TTInjector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTInjector.h; sourceTree = "<group>"; };
+		95E48375167C198A0050BD3C /* TTInjector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTInjector.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,32 +240,12 @@
 		95934FA2167B27EE00E4ED39 /* DependencyInjection */ = {
 			isa = PBXGroup;
 			children = (
-				95934FA3167B27EE00E4ED39 /* Introspection */,
-				95934FA6167B27EE00E4ED39 /* Mappings */,
-				95934FAE167B27EE00E4ED39 /* TTInjectable.h */,
-				95934FAF167B27EE00E4ED39 /* TTInjector.h */,
-				95934FB0167B27EE00E4ED39 /* TTInjector.m */,
+				95E4836E167C198A0050BD3C /* Introspection */,
+				95E48371167C198A0050BD3C /* Mappings */,
+				95E48374167C198A0050BD3C /* TTInjector.h */,
+				95E48375167C198A0050BD3C /* TTInjector.m */,
 			);
 			path = DependencyInjection;
-			sourceTree = "<group>";
-		};
-		95934FA3167B27EE00E4ED39 /* Introspection */ = {
-			isa = PBXGroup;
-			children = (
-				95934FA4167B27EE00E4ED39 /* TTIntrospectProperty.h */,
-				95934FA5167B27EE00E4ED39 /* TTIntrospectProperty.m */,
-			);
-			path = Introspection;
-			sourceTree = "<group>";
-		};
-		95934FA6167B27EE00E4ED39 /* Mappings */ = {
-			isa = PBXGroup;
-			children = (
-				95934FA9167B27EE00E4ED39 /* TTClassMappingParentNode.h */,
-				E42073B925BC9D38C701611B /* TTClassMappingTarget.h */,
-				E42070B998713450F93969C7 /* TTClassMappingTarget.m */,
-			);
-			path = Mappings;
 			sourceTree = "<group>";
 		};
 		95934FB1167B27EE00E4ED39 /* Logging */ = {
@@ -394,6 +371,24 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		95E4836E167C198A0050BD3C /* Introspection */ = {
+			isa = PBXGroup;
+			children = (
+				95E4836F167C198A0050BD3C /* TTIntrospectProperty.h */,
+				95E48370167C198A0050BD3C /* TTIntrospectProperty.m */,
+			);
+			path = Introspection;
+			sourceTree = "<group>";
+		};
+		95E48371167C198A0050BD3C /* Mappings */ = {
+			isa = PBXGroup;
+			children = (
+				95E48372167C198A0050BD3C /* TTInjectionMapping.h */,
+				95E48373167C198A0050BD3C /* TTInjectionMapping.m */,
+			);
+			path = Mappings;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -504,10 +499,10 @@
 				95934FC5167B27EE00E4ED39 /* NSManagedObjectContext+TTConvenience.m in Sources */,
 				95934FC7167B27EE00E4ED39 /* NSManagedObjectContext+TTUniquing.m in Sources */,
 				95934FC9167B27EE00E4ED39 /* TTCGUtils.m in Sources */,
-				95934FCB167B27EE00E4ED39 /* TTIntrospectProperty.m in Sources */,
-				95934FD3167B27EE00E4ED39 /* TTInjector.m in Sources */,
 				95934FD5167B27EE00E4ED39 /* TTLog.m in Sources */,
-				E4207B3E61E5F45AEB48F0AD /* TTClassMappingTarget.m in Sources */,
+				95E48376167C198A0050BD3C /* TTIntrospectProperty.m in Sources */,
+				95E48378167C198A0050BD3C /* TTInjectionMapping.m in Sources */,
+				95E4837A167C198A0050BD3C /* TTInjector.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -526,8 +521,6 @@
 				95934FC6167B27EE00E4ED39 /* NSManagedObjectContext+TTConvenience.m in Sources */,
 				95934FC8167B27EE00E4ED39 /* NSManagedObjectContext+TTUniquing.m in Sources */,
 				95934FCA167B27EE00E4ED39 /* TTCGUtils.m in Sources */,
-				95934FCC167B27EE00E4ED39 /* TTIntrospectProperty.m in Sources */,
-				95934FD4167B27EE00E4ED39 /* TTInjector.m in Sources */,
 				95934FD6167B27EE00E4ED39 /* TTLog.m in Sources */,
 				95934FE6167B293A00E4ED39 /* TTTCoreGraphicsTestCase.m in Sources */,
 				95934FEA167B296600E4ED39 /* TTTDependencyInjectionTestCase.m in Sources */,
@@ -538,6 +531,9 @@
 				95934FFD167B2D5F00E4ED39 /* TTTDIConcreteSingleton.m in Sources */,
 				95935000167B2D7F00E4ED39 /* TTTDISimpleSingleton.m in Sources */,
 				95935003167B318200E4ED39 /* TTTDIInjectableObject.m in Sources */,
+				95E48377167C198A0050BD3C /* TTIntrospectProperty.m in Sources */,
+				95E48379167C198A0050BD3C /* TTInjectionMapping.m in Sources */,
+				95E4837B167C198A0050BD3C /* TTInjector.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -19,45 +19,43 @@
 // THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
-#import "TTClassMappingTarget.h"
-#import "TTInjectable.h"
+#import "TTInjectionMapping.h"
 
-#define Injector [TTInjector sharedInjector]
-//#define injectionAlloc allocFromInjector:[TTInjector sharedInjector]
-//#define injectionObject objectFromInjector:[TTInjector sharedInjector]
+#define injectAlloc allocWithInjector:[TTInjector sharedInjector]
+#define injectObject objectFromInjector:[TTInjector sharedInjector]
+#define inject injectWithInjector:[TTInjector sharedInjector]
 
-@protocol TTInjectorSpawning
+@protocol TTInjectable <NSObject>
 
-- (id)objectForMappedClass:(Class)mappedClass;
-
-- (id)injectPropertiesIntoObject:(id <TTInjectable>)object;
-
-- (Class)classForMappedClass:(Class)mappedClass;
+@optional
+- (void)didInjectProperties;
 
 @end
 
-@protocol TTInjectorMapping
+@protocol TTInjectionMapper
 
-- (id <TTClassMappingSource>)mapClass:(Class)class;
+- (id <TTInjectionMappingStart>)mapClass:(Class)class;
 
 - (void)unmapClass:(Class)class;
 
 @end
 
-@interface TTInjector : NSObject <TTInjectorSpawning, TTInjectorMapping>
+@interface TTInjector : NSObject <TTInjectionMapper>
 
 + (TTInjector *)sharedInjector;
 
-+ (id <TTInjectorMapping>)sharedMappingInjector;
++ (id <TTInjectionMapper>)sharedMappingInjector;
 
-+ (TTInjector *)setSharedInjector:(TTInjector *)injector;
++ (id <TTInjectionMapper>)setSharedInjector:(TTInjector *)injector;
 
 @end
 
 @interface NSObject (TTInjector)
 
-+ (id)allocFromInjector:(TTInjector *)injector;
++ (id)allocWithInjector:(TTInjector *)injector;
 
 + (id)objectFromInjector:(TTInjector *)injector;
+
+- (id)injectWithInjector:(TTInjector *)injector;
 
 @end

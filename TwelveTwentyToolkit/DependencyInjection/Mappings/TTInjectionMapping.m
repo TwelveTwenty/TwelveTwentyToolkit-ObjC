@@ -18,24 +18,24 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "TTClassMappingTarget.h"
+#import "TTInjectionMapping.h"
 
 #define IS_SINGLETON (self.options & TTTerminationOptionSingleton)
 #define IS_SINGLE_SERVING (self.options & TTTerminationOptionSingleServing)
 #define IS_ALLOC_ONLY (self.options & TTTerminationOptionAllocOnly)
 
-@interface TTClassMappingTarget ()
+@interface TTInjectionMapping ()
 
 @property (nonatomic, strong) Class mappedClass;
-@property (nonatomic, strong) TTClassMappingTarget *childMapping;
+@property (nonatomic, strong) TTInjectionMapping *childMapping;
 @property (nonatomic) TTTerminationOption options;
-@property (nonatomic, weak, readwrite) id <TTClassMappingParentNode> parent;
+@property (nonatomic, weak, readwrite) id <TTInjectionMappingParent> parent;
 @property (nonatomic, strong, readwrite) id targetObject;
-@property (nonatomic, readonly) TTClassMappingTarget *endMapping;
+@property (nonatomic, readonly) TTInjectionMapping *endMapping;
 
 @end
 
-@implementation TTClassMappingTarget
+@implementation TTInjectionMapping
 {
 	dispatch_once_t onceToken;
 	id _singleton;
@@ -43,7 +43,7 @@
 
 #pragma mark Class mapping source
 
-- (id)initWithParent:(id <TTClassMappingParentNode>)parent mappedClass:(Class)mappedClass options:(TTTerminationOption)options
+- (id)initWithParent:(id <TTInjectionMappingParent>)parent mappedClass:(Class)mappedClass options:(TTTerminationOption)options
 {
 	self = [super init];
 
@@ -57,7 +57,7 @@
 	return self;
 }
 
-- (id <TTClassMappingTerminator>)toObject:(id)object
+- (id <TTInjectionMappingEnd>)toObject:(id)object
 {
 	self.targetObject = object;
 	[self assertIntegrity];
@@ -66,14 +66,14 @@
 
 #pragma mark Class mapping target
 
-- (id <TTClassMappingTarget>)toSubclass:(Class)class
+- (id <TTInjectionMapping>)toSubclass:(Class)class
 {
-	self.childMapping = [[TTClassMappingTarget alloc] initWithParent:self mappedClass:class options:TTTerminationOptionNone];
+	self.childMapping = [[TTInjectionMapping alloc] initWithParent:self mappedClass:class options:TTTerminationOptionNone];
 	[self assertIntegrity];
-	return (id <TTClassMappingTarget>) self.childMapping;
+	return (id <TTInjectionMapping>) self.childMapping;
 }
 
-- (id <TTClassMappingTerminator>)allocOnly
+- (id <TTInjectionMappingEnd>)allocOnly
 {
 	self.options |= TTTerminationOptionAllocOnly;
 	[self assertIntegrity];
@@ -151,7 +151,7 @@
 	}
 }
 
-- (void)removeChildMapping:(TTClassMappingTarget *)mapping
+- (void)removeChildMapping:(TTInjectionMapping *)mapping
 {
 	// bubble up to the injector.
 	[self.parent removeChildMapping:self];

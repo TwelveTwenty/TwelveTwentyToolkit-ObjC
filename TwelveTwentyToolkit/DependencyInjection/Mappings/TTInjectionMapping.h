@@ -19,27 +19,28 @@
 // THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
-#import "TTClassMappingParentNode.h"
 
-@protocol TTClassMappingTerminator
+@class TTInjectionMapping;
+
+@protocol TTInjectionMappingEnd
 
 - (void)singleServing;
 
 @end
 
-@protocol TTClassMappingTarget <TTClassMappingTerminator>
+@protocol TTInjectionMapping <TTInjectionMappingEnd>
 
-- (BOOL)isAllocOnly;
+- (id <TTInjectionMappingEnd>)allocOnly;
 
 - (void)asSingleton;
 
 @end
 
-@protocol TTClassMappingSource <TTClassMappingTarget>
+@protocol TTInjectionMappingStart <TTInjectionMapping>
 
-- (id <TTClassMappingTarget>)toSubclass:(Class)class;
+- (id <TTInjectionMapping>)toSubclass:(Class)class;
 
-- (id <TTClassMappingTerminator>)toObject:(id)object;
+- (id <TTInjectionMappingEnd>)toObject:(id)object;
 
 @end
 
@@ -51,11 +52,18 @@ typedef enum
 	TTTerminationOptionAllocOnly = 1 << 2 // object can't be called on a mapping like this.
 } TTTerminationOption;
 
-@interface TTClassMappingTarget : NSObject <TTClassMappingSource, TTClassMappingParentNode>
+@protocol TTInjectionMappingParent <NSObject>
+
+- (void)removeChildMapping:(TTInjectionMapping *)mapping;
+
+@end
+
+@interface TTInjectionMapping : NSObject <TTInjectionMappingStart, TTInjectionMappingParent>
 
 @property (nonatomic, strong, readonly) Class targetClass;
 @property (nonatomic, strong, readonly) id targetObject;
 
-- (id)initWithParent:(id <TTClassMappingParentNode>)parent mappedClass:(Class)mappedClass options:(TTTerminationOption)options;
+- (id)initWithParent:(id <TTInjectionMappingParent>)parent mappedClass:(Class)mappedClass options:(TTTerminationOption)options;
 
 @end
+
