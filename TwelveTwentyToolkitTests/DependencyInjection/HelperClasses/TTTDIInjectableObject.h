@@ -27,5 +27,6 @@
 
 @property (nonatomic, strong) TTTDISimpleObject <TTInjectable>*simpleInjectedObject;
 @property (nonatomic, strong) TTTDISimpleObject *simpleNotInjectedObject;
+@property (nonatomic, strong) NSArray <TTInjectable>*simpleList;
 
 @end

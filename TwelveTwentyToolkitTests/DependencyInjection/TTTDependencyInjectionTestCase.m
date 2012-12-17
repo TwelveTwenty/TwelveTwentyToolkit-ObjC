@@ -36,6 +36,7 @@
 
 @property (nonatomic, strong) TTInjector *injector;
 @property (nonatomic, strong) id existingObject;
+@property (nonatomic, strong) NSArray *simpleListObject;
 
 @end
 
@@ -53,6 +54,9 @@
 
     self.existingObject = @[@"Hello", @"Object"];
     [[self.injector mapClass:[NSArray class]] toObject:self.existingObject];
+    
+    self.simpleListObject = @[@"Another", @"List"];
+    [[self.injector mapClass:[NSArray class] withIdentifier:@"simpleList"] toObject:self.simpleListObject];
 
     [[self.injector mapClass:[NSDictionary class]] singleServing];
 
@@ -154,6 +158,13 @@
     STAssertTrue([injectable.simpleInjectedObject isKindOfClass:[TTTDISimpleObject class]], @"Property marked with the injectable protocol is injected with a proper object.");
     
     STAssertNil(injectable.simpleNotInjectedObject, @"Property not marked with the injectable protocol is not injected, even if the property's type actually implements that protocol.");
+}
+
+- (void)testPropertyObjectInjection
+{
+    TTTDIInjectableObject *injectable = [TTTDIInjectableObject objectFromInjector:self.injector];
+    
+    STAssertTrue(injectable.simpleList == self.simpleListObject, @"Object marked with the injectable protocol is injected with the proper object based on its name/identifier.");
 }
 
 @end
