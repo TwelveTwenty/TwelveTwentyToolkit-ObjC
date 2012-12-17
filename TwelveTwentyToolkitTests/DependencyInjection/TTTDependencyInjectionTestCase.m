@@ -69,7 +69,7 @@
     self.existingObject = nil;
 }
 
-- (void)testEmpty
+- (void)testSetup
 {
 	STAssertTrue(YES, @"Setup works");
 }
