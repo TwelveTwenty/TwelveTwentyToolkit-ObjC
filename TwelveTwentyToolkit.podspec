@@ -1,11 +1,11 @@
 Pod::Spec.new do |s|
   s.name         = 'TwelveTwentyToolkit'
-  s.version      = '0.0.4'
+  s.version      = '0.0.5'
   s.summary      = 'The Twelve Twenty Toolkit of reusable Objective-C classes.'
   s.homepage     = 'http://twelvetwenty.nl'
   s.license      = 'MIT'
   s.author       = { 'Eric-Paul Lecluse' => 'epologee@gmail.com', 'Jankees van Woezik' => 'jankeesvw@gmail.com' }
-  s.source       = { :git => 'https://github.com/TwelveTwenty/TwelveTwentyToolkit-ObjC.git', :tag => '0.0.4' }
+  s.source       = { :git => 'https://github.com/TwelveTwenty/TwelveTwentyToolkit-ObjC.git', :tag => '0.0.5' }
   s.platform     = :ios, '5.1'
   s.source_files = 'TwelveTwentyToolkit/TwelveTwentyToolkit.h'
   s.requires_arc = true
@@ -44,5 +44,10 @@ Pod::Spec.new do |s|
   s.subspec 'Commander' do |di|
     di.dependency 'TwelveTwentyToolkit/DependencyInjection'
     di.source_files = 'TwelveTwentyToolkit/Commander/**/*.{h,m}'
+  end
+  
+  s.subspec 'Tables' do |tb|
+    tb.dependency 'TwelveTwentyToolkit/Logging'
+    tb.source_files = 'TwelveTwentyToolkit/Tables/**/*.{h,m}'
   end
 end
