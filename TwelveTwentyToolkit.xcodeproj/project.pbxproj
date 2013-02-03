@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9560BC9516BDD75C0087C1A8 /* TTAbstractPersistenceProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9560BC9416BDD75C0087C1A8 /* TTAbstractPersistenceProxy.m */; };
 		95934FB4167B27EE00E4ED39 /* _TTCDLinkedRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 95934F8A167B27EE00E4ED39 /* _TTCDLinkedRecord.m */; };
 		95934FB5167B27EE00E4ED39 /* _TTCDLinkedRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 95934F8A167B27EE00E4ED39 /* _TTCDLinkedRecord.m */; };
 		95934FB6167B27EE00E4ED39 /* _TTCDUnifiedRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 95934F8C167B27EE00E4ED39 /* _TTCDUnifiedRecord.m */; };
@@ -60,6 +61,8 @@
 		95E48379167C198A0050BD3C /* TTInjectionMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E48373167C198A0050BD3C /* TTInjectionMapping.m */; };
 		95E4837A167C198A0050BD3C /* TTInjector.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E48375167C198A0050BD3C /* TTInjector.m */; };
 		95E4837B167C198A0050BD3C /* TTInjector.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E48375167C198A0050BD3C /* TTInjector.m */; };
+		E42071AC01C1371D3186C65F /* TTCommander.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = E4207D92AEC8B9EFDBDD2540 /* TTCommander.h */; };
+		E4207A98BE9BDA9B656243DE /* TTCommander.m in Sources */ = {isa = PBXBuildFile; fileRef = E4207BDBAE66FBA85205F8BB /* TTCommander.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,12 +83,15 @@
 			dstSubfolderSpec = 16;
 			files = (
 				95DC8FB7167B26B200AF1428 /* TwelveTwentyToolkit.h in CopyFiles */,
+				E42071AC01C1371D3186C65F /* TTCommander.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9560BC9316BDD75C0087C1A8 /* TTAbstractPersistenceProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTAbstractPersistenceProxy.h; sourceTree = "<group>"; };
+		9560BC9416BDD75C0087C1A8 /* TTAbstractPersistenceProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTAbstractPersistenceProxy.m; sourceTree = "<group>"; };
 		95934F89167B27EE00E4ED39 /* _TTCDLinkedRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _TTCDLinkedRecord.h; sourceTree = "<group>"; };
 		95934F8A167B27EE00E4ED39 /* _TTCDLinkedRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _TTCDLinkedRecord.m; sourceTree = "<group>"; };
 		95934F8B167B27EE00E4ED39 /* _TTCDUnifiedRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _TTCDUnifiedRecord.h; sourceTree = "<group>"; };
@@ -147,6 +153,8 @@
 		95E48373167C198A0050BD3C /* TTInjectionMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTInjectionMapping.m; sourceTree = "<group>"; };
 		95E48374167C198A0050BD3C /* TTInjector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTInjector.h; sourceTree = "<group>"; };
 		95E48375167C198A0050BD3C /* TTInjector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTInjector.m; sourceTree = "<group>"; };
+		E4207BDBAE66FBA85205F8BB /* TTCommander.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTCommander.m; sourceTree = "<group>"; };
+		E4207D92AEC8B9EFDBDD2540 /* TTCommander.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTCommander.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +186,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9560BC9216BDD75C0087C1A8 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				9560BC9316BDD75C0087C1A8 /* TTAbstractPersistenceProxy.h */,
+				9560BC9416BDD75C0087C1A8 /* TTAbstractPersistenceProxy.m */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
 		95934F86167B27EE00E4ED39 /* AddressBook */ = {
 			isa = PBXGroup;
 			children = (
@@ -334,12 +351,14 @@
 			isa = PBXGroup;
 			children = (
 				95934F86167B27EE00E4ED39 /* AddressBook */,
+				E420775CCE6BEFB191741F1F /* Commander */,
 				95934F98167B27EE00E4ED39 /* CoreData */,
 				95934F9F167B27EE00E4ED39 /* CoreGraphics */,
 				95934FA2167B27EE00E4ED39 /* DependencyInjection */,
 				95934FB1167B27EE00E4ED39 /* Logging */,
-				95DC8FB6167B26B200AF1428 /* TwelveTwentyToolkit.h */,
+				9560BC9216BDD75C0087C1A8 /* Persistence */,
 				95DC8FB4167B26B200AF1428 /* Supporting Files */,
+				95DC8FB6167B26B200AF1428 /* TwelveTwentyToolkit.h */,
 			);
 			path = TwelveTwentyToolkit;
 			sourceTree = "<group>";
@@ -387,6 +406,15 @@
 				95E48373167C198A0050BD3C /* TTInjectionMapping.m */,
 			);
 			path = Mappings;
+			sourceTree = "<group>";
+		};
+		E420775CCE6BEFB191741F1F /* Commander */ = {
+			isa = PBXGroup;
+			children = (
+				E4207BDBAE66FBA85205F8BB /* TTCommander.m */,
+				E4207D92AEC8B9EFDBDD2540 /* TTCommander.h */,
+			);
+			path = Commander;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -503,6 +531,8 @@
 				95E48376167C198A0050BD3C /* TTIntrospectProperty.m in Sources */,
 				95E48378167C198A0050BD3C /* TTInjectionMapping.m in Sources */,
 				95E4837A167C198A0050BD3C /* TTInjector.m in Sources */,
+				E4207A98BE9BDA9B656243DE /* TTCommander.m in Sources */,
+				9560BC9516BDD75C0087C1A8 /* TTAbstractPersistenceProxy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
