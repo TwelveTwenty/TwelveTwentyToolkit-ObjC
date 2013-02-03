@@ -11,8 +11,13 @@
 @interface TTAbstractPersistenceProxy : NSObject
 
 - (id)init UNAVAILABLE_ATTRIBUTE;
+- (id)initWithStoreName:(NSString *)storeName resetThreshold:(int)resetThreshold;
 
 - (void)saveToDisk;
+
+#ifdef DEBUG
+- (void)forceReset;
+#endif
 
 @end
 
@@ -21,8 +26,6 @@
 @optional
 
 @property (nonatomic, strong, readonly) NSManagedObjectContext *mainContext;
-
-- (id)initWithStoreName:(NSString *)storeName;
 
 - (NSManagedObjectContext *)newPrivateContext;
 

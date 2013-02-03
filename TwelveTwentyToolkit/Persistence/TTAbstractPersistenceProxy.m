@@ -1,6 +1,8 @@
 #import "TTAbstractPersistenceProxy.h"
 #import "TTLog.h"
 
+#define TT_PERSISTENCE_THRESHOLD_KEY @"TT_PERSISTENCE_THRESHOLD"
+
 @interface TTAbstractPersistenceProxy () <TTAbstractPersistenceProxy>
 
 @property (nonatomic, strong, readwrite) NSManagedObjectContext *mainContext;
@@ -13,16 +15,49 @@
 
 @implementation TTAbstractPersistenceProxy
 
-- (id)initWithStoreName:(NSString *)storeName
+- (id)initWithStoreName:(NSString *)storeName resetThreshold:(int)resetThreshold
 {
 	self = [super init];
 
 	if (self)
 	{
 		self.storeURL = [[self storeDirectory] URLByAppendingPathComponent:[NSString stringWithFormat:@"%@.sqlite", storeName]];
+		[self checkResetThreshold:resetThreshold];
 	}
 
 	return self;
+}
+
+/**
+* If you pass a resetThreshold higher than 0, this method will compare it to a value in the NSUserDefaults.
+* If that value does not exist, or if it's lower than the threshold, the existing persistentStore file will be
+* deleted. You can use this to ensure an empty store, for example if your model has changed and you want to
+* prevent the need for migrating.
+*/
+- (void)checkResetThreshold:(int)resetThreshold
+{
+	if (resetThreshold == 0)
+	{
+		return;
+	}
+
+	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+	NSString *key = [NSString stringWithFormat:@"%@-%@", TT_PERSISTENCE_THRESHOLD_KEY, self.storeURL.lastPathComponent];
+	BOOL reset = resetThreshold > [defaults integerForKey:key];
+	if (reset && [[NSFileManager defaultManager] fileExistsAtPath:self.storeURL.path])
+	{
+		NSError *error = nil;
+		if ([[NSFileManager defaultManager] removeItemAtURL:self.storeURL error:&error])
+		{
+			ILog(@"Reset store %@", self.storeURL);
+			[defaults setInteger:resetThreshold forKey:key];
+			[defaults synchronize];
+		}
+		else
+		{
+			ELog(@"Could not reset store: %@", error);
+		}
+	}
 }
 
 - (NSManagedObjectContext *)newPrivateContext
@@ -147,5 +182,23 @@
 {
 	return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
 }
+
+#ifdef DEBUG
+/**
+* The reset will take place at the next launch. Use for debugging/testing only
+*/
+- (void)forceReset
+{
+	NSString *key = [NSString stringWithFormat:@"%@-%@", TT_PERSISTENCE_THRESHOLD_KEY, self.storeURL.lastPathComponent];
+	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+	[defaults removeObjectForKey:key];
+	[defaults synchronize];
+
+	if (_baseContext == nil)
+	{
+		[self checkResetThreshold:1];
+	}
+}
+#endif
 
 @end
