@@ -2,19 +2,23 @@
 * Objectives of this class:
 * + don't expose the managedObjectContext to the public API
 * + allow persistent store flexibility (sqlite, in-memory, etc.)
+* + return NSFetchedResultsControllers wherever possible, for handling store changes
 */
 
 #import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
 
-@interface TTAbstractCoreDataProxy : NSObject
+@interface TTAbstractPersistenceProxy : NSObject
 
 - (id)init UNAVAILABLE_ATTRIBUTE;
 
+- (void)saveToDisk;
+
 @end
 
-@protocol TTAbstractCoreDataProxyProtected
+@protocol TTAbstractPersistenceProxy // protected API
 
-@optional // they're actually all implemented.
+@optional
 
 @property (nonatomic, strong, readonly) NSManagedObjectContext *mainContext;
 

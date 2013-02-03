@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
   s.license      = 'MIT'
   s.author       = { 'Eric-Paul Lecluse' => 'epologee@gmail.com', 'Jankees van Woezik' => 'jankeesvw@gmail.com' }
   s.source       = { :git => 'https://github.com/TwelveTwenty/TwelveTwentyToolkit-ObjC.git', :tag => '0.0.4' }
-  s.platform     = :ios, '5.0'
+  s.platform     = :ios, '5.1'
   s.source_files = 'TwelveTwentyToolkit/TwelveTwentyToolkit.h'
   s.requires_arc = true
   
@@ -24,6 +24,12 @@ Pod::Spec.new do |s|
     cd.source_files = 'TwelveTwentyToolkit/CoreData/*.{h,m}'
   end
   
+  s.subspec 'Persistence' do |ps|
+    ps.frameworks = 'CoreData'
+    ps.dependency 'TwelveTwentyToolkit/CoreData'
+    ps.source_files = 'TwelveTwentyToolkit/Persistence/*.{h,m}'
+  end
+  
   s.subspec 'AddressBook' do |ab|
     ab.frameworks = 'AddressBook'
     ab.dependency 'TwelveTwentyToolkit/CoreData'
@@ -33,5 +39,10 @@ Pod::Spec.new do |s|
   s.subspec 'DependencyInjection' do |di|
     di.dependency 'TwelveTwentyToolkit/Logging'
     di.source_files = 'TwelveTwentyToolkit/DependencyInjection/**/*.{h,m}'
+  end
+  
+  s.subspec 'Commander' do |di|
+    di.dependency 'TwelveTwentyToolkit/DependencyInjection'
+    di.source_files = 'TwelveTwentyToolkit/Commander/**/*.{h,m}'
   end
 end

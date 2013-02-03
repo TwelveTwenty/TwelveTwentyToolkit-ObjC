@@ -1,7 +1,7 @@
-#import "TTAbstractCoreDataProxy.h"
+#import "TTAbstractPersistenceProxy.h"
 #import "TTLog.h"
 
-@interface TTAbstractCoreDataProxy () <TTAbstractCoreDataProxyProtected>
+@interface TTAbstractPersistenceProxy () <TTAbstractPersistenceProxy>
 
 @property (nonatomic, strong, readwrite) NSManagedObjectContext *mainContext;
 @property (nonatomic, strong) NSManagedObjectModel *managedObjectModel;
@@ -11,7 +11,7 @@
 
 @end
 
-@implementation TTAbstractCoreDataProxy
+@implementation TTAbstractPersistenceProxy
 
 - (id)initWithStoreName:(NSString *)storeName
 {
