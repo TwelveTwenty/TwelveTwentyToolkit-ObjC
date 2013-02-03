@@ -18,22 +18,27 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
+#import "TTTCoreGraphicsTestCase.h"
+#import <UIKit/UIKit.h>
+#import "TTCGUtils.h"
 
-static void CFReleaseIfNotNULL (CFTypeRef ref)
+@implementation TTTCoreGraphicsTestCase
+
+- (void)setUp
 {
-	if (ref != NULL)
-	{
-		CFRelease (ref);
-	}
 }
 
-static CFTypeRef CFRetainIfNotNULL (CFTypeRef ref)
+- (void)tearDown
 {
-	if (ref != NULL)
-	{
-		return CFRetain (ref);
-	}
+}
+
+- (void)testTrim
+{
+    CGRect rectA = CGRectMake(10, 10, 100, 100);
+    CGRect rectB = CGRectTrim(rectA, 10, 20, 30, 40);
     
-    return ref;
+    NSLog(@"%@", NSStringFromCGRect(rectB));
+    STAssertTrue(CGRectEqualToRect(rectB, CGRectMake(30, 20, 40, 60)), @"Trimming from all sides results in a correct new rectangle.");
 }
+
+@end

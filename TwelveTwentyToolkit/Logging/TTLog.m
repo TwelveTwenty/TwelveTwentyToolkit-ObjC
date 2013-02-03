@@ -1,6 +1,6 @@
-// Copyright (c) 2012 Twelve Twenty (http://twelvetwenty.nl/)
+// Copyright (c) 2012 Twelve Twenty (http://twelvetwenty.nl)
 //
-// Permission is hereby granted, free of charge, to any unifiedCard obtaining a copy
+// Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
 // in the Software without restriction, including without limitation the rights
 // to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
@@ -18,22 +18,20 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
+#import "TTLog.h"
 
-static void CFReleaseIfNotNULL (CFTypeRef ref)
-{
-	if (ref != NULL)
-	{
-		CFRelease (ref);
-	}
-}
+int kLogLevel = LOG_LEVEL;
 
-static CFTypeRef CFRetainIfNotNULL (CFTypeRef ref)
-{
-	if (ref != NULL)
-	{
-		return CFRetain (ref);
-	}
-    
-    return ref;
+void QuietLog (NSString *format, ...) {
+    if (format == nil) {
+        printf("nil\n");
+        return;
+    }
+    // Get a reference to the arguments that follow the format parameter
+    va_list argList;
+    va_start(argList, format);
+    // Perform format string argument substitution, reinstate %% escapes, then print
+    NSString *s = [[NSString alloc] initWithFormat:format arguments:argList];
+    printf("%s\n", [[s stringByReplacingOccurrencesOfString:@"%%" withString:@"%%%%"] UTF8String]);
+    va_end(argList);
 }

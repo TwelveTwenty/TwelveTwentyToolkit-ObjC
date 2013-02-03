@@ -19,21 +19,14 @@
 // THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
+#import "TTInjector.h"
 
-static void CFReleaseIfNotNULL (CFTypeRef ref)
-{
-	if (ref != NULL)
-	{
-		CFRelease (ref);
-	}
-}
+@class TTTDISimpleObject;
 
-static CFTypeRef CFRetainIfNotNULL (CFTypeRef ref)
-{
-	if (ref != NULL)
-	{
-		return CFRetain (ref);
-	}
-    
-    return ref;
-}
+@interface TTTDIInjectableObject : NSObject <TTInjectable>
+
+@property (nonatomic, strong) TTTDISimpleObject <TTInjectable>*simpleInjectedObject;
+@property (nonatomic, strong) TTTDISimpleObject *simpleNotInjectedObject;
+@property (nonatomic, strong) NSArray <TTInjectable>*simpleList;
+
+@end

@@ -18,27 +18,8 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "TwelveTwentyToolkitTests.h"
-#import <UIKit/UIKit.h>
-#import "TTCGUtils.h"
+#import "TTTDIBaseSingleton.h"
 
-@implementation TwelveTwentyToolkitTests
-
-- (void)setUp
-{
-}
-
-- (void)tearDown
-{
-}
-
-- (void)testTrim
-{
-    CGRect rectA = CGRectMake(10, 10, 100, 100);
-    CGRect rectB = CGRectTrim(rectA, 10, 20, 30, 40);
-    
-    NSLog(@"%@", NSStringFromCGRect(rectB));
-    STAssertTrue(CGRectEqualToRect(rectB, CGRectMake(30, 20, 40, 60)), @"Trimming from all sides results in a correct new rectangle.");
-}
+@interface TTTDIConcreteSingleton : TTTDIBaseSingleton
 
 @end

@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'TwelveTwentyToolkit' target in the 'TwelveTwentyToolkit' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+#endif
