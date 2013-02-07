@@ -103,7 +103,8 @@
 
 - (void)saveToDisk
 {
-	[self.mainContext performBlock:^{
+	[self.mainContext performBlockAndWait:^{
+        NSAssert([[NSThread currentThread] isMainThread], @"Must run on main thread");
 		if ([self.mainContext hasChanges])
 		{
 			NSError *error = nil;
