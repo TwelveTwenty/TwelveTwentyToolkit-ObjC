@@ -37,7 +37,7 @@
 	}];
 
 	request.sortDescriptors = sortDescriptors;
-	request.returnsObjectsAsFaults = NO;
+	request.returnsObjectsAsFaults = YES;
 	request.includesPendingChanges = NO;
 
 	NSFetchedResultsController *controller = [[NSFetchedResultsController alloc] initWithFetchRequest:request

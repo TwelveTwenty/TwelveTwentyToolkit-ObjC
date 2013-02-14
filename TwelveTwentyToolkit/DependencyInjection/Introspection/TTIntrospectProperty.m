@@ -19,7 +19,7 @@
 // THE SOFTWARE.
 
 #import "TTIntrospectProperty.h"
-#import "TTLog.h"
+#import "TTTLog.h"
 
 typedef enum
 {
