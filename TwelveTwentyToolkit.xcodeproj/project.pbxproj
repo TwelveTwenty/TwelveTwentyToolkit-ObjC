@@ -31,8 +31,8 @@
 		95934FC8167B27EE00E4ED39 /* NSManagedObjectContext+TTUniquing.m in Sources */ = {isa = PBXBuildFile; fileRef = 95934F9E167B27EE00E4ED39 /* NSManagedObjectContext+TTUniquing.m */; };
 		95934FC9167B27EE00E4ED39 /* TTCGUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 95934FA1167B27EE00E4ED39 /* TTCGUtils.m */; };
 		95934FCA167B27EE00E4ED39 /* TTCGUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 95934FA1167B27EE00E4ED39 /* TTCGUtils.m */; };
-		95934FD5167B27EE00E4ED39 /* TTLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 95934FB3167B27EE00E4ED39 /* TTLog.m */; };
-		95934FD6167B27EE00E4ED39 /* TTLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 95934FB3167B27EE00E4ED39 /* TTLog.m */; };
+		95934FD5167B27EE00E4ED39 /* TTTLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 95934FB3167B27EE00E4ED39 /* TTTLog.m */; };
+		95934FD6167B27EE00E4ED39 /* TTTLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 95934FB3167B27EE00E4ED39 /* TTTLog.m */; };
 		95934FD8167B283E00E4ED39 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95934FD7167B283E00E4ED39 /* AddressBook.framework */; };
 		95934FDA167B284800E4ED39 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95934FD9167B284800E4ED39 /* CoreData.framework */; };
 		95934FDC167B285200E4ED39 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95934FDB167B285200E4ED39 /* QuartzCore.framework */; };
@@ -114,8 +114,8 @@
 		95934F9E167B27EE00E4ED39 /* NSManagedObjectContext+TTUniquing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+TTUniquing.m"; sourceTree = "<group>"; };
 		95934FA0167B27EE00E4ED39 /* TTCGUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTCGUtils.h; sourceTree = "<group>"; };
 		95934FA1167B27EE00E4ED39 /* TTCGUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTCGUtils.m; sourceTree = "<group>"; };
-		95934FB2167B27EE00E4ED39 /* TTLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTLog.h; sourceTree = "<group>"; };
-		95934FB3167B27EE00E4ED39 /* TTLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTLog.m; sourceTree = "<group>"; };
+		95934FB2167B27EE00E4ED39 /* TTTLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTLog.h; sourceTree = "<group>"; };
+		95934FB3167B27EE00E4ED39 /* TTTLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTLog.m; sourceTree = "<group>"; };
 		95934FD7167B283E00E4ED39 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		95934FD9167B284800E4ED39 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		95934FDB167B285200E4ED39 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -268,8 +268,8 @@
 		95934FB1167B27EE00E4ED39 /* Logging */ = {
 			isa = PBXGroup;
 			children = (
-				95934FB2167B27EE00E4ED39 /* TTLog.h */,
-				95934FB3167B27EE00E4ED39 /* TTLog.m */,
+				95934FB2167B27EE00E4ED39 /* TTTLog.h */,
+				95934FB3167B27EE00E4ED39 /* TTTLog.m */,
 			);
 			path = Logging;
 			sourceTree = "<group>";
@@ -527,7 +527,7 @@
 				95934FC5167B27EE00E4ED39 /* NSManagedObjectContext+TTConvenience.m in Sources */,
 				95934FC7167B27EE00E4ED39 /* NSManagedObjectContext+TTUniquing.m in Sources */,
 				95934FC9167B27EE00E4ED39 /* TTCGUtils.m in Sources */,
-				95934FD5167B27EE00E4ED39 /* TTLog.m in Sources */,
+				95934FD5167B27EE00E4ED39 /* TTTLog.m in Sources */,
 				95E48376167C198A0050BD3C /* TTIntrospectProperty.m in Sources */,
 				95E48378167C198A0050BD3C /* TTInjectionMapping.m in Sources */,
 				95E4837A167C198A0050BD3C /* TTInjector.m in Sources */,
@@ -551,7 +551,7 @@
 				95934FC6167B27EE00E4ED39 /* NSManagedObjectContext+TTConvenience.m in Sources */,
 				95934FC8167B27EE00E4ED39 /* NSManagedObjectContext+TTUniquing.m in Sources */,
 				95934FCA167B27EE00E4ED39 /* TTCGUtils.m in Sources */,
-				95934FD6167B27EE00E4ED39 /* TTLog.m in Sources */,
+				95934FD6167B27EE00E4ED39 /* TTTLog.m in Sources */,
 				95934FE6167B293A00E4ED39 /* TTTCoreGraphicsTestCase.m in Sources */,
 				95934FEA167B296600E4ED39 /* TTTDependencyInjectionTestCase.m in Sources */,
 				95934FEE167B2A0900E4ED39 /* TTTDISimpleObject.m in Sources */,

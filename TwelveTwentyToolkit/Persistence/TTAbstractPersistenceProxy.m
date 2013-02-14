@@ -1,5 +1,5 @@
 #import "TTAbstractPersistenceProxy.h"
-#import "TTLog.h"
+#import "TTTLog.h"
 
 #define TT_PERSISTENCE_THRESHOLD_KEY @"TT_PERSISTENCE_THRESHOLD"
 
@@ -8,14 +8,15 @@
 @property (nonatomic, strong, readwrite) NSManagedObjectContext *mainContext;
 @property (nonatomic, strong) NSManagedObjectModel *managedObjectModel;
 @property (nonatomic, strong) NSPersistentStoreCoordinator *persistentStoreCoordinator;
-@property (nonatomic, strong) NSManagedObjectContext *baseContext;
+@property (nonatomic, strong) NSManagedObjectContext *diskContext;
 @property (nonatomic, strong) NSURL *storeURL;
+@property (nonatomic) BOOL nestContexts;
 
 @end
 
 @implementation TTAbstractPersistenceProxy
 
-- (id)initWithStoreName:(NSString *)storeName resetThreshold:(int)resetThreshold
+- (id)initWithStoreName:(NSString *)storeName nestContexts:(BOOL)nestContexts resetThreshold:(int)resetThreshold
 {
 	self = [super init];
 
@@ -23,6 +24,8 @@
 	{
 		self.storeURL = [[self storeDirectory] URLByAppendingPathComponent:[NSString stringWithFormat:@"%@.sqlite", storeName]];
 		[self checkResetThreshold:resetThreshold];
+
+		self.nestContexts = nestContexts;
 	}
 
 	return self;
@@ -64,10 +67,34 @@
 {
 	NSManagedObjectContext *context = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
 	context.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy;
-	context.parentContext = self.baseContext;
+	context.parentContext = self.mainContext;
 	context.undoManager = nil;
 
 	return context;
+}
+
+- (NSManagedObjectModel *)managedObjectModel
+{
+	if (!_managedObjectModel)
+	{
+		self.managedObjectModel = [NSManagedObjectModel mergedModelFromBundles:@[[self modelBundle]]];
+	}
+
+	return _managedObjectModel;
+}
+
+- (NSPersistentStoreCoordinator *)persistentStoreCoordinator
+{
+	if (!_persistentStoreCoordinator)
+	{
+		self.persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:self.managedObjectModel];
+		if (![self addStoresToPersistentStoreCoordinator:_persistentStoreCoordinator])
+		{
+			self.persistentStoreCoordinator = nil;
+		}
+	}
+
+	return _persistentStoreCoordinator;
 }
 
 - (NSManagedObjectContext *)mainContext
@@ -75,36 +102,41 @@
 	if (_mainContext == nil)
 	{
 		self.mainContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
-		_mainContext.mergePolicy = NSMergeByPropertyStoreTrumpMergePolicy;
-		_mainContext.parentContext = self.baseContext;
+		_mainContext.mergePolicy = NSOverwriteMergePolicy;
 		_mainContext.undoManager = nil;
+
+		if (self.nestContexts)
+		{
+			_mainContext.parentContext = self.diskContext;
+		}
+		else
+		{
+			_mainContext.persistentStoreCoordinator = self.persistentStoreCoordinator;
+		}
 	}
 
 	return _mainContext;
 }
 
-- (NSManagedObjectContext *)baseContext
+- (NSManagedObjectContext *)diskContext
 {
-	if (!_baseContext)
+	NSAssert(self.nestContexts, @"Disk context only available when nestContexts is on.");
+
+	if (!_diskContext)
 	{
-		self.managedObjectModel = [NSManagedObjectModel mergedModelFromBundles:@[[self modelBundle]]];
-
-		self.persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:self.managedObjectModel];
-
-		if ([self addStoresToPersistentStoreCoordinator:self.persistentStoreCoordinator])
-		{
-			self.baseContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
-			_baseContext.persistentStoreCoordinator = self.persistentStoreCoordinator;
-		}
+		self.diskContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
+		_diskContext.mergePolicy = NSOverwriteMergePolicy;
+		_diskContext.undoManager = nil;
+		_diskContext.persistentStoreCoordinator = self.persistentStoreCoordinator;
 	}
 
-	return _baseContext;
+	return _diskContext;
 }
 
 - (void)saveToDisk
 {
 	[self.mainContext performBlockAndWait:^{
-        NSAssert([[NSThread currentThread] isMainThread], @"Must run on main thread");
+		NSAssert([[NSThread currentThread] isMainThread], @"Must run on main thread");
 		if ([self.mainContext hasChanges])
 		{
 			NSError *error = nil;
@@ -124,25 +156,28 @@
 			ILog(@"Main context has no changes to save to disk");
 		}
 
-		[self.baseContext performBlock:^{
-			if ([self.baseContext hasChanges])
-			{
-				NSError *error = nil;
-				BOOL saved = [self.baseContext save:&error];
-				if (saved)
+		if (self.nestContexts)
+		{
+			[self.diskContext performBlock:^{
+				if ([self.diskContext hasChanges])
 				{
-					DLog(@"Base context saved.");
+					NSError *error = nil;
+					BOOL saved = [self.diskContext save:&error];
+					if (saved)
+					{
+						DLog(@"Base context saved.");
+					}
+					else
+					{
+						ELog(@"Error saving base context %@, %@", error, [error userInfo]);
+					}
 				}
 				else
 				{
-					ELog(@"Error saving base context %@, %@", error, [error userInfo]);
+					ILog(@"Base context has no changes to save to disk.");
 				}
-			}
-			else
-			{
-				ILog(@"Base context has no changes to save to disk.");
-			}
-		}];
+			}];
+		}
 	}];
 }
 
@@ -171,6 +206,11 @@
 													URL:nil options:nil error:&error];
 	}
 
+	if (store == nil)
+	{
+		ELog(@"Error adding persistent store: %@", error);
+	}
+
 	return store != nil;
 }
 
@@ -195,7 +235,7 @@
 	[defaults removeObjectForKey:key];
 	[defaults synchronize];
 
-	if (_baseContext == nil)
+	if (_diskContext == nil)
 	{
 		[self checkResetThreshold:1];
 	}

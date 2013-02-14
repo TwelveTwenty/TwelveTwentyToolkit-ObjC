@@ -28,6 +28,8 @@
  */
 - (NSError *)simpleSave;
 
+- (BOOL)recursiveSave;
+
 /**
  Outputs the state of changes to the console.
  */

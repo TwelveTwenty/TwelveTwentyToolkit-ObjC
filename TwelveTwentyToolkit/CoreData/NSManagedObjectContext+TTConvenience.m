@@ -19,6 +19,7 @@
 // THE SOFTWARE.
 
 #import "NSManagedObjectContext+TTConvenience.h"
+#import "TTTLog.h"
 
 
 @implementation NSManagedObjectContext (TTConvenience)
@@ -28,29 +29,47 @@
     NSError *error = nil;
 
     if ([self save:&error]) {
-        NSLog(@"Context saved.");
+		DLog(@"Context saved.");
         return nil;
     }
 
-    NSLog(@"Error saving context due to %i: \"%@\" with user info: %@", error.code, [error.userInfo objectForKey:NSLocalizedDescriptionKey], error.userInfo);
+	ELog(@"Error saving context due to %i: \"%@\" with user info: %@", error.code, [error.userInfo objectForKey:NSLocalizedDescriptionKey], error.userInfo);
     return error;
+}
+
+- (BOOL)recursiveSave
+{
+	NSError *error = nil;
+
+	if ([self save:&error]) {
+		DLog(@"Context saved.");
+
+		if (self.parentContext != nil)
+		{
+			return [self.parentContext recursiveSave];
+		}
+
+		return YES;
+	}
+    
+    return NO;
 }
 
 - (void)printChanges
 {
     if (![self hasChanges])
     {
-        NSLog(@"No changes on context %@", self);
+		DLog(@"No changes on context %@", self);
         return;
     }
 
-    NSLog(@"Changes on context %@", self);
+	DLog(@"Changes on context %@", self);
     NSArray *keys = [NSArray arrayWithObjects:@"updatedObjects", @"insertedObjects", @"deletedObjects", @"registeredObjects", nil];
     for (NSString *key in keys) {
         NSSet *objects = [self valueForKey:key];
         if (![objects count]) continue;
 
-        NSLog(@"%@:", [key uppercaseString]);
+		DLog(@"%@:", [key uppercaseString]);
         for (NSManagedObject *object in [self updatedObjects]) {
             NSLog(@"\t%@: %@", [object class], [object changedValues]);
         }
