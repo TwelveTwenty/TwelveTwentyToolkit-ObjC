@@ -8,9 +8,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@interface TTAbstractPersistenceProxy : NSObject
-
-- (id)init UNAVAILABLE_ATTRIBUTE;
+@protocol TTAbstractPersistenceProxy <NSObject>
 
 - (id)initWithStoreName:(NSString *)storeName nestContexts:(BOOL)nestContexts resetThreshold:(int)resetThreshold;
 
@@ -22,9 +20,12 @@
 
 @end
 
-@protocol TTAbstractPersistenceProxy // protected API
 
-@optional
+@interface TTAbstractPersistenceProxy : NSObject <TTAbstractPersistenceProxy>
+
+- (id)init UNAVAILABLE_ATTRIBUTE;
+
+#pragma mark - private API
 
 @property (nonatomic, strong, readonly) NSURL *storeURL;
 @property (nonatomic, strong, readonly) NSManagedObjectContext *mainContext;
