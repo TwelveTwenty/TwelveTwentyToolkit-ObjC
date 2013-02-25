@@ -3,7 +3,7 @@
 
 #define TT_PERSISTENCE_THRESHOLD_KEY @"TT_PERSISTENCE_THRESHOLD"
 
-@interface TTAbstractPersistenceProxy () <TTAbstractPersistenceProxy>
+@interface TTAbstractPersistenceProxy ()
 
 @property (nonatomic, strong, readwrite) NSManagedObjectContext *mainContext;
 @property (nonatomic, strong) NSManagedObjectModel *managedObjectModel;
