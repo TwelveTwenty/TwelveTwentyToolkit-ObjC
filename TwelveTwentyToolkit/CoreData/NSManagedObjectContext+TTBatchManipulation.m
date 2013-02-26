@@ -19,7 +19,7 @@
 // THE SOFTWARE.
 
 #import "NSManagedObjectContext+TTBatchManipulation.h"
-
+#import "NSPredicate+TTTConvenience.h"
 
 @implementation NSManagedObjectContext (TTBatchManipulation)
 
@@ -65,7 +65,7 @@
 - (NSInteger)deleteEntitiesNamed:(NSString *)entityName withValue:(id)value forKey:(NSString *)key error:(NSError **)error
 {
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:entityName];
-    request.predicate = [NSPredicate predicateWithFormat:@"%@ == %@", key, value];
+    request.predicate = [NSPredicate predicateWithComplexFormat:@"%@ = %%@" innerArguments:@[key] outerArguments:@[value]];
     NSArray *results = [self executeFetchRequest:request error:error];
     if (!results)
     {

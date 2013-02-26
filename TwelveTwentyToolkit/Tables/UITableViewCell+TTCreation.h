@@ -19,6 +19,7 @@
 // THE SOFTWARE.#import <Foundation/Foundation.h>
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 /**
  To take care of the everlasting dequeue or create problem when retrieving cells in a UITableView,
