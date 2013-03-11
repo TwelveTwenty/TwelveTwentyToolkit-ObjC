@@ -224,7 +224,6 @@
 	return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
 }
 
-#ifdef DEBUG
 /**
 * The reset will take place at the next launch. Use for debugging/testing only
 */
@@ -240,6 +239,5 @@
 		[self checkResetThreshold:1];
 	}
 }
-#endif
 
 @end

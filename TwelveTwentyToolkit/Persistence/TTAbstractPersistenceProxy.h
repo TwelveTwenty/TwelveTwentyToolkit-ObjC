@@ -14,9 +14,7 @@
 
 - (void)saveToDisk;
 
-#ifdef DEBUG
 - (void)forceReset;
-#endif
 
 @end
 
