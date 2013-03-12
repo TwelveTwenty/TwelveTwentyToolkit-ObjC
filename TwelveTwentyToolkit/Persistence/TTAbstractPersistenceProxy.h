@@ -10,18 +10,19 @@
 
 @protocol TTAbstractPersistenceProxy <NSObject>
 
-- (id)initWithStoreName:(NSString *)storeName nestContexts:(BOOL)nestContexts resetThreshold:(int)resetThreshold;
-
-- (void)saveToDisk;
-
-- (void)forceReset;
 
 @end
 
 
 @interface TTAbstractPersistenceProxy : NSObject <TTAbstractPersistenceProxy>
 
+- (id)initWithStoreName:(NSString *)storeName nestContexts:(BOOL)nestContexts resetThreshold:(int)resetThreshold;
+
 - (id)init UNAVAILABLE_ATTRIBUTE;
+
+- (void)saveToDisk;
+
+- (void)forceReset;
 
 #pragma mark - private API
 
