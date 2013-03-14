@@ -8,30 +8,24 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@protocol TTAbstractPersistenceProxy <NSObject>
+@interface TTAbstractPersistenceProxy : NSObject
 
-
-@end
-
-
-@interface TTAbstractPersistenceProxy : NSObject <TTAbstractPersistenceProxy>
+@property (nonatomic, strong, readonly) NSURL *storeURL;
+@property (nonatomic, strong, readonly) NSManagedObjectContext *mainContext;
 
 - (id)initWithStoreName:(NSString *)storeName nestContexts:(BOOL)nestContexts resetThreshold:(int)resetThreshold;
 
 - (id)init UNAVAILABLE_ATTRIBUTE;
 
+- (NSManagedObjectContext *)newPrivateContext;
+
 - (void)saveToDisk;
 
 - (void)forceReset;
 
-#pragma mark - private API
-
-@property (nonatomic, strong, readonly) NSURL *storeURL;
-@property (nonatomic, strong, readonly) NSManagedObjectContext *mainContext;
-
-- (NSManagedObjectContext *)newPrivateContext;
-
 #pragma mark - Overrideable
+
+- (void)seedDatabase;
 
 - (BOOL)addStoresToPersistentStoreCoordinator:(NSPersistentStoreCoordinator *)coordinator;
 

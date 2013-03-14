@@ -12,6 +12,7 @@
 @property (nonatomic, strong) NSURL *storeURL;
 @property (nonatomic) BOOL nestContexts;
 
+@property(nonatomic) BOOL requiresDatabaseSeed;
 @end
 
 @implementation TTAbstractPersistenceProxy
@@ -113,6 +114,11 @@
 		{
 			_mainContext.persistentStoreCoordinator = self.persistentStoreCoordinator;
 		}
+        
+        if (self.requiresDatabaseSeed)
+        {
+            [self seedDatabase];
+        }
 	}
 
 	return _mainContext;
@@ -131,6 +137,11 @@
 	}
 
 	return _diskContext;
+}
+
+- (void)seedDatabase
+{
+    // override when you want to seed the database after the core data stack is set up.
 }
 
 - (void)saveToDisk
@@ -191,6 +202,8 @@
 	{
 		// Add SQLite store
 		NSDictionary *options = @{NSInferMappingModelAutomaticallyOption : @YES, NSMigratePersistentStoresAutomaticallyOption : @YES};
+
+        self.requiresDatabaseSeed = ![[NSFileManager defaultManager] fileExistsAtPath:self.storeURL.path];
 
 		store = [coordinator addPersistentStoreWithType:NSSQLiteStoreType
 										  configuration:configuration
