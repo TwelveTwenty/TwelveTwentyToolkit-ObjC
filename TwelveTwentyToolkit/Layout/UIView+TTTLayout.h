@@ -1,0 +1,24 @@
+#import <Foundation/Foundation.h>
+#import "TTCGUtils.h"
+
+typedef enum {
+    TTTDistributeAlignLeft,
+    TTTDistributeAlignCenter,
+    TTTDistributeAlignRight
+} TTTDistributeAlign;
+
+@interface UIView (TTTLayout)
+
+- (void)tttAddSubviews:(NSArray *)array;
+
+- (CGRect)tttResetIntrinsicContentFrame;
+
+- (CGRect)tttDistributeViewsHorizontally:(NSArray *)views inFrame:(CGRect)containerFrame withSpacing:(CGFloat)spacing;
+
+- (CGRect)tttDistributeViewsHorizontally:(NSArray *)views inFrame:(CGRect)containerFrame withSpacing:(CGFloat)spacing alignment:(TTTDistributeAlign)alignment;
+
+- (CGRect)tttDistributeViews:(NSArray *)views asRowsInFrame:(CGRect)containerFrame withSpacing:(CGFloat)spacing horizontalAlignment:(TTTDistributeAlign)alignment rowLimit:(int)rowLimit;
+
+- (CGRect)tttDistributeViews:(NSArray *)views asRowsInFrame:(CGRect)containerFrame withSpacing:(CGFloat)spacing horizontalAlignment:(TTTDistributeAlign)alignment rowLimit:(int)rowLimit containerAlignment:(CGAlignOption)containerAlignment;
+
+@end

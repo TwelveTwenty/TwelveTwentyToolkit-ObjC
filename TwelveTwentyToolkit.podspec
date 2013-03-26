@@ -50,4 +50,9 @@ Pod::Spec.new do |s|
     tb.dependency 'TwelveTwentyToolkit/Logging'
     tb.source_files = 'TwelveTwentyToolkit/Tables/**/*.{h,m}'
   end
+  
+  s.subspec 'Layout' do |lo|
+    lo.dependency 'TwelveTwentyToolkit/Logging'
+    lo.source_files = 'TwelveTwentyToolkit/Layout/**/*.{h,m}'
+  end
 end
