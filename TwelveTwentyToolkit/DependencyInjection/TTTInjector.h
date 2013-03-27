@@ -71,6 +71,8 @@
 
 + (id <TTTInjectionMapper>)setSharedInjector:(TTTInjector *)injector;
 
+- (id)injectPropertiesIntoObject:(id <TTTInjectable>)object;
+
 @end
 
 /**

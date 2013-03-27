@@ -4,9 +4,9 @@
 
 @property(readonly) Class commandClass;
 
-- (id)initWithCommandClass:(Class)class;
+- (id)initWithMappedCommand:(Class)commandClass;
 - (id)init UNAVAILABLE_ATTRIBUTE;
 
-- (void)dispatch:(id)sender;
+- (void)trigger:(id)sender;
 
 @end

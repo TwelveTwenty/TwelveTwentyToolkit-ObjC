@@ -2,7 +2,7 @@
 
 @class TTTInjector;
 
-@interface TTTCommander : UIResponder
+@interface TTTTriggerCommandResponder : UIResponder
 
 - (id)initWithInjector:(TTTInjector *)injector;
 

@@ -8,19 +8,19 @@
 
 @implementation TTTTriggerEvent
 
-- (id)initWithCommandClass:(Class)class
+- (id)initWithMappedCommand:(Class)commandClass
 {
     self = [super init];
 
     if (self)
     {
-        self.commandClass = class;
+        self.commandClass = commandClass;
     }
 
     return self;
 }
 
-- (void)dispatch:(id)sender
+- (void)trigger:(id)sender
 {
     if (![[UIApplication sharedApplication] sendAction:@selector(sender:didTrigger:) to:nil from:sender forEvent:self])
     {

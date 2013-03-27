@@ -3,13 +3,14 @@
 
 @implementation TTTCommand
 
-- (id)initWithTriggerEvent:(TTTTriggerEvent *)triggerEvent
+- (id)initWithTrigger:(TTTTriggerEvent *)trigger
 {
     self = [super init];
     
     if (self)
     {
-        self.triggerEvent = triggerEvent;
+        self.trigger = trigger;
+        self.requiresMainThread = YES;
     }
     
     return self;
