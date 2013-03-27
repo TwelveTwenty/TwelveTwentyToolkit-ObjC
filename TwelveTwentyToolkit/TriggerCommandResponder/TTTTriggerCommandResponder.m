@@ -6,7 +6,7 @@
 @interface TTTTriggerCommandResponder ()
 
 @property(nonatomic, strong) TTTInjector *injector;
-@property(nonatomic, strong) NSOperationQueue *commandQueue;
+@property(nonatomic, strong) NSOperationQueue *backgroundCommandQueue;
 
 @end
 
@@ -19,11 +19,21 @@
     if (self)
     {
         self.injector = injector;
-        self.commandQueue = [[NSOperationQueue alloc] init];
-        self.commandQueue.maxConcurrentOperationCount = 1;
+        self.backgroundCommandQueue = [[NSOperationQueue alloc] init];
+        self.maxConcurrentOperationCount = 1;
     }
 
     return self;
+}
+
+- (NSInteger)maxConcurrentOperationCount
+{
+    return self.backgroundCommandQueue.maxConcurrentOperationCount;
+}
+
+- (void)setMaxConcurrentOperationCount:(NSInteger)maxConcurrentOperationCount
+{
+    self.backgroundCommandQueue.maxConcurrentOperationCount = maxConcurrentOperationCount;
 }
 
 - (void)sender:(id)sender didTrigger:(TTTTriggerEvent *)trigger
@@ -37,7 +47,7 @@
     }
     else
     {
-        [self.commandQueue addOperation:command];
+        [self.backgroundCommandQueue addOperation:command];
     }
 }
 
