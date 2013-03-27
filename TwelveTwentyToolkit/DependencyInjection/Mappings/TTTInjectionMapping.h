@@ -20,7 +20,7 @@
 
 #import <Foundation/Foundation.h>
 
-@class TTInjectionMapping;
+@class TTTInjectionMapping;
 
 @protocol TTInjectionMappingEnd
 
@@ -28,7 +28,7 @@
 
 @end
 
-@protocol TTInjectionMapping <TTInjectionMappingEnd>
+@protocol TTTInjectionMapping <TTInjectionMappingEnd>
 
 - (id <TTInjectionMappingEnd>)allocOnly;
 
@@ -36,9 +36,9 @@
 
 @end
 
-@protocol TTInjectionMappingStart <TTInjectionMapping>
+@protocol TTInjectionMappingStart <TTTInjectionMapping>
 
-- (id <TTInjectionMapping>)toSubclass:(Class)class;
+- (id <TTTInjectionMapping>)toSubclass:(Class)class;
 
 - (id <TTInjectionMappingEnd>)toObject:(id)object;
 
@@ -54,11 +54,11 @@ typedef enum
 
 @protocol TTInjectionMappingParent <NSObject>
 
-- (void)removeChildMapping:(TTInjectionMapping *)mapping;
+- (void)removeChildMapping:(TTTInjectionMapping *)mapping;
 
 @end
 
-@interface TTInjectionMapping : NSObject <TTInjectionMappingStart, TTInjectionMappingParent>
+@interface TTTInjectionMapping : NSObject <TTInjectionMappingStart, TTInjectionMappingParent>
 
 @property (nonatomic, strong, readonly) Class targetClass;
 @property (nonatomic, strong, readonly) id targetObject;

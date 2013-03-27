@@ -15,6 +15,6 @@
 *               right: 21
 *
 */
-+ (UIImage *)resizableImageForCapInsetsName:(NSString *)nameWithCapInsets;
++ (UIImage *)tttResizableImageForCapInsetsName:(NSString *)nameWithCapInsets;
 
 @end

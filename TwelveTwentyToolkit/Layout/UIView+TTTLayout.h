@@ -9,6 +9,9 @@ typedef enum {
 
 @interface UIView (TTTLayout)
 
+@property (setter = tttSetOrigin:) CGPoint tttOrigin;
+@property (setter = tttSetSize:) CGSize tttSize;
+
 - (void)tttAddSubviews:(NSArray *)array;
 
 - (CGRect)tttResetIntrinsicContentFrame;

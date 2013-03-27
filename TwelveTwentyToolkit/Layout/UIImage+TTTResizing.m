@@ -3,7 +3,7 @@
 
 @implementation UIImage (TTTResizing)
 
-+ (UIImage *)resizableImageForCapInsetsName:(NSString *)nameWithCapInsets
++ (UIImage *)tttResizableImageForCapInsetsName:(NSString *)nameWithCapInsets
 {
 	UIImage *original = [UIImage imageNamed:nameWithCapInsets];
 	NSArray *chunks = [nameWithCapInsets componentsSeparatedByString:@"-"];

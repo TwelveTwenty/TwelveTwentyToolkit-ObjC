@@ -4,6 +4,30 @@
 
 @implementation UIView (TTTLayout)
 
+- (void)tttSetOrigin:(CGPoint)origin
+{
+    CGRect frame = self.frame;
+    frame.origin = origin;
+    self.frame = frame;
+}
+
+- (CGPoint)tttOrigin
+{
+    return self.frame.origin;
+}
+
+- (void)tttSetSize:(CGSize)size
+{
+    CGRect frame = self.frame;
+    frame.size = size;
+    self.frame = frame;
+}
+
+- (CGSize)tttSize
+{
+    return self.frame.size;
+}
+
 - (void)tttAddSubviews:(NSArray *)array
 {
     [array enumerateObjectsUsingBlock:^(UIView *view, NSUInteger idx, BOOL *stop) {

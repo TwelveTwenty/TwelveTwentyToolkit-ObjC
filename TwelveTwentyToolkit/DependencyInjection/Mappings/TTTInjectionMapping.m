@@ -18,24 +18,24 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "TTInjectionMapping.h"
+#import "TTTInjectionMapping.h"
 
 #define IS_SINGLETON (self.options & TTTerminationOptionSingleton)
 #define IS_SINGLE_SERVING (self.options & TTTerminationOptionSingleServing)
 #define IS_ALLOC_ONLY (self.options & TTTerminationOptionAllocOnly)
 
-@interface TTInjectionMapping ()
+@interface TTTInjectionMapping ()
 
 @property (nonatomic, strong) Class mappedClass;
-@property (nonatomic, strong) TTInjectionMapping *childMapping;
+@property (nonatomic, strong) TTTInjectionMapping *childMapping;
 @property (nonatomic) TTTerminationOption options;
 @property (nonatomic, weak, readwrite) id <TTInjectionMappingParent> parent;
 @property (nonatomic, strong, readwrite) id targetObject;
-@property (nonatomic, readonly) TTInjectionMapping *endMapping;
+@property (nonatomic, readonly) TTTInjectionMapping *endMapping;
 
 @end
 
-@implementation TTInjectionMapping
+@implementation TTTInjectionMapping
 {
 	dispatch_once_t onceToken;
 	id _singleton;
@@ -66,11 +66,11 @@
 
 #pragma mark Class mapping target
 
-- (id <TTInjectionMapping>)toSubclass:(Class)class
+- (id <TTTInjectionMapping>)toSubclass:(Class)class
 {
-	self.childMapping = [[TTInjectionMapping alloc] initWithParent:self mappedClass:class options:TTTerminationOptionNone];
+	self.childMapping = [[TTTInjectionMapping alloc] initWithParent:self mappedClass:class options:TTTerminationOptionNone];
 	[self assertIntegrity];
-	return (id <TTInjectionMapping>) self.childMapping;
+	return (id <TTTInjectionMapping>) self.childMapping;
 }
 
 - (id <TTInjectionMappingEnd>)allocOnly
@@ -151,7 +151,7 @@
 	}
 }
 
-- (void)removeChildMapping:(TTInjectionMapping *)mapping
+- (void)removeChildMapping:(TTTInjectionMapping *)mapping
 {
 	// bubble up to the injector.
 	[self.parent removeChildMapping:self];

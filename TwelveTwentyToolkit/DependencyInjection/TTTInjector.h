@@ -19,20 +19,20 @@
 // THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
-#import "TTInjectionMapping.h"
+#import "TTTInjectionMapping.h"
 
-#define injectAlloc allocWithInjector:[TTInjector sharedInjector]
-#define injectObject objectFromInjector:[TTInjector sharedInjector]
-#define injectObjectNamed(...) objectFromInjector:[TTInjector sharedInjector] withIdentifier:[NSString stringWithFormat:__VA_ARGS__]
-#define inject injectWithInjector:[TTInjector sharedInjector]
+#define injectAlloc allocWithInjector:[TTTInjector sharedInjector]
+#define injectObject objectFromInjector:[TTTInjector sharedInjector]
+#define injectObjectNamed(...) objectFromInjector:[TTTInjector sharedInjector] withIdentifier:[NSString stringWithFormat:__VA_ARGS__]
+#define inject injectWithInjector:[TTTInjector sharedInjector]
 
 /**
- The TTInjectable protocol is used to 'mark' properties to be injected automatically.
+ The TTTInjectable protocol is used to 'mark' properties to be injected automatically.
  The injected objects need not implement the protocol explicitly.
  You can, for example, inject an array property like this:
- @property (strong) NSArray <TTInjectable>*plants;
+ @property (strong) NSArray <TTTInjectable>*plants;
  */
-@protocol TTInjectable <NSObject>
+@protocol TTTInjectable <NSObject>
 
 @optional
 - (void)didInjectProperties;
@@ -47,7 +47,7 @@
  [[[self.injector mapClass:[CustomClass class]] toObject:[CustomSubclass]] singleServing];
  [[self.injector mapClass:[NSArray class] withIdentifier:@"plants"] toObject:@[@"Tree", @"Grass"]];
  */
-@protocol TTInjectionMapper
+@protocol TTTInjectionMapper
 
 - (id <TTInjectionMappingStart>)mapClass:(Class)class;
 
@@ -60,16 +60,16 @@
 @end
 
 /**
- The TTInjector public interface only deals with class methods for setting and getting a/the shared injector.
+ The TTTInjector public interface only deals with class methods for setting and getting a/the shared injector.
  You can manually keep a reference to one or more injector instances if you prefer.
  */
-@interface TTInjector : NSObject <TTInjectionMapper>
+@interface TTTInjector : NSObject <TTTInjectionMapper>
 
-+ (TTInjector *)sharedInjector;
++ (TTTInjector *)sharedInjector;
 
-+ (id <TTInjectionMapper>)sharedMappingInjector;
++ (id <TTTInjectionMapper>)sharedMappingInjector;
 
-+ (id <TTInjectionMapper>)setSharedInjector:(TTInjector *)injector;
++ (id <TTTInjectionMapper>)setSharedInjector:(TTTInjector *)injector;
 
 @end
 
@@ -77,7 +77,7 @@
  Retrieve mapped classes, objects or manually fire injection with these NSObject methods.
  Example:
  
-    [[CustomClass allocWithInjector:[TTInjector sharedInjector]] initWithFrame:CGRectZero];
+    [[CustomClass allocWithInjector:[TTTInjector sharedInjector]] initWithFrame:CGRectZero];
  
  There's a shorthand macro for this above, so you if you use the sharedInjector, you may write:
  
@@ -85,20 +85,20 @@
  
  Or try identifier-based mappings:
  
-    [NSArray objectFromInjector:[TTInjector sharedInjector] withIdentifier:@"plants"];
+    [NSArray objectFromInjector:[TTTInjector sharedInjector] withIdentifier:@"plants"];
  
  If objects are mapped with an identifier, properties that share that name will be automatically injected:
  
-    @property (strong) NSArray <TTInjectable>*plants;
+    @property (strong) NSArray <TTTInjectable>*plants;
  */
-@interface NSObject (TTInjector)
+@interface NSObject (TTTInjector)
 
-+ (id)allocWithInjector:(TTInjector *)injector;
++ (id)allocWithInjector:(TTTInjector *)injector;
 
-+ (id)objectFromInjector:(TTInjector *)injector;
++ (id)objectFromInjector:(TTTInjector *)injector;
 
-+ (id)objectFromInjector:(TTInjector *)injector withIdentifier:(NSString *)identifier;
++ (id)objectFromInjector:(TTTInjector *)injector withIdentifier:(NSString *)identifier;
 
-- (id)injectWithInjector:(TTInjector *)injector;
+- (id)injectWithInjector:(TTTInjector *)injector;
 
 @end
