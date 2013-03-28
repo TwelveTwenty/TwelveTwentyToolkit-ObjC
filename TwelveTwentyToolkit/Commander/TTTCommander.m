@@ -1,25 +1,25 @@
 #import "TTTInjector.h"
 #import "TTTTrigger.h"
 #import "TTTCommand.h"
-#import "TTTTriggerCommandResponder.h"
+#import "TTTCommander.h"
 
-@interface TTTTriggerCommandResponder ()
+@interface TTTCommander ()
 
 @property(nonatomic, strong) TTTInjector *injector;
 @property(nonatomic, strong) NSOperationQueue *backgroundCommandQueue;
 
 @end
 
-@implementation TTTTriggerCommandResponder
+@implementation TTTCommander
 
-static TTTTriggerCommandResponder *_shared = nil;
+static TTTCommander *_shared = nil;
 
-+ (TTTTriggerCommandResponder *)sharedTriggerCommandResponder
++ (TTTCommander *)sharedTriggerCommandResponder
 {
 	return _shared;
 }
 
-+ (TTTTriggerCommandResponder *)setSharedTriggerCommandResponder:(TTTTriggerCommandResponder *)responder
++ (TTTCommander *)setSharedTriggerCommandResponder:(TTTCommander *)responder
 {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{

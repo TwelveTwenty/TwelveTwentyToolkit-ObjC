@@ -3,13 +3,13 @@
 @class TTTInjector;
 @class TTTTrigger;
 
-@interface TTTTriggerCommandResponder : UIResponder
+@interface TTTCommander : UIResponder
 
 @property NSInteger maxConcurrentOperationCount;
 
-+ (TTTTriggerCommandResponder *)sharedTriggerCommandResponder;
++ (TTTCommander *)sharedTriggerCommandResponder;
 
-+ (TTTTriggerCommandResponder *)setSharedTriggerCommandResponder:(TTTTriggerCommandResponder *)responder;
++ (TTTCommander *)setSharedTriggerCommandResponder:(TTTCommander *)responder;
 
 - (id)initWithInjector:(TTTInjector *)injector;
 

@@ -41,9 +41,9 @@ Pod::Spec.new do |s|
     di.source_files = 'TwelveTwentyToolkit/DependencyInjection/**/*.{h,m}'
   end
   
-  s.subspec 'TriggerCommandResponder' do |di|
+  s.subspec 'Commander' do |di|
     di.dependency 'TwelveTwentyToolkit/DependencyInjection'
-    di.source_files = 'TwelveTwentyToolkit/TriggerCommandResponder/**/*.{h,m}'
+    di.source_files = 'TwelveTwentyToolkit/Commander/**/*.{h,m}'
   end
   
   s.subspec 'Tables' do |tb|
