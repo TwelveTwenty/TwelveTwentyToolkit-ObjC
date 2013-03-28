@@ -43,7 +43,7 @@ static TTTInjector *_sharedInjector;
 	return (id <TTTInjectionMapper>) [self sharedInjector];
 }
 
-+ (id <TTTInjectionMapper>)setSharedInjector:(TTTInjector *)injector
++ (TTTInjector *)setSharedInjector:(TTTInjector *)injector
 {
 	static dispatch_once_t onceToken;
 	dispatch_once(&onceToken, ^{_sharedInjector = injector;});

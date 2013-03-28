@@ -12,6 +12,23 @@
 
 @implementation TTTTriggerCommandResponder
 
+static TTTTriggerCommandResponder *_shared = nil;
+
++ (TTTTriggerCommandResponder *)sharedTriggerCommandResponder
+{
+	return _shared;
+}
+
++ (TTTTriggerCommandResponder *)setSharedTriggerCommandResponder:(TTTTriggerCommandResponder *)responder
+{
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _shared = responder;
+    });
+
+    return _shared;
+}
+
 - (id)initWithInjector:(TTTInjector *)injector
 {
     self = [super init];
@@ -36,7 +53,7 @@
     self.backgroundCommandQueue.maxConcurrentOperationCount = maxConcurrentOperationCount;
 }
 
-- (void)sender:(id)sender didTrigger:(TTTTrigger *)trigger
+- (void)sender:(id)sender didInvoke:(TTTTrigger *)trigger
 {
     TTTCommand *command = [[trigger.commandClass alloc] initWithTrigger:trigger];
     [self.injector injectPropertiesIntoObject:(id <TTTInjectable>) command];

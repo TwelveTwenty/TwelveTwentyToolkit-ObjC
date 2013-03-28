@@ -1,5 +1,23 @@
 #import "TTTTrigger.h"
 
+@implementation UIView (TTTDebugging)
+
+- (UIResponder *)tttFindFirstResponder
+{
+    if (self.isFirstResponder) {
+        return self;
+    }
+    
+    for (UIView *subview in self.subviews) {
+        UIResponder *responder = [subview tttFindFirstResponder];
+        if (responder) return responder;
+    }
+    
+    return nil;
+}
+
+@end
+
 @interface TTTTrigger ()
 
 @property(readwrite) Class commandClass;
@@ -20,11 +38,11 @@
     return self;
 }
 
-- (void)trigger:(id)sender
+- (void)invoke
 {
-    if (![[UIApplication sharedApplication] sendAction:@selector(sender:didTrigger:) to:nil from:sender forEvent:self])
+    if (![[UIApplication sharedApplication] sendAction:@selector(sender:didInvoke:) to:nil from:[UIApplication sharedApplication] forEvent:self])
     {
-        [NSException raise:@"TTT_TRIGGER_EVENT_EXCEPTION" format:@"`sender:didTrigger:` action for %@ not found in responder chain.", self];
+        [NSException raise:@"TTT_TRIGGER_EVENT_EXCEPTION" format:@"`sender:didInvoke:` action for %@ not found in responder chain.", self];
     }
 }
 

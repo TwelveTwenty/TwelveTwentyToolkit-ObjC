@@ -7,6 +7,6 @@
 - (id)initWithMappedCommand:(Class)commandClass;
 - (id)init UNAVAILABLE_ATTRIBUTE;
 
-- (void)trigger:(id)sender;
+- (void)invoke;
 
 @end

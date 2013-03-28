@@ -26,6 +26,11 @@
     return YES;
 }
 
+- (void)start
+{
+    [self main];
+}
+
 - (void)main
 {
     self.isExecuting = YES;
