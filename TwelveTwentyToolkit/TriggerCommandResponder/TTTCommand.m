@@ -1,9 +1,9 @@
 #import "TTTCommand.h"
-#import "TTTTriggerEvent.h"
+#import "TTTTrigger.h"
 
 @implementation TTTCommand
 
-- (id)initWithTrigger:(TTTTriggerEvent *)trigger
+- (id)initWithTrigger:(TTTTrigger *)trigger
 {
     self = [super init];
     

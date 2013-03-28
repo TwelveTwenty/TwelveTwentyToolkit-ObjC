@@ -55,4 +55,9 @@ Pod::Spec.new do |s|
     lo.dependency 'TwelveTwentyToolkit/Logging'
     lo.source_files = 'TwelveTwentyToolkit/Layout/**/*.{h,m}'
   end
+
+  s.subspec 'CoreAnimation' do |ca|
+    ca.dependency 'TwelveTwentyToolkit/Logging'
+    ca.source_files = 'TwelveTwentyToolkit/CoreAnimation/**/*.{h,m}'
+  end
 end

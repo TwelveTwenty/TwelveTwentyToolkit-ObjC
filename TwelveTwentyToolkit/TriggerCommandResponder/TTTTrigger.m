@@ -1,12 +1,12 @@
-#import "TTTTriggerEvent.h"
+#import "TTTTrigger.h"
 
-@interface TTTTriggerEvent ()
+@interface TTTTrigger ()
 
 @property(readwrite) Class commandClass;
 
 @end
 
-@implementation TTTTriggerEvent
+@implementation TTTTrigger
 
 - (id)initWithMappedCommand:(Class)commandClass
 {

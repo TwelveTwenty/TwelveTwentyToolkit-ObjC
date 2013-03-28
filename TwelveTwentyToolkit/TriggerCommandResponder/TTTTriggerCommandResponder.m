@@ -1,5 +1,5 @@
 #import "TTTInjector.h"
-#import "TTTTriggerEvent.h"
+#import "TTTTrigger.h"
 #import "TTTCommand.h"
 #import "TTTTriggerCommandResponder.h"
 
@@ -36,7 +36,7 @@
     self.backgroundCommandQueue.maxConcurrentOperationCount = maxConcurrentOperationCount;
 }
 
-- (void)sender:(id)sender didTrigger:(TTTTriggerEvent *)trigger
+- (void)sender:(id)sender didTrigger:(TTTTrigger *)trigger
 {
     TTTCommand *command = [[trigger.commandClass alloc] initWithTrigger:trigger];
     [self.injector injectPropertiesIntoObject:(id <TTTInjectable>) command];

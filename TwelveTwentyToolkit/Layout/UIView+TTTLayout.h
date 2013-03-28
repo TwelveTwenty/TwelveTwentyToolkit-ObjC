@@ -24,4 +24,6 @@ typedef enum {
 
 - (CGRect)tttDistributeViews:(NSArray *)views asRowsInFrame:(CGRect)containerFrame withSpacing:(CGFloat)spacing horizontalAlignment:(TTTDistributeAlign)alignment rowLimit:(int)rowLimit containerAlignment:(CGAlignOption)containerAlignment;
 
+- (NSString *)tttHierarchy:(NSString *)leading;
+
 @end

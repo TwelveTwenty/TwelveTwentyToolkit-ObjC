@@ -37,7 +37,7 @@
 
 - (CGRect)tttResetIntrinsicContentFrame
 {
-    self.frame = (CGRect){self.frame.origin, self.intrinsicContentSize};
+    self.frame = (CGRect) {self.frame.origin, self.intrinsicContentSize};
     return self.frame;
 }
 
@@ -207,6 +207,26 @@
     }
 
     return result;
+}
+
+- (NSString *)tttHierarchy:(NSString *)leading
+{
+    NSMutableString *s = [NSMutableString string];
+    if (!leading) leading = @"";
+
+    [s appendFormat:@"\n%@- %@", leading, self];
+    if (self.subviews.count)
+    {
+        [s appendFormat:@"\n%@  |", leading];
+        for (UIView *subview in self.subviews)
+        {
+            NSString *l = [leading stringByAppendingString:@"  |"];
+            [s appendFormat:[subview tttHierarchy:l]];
+        }
+        [s appendFormat:@"\n%@", leading];
+    }
+
+    return s;
 }
 
 @end

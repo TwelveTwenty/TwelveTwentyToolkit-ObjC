@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 
-@interface TTTTriggerEvent : UIEvent
+@interface TTTTrigger : UIEvent
 
 @property(readonly) Class commandClass;
 
