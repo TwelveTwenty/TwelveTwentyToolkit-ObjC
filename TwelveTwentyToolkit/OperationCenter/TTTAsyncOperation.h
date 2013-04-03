@@ -1,5 +1,5 @@
 #import <Foundation/Foundation.h>
-#import "TTTCommand.h"
+#import "TTTOperation.h"
 
 /**
  * If `success` is YES, consider the completion to be flawless.
@@ -11,7 +11,7 @@
  */
 typedef void (^TTTCompletionBlock)(BOOL success, id object, NSError *error);
 
-@interface TTTAsyncCommand : TTTCommand
+@interface TTTAsyncOperation : TTTOperation
 
 - (void)dispatchSuccessfulCompletion:(TTTCompletionBlock)completionBlock withOptionalContext:(id)context;
 

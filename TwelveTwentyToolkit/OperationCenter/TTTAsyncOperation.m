@@ -1,23 +1,24 @@
-#import <TwelveTwentyToolkit/TTTLog.h>
-#import "TTTAsyncCommand.h"
-#import "TTTTrigger.h"
+#import <TwelveTwentyToolkit/TTTOperationCommand.h>
+#import "TTTAsyncOperation.h"
 
-@interface TTTAsyncCommand ()
+@interface TTTAsyncOperation ()
 
 @property(nonatomic) BOOL isFinished;
 @property(nonatomic) BOOL isExecuting;
 
 @end
 
-@implementation TTTAsyncCommand
+@implementation TTTAsyncOperation
 
-- (id)initWithTrigger:(TTTTrigger *)trigger
+- (id)initWithCommand:(TTTOperationCommand *)command
 {
-    self = [super initWithTrigger:trigger];
+    self = [super initWithCommand:command];
+
     if (self)
     {
         self.isFinished = NO;
     }
+
     return self;
 }
 
@@ -60,8 +61,14 @@
         completionBlock(success, context, error);
     });
 
+    [self willChangeValueForKey:@"isExecuting"];
+    [self willChangeValueForKey:@"isFinished"];
+    
     self.isExecuting = NO;
     self.isFinished = YES;
+    
+    [self didChangeValueForKey:@"isExecuting"];
+    [self didChangeValueForKey:@"isFinished"];
 }
 
 @end

@@ -1,4 +1,4 @@
-#import "TTTTrigger.h"
+#import "TTTOperationCommand.h"
 
 @implementation UIView (TTTDebugging)
 
@@ -18,21 +18,21 @@
 
 @end
 
-@interface TTTTrigger ()
+@interface TTTOperationCommand ()
 
-@property(readwrite) Class commandClass;
+@property(readwrite) Class operationClass;
 
 @end
 
-@implementation TTTTrigger
+@implementation TTTOperationCommand
 
-- (id)initWithMappedCommand:(Class)commandClass
+- (id)initWithMappedOperation:(Class)operationClass
 {
     self = [super init];
 
     if (self)
     {
-        self.commandClass = commandClass;
+        self.operationClass = operationClass;
     }
 
     return self;
@@ -40,7 +40,7 @@
 
 - (void)invoke
 {
-    if (![[UIApplication sharedApplication] sendAction:@selector(sender:didInvoke:) to:nil from:[UIApplication sharedApplication] forEvent:self])
+    if (![[UIApplication sharedApplication] sendAction:@selector(sender:didInvokeCommand:) to:nil from:[UIApplication sharedApplication] forEvent:self])
     {
         [NSException raise:@"TTT_TRIGGER_EVENT_EXCEPTION" format:@"`sender:didInvoke:` action for %@ not found in responder chain.", self];
     }
