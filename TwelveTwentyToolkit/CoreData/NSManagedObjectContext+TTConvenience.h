@@ -28,8 +28,6 @@
  */
 - (NSError *)simpleSave;
 
-- (BOOL)recursiveSave DEPRECATED_ATTRIBUTE;
-
 /**
  Outputs the state of changes to the console.
  */

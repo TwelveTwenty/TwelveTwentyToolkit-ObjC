@@ -37,24 +37,6 @@
     return error;
 }
 
-- (BOOL)recursiveSave
-{
-	NSError *error = nil;
-
-	if ([self save:&error]) {
-		DLog(@"Context saved.");
-
-		if (self.parentContext != nil)
-		{
-			return [self.parentContext recursiveSave];
-		}
-
-		return YES;
-	}
-    
-    return NO;
-}
-
 - (void)printChanges
 {
     if (![self hasChanges])
