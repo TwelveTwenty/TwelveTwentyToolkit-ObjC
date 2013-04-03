@@ -71,7 +71,9 @@
 
 + (TTTInjector *)setSharedInjector:(TTTInjector *)injector;
 
-- (id)injectPropertiesIntoObject:(id <TTTInjectable>)object;
+- (id)injectPropertiesIntoObject:(id)object;
+
+- (void)invalidateObject:(id)object;
 
 @end
 
