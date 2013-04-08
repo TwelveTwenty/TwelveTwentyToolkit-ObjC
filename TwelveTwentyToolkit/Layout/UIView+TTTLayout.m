@@ -37,8 +37,13 @@
 
 - (CGRect)tttResetIntrinsicContentFrame
 {
-    self.frame = (CGRect) {self.frame.origin, self.intrinsicContentSize};
+    self.frame = [self tttIntrinsicContentFrame];
     return self.frame;
+}
+
+- (CGRect)tttIntrinsicContentFrame
+{
+    return (CGRect) {self.frame.origin, self.intrinsicContentSize};
 }
 
 - (CGRect)tttDistributeViewsHorizontally:(NSArray *)views inFrame:(CGRect)containerFrame withSpacing:(CGFloat)spacing
@@ -221,7 +226,7 @@
         for (UIView *subview in self.subviews)
         {
             NSString *l = [leading stringByAppendingString:@"  |"];
-            [s appendFormat:[subview tttHierarchy:l]];
+            [s appendFormat:@"%@", [subview tttHierarchy:l]];
         }
         [s appendFormat:@"\n%@", leading];
     }

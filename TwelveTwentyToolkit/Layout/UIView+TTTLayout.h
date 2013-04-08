@@ -16,6 +16,8 @@ typedef enum {
 
 - (CGRect)tttResetIntrinsicContentFrame;
 
+- (CGRect)tttIntrinsicContentFrame;
+
 - (CGRect)tttDistributeViewsHorizontally:(NSArray *)views inFrame:(CGRect)containerFrame withSpacing:(CGFloat)spacing;
 
 - (CGRect)tttDistributeViewsHorizontally:(NSArray *)views inFrame:(CGRect)containerFrame withSpacing:(CGFloat)spacing alignment:(TTTDistributeAlign)alignment;
