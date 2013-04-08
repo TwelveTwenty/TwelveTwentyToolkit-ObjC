@@ -8,7 +8,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@interface TTAbstractPersistenceProxy : NSObject
+@interface TTTAbstractPersistenceProxy : NSObject
 
 @property (nonatomic, strong, readonly) NSURL *storeURL;
 @property (nonatomic, strong, readonly) NSManagedObjectContext *mainContext;

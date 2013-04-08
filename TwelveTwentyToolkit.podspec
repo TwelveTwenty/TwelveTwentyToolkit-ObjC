@@ -10,7 +10,12 @@ Pod::Spec.new do |s|
   s.source_files = 'TwelveTwentyToolkit/TwelveTwentyToolkit.h'
   s.requires_arc = true
   
+  s.subspec 'Foundation' do |lg|
+    lg.source_files = 'TwelveTwentyToolkit/Foundation/**/*.{h,m}'
+  end
+
   s.subspec 'Logging' do |lg|
+    lg.dependency 'TwelveTwentyToolkit/Foundation'
     lg.source_files = 'TwelveTwentyToolkit/Logging/**/*.{h,m}'
   end
   
@@ -21,6 +26,7 @@ Pod::Spec.new do |s|
   
   s.subspec 'CoreData' do |cd|
     cd.frameworks = 'CoreData'
+    cd.dependency 'TwelveTwentyToolkit/Foundation'
     cd.source_files = 'TwelveTwentyToolkit/CoreData/*.{h,m}'
   end
   

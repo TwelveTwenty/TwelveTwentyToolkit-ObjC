@@ -1,7 +1,20 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@interface TTTAbstractManagedObject : NSManagedObject
+@protocol TTTMogeneratorEntity
+
++ (NSFetchedResultsController *) fetchedResultsControllerWithSortingKeys:(NSDictionary *)sortingKeysWithAscendingFlag
+                                                    managedObjectContext:(NSManagedObjectContext *)context
+                                                      sectionNameKeyPath:(NSString *)sectionNameKeyPath
+                                                               cacheName:(NSString *)cacheName;
+
++ (NSFetchRequest *)fetchRequestWithSortingKeys:(NSDictionary *)sortingKeysWithAscendingFlag;
+
++ (NSString *)entityName;
+
+@end
+
+@interface TTTAbstractManagedObject : NSManagedObject <TTTMogeneratorEntity>
 
 + (NSFetchedResultsController *) fetchedResultsControllerWithSortingKeys:(NSDictionary *)sortingKeysWithAscendingFlag
                                                     managedObjectContext:(NSManagedObjectContext *)context

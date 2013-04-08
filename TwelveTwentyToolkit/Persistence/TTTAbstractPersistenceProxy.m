@@ -1,11 +1,10 @@
 #import <TwelveTwentyToolkit/TwelveTwentyToolkit.h>
-#import "TTAbstractPersistenceProxy.h"
+#import "TTTAbstractPersistenceProxy.h"
 #import "TTTLog.h"
-#import "TwelveTwentyToolkit.h"
 
 #define TT_PERSISTENCE_THRESHOLD_KEY @"TT_PERSISTENCE_THRESHOLD"
 
-@interface TTAbstractPersistenceProxy ()
+@interface TTTAbstractPersistenceProxy ()
 
 @property(nonatomic, strong, readwrite) NSManagedObjectContext *mainContext;
 @property(nonatomic, strong) NSManagedObjectModel *managedObjectModel;
@@ -22,7 +21,7 @@
 @property(nonatomic) BOOL allowAsynchronousSaving;
 @end
 
-@implementation TTAbstractPersistenceProxy
+@implementation TTTAbstractPersistenceProxy
 
 - (id)initWithStoreName:(NSString *)storeName nestContexts:(BOOL)nestContexts resetThreshold:(int)resetThreshold
 {

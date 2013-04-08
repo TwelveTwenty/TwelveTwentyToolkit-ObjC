@@ -38,4 +38,11 @@
     return controller;
 }
 
++ (NSString *)entityName
+{
+    NSAssert(NO, @"This method should be overridden by a mogenerator generated entity class.");
+    [self doesNotRecognizeSelector:_cmd];
+    return nil;
+}
+
 @end
