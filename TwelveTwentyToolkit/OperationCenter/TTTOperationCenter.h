@@ -3,7 +3,7 @@
 @class TTTInjector;
 @class TTTOperationCommand;
 
-@interface TTTOperationCenter : UIResponder
+@interface TTTOperationCenter : NSObject
 
 @property NSInteger maxConcurrentOperationCount;
 
