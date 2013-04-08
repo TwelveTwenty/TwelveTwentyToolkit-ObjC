@@ -20,14 +20,12 @@
 
 #import "TTTInjector.h"
 #import "TTIntrospectProperty.h"
-#import "TTTLog.h"
 
 static TTTInjector *_sharedInjector;
 
 @interface TTTInjector () <TTInjectionMappingParent>
 
 @property(nonatomic, strong) NSMutableDictionary *classMappings;
-@property(nonatomic, strong) NSMutableDictionary *injections;
 
 @end
 
@@ -46,8 +44,10 @@ static TTTInjector *_sharedInjector;
 
 + (TTTInjector *)setSharedInjector:(TTTInjector *)injector
 {
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{_sharedInjector = injector;});
+    @synchronized (self)
+    {
+        _sharedInjector = injector;
+    }
     return _sharedInjector;
 }
 
@@ -68,7 +68,6 @@ static TTTInjector *_sharedInjector;
     if (self)
     {
         self.classMappings = [NSMutableDictionary dictionary];
-        self.injections = [NSMutableDictionary dictionary];
 
         [[self mapClass:[self class]] toObject:self];
     }
@@ -143,30 +142,17 @@ static TTTInjector *_sharedInjector;
 
 - (id)injectPropertiesIntoObject:(id)object
 {
-    NSString *address = [NSString stringWithFormat:@"%p", &object];
+    BOOL previouslyInjected = [self performInjectionOnObject:object];
 
-    if (self.injections[address])
-    {
-        ELog(@"Already injected into %@: %@", address, object);
-    }
-
-    self.injections[address] = [self performInjectionOnObject:object];
-    
-    if ([object respondsToSelector:@selector(didInjectProperties)])
+    if (!previouslyInjected && [object respondsToSelector:@selector(didInjectProperties)])
     {
         [object didInjectProperties];
     }
-    
+
     return object;
 }
 
-- (void)invalidateObject:(id)object
-{
-    NSString *address = [NSString stringWithFormat:@"%p", &object];
-    [self.injections removeObjectForKey:address];
-}
-
-- (NSNumber *)performInjectionOnObject:(NSObject <TTTInjectable> *)object
+- (BOOL)performInjectionOnObject:(NSObject <TTTInjectable> *)object
 {
     NSArray *properties = [TTIntrospectProperty propertiesOfClass:[object class]];
     int count = 0;
@@ -175,15 +161,18 @@ static TTTInjector *_sharedInjector;
     {
         if (prop.isObject && [prop implementsProtocol:@protocol(TTTInjectable)])
         {
-            count++;
-            id value = [self objectForMappedClass:prop.typeClass withIdentifier:prop.name];
-            if (!value) value = [self objectForMappedClass:prop.typeClass withIdentifier:nil];
-            NSAssert(value != nil, @"No mapping found for property %@ marked with <TTTInjectable>", prop.name);
-            [object setValue:value forKey:prop.name];
+            if ([object valueForKey:prop.name] == nil)
+            {
+                count++;
+                id value = [self objectForMappedClass:prop.typeClass withIdentifier:prop.name];
+                if (!value) value = [self objectForMappedClass:prop.typeClass withIdentifier:nil];
+                NSAssert(value != nil, @"No mapping found for property %@ marked with <TTTInjectable>", prop.name);
+                [object setValue:value forKey:prop.name];
+            }
         }
     }
 
-    return @(count);
+    return count > 0;
 }
 
 @end

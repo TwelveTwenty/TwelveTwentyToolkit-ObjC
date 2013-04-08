@@ -22,10 +22,10 @@ static TTTOperationCenter *_defaultCenter = nil;
 
 + (TTTOperationCenter *)setDefaultCenter:(TTTOperationCenter *)defaultCenter
 {
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
+    @synchronized (self)
+    {
         _defaultCenter = defaultCenter;
-    });
+    }
 
     return _defaultCenter;
 }

@@ -13,8 +13,8 @@ typedef void (^TTTCompletionBlock)(BOOL success, id object, NSError *error);
 
 @interface TTTAsyncOperation : TTTOperation
 
-- (void)dispatchSuccessfulCompletion:(TTTCompletionBlock)completionBlock withOptionalContext:(id)context;
+- (void)dispatchSuccessfulCompletionWithOptionalContext:(id)context;
 
-- (void)dispatchUnsuccessfulCompletion:(TTTCompletionBlock)completionBlock withError:(NSError *)error;
+- (void)dispatchUnsuccessfulCompletionWithError:(NSError *)error;
 
 @end

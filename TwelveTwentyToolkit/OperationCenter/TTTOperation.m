@@ -40,9 +40,4 @@
     [self doesNotRecognizeSelector:_cmd];
 }
 
-- (void)dealloc
-{
-    [[TTTInjector sharedInjector] invalidateObject:self];
-}
-
 @end

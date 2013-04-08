@@ -73,8 +73,6 @@
 
 - (id)injectPropertiesIntoObject:(id)object;
 
-- (void)invalidateObject:(id)object;
-
 @end
 
 /**

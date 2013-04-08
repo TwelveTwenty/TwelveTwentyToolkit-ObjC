@@ -1,22 +1,5 @@
 #import "TTTOperationCommand.h"
-
-@implementation UIView (TTTDebugging)
-
-- (UIResponder *)tttFindFirstResponder
-{
-    if (self.isFirstResponder) {
-        return self;
-    }
-    
-    for (UIView *subview in self.subviews) {
-        UIResponder *responder = [subview tttFindFirstResponder];
-        if (responder) return responder;
-    }
-    
-    return nil;
-}
-
-@end
+#import "TTTOperationCenter.h"
 
 @interface TTTOperationCommand ()
 
@@ -40,10 +23,7 @@
 
 - (void)invoke
 {
-    if (![[UIApplication sharedApplication] sendAction:@selector(sender:didInvokeCommand:) to:nil from:[UIApplication sharedApplication] forEvent:self])
-    {
-        [NSException raise:@"TTT_TRIGGER_EVENT_EXCEPTION" format:@"`sender:didInvoke:` action for %@ not found in responder chain.", self];
-    }
+    [[TTTOperationCenter defaultCenter] sender:nil didInvokeCommand:self];
 }
 
 @end

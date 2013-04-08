@@ -1,4 +1,6 @@
 #import <TwelveTwentyToolkit/TTTOperationCommand.h>
+#import <TwelveTwentyToolkit/TTTAsyncOperationCommand.h>
+#import <TwelveTwentyToolkit/TTTLog.h>
 #import "TTTAsyncOperation.h"
 
 @interface TTTAsyncOperation ()
@@ -6,12 +8,17 @@
 @property(nonatomic) BOOL isFinished;
 @property(nonatomic) BOOL isExecuting;
 
+@property (nonatomic, readonly) TTTAsyncOperationCommand *command;
+
 @end
 
 @implementation TTTAsyncOperation
 
+@dynamic command;
+
 - (id)initWithCommand:(TTTOperationCommand *)command
 {
+    NSAssert([command isKindOfClass:[TTTAsyncOperationCommand class]], @"Supplied command is required to be a subclass of %@", [TTTAsyncOperationCommand class]);
     self = [super initWithCommand:command];
 
     if (self)
@@ -39,14 +46,14 @@
     [super main];
 }
 
-- (void)dispatchSuccessfulCompletion:(TTTCompletionBlock)completionBlock withOptionalContext:(id)context
+- (void)dispatchSuccessfulCompletionWithOptionalContext:(id)context
 {
-    [self dispatchCompletion:completionBlock withSuccess:YES context:context error:nil];
+    [self dispatchCompletion:self.command.completion withSuccess:YES context:context error:nil];
 }
 
-- (void)dispatchUnsuccessfulCompletion:(TTTCompletionBlock)completionBlock withError:(NSError *)error
+- (void)dispatchUnsuccessfulCompletionWithError:(NSError *)error
 {
-    [self dispatchCompletion:completionBlock withSuccess:NO context:nil error:error];
+    [self dispatchCompletion:self.command.completion withSuccess:NO context:nil error:error];
 }
 
 - (void)dispatchCompletion:(TTTCompletionBlock)completionBlock withSuccess:(BOOL)success context:(id)context error:(NSError *)error
@@ -54,6 +61,7 @@
     if (!success)
     {
         NSAssert(error != nil, @"If success is NO, you must provide an error");
+        ELog(@"Operation completed unsuccessfully. Error: %@", error);
     }
 
     if (completionBlock == nil) return;
