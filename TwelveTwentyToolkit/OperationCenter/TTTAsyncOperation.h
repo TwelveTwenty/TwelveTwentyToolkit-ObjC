@@ -13,8 +13,16 @@ typedef void (^TTTCompletionBlock)(BOOL success, id object, NSError *error);
 
 @interface TTTAsyncOperation : TTTOperation
 
+@property(nonatomic, copy) TTTCompletionBlock completion;
+
+- (id)initWithCompletion:(TTTCompletionBlock)completion;
+
 - (void)dispatchSuccessfulCompletionWithOptionalContext:(id)context;
 
 - (void)dispatchUnsuccessfulCompletionWithError:(NSError *)error;
+
+- (void (^)(void))completionBlock UNAVAILABLE_ATTRIBUTE;
+
+- (void)setCompletionBlock:(void (^)(void))block UNAVAILABLE_ATTRIBUTE;
 
 @end

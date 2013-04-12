@@ -2,6 +2,7 @@
 
 @class TTTInjector;
 @class TTTOperationCommand;
+@class TTTOperation;
 
 @interface TTTOperationCenter : NSObject
 
@@ -13,6 +14,6 @@
 
 - (id)initWithInjector:(TTTInjector *)injector;
 
-- (void)sender:(id)sender didInvokeCommand:(TTTOperationCommand *)command;
+- (void)queueOperation:(TTTOperation *)operation;
 
 @end

@@ -1,4 +1,4 @@
-#import <TwelveTwentyToolkit/TTTOperationCommand.h>
+#import <TwelveTwentyToolkit/TTTOperation.h>
 #import "TTTOperationCenter.h"
 #import "TTTInjector.h"
 #import "TTTOperation.h"
@@ -39,7 +39,7 @@ static TTTOperationCenter *_defaultCenter = nil;
         self.injector = injector;
         self.backgroundCommandQueue = [[NSOperationQueue alloc] init];
         self.mainCommandQueue = [NSOperationQueue mainQueue];
-        self.maxConcurrentOperationCount = 1;
+        self.maxConcurrentOperationCount = 2;
 
         if (_defaultCenter == nil)
         {
@@ -60,9 +60,8 @@ static TTTOperationCenter *_defaultCenter = nil;
     self.backgroundCommandQueue.maxConcurrentOperationCount = maxConcurrentOperationCount;
 }
 
-- (void)sender:(id)sender didInvokeCommand:(TTTOperationCommand *)command
+- (void)queueOperation:(TTTOperation *)operation
 {
-    TTTOperation *operation = [[command.operationClass alloc] initWithCommand:command];
     [self.injector injectPropertiesIntoObject:(id <TTTInjectable>) operation];
 
     if (operation.requiresMainThread)

@@ -1,31 +1,24 @@
-#import <TwelveTwentyToolkit/TTTOperationCommand.h>
 #import "TTTOperation.h"
 #import "TTTLog.h"
-#import "TTTInjector.h"
+#import "TTTOperationCenter.h"
 
 @implementation TTTOperation
 
-- (id)initWithCommand:(TTTOperationCommand *)command
+- (id)init
 {
     self = [super init];
     
     if (self)
     {
-        self.command = command;
         self.requiresMainThread = YES;
     }
     
     return self;
 }
 
-- (void)setCommand:(TTTOperationCommand *)command
+- (void)queue
 {
-    _command = command;
-}
-
-- (TTTOperationCommand *)command
-{
-    return _command;
+    [[TTTOperationCenter defaultCenter] queueOperation:self];
 }
 
 - (void)main
