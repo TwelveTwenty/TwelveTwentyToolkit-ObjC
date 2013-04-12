@@ -5,8 +5,8 @@
 
 @interface TTTAsyncOperation ()
 
-@property(nonatomic) BOOL isFinished;
-@property(nonatomic) BOOL isExecuting;
+@property(nonatomic, getter=isFinished) BOOL finished;
+@property(nonatomic, getter=isExecuting) BOOL executing;
 
 @property (nonatomic, readonly) TTTAsyncOperationCommand *command;
 
@@ -20,12 +20,6 @@
 {
     NSAssert([command isKindOfClass:[TTTAsyncOperationCommand class]], @"Supplied command is required to be a subclass of %@", [TTTAsyncOperationCommand class]);
     self = [super initWithCommand:command];
-
-    if (self)
-    {
-        self.isFinished = NO;
-    }
-
     return self;
 }
 
@@ -34,16 +28,29 @@
     return YES;
 }
 
-- (void)start
+- (void)setExecuting:(BOOL)isExecuting
 {
-    [self main];
+    [self willChangeValueForKey:@"isExecuting"];
+    
+    _executing = isExecuting;
+    
+    [self didChangeValueForKey:@"isExecuting"];
 }
 
-- (void)main
+- (void)setFinished:(BOOL)isFinished
 {
-    self.isExecuting = YES;
+    [self willChangeValueForKey:@"isFinished"];
+    
+    _finished = isFinished;
+    
+    [self didChangeValueForKey:@"isFinished"];
+}
 
-    [super main];
+- (void)start
+{
+    self.executing = YES;
+    
+    [self main];
 }
 
 - (void)dispatchSuccessfulCompletionWithOptionalContext:(id)context
@@ -64,19 +71,15 @@
         ELog(@"Operation completed unsuccessfully. Error: %@", error);
     }
 
-    if (completionBlock == nil) return;
-    dispatch_async(dispatch_get_main_queue(), ^{
-        completionBlock(success, context, error);
-    });
+    if (completionBlock != nil)
+    {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            completionBlock(success, context, error);
+        });
+    }
 
-    [self willChangeValueForKey:@"isExecuting"];
-    [self willChangeValueForKey:@"isFinished"];
-    
-    self.isExecuting = NO;
-    self.isFinished = YES;
-    
-    [self didChangeValueForKey:@"isExecuting"];
-    [self didChangeValueForKey:@"isFinished"];
+    self.executing = NO;
+    self.finished = YES;
 }
 
 @end

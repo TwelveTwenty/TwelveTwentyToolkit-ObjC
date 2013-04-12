@@ -84,8 +84,22 @@ static TTTInjector *_sharedInjector;
 
 - (id <TTInjectionMappingStart>)mapClass:(Class)class withIdentifier:(NSString *)identifier
 {
+    return [self mapClass:class withIdentifier:identifier overwriteExisting:NO];
+}
+
+- (id <TTInjectionMappingStart>)mapClass:(Class)class overwriteExisting:(BOOL)overwriteExisting
+{
+    return [self mapClass:class withIdentifier:nil overwriteExisting:overwriteExisting];
+}
+
+- (id <TTInjectionMappingStart>)mapClass:(Class)class withIdentifier:(NSString *)identifier overwriteExisting:(BOOL)overwriteExisting
+{
     NSString *key = [[self class] keyForClass:class withIdentifier:identifier];
-    NSAssert([self.classMappings objectForKey:key] == nil, @"Attempted duplicate mapping for key %@", key);
+    
+    if (!overwriteExisting)
+    {
+        NSAssert([self.classMappings objectForKey:key] == nil, @"Attempted duplicate mapping for key %@", key);
+    }
 
     TTTInjectionMapping *mapping = [[TTTInjectionMapping alloc] initWithParent:self mappedClass:class options:TTTerminationOptionNone];
     self.classMappings[key] = mapping;

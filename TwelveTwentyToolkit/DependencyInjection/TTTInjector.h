@@ -53,6 +53,10 @@
 
 - (id <TTInjectionMappingStart>)mapClass:(Class)class withIdentifier:(NSString *)identifier;
 
+- (id <TTInjectionMappingStart>)mapClass:(Class)class overwriteExisting:(BOOL)overwriteExisting;
+
+- (id <TTInjectionMappingStart>)mapClass:(Class)class withIdentifier:(NSString *)identifier overwriteExisting:(BOOL)overwriteExisting;
+
 - (void)unmapClass:(Class)class;
 
 - (void)unmapClass:(Class)class withIdentifier:(NSString *)identifier;

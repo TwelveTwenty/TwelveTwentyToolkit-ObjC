@@ -54,7 +54,7 @@
 
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *key = [NSString stringWithFormat:@"%@-%@", TT_PERSISTENCE_THRESHOLD_KEY, self.storeURL.lastPathComponent];
-    BOOL reset = resetThreshold > [defaults integerForKey:key];
+    BOOL reset = (resetThreshold != [defaults integerForKey:key]);
     if (reset && [[NSFileManager defaultManager] fileExistsAtPath:self.storeURL.path])
     {
         NSError *error = nil;
