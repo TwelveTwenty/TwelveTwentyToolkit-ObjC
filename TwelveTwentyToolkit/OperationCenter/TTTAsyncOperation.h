@@ -9,20 +9,16 @@
  *
  * If `success` is NO, look at the `error` object for the reason why.
  */
-typedef void (^TTTCompletionBlock)(BOOL success, id object, NSError *error);
+typedef void (^TTTFeedbackBlock)(BOOL success, id object, NSError *error);
 
 @interface TTTAsyncOperation : TTTOperation
 
-@property(nonatomic, copy) TTTCompletionBlock completion;
+@property(nonatomic, copy) TTTFeedbackBlock feedbackBlock;
 
-- (id)initWithCompletion:(TTTCompletionBlock)completion;
+- (id)initWithFeedback:(TTTFeedbackBlock)completion;
 
-- (void)dispatchSuccessfulCompletionWithOptionalContext:(id)context;
+- (void)dispatchSuccessfulFeedbackWithOptionalContext:(id)context;
 
-- (void)dispatchUnsuccessfulCompletionWithError:(NSError *)error;
-
-- (void (^)(void))completionBlock UNAVAILABLE_ATTRIBUTE;
-
-- (void)setCompletionBlock:(void (^)(void))block UNAVAILABLE_ATTRIBUTE;
+- (void)dispatchUnsuccessfulFeedbackWithError:(NSError *)error;
 
 @end

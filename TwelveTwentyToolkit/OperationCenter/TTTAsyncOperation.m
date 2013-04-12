@@ -10,13 +10,13 @@
 
 @implementation TTTAsyncOperation
 
-- (id)initWithCompletion:(TTTCompletionBlock)completionBlock
+- (id)initWithFeedback:(TTTFeedbackBlock)feedbackBlock
 {
     self = [super init];
 
     if (self)
     {
-        self.completion = completionBlock;
+        self.feedbackBlock = feedbackBlock;
         self.requiresMainThread = NO;
     }
     return self;
@@ -52,17 +52,17 @@
     [self main];
 }
 
-- (void)dispatchSuccessfulCompletionWithOptionalContext:(id)context
+- (void)dispatchSuccessfulFeedbackWithOptionalContext:(id)context
 {
-    [self dispatchCompletion:self.completion withSuccess:YES context:context error:nil];
+    [self dispatchFeedback:self.feedbackBlock withSuccess:YES context:context error:nil];
 }
 
-- (void)dispatchUnsuccessfulCompletionWithError:(NSError *)error
+- (void)dispatchUnsuccessfulFeedbackWithError:(NSError *)error
 {
-    [self dispatchCompletion:self.completion withSuccess:NO context:nil error:error];
+    [self dispatchFeedback:self.feedbackBlock withSuccess:NO context:nil error:error];
 }
 
-- (void)dispatchCompletion:(TTTCompletionBlock)completion withSuccess:(BOOL)success context:(id)context error:(NSError *)error
+- (void)dispatchFeedback:(TTTFeedbackBlock)feedback withSuccess:(BOOL)success context:(id)context error:(NSError *)error
 {
     if (!success)
     {
@@ -70,10 +70,10 @@
         ELog(@"Operation completed unsuccessfully. Error: %@", error);
     }
 
-    if (completion != nil)
+    if (feedback != nil)
     {
         dispatch_async(dispatch_get_main_queue(), ^{
-            completion(success, context, error);
+            feedback(success, context, error);
         });
     }
 

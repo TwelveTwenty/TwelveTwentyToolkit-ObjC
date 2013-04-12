@@ -1,7 +1,6 @@
 #import <Foundation/Foundation.h>
 
 @class TTTInjector;
-@class TTTOperationCommand;
 @class TTTOperation;
 
 @interface TTTOperationCenter : NSObject
