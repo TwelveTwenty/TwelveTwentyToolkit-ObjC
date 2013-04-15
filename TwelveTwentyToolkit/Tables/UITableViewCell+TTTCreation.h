@@ -23,9 +23,9 @@
 
 /**
  To take care of the everlasting dequeue or create problem when retrieving cells in a UITableView,
- this category provides some convenience methods on any UITableViewCell+TTCreation.
+ this category provides some convenience methods on any UITableViewCell+TTTCreation.
  */
-@interface UITableViewCell (TTCreation)
+@interface UITableViewCell (TTTCreation)
 
 /**
  This is the mother of the other category methods.

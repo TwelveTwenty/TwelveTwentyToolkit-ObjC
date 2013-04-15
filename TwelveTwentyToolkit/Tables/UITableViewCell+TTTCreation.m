@@ -18,10 +18,10 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.#import <Foundation/Foundation.h>
 
-#import "UITableViewCell+TTCreation.h"
+#import "UITableViewCell+TTTCreation.h"
 
 
-@implementation UITableViewCell (TTCreation)
+@implementation UITableViewCell (TTTCreation)
 
 + (id)createOrDequeueFromTable:(UITableView *)tableView withStyle:(UITableViewCellStyle)style feedback:(BOOL *)created reuseIdentifier:(NSString *)reuseIdentifier;
 {
