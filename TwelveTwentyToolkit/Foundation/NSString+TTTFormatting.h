@@ -2,6 +2,6 @@
 
 @interface NSString (TTTFormatting)
 
-- (NSString *)formattedWith:(NSString *)arguments, ...;
+- (NSString *)tttFormattedWith:(NSString *)arguments, ...;
 
 @end

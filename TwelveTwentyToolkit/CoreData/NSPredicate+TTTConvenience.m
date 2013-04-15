@@ -3,11 +3,11 @@
 
 @implementation NSPredicate (TTTConvenience)
 
-+ (NSPredicate *)predicateWithComplexFormat:(NSString *)complexFormat innerArguments:(NSArray *)innerArguments outerArguments:(NSArray *)outerArguments
++ (NSPredicate *)tttPredicateWithComplexFormat:(NSString *)complexFormat innerArguments:(NSArray *)innerArguments outerArguments:(NSArray *)outerArguments
 {
-    NSString *simpleFormat = [[NSString alloc] initWithFormat:complexFormat arguments:[innerArguments toVAList]];
+    NSString *simpleFormat = [[NSString alloc] initWithFormat:complexFormat arguments:[innerArguments tttToVAList]];
 
-    return [self predicateWithFormat:simpleFormat arguments:[outerArguments toVAList]];
+    return [self predicateWithFormat:simpleFormat arguments:[outerArguments tttToVAList]];
 }
 
 @end

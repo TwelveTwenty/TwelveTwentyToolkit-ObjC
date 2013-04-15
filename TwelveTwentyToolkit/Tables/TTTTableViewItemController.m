@@ -1,7 +1,6 @@
 #import "UITableViewCell+TTTCreation.h"
 #import "TTTTableViewItemController.h"
 #import "TTTTableViewItem.h"
-#import "IZOBaseInputCell.h"
 #import "TTTTableViewSection.h"
 
 typedef enum
@@ -110,19 +109,19 @@ typedef enum
         item.configureBlock(cell, indexPath);
     }
 
-    if ([cell respondsToSelector:@selector(setPositionInSection:)])
+    if ([cell conformsToProtocol:@protocol(TTTGroupedTableViewCell)])
     {
         if (indexPath.row == 0)
         {
-            [(id) cell setPositionInSection:IZOTableViewSectionPositionTop];
+            [(id <TTTGroupedTableViewCell>) cell setPositionInSection:TTTTableViewSectionPositionTop];
         }
         else if (indexPath.row == [self tableView:tableView numberOfRowsInSection:indexPath.section] - 1)
         {
-            [(id) cell setPositionInSection:IZOTableViewSectionPositionBottom];
+            [(id <TTTGroupedTableViewCell>) cell setPositionInSection:TTTTableViewSectionPositionBottom];
         }
         else
         {
-            [(id) cell setPositionInSection:IZOTableViewSectionPositionMiddle];
+            [(id <TTTGroupedTableViewCell>) cell setPositionInSection:TTTTableViewSectionPositionMiddle];
         }
     }
 

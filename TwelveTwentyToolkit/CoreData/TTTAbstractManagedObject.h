@@ -3,12 +3,12 @@
 
 @protocol TTTMogeneratorEntity
 
-+ (NSFetchedResultsController *) fetchedResultsControllerWithSortingKeys:(NSDictionary *)sortingKeysWithAscendingFlag
-                                                    managedObjectContext:(NSManagedObjectContext *)context
-                                                      sectionNameKeyPath:(NSString *)sectionNameKeyPath
-                                                               cacheName:(NSString *)cacheName;
++ (NSFetchedResultsController *)tttFetchedResultsControllerWithSortingKeys:(NSDictionary *)sortingKeysWithAscendingFlag
+                                                      managedObjectContext:(NSManagedObjectContext *)context
+                                                        sectionNameKeyPath:(NSString *)sectionNameKeyPath
+                                                                 cacheName:(NSString *)cacheName;
 
-+ (NSFetchRequest *)fetchRequestWithSortingKeys:(NSDictionary *)sortingKeysWithAscendingFlag;
++ (NSFetchRequest *)tttFetchRequestWithSortingKeys:(NSDictionary *)sortingKeysWithAscendingFlag;
 
 + (NSString *)entityName;
 
@@ -16,11 +16,11 @@
 
 @interface TTTAbstractManagedObject : NSManagedObject <TTTMogeneratorEntity>
 
-+ (NSFetchedResultsController *) fetchedResultsControllerWithSortingKeys:(NSDictionary *)sortingKeysWithAscendingFlag
-                                                    managedObjectContext:(NSManagedObjectContext *)context
-                                                      sectionNameKeyPath:(NSString *)sectionNameKeyPath
-                                                               cacheName:(NSString *)cacheName;
++ (NSFetchedResultsController *)tttFetchedResultsControllerWithSortingKeys:(NSDictionary *)sortingKeysWithAscendingFlag
+                                                      managedObjectContext:(NSManagedObjectContext *)context
+                                                        sectionNameKeyPath:(NSString *)sectionNameKeyPath
+                                                                 cacheName:(NSString *)cacheName;
 
-+ (NSFetchRequest *)fetchRequestWithSortingKeys:(NSDictionary *)sortingKeysWithAscendingFlag;
++ (NSFetchRequest *)tttFetchRequestWithSortingKeys:(NSDictionary *)sortingKeysWithAscendingFlag;
 
 @end

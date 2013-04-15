@@ -23,7 +23,7 @@
 
 #define TT_UNIFIED_ADDRESS_BOOK_REQUEST_UPDATE_NOTIFICATION @"TT_UNIFIED_ADDRESS_BOOK_REQUEST_UPDATE_NOTIFICATION"
 
-@interface TTUnifiedAddressBook : NSObject
+@interface TTTUnifiedAddressBook : NSObject
 
 @property(nonatomic, readonly) ABAddressBookRef addressBook;
 
@@ -33,21 +33,21 @@
 
 /**
 Get an array of all cards in the address book.
-@return an array of `TTUnifiedCard` instances.
+@return an array of `TTTUnifiedCard` instances.
 */
 - (NSArray *)allCards;
 
 /**
 Synchronous search for cards matching a query.
 @param query to search for, will be used by the `ABAddressBookCopyPeopleWithName` method.
-@return an array of `TTUnifiedCard` instances.
+@return an array of `TTTUnifiedCard` instances.
 */
 - (NSArray *)cardsMatchingQuery:(NSString *)query;
 
 /**
 Asynchronous search for cards matching a query.
 @param query to search for, will be used by the `ABAddressBookCopyPeopleWithName` method.
-@param resultsBlock is passed an array of `TTUnifiedCard` instances.
+@param resultsBlock is passed an array of `TTTUnifiedCard` instances.
 */
 - (void)cardsMatchingQuery:(NSString *)query withAsyncResults:(void (^)(NSArray *))resultsBlock;
 

@@ -1,7 +1,7 @@
 // DO NOT EDIT. This file is machine-generated and constantly overwritten.
-// Make changes to TTCDUnifiedRecord.m instead.
+// Make changes to TTTCDUnifiedRecord.m instead.
 
-#import "_TTCDUnifiedRecord.h"
+#import "_TTTCDUnifiedRecord.h"
 
 const struct TTCDUnifiedRecordAttributes TTCDUnifiedRecordAttributes = {
 	.position = @"position",
@@ -20,7 +20,7 @@ const struct TTCDUnifiedRecordFetchedProperties TTCDUnifiedRecordFetchedProperti
 @implementation TTCDUnifiedRecordID
 @end
 
-@implementation _TTCDUnifiedRecord
+@implementation _TTTCDUnifiedRecord
 
 + (id)insertInManagedObjectContext:(NSManagedObjectContext*)moc_ {
 	NSParameterAssert(moc_);

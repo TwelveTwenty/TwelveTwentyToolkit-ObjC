@@ -2,6 +2,6 @@
 
 @interface NSMutableDictionary (TTTUnless)
 
-- (void)unlessAttributePresent:(id)attribute setValue:(id)value;
+- (void)tttUnlessAttributePresent:(id)attribute setValue:(id)value;
 
 @end

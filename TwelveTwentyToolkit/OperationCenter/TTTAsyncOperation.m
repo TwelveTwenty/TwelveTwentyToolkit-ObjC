@@ -1,4 +1,4 @@
-#import <TwelveTwentyToolkit/TTTLog.h>
+#import "TTTLog.h"
 #import "TTTAsyncOperation.h"
 
 @interface TTTAsyncOperation ()

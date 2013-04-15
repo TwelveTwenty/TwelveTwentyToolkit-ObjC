@@ -2,7 +2,7 @@
 
 @implementation CALayer (TTTCrossfade)
 
-- (void)transitionCrossfadeWithDuration:(CFTimeInterval)duration
+- (void)tttTransitionCrossfadeWithDuration:(CFTimeInterval)duration
 {
     CATransition *transition = [CATransition animation];
     transition.duration = duration;

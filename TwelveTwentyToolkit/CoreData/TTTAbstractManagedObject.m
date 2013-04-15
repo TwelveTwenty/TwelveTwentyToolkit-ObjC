@@ -2,7 +2,7 @@
 
 @implementation TTTAbstractManagedObject
 
-+ (NSFetchRequest *)fetchRequestWithSortingKeys:(NSDictionary *)sortingKeysWithAscendingFlag
++ (NSFetchRequest *)tttFetchRequestWithSortingKeys:(NSDictionary *)sortingKeysWithAscendingFlag
 {
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:[(id) self entityName]];
     request.fetchBatchSize = 100;
@@ -23,12 +23,12 @@
     return request;
 }
 
-+ (NSFetchedResultsController *)fetchedResultsControllerWithSortingKeys:(NSDictionary *)sortingKeysWithAscendingFlag
-                                                   managedObjectContext:(NSManagedObjectContext *)context
-                                                     sectionNameKeyPath:(NSString *)sectionNameKeyPath
-                                                              cacheName:(NSString *)cacheName
++ (NSFetchedResultsController *)tttFetchedResultsControllerWithSortingKeys:(NSDictionary *)sortingKeysWithAscendingFlag
+                                                      managedObjectContext:(NSManagedObjectContext *)context
+                                                        sectionNameKeyPath:(NSString *)sectionNameKeyPath
+                                                                 cacheName:(NSString *)cacheName
 {
-    NSFetchRequest *request = [self fetchRequestWithSortingKeys:sortingKeysWithAscendingFlag];
+    NSFetchRequest *request = [self tttFetchRequestWithSortingKeys:sortingKeysWithAscendingFlag];
 
     NSFetchedResultsController *controller = [[NSFetchedResultsController alloc] initWithFetchRequest:request
                                                                                  managedObjectContext:context

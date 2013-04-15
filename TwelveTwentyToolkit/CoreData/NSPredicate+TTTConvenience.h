@@ -2,6 +2,6 @@
 
 @interface NSPredicate (TTTConvenience)
 
-+ (NSPredicate *)predicateWithComplexFormat:(NSString *)complexFormat innerArguments:(NSArray *)innerArguments outerArguments:(NSArray *)outerArguments;
++ (NSPredicate *)tttPredicateWithComplexFormat:(NSString *)complexFormat innerArguments:(NSArray *)innerArguments outerArguments:(NSArray *)outerArguments;
 
 @end

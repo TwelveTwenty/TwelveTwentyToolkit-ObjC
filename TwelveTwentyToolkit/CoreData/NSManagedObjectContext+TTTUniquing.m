@@ -18,20 +18,20 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "NSManagedObjectContext+TTUniquing.h"
+#import "NSManagedObjectContext+TTTUniquing.h"
 
-@implementation NSManagedObjectContext (TTUniquing)
+@implementation NSManagedObjectContext (TTTUniquing)
 
-- (id)uniqueEntityForName:(NSString *)name withValue:(id)value forKey:(NSString *)key
+- (id)tttUniqueEntityForName:(NSString *)name withValue:(id)value forKey:(NSString *)key
 {
     BOOL existed = NO;
-    NSManagedObject* result = [self uniqueEntityForName:name withValue:value forKey:key existed:&existed];
+    NSManagedObject* result = [self tttUniqueEntityForName:name withValue:value forKey:key existed:&existed];
     return result;
 }
 
-- (id)uniqueEntityForName:(NSString *)name withValue:(id)value forKey:(NSString *)key existed:(BOOL *)existed
+- (id)tttUniqueEntityForName:(NSString *)name withValue:(id)value forKey:(NSString *)key existed:(BOOL *)existed
 {
-    NSManagedObject *entity = [self existingEntityForName:name withValue:value forKey:key];
+    NSManagedObject *entity = [self tttExistingEntityForName:name withValue:value forKey:key];
     
     if (entity == nil) {
         entity = [NSEntityDescription insertNewObjectForEntityForName:name inManagedObjectContext:self];
@@ -44,7 +44,7 @@
     return entity;
 }
 
-- (id)existingEntityForName:(NSString *)name withValue:(id)value forKey:(NSString *)key 
+- (id)tttExistingEntityForName:(NSString *)name withValue:(id)value forKey:(NSString *)key
 {
     if (value == nil || [@"" isEqualToString:[value description]]) 
 	{

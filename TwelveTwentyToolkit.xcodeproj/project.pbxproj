@@ -7,27 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9572982816DD4D89002793D3 /* _TTCDLinkedRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 957297F516DD4D89002793D3 /* _TTCDLinkedRecord.m */; };
-		9572982916DD4D89002793D3 /* _TTCDUnifiedRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 957297F716DD4D89002793D3 /* _TTCDUnifiedRecord.m */; };
-		9572982A16DD4D89002793D3 /* TTCDLinkedRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 957297F916DD4D89002793D3 /* TTCDLinkedRecord.m */; };
-		9572982B16DD4D89002793D3 /* TTCDUnifiedRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 957297FB16DD4D89002793D3 /* TTCDUnifiedRecord.m */; };
-		9572982C16DD4D89002793D3 /* TTUnifiedAddressBook.m in Sources */ = {isa = PBXBuildFile; fileRef = 957297FE16DD4D89002793D3 /* TTUnifiedAddressBook.m */; };
-		9572982D16DD4D89002793D3 /* TTUnifiedAddressBook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 957297FF16DD4D89002793D3 /* TTUnifiedAddressBook.xcdatamodeld */; };
-		9572982E16DD4D89002793D3 /* TTUnifiedCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 9572980216DD4D89002793D3 /* TTUnifiedCard.m */; };
-		9572982F16DD4D89002793D3 /* TTCommander.m in Sources */ = {isa = PBXBuildFile; fileRef = 9572980516DD4D89002793D3 /* TTCommander.m */; };
-		9572983016DD4D89002793D3 /* NSArray+TTTVALists.m in Sources */ = {isa = PBXBuildFile; fileRef = 9572980816DD4D89002793D3 /* NSArray+TTTVALists.m */; };
-		9572983116DD4D89002793D3 /* NSManagedObject+TTFetchedResultsControllers.m in Sources */ = {isa = PBXBuildFile; fileRef = 9572980A16DD4D89002793D3 /* NSManagedObject+TTFetchedResultsControllers.m */; };
-		9572983216DD4D89002793D3 /* NSManagedObjectContext+TTBatchManipulation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9572980C16DD4D89002793D3 /* NSManagedObjectContext+TTBatchManipulation.m */; };
-		9572983316DD4D89002793D3 /* NSManagedObjectContext+TTConvenience.m in Sources */ = {isa = PBXBuildFile; fileRef = 9572980E16DD4D89002793D3 /* NSManagedObjectContext+TTConvenience.m */; };
-		9572983416DD4D89002793D3 /* NSManagedObjectContext+TTUniquing.m in Sources */ = {isa = PBXBuildFile; fileRef = 9572981016DD4D89002793D3 /* NSManagedObjectContext+TTUniquing.m */; };
-		9572983516DD4D89002793D3 /* NSPredicate+TTTConvenience.m in Sources */ = {isa = PBXBuildFile; fileRef = 9572981216DD4D89002793D3 /* NSPredicate+TTTConvenience.m */; };
-		9572983616DD4D89002793D3 /* TTCGUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 9572981516DD4D89002793D3 /* TTCGUtils.m */; };
-		9572983716DD4D89002793D3 /* TTIntrospectProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 9572981916DD4D89002793D3 /* TTIntrospectProperty.m */; };
-		9572983816DD4D89002793D3 /* TTInjectionMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 9572981C16DD4D89002793D3 /* TTInjectionMapping.m */; };
-		9572983916DD4D89002793D3 /* TTInjector.m in Sources */ = {isa = PBXBuildFile; fileRef = 9572981E16DD4D89002793D3 /* TTInjector.m */; };
-		9572983A16DD4D89002793D3 /* TTTLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 9572982116DD4D89002793D3 /* TTTLog.m */; };
-		9572983B16DD4D89002793D3 /* TTAbstractPersistenceProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9572982416DD4D89002793D3 /* TTAbstractPersistenceProxy.m */; };
-		9572983C16DD4D89002793D3 /* UITableViewCell+TTCreation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9572982716DD4D89002793D3 /* UITableViewCell+TTCreation.m */; };
 		95934FD8167B283E00E4ED39 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95934FD7167B283E00E4ED39 /* AddressBook.framework */; };
 		95934FDA167B284800E4ED39 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95934FD9167B284800E4ED39 /* CoreData.framework */; };
 		95934FDC167B285200E4ED39 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95934FDB167B285200E4ED39 /* QuartzCore.framework */; };
@@ -44,6 +23,43 @@
 		95934FFD167B2D5F00E4ED39 /* TTTDIConcreteSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 95934FFC167B2D5F00E4ED39 /* TTTDIConcreteSingleton.m */; };
 		95935000167B2D7F00E4ED39 /* TTTDISimpleSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 95934FFF167B2D7F00E4ED39 /* TTTDISimpleSingleton.m */; };
 		95935003167B318200E4ED39 /* TTTDIInjectableObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 95935002167B318100E4ED39 /* TTTDIInjectableObject.m */; };
+		9594A4D2171C937700F75476 /* _TTTCDLinkedRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594A47C171C937700F75476 /* _TTTCDLinkedRecord.m */; };
+		9594A4D3171C937700F75476 /* _TTTCDUnifiedRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594A47E171C937700F75476 /* _TTTCDUnifiedRecord.m */; };
+		9594A4D4171C937700F75476 /* TTTCDLinkedRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594A480171C937700F75476 /* TTTCDLinkedRecord.m */; };
+		9594A4D5171C937700F75476 /* TTTCDUnifiedRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594A482171C937700F75476 /* TTTCDUnifiedRecord.m */; };
+		9594A4D6171C937700F75476 /* TTTUnifiedAddressBook.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594A485171C937700F75476 /* TTTUnifiedAddressBook.m */; };
+		9594A4D7171C937700F75476 /* TTTUnifiedCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594A487171C937700F75476 /* TTTUnifiedCard.m */; };
+		9594A4D8171C937700F75476 /* TTTUnifiedAddressBook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9594A488171C937700F75476 /* TTTUnifiedAddressBook.xcdatamodeld */; };
+		9594A4D9171C937700F75476 /* CALayer+TTTCrossfade.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594A48C171C937700F75476 /* CALayer+TTTCrossfade.m */; };
+		9594A4DA171C937700F75476 /* NSFetchedResultsController+TTTEasySections.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594A48F171C937700F75476 /* NSFetchedResultsController+TTTEasySections.m */; };
+		9594A4DB171C937700F75476 /* NSManagedObjectContext+TTTBatchManipulation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594A491171C937700F75476 /* NSManagedObjectContext+TTTBatchManipulation.m */; };
+		9594A4DC171C937700F75476 /* NSManagedObjectContext+TTTConvenience.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594A493171C937700F75476 /* NSManagedObjectContext+TTTConvenience.m */; };
+		9594A4DD171C937700F75476 /* NSManagedObjectContext+TTTUniquing.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594A495171C937700F75476 /* NSManagedObjectContext+TTTUniquing.m */; };
+		9594A4DE171C937700F75476 /* NSPredicate+TTTConvenience.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594A497171C937700F75476 /* NSPredicate+TTTConvenience.m */; };
+		9594A4DF171C937700F75476 /* TTTAbstractManagedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594A499171C937700F75476 /* TTTAbstractManagedObject.m */; };
+		9594A4E0171C937700F75476 /* TTCGUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594A49C171C937700F75476 /* TTCGUtils.m */; };
+		9594A4E1171C937700F75476 /* TTIntrospectProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594A4A0171C937700F75476 /* TTIntrospectProperty.m */; };
+		9594A4E2171C937700F75476 /* TTTInjectionMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594A4A3171C937700F75476 /* TTTInjectionMapping.m */; };
+		9594A4E3171C937700F75476 /* TTTInjector.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594A4A5171C937700F75476 /* TTTInjector.m */; };
+		9594A4E4171C937700F75476 /* NSArray+TTTMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594A4A8171C937700F75476 /* NSArray+TTTMapping.m */; };
+		9594A4E5171C937700F75476 /* NSArray+TTTVALists.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594A4AA171C937700F75476 /* NSArray+TTTVALists.m */; };
+		9594A4E6171C937700F75476 /* NSMutableDictionary+TTTUnless.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594A4AC171C937700F75476 /* NSMutableDictionary+TTTUnless.m */; };
+		9594A4E7171C937700F75476 /* NSObject+TTTBlocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594A4AE171C937700F75476 /* NSObject+TTTBlocks.m */; };
+		9594A4E8171C937700F75476 /* NSString+TTTEmptiness.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594A4B0171C937700F75476 /* NSString+TTTEmptiness.m */; };
+		9594A4E9171C937700F75476 /* NSString+TTTFormatting.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594A4B2171C937700F75476 /* NSString+TTTFormatting.m */; };
+		9594A4EA171C937700F75476 /* NSString+TTTURLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594A4B4171C937700F75476 /* NSString+TTTURLEncoding.m */; };
+		9594A4EB171C937700F75476 /* UIImage+TTTResizing.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594A4B7171C937700F75476 /* UIImage+TTTResizing.m */; };
+		9594A4EC171C937700F75476 /* UIView+TTTHitTesting.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594A4B9171C937700F75476 /* UIView+TTTHitTesting.m */; };
+		9594A4ED171C937700F75476 /* UIView+TTTLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594A4BB171C937700F75476 /* UIView+TTTLayout.m */; };
+		9594A4EE171C937700F75476 /* TTTLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594A4BE171C937700F75476 /* TTTLog.m */; };
+		9594A4EF171C937700F75476 /* TTTAsyncOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594A4C1171C937700F75476 /* TTTAsyncOperation.m */; };
+		9594A4F0171C937700F75476 /* TTTOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594A4C3171C937700F75476 /* TTTOperation.m */; };
+		9594A4F1171C937700F75476 /* TTTOperationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594A4C5171C937700F75476 /* TTTOperationCenter.m */; };
+		9594A4F2171C937700F75476 /* TTTAbstractPersistenceProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594A4C8171C937700F75476 /* TTTAbstractPersistenceProxy.m */; };
+		9594A4F3171C937700F75476 /* TTTTableViewItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594A4CB171C937700F75476 /* TTTTableViewItem.m */; };
+		9594A4F4171C937700F75476 /* TTTTableViewItemController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594A4CD171C937700F75476 /* TTTTableViewItemController.m */; };
+		9594A4F5171C937700F75476 /* TTTTableViewSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594A4CF171C937700F75476 /* TTTTableViewSection.m */; };
+		9594A4F6171C937700F75476 /* UITableViewCell+TTTCreation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594A4D1171C937700F75476 /* UITableViewCell+TTTCreation.m */; };
 		95DC8FB2167B26B200AF1428 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95DC8FB1167B26B200AF1428 /* Foundation.framework */; };
 		95DC8FB7167B26B200AF1428 /* TwelveTwentyToolkit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 95DC8FB6167B26B200AF1428 /* TwelveTwentyToolkit.h */; };
 		95DC8FC1167B26B200AF1428 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95DC8FC0167B26B200AF1428 /* SenTestingKit.framework */; };
@@ -76,48 +92,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		957297F416DD4D89002793D3 /* _TTCDLinkedRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _TTCDLinkedRecord.h; sourceTree = "<group>"; };
-		957297F516DD4D89002793D3 /* _TTCDLinkedRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _TTCDLinkedRecord.m; sourceTree = "<group>"; };
-		957297F616DD4D89002793D3 /* _TTCDUnifiedRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _TTCDUnifiedRecord.h; sourceTree = "<group>"; };
-		957297F716DD4D89002793D3 /* _TTCDUnifiedRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _TTCDUnifiedRecord.m; sourceTree = "<group>"; };
-		957297F816DD4D89002793D3 /* TTCDLinkedRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTCDLinkedRecord.h; sourceTree = "<group>"; };
-		957297F916DD4D89002793D3 /* TTCDLinkedRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTCDLinkedRecord.m; sourceTree = "<group>"; };
-		957297FA16DD4D89002793D3 /* TTCDUnifiedRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTCDUnifiedRecord.h; sourceTree = "<group>"; };
-		957297FB16DD4D89002793D3 /* TTCDUnifiedRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTCDUnifiedRecord.m; sourceTree = "<group>"; };
-		957297FC16DD4D89002793D3 /* generate_classes.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = generate_classes.sh; sourceTree = "<group>"; };
-		957297FD16DD4D89002793D3 /* TTUnifiedAddressBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTUnifiedAddressBook.h; sourceTree = "<group>"; };
-		957297FE16DD4D89002793D3 /* TTUnifiedAddressBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTUnifiedAddressBook.m; sourceTree = "<group>"; };
-		9572980016DD4D89002793D3 /* TTUnifiedAddressBook.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TTUnifiedAddressBook.xcdatamodel; sourceTree = "<group>"; };
-		9572980116DD4D89002793D3 /* TTUnifiedCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTUnifiedCard.h; sourceTree = "<group>"; };
-		9572980216DD4D89002793D3 /* TTUnifiedCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTUnifiedCard.m; sourceTree = "<group>"; };
-		9572980416DD4D89002793D3 /* TTCommander.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTCommander.h; sourceTree = "<group>"; };
-		9572980516DD4D89002793D3 /* TTCommander.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTCommander.m; sourceTree = "<group>"; };
-		9572980716DD4D89002793D3 /* NSArray+TTTVALists.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+TTTVALists.h"; sourceTree = "<group>"; };
-		9572980816DD4D89002793D3 /* NSArray+TTTVALists.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+TTTVALists.m"; sourceTree = "<group>"; };
-		9572980916DD4D89002793D3 /* NSManagedObject+TTFetchedResultsControllers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+TTFetchedResultsControllers.h"; sourceTree = "<group>"; };
-		9572980A16DD4D89002793D3 /* NSManagedObject+TTFetchedResultsControllers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+TTFetchedResultsControllers.m"; sourceTree = "<group>"; };
-		9572980B16DD4D89002793D3 /* NSManagedObjectContext+TTBatchManipulation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+TTBatchManipulation.h"; sourceTree = "<group>"; };
-		9572980C16DD4D89002793D3 /* NSManagedObjectContext+TTBatchManipulation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+TTBatchManipulation.m"; sourceTree = "<group>"; };
-		9572980D16DD4D89002793D3 /* NSManagedObjectContext+TTConvenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+TTConvenience.h"; sourceTree = "<group>"; };
-		9572980E16DD4D89002793D3 /* NSManagedObjectContext+TTConvenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+TTConvenience.m"; sourceTree = "<group>"; };
-		9572980F16DD4D89002793D3 /* NSManagedObjectContext+TTUniquing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+TTUniquing.h"; sourceTree = "<group>"; };
-		9572981016DD4D89002793D3 /* NSManagedObjectContext+TTUniquing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+TTUniquing.m"; sourceTree = "<group>"; };
-		9572981116DD4D89002793D3 /* NSPredicate+TTTConvenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSPredicate+TTTConvenience.h"; sourceTree = "<group>"; };
-		9572981216DD4D89002793D3 /* NSPredicate+TTTConvenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSPredicate+TTTConvenience.m"; sourceTree = "<group>"; };
-		9572981416DD4D89002793D3 /* TTCGUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTCGUtils.h; sourceTree = "<group>"; };
-		9572981516DD4D89002793D3 /* TTCGUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTCGUtils.m; sourceTree = "<group>"; };
-		9572981816DD4D89002793D3 /* TTIntrospectProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTIntrospectProperty.h; sourceTree = "<group>"; };
-		9572981916DD4D89002793D3 /* TTIntrospectProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTIntrospectProperty.m; sourceTree = "<group>"; };
-		9572981B16DD4D89002793D3 /* TTInjectionMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTInjectionMapping.h; sourceTree = "<group>"; };
-		9572981C16DD4D89002793D3 /* TTInjectionMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTInjectionMapping.m; sourceTree = "<group>"; };
-		9572981D16DD4D89002793D3 /* TTInjector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTInjector.h; sourceTree = "<group>"; };
-		9572981E16DD4D89002793D3 /* TTInjector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTInjector.m; sourceTree = "<group>"; };
-		9572982016DD4D89002793D3 /* TTTLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTLog.h; sourceTree = "<group>"; };
-		9572982116DD4D89002793D3 /* TTTLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTLog.m; sourceTree = "<group>"; };
-		9572982316DD4D89002793D3 /* TTAbstractPersistenceProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTAbstractPersistenceProxy.h; sourceTree = "<group>"; };
-		9572982416DD4D89002793D3 /* TTAbstractPersistenceProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTAbstractPersistenceProxy.m; sourceTree = "<group>"; };
-		9572982616DD4D89002793D3 /* UITableViewCell+TTCreation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+TTCreation.h"; sourceTree = "<group>"; };
-		9572982716DD4D89002793D3 /* UITableViewCell+TTCreation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+TTCreation.m"; sourceTree = "<group>"; };
 		95934FD7167B283E00E4ED39 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		95934FD9167B284800E4ED39 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		95934FDB167B285200E4ED39 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -141,6 +115,79 @@
 		95934FFF167B2D7F00E4ED39 /* TTTDISimpleSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTDISimpleSingleton.m; sourceTree = "<group>"; };
 		95935001167B318100E4ED39 /* TTTDIInjectableObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTDIInjectableObject.h; sourceTree = "<group>"; };
 		95935002167B318100E4ED39 /* TTTDIInjectableObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTDIInjectableObject.m; sourceTree = "<group>"; };
+		9594A47B171C937700F75476 /* _TTTCDLinkedRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _TTTCDLinkedRecord.h; sourceTree = "<group>"; };
+		9594A47C171C937700F75476 /* _TTTCDLinkedRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _TTTCDLinkedRecord.m; sourceTree = "<group>"; };
+		9594A47D171C937700F75476 /* _TTTCDUnifiedRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _TTTCDUnifiedRecord.h; sourceTree = "<group>"; };
+		9594A47E171C937700F75476 /* _TTTCDUnifiedRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _TTTCDUnifiedRecord.m; sourceTree = "<group>"; };
+		9594A47F171C937700F75476 /* TTTCDLinkedRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTCDLinkedRecord.h; sourceTree = "<group>"; };
+		9594A480171C937700F75476 /* TTTCDLinkedRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTCDLinkedRecord.m; sourceTree = "<group>"; };
+		9594A481171C937700F75476 /* TTTCDUnifiedRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTCDUnifiedRecord.h; sourceTree = "<group>"; };
+		9594A482171C937700F75476 /* TTTCDUnifiedRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTCDUnifiedRecord.m; sourceTree = "<group>"; };
+		9594A484171C937700F75476 /* TTTUnifiedAddressBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTUnifiedAddressBook.h; sourceTree = "<group>"; };
+		9594A485171C937700F75476 /* TTTUnifiedAddressBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTUnifiedAddressBook.m; sourceTree = "<group>"; };
+		9594A486171C937700F75476 /* TTTUnifiedCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTUnifiedCard.h; sourceTree = "<group>"; };
+		9594A487171C937700F75476 /* TTTUnifiedCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTUnifiedCard.m; sourceTree = "<group>"; };
+		9594A489171C937700F75476 /* TTTUnifiedAddressBook.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TTTUnifiedAddressBook.xcdatamodel; sourceTree = "<group>"; };
+		9594A48B171C937700F75476 /* CALayer+TTTCrossfade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+TTTCrossfade.h"; sourceTree = "<group>"; };
+		9594A48C171C937700F75476 /* CALayer+TTTCrossfade.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+TTTCrossfade.m"; sourceTree = "<group>"; };
+		9594A48E171C937700F75476 /* NSFetchedResultsController+TTTEasySections.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFetchedResultsController+TTTEasySections.h"; sourceTree = "<group>"; };
+		9594A48F171C937700F75476 /* NSFetchedResultsController+TTTEasySections.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFetchedResultsController+TTTEasySections.m"; sourceTree = "<group>"; };
+		9594A490171C937700F75476 /* NSManagedObjectContext+TTTBatchManipulation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+TTTBatchManipulation.h"; sourceTree = "<group>"; };
+		9594A491171C937700F75476 /* NSManagedObjectContext+TTTBatchManipulation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+TTTBatchManipulation.m"; sourceTree = "<group>"; };
+		9594A492171C937700F75476 /* NSManagedObjectContext+TTTConvenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+TTTConvenience.h"; sourceTree = "<group>"; };
+		9594A493171C937700F75476 /* NSManagedObjectContext+TTTConvenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+TTTConvenience.m"; sourceTree = "<group>"; };
+		9594A494171C937700F75476 /* NSManagedObjectContext+TTTUniquing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+TTTUniquing.h"; sourceTree = "<group>"; };
+		9594A495171C937700F75476 /* NSManagedObjectContext+TTTUniquing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+TTTUniquing.m"; sourceTree = "<group>"; };
+		9594A496171C937700F75476 /* NSPredicate+TTTConvenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSPredicate+TTTConvenience.h"; sourceTree = "<group>"; };
+		9594A497171C937700F75476 /* NSPredicate+TTTConvenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSPredicate+TTTConvenience.m"; sourceTree = "<group>"; };
+		9594A498171C937700F75476 /* TTTAbstractManagedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTAbstractManagedObject.h; sourceTree = "<group>"; };
+		9594A499171C937700F75476 /* TTTAbstractManagedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTAbstractManagedObject.m; sourceTree = "<group>"; };
+		9594A49B171C937700F75476 /* TTCGUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTCGUtils.h; sourceTree = "<group>"; };
+		9594A49C171C937700F75476 /* TTCGUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTCGUtils.m; sourceTree = "<group>"; };
+		9594A49F171C937700F75476 /* TTIntrospectProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTIntrospectProperty.h; sourceTree = "<group>"; };
+		9594A4A0171C937700F75476 /* TTIntrospectProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTIntrospectProperty.m; sourceTree = "<group>"; };
+		9594A4A2171C937700F75476 /* TTTInjectionMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTInjectionMapping.h; sourceTree = "<group>"; };
+		9594A4A3171C937700F75476 /* TTTInjectionMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTInjectionMapping.m; sourceTree = "<group>"; };
+		9594A4A4171C937700F75476 /* TTTInjector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTInjector.h; sourceTree = "<group>"; };
+		9594A4A5171C937700F75476 /* TTTInjector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTInjector.m; sourceTree = "<group>"; };
+		9594A4A7171C937700F75476 /* NSArray+TTTMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+TTTMapping.h"; sourceTree = "<group>"; };
+		9594A4A8171C937700F75476 /* NSArray+TTTMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+TTTMapping.m"; sourceTree = "<group>"; };
+		9594A4A9171C937700F75476 /* NSArray+TTTVALists.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+TTTVALists.h"; sourceTree = "<group>"; };
+		9594A4AA171C937700F75476 /* NSArray+TTTVALists.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+TTTVALists.m"; sourceTree = "<group>"; };
+		9594A4AB171C937700F75476 /* NSMutableDictionary+TTTUnless.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+TTTUnless.h"; sourceTree = "<group>"; };
+		9594A4AC171C937700F75476 /* NSMutableDictionary+TTTUnless.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+TTTUnless.m"; sourceTree = "<group>"; };
+		9594A4AD171C937700F75476 /* NSObject+TTTBlocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+TTTBlocks.h"; sourceTree = "<group>"; };
+		9594A4AE171C937700F75476 /* NSObject+TTTBlocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+TTTBlocks.m"; sourceTree = "<group>"; };
+		9594A4AF171C937700F75476 /* NSString+TTTEmptiness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+TTTEmptiness.h"; sourceTree = "<group>"; };
+		9594A4B0171C937700F75476 /* NSString+TTTEmptiness.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+TTTEmptiness.m"; sourceTree = "<group>"; };
+		9594A4B1171C937700F75476 /* NSString+TTTFormatting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+TTTFormatting.h"; sourceTree = "<group>"; };
+		9594A4B2171C937700F75476 /* NSString+TTTFormatting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+TTTFormatting.m"; sourceTree = "<group>"; };
+		9594A4B3171C937700F75476 /* NSString+TTTURLEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+TTTURLEncoding.h"; sourceTree = "<group>"; };
+		9594A4B4171C937700F75476 /* NSString+TTTURLEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+TTTURLEncoding.m"; sourceTree = "<group>"; };
+		9594A4B6171C937700F75476 /* UIImage+TTTResizing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+TTTResizing.h"; sourceTree = "<group>"; };
+		9594A4B7171C937700F75476 /* UIImage+TTTResizing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+TTTResizing.m"; sourceTree = "<group>"; };
+		9594A4B8171C937700F75476 /* UIView+TTTHitTesting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+TTTHitTesting.h"; sourceTree = "<group>"; };
+		9594A4B9171C937700F75476 /* UIView+TTTHitTesting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+TTTHitTesting.m"; sourceTree = "<group>"; };
+		9594A4BA171C937700F75476 /* UIView+TTTLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+TTTLayout.h"; sourceTree = "<group>"; };
+		9594A4BB171C937700F75476 /* UIView+TTTLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+TTTLayout.m"; sourceTree = "<group>"; };
+		9594A4BD171C937700F75476 /* TTTLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTLog.h; sourceTree = "<group>"; };
+		9594A4BE171C937700F75476 /* TTTLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTLog.m; sourceTree = "<group>"; };
+		9594A4C0171C937700F75476 /* TTTAsyncOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTAsyncOperation.h; sourceTree = "<group>"; };
+		9594A4C1171C937700F75476 /* TTTAsyncOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTAsyncOperation.m; sourceTree = "<group>"; };
+		9594A4C2171C937700F75476 /* TTTOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTOperation.h; sourceTree = "<group>"; };
+		9594A4C3171C937700F75476 /* TTTOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTOperation.m; sourceTree = "<group>"; };
+		9594A4C4171C937700F75476 /* TTTOperationCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTOperationCenter.h; sourceTree = "<group>"; };
+		9594A4C5171C937700F75476 /* TTTOperationCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTOperationCenter.m; sourceTree = "<group>"; };
+		9594A4C7171C937700F75476 /* TTTAbstractPersistenceProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTAbstractPersistenceProxy.h; sourceTree = "<group>"; };
+		9594A4C8171C937700F75476 /* TTTAbstractPersistenceProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTAbstractPersistenceProxy.m; sourceTree = "<group>"; };
+		9594A4CA171C937700F75476 /* TTTTableViewItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTTableViewItem.h; sourceTree = "<group>"; };
+		9594A4CB171C937700F75476 /* TTTTableViewItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTTableViewItem.m; sourceTree = "<group>"; };
+		9594A4CC171C937700F75476 /* TTTTableViewItemController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTTableViewItemController.h; sourceTree = "<group>"; };
+		9594A4CD171C937700F75476 /* TTTTableViewItemController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTTableViewItemController.m; sourceTree = "<group>"; };
+		9594A4CE171C937700F75476 /* TTTTableViewSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTTableViewSection.h; sourceTree = "<group>"; };
+		9594A4CF171C937700F75476 /* TTTTableViewSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTTableViewSection.m; sourceTree = "<group>"; };
+		9594A4D0171C937700F75476 /* UITableViewCell+TTTCreation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+TTTCreation.h"; sourceTree = "<group>"; };
+		9594A4D1171C937700F75476 /* UITableViewCell+TTTCreation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+TTTCreation.m"; sourceTree = "<group>"; };
 		95DC8FAE167B26B200AF1428 /* libTwelveTwentyToolkit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTwelveTwentyToolkit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		95DC8FB1167B26B200AF1428 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		95DC8FB5167B26B200AF1428 /* TwelveTwentyToolkit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TwelveTwentyToolkit-Prefix.pch"; sourceTree = "<group>"; };
@@ -180,136 +227,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		957297F116DD4D89002793D3 /* AddressBook */ = {
-			isa = PBXGroup;
-			children = (
-				957297F216DD4D89002793D3 /* Entities */,
-				957297FC16DD4D89002793D3 /* generate_classes.sh */,
-				957297FD16DD4D89002793D3 /* TTUnifiedAddressBook.h */,
-				957297FE16DD4D89002793D3 /* TTUnifiedAddressBook.m */,
-				957297FF16DD4D89002793D3 /* TTUnifiedAddressBook.xcdatamodeld */,
-				9572980116DD4D89002793D3 /* TTUnifiedCard.h */,
-				9572980216DD4D89002793D3 /* TTUnifiedCard.m */,
-			);
-			path = AddressBook;
-			sourceTree = "<group>";
-		};
-		957297F216DD4D89002793D3 /* Entities */ = {
-			isa = PBXGroup;
-			children = (
-				957297F316DD4D89002793D3 /* Abstract */,
-				957297F816DD4D89002793D3 /* TTCDLinkedRecord.h */,
-				957297F916DD4D89002793D3 /* TTCDLinkedRecord.m */,
-				957297FA16DD4D89002793D3 /* TTCDUnifiedRecord.h */,
-				957297FB16DD4D89002793D3 /* TTCDUnifiedRecord.m */,
-			);
-			path = Entities;
-			sourceTree = "<group>";
-		};
-		957297F316DD4D89002793D3 /* Abstract */ = {
-			isa = PBXGroup;
-			children = (
-				957297F416DD4D89002793D3 /* _TTCDLinkedRecord.h */,
-				957297F516DD4D89002793D3 /* _TTCDLinkedRecord.m */,
-				957297F616DD4D89002793D3 /* _TTCDUnifiedRecord.h */,
-				957297F716DD4D89002793D3 /* _TTCDUnifiedRecord.m */,
-			);
-			path = Abstract;
-			sourceTree = "<group>";
-		};
-		9572980316DD4D89002793D3 /* Commander */ = {
-			isa = PBXGroup;
-			children = (
-				9572980416DD4D89002793D3 /* TTCommander.h */,
-				9572980516DD4D89002793D3 /* TTCommander.m */,
-			);
-			path = Commander;
-			sourceTree = "<group>";
-		};
-		9572980616DD4D89002793D3 /* CoreData */ = {
-			isa = PBXGroup;
-			children = (
-				9572980716DD4D89002793D3 /* NSArray+TTTVALists.h */,
-				9572980816DD4D89002793D3 /* NSArray+TTTVALists.m */,
-				9572980916DD4D89002793D3 /* NSManagedObject+TTFetchedResultsControllers.h */,
-				9572980A16DD4D89002793D3 /* NSManagedObject+TTFetchedResultsControllers.m */,
-				9572980B16DD4D89002793D3 /* NSManagedObjectContext+TTBatchManipulation.h */,
-				9572980C16DD4D89002793D3 /* NSManagedObjectContext+TTBatchManipulation.m */,
-				9572980D16DD4D89002793D3 /* NSManagedObjectContext+TTConvenience.h */,
-				9572980E16DD4D89002793D3 /* NSManagedObjectContext+TTConvenience.m */,
-				9572980F16DD4D89002793D3 /* NSManagedObjectContext+TTUniquing.h */,
-				9572981016DD4D89002793D3 /* NSManagedObjectContext+TTUniquing.m */,
-				9572981116DD4D89002793D3 /* NSPredicate+TTTConvenience.h */,
-				9572981216DD4D89002793D3 /* NSPredicate+TTTConvenience.m */,
-			);
-			path = CoreData;
-			sourceTree = "<group>";
-		};
-		9572981316DD4D89002793D3 /* CoreGraphics */ = {
-			isa = PBXGroup;
-			children = (
-				9572981416DD4D89002793D3 /* TTCGUtils.h */,
-				9572981516DD4D89002793D3 /* TTCGUtils.m */,
-			);
-			path = CoreGraphics;
-			sourceTree = "<group>";
-		};
-		9572981616DD4D89002793D3 /* DependencyInjection */ = {
-			isa = PBXGroup;
-			children = (
-				9572981716DD4D89002793D3 /* Introspection */,
-				9572981A16DD4D89002793D3 /* Mappings */,
-				9572981D16DD4D89002793D3 /* TTInjector.h */,
-				9572981E16DD4D89002793D3 /* TTInjector.m */,
-			);
-			path = DependencyInjection;
-			sourceTree = "<group>";
-		};
-		9572981716DD4D89002793D3 /* Introspection */ = {
-			isa = PBXGroup;
-			children = (
-				9572981816DD4D89002793D3 /* TTIntrospectProperty.h */,
-				9572981916DD4D89002793D3 /* TTIntrospectProperty.m */,
-			);
-			path = Introspection;
-			sourceTree = "<group>";
-		};
-		9572981A16DD4D89002793D3 /* Mappings */ = {
-			isa = PBXGroup;
-			children = (
-				9572981B16DD4D89002793D3 /* TTInjectionMapping.h */,
-				9572981C16DD4D89002793D3 /* TTInjectionMapping.m */,
-			);
-			path = Mappings;
-			sourceTree = "<group>";
-		};
-		9572981F16DD4D89002793D3 /* Logging */ = {
-			isa = PBXGroup;
-			children = (
-				9572982016DD4D89002793D3 /* TTTLog.h */,
-				9572982116DD4D89002793D3 /* TTTLog.m */,
-			);
-			path = Logging;
-			sourceTree = "<group>";
-		};
-		9572982216DD4D89002793D3 /* Persistence */ = {
-			isa = PBXGroup;
-			children = (
-				9572982316DD4D89002793D3 /* TTAbstractPersistenceProxy.h */,
-				9572982416DD4D89002793D3 /* TTAbstractPersistenceProxy.m */,
-			);
-			path = Persistence;
-			sourceTree = "<group>";
-		};
-		9572982516DD4D89002793D3 /* Tables */ = {
-			isa = PBXGroup;
-			children = (
-				9572982616DD4D89002793D3 /* UITableViewCell+TTCreation.h */,
-				9572982716DD4D89002793D3 /* UITableViewCell+TTCreation.m */,
-			);
-			path = Tables;
-			sourceTree = "<group>";
-		};
 		95934FE3167B293A00E4ED39 /* CoreGraphics */ = {
 			isa = PBXGroup;
 			children = (
@@ -350,6 +267,188 @@
 			path = HelperClasses;
 			sourceTree = "<group>";
 		};
+		9594A478171C937700F75476 /* AddressBook */ = {
+			isa = PBXGroup;
+			children = (
+				9594A479171C937700F75476 /* Entities */,
+				9594A484171C937700F75476 /* TTTUnifiedAddressBook.h */,
+				9594A485171C937700F75476 /* TTTUnifiedAddressBook.m */,
+				9594A486171C937700F75476 /* TTTUnifiedCard.h */,
+				9594A487171C937700F75476 /* TTTUnifiedCard.m */,
+				9594A488171C937700F75476 /* TTTUnifiedAddressBook.xcdatamodeld */,
+			);
+			path = AddressBook;
+			sourceTree = "<group>";
+		};
+		9594A479171C937700F75476 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				9594A47A171C937700F75476 /* Abstract */,
+				9594A47F171C937700F75476 /* TTTCDLinkedRecord.h */,
+				9594A480171C937700F75476 /* TTTCDLinkedRecord.m */,
+				9594A481171C937700F75476 /* TTTCDUnifiedRecord.h */,
+				9594A482171C937700F75476 /* TTTCDUnifiedRecord.m */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		9594A47A171C937700F75476 /* Abstract */ = {
+			isa = PBXGroup;
+			children = (
+				9594A47B171C937700F75476 /* _TTTCDLinkedRecord.h */,
+				9594A47C171C937700F75476 /* _TTTCDLinkedRecord.m */,
+				9594A47D171C937700F75476 /* _TTTCDUnifiedRecord.h */,
+				9594A47E171C937700F75476 /* _TTTCDUnifiedRecord.m */,
+			);
+			path = Abstract;
+			sourceTree = "<group>";
+		};
+		9594A48A171C937700F75476 /* CoreAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				9594A48B171C937700F75476 /* CALayer+TTTCrossfade.h */,
+				9594A48C171C937700F75476 /* CALayer+TTTCrossfade.m */,
+			);
+			path = CoreAnimation;
+			sourceTree = "<group>";
+		};
+		9594A48D171C937700F75476 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				9594A48E171C937700F75476 /* NSFetchedResultsController+TTTEasySections.h */,
+				9594A48F171C937700F75476 /* NSFetchedResultsController+TTTEasySections.m */,
+				9594A490171C937700F75476 /* NSManagedObjectContext+TTTBatchManipulation.h */,
+				9594A491171C937700F75476 /* NSManagedObjectContext+TTTBatchManipulation.m */,
+				9594A492171C937700F75476 /* NSManagedObjectContext+TTTConvenience.h */,
+				9594A493171C937700F75476 /* NSManagedObjectContext+TTTConvenience.m */,
+				9594A494171C937700F75476 /* NSManagedObjectContext+TTTUniquing.h */,
+				9594A495171C937700F75476 /* NSManagedObjectContext+TTTUniquing.m */,
+				9594A496171C937700F75476 /* NSPredicate+TTTConvenience.h */,
+				9594A497171C937700F75476 /* NSPredicate+TTTConvenience.m */,
+				9594A498171C937700F75476 /* TTTAbstractManagedObject.h */,
+				9594A499171C937700F75476 /* TTTAbstractManagedObject.m */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		9594A49A171C937700F75476 /* CoreGraphics */ = {
+			isa = PBXGroup;
+			children = (
+				9594A49B171C937700F75476 /* TTCGUtils.h */,
+				9594A49C171C937700F75476 /* TTCGUtils.m */,
+			);
+			path = CoreGraphics;
+			sourceTree = "<group>";
+		};
+		9594A49D171C937700F75476 /* DependencyInjection */ = {
+			isa = PBXGroup;
+			children = (
+				9594A49E171C937700F75476 /* Introspection */,
+				9594A4A1171C937700F75476 /* Mappings */,
+				9594A4A4171C937700F75476 /* TTTInjector.h */,
+				9594A4A5171C937700F75476 /* TTTInjector.m */,
+			);
+			path = DependencyInjection;
+			sourceTree = "<group>";
+		};
+		9594A49E171C937700F75476 /* Introspection */ = {
+			isa = PBXGroup;
+			children = (
+				9594A49F171C937700F75476 /* TTIntrospectProperty.h */,
+				9594A4A0171C937700F75476 /* TTIntrospectProperty.m */,
+			);
+			path = Introspection;
+			sourceTree = "<group>";
+		};
+		9594A4A1171C937700F75476 /* Mappings */ = {
+			isa = PBXGroup;
+			children = (
+				9594A4A2171C937700F75476 /* TTTInjectionMapping.h */,
+				9594A4A3171C937700F75476 /* TTTInjectionMapping.m */,
+			);
+			path = Mappings;
+			sourceTree = "<group>";
+		};
+		9594A4A6171C937700F75476 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				9594A4A7171C937700F75476 /* NSArray+TTTMapping.h */,
+				9594A4A8171C937700F75476 /* NSArray+TTTMapping.m */,
+				9594A4A9171C937700F75476 /* NSArray+TTTVALists.h */,
+				9594A4AA171C937700F75476 /* NSArray+TTTVALists.m */,
+				9594A4AB171C937700F75476 /* NSMutableDictionary+TTTUnless.h */,
+				9594A4AC171C937700F75476 /* NSMutableDictionary+TTTUnless.m */,
+				9594A4AD171C937700F75476 /* NSObject+TTTBlocks.h */,
+				9594A4AE171C937700F75476 /* NSObject+TTTBlocks.m */,
+				9594A4AF171C937700F75476 /* NSString+TTTEmptiness.h */,
+				9594A4B0171C937700F75476 /* NSString+TTTEmptiness.m */,
+				9594A4B1171C937700F75476 /* NSString+TTTFormatting.h */,
+				9594A4B2171C937700F75476 /* NSString+TTTFormatting.m */,
+				9594A4B3171C937700F75476 /* NSString+TTTURLEncoding.h */,
+				9594A4B4171C937700F75476 /* NSString+TTTURLEncoding.m */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		9594A4B5171C937700F75476 /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				9594A4B6171C937700F75476 /* UIImage+TTTResizing.h */,
+				9594A4B7171C937700F75476 /* UIImage+TTTResizing.m */,
+				9594A4B8171C937700F75476 /* UIView+TTTHitTesting.h */,
+				9594A4B9171C937700F75476 /* UIView+TTTHitTesting.m */,
+				9594A4BA171C937700F75476 /* UIView+TTTLayout.h */,
+				9594A4BB171C937700F75476 /* UIView+TTTLayout.m */,
+			);
+			path = Layout;
+			sourceTree = "<group>";
+		};
+		9594A4BC171C937700F75476 /* Logging */ = {
+			isa = PBXGroup;
+			children = (
+				9594A4BD171C937700F75476 /* TTTLog.h */,
+				9594A4BE171C937700F75476 /* TTTLog.m */,
+			);
+			path = Logging;
+			sourceTree = "<group>";
+		};
+		9594A4BF171C937700F75476 /* OperationCenter */ = {
+			isa = PBXGroup;
+			children = (
+				9594A4C0171C937700F75476 /* TTTAsyncOperation.h */,
+				9594A4C1171C937700F75476 /* TTTAsyncOperation.m */,
+				9594A4C2171C937700F75476 /* TTTOperation.h */,
+				9594A4C3171C937700F75476 /* TTTOperation.m */,
+				9594A4C4171C937700F75476 /* TTTOperationCenter.h */,
+				9594A4C5171C937700F75476 /* TTTOperationCenter.m */,
+			);
+			path = OperationCenter;
+			sourceTree = "<group>";
+		};
+		9594A4C6171C937700F75476 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				9594A4C7171C937700F75476 /* TTTAbstractPersistenceProxy.h */,
+				9594A4C8171C937700F75476 /* TTTAbstractPersistenceProxy.m */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		9594A4C9171C937700F75476 /* Tables */ = {
+			isa = PBXGroup;
+			children = (
+				9594A4CA171C937700F75476 /* TTTTableViewItem.h */,
+				9594A4CB171C937700F75476 /* TTTTableViewItem.m */,
+				9594A4CC171C937700F75476 /* TTTTableViewItemController.h */,
+				9594A4CD171C937700F75476 /* TTTTableViewItemController.m */,
+				9594A4CE171C937700F75476 /* TTTTableViewSection.h */,
+				9594A4CF171C937700F75476 /* TTTTableViewSection.m */,
+				9594A4D0171C937700F75476 /* UITableViewCell+TTTCreation.h */,
+				9594A4D1171C937700F75476 /* UITableViewCell+TTTCreation.m */,
+			);
+			path = Tables;
+			sourceTree = "<group>";
+		};
 		95DC8FA3167B26B200AF1428 = {
 			isa = PBXGroup;
 			children = (
@@ -386,14 +485,17 @@
 		95DC8FB3167B26B200AF1428 /* TwelveTwentyToolkit */ = {
 			isa = PBXGroup;
 			children = (
-				957297F116DD4D89002793D3 /* AddressBook */,
-				9572980316DD4D89002793D3 /* Commander */,
-				9572980616DD4D89002793D3 /* CoreData */,
-				9572981316DD4D89002793D3 /* CoreGraphics */,
-				9572981616DD4D89002793D3 /* DependencyInjection */,
-				9572981F16DD4D89002793D3 /* Logging */,
-				9572982216DD4D89002793D3 /* Persistence */,
-				9572982516DD4D89002793D3 /* Tables */,
+				9594A478171C937700F75476 /* AddressBook */,
+				9594A48A171C937700F75476 /* CoreAnimation */,
+				9594A48D171C937700F75476 /* CoreData */,
+				9594A49A171C937700F75476 /* CoreGraphics */,
+				9594A49D171C937700F75476 /* DependencyInjection */,
+				9594A4A6171C937700F75476 /* Foundation */,
+				9594A4B5171C937700F75476 /* Layout */,
+				9594A4BC171C937700F75476 /* Logging */,
+				9594A4BF171C937700F75476 /* OperationCenter */,
+				9594A4C6171C937700F75476 /* Persistence */,
+				9594A4C9171C937700F75476 /* Tables */,
 				95DC8FB4167B26B200AF1428 /* Supporting Files */,
 				95DC8FB6167B26B200AF1428 /* TwelveTwentyToolkit.h */,
 			);
@@ -525,27 +627,43 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9572982816DD4D89002793D3 /* _TTCDLinkedRecord.m in Sources */,
-				9572982916DD4D89002793D3 /* _TTCDUnifiedRecord.m in Sources */,
-				9572982A16DD4D89002793D3 /* TTCDLinkedRecord.m in Sources */,
-				9572982B16DD4D89002793D3 /* TTCDUnifiedRecord.m in Sources */,
-				9572982C16DD4D89002793D3 /* TTUnifiedAddressBook.m in Sources */,
-				9572982D16DD4D89002793D3 /* TTUnifiedAddressBook.xcdatamodeld in Sources */,
-				9572982E16DD4D89002793D3 /* TTUnifiedCard.m in Sources */,
-				9572982F16DD4D89002793D3 /* TTCommander.m in Sources */,
-				9572983016DD4D89002793D3 /* NSArray+TTTVALists.m in Sources */,
-				9572983116DD4D89002793D3 /* NSManagedObject+TTFetchedResultsControllers.m in Sources */,
-				9572983216DD4D89002793D3 /* NSManagedObjectContext+TTBatchManipulation.m in Sources */,
-				9572983316DD4D89002793D3 /* NSManagedObjectContext+TTConvenience.m in Sources */,
-				9572983416DD4D89002793D3 /* NSManagedObjectContext+TTUniquing.m in Sources */,
-				9572983516DD4D89002793D3 /* NSPredicate+TTTConvenience.m in Sources */,
-				9572983616DD4D89002793D3 /* TTCGUtils.m in Sources */,
-				9572983716DD4D89002793D3 /* TTIntrospectProperty.m in Sources */,
-				9572983816DD4D89002793D3 /* TTInjectionMapping.m in Sources */,
-				9572983916DD4D89002793D3 /* TTInjector.m in Sources */,
-				9572983A16DD4D89002793D3 /* TTTLog.m in Sources */,
-				9572983B16DD4D89002793D3 /* TTAbstractPersistenceProxy.m in Sources */,
-				9572983C16DD4D89002793D3 /* UITableViewCell+TTCreation.m in Sources */,
+				9594A4D2171C937700F75476 /* _TTTCDLinkedRecord.m in Sources */,
+				9594A4D3171C937700F75476 /* _TTTCDUnifiedRecord.m in Sources */,
+				9594A4D4171C937700F75476 /* TTTCDLinkedRecord.m in Sources */,
+				9594A4D5171C937700F75476 /* TTTCDUnifiedRecord.m in Sources */,
+				9594A4D6171C937700F75476 /* TTTUnifiedAddressBook.m in Sources */,
+				9594A4D7171C937700F75476 /* TTTUnifiedCard.m in Sources */,
+				9594A4D8171C937700F75476 /* TTTUnifiedAddressBook.xcdatamodeld in Sources */,
+				9594A4D9171C937700F75476 /* CALayer+TTTCrossfade.m in Sources */,
+				9594A4DA171C937700F75476 /* NSFetchedResultsController+TTTEasySections.m in Sources */,
+				9594A4DB171C937700F75476 /* NSManagedObjectContext+TTTBatchManipulation.m in Sources */,
+				9594A4DC171C937700F75476 /* NSManagedObjectContext+TTTConvenience.m in Sources */,
+				9594A4DD171C937700F75476 /* NSManagedObjectContext+TTTUniquing.m in Sources */,
+				9594A4DE171C937700F75476 /* NSPredicate+TTTConvenience.m in Sources */,
+				9594A4DF171C937700F75476 /* TTTAbstractManagedObject.m in Sources */,
+				9594A4E0171C937700F75476 /* TTCGUtils.m in Sources */,
+				9594A4E1171C937700F75476 /* TTIntrospectProperty.m in Sources */,
+				9594A4E2171C937700F75476 /* TTTInjectionMapping.m in Sources */,
+				9594A4E3171C937700F75476 /* TTTInjector.m in Sources */,
+				9594A4E4171C937700F75476 /* NSArray+TTTMapping.m in Sources */,
+				9594A4E5171C937700F75476 /* NSArray+TTTVALists.m in Sources */,
+				9594A4E6171C937700F75476 /* NSMutableDictionary+TTTUnless.m in Sources */,
+				9594A4E7171C937700F75476 /* NSObject+TTTBlocks.m in Sources */,
+				9594A4E8171C937700F75476 /* NSString+TTTEmptiness.m in Sources */,
+				9594A4E9171C937700F75476 /* NSString+TTTFormatting.m in Sources */,
+				9594A4EA171C937700F75476 /* NSString+TTTURLEncoding.m in Sources */,
+				9594A4EB171C937700F75476 /* UIImage+TTTResizing.m in Sources */,
+				9594A4EC171C937700F75476 /* UIView+TTTHitTesting.m in Sources */,
+				9594A4ED171C937700F75476 /* UIView+TTTLayout.m in Sources */,
+				9594A4EE171C937700F75476 /* TTTLog.m in Sources */,
+				9594A4EF171C937700F75476 /* TTTAsyncOperation.m in Sources */,
+				9594A4F0171C937700F75476 /* TTTOperation.m in Sources */,
+				9594A4F1171C937700F75476 /* TTTOperationCenter.m in Sources */,
+				9594A4F2171C937700F75476 /* TTTAbstractPersistenceProxy.m in Sources */,
+				9594A4F3171C937700F75476 /* TTTTableViewItem.m in Sources */,
+				9594A4F4171C937700F75476 /* TTTTableViewItemController.m in Sources */,
+				9594A4F5171C937700F75476 /* TTTTableViewSection.m in Sources */,
+				9594A4F6171C937700F75476 /* UITableViewCell+TTTCreation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -721,13 +839,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		957297FF16DD4D89002793D3 /* TTUnifiedAddressBook.xcdatamodeld */ = {
+		9594A488171C937700F75476 /* TTTUnifiedAddressBook.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				9572980016DD4D89002793D3 /* TTUnifiedAddressBook.xcdatamodel */,
+				9594A489171C937700F75476 /* TTTUnifiedAddressBook.xcdatamodel */,
 			);
-			currentVersion = 9572980016DD4D89002793D3 /* TTUnifiedAddressBook.xcdatamodel */;
-			path = TTUnifiedAddressBook.xcdatamodeld;
+			currentVersion = 9594A489171C937700F75476 /* TTTUnifiedAddressBook.xcdatamodel */;
+			path = TTTUnifiedAddressBook.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

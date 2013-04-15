@@ -1,6 +1,6 @@
 // Copyright (c) 2012 Twelve Twenty (http://twelvetwenty.nl)
 //
-// Permission is hereby granted, free of charge, to any unifiedCard obtaining a copy
+// Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
 // in the Software without restriction, including without limitation the rights
 // to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
@@ -18,8 +18,24 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "_TTCDLinkedRecord.h"
+#import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
 
-@interface TTCDLinkedRecord : _TTCDLinkedRecord
-{}
+@interface NSManagedObjectContext (TTTUniquing)
+
+/**
+ finds or creates a unique NSManagedObject for the given key/value pair.
+ */
+- (id)tttUniqueEntityForName:(NSString *)name withValue:(id)value forKey:(NSString *)key;
+
+/**
+ find one existing entity for the given key/value pair
+ */
+- (id)tttExistingEntityForName:(NSString *)name withValue:(id)value forKey:(NSString *)key;
+
+/**
+ finds or creates a unique NSManagedObject for the given key/value pair and gives feedback on whether it existed or not
+ */
+- (id)tttUniqueEntityForName:(NSString *)name withValue:(id)value forKey:(NSString *)key existed:(BOOL *)existed;
+
 @end

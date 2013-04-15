@@ -23,25 +23,25 @@
 
 enum {TTDeleteFailed = -1};
 
-@interface NSManagedObjectContext (TTBatchManipulation)
+@interface NSManagedObjectContext (TTTBatchManipulation)
 
 /**
  * Fetches all entities of a certain name with a simple sort option.
  */
-- (NSArray *)allEntitiesNamed:(NSString *)entityName sortedByKey:(NSString *)sortKey ascending:(BOOL)ascending;
+- (NSArray *)tttAllEntitiesNamed:(NSString *)entityName sortedByKey:(NSString *)sortKey ascending:(BOOL)ascending;
 
 /**
  * Set one value on all entities of a certain entity.
  * returns YES if successful, NO if not, provides the Core Data error.
  */
-- (BOOL)setValue:(id)value forKey:(NSString *)key onEntitiesWithName:(NSString *)entityName error:(NSError **)error;
+- (BOOL)tttSetValue:(id)value forKey:(NSString *)key onEntitiesWithName:(NSString *)entityName error:(NSError **)error;
 
 /**
  * Delete all entities matching the value for key provided.
  * returns a count of 0 or higher records deleted, or
  */
-- (NSInteger)deleteEntitiesNamed:(NSString *)entityName withValue:(id)value forKey:(NSString *)key error:(NSError **)error;
+- (NSInteger)tttDeleteEntitiesNamed:(NSString *)entityName withValue:(id)value forKey:(NSString *)key error:(NSError **)error;
 
-- (NSInteger)deleteAllEntitiesNamed:(NSString *)entityName error:(NSError **)error;
+- (NSInteger)tttDeleteAllEntitiesNamed:(NSString *)entityName error:(NSError **)error;
 
 @end

@@ -2,7 +2,7 @@
 
 @implementation NSString (TTTFormatting)
 
-- (NSString *)formattedWith:(NSString *)arguments, ...
+- (NSString *)tttFormattedWith:(NSString *)arguments, ...
 {
     va_list list;
     va_start(list, arguments);

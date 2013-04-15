@@ -1,5 +1,5 @@
 // DO NOT EDIT. This file is machine-generated and constantly overwritten.
-// Make changes to TTCDLinkedRecord.h instead.
+// Make changes to TTTCDLinkedRecord.h instead.
 
 #import <CoreData/CoreData.h>
 
@@ -15,14 +15,14 @@ extern const struct TTCDLinkedRecordRelationships {
 extern const struct TTCDLinkedRecordFetchedProperties {
 } TTCDLinkedRecordFetchedProperties;
 
-@class TTCDUnifiedRecord;
+@class TTTCDUnifiedRecord;
 
 
 
 @interface TTCDLinkedRecordID : NSManagedObjectID {}
 @end
 
-@interface _TTCDLinkedRecord : NSManagedObject {}
+@interface _TTTCDLinkedRecord : NSManagedObject {}
 + (id)insertInManagedObjectContext:(NSManagedObjectContext*)moc_;
 + (NSString*)entityName;
 + (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
@@ -44,7 +44,7 @@ extern const struct TTCDLinkedRecordFetchedProperties {
 
 
 
-@property (nonatomic, strong) TTCDUnifiedRecord* unifiedRecord;
+@property (nonatomic, strong) TTTCDUnifiedRecord * unifiedRecord;
 
 //- (BOOL)validateUnifiedRecord:(id*)value_ error:(NSError**)error_;
 
@@ -54,11 +54,11 @@ extern const struct TTCDLinkedRecordFetchedProperties {
 
 @end
 
-@interface _TTCDLinkedRecord (CoreDataGeneratedAccessors)
+@interface _TTTCDLinkedRecord (CoreDataGeneratedAccessors)
 
 @end
 
-@interface _TTCDLinkedRecord (CoreDataGeneratedPrimitiveAccessors)
+@interface _TTTCDLinkedRecord (CoreDataGeneratedPrimitiveAccessors)
 
 
 - (NSNumber*)primitiveRecordID;
@@ -71,8 +71,8 @@ extern const struct TTCDLinkedRecordFetchedProperties {
 
 
 
-- (TTCDUnifiedRecord*)primitiveUnifiedRecord;
-- (void)setPrimitiveUnifiedRecord:(TTCDUnifiedRecord*)value;
+- (TTTCDUnifiedRecord *)primitiveUnifiedRecord;
+- (void)setPrimitiveUnifiedRecord:(TTTCDUnifiedRecord *)value;
 
 
 @end

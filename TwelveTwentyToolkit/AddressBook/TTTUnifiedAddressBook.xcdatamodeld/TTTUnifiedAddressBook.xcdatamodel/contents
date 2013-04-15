@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1811" systemVersion="12C54" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="LinkedRecord" representedClassName="TTCDLinkedRecord" syncable="YES">
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2061" systemVersion="12D78" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="LinkedRecord" representedClassName="TTTCDLinkedRecord" syncable="YES">
         <attribute name="recordID" optional="YES" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
         <relationship name="unifiedRecord" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="UnifiedRecord" inverseName="linkedRecord" inverseEntity="UnifiedRecord" syncable="YES"/>
     </entity>
-    <entity name="UnifiedRecord" representedClassName="TTCDUnifiedRecord" syncable="YES">
+    <entity name="UnifiedRecord" representedClassName="TTTCDUnifiedRecord" syncable="YES">
         <attribute name="position" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="recordID" optional="YES" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
         <attribute name="sortFieldFirstName" optional="YES" attributeType="String" syncable="YES"/>
@@ -12,7 +12,7 @@
         <relationship name="linkedRecord" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="LinkedRecord" inverseName="unifiedRecord" inverseEntity="LinkedRecord" syncable="YES"/>
     </entity>
     <elements>
-        <element name="LinkedRecord" positionX="126" positionY="207" width="128" height="73"/>
-        <element name="UnifiedRecord" positionX="-83" positionY="204" width="128" height="118"/>
+        <element name="LinkedRecord" positionX="126" positionY="207" width="128" height="75"/>
+        <element name="UnifiedRecord" positionX="-83" positionY="204" width="128" height="120"/>
     </elements>
 </model>

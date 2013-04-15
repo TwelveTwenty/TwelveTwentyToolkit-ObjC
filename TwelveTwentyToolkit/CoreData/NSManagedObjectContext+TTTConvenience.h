@@ -18,44 +18,19 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "NSManagedObjectContext+TTConvenience.h"
-#import "TTTLog.h"
+#import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
 
+@interface NSManagedObjectContext (TTTConvenience)
 
-@implementation NSManagedObjectContext (TTConvenience)
+/**
+ Saves the context and logs an error message when it fails.
+ */
+- (NSError *)tttSimpleSave;
 
-- (NSError *)simpleSave
-{
-    NSError *error = nil;
-
-    if ([self save:&error]) {
-		DLog(@"Context saved.");
-        return nil;
-    }
-
-	ELog(@"Error saving context due to %i: \"%@\" with user info: %@", error.code, [error.userInfo objectForKey:NSLocalizedDescriptionKey], error.userInfo);
-    return error;
-}
-
-- (void)printChanges
-{
-    if (![self hasChanges])
-    {
-		DLog(@"No changes on context %@", self);
-        return;
-    }
-
-	DLog(@"Changes on context %@", self);
-    NSArray *keys = [NSArray arrayWithObjects:@"updatedObjects", @"insertedObjects", @"deletedObjects", @"registeredObjects", nil];
-    for (NSString *key in keys) {
-        NSSet *objects = [self valueForKey:key];
-        if (![objects count]) continue;
-
-		DLog(@"%@:", [key uppercaseString]);
-        for (NSManagedObject *object in [self updatedObjects]) {
-            NSLog(@"\t%@: %@", [object class], [object changedValues]);
-        }
-    }
-}
+/**
+ Outputs the state of changes to the console.
+ */
+- (void)tttPrintChanges;
 
 @end

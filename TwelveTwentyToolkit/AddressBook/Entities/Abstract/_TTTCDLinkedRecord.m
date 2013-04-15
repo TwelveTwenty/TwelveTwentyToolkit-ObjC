@@ -1,7 +1,7 @@
 // DO NOT EDIT. This file is machine-generated and constantly overwritten.
-// Make changes to TTCDLinkedRecord.m instead.
+// Make changes to TTTCDLinkedRecord.m instead.
 
-#import "_TTCDLinkedRecord.h"
+#import "_TTTCDLinkedRecord.h"
 
 const struct TTCDLinkedRecordAttributes TTCDLinkedRecordAttributes = {
 	.recordID = @"recordID",
@@ -17,7 +17,7 @@ const struct TTCDLinkedRecordFetchedProperties TTCDLinkedRecordFetchedProperties
 @implementation TTCDLinkedRecordID
 @end
 
-@implementation _TTCDLinkedRecord
+@implementation _TTTCDLinkedRecord
 
 + (id)insertInManagedObjectContext:(NSManagedObjectContext*)moc_ {
 	NSParameterAssert(moc_);

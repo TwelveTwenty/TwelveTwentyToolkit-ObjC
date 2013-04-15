@@ -18,12 +18,12 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "NSManagedObjectContext+TTBatchManipulation.h"
+#import "NSManagedObjectContext+TTTBatchManipulation.h"
 #import "NSPredicate+TTTConvenience.h"
 
-@implementation NSManagedObjectContext (TTBatchManipulation)
+@implementation NSManagedObjectContext (TTTBatchManipulation)
 
-- (NSArray *)allEntitiesNamed:(NSString *)entityName sortedByKey:(NSString *)sortKey ascending:(BOOL)ascending
+- (NSArray *)tttAllEntitiesNamed:(NSString *)entityName sortedByKey:(NSString *)sortKey ascending:(BOOL)ascending
 {
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
 
@@ -48,7 +48,7 @@
 }
 
 
-- (BOOL)setValue:(id)value forKey:(NSString *)key onEntitiesWithName:(NSString *)entityName error:(NSError **)error
+- (BOOL)tttSetValue:(id)value forKey:(NSString *)key onEntitiesWithName:(NSString *)entityName error:(NSError **)error
 {
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:entityName];
     NSArray *results = [self executeFetchRequest:request error:error];
@@ -62,10 +62,10 @@
     return YES;
 }
 
-- (NSInteger)deleteEntitiesNamed:(NSString *)entityName withValue:(id)value forKey:(NSString *)key error:(NSError **)error
+- (NSInteger)tttDeleteEntitiesNamed:(NSString *)entityName withValue:(id)value forKey:(NSString *)key error:(NSError **)error
 {
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:entityName];
-    request.predicate = [NSPredicate predicateWithComplexFormat:@"%@ = %%@" innerArguments:@[key] outerArguments:@[value]];
+    request.predicate = [NSPredicate tttPredicateWithComplexFormat:@"%@ = %%@" innerArguments:@[key] outerArguments:@[value]];
     NSArray *results = [self executeFetchRequest:request error:error];
     if (!results)
     {
@@ -81,7 +81,7 @@
     return count;
 }
 
-- (NSInteger)deleteAllEntitiesNamed:(NSString *)entityName error:(NSError **)error
+- (NSInteger)tttDeleteAllEntitiesNamed:(NSString *)entityName error:(NSError **)error
 {
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:entityName];
     NSArray *results = [self executeFetchRequest:request error:error];

@@ -2,6 +2,6 @@
 
 @interface NSArray (TTTVALists)
 
-- (va_list)toVAList;
+- (va_list)tttToVAList;
 
 @end

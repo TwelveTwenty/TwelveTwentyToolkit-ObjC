@@ -1,6 +1,5 @@
 #import "TTTTableViewSection.h"
 #import "TTTTableViewItem.h"
-#import "IZOTableSectionView.h"
 
 @interface TTTTableViewSection ()
 @property(nonatomic, strong) NSMutableArray *items;
