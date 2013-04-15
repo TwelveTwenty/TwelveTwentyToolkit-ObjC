@@ -1,17 +1,21 @@
 Pod::Spec.new do |s|
   s.name         = 'TwelveTwentyToolkit'
-  s.version      = '0.1.2'
+  s.version      = '0.1.3'
   s.summary      = 'The Twelve Twenty Toolkit of reusable Objective-C classes.'
   s.homepage     = 'http://twelvetwenty.nl'
   s.license      = 'MIT'
   s.author       = { 'Eric-Paul Lecluse' => 'epologee@gmail.com', 'Jankees van Woezik' => 'jankeesvw@gmail.com' }
-  s.source       = { :git => 'https://github.com/TwelveTwenty/TwelveTwentyToolkit-ObjC.git', :tag => '0.1.2' }
+  s.source       = { :git => 'https://github.com/TwelveTwenty/TwelveTwentyToolkit-ObjC.git', :tag => '0.1.3' }
   s.platform     = :ios, '5.1'
-  s.source_files = 'TwelveTwentyToolkit/TwelveTwentyToolkit.h'
   s.requires_arc = true
   
-  s.subspec 'Foundation' do |lg|
-    lg.source_files = 'TwelveTwentyToolkit/Foundation/**/*.{h,m}'
+  s.subspec 'Core' do |c|
+    c.source_files = 'TwelveTwentyToolkit/TwelveTwentyToolkit.h'
+  end
+  
+  s.subspec 'Foundation' do |fn|
+    fn.dependency 'TwelveTwentyToolkit/Core'
+    fn.source_files = 'TwelveTwentyToolkit/Foundation/**/*.{h,m}'
   end
 
   s.subspec 'Logging' do |lg|
@@ -21,6 +25,7 @@ Pod::Spec.new do |s|
   
   s.subspec 'CoreGraphics' do |cg|
     cg.frameworks = 'UIKit','QuartzCore'
+    cg.dependency 'TwelveTwentyToolkit/Foundation'
     cg.source_files = 'TwelveTwentyToolkit/CoreGraphics/*.{h,m}'
   end
   
