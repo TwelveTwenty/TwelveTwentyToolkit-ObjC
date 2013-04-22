@@ -59,6 +59,17 @@ typedef enum
 	}
 
 	free(list);
+    
+    Class superClass = class_getSuperclass( introspectClass );
+    if ( superClass != nil && ! [superClass isEqual:[NSObject class]] )
+    {
+        NSArray *superProperties = [self propertiesOfClass:superClass];
+        if ([superProperties count])
+        {
+            [properties addObjectsFromArray:superProperties];
+        }
+    }
+    
 	return properties;
 }
 
