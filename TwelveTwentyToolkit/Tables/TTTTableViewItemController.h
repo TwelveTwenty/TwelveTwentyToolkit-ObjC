@@ -8,10 +8,9 @@
 
 typedef enum
 {
-    TTTTableViewSectionPositionNone,
-    TTTTableViewSectionPositionTop,
-    TTTTableViewSectionPositionMiddle,
-    TTTTableViewSectionPositionBottom
+    TTTTableViewSectionPositionNone = 0,
+    TTTTableViewSectionPositionTop = 1 << 0,
+    TTTTableViewSectionPositionBottom = 1 << 1
 } TTTTableViewSectionPosition;
 
 @interface TTTTableViewItemController : NSObject <UITableViewDataSource, UITableViewDelegate>

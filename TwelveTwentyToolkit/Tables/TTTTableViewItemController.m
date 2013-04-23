@@ -117,18 +117,19 @@ typedef enum
 
     if ([cell conformsToProtocol:@protocol(TTTGroupedTableViewCell)])
     {
+        TTTTableViewSectionPosition position = TTTTableViewSectionPositionNone;
+
         if (indexPath.row == 0)
         {
-            [(id <TTTGroupedTableViewCell>) cell setPositionInSection:TTTTableViewSectionPositionTop];
+            position |= TTTTableViewSectionPositionTop;
         }
-        else if (indexPath.row == [self tableView:tableView numberOfRowsInSection:indexPath.section] - 1)
+
+        if (indexPath.row == [self tableView:tableView numberOfRowsInSection:indexPath.section] - 1)
         {
-            [(id <TTTGroupedTableViewCell>) cell setPositionInSection:TTTTableViewSectionPositionBottom];
+            position |= TTTTableViewSectionPositionBottom;
         }
-        else
-        {
-            [(id <TTTGroupedTableViewCell>) cell setPositionInSection:TTTTableViewSectionPositionMiddle];
-        }
+
+        [(id <TTTGroupedTableViewCell>) cell setPositionInSection:position];
     }
 
     return cell;
