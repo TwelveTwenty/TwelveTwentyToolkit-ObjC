@@ -65,7 +65,36 @@
 - (NSInteger)tttDeleteEntitiesNamed:(NSString *)entityName withValue:(id)value forKey:(NSString *)key error:(NSError **)error
 {
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:entityName];
-    request.predicate = [NSPredicate tttPredicateWithComplexFormat:@"%@ = %%@" innerArguments:@[key] outerArguments:@[value]];
+    request.predicate = [NSPredicate tttPredicateWithComplexFormat:@"%@ == %%@" innerArguments:@[key] outerArguments:@[value]];
+    NSArray *results = [self executeFetchRequest:request error:error];
+    if (!results)
+    {
+        return TTDeleteFailed;
+    }
+
+    NSUInteger count = [results count];
+    for (NSManagedObject *object in results)
+    {
+        [self deleteObject:object];
+    }
+
+    return count;
+}
+
+- (NSInteger)tttDeleteEntitiesNamed:(NSString *)entityName withNoRelationshipForKey:(NSString *)key error:(NSError **)error
+{
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:entityName];
+    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:entityName inManagedObjectContext:self];
+    NSRelationshipDescription *relationshipDescription = entityDescription.relationshipsByName[key];
+    if (relationshipDescription.isToMany)
+    {
+        request.predicate = [NSPredicate tttPredicateWithComplexFormat:@"%@ == nil || %@.@count == 0" innerArguments:@[key, key] outerArguments:nil];
+    }
+    else
+    {
+        request.predicate = [NSPredicate tttPredicateWithComplexFormat:@"%@ == nil" innerArguments:@[key] outerArguments:nil];
+    }
+
     NSArray *results = [self executeFetchRequest:request error:error];
     if (!results)
     {

@@ -21,29 +21,12 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-enum {TTDeleteFailed = -1};
+@interface NSManagedObject (TTTUniquing)
 
-@interface NSManagedObjectContext (TTTBatchManipulation)
++ (id)tttExistingEntityWithValue:(id)value forKey:(NSString *)key inContext:(NSManagedObjectContext *)context;
 
-/**
- * Fetches all entities of a certain name with a simple sort option.
- */
-- (NSArray *)tttAllEntitiesNamed:(NSString *)entityName sortedByKey:(NSString *)sortKey ascending:(BOOL)ascending;
++ (id)tttUniqueEntityWithValue:(id)value forKey:(NSString *)key inContext:(NSManagedObjectContext *)context;
 
-/**
- * Set one value on all entities of a certain entity.
- * returns YES if successful, NO if not, provides the Core Data error.
- */
-- (BOOL)tttSetValue:(id)value forKey:(NSString *)key onEntitiesWithName:(NSString *)entityName error:(NSError **)error;
-
-/**
- * Delete all entities matching the value for key provided.
- * returns a count of 0 or higher records deleted, or
- */
-- (NSInteger)tttDeleteEntitiesNamed:(NSString *)entityName withValue:(id)value forKey:(NSString *)key error:(NSError **)error;
-
-- (NSInteger)tttDeleteEntitiesNamed:(NSString *)entityName withNoRelationshipForKey:(NSString *)key error:(NSError **)error;
-
-- (NSInteger)tttDeleteAllEntitiesNamed:(NSString *)entityName error:(NSError **)error;
++ (id)tttUniqueEntityWithValue:(id)value forKey:(NSString *)key inContext:(NSManagedObjectContext *)context existed:(BOOL *)existed;
 
 @end

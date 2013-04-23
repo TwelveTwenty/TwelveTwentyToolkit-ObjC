@@ -10,6 +10,8 @@
 
 + (NSFetchRequest *)tttFetchRequestWithSortingKeys:(NSDictionary *)sortingKeysWithAscendingFlag;
 
++ (id)insertInManagedObjectContext:(NSManagedObjectContext*)moc;
+
 + (NSString *)entityName;
 
 @end
