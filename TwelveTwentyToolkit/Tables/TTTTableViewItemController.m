@@ -10,6 +10,7 @@ typedef enum
     TTTDelegateOptionWillDisplayCell = 1 << 1,
     TTTDelegateOptionDidEndDisplayingCell = 1 << 2,
     TTTDelegateOptionViewForHeaderInSection = 1 << 3,
+    TTTDelegateOptionScrollViewDidScroll = 1 << 4
 } TTTDelegateOption;
 
 @interface TTTTableViewItemController ()
@@ -59,6 +60,11 @@ typedef enum
     {
         self.delegateOptions |= TTTDelegateOptionViewForHeaderInSection;
     }
+
+    if ([_relayDelegate respondsToSelector:@selector(scrollViewDidScroll:)])
+    {
+        self.delegateOptions |= TTTDelegateOptionScrollViewDidScroll;
+    }
 }
 
 - (TTTTableViewSection *)sectionAtIndex:(NSInteger)index
@@ -78,7 +84,7 @@ typedef enum
 
 - (TTTTableViewItem *)itemAtIndexPath:(NSIndexPath *)indexPath
 {
-    TTTTableViewSection *section = [self sectionAtIndex:(NSUInteger)indexPath.section];
+    TTTTableViewSection *section = [self sectionAtIndex:(NSUInteger) indexPath.section];
     return [section itemAtIndex:(NSUInteger) indexPath.row];
 }
 
@@ -137,7 +143,26 @@ typedef enum
     }
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    CGFloat headerHeight = [[self sectionAtIndex:section] headerHeight];
+    return headerHeight >= 0 ? headerHeight : tableView.sectionHeaderHeight;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    return [self sectionAtIndex:section].title;
+}
+
 #pragma mark - Relay delegate methods
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    if (self.delegateOptions & TTTDelegateOptionScrollViewDidScroll)
+    {
+        [self.relayDelegate scrollViewDidScroll:scrollView];
+    }
+}
 
 - (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView
 {
@@ -149,7 +174,12 @@ typedef enum
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (self.delegateOptions & TTTDelegateOptionWillDisplayCell)
+    TTTTableViewItem *item = [self itemAtIndexPath:indexPath];
+    if (item.willDisplayBlock)
+    {
+        item.willDisplayBlock(item, cell, indexPath);
+    }
+    else if (self.delegateOptions & TTTDelegateOptionWillDisplayCell)
     {
         [self.relayDelegate tableView:tableView willDisplayCell:cell forRowAtIndexPath:indexPath];
     }
@@ -157,7 +187,12 @@ typedef enum
 
 - (void)tableView:(UITableView *)tableView didEndDisplayingCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (self.delegateOptions & TTTDelegateOptionDidEndDisplayingCell)
+    TTTTableViewItem *item = [self itemAtIndexPath:indexPath];
+    if (item.didEndDisplayingBlock)
+    {
+        item.didEndDisplayingBlock(item, cell, indexPath);
+    }
+    else if (self.delegateOptions & TTTDelegateOptionDidEndDisplayingCell)
     {
         [self.relayDelegate tableView:tableView didEndDisplayingCell:cell forRowAtIndexPath:indexPath];
     }
@@ -176,14 +211,6 @@ typedef enum
     }
 
     return nil;
-}
-
-#pragma mark - Relay data source methods
-
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
-{
-    TTTTableViewSection *s = [self sectionAtIndex:section];
-    return s.title;
 }
 
 @end

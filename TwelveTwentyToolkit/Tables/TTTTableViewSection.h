@@ -15,14 +15,18 @@ typedef UIView *(^TTTHeaderViewBlock)(UITableView *tableView, TTTTableViewSectio
 
 @property(nonatomic, copy) TTTHeaderViewBlock headerViewBlock;
 
+@property (nonatomic) CGFloat headerHeight;
+
 - (id)initWithIndex:(NSInteger)index;
+
 - (id)init UNAVAILABLE_ATTRIBUTE;
 
 - (NSUInteger)count;
 
-- (NSIndexPath *)addItem:(TTTTableViewItem *)item;
+- (TTTTableViewItem *)addItem:(TTTTableViewItem *)item;
 
 - (TTTTableViewItem *)itemAtIndex:(NSInteger)index;
 
 - (void)addItems:(NSArray *)array;
+
 @end

@@ -15,6 +15,7 @@
     {
         self.index = index;
         self.items = [NSMutableArray array];
+        self.headerHeight = -1;
     }
 
     return self;
@@ -25,10 +26,11 @@
     return [self.items count];
 }
 
-- (NSIndexPath *)addItem:(TTTTableViewItem *)item
+- (TTTTableViewItem *)addItem:(TTTTableViewItem *)item
 {
     [self.items addObject:item];
-    return [NSIndexPath indexPathForRow:[self.items count] - 1 inSection:self.index];
+    item.indexPath = [NSIndexPath indexPathForRow:[self.items count] - 1 inSection:self.index]; 
+    return item;
 }
 
 - (TTTTableViewItem *)itemAtIndex:(NSInteger)index
