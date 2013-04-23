@@ -16,9 +16,10 @@
     return self;
 }
 
-- (void)queue
+- (id)queue
 {
     [[TTTOperationCenter defaultCenter] queueOperation:self];
+    return self;
 }
 
 - (void)main

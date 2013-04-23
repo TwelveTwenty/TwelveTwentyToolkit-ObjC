@@ -64,6 +64,12 @@
 
 - (void)dispatchFeedback:(TTTFeedbackBlock)feedback withSuccess:(BOOL)success context:(id)context error:(NSError *)error
 {
+    if (self.isCancelled)
+    {
+        DLog(@"Operation cancelled.");
+        return;
+    }
+
     if (!success)
     {
         NSAssert(error != nil, @"If success is NO, you must provide an error");

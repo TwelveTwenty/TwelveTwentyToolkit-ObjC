@@ -5,7 +5,7 @@
 
 @property(nonatomic) BOOL requiresMainThread;
 
-- (void)queue;
+- (id)queue;
 
 - (void)execute OVERRIDE_ATTRIBUTE;
 
