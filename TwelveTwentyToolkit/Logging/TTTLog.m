@@ -20,7 +20,7 @@
 
 #import "TTTLog.h"
 
-int kLogLevel = LOG_LEVEL;
+int kTTTLogLevel = TTT_LOG_LEVEL;
 
 void QuietLog (NSString *format, ...) {
     if (format == nil) {
