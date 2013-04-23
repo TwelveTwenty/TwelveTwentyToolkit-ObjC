@@ -57,12 +57,22 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *key = [NSString stringWithFormat:@"%@-%@", TT_PERSISTENCE_THRESHOLD_KEY, self.storeURL.lastPathComponent];
     BOOL reset = (resetThreshold != [defaults integerForKey:key]);
-    if (reset && [[NSFileManager defaultManager] fileExistsAtPath:self.storeURL.path])
+    if (reset)
+    {
+        [self performResetWithThreshold:resetThreshold];
+    }
+}
+
+- (void)performResetWithThreshold:(int)resetThreshold
+{
+    if ([[NSFileManager defaultManager] fileExistsAtPath:self.storeURL.path])
     {
         NSError *error = nil;
         if ([[NSFileManager defaultManager] removeItemAtURL:self.storeURL error:&error])
         {
             ILog(@"Reset store %@", self.storeURL);
+            NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+            NSString *key = [NSString stringWithFormat:@"%@-%@", TT_PERSISTENCE_THRESHOLD_KEY, self.storeURL.lastPathComponent];
             [defaults setInteger:resetThreshold forKey:key];
             [defaults synchronize];
         }

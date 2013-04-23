@@ -17,6 +17,8 @@
 
 - (id)init UNAVAILABLE_ATTRIBUTE;
 
+- (void)performResetWithThreshold:(int)resetThreshold;
+
 - (NSManagedObjectContext *)newPrivateContext;
 
 - (void)saveToDisk;
