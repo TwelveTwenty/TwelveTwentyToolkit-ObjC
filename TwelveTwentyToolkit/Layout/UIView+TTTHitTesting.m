@@ -1,18 +1,10 @@
-//
-//  UIView+Reusabilitee.m
-//  wowcal
-//
-//  Created by Eric-Paul Lecluse on 21-10-11.
-//  Copyright (c) 2011 PINCH. All rights reserved.
-//
-
 #import "UIView+TTTHitTesting.h"
 
 @implementation UIView (TTTHitTesting)
 
 - (BOOL)tttPointInsideSubviews:(CGPoint)point withEvent:(UIEvent *)event
 {
-    return [self tttPointInsideSubviews:point withEvent:event skipHiddenViews:FALSE];
+    return [self tttPointInsideSubviews:point withEvent:event skipHiddenViews:NO];
 }
 
 - (BOOL)tttPointInsideSubviews:(CGPoint)point withEvent:(UIEvent *)event skipHiddenViews:(BOOL)skipHidden
@@ -36,15 +28,15 @@
 
         if (skipHidden)
         {
-            if (subview.hidden == FALSE && subview.alpha > 0 && [subview pointInside:localPoint withEvent:event])
+            if (subview.hidden == NO && subview.alpha > 0 && [subview pointInside:localPoint withEvent:event])
             {
-                return TRUE;
+                return YES;
             }
         }
         else {
             if ([subview pointInside:localPoint withEvent:event])
             {
-                return TRUE;
+                return YES;
             }
         }
     }
