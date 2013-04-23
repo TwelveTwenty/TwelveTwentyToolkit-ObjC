@@ -69,6 +69,8 @@
  */
 @interface TTTInjector : NSObject <TTTInjectionMapper>
 
+@property(nonatomic) BOOL allowImplicitMapping;
+
 + (TTTInjector *)sharedInjector;
 
 + (id <TTTInjectionMapper>)sharedMappingInjector;

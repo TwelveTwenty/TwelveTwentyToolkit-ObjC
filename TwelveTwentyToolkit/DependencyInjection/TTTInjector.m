@@ -137,6 +137,18 @@ static TTTInjector *_sharedInjector;
 {
     NSString *key = [[self class] keyForClass:mappedClass withIdentifier:identifier];
     TTTInjectionMapping *mapping = self.classMappings[key];
+
+    if (!mapping)
+    {
+        key = [[self class] keyForClass:mappedClass withIdentifier:nil];
+        mapping = self.classMappings[key];
+    }
+
+    if (!mapping && self.allowImplicitMapping)
+    {
+        mapping = [[TTTInjectionMapping alloc] initWithParent:self mappedClass:mappedClass options:TTTerminationOptionNone];
+    }
+    
     return mapping;
 }
 
@@ -195,24 +207,28 @@ static TTTInjector *_sharedInjector;
 
 + (id)allocWithInjector:(TTTInjector *)injector
 {
+    NSAssert(injector, @"Can't inject from nil injector.");
     Class targetClass = [injector classForMappedClass:self withIdentifier:nil];
     return [targetClass alloc];
 }
 
 + (id)objectFromInjector:(TTTInjector *)injector
 {
+    NSAssert(injector, @"Can't inject from nil injector.");
     return [self objectFromInjector:injector withIdentifier:nil];
 }
 
 + (id)objectFromInjector:(TTTInjector *)injector withIdentifier:(NSString *)identifier
 {
+    NSAssert(injector, @"Can't inject from nil injector.");
     id value = [injector objectForMappedClass:self withIdentifier:identifier];
-    NSAssert(value != nil, @"No value found mapped to %@", [self class]);
+    NSAssert(value != nil, @"No value found mapped to %@. Use allowImplicitMapping to prevent this from happening", [self class]);
     return value;
 }
 
 - (id)injectWithInjector:(TTTInjector *)injector
 {
+    NSAssert(injector, @"Can't inject from nil injector.");
     [injector injectPropertiesIntoObject:(id <TTTInjectable>) self];
     return self;
 }
