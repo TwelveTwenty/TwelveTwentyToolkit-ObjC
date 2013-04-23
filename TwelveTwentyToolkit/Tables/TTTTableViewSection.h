@@ -19,6 +19,8 @@ typedef UIView *(^TTTHeaderViewBlock)(UITableView *tableView, TTTTableViewSectio
 
 - (id)initWithIndex:(NSInteger)index;
 
+- (void)reloadData;
+
 - (id)init UNAVAILABLE_ATTRIBUTE;
 
 - (NSUInteger)count;

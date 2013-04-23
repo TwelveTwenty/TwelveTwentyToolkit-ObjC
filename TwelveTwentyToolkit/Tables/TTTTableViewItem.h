@@ -3,10 +3,10 @@
 
 @class TTTTableViewItem;
 
-typedef void (^TTTConfigureItemBlock)(id cell, NSIndexPath *indexPath);
-typedef void (^TTTDidSelectItemBlock)(TTTTableViewItem *item, NSIndexPath *indexPath);
-typedef void (^TTTWillDisplayItemBlock)(TTTTableViewItem *item, id cell, NSIndexPath *indexPath);
-typedef void (^TTTDidEndDisplayingItemBlock)(TTTTableViewItem *item, id cell, NSIndexPath *indexPath);
+typedef void (^TTTConfigureItemBlock)(id item, id cell, NSIndexPath *indexPath);
+typedef void (^TTTDidSelectItemBlock)(id item, NSIndexPath *indexPath);
+typedef void (^TTTWillDisplayItemBlock)(id item, id cell, NSIndexPath *indexPath);
+typedef void (^TTTDidEndDisplayingItemBlock)(id item, id cell, NSIndexPath *indexPath);
 
 @interface TTTTableViewItem : NSObject
 
@@ -18,6 +18,6 @@ typedef void (^TTTDidEndDisplayingItemBlock)(TTTTableViewItem *item, id cell, NS
 @property(nonatomic, copy) TTTWillDisplayItemBlock willDisplayBlock;
 @property(nonatomic, copy) TTTDidEndDisplayingItemBlock didEndDisplayingBlock;
 
-+ (TTTTableViewItem *)itemWithCellClass:(Class)cellClass height:(CGFloat)height configure:(TTTConfigureItemBlock)configureBlock didSelect:(TTTDidSelectItemBlock)didSelectBlock;
++ (id)itemWithCellClass:(Class)cellClass height:(CGFloat)height configure:(TTTConfigureItemBlock)configureBlock didSelect:(TTTDidSelectItemBlock)didSelectBlock;
 
 @end

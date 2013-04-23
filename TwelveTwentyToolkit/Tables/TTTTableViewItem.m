@@ -2,7 +2,7 @@
 
 @implementation TTTTableViewItem
 
-+ (TTTTableViewItem *)itemWithCellClass:(Class)cellClass height:(CGFloat)height configure:(TTTConfigureItemBlock)configureBlock didSelect:(TTTDidSelectItemBlock)didSelectBlock
++ (id)itemWithCellClass:(Class)cellClass height:(CGFloat)height configure:(TTTConfigureItemBlock)configureBlock didSelect:(TTTDidSelectItemBlock)didSelectBlock
 {
     TTTTableViewItem *item = [[self alloc] init];
     item.cellClass = cellClass;

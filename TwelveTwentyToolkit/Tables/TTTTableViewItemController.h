@@ -5,6 +5,7 @@
 @class IZOTableView;
 @class IZORegistrationViewController;
 @class TTTTableViewSection;
+@class TTTTableViewFetchedSection;
 
 typedef enum
 {
@@ -22,6 +23,8 @@ typedef enum
 - (TTTTableViewSection *)addSection;
 
 - (TTTTableViewItem *)itemAtIndexPath:(NSIndexPath *)indexPath;
+
+- (TTTTableViewFetchedSection *)addFetchedSection;
 
 @end
 

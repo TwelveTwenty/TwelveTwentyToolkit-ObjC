@@ -2,7 +2,9 @@
 #import "TTTTableViewItem.h"
 
 @interface TTTTableViewSection ()
+
 @property(nonatomic, strong) NSMutableArray *items;
+
 @end
 
 @implementation TTTTableViewSection
@@ -19,6 +21,11 @@
     }
 
     return self;
+}
+
+- (void)reloadData
+{
+    // void
 }
 
 - (NSUInteger)count

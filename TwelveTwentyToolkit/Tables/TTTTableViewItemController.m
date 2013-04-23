@@ -2,6 +2,7 @@
 #import "TTTTableViewItemController.h"
 #import "TTTTableViewItem.h"
 #import "TTTTableViewSection.h"
+#import "TTTTableViewFetchedSection.h"
 
 typedef enum
 {
@@ -19,6 +20,7 @@ typedef enum
 
 @property(nonatomic) TTTDelegateOption delegateOptions;
 
+@property(nonatomic) BOOL requiresReload;
 @end
 
 @implementation TTTTableViewItemController
@@ -29,6 +31,7 @@ typedef enum
 
     if (self)
     {
+        self.requiresReload = YES;
         self.sections = [NSMutableArray array];
     }
 
@@ -67,6 +70,17 @@ typedef enum
     }
 }
 
+- (void)reloadData
+{
+    for (TTTTableViewSection *section in self.sections)
+    {
+        [section reloadData];
+    }
+
+    self.requiresReload = NO;
+}
+
+
 - (TTTTableViewSection *)sectionAtIndex:(NSInteger)index
 {
     if (index >= [self.sections count]) return nil;
@@ -77,7 +91,18 @@ typedef enum
 
 - (TTTTableViewSection *)addSection
 {
+    self.requiresReload = YES;
+
     TTTTableViewSection *section = [[TTTTableViewSection alloc] initWithIndex:[self.sections count]];
+    [self.sections addObject:section];
+    return section;
+}
+
+- (TTTTableViewFetchedSection *)addFetchedSection
+{
+    self.requiresReload = YES;
+
+    TTTTableViewFetchedSection *section = [[TTTTableViewFetchedSection alloc] initWithIndex:[self.sections count]];
     [self.sections addObject:section];
     return section;
 }
@@ -90,6 +115,11 @@ typedef enum
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
+    if (self.requiresReload)
+    {
+        [self reloadData];
+    }
+
     return [self.sections count];
 }
 
@@ -112,7 +142,7 @@ typedef enum
 
     if (item.configureBlock)
     {
-        item.configureBlock(cell, indexPath);
+        item.configureBlock(item, cell, indexPath);
     }
 
     if ([cell conformsToProtocol:@protocol(TTTGroupedTableViewCell)])
