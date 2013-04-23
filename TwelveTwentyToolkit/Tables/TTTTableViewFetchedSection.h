@@ -5,7 +5,9 @@
 
 @interface TTTTableViewFetchedSection : TTTTableViewSection
 
-@property(nonatomic, strong) NSFetchedResultsController *controller;
+@property(nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
+
+@property(nonatomic, weak) TTTTableViewItemController *itemController;
 
 - (void)setCellClass:(Class)cellClass height:(CGFloat)height configure:(TTTConfigureItemBlock)configureBlock didSelect:(TTTDidSelectItemBlock)didSelectBlock;
 

@@ -14,9 +14,17 @@ typedef enum
     TTTTableViewSectionPositionBottom = 1 << 1
 } TTTTableViewSectionPosition;
 
+@protocol TTTTableViewItemControllerDelegate;
+
 @interface TTTTableViewItemController : NSObject <UITableViewDataSource, UITableViewDelegate>
 
-@property(nonatomic, weak) id <UITableViewDelegate>relayDelegate;
+@property(nonatomic, weak) id <UITableViewDelegate> relayDelegate;
+
+@property(nonatomic, weak) id <TTTTableViewItemControllerDelegate> delegate;
+
+@property(nonatomic) BOOL requiresReload;
+
+- (void)reloadData;
 
 - (TTTTableViewSection *)sectionAtIndex:(NSInteger)index;
 
@@ -33,3 +41,10 @@ typedef enum
 - (void)setPositionInSection:(TTTTableViewSectionPosition)position;
 
 @end
+
+@protocol TTTTableViewItemControllerDelegate
+
+- (void)tableViewItemControllerDidReloadData;
+
+@end
+

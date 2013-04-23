@@ -20,7 +20,6 @@ typedef enum
 
 @property(nonatomic) TTTDelegateOption delegateOptions;
 
-@property(nonatomic) BOOL requiresReload;
 @end
 
 @implementation TTTTableViewItemController
@@ -78,8 +77,8 @@ typedef enum
     }
 
     self.requiresReload = NO;
+    [self.delegate tableViewItemControllerDidReloadData];
 }
-
 
 - (TTTTableViewSection *)sectionAtIndex:(NSInteger)index
 {
@@ -104,6 +103,8 @@ typedef enum
 
     TTTTableViewFetchedSection *section = [[TTTTableViewFetchedSection alloc] initWithIndex:[self.sections count]];
     [self.sections addObject:section];
+    section.itemController = self;
+
     return section;
 }
 

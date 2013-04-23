@@ -1,10 +1,11 @@
 #import <TwelveTwentyToolkit/TTTTableViewItem.h>
 #import <CoreData/CoreData.h>
+#import <TwelveTwentyToolkit/TTTTableViewItemController.h>
 #import "TTTTableViewFetchedSection.h"
 #import "NSFetchedResultsController+TTTEasySections.h"
 #import "TTTTableViewFetchedItem.h"
 
-@interface TTTTableViewFetchedSection ()
+@interface TTTTableViewFetchedSection () <NSFetchedResultsControllerDelegate>
 
 @property(nonatomic, strong) NSMutableDictionary *cachedItems;
 
@@ -32,10 +33,10 @@
 - (void)reloadData
 {
     self.cachedItems = [NSMutableDictionary dictionary];
-    if (self.controller)
+    if (self.fetchedResultsController)
     {
-        [NSFetchedResultsController deleteCacheWithName:self.controller.cacheName];
-        [self.controller performFetch:NULL];
+        [NSFetchedResultsController deleteCacheWithName:self.fetchedResultsController.cacheName];
+        [self.fetchedResultsController performFetch:NULL];
     }
 }
 
@@ -47,9 +48,21 @@
     self.didSelectBlock = didSelectBlock;
 }
 
+- (void)setFetchedResultsController:(NSFetchedResultsController *)fetchedResultsController
+{
+    _fetchedResultsController = fetchedResultsController;
+
+    fetchedResultsController.delegate = self;
+}
+
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
+{
+    [self.itemController reloadData];
+}
+
 - (NSUInteger)count
 {
-    return [self.controller tttNumberOfObjectsInFirstSection];
+    return [self.fetchedResultsController tttNumberOfObjectsInFirstSection];
 }
 
 - (TTTTableViewItem *)itemAtIndex:(NSInteger)index
@@ -58,7 +71,7 @@
     if (!item)
     {
         item = [TTTTableViewFetchedItem itemWithCellClass:self.cellClass height:self.rowHeight configure:self.configureBlock didSelect:self.didSelectBlock];
-        item.fetchedEntity = [[self.controller tttFirstSection] objects][index];
+        item.fetchedEntity = [[self.fetchedResultsController tttFirstSection] objects][index];
         self.cachedItems[@(index)] = item;
     }
 

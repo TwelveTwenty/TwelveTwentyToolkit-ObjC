@@ -2,7 +2,7 @@
 
 @implementation TTTAbstractManagedObject
 
-+ (NSFetchRequest *)tttFetchRequestWithSortingKeys:(NSDictionary *)sortingKeysWithAscendingFlag
++ (NSFetchRequest *)fetchRequestWithSortingKeys:(NSDictionary *)sortingKeysWithAscendingFlag
 {
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:[(id) self entityName]];
     request.fetchBatchSize = 100;
@@ -17,18 +17,26 @@
         request.sortDescriptors = sortDescriptors;
     }
 
-    request.returnsObjectsAsFaults = YES;
-    request.includesPendingChanges = NO;
+    request.returnsObjectsAsFaults = NO;
+    request.includesPendingChanges = YES;
 
     return request;
 }
 
-+ (NSFetchedResultsController *)tttFetchedResultsControllerWithSortingKeys:(NSDictionary *)sortingKeysWithAscendingFlag
-                                                      managedObjectContext:(NSManagedObjectContext *)context
-                                                        sectionNameKeyPath:(NSString *)sectionNameKeyPath
-                                                                 cacheName:(NSString *)cacheName
++ (NSFetchedResultsController *)fetchedResultsControllerWithSortingKeys:(NSDictionary *)sortingKeysWithAscendingFlag
+                                                   managedObjectContext:(NSManagedObjectContext *)context
 {
-    NSFetchRequest *request = [self tttFetchRequestWithSortingKeys:sortingKeysWithAscendingFlag];
+    return [self fetchedResultsControllerWithSortingKeys:sortingKeysWithAscendingFlag
+                                    managedObjectContext:context
+                                      sectionNameKeyPath:nil
+                                               cacheName:[@(rand()) stringValue]];
+}
++ (NSFetchedResultsController *)fetchedResultsControllerWithSortingKeys:(NSDictionary *)sortingKeysWithAscendingFlag
+                                                   managedObjectContext:(NSManagedObjectContext *)context
+                                                     sectionNameKeyPath:(NSString *)sectionNameKeyPath
+                                                              cacheName:(NSString *)cacheName
+{
+    NSFetchRequest *request = [self fetchRequestWithSortingKeys:sortingKeysWithAscendingFlag];
 
     NSFetchedResultsController *controller = [[NSFetchedResultsController alloc] initWithFetchRequest:request
                                                                                  managedObjectContext:context
@@ -36,6 +44,13 @@
                                                                                             cacheName:cacheName];
 
     return controller;
+}
+
++ (id)insertInManagedObjectContext:(NSManagedObjectContext *)moc
+{
+    NSAssert(NO, @"This method should be overridden by a mogenerator generated entity class.");
+    [self doesNotRecognizeSelector:_cmd];
+    return nil;
 }
 
 + (NSString *)entityName
