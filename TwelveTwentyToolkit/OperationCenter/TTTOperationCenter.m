@@ -62,7 +62,7 @@ static TTTOperationCenter *_defaultCenter = nil;
 
 - (void)queueOperation:(TTTOperation *)operation
 {
-    [self.injector injectPropertiesIntoObject:(id <TTTInjectable>) operation];
+    operation.injector = self.injector;
 
     if (operation.requiresMainThread)
     {
