@@ -112,7 +112,8 @@ CGRect CGRectAlignAndPositionNextToRect(CGRect rectA, CGRect rectB, CGAlignOptio
 
 CGRect CGRectRoundToDevicePixels(CGRect r)
     {
-        CGFloat scale = [UIScreen mainScreen].scale;
+        static CGFloat scale = 0;
+        if (!scale) scale = [UIScreen mainScreen].scale;
 
         CGRect q = r;
         q.origin.x = roundf(q.origin.x * scale) / scale;
