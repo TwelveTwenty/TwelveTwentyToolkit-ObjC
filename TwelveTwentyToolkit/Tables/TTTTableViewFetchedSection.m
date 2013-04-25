@@ -71,7 +71,10 @@
     if (!item)
     {
         item = [TTTTableViewFetchedItem itemWithCellClass:self.cellClass height:self.rowHeight configure:self.configureBlock didSelect:self.didSelectBlock];
-        item.fetchedEntity = [[self.fetchedResultsController tttFirstSection] objects][index];
+        NSArray *objects = [[self.fetchedResultsController tttFirstSection] objects];
+        if (index < 0) return nil;
+        if (index >= [objects count]) return nil;
+        item.fetchedEntity = objects[index];
         self.cachedItems[@(index)] = item;
     }
 

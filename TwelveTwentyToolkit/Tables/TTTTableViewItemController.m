@@ -219,6 +219,7 @@ typedef enum
 
 - (void)tableView:(UITableView *)tableView didEndDisplayingCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    #warning this causes an error when the table reloaded.
     TTTTableViewItem *item = [self itemAtIndexPath:indexPath];
     if (item.didEndDisplayingBlock)
     {
