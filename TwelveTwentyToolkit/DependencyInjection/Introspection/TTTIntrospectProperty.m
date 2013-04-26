@@ -18,7 +18,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "TTIntrospectProperty.h"
+#import "TTTIntrospectProperty.h"
 #import "TTTLog.h"
 
 typedef enum
@@ -31,7 +31,7 @@ typedef enum
 	TTPropertyFlagWeak = 1 << 5
 } TTPropertyFlag;
 
-@interface TTIntrospectProperty ()
+@interface TTTIntrospectProperty ()
 
 @property (nonatomic, copy, readwrite) NSString *name;
 @property (nonatomic, copy, readwrite) NSString *typeEncoding;
@@ -45,7 +45,7 @@ typedef enum
 
 @end
 
-@implementation TTIntrospectProperty
+@implementation TTTIntrospectProperty
 
 + (NSArray *)propertiesOfClass:(Class)introspectClass
 {
