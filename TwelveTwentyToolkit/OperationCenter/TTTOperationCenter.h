@@ -15,4 +15,6 @@
 
 - (void)queueOperation:(TTTOperation *)operation;
 
+- (void)inlineOperation:(TTTOperation *)operation;
+
 @end

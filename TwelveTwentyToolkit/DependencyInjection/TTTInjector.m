@@ -70,6 +70,11 @@ static TTTInjector *_sharedInjector;
         self.classMappings = [NSMutableDictionary dictionary];
 
         [[self mapClass:[self class]] toObject:self];
+
+        if (!_sharedInjector)
+        {
+            [[self class] setSharedInjector:self];
+        }
     }
 
     return self;

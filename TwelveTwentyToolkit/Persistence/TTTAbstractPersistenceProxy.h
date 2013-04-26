@@ -19,7 +19,11 @@
 
 - (void)performResetWithThreshold:(int)resetThreshold;
 
+- (NSManagedObjectContext *)threadContext;
+
 - (NSManagedObjectContext *)newPrivateContext;
+
+- (BOOL)savePrivateContext:(NSManagedObjectContext *)context;
 
 - (void)saveToDisk;
 

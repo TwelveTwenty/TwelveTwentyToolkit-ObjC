@@ -23,6 +23,12 @@
     return self;
 }
 
+- (id)inline
+{
+    [[TTTOperationCenter defaultCenter] inlineOperation:self];
+    return self;
+}
+
 - (void)main
 {
     [self.injector injectPropertiesIntoObject:self];

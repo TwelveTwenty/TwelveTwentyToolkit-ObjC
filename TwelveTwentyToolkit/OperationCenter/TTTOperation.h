@@ -11,6 +11,8 @@
 
 - (id)queue;
 
+- (id)inline;
+
 - (void)execute OVERRIDE_ATTRIBUTE;
 
 @end

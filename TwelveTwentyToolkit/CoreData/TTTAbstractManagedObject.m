@@ -1,4 +1,5 @@
 #import "TTTAbstractManagedObject.h"
+#import "TTTTimestamped.h"
 
 @implementation TTTAbstractManagedObject
 
@@ -58,6 +59,18 @@
     NSAssert(NO, @"This method should be overridden by a mogenerator generated entity class.");
     [self doesNotRecognizeSelector:_cmd];
     return nil;
+}
+
+- (void)awakeFromInsert
+{
+    [super awakeFromInsert];
+
+    if ([self conformsToProtocol:@protocol(TTTTimestamped)])
+    {
+        NSDate *now = [NSDate date];
+        [self setValue:now forKey:TTTTimestampedAttributes.createdAt];
+        [self setValue:now forKey:TTTTimestampedAttributes.updatedAt];
+    }
 }
 
 @end

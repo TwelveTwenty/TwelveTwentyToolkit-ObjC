@@ -3,7 +3,6 @@
 #import "TTTAbstractPersistenceProxy.h"
 #import "TTTLog.h"
 
-
 #define TT_PERSISTENCE_THRESHOLD_KEY @"TT_PERSISTENCE_THRESHOLD"
 
 @interface TTTAbstractPersistenceProxy ()
@@ -83,6 +82,16 @@
     }
 }
 
+- (NSManagedObjectContext *)threadContext
+{
+    if ([[NSThread currentThread] isMainThread])
+    {
+        return self.mainContext;
+    }
+
+    return [self newPrivateContext];
+}
+
 - (NSManagedObjectContext *)newPrivateContext
 {
     NSManagedObjectContext *context = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
@@ -101,28 +110,25 @@
     return context;
 }
 
-- (NSManagedObjectModel *)managedObjectModel
+- (BOOL)savePrivateContext:(NSManagedObjectContext *)context
 {
-    if (!_managedObjectModel)
-    {
-        self.managedObjectModel = [NSManagedObjectModel mergedModelFromBundles:@[[self modelBundle]]];
-    }
+    __block BOOL success = NO;
 
-    return _managedObjectModel;
-}
-
-- (NSPersistentStoreCoordinator *)persistentStoreCoordinator
-{
-    if (!_persistentStoreCoordinator)
-    {
-        self.persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:self.managedObjectModel];
-        if (![self addStoresToPersistentStoreCoordinator:_persistentStoreCoordinator])
+    [context performBlockAndWait:^{
+        NSError *error = nil;
+        if ([context save:&error])
         {
-            self.persistentStoreCoordinator = nil;
+            DLog(@"Saved private context.");
+            [self saveToDisk];
+            success = YES;
         }
-    }
+        else
+        {
+            ELog(@"Failed to save context: %@", error);
+        }
+    }];
 
-    return _persistentStoreCoordinator;
+    return success;
 }
 
 - (NSManagedObjectContext *)mainContext
@@ -164,6 +170,30 @@
     }
 
     return _diskContext;
+}
+
+- (NSManagedObjectModel *)managedObjectModel
+{
+    if (!_managedObjectModel)
+    {
+        self.managedObjectModel = [NSManagedObjectModel mergedModelFromBundles:@[[self modelBundle]]];
+    }
+
+    return _managedObjectModel;
+}
+
+- (NSPersistentStoreCoordinator *)persistentStoreCoordinator
+{
+    if (!_persistentStoreCoordinator)
+    {
+        self.persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:self.managedObjectModel];
+        if (![self addStoresToPersistentStoreCoordinator:_persistentStoreCoordinator])
+        {
+            self.persistentStoreCoordinator = nil;
+        }
+    }
+
+    return _persistentStoreCoordinator;
 }
 
 - (void)seedDatabase

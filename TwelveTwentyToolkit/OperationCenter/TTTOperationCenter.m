@@ -74,4 +74,13 @@ static TTTOperationCenter *_defaultCenter = nil;
     }
 }
 
+- (void)inlineOperation:(TTTOperation *)operation
+{
+    operation.injector = self.injector;
+
+    NSAssert(operation.requiresMainThread == YES, @"Operations can only be executed in line if they run on the main thread.");
+
+    [operation start];
+}
+
 @end
