@@ -73,7 +73,6 @@
     if (!success)
     {
         NSAssert(error != nil, @"If success is NO, you must provide an error");
-        ELog(@"Operation completed unsuccessfully. Error: %@", error);
     }
 
     if (feedback != nil)

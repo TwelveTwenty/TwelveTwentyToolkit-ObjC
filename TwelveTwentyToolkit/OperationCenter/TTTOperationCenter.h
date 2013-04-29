@@ -9,6 +9,8 @@
 
 + (TTTOperationCenter *)defaultCenter;
 
++ (TTTOperationCenter *)setDefaultCenterWithInjector:(TTTInjector *)injector;
+
 + (TTTOperationCenter *)setDefaultCenter:(TTTOperationCenter *)defaultCenter;
 
 - (id)initWithInjector:(TTTInjector *)injector;

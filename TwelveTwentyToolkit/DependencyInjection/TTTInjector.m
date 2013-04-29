@@ -42,6 +42,12 @@ static TTTInjector *_sharedInjector;
     return (id <TTTInjectionMapper>) [self sharedInjector];
 }
 
++ (TTTInjector *)setSharedInjector
+{
+    NSAssert(_sharedInjector == nil, @"Won't setup the shared injector if there already is one.");
+    return [self setSharedInjector:[[self alloc] init]];
+}
+
 + (TTTInjector *)setSharedInjector:(TTTInjector *)injector
 {
     @synchronized (self)
@@ -70,11 +76,6 @@ static TTTInjector *_sharedInjector;
         self.classMappings = [NSMutableDictionary dictionary];
 
         [[self mapClass:[self class]] toObject:self];
-
-        if (!_sharedInjector)
-        {
-            [[self class] setSharedInjector:self];
-        }
     }
 
     return self;

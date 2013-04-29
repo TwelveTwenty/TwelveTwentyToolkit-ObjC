@@ -1,9 +1,6 @@
 #import <Foundation/Foundation.h>
 
 @class TTTTableViewItem;
-@class IZOBaseTableViewCell;
-@class IZOTableView;
-@class IZORegistrationViewController;
 @class TTTTableViewSection;
 @class TTTTableViewFetchedSection;
 
