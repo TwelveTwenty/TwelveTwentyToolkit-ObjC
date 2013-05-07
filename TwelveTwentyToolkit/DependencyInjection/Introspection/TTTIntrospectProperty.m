@@ -236,7 +236,7 @@ typedef enum
 		[protocolNames addObject:NSStringFromProtocol(proto)];
 	}
 
-	return [NSString stringWithFormat:@"<%@ encoding='%@' type='%@' protocols='%@' readOnly='%@' strong='%@' weak='%@'>", [self class], self.typeEncoding, self.typeClass, [protocolNames componentsJoinedByString:@","], self.readOnlyFlag ? @"yes" : @"no", self.strongFlag ? @"yes" : @"no", self.weakFlag ? @"yes" : @"no"];
+	return [NSString stringWithFormat:@"<%@ name='%@' encoding='%@' type='%@' protocols='%@' readOnly='%@' strong='%@' weak='%@'>", [self class], self.name, self.typeEncoding, self.typeClass, [protocolNames componentsJoinedByString:@","], self.readOnlyFlag ? @"yes" : @"no", self.strongFlag ? @"yes" : @"no", self.weakFlag ? @"yes" : @"no"];
 }
 
 @end

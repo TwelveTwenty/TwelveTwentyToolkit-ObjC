@@ -44,7 +44,6 @@ static TTTInjector *_sharedInjector;
 
 + (TTTInjector *)setSharedInjector
 {
-    NSAssert(_sharedInjector == nil, @"Won't setup the shared injector if there already is one.");
     return [self setSharedInjector:[[self alloc] init]];
 }
 
@@ -52,6 +51,11 @@ static TTTInjector *_sharedInjector;
 {
     @synchronized (self)
     {
+        if (injector)
+        {
+            NSAssert(_sharedInjector == nil, @"Won't setup the shared injector if there already is one.");
+        }
+
         _sharedInjector = injector;
     }
     return _sharedInjector;
