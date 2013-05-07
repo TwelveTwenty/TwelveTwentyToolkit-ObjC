@@ -21,7 +21,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-enum {TTDeleteFailed = -1};
+enum {TTTDeleteFailed = -1};
 
 @interface NSManagedObjectContext (TTTBatchManipulation)
 

@@ -69,7 +69,7 @@
     NSArray *results = [self executeFetchRequest:request error:error];
     if (!results)
     {
-        return TTDeleteFailed;
+        return TTTDeleteFailed;
     }
 
     NSUInteger count = [results count];
@@ -98,7 +98,7 @@
     NSArray *results = [self executeFetchRequest:request error:error];
     if (!results)
     {
-        return TTDeleteFailed;
+        return TTTDeleteFailed;
     }
 
     NSUInteger count = [results count];
@@ -116,7 +116,7 @@
     NSArray *results = [self executeFetchRequest:request error:error];
     if (!results)
     {
-        return TTDeleteFailed;
+        return TTTDeleteFailed;
     }
 
     for (NSManagedObject *object in results)
