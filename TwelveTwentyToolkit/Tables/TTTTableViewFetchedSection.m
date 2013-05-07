@@ -4,6 +4,7 @@
 #import "TTTTableViewFetchedSection.h"
 #import "NSFetchedResultsController+TTTEasySections.h"
 #import "TTTTableViewFetchedItem.h"
+#import "TTTLog.h"
 
 @interface TTTTableViewFetchedSection () <NSFetchedResultsControllerDelegate>
 
@@ -57,40 +58,39 @@
 
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
 {
+    DLog(@"Controller first item: %@", controller.tttFirstObjectInFirstSection);
     [self.itemController reloadData];
 }
 
 - (NSUInteger)count
 {
-    return [self.fetchedResultsController tttNumberOfObjectsInFirstSection];
+    if (self.fetchedResultsController)
+    {
+        return [self.fetchedResultsController tttNumberOfObjectsInFirstSection];
+    }
+
+    return [super count];
 }
 
 - (TTTTableViewItem *)itemAtIndex:(NSInteger)index
 {
-    TTTTableViewFetchedItem *item = self.cachedItems[@(index)];
-    if (!item)
+    if (self.fetchedResultsController)
     {
-        item = [TTTTableViewFetchedItem itemWithCellClass:self.cellClass height:self.rowHeight configure:self.configureBlock didSelect:self.didSelectBlock];
-        NSArray *objects = [[self.fetchedResultsController tttFirstSection] objects];
-        if (index < 0) return nil;
-        if (index >= [objects count]) return nil;
-        item.fetchedEntity = objects[index];
-        self.cachedItems[@(index)] = item;
+        TTTTableViewFetchedItem *item = self.cachedItems[@(index)];
+        if (!item)
+        {
+            item = [TTTTableViewFetchedItem itemWithCellClass:self.cellClass height:self.rowHeight configure:self.configureBlock didSelect:self.didSelectBlock];
+            NSArray *objects = [[self.fetchedResultsController tttFirstSection] objects];
+            if (index < 0) return nil;
+            if (index >= [objects count]) return nil;
+            item.fetchedEntity = objects[index];
+            self.cachedItems[@(index)] = item;
+        }
+
+        return item;
     }
 
-    return item;
-}
-
-- (TTTTableViewItem *)addItem:(TTTTableViewItem *)item
-{
-    [self doesNotRecognizeSelector:_cmd];
-    return nil;
-}
-
-- (void)addItems:(NSArray *)array
-{
-    [self doesNotRecognizeSelector:_cmd];
-    return nil;
+    return [super itemAtIndex:index];
 }
 
 @end

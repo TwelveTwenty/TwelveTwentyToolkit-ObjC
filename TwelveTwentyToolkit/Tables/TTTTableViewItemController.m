@@ -126,7 +126,8 @@ typedef enum
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [[self sectionAtIndex:(NSUInteger) section] count];
+    NSInteger count = [[self sectionAtIndex:(NSUInteger) section] count];
+    return count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
