@@ -17,13 +17,16 @@ static TTTOperationCenter *_defaultCenter = nil;
 
 + (TTTOperationCenter *)defaultCenter
 {
-	return _defaultCenter;
+    return _defaultCenter;
 }
 
 + (TTTOperationCenter *)setDefaultCenterWithInjector:(TTTInjector *)injector
 {
-    NSAssert(_defaultCenter == nil, @"Can't setup default center if it's already set up.");
-    
+    if (injector)
+    {
+        NSAssert(_defaultCenter == nil, @"Can't setup default center if it's already set up.");
+    }
+
     return [self setDefaultCenter:[[self alloc] initWithInjector:injector]];
 }
 

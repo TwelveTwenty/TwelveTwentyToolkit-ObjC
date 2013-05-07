@@ -14,8 +14,10 @@ typedef void (^TTTFeedbackBlock)(BOOL success, id object, NSError *error);
 @interface TTTAsyncOperation : TTTOperation
 
 @property(nonatomic, copy) TTTFeedbackBlock feedbackBlock;
+@property(nonatomic, readonly) void (^defaultSuccessBlock)(id);
+@property(nonatomic, readonly) void (^defaultFailureBlock)(NSError *);
 
-- (id)initWithFeedback:(TTTFeedbackBlock)completion;
+- (id)initWithFeedback:(TTTFeedbackBlock)feedbackBlock;
 
 - (void)dispatchSuccessfulFeedbackWithOptionalContext:(id)context;
 

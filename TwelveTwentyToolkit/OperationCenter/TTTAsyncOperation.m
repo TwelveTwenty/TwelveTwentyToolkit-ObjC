@@ -6,9 +6,17 @@
 @property(nonatomic, getter=isFinished) BOOL finished;
 @property(nonatomic, getter=isExecuting) BOOL executing;
 
+@property(nonatomic, strong) void (^defaultSuccessBlock)(id);
+@property(nonatomic, strong) void (^defaultFailureBlock)(NSError *);
+
 @end
 
 @implementation TTTAsyncOperation
+
+- (void)dealloc
+{
+
+}
 
 - (id)initWithFeedback:(TTTFeedbackBlock)feedbackBlock
 {
@@ -18,6 +26,17 @@
     {
         self.feedbackBlock = feedbackBlock;
         self.requiresMainThread = NO;
+
+        __strong TTTAsyncOperation *dereferencedSelf = self;
+        self.defaultSuccessBlock = ^(id result) {
+            if (dereferencedSelf.isCancelled) return;
+            [dereferencedSelf dispatchSuccessfulFeedbackWithOptionalContext:nil];
+        };
+
+        self.defaultFailureBlock = ^(NSError *error) {
+            if (dereferencedSelf.isCancelled) return;
+            [dereferencedSelf dispatchUnsuccessfulFeedbackWithError:error];
+        };
     }
     return self;
 }
@@ -82,6 +101,9 @@
         });
     }
 
+    self.defaultSuccessBlock = nil;
+    self.defaultFailureBlock = nil;
+    
     self.executing = NO;
     self.finished = YES;
 }
