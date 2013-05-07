@@ -110,27 +110,6 @@
     return context;
 }
 
-- (BOOL)savePrivateContext:(NSManagedObjectContext *)context
-{
-    __block BOOL success = NO;
-
-    [context performBlockAndWait:^{
-        NSError *error = nil;
-        if ([context save:&error])
-        {
-            DLog(@"Saved private context.");
-            [self saveToDisk];
-            success = YES;
-        }
-        else
-        {
-            ELog(@"Failed to save context: %@", error);
-        }
-    }];
-
-    return success;
-}
-
 - (NSManagedObjectContext *)mainContext
 {
     if (_mainContext == nil)
@@ -201,6 +180,26 @@
     // override when you want to seed the database after the core data stack is set up.
 }
 
+- (BOOL)savePrivateContext:(NSManagedObjectContext *)context
+{
+    __block BOOL success = NO;
+
+    [context performBlockAndWait:^{
+        NSError *error = nil;
+        if ([context save:&error])
+        {
+            [self saveToDisk];
+            success = YES;
+        }
+        else
+        {
+            ELog(@"Failed to save context: %@", error);
+        }
+    }];
+
+    return success;
+}
+
 - (void)saveToDisk
 {
     [self.mainContext performBlockAndWait:^{
@@ -209,19 +208,11 @@
         {
             NSError *error = nil;
             BOOL saved = [self.mainContext save:&error];
-            if (saved)
-            {
-                DLog(@"Main context saved.");
-            }
-            else
+            if (!saved)
             {
                 ELog(@"Error saving main context: %@, %@", error, [error userInfo]);
                 return;
             }
-        }
-        else
-        {
-            ILog(@"Main context has no changes to save to disk");
         }
 
         if (self.nestContexts)
@@ -231,18 +222,10 @@
                 {
                     NSError *error = nil;
                     BOOL saved = [self.diskContext save:&error];
-                    if (saved)
-                    {
-                        DLog(@"Base context saved.");
-                    }
-                    else
+                    if (!saved)
                     {
                         ELog(@"Error saving base context %@, %@", error, [error userInfo]);
                     }
-                }
-                else
-                {
-                    ILog(@"Base context has no changes to save to disk.");
                 }
             };
 
