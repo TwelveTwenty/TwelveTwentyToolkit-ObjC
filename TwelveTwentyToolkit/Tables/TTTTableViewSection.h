@@ -5,17 +5,20 @@
 @class IZOTableSectionView;
 @class TTTTableViewSection;
 
-typedef UIView *(^TTTHeaderViewBlock)(UITableView *tableView, TTTTableViewSection *section); // ^UIView *(UITableView *tableView, TTTTableViewSection *section)
+typedef UIView *(^TTTSectionViewBlock)(TTTTableViewSection *section); // ^UIView *(UITableView *tableView, TTTTableViewSection *section)
 
 @interface TTTTableViewSection : NSObject
 
 @property(nonatomic) NSInteger index;
-
 @property(nonatomic, copy) NSString *title;
 
-@property(nonatomic, copy) TTTHeaderViewBlock headerViewBlock;
+@property(nonatomic) CGFloat headerHeight;
+@property(nonatomic, copy) TTTSectionViewBlock headerViewBlock;
+@property(nonatomic, strong) UIView *headerView;
 
-@property (nonatomic) CGFloat headerHeight;
+@property(nonatomic) CGFloat footerHeight;
+@property(nonatomic, copy) TTTSectionViewBlock footerViewBlock;
+@property(nonatomic, strong) UIView *footerView;
 
 - (id)initWithIndex:(NSInteger)index;
 

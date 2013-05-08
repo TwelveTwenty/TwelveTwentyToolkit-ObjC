@@ -1,4 +1,4 @@
-#import <TwelveTwentyToolkit/TTTInjector.h>
+#import "TTTInjector.h"
 #import "TTTOperation.h"
 #import "TTTOperationCenter.h"
 

@@ -1,5 +1,5 @@
 #import <Foundation/Foundation.h>
-#import <TwelveTwentyToolkit/TTTTableViewItem.h>
+#import "TTTTableViewItem.h"
 
 @interface TTTTableViewFetchedItem : TTTTableViewItem
 

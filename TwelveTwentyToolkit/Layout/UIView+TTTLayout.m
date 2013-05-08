@@ -1,6 +1,6 @@
 #import <CoreGraphics/CoreGraphics.h>
 #import "UIView+TTTLayout.h"
-#import "TTCGUtils.h"
+#import "TTTCGUtils.h"
 
 @implementation UIView (TTTLayout)
 

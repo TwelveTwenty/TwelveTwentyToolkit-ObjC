@@ -53,3 +53,28 @@ static CFTypeRef CFRetainIfNotNULL (CFTypeRef ref)
 #ifndef OVERRIDE_ATTRIBUTE
     #define OVERRIDE_ATTRIBUTE
 #endif
+
+#define TTTPrepareBlockSelf() __typeof__(self) __weak blockSelf = self
+
+#if !defined(NS_BLOCK_ASSERTIONS)
+
+#if !defined(TTTBlockAssert)
+#define TTTBlockAssert(condition, desc, ...)	\
+    do {				\
+	__PRAGMA_PUSH_NO_EXTRA_ARG_WARNINGS \
+	if (!(condition)) {		\
+	    [[NSAssertionHandler currentHandler] handleFailureInMethod:_cmd \
+		object:blockSelf file:[NSString stringWithUTF8String:__FILE__] \
+	    	lineNumber:__LINE__ description:(desc), ##__VA_ARGS__]; \
+	}				\
+        __PRAGMA_POP_NO_EXTRA_ARG_WARNINGS \
+    } while(0)
+#endif
+
+#else // NS_BLOCK_ASSERTIONS defined
+
+#if !defined(TTTBlockAssert)
+#define TTTBlockAssert(condition, desc, ...) do {} while (0)
+#endif
+
+#endif

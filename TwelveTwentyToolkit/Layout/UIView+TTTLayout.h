@@ -1,5 +1,5 @@
 #import <Foundation/Foundation.h>
-#import "TTCGUtils.h"
+#import "TTTCGUtils.h"
 
 typedef enum {
     TTTDistributeAlignLeft,

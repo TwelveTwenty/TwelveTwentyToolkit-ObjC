@@ -11,6 +11,7 @@ typedef enum
     TTTDelegateOptionWillDisplayCell = 1 << 1,
     TTTDelegateOptionDidEndDisplayingCell = 1 << 2,
     TTTDelegateOptionViewForHeaderInSection = 1 << 3,
+    TTTDelegateOptionViewForFooterInSection = 1 << 3,
     TTTDelegateOptionScrollViewDidScroll = 1 << 4
 } TTTDelegateOption;
 
@@ -61,6 +62,11 @@ typedef enum
     if ([_relayDelegate respondsToSelector:@selector(tableView:viewForHeaderInSection:)])
     {
         self.delegateOptions |= TTTDelegateOptionViewForHeaderInSection;
+    }
+
+    if ([_relayDelegate respondsToSelector:@selector(tableView:viewForFooterInSection:)])
+    {
+        self.delegateOptions |= TTTDelegateOptionViewForFooterInSection;
     }
 
     if ([_relayDelegate respondsToSelector:@selector(scrollViewDidScroll:)])
@@ -176,12 +182,6 @@ typedef enum
     }
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-{
-    CGFloat headerHeight = [[self sectionAtIndex:section] headerHeight];
-    return headerHeight >= 0 ? headerHeight : tableView.sectionHeaderHeight;
-}
-
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     return [self sectionAtIndex:section].title;
@@ -220,7 +220,7 @@ typedef enum
 
 - (void)tableView:(UITableView *)tableView didEndDisplayingCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    #warning this causes an error when the table reloaded.
+#warning this causes an error when the table reloaded.
     TTTTableViewItem *item = [self itemAtIndexPath:indexPath];
     if (item.didEndDisplayingBlock)
     {
@@ -232,16 +232,47 @@ typedef enum
     }
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    CGFloat headerHeight = [[self sectionAtIndex:section] headerHeight];
+    return headerHeight >= 0 ? headerHeight : tableView.sectionHeaderHeight;
+}
+
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     TTTTableViewSection *s = [self sectionAtIndex:section];
-    if (s.headerViewBlock)
+
+    if (s.headerHeight)
     {
-        return s.headerViewBlock(tableView, s);
+        return s.headerView;
     }
+
     if (self.delegateOptions & TTTDelegateOptionViewForHeaderInSection)
     {
         return [self.relayDelegate tableView:tableView viewForHeaderInSection:section];
+    }
+
+    return nil;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    CGFloat footerHeight = [[self sectionAtIndex:section] footerHeight];
+    return footerHeight >= 0 ? footerHeight : tableView.sectionFooterHeight;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    TTTTableViewSection *s = [self sectionAtIndex:section];
+
+    if (s.footerHeight)
+    {
+        return s.footerView;
+    }
+
+    if (self.delegateOptions & TTTDelegateOptionViewForFooterInSection)
+    {
+        return [self.relayDelegate tableView:tableView viewForFooterInSection:section];
     }
 
     return nil;

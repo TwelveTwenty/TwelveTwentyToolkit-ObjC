@@ -49,11 +49,27 @@ typedef enum {
     CGAlignPreventDevicePixelRounding = 1 << 10
 } CGAlignOption;
 
+typedef enum
+{
+    CGTweakNone = 0,
+    CGTweakOriginX = 1 << 0,
+    CGTweakOriginY = 1 << 1,
+    CGTweakSizeWidth = 1 << 2,
+    CGTweakSizeHeight = 1 << 3
+} CGTweakOption;
+
+
 /** Trim a CGRect from the top, counter clockwise. */
 extern CGRect CGRectTrim(CGRect rect, CGFloat top, CGFloat left, CGFloat bottom, CGFloat right);
 
 /** The opposite of CGRectTrim */
 extern CGRect CGRectExpand(CGRect rect, CGFloat top, CGFloat left, CGFloat bottom, CGFloat right);
+
+/**
+* Replace one or more properties of a rect with a tweaked value.
+* Example: CGRectWithTweak(rect, CGTweakSizeHeight, 0.5);
+*/
+extern CGRect CGRectWithTweak(CGRect rect, CGTweakOption tweakOption, CGFloat tweakValue);
 
 /** Align one rect to another one. Will round to device pixels unless flagged with CGAlignPreventDevicePixelRounding */
 extern CGRect CGRectAlignToRect(CGRect rectA, CGRect rectB, CGAlignOption options);

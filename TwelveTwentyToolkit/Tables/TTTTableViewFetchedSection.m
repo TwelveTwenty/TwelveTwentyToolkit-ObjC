@@ -1,6 +1,6 @@
-#import <TwelveTwentyToolkit/TTTTableViewItem.h>
+#import "TTTTableViewItem.h"
 #import <CoreData/CoreData.h>
-#import <TwelveTwentyToolkit/TTTTableViewItemController.h>
+#import "TTTTableViewItemController.h"
 #import "TTTTableViewFetchedSection.h"
 #import "NSFetchedResultsController+TTTEasySections.h"
 #import "TTTTableViewFetchedItem.h"
@@ -11,7 +11,6 @@
 @property(nonatomic, strong) NSMutableDictionary *cachedItems;
 
 @property(nonatomic, strong) Class cellClass;
-@property(nonatomic) CGFloat rowHeight;
 @property(nonatomic, copy) TTTConfigureItemBlock configureBlock;
 @property(nonatomic, copy) TTTDidSelectItemBlock didSelectBlock;
 
@@ -64,7 +63,7 @@
 
 - (NSUInteger)count
 {
-    if (self.fetchedResultsController)
+    if ([self.fetchedResultsController tttNumberOfObjectsInFirstSection])
     {
         return [self.fetchedResultsController tttNumberOfObjectsInFirstSection];
     }
@@ -74,7 +73,7 @@
 
 - (TTTTableViewItem *)itemAtIndex:(NSInteger)index
 {
-    if (self.fetchedResultsController)
+    if ([self.fetchedResultsController tttNumberOfObjectsInFirstSection])
     {
         TTTTableViewFetchedItem *item = self.cachedItems[@(index)];
         if (!item)
