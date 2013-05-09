@@ -11,8 +11,9 @@ typedef enum
     TTTDelegateOptionWillDisplayCell = 1 << 1,
     TTTDelegateOptionDidEndDisplayingCell = 1 << 2,
     TTTDelegateOptionViewForHeaderInSection = 1 << 3,
-    TTTDelegateOptionViewForFooterInSection = 1 << 3,
-    TTTDelegateOptionScrollViewDidScroll = 1 << 4
+    TTTDelegateOptionViewForFooterInSection = 1 << 4,
+    TTTDelegateOptionScrollViewDidScroll = 1 << 5,
+    TTTDelegateOptionScrollViewWillBeginDragging = 1 << 6,
 } TTTDelegateOption;
 
 @interface TTTTableViewItemController ()
@@ -72,6 +73,11 @@ typedef enum
     if ([_relayDelegate respondsToSelector:@selector(scrollViewDidScroll:)])
     {
         self.delegateOptions |= TTTDelegateOptionScrollViewDidScroll;
+    }
+
+    if ([_relayDelegate respondsToSelector:@selector(scrollViewWillBeginDragging:)])
+    {
+        self.delegateOptions |= TTTDelegateOptionScrollViewWillBeginDragging;
     }
 }
 
@@ -194,6 +200,14 @@ typedef enum
     if (self.delegateOptions & TTTDelegateOptionScrollViewDidScroll)
     {
         [self.relayDelegate scrollViewDidScroll:scrollView];
+    }
+}
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+{
+    if (self.delegateOptions & TTTDelegateOptionScrollViewWillBeginDragging)
+    {
+        [self.relayDelegate scrollViewWillBeginDragging:scrollView];
     }
 }
 

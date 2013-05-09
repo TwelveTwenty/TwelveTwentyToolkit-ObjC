@@ -2,6 +2,7 @@
 #import "TTTTableViewSection.h"
 
 @class NSFetchedResultsController;
+@class TTTTableViewItemController;
 
 @interface TTTTableViewFetchedSection : TTTTableViewSection
 

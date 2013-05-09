@@ -18,7 +18,7 @@
     {
         self.index = index;
         self.items = [NSMutableArray array];
-        self.headerHeight = -1;
+        self.headerHeight = 0;
     }
 
     return self;
