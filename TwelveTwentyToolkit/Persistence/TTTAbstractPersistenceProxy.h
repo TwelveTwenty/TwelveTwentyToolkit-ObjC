@@ -9,6 +9,9 @@
 #import <CoreData/CoreData.h>
 
 @interface TTTAbstractPersistenceProxy : NSObject
+{
+    NSManagedObjectContext *_mainContext;
+}
 
 @property (nonatomic, strong, readonly) NSURL *storeURL;
 @property (nonatomic, strong, readonly) NSManagedObjectContext *mainContext;
