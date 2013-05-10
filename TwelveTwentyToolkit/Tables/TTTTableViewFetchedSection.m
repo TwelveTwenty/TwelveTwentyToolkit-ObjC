@@ -1,5 +1,6 @@
 #import "TTTTableViewItem.h"
 #import <CoreData/CoreData.h>
+#import <TwelveTwentyToolkit/NSFetchedResultsController+TTTCacheControl.h>
 #import "TTTTableViewItemController.h"
 #import "TTTTableViewFetchedSection.h"
 #import "NSFetchedResultsController+TTTEasySections.h"
@@ -18,19 +19,19 @@
 
 @implementation TTTTableViewFetchedSection
 
-- (id)initWithIndex:(NSInteger)index1
+- (id)init
 {
-    self = [super initWithIndex:index];
+    self = [super init];
 
     if (self)
     {
-        [self reloadData];
+        [self loadSection];
     }
 
     return self;
 }
 
-- (void)reloadData
+- (void)loadSection
 {
     self.cachedItems = [NSMutableDictionary dictionary];
     if (self.fetchedResultsController)
@@ -52,23 +53,21 @@
 {
     _fetchedResultsController = fetchedResultsController;
 
+    [fetchedResultsController performFetch:NULL];
+
+    [self.delegate sectionDidReload:self];
+
     fetchedResultsController.delegate = self;
 }
 
-- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
-{
-    DLog(@"Controller first item: %@", controller.tttFirstObjectInFirstSection);
-    [self.itemController reloadData];
-}
-
-- (NSUInteger)count
+- (NSUInteger)numberOfItems
 {
     if ([self.fetchedResultsController tttNumberOfObjectsInFirstSection])
     {
         return [self.fetchedResultsController tttNumberOfObjectsInFirstSection];
     }
 
-    return [super count];
+    return [super numberOfItems];
 }
 
 - (TTTTableViewItem *)itemAtIndex:(NSInteger)index
@@ -90,6 +89,49 @@
     }
 
     return [super itemAtIndex:index];
+}
+
+#pragma mark - NSFetchedResultsController delegate methods
+
+- (void)controllerWillChangeContent:(NSFetchedResultsController *)controller
+{
+    self.cachedItems = [NSMutableDictionary dictionary];
+
+    [self.delegate sectionWillBeginChanges:self];
+}
+
+- (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type newIndexPath:(NSIndexPath *)newIndexPath
+{
+    NSIndexPath *convertedIndexPath = [NSIndexPath indexPathForRow:indexPath.row inSection:self.index];
+    NSIndexPath *convertedNewIndexPath = [NSIndexPath indexPathForRow:newIndexPath.row inSection:self.index];
+
+    switch (type)
+    {
+
+        case NSFetchedResultsChangeInsert:
+            [self.delegate sectionDidInsertRowAtIndexPath:convertedNewIndexPath];
+            break;
+
+        case NSFetchedResultsChangeDelete:
+            [self.delegate sectionDidDeleteRowAtIndexPath:convertedIndexPath];
+            break;
+
+        case NSFetchedResultsChangeUpdate:
+            [self.delegate sectionDidUpdateRowAtIndexPath:convertedIndexPath];
+            break;
+
+        case NSFetchedResultsChangeMove:
+        {
+            [self.delegate sectionDidDeleteRowAtIndexPath:convertedIndexPath];
+            [self.delegate sectionDidInsertRowAtIndexPath:convertedNewIndexPath];
+            break;
+        }
+    }
+}
+
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
+{
+    [self.delegate sectionDidEndChanges:self];
 }
 
 @end

@@ -1,295 +1,53 @@
-#import "UITableViewCell+TTTCreation.h"
+#import <mach-o/loader.h>
+#import <TwelveTwentyToolkit/NSFetchedResultsController+TTTEasySections.h>
 #import "TTTTableViewItemController.h"
-#import "TTTTableViewItem.h"
 #import "TTTTableViewSection.h"
+#import "TTTTableViewFetchedItem.h"
 #import "TTTTableViewFetchedSection.h"
 
-typedef enum
-{
-    TTTDelegateOptionNone = 0,
-    TTTDelegateOptionWillBeginDecelerating = 1 << 0,
-    TTTDelegateOptionWillDisplayCell = 1 << 1,
-    TTTDelegateOptionDidEndDisplayingCell = 1 << 2,
-    TTTDelegateOptionViewForHeaderInSection = 1 << 3,
-    TTTDelegateOptionViewForFooterInSection = 1 << 4,
-    TTTDelegateOptionScrollViewDidScroll = 1 << 5,
-    TTTDelegateOptionScrollViewWillBeginDragging = 1 << 6,
-} TTTDelegateOption;
-
-@interface TTTTableViewItemController ()
-
-@property(nonatomic, strong) NSMutableArray *sections;
-
-@property(nonatomic) TTTDelegateOption delegateOptions;
-
+@interface TTTTableViewItemController () <TTTTableViewSectionDelegate>
 @end
 
 @implementation TTTTableViewItemController
 
-- (id)init
+- (id)addSection:(TTTTableViewSection *)section
 {
-    self = [super init];
-
-    if (self)
-    {
-        self.requiresReload = YES;
-        self.sections = [NSMutableArray array];
-    }
-
-    return self;
+    section.delegate = self;
+    return [super addSection:section];
 }
 
-- (void)setRelayDelegate:(id <UITableViewDelegate>)relayDelegate
+#pragma mark - TTTTableViewSectionDelegate methods
+
+- (void)sectionDidReload:(TTTTableViewFetchedSection *)section1
 {
-    _relayDelegate = relayDelegate;
-
-    self.delegateOptions = TTTDelegateOptionNone;
-
-    if ([_relayDelegate respondsToSelector:@selector(scrollViewWillBeginDecelerating:)])
-    {
-        self.delegateOptions |= TTTDelegateOptionWillBeginDecelerating;
-    }
-
-    if ([_relayDelegate respondsToSelector:@selector(tableView:willDisplayCell:forRowAtIndexPath:)])
-    {
-        self.delegateOptions |= TTTDelegateOptionWillDisplayCell;
-    }
-
-    if ([_relayDelegate respondsToSelector:@selector(tableView:didEndDisplayingCell:forRowAtIndexPath:)])
-    {
-        self.delegateOptions |= TTTDelegateOptionDidEndDisplayingCell;
-    }
-
-    if ([_relayDelegate respondsToSelector:@selector(tableView:viewForHeaderInSection:)])
-    {
-        self.delegateOptions |= TTTDelegateOptionViewForHeaderInSection;
-    }
-
-    if ([_relayDelegate respondsToSelector:@selector(tableView:viewForFooterInSection:)])
-    {
-        self.delegateOptions |= TTTDelegateOptionViewForFooterInSection;
-    }
-
-    if ([_relayDelegate respondsToSelector:@selector(scrollViewDidScroll:)])
-    {
-        self.delegateOptions |= TTTDelegateOptionScrollViewDidScroll;
-    }
-
-    if ([_relayDelegate respondsToSelector:@selector(scrollViewWillBeginDragging:)])
-    {
-        self.delegateOptions |= TTTDelegateOptionScrollViewWillBeginDragging;
-    }
+    [self.tableView reloadData];
 }
 
-- (void)reloadData
+- (void)sectionWillBeginChanges:(TTTTableViewFetchedSection *)section
 {
-    for (TTTTableViewSection *section in self.sections)
-    {
-        [section reloadData];
-    }
-
-    self.requiresReload = NO;
-    [self.delegate tableViewItemControllerDidReloadData];
+    [self.tableView beginUpdates];
 }
 
-- (TTTTableViewSection *)sectionAtIndex:(NSInteger)index
+- (void)sectionDidInsertRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (index >= [self.sections count]) return nil;
-    if (index < 0) return nil;
-
-    return [self.sections objectAtIndex:(NSUInteger) index];
+    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
 }
 
-- (TTTTableViewSection *)addSection
+- (void)sectionDidDeleteRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    self.requiresReload = YES;
-
-    TTTTableViewSection *section = [[TTTTableViewSection alloc] initWithIndex:[self.sections count]];
-    [self.sections addObject:section];
-    return section;
+    [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
 }
 
-- (TTTTableViewFetchedSection *)addFetchedSection
-{
-    self.requiresReload = YES;
-
-    TTTTableViewFetchedSection *section = [[TTTTableViewFetchedSection alloc] initWithIndex:[self.sections count]];
-    [self.sections addObject:section];
-    section.itemController = self;
-
-    return section;
-}
-
-- (TTTTableViewItem *)itemAtIndexPath:(NSIndexPath *)indexPath
-{
-    TTTTableViewSection *section = [self sectionAtIndex:(NSUInteger) indexPath.section];
-    return [section itemAtIndex:(NSUInteger) indexPath.row];
-}
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    if (self.requiresReload)
-    {
-        [self reloadData];
-    }
-
-    return [self.sections count];
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    NSInteger count = [[self sectionAtIndex:(NSUInteger) section] count];
-    return count;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)sectionDidUpdateRowAtIndexPath:(NSIndexPath *)indexPath
 {
     TTTTableViewItem *item = [self itemAtIndexPath:indexPath];
-    return item.height ? item.height : tableView.rowHeight;
+    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+    item.configureBlock(item, cell, indexPath);
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)sectionDidEndChanges:(TTTTableViewSection *)section
 {
-    TTTTableViewItem *item = [self itemAtIndexPath:indexPath];
-
-    UITableViewCell *cell = [item.cellClass createOrDequeueFromTable:tableView];
-
-    if (item.configureBlock)
-    {
-        item.configureBlock(item, cell, indexPath);
-    }
-
-    if ([cell conformsToProtocol:@protocol(TTTGroupedTableViewCell)])
-    {
-        TTTTableViewSectionPosition position = TTTTableViewSectionPositionNone;
-
-        if (indexPath.row == 0)
-        {
-            position |= TTTTableViewSectionPositionTop;
-        }
-
-        if (indexPath.row == [self tableView:tableView numberOfRowsInSection:indexPath.section] - 1)
-        {
-            position |= TTTTableViewSectionPositionBottom;
-        }
-
-        [(id <TTTGroupedTableViewCell>) cell setPositionInSection:position];
-    }
-
-    return cell;
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    TTTTableViewItem *item = [self itemAtIndexPath:indexPath];
-    if (item.didSelectBlock)
-    {
-        item.didSelectBlock(item, indexPath);
-    }
-}
-
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
-{
-    return [self sectionAtIndex:section].title;
-}
-
-#pragma mark - Relay delegate methods
-
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView
-{
-    if (self.delegateOptions & TTTDelegateOptionScrollViewDidScroll)
-    {
-        [self.relayDelegate scrollViewDidScroll:scrollView];
-    }
-}
-
-- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
-{
-    if (self.delegateOptions & TTTDelegateOptionScrollViewWillBeginDragging)
-    {
-        [self.relayDelegate scrollViewWillBeginDragging:scrollView];
-    }
-}
-
-- (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView
-{
-    if (self.delegateOptions & TTTDelegateOptionWillBeginDecelerating)
-    {
-        [self.relayDelegate scrollViewWillBeginDecelerating:scrollView];
-    }
-}
-
-- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    TTTTableViewItem *item = [self itemAtIndexPath:indexPath];
-    if (item.willDisplayBlock)
-    {
-        item.willDisplayBlock(item, cell, indexPath);
-    }
-    else if (self.delegateOptions & TTTDelegateOptionWillDisplayCell)
-    {
-        [self.relayDelegate tableView:tableView willDisplayCell:cell forRowAtIndexPath:indexPath];
-    }
-}
-
-- (void)tableView:(UITableView *)tableView didEndDisplayingCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-#warning this causes an error when the table reloaded.
-    TTTTableViewItem *item = [self itemAtIndexPath:indexPath];
-    if (item.didEndDisplayingBlock)
-    {
-        item.didEndDisplayingBlock(item, cell, indexPath);
-    }
-    else if (self.delegateOptions & TTTDelegateOptionDidEndDisplayingCell)
-    {
-        [self.relayDelegate tableView:tableView didEndDisplayingCell:cell forRowAtIndexPath:indexPath];
-    }
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-{
-    CGFloat headerHeight = [[self sectionAtIndex:section] headerHeight];
-    return headerHeight >= 0 ? headerHeight : tableView.sectionHeaderHeight;
-}
-
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-{
-    TTTTableViewSection *s = [self sectionAtIndex:section];
-
-    if (s.headerHeight)
-    {
-        return s.headerView;
-    }
-
-    if (self.delegateOptions & TTTDelegateOptionViewForHeaderInSection)
-    {
-        return [self.relayDelegate tableView:tableView viewForHeaderInSection:section];
-    }
-
-    return nil;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
-{
-    CGFloat footerHeight = [[self sectionAtIndex:section] footerHeight];
-    return footerHeight >= 0 ? footerHeight : tableView.sectionFooterHeight;
-}
-
-- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
-{
-    TTTTableViewSection *s = [self sectionAtIndex:section];
-
-    if (s.footerHeight)
-    {
-        return s.footerView;
-    }
-
-    if (self.delegateOptions & TTTDelegateOptionViewForFooterInSection)
-    {
-        return [self.relayDelegate tableView:tableView viewForFooterInSection:section];
-    }
-
-    return nil;
+    [self.tableView endUpdates];
 }
 
 @end

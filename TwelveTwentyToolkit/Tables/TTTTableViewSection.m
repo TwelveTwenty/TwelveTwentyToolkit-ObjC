@@ -1,6 +1,7 @@
 #import <CoreGraphics/CoreGraphics.h>
 #import "TTTTableViewSection.h"
 #import "TTTTableViewItem.h"
+#import "TTTTableViewFetchedSection.h"
 
 @interface TTTTableViewSection ()
 
@@ -10,13 +11,18 @@
 
 @implementation TTTTableViewSection
 
-- (id)initWithIndex:(NSInteger)index
++ (id)section
+{
+    return [[self alloc] init];
+}
+
+- (id)init
 {
     self = [super init];
 
     if (self)
     {
-        self.index = index;
+        self.index = -1;
         self.items = [NSMutableArray array];
         self.headerHeight = 0;
     }
@@ -24,12 +30,38 @@
     return self;
 }
 
-- (void)reloadData
+- (NSInteger)index
 {
-    // void
+    NSAssert(_index >= 0, @"Invalid index");
+    return _index;
 }
 
-- (NSUInteger)count
+- (NSIndexSet *)indexSet
+{
+    return [NSIndexSet indexSetWithIndex:(NSUInteger) self.index];
+}
+
+- (NSArray *)indexPaths
+{
+    NSUInteger numberOfItems = self.numberOfItems;
+    if (!numberOfItems) return nil;
+
+    NSMutableArray *indexPaths = [NSMutableArray arrayWithCapacity:numberOfItems];
+
+    for (NSUInteger row = 0; row < numberOfItems; ++row)
+    {
+        [indexPaths addObject:[NSIndexPath indexPathForRow:row inSection:self.index]];
+    }
+
+    return indexPaths;
+}
+
+- (void)loadSection
+{
+    [self.delegate sectionDidEndChanges:self];
+}
+
+- (NSUInteger)numberOfItems
 {
     return [self.items count];
 }
@@ -92,6 +124,16 @@
     }
 
     return _footerView;
+}
+
+- (NSString *)description
+{
+    NSMutableString *description = [NSMutableString stringWithFormat:@"<%@:", NSStringFromClass([self class])];
+
+    [description appendFormat:@" index=\"%i\" rows=\"%i\" title=\"%@\"", self.index, self.numberOfItems, self.title];
+
+    [description appendFormat:@" %p>", &self];
+    return description;
 }
 
 @end
