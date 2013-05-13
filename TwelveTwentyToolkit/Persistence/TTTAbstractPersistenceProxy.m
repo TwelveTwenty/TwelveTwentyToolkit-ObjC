@@ -182,6 +182,12 @@
 
 - (BOOL)savePrivateContext:(NSManagedObjectContext *)context
 {
+    if (context == self.mainContext)
+    {
+        [self saveToDisk];
+        return YES;
+    }
+
     __block BOOL success = NO;
 
     [context performBlockAndWait:^{
