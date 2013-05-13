@@ -53,7 +53,7 @@
 {
     _fetchedResultsController = fetchedResultsController;
 
-    [fetchedResultsController performFetch:NULL];
+    [fetchedResultsController performFetch:NULL deleteCache:YES];
 
     [self.delegate sectionDidReload:self];
 
@@ -77,7 +77,8 @@
         TTTTableViewFetchedItem *item = self.cachedItems[@(index)];
         if (!item)
         {
-            item = [TTTTableViewFetchedItem itemWithCellClass:self.cellClass height:self.rowHeight configure:self.configureBlock didSelect:self.didSelectBlock];
+            item = (TTTTableViewFetchedItem *) [TTTTableViewFetchedItem itemWithCellClass:self.cellClass configure:self.configureBlock];
+            [[item fixedHeight:self.rowHeight] handleDidSelect:self.didSelectBlock];
             NSArray *objects = [[self.fetchedResultsController tttFirstSection] objects];
             if (index < 0) return nil;
             if (index >= [objects count]) return nil;

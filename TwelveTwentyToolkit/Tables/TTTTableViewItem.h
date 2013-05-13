@@ -3,21 +3,46 @@
 
 @class TTTTableViewItem;
 
+typedef CGFloat (^TTTDynamicHeightBlock)(id item, NSIndexPath *indexPath);
 typedef void (^TTTConfigureItemBlock)(id item, id cell, NSIndexPath *indexPath);
 typedef void (^TTTDidSelectItemBlock)(id item, NSIndexPath *indexPath);
 typedef void (^TTTWillDisplayItemBlock)(id item, id cell, NSIndexPath *indexPath);
 typedef void (^TTTDidEndDisplayingItemBlock)(id item, id cell, NSIndexPath *indexPath);
 
-@interface TTTTableViewItem : NSObject
+extern const CGFloat TTTUseDynamicHeight;
 
-@property(nonatomic, strong) Class cellClass;
+@protocol TTTFixedHeight
++ (CGFloat)fixedHeight;
+@end
+
+@protocol TTTTableViewItem
+
+#pragma mark - Linting methods
+- (id<TTTTableViewItem>)dynamicHeight:(TTTDynamicHeightBlock)heightBlock;
+- (id<TTTTableViewItem>)fixedHeight:(CGFloat)fixedHeight;
+- (id<TTTTableViewItem>)handleDidSelect:(TTTDidSelectItemBlock)didSelectBlock;
+- (id<TTTTableViewItem>)handleWillDisplay:(TTTWillDisplayItemBlock)willDisplayBlock;
+- (id<TTTTableViewItem>)handleDidEndDisplaying:(TTTDidEndDisplayingItemBlock)didEndDisplayingBlock;
+
+@end
+
+@interface TTTTableViewItem : NSObject <TTTTableViewItem>
+
 @property(nonatomic) CGFloat height;
 @property(nonatomic, strong) NSIndexPath *indexPath;
-@property(nonatomic, copy) TTTConfigureItemBlock configureBlock;
-@property(nonatomic, copy) TTTDidSelectItemBlock didSelectBlock;
-@property(nonatomic, copy) TTTWillDisplayItemBlock willDisplayBlock;
-@property(nonatomic, copy) TTTDidEndDisplayingItemBlock didEndDisplayingBlock;
+@property(nonatomic, strong, readonly) Class cellClass;
+@property(nonatomic, copy, readonly) TTTConfigureItemBlock configureBlock;
+@property(nonatomic, copy, readonly) TTTDidSelectItemBlock didSelectBlock;
+@property(nonatomic, copy, readonly) TTTWillDisplayItemBlock willDisplayBlock;
+@property(nonatomic, copy, readonly) TTTDidEndDisplayingItemBlock didEndDisplayingBlock;
 
-+ (id)itemWithCellClass:(Class)cellClass height:(CGFloat)height configure:(TTTConfigureItemBlock)configureBlock didSelect:(TTTDidSelectItemBlock)didSelectBlock;
++ (id)itemWithCellClass:(Class)cellClass configure:(TTTConfigureItemBlock)configureBlock fixedHeight:(CGFloat)height didSelect:(TTTDidSelectItemBlock)didSelectBlock UNAVAILABLE_ATTRIBUTE;
+
++ (id<TTTTableViewItem>)itemWithCellClass:(Class)cellClass configure:(TTTConfigureItemBlock)configureBlock;
+- (id)init UNAVAILABLE_ATTRIBUTE; // Use +itemWithCellClass:configureBlock: instead.
+
+#pragma mark - Rest
+
+- (CGFloat)resetHeight;
 
 @end

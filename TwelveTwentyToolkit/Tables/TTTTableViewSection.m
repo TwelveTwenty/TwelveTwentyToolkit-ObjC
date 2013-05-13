@@ -66,10 +66,10 @@
     return [self.items count];
 }
 
-- (TTTTableViewItem *)addItem:(TTTTableViewItem *)item
+- (id <TTTTableViewItem>)addItem:(id <TTTTableViewItem>)item
 {
     [self.items addObject:item];
-    item.indexPath = [NSIndexPath indexPathForRow:[self.items count] - 1 inSection:self.index]; 
+    [(TTTTableViewItem *)item setIndexPath:[NSIndexPath indexPathForRow:[self.items count] - 1 inSection:self.index]];
     return item;
 }
 

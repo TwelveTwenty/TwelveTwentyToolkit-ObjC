@@ -91,6 +91,10 @@
         [(id <TTTGroupedTableViewCell>) cell setPositionInSection:position];
     }
 
+    if (!cell)
+    {
+        NSAssert(cell, @"Cell can't be nil for index path %@. Check who's owning of this controller.", indexPath);
+    }
     return cell;
 }
 

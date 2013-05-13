@@ -6,6 +6,7 @@
 
 @interface TTTTableViewFetchedSection : TTTTableViewSection
 
+/** If you need to alter the fetched results controller's predicate, do it BEFORE assigning to this property */
 @property(nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 @property(nonatomic) CGFloat rowHeight;
 

@@ -34,7 +34,7 @@ typedef UIView *(^TTTSectionViewBlock)(TTTTableViewSection *section); // ^UIView
 
 - (NSUInteger)numberOfItems;
 
-- (TTTTableViewItem *)addItem:(TTTTableViewItem *)item;
+- (id <TTTTableViewItem>)addItem:(id <TTTTableViewItem>)item;
 
 - (TTTTableViewItem *)itemAtIndex:(NSInteger)index;
 
