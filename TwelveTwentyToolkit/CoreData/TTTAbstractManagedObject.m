@@ -1,7 +1,19 @@
 #import "TTTAbstractManagedObject.h"
 #import "TTTTimestamped.h"
+#import "NSManagedObject+TTTUniquing.h"
+
+const struct TTTIdentifiableAttributes TTTIdentifiableAttributes = {
+        .identifier = @"identifier",
+};
 
 @implementation TTTAbstractManagedObject
+
++ (id)uniqueEntityWithIdentifier:(NSNumber *)identifier inContext:(NSManagedObjectContext *)context
+{
+    NSAssert([self conformsToProtocol:@protocol(TTTIdentifiable)], @"Class %@ must conform to protocol TTTIndentifiable to use this method.", self);
+    id entity = [self tttUniqueEntityWithValue:identifier forKey:TTTIdentifiableAttributes.identifier inContext:context];
+    return entity;
+}
 
 + (NSFetchRequest *)fetchRequestWithSortingKeys:(NSDictionary *)sortingKeysWithAscendingFlag
 {

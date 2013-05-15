@@ -42,6 +42,8 @@ enum {TTTDeleteFailed = -1};
  */
 - (NSInteger)tttDeleteEntitiesNamed:(NSString *)entityName withValue:(id)value forKey:(NSString *)key error:(NSError **)error;
 
+- (NSInteger)tttDeleteEntitiesNamed:(NSString *)entityName withValues:(NSArray *)values forKeys:(NSArray *)keys error:(NSError **)error;
+
 - (NSInteger)tttDeleteEntitiesNamed:(NSString *)entityName withNoRelationshipForKey:(NSString *)key error:(NSError **)error;
 
 - (NSInteger)tttDeleteAllEntitiesNamed:(NSString *)entityName error:(NSError **)error;

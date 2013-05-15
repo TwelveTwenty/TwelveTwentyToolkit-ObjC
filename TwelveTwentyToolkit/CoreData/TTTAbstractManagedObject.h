@@ -22,5 +22,19 @@
 
 @end
 
+extern const struct TTTIdentifiableAttributes
+{
+    __unsafe_unretained NSString *identifier;
+} TTTIdentifiableAttributes;
+
+@protocol TTTIdentifiable <TTTMogeneratorEntity>
+
+@property(nonatomic, strong) NSNumber *identifier;
+
+@end
+
 @interface TTTAbstractManagedObject : NSManagedObject <TTTMogeneratorEntity>
+
++ (id)uniqueEntityWithIdentifier:(NSNumber *)identifier inContext:(NSManagedObjectContext *)context;
+
 @end

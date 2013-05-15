@@ -47,7 +47,6 @@
     return result;
 }
 
-
 - (BOOL)tttSetValue:(id)value forKey:(NSString *)key onEntitiesWithName:(NSString *)entityName error:(NSError **)error
 {
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:entityName];
@@ -64,8 +63,24 @@
 
 - (NSInteger)tttDeleteEntitiesNamed:(NSString *)entityName withValue:(id)value forKey:(NSString *)key error:(NSError **)error
 {
+    return [self tttDeleteEntitiesNamed:entityName withValues:@[value] forKeys:@[key] error:error];
+}
+
+- (NSInteger)tttDeleteEntitiesNamed:(NSString *)entityName withValues:(NSArray *)values forKeys:(NSArray *)keys error:(NSError **)error
+{
+    NSString *joinedFormat;
+    {
+        NSString *singleFormat = @"%@ == %%@";
+        NSMutableArray *combinedFormat = [NSMutableArray arrayWithCapacity:[values count]];
+        for (int i = 0; i < [values count]; ++i)
+        {
+            [combinedFormat addObject:singleFormat];
+        }
+        joinedFormat = [combinedFormat componentsJoinedByString:@" AND "];
+    }
+
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:entityName];
-    request.predicate = [NSPredicate tttPredicateWithComplexFormat:@"%@ == %%@" innerArguments:@[key] outerArguments:@[value]];
+    request.predicate = [NSPredicate tttPredicateWithComplexFormat:joinedFormat innerArguments:keys outerArguments:values];
     NSArray *results = [self executeFetchRequest:request error:error];
     if (!results)
     {
