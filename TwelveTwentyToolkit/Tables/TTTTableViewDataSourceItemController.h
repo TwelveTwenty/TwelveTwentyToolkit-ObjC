@@ -2,6 +2,7 @@
 
 @class TTTTableViewItem;
 @class TTTTableViewSection;
+@protocol TTTTableViewSection;
 
 typedef enum
 {
@@ -18,7 +19,7 @@ typedef enum
 - (id)initWithTableView:(UITableView *)tableView;
 - (id)init UNAVAILABLE_ATTRIBUTE;
 
-- (id)addSection:(TTTTableViewSection *)section;
+- (id <TTTTableViewSection>)addSection:(id<TTTTableViewSection>)section;
 - (TTTTableViewSection *)sectionAtIndex:(NSInteger)index;
 - (TTTTableViewItem *)itemAtIndexPath:(NSIndexPath *)indexPath;
 

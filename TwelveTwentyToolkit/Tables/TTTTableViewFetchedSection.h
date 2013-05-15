@@ -4,12 +4,32 @@
 @class NSFetchedResultsController;
 @class TTTTableViewItemController;
 
-@interface TTTTableViewFetchedSection : TTTTableViewSection
+@protocol TTTTableViewFetchedSection <TTTTableViewSection>
+
+- (id <TTTTableViewFetchedSection>)configure:(TTTConfigureItemBlock)configureBlock;
+
+- (id <TTTTableViewFetchedSection>)fixedRowHeight:(CGFloat)fixedRowHeight;
+
+- (id <TTTTableViewFetchedSection>)dynamicRowHeight:(TTTDynamicHeightBlock)heightBlock;
+
+- (id <TTTTableViewFetchedSection>)handleDidSelect:(TTTDidSelectItemBlock)didSelectBlock;
+
+- (TTTTableViewFetchedSection *)asFetchedSection;
+
+- (TTTTableViewSection *)asSection UNAVAILABLE_ATTRIBUTE;
+
+@end
+
+@interface TTTTableViewFetchedSection : TTTTableViewSection <TTTTableViewFetchedSection>
 
 /** If you need to alter the fetched results controller's predicate, do it BEFORE assigning to this property */
 @property(nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 @property(nonatomic) CGFloat rowHeight;
 
-- (void)setCellClass:(Class)cellClass height:(CGFloat)height configure:(TTTConfigureItemBlock)configureBlock didSelect:(TTTDidSelectItemBlock)didSelectBlock;
+@property(nonatomic, strong) Class cellClass;
+
++ (id <TTTTableViewFetchedSection>)fetchedSectionWithCellClass:(Class)cellClass configureBlock:(TTTConfigureItemBlock)configureBlock;
+
++ (id)section UNAVAILABLE_ATTRIBUTE;
 
 @end

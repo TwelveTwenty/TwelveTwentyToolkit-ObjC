@@ -11,13 +11,36 @@
 
 @property(nonatomic, strong) NSMutableDictionary *cachedItems;
 
-@property(nonatomic, strong) Class cellClass;
 @property(nonatomic, copy) TTTConfigureItemBlock configureBlock;
 @property(nonatomic, copy) TTTDidSelectItemBlock didSelectBlock;
 
+@property(nonatomic, copy) TTTDynamicHeightBlock dynamicHeightBlock;
 @end
 
 @implementation TTTTableViewFetchedSection
+
++ (id <TTTTableViewFetchedSection>)fetchedSectionWithCellClass:(Class)cellClass configureBlock:(TTTConfigureItemBlock)configureBlock
+{
+    return [[self alloc] initWithCellClass:cellClass configureBlock:configureBlock];
+}
+
+- (TTTTableViewFetchedSection *)asFetchedSection
+{
+    return self;
+}
+
+- (id)initWithCellClass:(Class)cellClass configureBlock:(TTTConfigureItemBlock)configureBlock
+{
+    self = [self init];
+
+    if (self)
+    {
+        self.configureBlock = configureBlock;
+        self.cellClass = cellClass;
+    }
+
+    return self;
+}
 
 - (id)init
 {
@@ -25,28 +48,35 @@
 
     if (self)
     {
-        [self loadSection];
+        self.cachedItems = [NSMutableDictionary dictionary];
     }
 
     return self;
 }
 
-- (void)loadSection
+- (id <TTTTableViewFetchedSection>)fixedRowHeight:(CGFloat)fixedRowHeight
 {
-    self.cachedItems = [NSMutableDictionary dictionary];
-    if (self.fetchedResultsController)
-    {
-        [NSFetchedResultsController deleteCacheWithName:self.fetchedResultsController.cacheName];
-        [self.fetchedResultsController performFetch:NULL];
-    }
+    self.rowHeight = fixedRowHeight;
+    return self;
 }
 
-- (void)setCellClass:(Class)cellClass height:(CGFloat)height configure:(TTTConfigureItemBlock)configureBlock didSelect:(TTTDidSelectItemBlock)didSelectBlock
+- (id <TTTTableViewFetchedSection>)dynamicRowHeight:(TTTDynamicHeightBlock)dynamicHeightBlock
 {
-    self.cellClass = cellClass;
-    self.rowHeight = height;
-    self.configureBlock = configureBlock;
+    self.dynamicHeightBlock = dynamicHeightBlock;
+    self.rowHeight = TTTUseDynamicHeight;
+    return self;
+}
+
+- (id <TTTTableViewFetchedSection>)handleDidSelect:(TTTDidSelectItemBlock)didSelectBlock
+{
     self.didSelectBlock = didSelectBlock;
+    return self;
+}
+
+- (id <TTTTableViewFetchedSection>)configure:(TTTConfigureItemBlock)configureBlock
+{
+    self.configureBlock = configureBlock;
+    return self;
 }
 
 - (void)setFetchedResultsController:(NSFetchedResultsController *)fetchedResultsController
@@ -55,7 +85,7 @@
 
     [fetchedResultsController performFetch:NULL deleteCache:YES];
 
-    [self.delegate sectionDidReload:self];
+    [self.itemController sectionDidReload:self];
 
     fetchedResultsController.delegate = self;
 }
@@ -77,8 +107,11 @@
         TTTTableViewFetchedItem *item = self.cachedItems[@(index)];
         if (!item)
         {
-            item = (TTTTableViewFetchedItem *) [TTTTableViewFetchedItem itemWithCellClass:self.cellClass configure:self.configureBlock];
-            [[item fixedHeight:self.rowHeight] handleDidSelect:self.didSelectBlock];
+            item = [[TTTTableViewFetchedItem fetchedItemWithCellClass:self.cellClass configure:self.configureBlock] asFetchedItem];
+            [item fixedHeight:self.rowHeight];
+            [item dynamicHeight:self.dynamicHeightBlock];
+            [item handleDidSelect:self.didSelectBlock];
+
             NSArray *objects = [[self.fetchedResultsController tttFirstSection] objects];
             if (index < 0) return nil;
             if (index >= [objects count]) return nil;
@@ -98,7 +131,7 @@
 {
     self.cachedItems = [NSMutableDictionary dictionary];
 
-    [self.delegate sectionWillBeginChanges:self];
+    [self.itemController sectionWillBeginChanges:self];
 }
 
 - (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type newIndexPath:(NSIndexPath *)newIndexPath
@@ -110,21 +143,21 @@
     {
 
         case NSFetchedResultsChangeInsert:
-            [self.delegate sectionDidInsertRowAtIndexPath:convertedNewIndexPath];
+            [self.itemController sectionDidInsertRowAtIndexPath:convertedNewIndexPath];
             break;
 
         case NSFetchedResultsChangeDelete:
-            [self.delegate sectionDidDeleteRowAtIndexPath:convertedIndexPath];
+            [self.itemController sectionDidDeleteRowAtIndexPath:convertedIndexPath];
             break;
 
         case NSFetchedResultsChangeUpdate:
-            [self.delegate sectionDidUpdateRowAtIndexPath:convertedIndexPath];
+            [self.itemController sectionDidUpdateRowAtIndexPath:convertedIndexPath];
             break;
 
         case NSFetchedResultsChangeMove:
         {
-            [self.delegate sectionDidDeleteRowAtIndexPath:convertedIndexPath];
-            [self.delegate sectionDidInsertRowAtIndexPath:convertedNewIndexPath];
+            [self.itemController sectionDidDeleteRowAtIndexPath:convertedIndexPath];
+            [self.itemController sectionDidInsertRowAtIndexPath:convertedNewIndexPath];
             break;
         }
     }
@@ -132,7 +165,7 @@
 
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
 {
-    [self.delegate sectionDidEndChanges:self];
+    [self.itemController sectionDidEndChanges:self];
 }
 
 @end

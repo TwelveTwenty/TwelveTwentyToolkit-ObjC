@@ -3,13 +3,19 @@
 #import "TTTTableViewItem.h"
 
 @class TTTTableViewSection;
+@class TTTTableViewItemController;
+@class TTTTableViewFetchedSection;
+@protocol TTTTableViewSectionDelegate;
 
 typedef UIView *(^TTTSectionViewBlock)(TTTTableViewSection *section); // ^UIView *(UITableView *tableView, TTTTableViewSection *section)
 
-@protocol TTTTableViewSectionDelegate;
-@class TTTTableViewFetchedSection;
+@protocol TTTTableViewSection
 
-@interface TTTTableViewSection : NSObject
+- (TTTTableViewSection *)asSection;
+
+@end
+
+@interface TTTTableViewSection : NSObject <TTTTableViewSection>
 
 @property(nonatomic) NSInteger index;
 @property(nonatomic, readonly) NSIndexSet *indexSet;
@@ -24,13 +30,11 @@ typedef UIView *(^TTTSectionViewBlock)(TTTTableViewSection *section); // ^UIView
 @property(nonatomic, copy) TTTSectionViewBlock footerViewBlock;
 @property(nonatomic, strong) UIView *footerView;
 
-@property(nonatomic, weak) id <TTTTableViewSectionDelegate>delegate;
+@property(nonatomic, weak) TTTTableViewItemController  <TTTTableViewSectionDelegate> *itemController;
 
-+ (id)section;
++ (id <TTTTableViewSection>)section;
 
 - (id)init;
-
-- (void)loadSection;
 
 - (NSUInteger)numberOfItems;
 

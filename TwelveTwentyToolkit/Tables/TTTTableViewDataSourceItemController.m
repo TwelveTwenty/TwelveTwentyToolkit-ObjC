@@ -8,6 +8,7 @@
 
 @implementation TTTTableViewDataSourceItemController
 
+
 - (id)initWithTableView:(UITableView *)tableView
 {
     self = [super init];
@@ -22,10 +23,10 @@
     return self;
 }
 
-- (id)addSection:(TTTTableViewSection *)section
+- (id <TTTTableViewSection>)addSection:(id<TTTTableViewSection>)section
 {
     NSAssert(![self.sections containsObject:section], @"Section can't be added twice: %@", section);
-    section.index = [self.sections count];
+    [(TTTTableViewSection *)section setIndex:[self.sections count]];
     [self.sections addObject:section];
     return section;
 }

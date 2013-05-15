@@ -10,15 +10,15 @@
 
 @implementation TTTTableViewItemController
 
-- (id)addSection:(TTTTableViewSection *)section
+- (id <TTTTableViewSection>)addSection:(id<TTTTableViewSection>)section
 {
-    section.delegate = self;
+    [section asSection].itemController = self;
     return [super addSection:section];
 }
 
 #pragma mark - TTTTableViewSectionDelegate methods
 
-- (void)sectionDidReload:(TTTTableViewFetchedSection *)section1
+- (void)sectionDidReload:(TTTTableViewFetchedSection *)section
 {
     [self.tableView reloadData];
 }

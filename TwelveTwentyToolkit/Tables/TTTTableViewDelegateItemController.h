@@ -6,7 +6,10 @@
 
 @interface TTTTableViewDelegateItemController : TTTTableViewDataSourceItemController <UITableViewDelegate>
 
-@property(nonatomic, weak) id <TTTTableViewItemControllerRelayDelegate> delegate;
+@property(nonatomic, weak, readonly) id <TTTTableViewItemControllerRelayDelegate> delegate;
+
+- (id)initWithTableView:(UITableView *)tableView delegate:(id <TTTTableViewItemControllerRelayDelegate>)delegate;
+- (id)initWithTableView:(UITableView *)tableView UNAVAILABLE_ATTRIBUTE;
 
 @end
 

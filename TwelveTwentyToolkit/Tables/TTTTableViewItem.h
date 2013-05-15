@@ -23,6 +23,7 @@ extern const CGFloat TTTUseDynamicHeight;
 - (id<TTTTableViewItem>)handleDidSelect:(TTTDidSelectItemBlock)didSelectBlock;
 - (id<TTTTableViewItem>)handleWillDisplay:(TTTWillDisplayItemBlock)willDisplayBlock;
 - (id<TTTTableViewItem>)handleDidEndDisplaying:(TTTDidEndDisplayingItemBlock)didEndDisplayingBlock;
+- (TTTTableViewItem *)asItem;
 
 @end
 
@@ -36,9 +37,8 @@ extern const CGFloat TTTUseDynamicHeight;
 @property(nonatomic, copy, readonly) TTTWillDisplayItemBlock willDisplayBlock;
 @property(nonatomic, copy, readonly) TTTDidEndDisplayingItemBlock didEndDisplayingBlock;
 
-+ (id)itemWithCellClass:(Class)cellClass configure:(TTTConfigureItemBlock)configureBlock fixedHeight:(CGFloat)height didSelect:(TTTDidSelectItemBlock)didSelectBlock UNAVAILABLE_ATTRIBUTE;
-
 + (id<TTTTableViewItem>)itemWithCellClass:(Class)cellClass configure:(TTTConfigureItemBlock)configureBlock;
+
 - (id)init UNAVAILABLE_ATTRIBUTE; // Use +itemWithCellClass:configureBlock: instead.
 
 #pragma mark - Rest

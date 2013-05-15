@@ -53,6 +53,11 @@ const CGFloat TTTUseDynamicHeight = 0;
     return self;
 }
 
+- (TTTTableViewItem *)asItem
+{
+    return self;
+}
+
 - (CGFloat)resetHeight
 {
     self.height = TTTUseDynamicHeight;

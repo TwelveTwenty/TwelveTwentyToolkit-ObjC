@@ -18,17 +18,19 @@ typedef enum
 
 @property(nonatomic) TTTDelegateOption delegateOptions;
 
+@property(nonatomic, weak, readwrite) id <TTTTableViewItemControllerRelayDelegate> delegate;
 @end
 
 @implementation TTTTableViewDelegateItemController
 
-- (id)initWithTableView:(UITableView *)tableView
+- (id)initWithTableView:(UITableView *)tableView delegate:(id <TTTTableViewItemControllerRelayDelegate>)delegate
 {
     self = [super initWithTableView:tableView];
 
     if (self)
     {
         self.tableView.delegate = self;
+        self.delegate = delegate;
     }
 
     return self;

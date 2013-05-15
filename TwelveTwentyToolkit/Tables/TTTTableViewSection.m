@@ -1,7 +1,6 @@
 #import <CoreGraphics/CoreGraphics.h>
 #import "TTTTableViewSection.h"
-#import "TTTTableViewItem.h"
-#import "TTTTableViewFetchedSection.h"
+#import "TTTTableViewItemController.h"
 
 @interface TTTTableViewSection ()
 
@@ -14,6 +13,11 @@
 + (id)section
 {
     return [[self alloc] init];
+}
+
+- (TTTTableViewSection *)asSection
+{
+    return self;
 }
 
 - (id)init
@@ -54,11 +58,6 @@
     }
 
     return indexPaths;
-}
-
-- (void)loadSection
-{
-    [self.delegate sectionDidEndChanges:self];
 }
 
 - (NSUInteger)numberOfItems
