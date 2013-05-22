@@ -53,6 +53,13 @@ CGRect CGRectWithTweak(CGRect rect, CGTweakOption tweakOption, CGFloat tweakValu
     return rect;
 }
 
+CGRect CGRectTranslate(CGRect rect, CGFloat x, CGFloat y) {
+    rect.origin.x += x;
+    rect.origin.y += y;
+
+    return rect;
+}
+
 CGRect CGRectAlignToRect(CGRect rectA, CGRect rectB, CGAlignOption options) {
     if (options & CGAlignLeftEdge)
     {

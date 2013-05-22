@@ -71,6 +71,8 @@ extern CGRect CGRectExpand(CGRect rect, CGFloat top, CGFloat left, CGFloat botto
 */
 extern CGRect CGRectWithTweak(CGRect rect, CGTweakOption tweakOption, CGFloat tweakValue);
 
+extern CGRect CGRectTranslate(CGRect rect, CGFloat x, CGFloat y);
+
 /** Align one rect to another one. Will round to device pixels unless flagged with CGAlignPreventDevicePixelRounding */
 extern CGRect CGRectAlignToRect(CGRect rectA, CGRect rectB, CGAlignOption options);
 
