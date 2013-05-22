@@ -70,6 +70,16 @@
 
     UITableViewCell *cell = [item.cellClass createOrDequeueFromTable:tableView];
 
+    if (item.didSelectBlock)
+    {
+        cell.selectionStyle = UITableViewCellSelectionStyleGray;
+    }
+    else
+    {
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    }
+
+
     if (item.configureBlock)
     {
         item.configureBlock(item, cell, indexPath);

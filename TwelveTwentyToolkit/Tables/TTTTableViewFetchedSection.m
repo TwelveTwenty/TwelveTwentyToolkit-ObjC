@@ -54,6 +54,13 @@
     return self;
 }
 
+- (void)setIndex:(NSInteger)index
+{
+    [super setIndex:index];
+
+    self.cachedItems = [NSMutableDictionary dictionary];
+}
+
 - (id <TTTTableViewFetchedSection>)fixedRowHeight:(CGFloat)fixedRowHeight
 {
     self.rowHeight = fixedRowHeight;
@@ -83,7 +90,7 @@
 {
     _fetchedResultsController = fetchedResultsController;
 
-    [fetchedResultsController performFetch:NULL deleteCache:YES];
+    [fetchedResultsController tttPerformFetch:NULL deleteCache:YES];
 
     [self.itemController sectionDidReload:self];
 

@@ -34,10 +34,13 @@
     return self;
 }
 
-- (NSInteger)index
+- (void)setIndex:(NSInteger)index
 {
-    NSAssert(_index >= 0, @"Invalid index");
-    return _index;
+    _index = index;
+
+    [self.items enumerateObjectsUsingBlock:^(TTTTableViewItem *item, NSUInteger idx, BOOL *stop) {
+        [item setIndexPath:[NSIndexPath indexPathForRow:idx inSection:index]];
+    }];
 }
 
 - (NSIndexSet *)indexSet

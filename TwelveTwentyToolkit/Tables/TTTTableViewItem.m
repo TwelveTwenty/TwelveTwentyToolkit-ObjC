@@ -65,7 +65,7 @@ const CGFloat TTTUseDynamicHeight = 0;
 
 - (CGFloat)height
 {
-    if (_height == TTTUseDynamicHeight)
+    if (_height == TTTUseDynamicHeight && self.heightBlock)
     {
         self.height = self.heightBlock(self, self.indexPath);
     }
