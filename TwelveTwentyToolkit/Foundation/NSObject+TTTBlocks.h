@@ -4,5 +4,6 @@
 
 - (void)tttForKey:(id)key performBlock:(void (^)(id))block;
 
-- (void)tttDo:(void (^)(id))block;
+- (id)tttDo:(void (^)(id object))block;
+
 @end

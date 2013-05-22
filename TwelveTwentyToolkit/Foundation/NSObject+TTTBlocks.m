@@ -11,9 +11,10 @@
     }
 }
 
-- (void)tttDo:(void (^)(id object))block
+- (id)tttDo:(void (^)(id object))block
 {
     block(self);
+    return self;
 }
 
 @end
