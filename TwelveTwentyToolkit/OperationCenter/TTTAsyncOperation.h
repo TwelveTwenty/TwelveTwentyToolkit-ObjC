@@ -11,11 +11,15 @@
  */
 typedef void (^TTTFeedbackBlock)(BOOL success, id object, NSError *error);
 
+typedef void (^TTTRequestSuccessBlock)(id jsonResult);
+
+typedef void (^TTTRequestFailureBlock)(NSError *error);
+
 @interface TTTAsyncOperation : TTTOperation
 
 @property(nonatomic, copy) TTTFeedbackBlock feedbackBlock;
-@property(nonatomic, readonly) void (^defaultSuccessBlock)(id);
-@property(nonatomic, readonly) void (^defaultFailureBlock)(NSError *);
+@property(nonatomic, readonly) TTTRequestSuccessBlock defaultSuccessBlock;
+@property(nonatomic, readonly) TTTRequestFailureBlock defaultFailureBlock;
 
 - (id)initWithFeedback:(TTTFeedbackBlock)feedbackBlock;
 

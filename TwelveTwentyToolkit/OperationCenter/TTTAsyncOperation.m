@@ -28,7 +28,7 @@
         self.requiresMainThread = NO;
 
         __strong TTTAsyncOperation *dereferencedSelf = self;
-        self.defaultSuccessBlock = ^(id result) {
+        self.defaultSuccessBlock = ^(id jsonResult) {
             if (dereferencedSelf.isCancelled) return;
             [dereferencedSelf dispatchSuccessfulFeedbackWithOptionalContext:nil];
         };
