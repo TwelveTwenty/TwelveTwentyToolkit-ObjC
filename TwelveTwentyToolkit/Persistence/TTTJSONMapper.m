@@ -80,6 +80,10 @@
         if (nestedJSON && nestedMapper)
         {
             entity = [nestedMapper applyJSON:nestedJSON toEntityInContext:context];
+            if (self.postProcessingBlock)
+            {
+                self.postProcessingBlock(JSON, entity);
+            }
         }
         else
         {
