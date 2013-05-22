@@ -35,6 +35,16 @@
     return context;
 }
 
+- (NSManagedObjectContext *)mainContext
+{
+    BOOL addHandlers = (self->_mainContext == nil);
+    if (!addHandlers) return [super mainContext];
+
+    NSManagedObjectContext *mainContext = [super mainContext];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleWillSaveContextNotification:) name:NSManagedObjectContextWillSaveNotification object:mainContext];
+    return mainContext;
+}
+
 - (void)handleWillSaveContextNotification:(NSNotification *)notification
 {
     NSManagedObjectContext *context = notification.object;
@@ -92,7 +102,12 @@
     }
 
     TTTJSONMapper *mapper = [self mapperForEntityClass:entityClass withIdentifier:identifier autoCreate:NO];
-    NSAssert(mapper, @"No mapper found for entity class `%@`", entityClass);
+
+    if (!mapper)
+    {
+        NSAssert(mapper, @"No mapper found for entity class `%@` from proxy %@", entityClass, self);
+    }
+
     id entityOrEntities = [mapper applyJSON:JSON toEntityInContext:context];
 
     if (autoSave)
