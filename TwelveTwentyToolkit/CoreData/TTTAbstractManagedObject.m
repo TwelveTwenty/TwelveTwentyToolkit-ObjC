@@ -10,21 +10,30 @@ const struct TTTIdentifiableAttributes TTTIdentifiableAttributes = {
 
 + (id)uniqueEntityWithIdentifier:(NSNumber *)identifier inContext:(NSManagedObjectContext *)context
 {
-    NSAssert([self conformsToProtocol:@protocol(TTTIdentifiable)], @"Class %@ must conform to protocol TTTIndentifiable to use this method.", self);
+    NSAssert([self conformsToProtocol:@protocol(TTTIdentifiable)], @"Class %@ must conform to protocol TTTIdentifiable to use this method.", self);
     id entity = [self tttUniqueEntityWithValue:identifier forKey:TTTIdentifiableAttributes.identifier inContext:context];
     return entity;
 }
 
-+ (NSFetchRequest *)fetchRequestWithSortingKeys:(NSDictionary *)sortingKeysWithAscendingFlag
++ (NSFetchRequest *)fetchRequestWithSortingKeys:(id)sortingKeysWithAscendingFlag
 {
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:[(id) self entityName]];
     request.fetchBatchSize = 100;
 
     if (sortingKeysWithAscendingFlag)
     {
+        NSArray *arrayOfSortingKeysWithAscendingFlag = sortingKeysWithAscendingFlag;
+        if (![arrayOfSortingKeysWithAscendingFlag isKindOfClass:[NSArray class]])
+        {
+            arrayOfSortingKeysWithAscendingFlag = @[sortingKeysWithAscendingFlag];
+        }
+
         NSMutableArray *sortDescriptors = [NSMutableArray array];
-        [sortingKeysWithAscendingFlag enumerateKeysAndObjectsUsingBlock:^(NSString *key, NSNumber *ascending, BOOL *stop) {
-            [sortDescriptors addObject:[NSSortDescriptor sortDescriptorWithKey:key ascending:[ascending boolValue]]];
+        [arrayOfSortingKeysWithAscendingFlag enumerateObjectsUsingBlock:^(NSDictionary *sortingKeysWithAscendingFlag, NSUInteger idx, BOOL *stop) {
+            NSAssert([sortingKeysWithAscendingFlag isKindOfClass:[NSDictionary class]], @"Only supports one level of nested dictionaries. Not %@", sortingKeysWithAscendingFlag);
+            [sortingKeysWithAscendingFlag enumerateKeysAndObjectsUsingBlock:^(NSString *key, NSNumber *ascending, BOOL *stop) {
+                [sortDescriptors addObject:[NSSortDescriptor sortDescriptorWithKey:key ascending:[ascending boolValue]]];
+            }];
         }];
 
         request.sortDescriptors = sortDescriptors;
@@ -36,15 +45,25 @@ const struct TTTIdentifiableAttributes TTTIdentifiableAttributes = {
     return request;
 }
 
-+ (NSFetchedResultsController *)fetchedResultsControllerWithSortingKeys:(NSDictionary *)sortingKeysWithAscendingFlag
++ (NSFetchedResultsController *)fetchedResultsControllerWithSortingKeys:(id)sortingKeysWithAscendingFlag
                                                    managedObjectContext:(NSManagedObjectContext *)context
 {
     return [self fetchedResultsControllerWithSortingKeys:sortingKeysWithAscendingFlag
                                     managedObjectContext:context
-                                      sectionNameKeyPath:nil
+                                      sectionNameKeyPath:nil];
+}
+
++ (NSFetchedResultsController *)fetchedResultsControllerWithSortingKeys:(id)sortingKeysWithAscendingFlag
+                                                   managedObjectContext:(NSManagedObjectContext *)context
+                                                     sectionNameKeyPath:(NSString *)sectionNameKeyPath
+{
+    return [self fetchedResultsControllerWithSortingKeys:sortingKeysWithAscendingFlag
+                                    managedObjectContext:context
+                                      sectionNameKeyPath:sectionNameKeyPath
                                                cacheName:[@(rand()) stringValue]];
 }
-+ (NSFetchedResultsController *)fetchedResultsControllerWithSortingKeys:(NSDictionary *)sortingKeysWithAscendingFlag
+
++ (NSFetchedResultsController *)fetchedResultsControllerWithSortingKeys:(id)sortingKeysWithAscendingFlag
                                                    managedObjectContext:(NSManagedObjectContext *)context
                                                      sectionNameKeyPath:(NSString *)sectionNameKeyPath
                                                               cacheName:(NSString *)cacheName

@@ -3,7 +3,7 @@
 
 @protocol TTTMogeneratorEntity
 
-+ (NSFetchedResultsController *)fetchedResultsControllerWithSortingKeys:(NSDictionary *)sortingKeysWithAscendingFlag
++ (NSFetchedResultsController *)fetchedResultsControllerWithSortingKeys:(id)sortingKeysWithAscendingFlag
                                                    managedObjectContext:(NSManagedObjectContext *)context
                                                      sectionNameKeyPath:(NSString *)sectionNameKeyPath
                                                               cacheName:(NSString *)cacheName;
@@ -11,10 +11,10 @@
 /**
 * Defaults section name key path to nil and cache name to a randomized string.
 */
-+ (NSFetchedResultsController *)fetchedResultsControllerWithSortingKeys:(NSDictionary *)sortingKeysWithAscendingFlag
++ (NSFetchedResultsController *)fetchedResultsControllerWithSortingKeys:(id)sortingKeysWithAscendingFlag
                                                    managedObjectContext:(NSManagedObjectContext *)context;
 
-+ (NSFetchRequest *)fetchRequestWithSortingKeys:(NSDictionary *)sortingKeysWithAscendingFlag;
++ (NSFetchRequest *)fetchRequestWithSortingKeys:(id)sortingKeysWithAscendingFlag;
 
 + (id)insertInManagedObjectContext:(NSManagedObjectContext *)moc;
 
@@ -37,4 +37,5 @@ extern const struct TTTIdentifiableAttributes
 
 + (id)uniqueEntityWithIdentifier:(NSNumber *)identifier inContext:(NSManagedObjectContext *)context;
 
++ (NSFetchedResultsController *)fetchedResultsControllerWithSortingKeys:(id)sortingKeysWithAscendingFlag managedObjectContext:(NSManagedObjectContext *)context sectionNameKeyPath:(NSString *)sectionNameKeyPath;
 @end
