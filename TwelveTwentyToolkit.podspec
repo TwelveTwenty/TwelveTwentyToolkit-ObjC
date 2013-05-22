@@ -6,7 +6,8 @@ Pod::Spec.new do |s|
   s.license      = 'MIT'
   s.author       = { 'Eric-Paul Lecluse' => 'epologee@gmail.com', 'Jankees van Woezik' => 'jankeesvw@gmail.com' }
   s.source       = { :git => 'https://github.com/TwelveTwenty/TwelveTwentyToolkit-ObjC.git', :tag => '0.1.3' }
-  s.platform     = :ios, '5.1'
+  s.ios.deployment_target = '6.0'
+  s.osx.deployment_target = '10.8'
   s.requires_arc = true
   
   s.subspec 'Core' do |c|
@@ -18,15 +19,20 @@ Pod::Spec.new do |s|
     fn.source_files = 'TwelveTwentyToolkit/Foundation/**/*.{h,m}'
   end
 
+  s.subspec 'Foundation-iOS' do |fn|
+    fn.ios.dependency 'TwelveTwentyToolkit/Foundation'
+    fn.ios.source_files = 'TwelveTwentyToolkit/Foundation-iOS/**/*.{h,m}'
+  end
+
   s.subspec 'Logging' do |lg|
     lg.dependency 'TwelveTwentyToolkit/Foundation'
     lg.source_files = 'TwelveTwentyToolkit/Logging/**/*.{h,m}'
   end
   
   s.subspec 'CoreGraphics' do |cg|
-    cg.frameworks = 'UIKit','QuartzCore'
-    cg.dependency 'TwelveTwentyToolkit/Foundation'
-    cg.source_files = 'TwelveTwentyToolkit/CoreGraphics/*.{h,m}'
+    cg.ios.frameworks = 'UIKit','QuartzCore'
+    cg.ios.dependency 'TwelveTwentyToolkit/Foundation'
+    cg.ios.source_files = 'TwelveTwentyToolkit/CoreGraphics/*.{h,m}'
   end
   
   s.subspec 'CoreData' do |cd|
@@ -34,17 +40,24 @@ Pod::Spec.new do |s|
     cd.dependency 'TwelveTwentyToolkit/Foundation'
     cd.source_files = 'TwelveTwentyToolkit/CoreData/*.{h,m}'
   end
+
+  s.subspec 'CoreData-iOS' do |cd|
+    cd.ios.frameworks = 'CoreData'
+    cd.ios.dependency 'TwelveTwentyToolkit/Foundation'
+    cd.ios.dependency 'TwelveTwentyToolkit/CoreData'
+    cd.ios.source_files = 'TwelveTwentyToolkit/CoreData-iOS/*.{h,m}'
+  end
   
   s.subspec 'Persistence' do |ps|
-    ps.frameworks = 'CoreData'
-    ps.dependency 'TwelveTwentyToolkit/CoreData'
-    ps.source_files = 'TwelveTwentyToolkit/Persistence/*.{h,m}'
+    ps.ios.frameworks = 'CoreData'
+    ps.ios.dependency 'TwelveTwentyToolkit/CoreData'
+    ps.ios.source_files = 'TwelveTwentyToolkit/Persistence/*.{h,m}'
   end
   
   s.subspec 'AddressBook' do |ab|
-    ab.frameworks = 'AddressBook'
-    ab.dependency 'TwelveTwentyToolkit/CoreData'
-    ab.source_files = 'TwelveTwentyToolkit/AddressBook/**/*.{h,m}'
+    ab.ios.frameworks = 'AddressBook'
+    ab.ios.dependency 'TwelveTwentyToolkit/CoreData'
+    ab.ios.source_files = 'TwelveTwentyToolkit/AddressBook/**/*.{h,m}'
   end
   
   s.subspec 'DependencyInjection' do |di|
@@ -58,17 +71,17 @@ Pod::Spec.new do |s|
   end
   
   s.subspec 'Tables' do |tb|
-    tb.dependency 'TwelveTwentyToolkit/Logging'
-    tb.source_files = 'TwelveTwentyToolkit/Tables/**/*.{h,m}'
+    tb.ios.dependency 'TwelveTwentyToolkit/Logging'
+    tb.ios.source_files = 'TwelveTwentyToolkit/Tables/**/*.{h,m}'
   end
   
   s.subspec 'Layout' do |lo|
-    lo.dependency 'TwelveTwentyToolkit/Logging'
-    lo.source_files = 'TwelveTwentyToolkit/Layout/**/*.{h,m}'
+    lo.ios.dependency 'TwelveTwentyToolkit/Logging'
+    lo.ios.source_files = 'TwelveTwentyToolkit/Layout/**/*.{h,m}'
   end
 
   s.subspec 'CoreAnimation' do |ca|
-    ca.dependency 'TwelveTwentyToolkit/Logging'
-    ca.source_files = 'TwelveTwentyToolkit/CoreAnimation/**/*.{h,m}'
+    ca.ios.dependency 'TwelveTwentyToolkit/Logging'
+    ca.ios.source_files = 'TwelveTwentyToolkit/CoreAnimation/**/*.{h,m}'
   end
 end

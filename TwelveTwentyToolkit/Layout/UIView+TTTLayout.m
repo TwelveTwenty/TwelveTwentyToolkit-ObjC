@@ -1,6 +1,7 @@
 #import <CoreGraphics/CoreGraphics.h>
 #import "UIView+TTTLayout.h"
 #import "TTTCGUtils.h"
+#import "TTTLog.h"
 
 @implementation UIView (TTTLayout)
 
@@ -111,6 +112,11 @@
     CGRect rowFrame = (CGRect) {containerFrame.origin, CGSizeZero};
     for (UIView *subview in views)
     {
+        if ([subview isKindOfClass:[NSNumber class]])
+        {
+            ELog(@"Fix this");
+            continue;
+        }
         CGRect subviewFrame = subview.frame;
         subviewFrame.origin = rowFrame.origin;
 

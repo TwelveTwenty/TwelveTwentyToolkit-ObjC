@@ -1,4 +1,3 @@
-#import <UIKit/UIKit.h>
 #import "TwelveTwentyToolkit.h"
 #import "TTTAbstractPersistenceProxy.h"
 #import "TTTLog.h"
