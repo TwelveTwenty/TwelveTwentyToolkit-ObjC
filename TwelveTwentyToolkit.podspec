@@ -84,4 +84,10 @@ Pod::Spec.new do |s|
     ca.ios.dependency 'TwelveTwentyToolkit/Logging'
     ca.ios.source_files = 'TwelveTwentyToolkit/CoreAnimation/**/*.{h,m}'
   end
+
+  s.subspec 'Theming' do |th|
+    th.ios.dependency 'TwelveTwentyToolkit/Layout'
+    th.ios.dependency 'TwelveTwentyToolkit/Foundation'
+    th.ios.source_files = 'TwelveTwentyToolkit/Theming/**/*.{h,m}'
+  end
 end
