@@ -29,13 +29,17 @@
 - (id)tttUniqueEntityForName:(NSString *)name withValue:(id)value forKey:(NSString *)key;
 
 /**
+ finds or creates a unique NSManagedObject for the given key/value pair and gives feedback on whether it existed or not
+ */
+- (id)tttUniqueEntityForName:(NSString *)name withValue:(id)value forKey:(NSString *)key existed:(BOOL *)existed;
+
+- (id)tttUniqueEntityForName:(NSString *)name withValues:(NSArray *)values forKeys:(NSArray *)keys existed:(BOOL *)existed;
+
+/**
  find one existing entity for the given key/value pair
  */
 - (id)tttExistingEntityForName:(NSString *)name withValue:(id)value forKey:(NSString *)key;
 
-/**
- finds or creates a unique NSManagedObject for the given key/value pair and gives feedback on whether it existed or not
- */
-- (id)tttUniqueEntityForName:(NSString *)name withValue:(id)value forKey:(NSString *)key existed:(BOOL *)existed;
+- (id)tttExistingEntityForName:(NSString *)entityName withValues:(NSArray *)values forKeys:(NSArray *)keys;
 
 @end

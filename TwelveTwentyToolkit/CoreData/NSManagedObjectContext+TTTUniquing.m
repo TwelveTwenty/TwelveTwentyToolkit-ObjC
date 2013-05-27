@@ -19,45 +19,68 @@
 // THE SOFTWARE.
 
 #import "NSManagedObjectContext+TTTUniquing.h"
+#import "NSPredicate+TTTConvenience.h"
 
 @implementation NSManagedObjectContext (TTTUniquing)
 
 - (id)tttUniqueEntityForName:(NSString *)name withValue:(id)value forKey:(NSString *)key
 {
     BOOL existed = NO;
-    NSManagedObject* result = [self tttUniqueEntityForName:name withValue:value forKey:key existed:&existed];
+    NSManagedObject *result = [self tttUniqueEntityForName:name withValue:value forKey:key existed:&existed];
     return result;
 }
 
 - (id)tttUniqueEntityForName:(NSString *)name withValue:(id)value forKey:(NSString *)key existed:(BOOL *)existed
 {
-    NSManagedObject *entity = [self tttExistingEntityForName:name withValue:value forKey:key];
-    
-    if (entity == nil) {
+    return [self tttUniqueEntityForName:name withValues:@[value] forKeys:@[key] existed:existed];
+}
+
+- (id)tttUniqueEntityForName:(NSString *)name withValues:(NSArray *)values forKeys:(NSArray *)keys existed:(BOOL *)existed
+{
+    NSManagedObject *entity = [self tttExistingEntityForName:name withValues:values forKeys:keys];
+
+    if (entity == nil)
+    {
         entity = [NSEntityDescription insertNewObjectForEntityForName:name inManagedObjectContext:self];
-        [entity setValue:value forKey:key];
-        *existed = NO;
-    } else {
-        *existed = YES;
+        [keys enumerateObjectsUsingBlock:^(id key, NSUInteger idx, BOOL *stop) {
+            [entity setValue:values[idx] forKey:key];
+        }];
+
+        if (existed) *existed = NO;
     }
-    
+    else if (existed) *existed = YES;
+
     return entity;
 }
 
 - (id)tttExistingEntityForName:(NSString *)name withValue:(id)value forKey:(NSString *)key
 {
-    if (value == nil || [@"" isEqualToString:[value description]]) 
-	{
-        return nil;
+    return [self tttExistingEntityForName:name withValues:@[value] forKeys:@[key]];
+}
+
+- (id)tttExistingEntityForName:(NSString *)entityName withValues:(NSArray *)values forKeys:(NSArray *)keys
+{
+    NSAssert([values count] == [keys count], @"Values and keys count don't match.");
+    if (![values count]) return nil;
+
+    NSString *joinedFormat;
+    {
+        NSString *singleFormat = @"%@ == %%@";
+        NSMutableArray *combinedFormat = [NSMutableArray arrayWithCapacity:[values count]];
+        for (int i = 0; i < [values count]; ++i)
+        {
+            [combinedFormat addObject:singleFormat];
+        }
+        joinedFormat = [combinedFormat componentsJoinedByString:@" AND "];
     }
-    
-    NSFetchRequest *request = [[NSFetchRequest alloc] init];    
-    request.entity = [NSEntityDescription entityForName:name inManagedObjectContext:self];
-    request.predicate = [NSPredicate predicateWithFormat:[key stringByAppendingString:@" == %@"], value];
+
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:entityName];
     request.fetchLimit = 1;
-    NSArray *result = [self executeFetchRequest:request error:nil];
-    
-    return [result lastObject];
+    request.predicate = [NSPredicate tttPredicateWithComplexFormat:joinedFormat innerArguments:keys outerArguments:values];
+    NSError *error = nil;
+    NSArray *results = [self executeFetchRequest:request error:&error];
+
+    return [results lastObject];
 }
 
 @end
