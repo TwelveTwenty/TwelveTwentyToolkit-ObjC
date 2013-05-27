@@ -39,6 +39,8 @@
 
 @end
 
+@class TTTInjector;
+
 /**
  This mapper protocol is used to narrow down the methods you call on the injector directly.
  The rest of its methods are accessed through the NSObject category class methods below.
@@ -61,6 +63,8 @@
 
 - (void)unmapClass:(Class)class withIdentifier:(NSString *)identifier;
 
+- (TTTInjector *)asInjector;
+
 @end
 
 /**
@@ -73,11 +77,11 @@
 
 + (TTTInjector *)sharedInjector;
 
-+ (id <TTTInjectionMapper>)sharedMappingInjector;
-
 + (TTTInjector *)setSharedInjector;
 
 + (TTTInjector *)setSharedInjector:(TTTInjector *)injector;
+
+- (id <TTTInjectionMapper>)asMapper;
 
 - (id)injectPropertiesIntoObject:(id)object;
 

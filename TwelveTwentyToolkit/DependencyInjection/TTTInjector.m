@@ -85,6 +85,11 @@ static TTTInjector *_sharedInjector;
     return self;
 }
 
+- (id <TTTInjectionMapper>)asMapper
+{
+    return self;
+}
+
 #pragma mark - Mapping protocols and classes
 
 - (id <TTInjectionMappingStart>)mapClass:(Class)class
@@ -141,6 +146,12 @@ static TTTInjector *_sharedInjector;
     }];
 }
 
+- (TTTInjector *)asInjector
+{
+    return self;
+}
+
+
 #pragma mark - Retrieving objects from mapped protocols and classes
 
 - (TTTInjectionMapping *)mappingForMappedClass:(Class)mappedClass withIdentifier:(NSString *)identifier
@@ -173,6 +184,7 @@ static TTTInjector *_sharedInjector;
     TTTInjectionMapping *mapping = [self mappingForMappedClass:mappedClass withIdentifier:identifier];
     return [mapping targetClass];
 }
+
 
 #pragma mark - Property injection
 
