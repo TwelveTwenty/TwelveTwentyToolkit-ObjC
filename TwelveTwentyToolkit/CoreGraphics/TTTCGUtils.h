@@ -31,23 +31,24 @@
 
 #define DEG2RAD (M_PI / 180.0)
 
-typedef enum {
-    CGAlignNone                     = 0,
+typedef enum NSInteger {
+    CGAlignNone                        = 0,
+    CGAlignPreventDevicePixelRounding  = 1 << 0,
     //
-    CGAlignLeftEdge                 = 1 << 0,
-    CGAlignCenterHorizontally       = 1 << 1,
-    CGAlignRightEdge                = 1 << 2,
-    CGAlignTopEdge                  = 1 << 3,
-    CGAlignCenterVertically         = 1 << 4,
-    CGAlignBottomEdge               = 1 << 5,
-    //
-    CGAlignPositionToTheLeft        = 1 << 6,
-    CGAlignPositionToTheRight       = 1 << 7,
-    CGAlignPositionAbove            = 1 << 8,
-    CGAlignPositionBelow            = 1 << 9,
-    //
-    CGAlignPreventDevicePixelRounding = 1 << 10
+    CGAlignLeftEdge                    = 1 << 1,
+    CGAlignCenterHorizontally          = 1 << 2,
+    CGAlignRightEdge                   = 1 << 3,
+    CGAlignTopEdge                     = 1 << 4,
+    CGAlignCenterVertically            = 1 << 5,
+    CGAlignBottomEdge                  = 1 << 6,
 } CGAlignOption;
+
+typedef enum CGAlignOption {
+    CGPositionToTheLeft = 1 << 10,
+    CGPositionToTheRight = 1 << 11,
+    CGPositionAbove = 1 << 12,
+    CGPositionBelow = 1 << 13,
+} CGPositionOption;
 
 typedef enum
 {
@@ -73,11 +74,13 @@ extern CGRect CGRectWithTweak(CGRect rect, CGTweakOption tweakOption, CGFloat tw
 
 extern CGRect CGRectTranslate(CGRect rect, CGFloat x, CGFloat y);
 
+extern CGRect CGRectSubtractRect(CGRect rectA, CGRect rectB, CGPositionOption options);
+
 /** Align one rect to another one. Will round to device pixels unless flagged with CGAlignPreventDevicePixelRounding */
 extern CGRect CGRectAlignToRect(CGRect rectA, CGRect rectB, CGAlignOption options);
 
 /** Align and (optionally) place a rect next to another one. Will round to device pixels unless flagged with CGAlignPreventDevicePixelRounding */
-extern CGRect CGRectAlignAndPositionNextToRect(CGRect rectA, CGRect rectB, CGAlignOption options, CGFloat spacing);
+extern CGRect CGRectAlignAndPositionNextToRect(CGRect rectA, CGRect rectB, CGPositionOption options, CGFloat spacing);
 
 /** Round the position and with of a rect so it matches actual pixels on the current device. Retina displays supported. */
 extern CGRect CGRectRoundToDevicePixels(CGRect r);

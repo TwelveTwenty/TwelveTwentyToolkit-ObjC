@@ -60,6 +60,25 @@ CGRect CGRectTranslate(CGRect rect, CGFloat x, CGFloat y) {
     return rect;
 }
 
+CGRect CGRectSubtractRect(CGRect rectA, CGRect rectB, CGPositionOption options) {
+    CGRect subtracted = rectA;
+
+    if (options & CGPositionToTheLeft)
+    {
+        // Subtract from the left side
+        CGFloat left = MAX(CGRectGetMaxX(rectB) - CGRectGetMinX(rectA), 0);
+        subtracted = CGRectTrim(rectA, 0, left, 0, 0);
+    }
+    else if (options & CGPositionToTheRight)
+    {
+        // Subtract from the right side
+        CGFloat right = MAX(CGRectGetMaxX(rectA) - CGRectGetMinX(rectB), 0);
+        subtracted = CGRectTrim(rectA, 0, 0, 0, right);
+    }
+
+    return subtracted;
+}
+
 CGRect CGRectAlignToRect(CGRect rectA, CGRect rectB, CGAlignOption options) {
     if (options & CGAlignLeftEdge)
     {
@@ -95,29 +114,29 @@ CGRect CGRectAlignToRect(CGRect rectA, CGRect rectB, CGAlignOption options) {
     return rectA;
 }
 
-CGRect CGRectAlignAndPositionNextToRect(CGRect rectA, CGRect rectB, CGAlignOption options, CGFloat spacing) {
+CGRect CGRectAlignAndPositionNextToRect(CGRect rectA, CGRect rectB, CGPositionOption options, CGFloat spacing) {
     // Align
 
     rectA = CGRectAlignToRect(rectA, rectB, options);
 
     // Horizontal placement
 
-    if (options & CGAlignPositionToTheLeft)
+    if (options & CGPositionToTheLeft)
     {
         rectA.origin.x = CGRectGetMinX(rectB) - CGRectGetWidth(rectA) - spacing;
     }
-    else if (options & CGAlignPositionToTheRight)
+    else if (options & CGPositionToTheRight)
     {
         rectA.origin.x = CGRectGetMaxX(rectB) + spacing;
     }
 
     // Vertical placement
 
-    if (options & CGAlignPositionAbove)
+    if (options & CGPositionAbove)
     {
         rectA.origin.y = CGRectGetMinY(rectB) - CGRectGetHeight(rectA) - spacing;
     }
-    else if (options & CGAlignPositionBelow)
+    else if (options & CGPositionBelow)
     {
         rectA.origin.y = CGRectGetMaxY(rectB) + spacing;
     }
