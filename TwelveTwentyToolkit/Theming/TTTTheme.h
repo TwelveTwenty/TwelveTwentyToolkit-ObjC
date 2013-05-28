@@ -1,10 +1,11 @@
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 #define TTTAttributeBackgroundColor @"TTTAttributeBackgroundColor"
 #define TTTAttributeBackgroundImage @"TTTAttributeBackgroundImage"
 #define TTTAttributeContentEdgeInsets @"TTTAttributeContentEdgeInsets"
 #define TTTAttributeContentHorizontalAlignment @"TTTAttributeContentHorizontalAlignment"
-#define TTTAttributeFont UITextAttributeFont
+#define TTTAttributeFont NSFontAttributeName
 #define TTTAttributeImage @"TTTAttributeImage"
 #define TTTAttributeImageEdgeInsets @"TTTAttributeImageEdgeInsets"
 #define TTTAttributeLayerShadowColor @"TTTAttributeLayerShadowColor"
@@ -15,8 +16,8 @@
 #define TTTAttributeNumberOfLines @"TTTAttributeNumberOfLines"
 #define TTTAttributeShowsTouchWhenHighlighted @"TTTAttributeShowsTouchWhenHighlighted"
 #define TTTAttributeTextAlignment @"TTTAttributeTextAlignment"
+#define TTTAttributeTextColor NSForegroundColorAttributeName
 #define TTTAttributeTextColorHighlighted @"TTTAttributeTextColorHighlighted"
-#define TTTAttributeTextColor UITextAttributeTextColor
 #define TTTAttributeTextShadowColor UITextAttributeTextShadowColor
 #define TTTAttributeTextShadowOffset UITextAttributeTextShadowOffset
 #define TTTAttributeTextStyle @"TTTAttributeTextStyle"
@@ -30,7 +31,7 @@ typedef NSInteger TTTButtonStyle;
 
 - (NSMutableDictionary *)attributesForTextStyle:(TTTTextStyle)style forControlState:(UIControlState)controlState;
 
-- (NSDictionary *)attributesForButtonStyle:(TTTButtonStyle)style withControlState:(UIControlState)controlState;
+- (NSMutableDictionary *)attributesForButtonStyle:(TTTButtonStyle)style withControlState:(UIControlState)controlState;
 
 @end
 
