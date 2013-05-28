@@ -83,7 +83,7 @@
 
         for (UIView *distributeView in views)
         {
-            anchorFrame = distributeView.frame = CGRectAlignAndPositionNextToRect(distributeView.frame, anchorFrame, CGAlignCenterVertically | CGAlignPositionToTheRight, spacing);
+            anchorFrame = distributeView.frame = CGRectAlignAndPositionNextToRect(distributeView.frame, anchorFrame, CGAlignCenterVertically | CGPositionToTheRight, spacing);
             if (CGRectEqualToRect(unionFrame, CGRectZero))
             {
                 unionFrame = anchorFrame;
