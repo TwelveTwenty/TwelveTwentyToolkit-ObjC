@@ -71,6 +71,8 @@ typedef NSInteger TTTButtonStyle;
 
 @interface UIButton (TTTTheming)
 
++ (id)tttButtonWithStyle:(TTTButtonStyle)buttonStyle;
+
 + (id)tttButtonWithTitle:(NSString *)title buttonStyle:(TTTButtonStyle)buttonStyle;
 
 - (void)tttApplyButtonStyle:(TTTButtonStyle)buttonStyle;

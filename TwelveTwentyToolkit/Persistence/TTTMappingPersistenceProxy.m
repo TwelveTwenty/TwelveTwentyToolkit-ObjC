@@ -49,11 +49,30 @@
 {
     NSManagedObjectContext *context = notification.object;
     NSDate *now = [NSDate date];
-    for (NSManagedObject <TTTTimestamped> *updatedObject in [context updatedObjects])
+    for (NSManagedObject *updatedObject in [context updatedObjects])
     {
         if ([updatedObject conformsToProtocol:@protocol(TTTTimestamped)])
         {
-            updatedObject.updatedAt = now;
+            [(id <TTTTimestamped>)updatedObject setUpdatedAt: now];
+        }
+        
+        if ([updatedObject conformsToProtocol:@protocol(TTTSynchronizable)])
+        {
+            [(id <TTTSynchronizable>)updatedObject setSyncStatus:TTTSyncStatusValues.updated];
+        }
+    }
+
+    for (NSManagedObject *insertedObject in [context insertedObjects])
+    {
+        if ([insertedObject conformsToProtocol:@protocol(TTTTimestamped)])
+        {
+            [(id <TTTTimestamped>) insertedObject setCreatedAt:now];
+            [(id <TTTTimestamped>) insertedObject setUpdatedAt:now];
+        }
+
+        if ([insertedObject conformsToProtocol:@protocol(TTTSynchronizable)])
+        {
+            [(id <TTTSynchronizable>) insertedObject setSyncStatus:TTTSyncStatusValues.inserted];
         }
     }
 }

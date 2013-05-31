@@ -18,44 +18,20 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "NSManagedObjectContext+TTTConvenience.h"
 #import "TTTLog.h"
 
+int kTTTLogLevel = TTT_LOG_LEVEL;
 
-@implementation NSManagedObjectContext (TTTConvenience)
-
-- (NSError *)tttSimpleSave
-{
-    NSError *error = nil;
-
-    if ([self save:&error]) {
-		DLog(@"Context saved.");
-        return nil;
-    }
-
-	ELog(@"Error saving context due to %li: \"%@\" with user info: %@", (long)error.code, [error.userInfo objectForKey:NSLocalizedDescriptionKey], error.userInfo);
-    return error;
-}
-
-- (void)tttPrintChanges
-{
-    if (![self hasChanges])
-    {
-		DLog(@"No changes on context %@", self);
+void QuietLog (NSString *format, ...) {
+    if (format == nil) {
+        printf("nil\n");
         return;
     }
-
-	DLog(@"Changes on context %@", self);
-    NSArray *keys = [NSArray arrayWithObjects:@"updatedObjects", @"insertedObjects", @"deletedObjects", @"registeredObjects", nil];
-    for (NSString *key in keys) {
-        NSSet *objects = [self valueForKey:key];
-        if (![objects count]) continue;
-
-		DLog(@"%@:", [key uppercaseString]);
-        for (NSManagedObject *object in [self updatedObjects]) {
-            NSLog(@"\t%@: %@", [object class], [object changedValues]);
-        }
-    }
+    // Get a reference to the arguments that follow the format parameter
+    va_list argList;
+    va_start(argList, format);
+    // Perform format string argument substitution, reinstate %% escapes, then print
+    NSString *s = [[NSString alloc] initWithFormat:format arguments:argList];
+    printf("%s\n", [[s stringByReplacingOccurrencesOfString:@"%%" withString:@"%%%%"] UTF8String]);
+    va_end(argList);
 }
-
-@end

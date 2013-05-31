@@ -18,6 +18,8 @@ typedef enum {
 
 - (CGRect)tttIntrinsicContentFrame;
 
+- (CGRect)tttFrameThatFitsWidth:(CGFloat)width;
+
 - (CGRect)tttDistributeViewsHorizontally:(NSArray *)views inFrame:(CGRect)containerFrame withSpacing:(CGFloat)spacing;
 
 - (CGRect)tttDistributeViewsHorizontally:(NSArray *)views inFrame:(CGRect)containerFrame withSpacing:(CGFloat)spacing alignment:(TTTDistributeAlign)alignment;

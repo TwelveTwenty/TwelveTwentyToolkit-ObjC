@@ -76,6 +76,19 @@ CGRect CGRectSubtractRect(CGRect rectA, CGRect rectB, CGPositionOption options) 
         subtracted = CGRectTrim(rectA, 0, 0, 0, right);
     }
 
+    if (options & CGPositionAbove)
+    {
+        // Subtract from the top side
+        CGFloat top = MAX(CGRectGetMaxY(rectB) - CGRectGetMinY(rectA), 0);
+        subtracted = CGRectTrim(rectA, top, 0, 0, 0);
+    }
+    else if (options & CGPositionBelow)
+    {
+        // Subtract from the bottom side
+        CGFloat bottom = MAX(CGRectGetMaxY(rectA) - CGRectGetMinY(rectB), 0);
+        subtracted = CGRectTrim(rectA, 0, 0, bottom, 0);
+    }
+
     return subtracted;
 }
 

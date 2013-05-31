@@ -47,6 +47,11 @@
     return (CGRect) {self.frame.origin, self.intrinsicContentSize};
 }
 
+- (CGRect)tttFrameThatFitsWidth:(CGFloat)width
+{
+    return (CGRect){self.frame.origin, [self sizeThatFits:CGSizeMake(width, 0)]};
+}
+
 - (CGRect)tttDistributeViewsHorizontally:(NSArray *)views inFrame:(CGRect)containerFrame withSpacing:(CGFloat)spacing
 {
     return [self tttDistributeViewsHorizontally:views inFrame:containerFrame withSpacing:spacing alignment:TTTDistributeAlignCenter];
@@ -117,6 +122,7 @@
             ELog(@"Fix this");
             continue;
         }
+
         CGRect subviewFrame = subview.frame;
         subviewFrame.origin = rowFrame.origin;
 

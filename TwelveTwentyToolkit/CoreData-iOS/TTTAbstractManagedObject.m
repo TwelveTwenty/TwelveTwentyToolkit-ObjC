@@ -1,3 +1,4 @@
+#import "TTTTimestamped.h"
 #import "TTTAbstractManagedObject.h"
 #import "TTTTimestamped.h"
 #import "NSManagedObject+TTTUniquing.h"
@@ -6,12 +7,30 @@ const struct TTTIdentifiableAttributes TTTIdentifiableAttributes = {
         .identifier = @"identifier",
 };
 
+const struct TTTSyncStatusAttributes TTTSyncStatusAttributes = {
+        .syncStatus = @"syncStatus",
+};
+
+const struct TTTSyncStatusValues TTTSyncStatusValues = {
+        .synchronized = @"synchronized",
+        .inserted = @"inserted",
+        .updated = @"updated",
+        .deleted = @"deleted",
+};
+
 @implementation TTTAbstractManagedObject
 
 + (id)uniqueEntityWithIdentifier:(NSNumber *)identifier inContext:(NSManagedObjectContext *)context
 {
     NSAssert([self conformsToProtocol:@protocol(TTTIdentifiable)], @"Class %@ must conform to protocol TTTIdentifiable to use this method.", self);
     id entity = [self tttUniqueEntityWithValue:identifier forKey:TTTIdentifiableAttributes.identifier inContext:context];
+    return entity;
+}
+
++ (id)existingEntityWithIdentifier:(NSNumber *)identifier inContext:(NSManagedObjectContext *)context
+{
+    NSAssert([self conformsToProtocol:@protocol(TTTIdentifiable)], @"Class %@ must conform to protocol TTTIdentifiable to use this method.", self);
+    id entity = [self tttExistingEntityWithValue:identifier forKey:TTTIdentifiableAttributes.identifier inContext:context];
     return entity;
 }
 

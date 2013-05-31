@@ -20,6 +20,7 @@
 
 
 #import <CoreData/CoreData.h>
+#import "NSManagedObject+TTTUniquing.h"
 #import "NSManagedObjectContext+TTTUniquing.h"
 
 @implementation NSManagedObject (TTTUniquing)

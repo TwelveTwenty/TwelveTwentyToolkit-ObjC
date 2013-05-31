@@ -165,6 +165,11 @@ static TTTTheme <TTTTheme> *_currentTheme;
 
 @implementation UIButton (TTTTheming)
 
++ (id)tttButtonWithStyle:(TTTButtonStyle)buttonStyle
+{
+    return [self tttButtonWithTitle:@"" buttonStyle:buttonStyle];
+}
+
 + (id)tttButtonWithTitle:(NSString *)title buttonStyle:(TTTButtonStyle)buttonStyle
 {
     UIButton *button = [self buttonWithType:UIButtonTypeCustom];

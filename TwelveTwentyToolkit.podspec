@@ -17,16 +17,18 @@ Pod::Spec.new do |s|
   s.subspec 'Foundation' do |fn|
     fn.dependency 'TwelveTwentyToolkit/Core'
     fn.source_files = 'TwelveTwentyToolkit/Foundation/**/*.{h,m}'
-  end
-
-  s.subspec 'Foundation-iOS' do |fn|
-    fn.ios.dependency 'TwelveTwentyToolkit/Foundation'
-    fn.ios.source_files = 'TwelveTwentyToolkit/Foundation-iOS/**/*.{h,m}'
+    
+    fn.subspec 'iOS' do |os|
+      os.ios.source_files = 'TwelveTwentyToolkit/Foundation-iOS/**/*.{h,m}'
+    end
   end
 
   s.subspec 'Logging' do |lg|
-    lg.dependency 'TwelveTwentyToolkit/Foundation'
-    lg.source_files = 'TwelveTwentyToolkit/Logging/**/*.{h,m}'
+    lg.osx.dependency 'TwelveTwentyToolkit/Foundation'
+    lg.osx.source_files = 'TwelveTwentyToolkit/Logging/**/*.{h,m}'
+
+    lg.ios.dependency 'TwelveTwentyToolkit/Foundation/iOS'
+    lg.ios.source_files = 'TwelveTwentyToolkit/Logging-iOS/**/*.{h,m}'
   end
   
   s.subspec 'CoreGraphics' do |cg|
@@ -39,13 +41,14 @@ Pod::Spec.new do |s|
     cd.frameworks = 'CoreData'
     cd.dependency 'TwelveTwentyToolkit/Foundation'
     cd.source_files = 'TwelveTwentyToolkit/CoreData/*.{h,m}'
-  end
 
-  s.subspec 'CoreData-iOS' do |cd|
-    cd.ios.frameworks = 'CoreData'
-    cd.ios.dependency 'TwelveTwentyToolkit/Foundation'
-    cd.ios.dependency 'TwelveTwentyToolkit/CoreData'
-    cd.ios.source_files = 'TwelveTwentyToolkit/CoreData-iOS/*.{h,m}'
+    cd.subspec 'OSX' do |os|
+      os.osx.source_files = 'TwelveTwentyToolkit/CoreData-OSX/*.{h,m}'
+    end
+
+    cd.subspec 'iOS' do |os|
+      os.ios.source_files = 'TwelveTwentyToolkit/CoreData-iOS/*.{h,m}'
+    end
   end
   
   s.subspec 'Persistence' do |ps|

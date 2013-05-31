@@ -31,7 +31,7 @@
 
 #define DEG2RAD (M_PI / 180.0)
 
-typedef enum NSInteger {
+typedef enum {
     CGAlignNone                        = 0,
     CGAlignPreventDevicePixelRounding  = 1 << 0,
     //
