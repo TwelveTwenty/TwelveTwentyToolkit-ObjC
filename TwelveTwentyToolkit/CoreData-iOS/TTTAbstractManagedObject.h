@@ -1,21 +1,9 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 #import "TTTTimestamped.h"
+#import "NSManagedObjectContext+TTTBatchManipulation.h"
 
 @protocol TTTMogeneratorEntity
-
-+ (NSFetchedResultsController *)fetchedResultsControllerWithSortingKeys:(id)sortingKeysWithAscendingFlag
-                                                   managedObjectContext:(NSManagedObjectContext *)context
-                                                     sectionNameKeyPath:(NSString *)sectionNameKeyPath
-                                                              cacheName:(NSString *)cacheName;
-
-/**
-* Defaults section name key path to nil and cache name to a randomized string.
-*/
-+ (NSFetchedResultsController *)fetchedResultsControllerWithSortingKeys:(id)sortingKeysWithAscendingFlag
-                                                   managedObjectContext:(NSManagedObjectContext *)context;
-
-+ (NSFetchRequest *)fetchRequestWithSortingKeys:(id)sortingKeysWithAscendingFlag;
 
 + (id)insertInManagedObjectContext:(NSManagedObjectContext *)moc;
 
@@ -57,10 +45,40 @@ extern const struct TTTSyncStatusValues
 
 @interface TTTAbstractManagedObject : NSManagedObject <TTTMogeneratorEntity>
 
+#pragma mark - Uniquing and batch manipulation
+
 + (id)uniqueEntityWithIdentifier:(NSNumber *)identifier inContext:(NSManagedObjectContext *)context;
 
 + (id)existingEntityWithIdentifier:(NSNumber *)identifier inContext:(NSManagedObjectContext *)context;
 
-+ (NSFetchedResultsController *)fetchedResultsControllerWithSortingKeys:(id)sortingKeysWithAscendingFlag managedObjectContext:(NSManagedObjectContext *)context sectionNameKeyPath:(NSString *)sectionNameKeyPath;
++ (NSArray *)allEntitiesSortedByKey:(NSString *)sortKey ascending:(BOOL)ascending inContext:(NSManagedObjectContext *)context;
+
++ (TTTDeleteCount)deleteEntitiesWithValues:(NSArray *)values forKeys:(NSArray *)keys inContext:(NSManagedObjectContext *)context error:(NSError **)error;
+
++ (TTTDeleteCount)deleteEntitiesWithNoRelationshipForKey:(NSString *)key inContext:(NSManagedObjectContext *)context error:(NSError **)error;
+
++ (TTTDeleteCount)deleteAllEntitiesInContext:(NSManagedObjectContext *)context error:(NSError **)error;
+
+#pragma mark - Fetch requests and ~controllers
+
++ (NSFetchRequest *)fetchRequestWithSortingKeys:(id)sortingKeysWithAscendingFlag;
+
+/**
+* Defaults section name key path to nil
+*/
++ (NSFetchedResultsController *)fetchedResultsControllerWithSortingKeys:(id)sortingKeysWithAscendingFlag
+                                                   managedObjectContext:(NSManagedObjectContext *)context;
+
+/**
+* Defaults cache name to a randomized string.
+*/
++ (NSFetchedResultsController *)fetchedResultsControllerWithSortingKeys:(id)sortingKeysWithAscendingFlag
+                                                   managedObjectContext:(NSManagedObjectContext *)context
+                                                     sectionNameKeyPath:(NSString *)sectionNameKeyPath;
+
++ (NSFetchedResultsController *)fetchedResultsControllerWithSortingKeys:(id)sortingKeysWithAscendingFlag
+                                                   managedObjectContext:(NSManagedObjectContext *)context
+                                                     sectionNameKeyPath:(NSString *)sectionNameKeyPath
+                                                              cacheName:(NSString *)cacheName;
 
 @end

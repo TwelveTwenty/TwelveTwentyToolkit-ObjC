@@ -2,6 +2,7 @@
 #import "TTTAbstractManagedObject.h"
 #import "TTTTimestamped.h"
 #import "NSManagedObject+TTTUniquing.h"
+#import "NSManagedObjectContext+TTTBatchManipulation.h"
 
 const struct TTTIdentifiableAttributes TTTIdentifiableAttributes = {
         .identifier = @"identifier",
@@ -23,15 +24,38 @@ const struct TTTSyncStatusValues TTTSyncStatusValues = {
 + (id)uniqueEntityWithIdentifier:(NSNumber *)identifier inContext:(NSManagedObjectContext *)context
 {
     NSAssert([self conformsToProtocol:@protocol(TTTIdentifiable)], @"Class %@ must conform to protocol TTTIdentifiable to use this method.", self);
-    id entity = [self tttUniqueEntityWithValue:identifier forKey:TTTIdentifiableAttributes.identifier inContext:context];
-    return entity;
+    return [self tttUniqueEntityWithValue:identifier forKey:TTTIdentifiableAttributes.identifier inContext:context];
 }
 
 + (id)existingEntityWithIdentifier:(NSNumber *)identifier inContext:(NSManagedObjectContext *)context
 {
     NSAssert([self conformsToProtocol:@protocol(TTTIdentifiable)], @"Class %@ must conform to protocol TTTIdentifiable to use this method.", self);
-    id entity = [self tttExistingEntityWithValue:identifier forKey:TTTIdentifiableAttributes.identifier inContext:context];
-    return entity;
+    return [self tttExistingEntityWithValue:identifier forKey:TTTIdentifiableAttributes.identifier inContext:context];
+}
+
++ (NSArray *)allEntitiesSortedByKey:(NSString *)sortKey ascending:(BOOL)ascending inContext:(NSManagedObjectContext *)context
+{
+    return [context tttAllEntitiesNamed:[self entityName] sortedByKey:sortKey ascending:ascending];
+}
+
++ (TTTDeleteCount)deleteEntitieswithValue:(id)value forKey:(NSString *)key inContext:(NSManagedObjectContext *)context error:(NSError **)error
+{
+    return [context tttDeleteEntitiesNamed:[self entityName] withValue:value forKey:key error:error];
+}
+
++ (TTTDeleteCount)deleteEntitiesWithValues:(NSArray *)values forKeys:(NSArray *)keys inContext:(NSManagedObjectContext *)context error:(NSError **)error
+{
+    return [context tttDeleteEntitiesNamed:[self entityName] withValues:values forKeys:keys error:error];
+}
+
++ (TTTDeleteCount)deleteEntitiesWithNoRelationshipForKey:(NSString *)key inContext:(NSManagedObjectContext *)context error:(NSError **)error
+{
+    return [context tttDeleteEntitiesNamed:[self entityName] withNoRelationshipForKey:key error:error];
+}
+
++ (TTTDeleteCount)deleteAllEntitiesInContext:(NSManagedObjectContext *)context error:(NSError **)error
+{
+    return [context tttDeleteAllEntitiesNamed:[self entityName] error:error];
 }
 
 + (NSFetchRequest *)fetchRequestWithSortingKeys:(id)sortingKeysWithAscendingFlag

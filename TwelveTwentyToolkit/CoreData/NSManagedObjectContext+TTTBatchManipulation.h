@@ -21,7 +21,8 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-enum {TTTDeleteFailed = -1};
+typedef NSInteger TTTDeleteCount;
+enum TTTDeleteCount {TTTDeleteFailed = -1};
 
 @interface NSManagedObjectContext (TTTBatchManipulation)
 
@@ -40,12 +41,12 @@ enum {TTTDeleteFailed = -1};
  * Delete all entities matching the value for key provided.
  * returns a count of 0 or higher records deleted, or
  */
-- (NSInteger)tttDeleteEntitiesNamed:(NSString *)entityName withValue:(id)value forKey:(NSString *)key error:(NSError **)error;
+- (TTTDeleteCount)tttDeleteEntitiesNamed:(NSString *)entityName withValue:(id)value forKey:(NSString *)key error:(NSError **)error;
 
-- (NSInteger)tttDeleteEntitiesNamed:(NSString *)entityName withValues:(NSArray *)values forKeys:(NSArray *)keys error:(NSError **)error;
+- (TTTDeleteCount)tttDeleteEntitiesNamed:(NSString *)entityName withValues:(NSArray *)values forKeys:(NSArray *)keys error:(NSError **)error;
 
-- (NSInteger)tttDeleteEntitiesNamed:(NSString *)entityName withNoRelationshipForKey:(NSString *)key error:(NSError **)error;
+- (TTTDeleteCount)tttDeleteEntitiesNamed:(NSString *)entityName withNoRelationshipForKey:(NSString *)key error:(NSError **)error;
 
-- (NSInteger)tttDeleteAllEntitiesNamed:(NSString *)entityName error:(NSError **)error;
+- (TTTDeleteCount)tttDeleteAllEntitiesNamed:(NSString *)entityName error:(NSError **)error;
 
 @end

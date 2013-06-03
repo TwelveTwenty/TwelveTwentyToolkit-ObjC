@@ -61,12 +61,12 @@
     return YES;
 }
 
-- (NSInteger)tttDeleteEntitiesNamed:(NSString *)entityName withValue:(id)value forKey:(NSString *)key error:(NSError **)error
+- (TTTDeleteCount)tttDeleteEntitiesNamed:(NSString *)entityName withValue:(id)value forKey:(NSString *)key error:(NSError **)error
 {
     return [self tttDeleteEntitiesNamed:entityName withValues:@[value] forKeys:@[key] error:error];
 }
 
-- (NSInteger)tttDeleteEntitiesNamed:(NSString *)entityName withValues:(NSArray *)values forKeys:(NSArray *)keys error:(NSError **)error
+- (TTTDeleteCount)tttDeleteEntitiesNamed:(NSString *)entityName withValues:(NSArray *)values forKeys:(NSArray *)keys error:(NSError **)error
 {
     NSString *joinedFormat;
     {
@@ -96,7 +96,7 @@
     return count;
 }
 
-- (NSInteger)tttDeleteEntitiesNamed:(NSString *)entityName withNoRelationshipForKey:(NSString *)key error:(NSError **)error
+- (TTTDeleteCount)tttDeleteEntitiesNamed:(NSString *)entityName withNoRelationshipForKey:(NSString *)key error:(NSError **)error
 {
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:entityName];
     NSEntityDescription *entityDescription = [NSEntityDescription entityForName:entityName inManagedObjectContext:self];
@@ -125,7 +125,7 @@
     return count;
 }
 
-- (NSInteger)tttDeleteAllEntitiesNamed:(NSString *)entityName error:(NSError **)error
+- (TTTDeleteCount)tttDeleteAllEntitiesNamed:(NSString *)entityName error:(NSError **)error
 {
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:entityName];
     NSArray *results = [self executeFetchRequest:request error:error];
