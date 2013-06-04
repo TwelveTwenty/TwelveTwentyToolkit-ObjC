@@ -53,6 +53,14 @@ extern const struct TTTSyncStatusValues
 
 + (NSArray *)allEntitiesSortedByKey:(NSString *)sortKey ascending:(BOOL)ascending inContext:(NSManagedObjectContext *)context;
 
++ (NSArray *)allEntitiesWithValue:(id)value forKey:(NSString *)key inContext:(NSManagedObjectContext *)context;
+
++ (NSArray *)allEntitiesWithValues:(NSArray *)values forKeys:(NSArray *)keys inContext:(NSManagedObjectContext *)context;
+
++ (NSArray *)allEntitiesWithValues:(NSArray *)values forKeys:(NSArray *)keys sortedByKey:(NSString *)sortKey ascending:(BOOL)ascending inContext:(NSManagedObjectContext *)context;
+
++ (TTTDeleteCount)deleteEntitiesWithValue:(id)value forKey:(NSString *)key inContext:(NSManagedObjectContext *)context error:(NSError **)error;
+
 + (TTTDeleteCount)deleteEntitiesWithValues:(NSArray *)values forKeys:(NSArray *)keys inContext:(NSManagedObjectContext *)context error:(NSError **)error;
 
 + (TTTDeleteCount)deleteEntitiesWithNoRelationshipForKey:(NSString *)key inContext:(NSManagedObjectContext *)context error:(NSError **)error;

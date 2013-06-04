@@ -31,6 +31,10 @@ enum TTTDeleteCount {TTTDeleteFailed = -1};
  */
 - (NSArray *)tttAllEntitiesNamed:(NSString *)entityName sortedByKey:(NSString *)sortKey ascending:(BOOL)ascending;
 
+- (NSArray *)tttAllEntitiesNamed:(NSString *)entityName withValues:(NSArray *)values forKeys:(NSArray *)keys;
+
+- (NSArray *)tttAllEntitiesNamed:(NSString *)entityName withValues:(NSArray *)values forKeys:(NSArray *)keys sortedByKey:(NSString *)sortKey ascending:(BOOL)ascending;
+
 /**
  * Set one value on all entities of a certain entity.
  * returns YES if successful, NO if not, provides the Core Data error.

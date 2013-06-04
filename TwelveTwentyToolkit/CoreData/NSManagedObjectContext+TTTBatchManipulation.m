@@ -25,10 +25,29 @@
 
 - (NSArray *)tttAllEntitiesNamed:(NSString *)entityName sortedByKey:(NSString *)sortKey ascending:(BOOL)ascending
 {
-    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    return [self tttAllEntitiesNamed:entityName withValues:nil forKeys:nil sortedByKey:sortKey ascending:ascending];
+}
 
-    NSEntityDescription *entity = [NSEntityDescription entityForName:entityName inManagedObjectContext:self];
-    [request setEntity:entity];
+- (NSArray *)tttAllEntitiesNamed:(NSString *)entityName withValues:(NSArray *)values forKeys:(NSArray *)keys
+{
+    return [self tttAllEntitiesNamed:entityName withValues:values forKeys:keys sortedByKey:nil ascending:YES];
+}
+
+- (NSArray *)tttAllEntitiesNamed:(NSString *)entityName withValues:(NSArray *)values forKeys:(NSArray *)keys sortedByKey:(NSString *)sortKey ascending:(BOOL)ascending
+{
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:entityName];
+
+    if (values && keys)
+    {
+        NSString *singleFormat = @"%@ == %%@";
+        NSMutableArray *combinedFormat = [NSMutableArray arrayWithCapacity:[values count]];
+        for (int i = 0; i < [values count]; ++i)
+        {
+            [combinedFormat addObject:singleFormat];
+        }
+        NSString *joinedFormat = [combinedFormat componentsJoinedByString:@" AND "];
+        request.predicate = [NSPredicate tttPredicateWithComplexFormat:joinedFormat innerArguments:keys outerArguments:values];
+    }
 
     if (sortKey != nil)
     {

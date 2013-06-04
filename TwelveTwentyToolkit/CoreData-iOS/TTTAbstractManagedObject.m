@@ -38,7 +38,22 @@ const struct TTTSyncStatusValues TTTSyncStatusValues = {
     return [context tttAllEntitiesNamed:[self entityName] sortedByKey:sortKey ascending:ascending];
 }
 
-+ (TTTDeleteCount)deleteEntitieswithValue:(id)value forKey:(NSString *)key inContext:(NSManagedObjectContext *)context error:(NSError **)error
++ (NSArray *)allEntitiesWithValue:(id)value forKey:(NSString *)key inContext:(NSManagedObjectContext *)context
+{
+    return [context tttAllEntitiesNamed:[self entityName] withValues:@[value] forKeys:@[key]];
+}
+
++ (NSArray *)allEntitiesWithValues:(NSArray *)values forKeys:(NSArray *)keys inContext:(NSManagedObjectContext *)context
+{
+    return [context tttAllEntitiesNamed:[self entityName] withValues:values forKeys:keys];
+}
+
++ (NSArray *)allEntitiesWithValues:(NSArray *)values forKeys:(NSArray *)keys sortedByKey:(NSString *)sortKey ascending:(BOOL)ascending inContext:(NSManagedObjectContext *)context
+{
+    return [context tttAllEntitiesNamed:[self entityName] withValues:values forKeys:keys sortedByKey:sortKey ascending:ascending];
+}
+
++ (TTTDeleteCount)deleteEntitiesWithValue:(id)value forKey:(NSString *)key inContext:(NSManagedObjectContext *)context error:(NSError **)error
 {
     return [context tttDeleteEntitiesNamed:[self entityName] withValue:value forKey:key error:error];
 }
