@@ -92,9 +92,9 @@
 
 - (CGFloat)headerHeight
 {
-    if (_headerHeight) return _headerHeight;
-
     if (self.headerView) return self.headerView.frame.size.height;
+
+    if (_headerHeight) return _headerHeight;
 
     return 0;
 }

@@ -125,7 +125,8 @@ typedef enum
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
     CGFloat headerHeight = [[self sectionAtIndex:section] headerHeight];
-    return headerHeight >= 0 ? headerHeight : tableView.sectionHeaderHeight;
+    headerHeight = headerHeight >= 0 ? headerHeight : tableView.sectionHeaderHeight;
+    return headerHeight;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
