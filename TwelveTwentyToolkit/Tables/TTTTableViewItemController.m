@@ -6,6 +6,7 @@
 #import "TTTTableViewFetchedSection.h"
 
 @interface TTTTableViewItemController () <TTTTableViewSectionDelegate>
+@property(nonatomic, strong) NSMutableDictionary *sectionAnimations;
 @end
 
 @implementation TTTTableViewItemController
@@ -13,7 +14,28 @@
 - (id <TTTTableViewSection>)addSection:(id<TTTTableViewSection>)section
 {
     [section asSection].itemController = self;
+
+    [self setRowAnimation:UITableViewRowAnimationFade forSection:[[section asSection] index]];
+
     return [super addSection:section];
+}
+
+- (id)initWithTableView:(UITableView *)tableView delegate:(id <TTTTableViewItemControllerRelayDelegate>)delegate
+{
+    self = [super initWithTableView:tableView delegate:delegate];
+
+    if (self)
+    {
+        self.sectionAnimations = [NSMutableDictionary dictionary];
+    }
+
+    return self;
+}
+
+- (void)setRowAnimation:(UITableViewRowAnimation)animation forSection:(NSInteger)section
+{
+    NSString *key = [NSString stringWithFormat:@"%i", section];
+    self.sectionAnimations[key] = @(animation);
 }
 
 #pragma mark - TTTTableViewSectionDelegate methods
@@ -30,12 +52,16 @@
 
 - (void)sectionDidInsertRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    NSString *key = [NSString stringWithFormat:@"%i", indexPath.section];
+    UITableViewRowAnimation animation = (UITableViewRowAnimation) [self.sectionAnimations[key] integerValue];
+    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:animation];
 }
 
 - (void)sectionDidDeleteRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    NSString *key = [NSString stringWithFormat:@"%i", indexPath.section];
+    UITableViewRowAnimation animation = (UITableViewRowAnimation) [self.sectionAnimations[key] integerValue];
+    [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:animation];
 }
 
 - (void)sectionDidUpdateRowAtIndexPath:(NSIndexPath *)indexPath

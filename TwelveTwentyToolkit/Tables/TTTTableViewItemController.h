@@ -4,4 +4,6 @@
 
 @interface TTTTableViewItemController : TTTTableViewDelegateItemController
 
+- (void)setRowAnimation:(UITableViewRowAnimation)animation forSection:(NSInteger)section;
+
 @end

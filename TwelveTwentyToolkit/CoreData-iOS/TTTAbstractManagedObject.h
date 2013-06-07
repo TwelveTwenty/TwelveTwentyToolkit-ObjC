@@ -51,6 +51,8 @@ extern const struct TTTSyncStatusValues
 
 + (id)existingEntityWithIdentifier:(NSNumber *)identifier inContext:(NSManagedObjectContext *)context;
 
++ (id)existingEntityWithValue:(id)value forKey:(NSString *)key inContext:(NSManagedObjectContext *)context;
+
 + (NSArray *)allEntitiesSortedByKey:(NSString *)sortKey ascending:(BOOL)ascending inContext:(NSManagedObjectContext *)context;
 
 + (NSArray *)allEntitiesWithValue:(id)value forKey:(NSString *)key inContext:(NSManagedObjectContext *)context;

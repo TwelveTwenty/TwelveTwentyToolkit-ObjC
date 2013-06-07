@@ -33,6 +33,11 @@ const struct TTTSyncStatusValues TTTSyncStatusValues = {
     return [self tttExistingEntityWithValue:identifier forKey:TTTIdentifiableAttributes.identifier inContext:context];
 }
 
++ (id)existingEntityWithValue:(id)value forKey:(NSString *)key inContext:(NSManagedObjectContext *)context
+{
+    return [self tttExistingEntityWithValue:value forKey:key inContext:context];
+}
+
 + (NSArray *)allEntitiesSortedByKey:(NSString *)sortKey ascending:(BOOL)ascending inContext:(NSManagedObjectContext *)context
 {
     return [context tttAllEntitiesNamed:[self entityName] sortedByKey:sortKey ascending:ascending];
