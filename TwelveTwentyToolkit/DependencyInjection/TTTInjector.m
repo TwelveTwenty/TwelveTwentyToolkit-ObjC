@@ -214,6 +214,7 @@ static TTTInjector *_sharedInjector;
 - (BOOL)performInjectionOnObject:(NSObject <TTTInjectable> *)object withMapping:(TTTInjectionMapping *)mapping
 {
     __block int count = 0;
+    __block BOOL nonNilPropertiesFound = NO;
     if (mapping)
     {
         [mapping.injectables enumerateKeysAndObjectsUsingBlock:^(NSString *identifier, Class typeClass, BOOL *stop) {
@@ -222,6 +223,10 @@ static TTTInjector *_sharedInjector;
                 count++;
                 id value = [self objectForMappedClass:typeClass withIdentifier:identifier];
                 [object setValue:value forKey:identifier];
+            }
+            else
+            {
+                nonNilPropertiesFound = YES;
             }
         }];
     }
@@ -241,11 +246,15 @@ static TTTInjector *_sharedInjector;
                     NSAssert(value != nil, @"No mapping found for property %@ marked with <TTTInjectable>", prop.name);
                     [object setValue:value forKey:prop.name];
                 }
+                else
+                {
+                    nonNilPropertiesFound = YES;
+                }
             }
         }
     }
 
-    return count > 0;
+    return nonNilPropertiesFound;
 }
 
 @end

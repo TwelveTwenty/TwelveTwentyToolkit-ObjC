@@ -11,6 +11,7 @@
 @interface TTTAbstractPersistenceProxy : NSObject
 {
     NSManagedObjectContext *_mainContext;
+    NSManagedObjectModel *_managedObjectModel;
 }
 
 @property (nonatomic, strong, readonly) NSURL *storeURL;
