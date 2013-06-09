@@ -16,6 +16,8 @@
 @property (nonatomic, strong, readonly) NSURL *storeURL;
 @property (nonatomic, strong, readonly) NSManagedObjectContext *mainContext;
 
+@property(nonatomic, readonly) BOOL requiresDatabaseSeed;
+
 - (id)initWithStoreName:(NSString *)storeName nestContexts:(BOOL)nestContexts resetThreshold:(int)resetThreshold;
 
 - (id)init UNAVAILABLE_ATTRIBUTE;

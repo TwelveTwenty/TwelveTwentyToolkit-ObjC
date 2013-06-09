@@ -13,12 +13,14 @@
 @property(nonatomic, strong) NSURL *storeURL;
 @property(nonatomic) BOOL nestContexts;
 
-@property(nonatomic) BOOL requiresDatabaseSeed;
+@property(nonatomic, readwrite) BOOL requiresDatabaseSeed;
+
 /**
  * Prevent asynchronous saving on iOS 5 with nested contexts due to Core Data bug
  * http://stackoverflow.com/questions/11786436/core-data-nested-managed-object-contexts-and-frequent-deadlocks-freezes/11900851#11900851
  */
 @property(nonatomic) BOOL allowAsynchronousSaving;
+@property(nonatomic) int resetThreshold;
 @end
 
 @implementation TTTAbstractPersistenceProxy
@@ -30,7 +32,7 @@
     if (self)
     {
         self.storeURL = [[self storeDirectory] URLByAppendingPathComponent:[NSString stringWithFormat:@"%@.sqlite", storeName]];
-        [self checkResetThreshold:resetThreshold];
+        self.resetThreshold = resetThreshold;
 
         self.nestContexts = nestContexts;
         self.allowAsynchronousSaving = TTT_SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"6.0");
@@ -113,22 +115,30 @@
 {
     if (_mainContext == nil)
     {
-        self.mainContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
-        _mainContext.mergePolicy = NSOverwriteMergePolicy;
-        _mainContext.undoManager = nil;
+        @synchronized (self)
+        {
+            if (_mainContext == nil)
+            {
+                [self checkResetThreshold:self.resetThreshold];
 
-        if (self.nestContexts)
-        {
-            _mainContext.parentContext = self.diskContext;
-        }
-        else
-        {
-            _mainContext.persistentStoreCoordinator = self.persistentStoreCoordinator;
-        }
+                self.mainContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
+                _mainContext.mergePolicy = NSOverwriteMergePolicy;
+                _mainContext.undoManager = nil;
 
-        if (self.requiresDatabaseSeed)
-        {
-            [self seedDatabase];
+                if (self.nestContexts)
+                {
+                    _mainContext.parentContext = self.diskContext;
+                }
+                else
+                {
+                    _mainContext.persistentStoreCoordinator = self.persistentStoreCoordinator;
+                }
+
+                if (self.requiresDatabaseSeed)
+                {
+                    [self seedDatabase];
+                }
+            }
         }
     }
 
