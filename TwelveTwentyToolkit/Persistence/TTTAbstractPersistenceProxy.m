@@ -119,6 +119,7 @@
         {
             if (_mainContext == nil)
             {
+                NSAssert([[NSThread currentThread] isMainThread], @"The first main context access should take place on the main thread. Only a MOC's init/release/retain methods are thread safe.");
                 [self checkResetThreshold:self.resetThreshold];
 
                 self.mainContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
