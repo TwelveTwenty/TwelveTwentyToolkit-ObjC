@@ -78,14 +78,19 @@ void tt_handleABExternalChange(ABAddressBookRef addressBook, CFDictionaryRef inf
 		// Require access not needed on iOS 5-.
 	}
 
+    
+    
 	__block ABAddressBookRef addressBook;
-	if (&ABAddressBookCreateWithOptions == NULL)
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+	if (&ABAddressBookCreateWithOptions == NULL && &ABAddressBookCreate != NULL)
 	{
 		// iOS 5-
 		addressBook = ABAddressBookCreate();
 		accessGrantedBlock(addressBook);
 	}
-	else
+#pragma clang diagnostic pop
+	else if (&ABAddressBookCreateWithOptions != NULL)
 	{
 		// iOS 6+
 		CFErrorRef error = NULL;
@@ -139,7 +144,10 @@ void tt_handleABExternalChange(ABAddressBookRef addressBook, CFDictionaryRef inf
 	if (&ABAddressBookCreateWithOptions == NULL)
 	{
 		// iOS 5-
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
 		addressBook = ABAddressBookCreate();
+#pragma clang diagnostic pop
 	}
 	else
 	{
