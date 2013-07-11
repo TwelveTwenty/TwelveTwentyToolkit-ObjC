@@ -104,7 +104,7 @@
 
     if (!cell)
     {
-        NSAssert(cell, @"Cell can't be nil for index path %@. Check who's owning of this controller.", indexPath);
+        NSAssert(cell, @"Cell can't be nil for index path %@. Check who's owning this controller.", indexPath);
     }
     return cell;
 }

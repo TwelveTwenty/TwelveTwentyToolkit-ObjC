@@ -9,7 +9,7 @@ typedef void (^TTTDidSelectItemBlock)(id item, NSIndexPath *indexPath);
 typedef void (^TTTWillDisplayItemBlock)(id item, id cell, NSIndexPath *indexPath);
 typedef void (^TTTDidEndDisplayingItemBlock)(id item, id cell, NSIndexPath *indexPath);
 
-extern const CGFloat TTTUseDynamicHeight;
+extern CGFloat const TTTUseDynamicHeight;
 
 @protocol TTTFixedHeight
 + (CGFloat)fixedHeight;
@@ -23,12 +23,14 @@ extern const CGFloat TTTUseDynamicHeight;
 - (id<TTTTableViewItem>)handleDidSelect:(TTTDidSelectItemBlock)didSelectBlock;
 - (id<TTTTableViewItem>)handleWillDisplay:(TTTWillDisplayItemBlock)willDisplayBlock;
 - (id<TTTTableViewItem>)handleDidEndDisplaying:(TTTDidEndDisplayingItemBlock)didEndDisplayingBlock;
+- (id<TTTTableViewItem>)tag:(NSInteger)tag;
 - (TTTTableViewItem *)asItem;
 
 @end
 
 @interface TTTTableViewItem : NSObject <TTTTableViewItem>
 
+@property(nonatomic) NSInteger tag;
 @property(nonatomic) CGFloat height;
 @property(nonatomic, strong) NSIndexPath *indexPath;
 @property(nonatomic, strong, readonly) Class cellClass;

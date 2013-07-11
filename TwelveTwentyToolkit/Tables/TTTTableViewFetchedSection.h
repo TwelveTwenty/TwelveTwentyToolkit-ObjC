@@ -30,6 +30,8 @@
 
 + (id <TTTTableViewFetchedSection>)fetchedSectionWithCellClass:(Class)cellClass configureBlock:(TTTConfigureItemBlock)configureBlock;
 
+- (Class)cellClassForItemAtIndex:(NSInteger)index1;
+
 + (id)section UNAVAILABLE_ATTRIBUTE;
 
 @end

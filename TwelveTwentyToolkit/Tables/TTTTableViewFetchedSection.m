@@ -13,8 +13,8 @@
 
 @property(nonatomic, copy) TTTConfigureItemBlock configureBlock;
 @property(nonatomic, copy) TTTDidSelectItemBlock didSelectBlock;
-
 @property(nonatomic, copy) TTTDynamicHeightBlock dynamicHeightBlock;
+
 @end
 
 @implementation TTTTableViewFetchedSection
@@ -107,6 +107,11 @@
     return [super numberOfItems];
 }
 
+- (Class)cellClassForItemAtIndex:(NSInteger)index
+{
+    return self.cellClass;
+}
+
 - (TTTTableViewItem *)itemAtIndex:(NSInteger)index
 {
     if ([self.fetchedResultsController tttNumberOfObjectsInFirstSection])
@@ -114,7 +119,8 @@
         TTTTableViewFetchedItem *item = self.cachedItems[@(index)];
         if (!item)
         {
-            item = [[TTTTableViewFetchedItem fetchedItemWithCellClass:self.cellClass configure:self.configureBlock] asFetchedItem];
+            item = [[TTTTableViewFetchedItem fetchedItemWithCellClass:[self cellClassForItemAtIndex:index] configure:self.configureBlock] asFetchedItem];
+            item.indexPath = [NSIndexPath indexPathForRow:index inSection:self.index];
             [item fixedHeight:self.rowHeight];
             [item dynamicHeight:self.dynamicHeightBlock];
             [item handleDidSelect:self.didSelectBlock];

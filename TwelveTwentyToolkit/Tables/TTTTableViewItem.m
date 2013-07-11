@@ -1,6 +1,6 @@
 #import "TTTTableViewItem.h"
 
-const CGFloat TTTUseDynamicHeight = 0;
+CGFloat const TTTUseDynamicHeight = 0;
 
 @interface TTTTableViewItem ()
 
@@ -67,6 +67,7 @@ const CGFloat TTTUseDynamicHeight = 0;
 {
     if (_height == TTTUseDynamicHeight && self.heightBlock)
     {
+        NSAssert(self.indexPath, @"Can't call block without index path");
         self.height = self.heightBlock(self, self.indexPath);
     }
 
@@ -102,6 +103,12 @@ const CGFloat TTTUseDynamicHeight = 0;
 - (id <TTTTableViewItem>)handleDidEndDisplaying:(TTTDidEndDisplayingItemBlock)didEndDisplayingBlock
 {
     self.didEndDisplayingBlock = didEndDisplayingBlock;
+    return self;
+}
+
+- (id <TTTTableViewItem>)tag:(NSInteger)tag
+{
+    self.tag = tag;
     return self;
 }
 
