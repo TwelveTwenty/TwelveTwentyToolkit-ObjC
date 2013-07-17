@@ -15,7 +15,6 @@
 
 - (void)dealloc
 {
-
 }
 
 - (id)initWithFeedback:(TTTFeedbackBlock)feedbackBlock
@@ -49,25 +48,25 @@
 - (void)setExecuting:(BOOL)isExecuting
 {
     [self willChangeValueForKey:@"isExecuting"];
-    
+
     _executing = isExecuting;
-    
+
     [self didChangeValueForKey:@"isExecuting"];
 }
 
 - (void)setFinished:(BOOL)isFinished
 {
     [self willChangeValueForKey:@"isFinished"];
-    
+
     _finished = isFinished;
-    
+
     [self didChangeValueForKey:@"isFinished"];
 }
 
 - (void)start
 {
     self.executing = YES;
-    
+
     [self main];
 }
 
@@ -96,14 +95,21 @@
 
     if (feedback != nil)
     {
-        dispatch_async(dispatch_get_main_queue(), ^{
+        if ([[NSThread currentThread] isMainThread])
+        {
             feedback(success, context, error);
-        });
+        }
+        else
+        {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                feedback(success, context, error);
+            });
+        }
     }
 
     self.defaultSuccessBlock = nil;
     self.defaultFailureBlock = nil;
-    
+
     self.executing = NO;
     self.finished = YES;
 }

@@ -1,8 +1,6 @@
 #import "TTTTimestamped.h"
 #import "TTTAbstractManagedObject.h"
-#import "TTTTimestamped.h"
 #import "NSManagedObject+TTTUniquing.h"
-#import "NSManagedObjectContext+TTTBatchManipulation.h"
 
 const struct TTTIdentifiableAttributes TTTIdentifiableAttributes = {
         .identifier = @"identifier",
@@ -159,7 +157,7 @@ const struct TTTSyncStatusValues TTTSyncStatusValues = {
 {
     [super awakeFromInsert];
 
-    if ([self conformsToProtocol:@protocol(TTTTimestamped)])
+    if ([self conformsToProtocol:@protocol(TTTTimestampedLocally)])
     {
         NSDate *now = [NSDate date];
         [self setValue:now forKey:TTTTimestampedAttributes.createdAt];

@@ -37,7 +37,7 @@ extern const struct TTTSyncStatusValues
     TTTSyncStatus deleted;
 } TTTSyncStatusValues;
 
-@protocol TTTSynchronizable <TTTIdentifiable, TTTTimestamped>
+@protocol TTTSynchronizable <TTTIdentifiable, TTTTimestampedLocally>
 
 @property(nonatomic, strong) NSString *syncStatus;
 

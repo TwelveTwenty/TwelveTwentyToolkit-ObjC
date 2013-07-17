@@ -7,4 +7,5 @@
 
 - (id)initWithFrame:(CGRect)frame drawBlock:(TTTDrawingBlock)drawBlock;
 
+- (id)initWithFrame:(CGRect)frame drawBlock:(TTTDrawingBlock)drawBlock opaque:(BOOL)opaque;
 @end

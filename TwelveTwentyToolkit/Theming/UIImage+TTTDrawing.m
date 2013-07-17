@@ -8,11 +8,15 @@
     UIGraphicsBeginImageContextWithOptions(size, NO, scale);
     CGContextRef context = UIGraphicsGetCurrentContext();
 
-    drawing(context, (CGRect) {{0, 0}, size}, scale);
+    if (context != NULL)
+    {
+        drawing(context, (CGRect) {{0, 0}, size}, scale);
+        UIImage *img = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        return img;
+    }
 
-    UIImage *img = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    return img;
+    return nil;
 }
 
 @end

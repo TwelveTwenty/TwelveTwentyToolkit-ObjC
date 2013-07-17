@@ -1,7 +1,5 @@
-#import "TTTLog.h"
 #import "TTTAbstractManagedObject.h"
 #import "TTTMappingPersistenceProxy.h"
-#import "TTTTimestamped.h"
 #import "TTTJSONMapper.h"
 
 #define TTT_DEFAULT_MAPPING @"DefaultMapping"
@@ -51,23 +49,23 @@
     NSDate *now = [NSDate date];
     for (NSManagedObject *updatedObject in [context updatedObjects])
     {
-        if ([updatedObject conformsToProtocol:@protocol(TTTTimestamped)])
+        if ([updatedObject conformsToProtocol:@protocol(TTTTimestampedLocally)])
         {
-            [(id <TTTTimestamped>)updatedObject setUpdatedAt: now];
+            [(id <TTTTimestampedLocally>) updatedObject setUpdatedAt:now];
         }
-        
+
         if ([updatedObject conformsToProtocol:@protocol(TTTSynchronizable)])
         {
-            [(id <TTTSynchronizable>)updatedObject setSyncStatus:TTTSyncStatusValues.updated];
+            [(id <TTTSynchronizable>) updatedObject setSyncStatus:TTTSyncStatusValues.updated];
         }
     }
 
     for (NSManagedObject *insertedObject in [context insertedObjects])
     {
-        if ([insertedObject conformsToProtocol:@protocol(TTTTimestamped)])
+        if ([insertedObject conformsToProtocol:@protocol(TTTTimestampedLocally)])
         {
-            [(id <TTTTimestamped>) insertedObject setCreatedAt:now];
-            [(id <TTTTimestamped>) insertedObject setUpdatedAt:now];
+            [(id <TTTTimestampedLocally>) insertedObject setCreatedAt:now];
+            [(id <TTTTimestampedLocally>) insertedObject setUpdatedAt:now];
         }
 
         if ([insertedObject conformsToProtocol:@protocol(TTTSynchronizable)])

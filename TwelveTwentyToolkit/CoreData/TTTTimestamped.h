@@ -12,3 +12,6 @@ extern const struct TTTTimestampedAttributes
 @property (nonatomic, strong) NSDate* updatedAt;
 
 @end
+
+@protocol TTTTimestampedLocally <TTTTimestamped>
+@end
