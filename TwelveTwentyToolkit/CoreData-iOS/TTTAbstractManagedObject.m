@@ -1,6 +1,7 @@
 #import "TTTTimestamped.h"
 #import "TTTAbstractManagedObject.h"
 #import "NSManagedObject+TTTUniquing.h"
+#import "NSManagedObjectContext+TTTUniquing.h"
 
 const struct TTTIdentifiableAttributes TTTIdentifiableAttributes = {
         .identifier = @"identifier",
@@ -34,6 +35,11 @@ const struct TTTSyncStatusValues TTTSyncStatusValues = {
 + (id)existingEntityWithValue:(id)value forKey:(NSString *)key inContext:(NSManagedObjectContext *)context
 {
     return [self tttExistingEntityWithValue:value forKey:key inContext:context];
+}
+
++ (id)existingEntityWithValues:(NSArray *)values forKeys:(NSArray *)keys inContext:(NSManagedObjectContext *)context
+{
+    return [context tttExistingEntityForName:[self entityName] withValues:values forKeys:keys];
 }
 
 + (NSArray *)allEntitiesSortedByKey:(NSString *)sortKey ascending:(BOOL)ascending inContext:(NSManagedObjectContext *)context
