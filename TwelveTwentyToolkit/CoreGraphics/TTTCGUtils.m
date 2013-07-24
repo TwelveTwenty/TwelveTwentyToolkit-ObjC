@@ -63,26 +63,26 @@ CGRect CGRectTranslate(CGRect rect, CGFloat x, CGFloat y) {
 CGRect CGRectSubtractRect(CGRect subject, CGRect operator, CGSubtractOption options) {
     CGRect subtracted = subject;
 
-    if (options & CGSubtractLeft)
+    if (options & CGSubtractFromTheLeft)
     {
         // Subtract from the left side
         CGFloat left = MAX(CGRectGetMaxX(operator) - CGRectGetMinX(subject), 0);
         subtracted = CGRectTrim(subject, 0, left, 0, 0);
     }
-    else if (options & CGSubtractRight)
+    else if (options & CGSubtractFromTheRight)
     {
         // Subtract from the right side
         CGFloat right = MAX(CGRectGetMaxX(subject) - CGRectGetMinX(operator), 0);
         subtracted = CGRectTrim(subject, 0, 0, 0, right);
     }
 
-    if (options & CGSubtractTop)
+    if (options & CGSubtractFromTheTop)
     {
         // Subtract from the top side
         CGFloat top = MAX(CGRectGetMaxY(operator) - CGRectGetMinY(subject), 0);
         subtracted = CGRectTrim(subject, top, 0, 0, 0);
     }
-    else if (options & CGSubtractBottom)
+    else if (options & CGSubtractFromTheBottom)
     {
         // Subtract from the bottom side
         CGFloat bottom = MAX(CGRectGetMaxY(subject) - CGRectGetMinY(operator), 0);

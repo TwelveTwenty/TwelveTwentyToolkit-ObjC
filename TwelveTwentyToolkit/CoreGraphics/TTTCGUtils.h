@@ -69,10 +69,10 @@ typedef TTTCGOption CGTweakOption;
 enum
 {
     CGSubtractNone = 0,
-    CGSubtractLeft = CGPositionToTheLeft,
-    CGSubtractRight = CGPositionToTheRight,
-    CGSubtractTop = CGPositionAbove,
-    CGSubtractBottom = CGPositionBelow
+    CGSubtractFromTheLeft = CGPositionToTheLeft,
+    CGSubtractFromTheRight = CGPositionToTheRight,
+    CGSubtractFromTheTop = CGPositionAbove,
+    CGSubtractFromTheBottom = CGPositionBelow
 };
 typedef TTTCGOption CGSubtractOption;
 

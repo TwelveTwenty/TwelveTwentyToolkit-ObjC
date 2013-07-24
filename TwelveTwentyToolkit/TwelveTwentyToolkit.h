@@ -56,6 +56,9 @@ static CFTypeRef CFRetainIfNotNULL (CFTypeRef ref)
 
 #define TTTPrepareBlockSelf() __typeof__(self) __weak blockSelf = self
 
+#define TTTStaticScreenScale() static CGFloat scale = 0; \
+if (!scale) scale = [UIScreen mainScreen].scale;
+
 #if !defined(NS_BLOCK_ASSERTIONS)
 
 #if !defined(TTTBlockAssert)

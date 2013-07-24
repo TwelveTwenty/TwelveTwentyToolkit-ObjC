@@ -163,6 +163,15 @@ static TTTTheme <TTTTheme> *_currentTheme;
 
 @end
 
+@implementation UIColor (TTTTheming)
+
++ (UIColor *)tttColorForStyle:(TTTColorStyle)colorStyle
+{
+    return [[TTTTheme currentTheme] colorForStyle:colorStyle];
+}
+
+@end
+
 @implementation UIButton (TTTTheming)
 
 + (id)tttButtonWithStyle:(TTTButtonStyle)buttonStyle

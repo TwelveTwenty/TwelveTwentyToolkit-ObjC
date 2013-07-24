@@ -26,12 +26,17 @@
 
 typedef NSInteger TTTTextStyle;
 typedef NSInteger TTTButtonStyle;
+typedef NSInteger TTTColorStyle;
 
 @protocol TTTTheme <NSObject>
 
 - (NSMutableDictionary *)attributesForTextStyle:(TTTTextStyle)style forControlState:(UIControlState)controlState;
 
 - (NSMutableDictionary *)attributesForButtonStyle:(TTTButtonStyle)style withControlState:(UIControlState)controlState;
+
+@optional
+
+- (UIColor *)colorForStyle:(TTTColorStyle)colorStyle;
 
 @end
 
@@ -56,6 +61,12 @@ typedef NSInteger TTTButtonStyle;
 - (void)applyButtonStyle:(TTTButtonStyle)style toButton:(UIButton *)button;
 
 - (CGSize)UIOffsetValueToCGSize:(NSValue *)offsetValue;
+
+@end
+
+@interface UIColor (TTTTheming)
+
++ (UIColor *)tttColorForStyle:(TTTColorStyle)colorStyle;
 
 @end
 
