@@ -139,7 +139,7 @@ static TTTTheme <TTTTheme> *_currentTheme;
 
 @implementation UILabel (TTTTheming)
 
-+ (id)tttLabelWithText:(NSString *)text textStyle:(TTTTextStyle)textStyle
++ (UILabel *)tttLabelWithText:(NSString *)text textStyle:(TTTTextStyle)textStyle
 {
     UILabel *label = [[self alloc] init];
     label.text = text;
@@ -148,7 +148,7 @@ static TTTTheme <TTTTheme> *_currentTheme;
     return label;
 }
 
-+ (id)tttLabelWithTextStyle:(TTTTextStyle)textStyle
++ (UILabel *)tttLabelWithTextStyle:(TTTTextStyle)textStyle
 {
     UILabel *label = [[self alloc] init];
     [label tttApplyTextStyle:textStyle];

@@ -61,9 +61,9 @@ typedef NSInteger TTTButtonStyle;
 
 @interface UILabel (TTTTheming)
 
-+ (id)tttLabelWithText:(NSString *)text textStyle:(TTTTextStyle)textStyle;
++ (UILabel *)tttLabelWithText:(NSString *)text textStyle:(TTTTextStyle)textStyle;
 
-+ (id)tttLabelWithTextStyle:(TTTTextStyle)textStyle;
++ (UILabel *)tttLabelWithTextStyle:(TTTTextStyle)textStyle;
 
 - (void)tttApplyTextStyle:(TTTTextStyle)textStyle;
 
