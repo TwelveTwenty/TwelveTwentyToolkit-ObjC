@@ -31,7 +31,11 @@
 
     if (self)
     {
-        self.storeURL = [[self storeDirectory] URLByAppendingPathComponent:[NSString stringWithFormat:@"%@.sqlite", storeName]];
+        if (storeName)
+        {
+            self.storeURL = [[self storeDirectory] URLByAppendingPathComponent:[NSString stringWithFormat:@"%@.sqlite", storeName]];
+        }
+
         self.resetThreshold = resetThreshold;
 
         self.nestContexts = nestContexts;
