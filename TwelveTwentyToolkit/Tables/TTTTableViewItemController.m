@@ -5,12 +5,14 @@
 #import "TTTTableViewFetchedSection.h"
 
 @interface TTTTableViewItemController () <TTTTableViewSectionDelegate>
+
 @property(nonatomic, strong) NSMutableDictionary *sectionAnimations;
+
 @end
 
 @implementation TTTTableViewItemController
 
-- (id <TTTTableViewSection>)addSection:(id<TTTTableViewSection>)section
+- (id <TTTTableViewSection>)addSection:(id <TTTTableViewSection>)section
 {
     [section asSection].itemController = self;
 

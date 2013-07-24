@@ -21,7 +21,12 @@
 
 + (id <TTTTableViewFetchedSection>)fetchedSectionWithCellClass:(Class)cellClass configureBlock:(TTTConfigureItemBlock)configureBlock
 {
-    return [[self alloc] initWithCellClass:cellClass configureBlock:configureBlock];
+    TTTTableViewFetchedSection *section = [[self alloc] init];
+
+    section.configureBlock = configureBlock;
+    section.cellClass = cellClass;
+
+    return section;
 }
 
 - (TTTTableViewFetchedSection *)asFetchedSection
@@ -29,18 +34,6 @@
     return self;
 }
 
-- (id)initWithCellClass:(Class)cellClass configureBlock:(TTTConfigureItemBlock)configureBlock
-{
-    self = [self init];
-
-    if (self)
-    {
-        self.configureBlock = configureBlock;
-        self.cellClass = cellClass;
-    }
-
-    return self;
-}
 
 - (id)init
 {
