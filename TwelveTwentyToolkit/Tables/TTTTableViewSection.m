@@ -92,11 +92,16 @@
 
 - (CGFloat)headerHeight
 {
-    if (self.headerView) return self.headerView.frame.size.height;
+    if (!_headerHeight)
+    {
+        if (_headerView)
+        {
+            // Not calling self.headerView, to prevent creation of the header block.
+            _headerHeight = _headerView.frame.size.height;
+        }
+    }
 
-    if (_headerHeight) return _headerHeight;
-
-    return 0;
+    return _headerHeight;
 }
 
 - (UIView *)headerView

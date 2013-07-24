@@ -83,7 +83,8 @@ typedef enum
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     TTTTableViewItem *item = [self itemAtIndexPath:indexPath];
-    return item.height ? item.height : tableView.rowHeight;
+    CGFloat height = item.height ? item.height : tableView.rowHeight;
+    return height;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
