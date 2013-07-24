@@ -31,34 +31,50 @@
 
 #define DEG2RAD (M_PI / 180.0)
 
-typedef enum {
+enum {
     CGAlignNone                        = 0,
     CGAlignPreventDevicePixelRounding  = 1 << 0,
-    //
+};
+typedef NSInteger TTTCGOption;
+
+enum
+{
     CGAlignLeftEdge                    = 1 << 1,
     CGAlignCenterHorizontally          = 1 << 2,
     CGAlignRightEdge                   = 1 << 3,
     CGAlignTopEdge                     = 1 << 4,
     CGAlignCenterVertically            = 1 << 5,
     CGAlignBottomEdge                  = 1 << 6,
-} CGAlignOption;
+};
+typedef TTTCGOption CGAlignOption;
 
-typedef enum CGAlignOption {
+enum {
     CGPositionToTheLeft = 1 << 10,
     CGPositionToTheRight = 1 << 11,
     CGPositionAbove = 1 << 12,
     CGPositionBelow = 1 << 13,
-} CGPositionOption;
+};
+typedef CGAlignOption CGPositionOption;
 
-typedef enum
+enum
 {
     CGTweakNone = 0,
-    CGTweakOriginX = 1 << 0,
-    CGTweakOriginY = 1 << 1,
-    CGTweakSizeWidth = 1 << 2,
-    CGTweakSizeHeight = 1 << 3
-} CGTweakOption;
+    CGTweakOriginX = 1 << 14,
+    CGTweakOriginY = 1 << 15,
+    CGTweakSizeWidth = 1 << 16,
+    CGTweakSizeHeight = 1 << 17
+};
+typedef TTTCGOption CGTweakOption;
 
+enum
+{
+    CGSubtractNone = 0,
+    CGSubtractLeft = CGPositionToTheLeft,
+    CGSubtractRight = CGPositionToTheRight,
+    CGSubtractTop = CGPositionAbove,
+    CGSubtractBottom = CGPositionBelow
+};
+typedef TTTCGOption CGSubtractOption;
 
 /** Trim a CGRect from the top, counter clockwise. */
 extern CGRect CGRectTrim(CGRect rect, CGFloat top, CGFloat left, CGFloat bottom, CGFloat right);
@@ -74,7 +90,7 @@ extern CGRect CGRectWithTweak(CGRect rect, CGTweakOption tweakOption, CGFloat tw
 
 extern CGRect CGRectTranslate(CGRect rect, CGFloat x, CGFloat y);
 
-extern CGRect CGRectSubtractRect(CGRect rectA, CGRect rectB, CGPositionOption options);
+extern CGRect CGRectSubtractRect(CGRect subject, CGRect operator, CGSubtractOption options);
 
 /** Align one rect to another one. Will round to device pixels unless flagged with CGAlignPreventDevicePixelRounding */
 extern CGRect CGRectAlignToRect(CGRect rectA, CGRect rectB, CGAlignOption options);
@@ -99,3 +115,11 @@ extern CGFloat CGPointLength(CGPoint p);
 
 /** Aspect fit */
 extern CGSize CGSizeScaleToFit(CGSize sizeA, CGSize sizeB);
+
+/** Draw rounded pill rect */
+extern CGPathRef CGPathCreatePill(CGRect rect);
+
+/** Rounded rect methods by Alexsander Akers & Zachary Waldowski: https://github.com/zwaldowski/AZAppearanceKit */
+extern CGPathRef CGPathCreateWithRoundedRect(CGRect rect, CGFloat cornerRadius);
+
+extern CGPathRef CGPathCreateByRoundingCornersInRect(CGRect rect, CGFloat topLeftRadius, CGFloat topRightRadius, CGFloat bottomLeftRadius, CGFloat bottomRightRadius);

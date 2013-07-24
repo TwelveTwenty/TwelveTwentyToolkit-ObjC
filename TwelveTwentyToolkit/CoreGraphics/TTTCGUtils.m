@@ -60,33 +60,33 @@ CGRect CGRectTranslate(CGRect rect, CGFloat x, CGFloat y) {
     return rect;
 }
 
-CGRect CGRectSubtractRect(CGRect rectA, CGRect rectB, CGPositionOption options) {
-    CGRect subtracted = rectA;
+CGRect CGRectSubtractRect(CGRect subject, CGRect operator, CGSubtractOption options) {
+    CGRect subtracted = subject;
 
-    if (options & CGPositionToTheLeft)
+    if (options & CGSubtractLeft)
     {
         // Subtract from the left side
-        CGFloat left = MAX(CGRectGetMaxX(rectB) - CGRectGetMinX(rectA), 0);
-        subtracted = CGRectTrim(rectA, 0, left, 0, 0);
+        CGFloat left = MAX(CGRectGetMaxX(operator) - CGRectGetMinX(subject), 0);
+        subtracted = CGRectTrim(subject, 0, left, 0, 0);
     }
-    else if (options & CGPositionToTheRight)
+    else if (options & CGSubtractRight)
     {
         // Subtract from the right side
-        CGFloat right = MAX(CGRectGetMaxX(rectA) - CGRectGetMinX(rectB), 0);
-        subtracted = CGRectTrim(rectA, 0, 0, 0, right);
+        CGFloat right = MAX(CGRectGetMaxX(subject) - CGRectGetMinX(operator), 0);
+        subtracted = CGRectTrim(subject, 0, 0, 0, right);
     }
 
-    if (options & CGPositionAbove)
+    if (options & CGSubtractTop)
     {
         // Subtract from the top side
-        CGFloat top = MAX(CGRectGetMaxY(rectB) - CGRectGetMinY(rectA), 0);
-        subtracted = CGRectTrim(rectA, top, 0, 0, 0);
+        CGFloat top = MAX(CGRectGetMaxY(operator) - CGRectGetMinY(subject), 0);
+        subtracted = CGRectTrim(subject, top, 0, 0, 0);
     }
-    else if (options & CGPositionBelow)
+    else if (options & CGSubtractBottom)
     {
         // Subtract from the bottom side
-        CGFloat bottom = MAX(CGRectGetMaxY(rectA) - CGRectGetMinY(rectB), 0);
-        subtracted = CGRectTrim(rectA, 0, 0, bottom, 0);
+        CGFloat bottom = MAX(CGRectGetMaxY(subject) - CGRectGetMinY(operator), 0);
+        subtracted = CGRectTrim(subject, 0, 0, bottom, 0);
     }
 
     return subtracted;
@@ -211,4 +211,39 @@ CGSize CGSizeScaleToFit(CGSize sizeA, CGSize sizeB) {
     CGFloat minRatio = MIN(hRatio, vRatio);
 
     return CGSizeMake(sizeA.width * minRatio, sizeA.height * minRatio);
+}
+
+CGPathRef CGPathCreatePill(CGRect rect) {
+    return CGPathCreateWithRoundedRect(rect, CGRectGetHeight(rect) / 2.0);
+}
+
+CGPathRef CGPathCreateWithRoundedRect(CGRect rect, CGFloat cornerRadius) {
+    return CGPathCreateByRoundingCornersInRect(rect, cornerRadius, cornerRadius, cornerRadius, cornerRadius);
+}
+
+CGPathRef CGPathCreateByRoundingCornersInRect(CGRect rect, CGFloat topLeftRadius, CGFloat topRightRadius, CGFloat bottomLeftRadius, CGFloat bottomRightRadius) {
+    const CGPoint topLeft = rect.origin;
+    const CGPoint topRight = CGPointMake(CGRectGetMaxX(rect), CGRectGetMinY(rect));
+    const CGPoint bottomRight = CGPointMake(CGRectGetMaxX(rect), CGRectGetMaxY(rect));
+    const CGPoint bottomLeft = CGPointMake(CGRectGetMinX(rect), CGRectGetMaxY(rect));
+
+    CGMutablePathRef path = CGPathCreateMutable();
+
+    CGPathMoveToPoint(path, NULL, topLeft.x + topLeftRadius, topLeft.y);
+
+    CGPathAddLineToPoint(path, NULL, topRight.x - topRightRadius, topRight.y);
+    CGPathAddCurveToPoint(path, NULL, topRight.x, topRight.y, topRight.x, topRight.y + topRightRadius, topRight.x, topRight.y + topRightRadius);
+
+    CGPathAddLineToPoint(path, NULL, bottomRight.x, bottomRight.y - bottomRightRadius);
+    CGPathAddCurveToPoint(path, NULL, bottomRight.x, bottomRight.y, bottomRight.x - bottomRightRadius, bottomRight.y, bottomRight.x - bottomRightRadius, bottomRight.y);
+
+    CGPathAddLineToPoint(path, NULL, bottomLeft.x + bottomLeftRadius, bottomLeft.y);
+    CGPathAddCurveToPoint(path, NULL, bottomLeft.x, bottomLeft.y, bottomLeft.x, bottomLeft.y - bottomLeftRadius, bottomLeft.x, bottomLeft.y - bottomLeftRadius);
+
+    CGPathAddLineToPoint(path, NULL, topLeft.x, topLeft.y + topLeftRadius);
+    CGPathAddCurveToPoint(path, NULL, topLeft.x, topLeft.y, topLeft.x + topLeftRadius, topLeft.y, topLeft.x + topLeftRadius, topLeft.y);
+
+    CGPathCloseSubpath(path);
+
+    return path;
 }
