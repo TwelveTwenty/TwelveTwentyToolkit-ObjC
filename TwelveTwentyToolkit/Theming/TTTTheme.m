@@ -60,7 +60,6 @@ static TTTTheme <TTTTheme> *_currentTheme;
     [attributes tttForKey:TTTAttributeTextAlignment performBlock:^(id value) {label.textAlignment = (NSTextAlignment) [value integerValue];}];
     [attributes tttForKey:TTTAttributeLineBreakMode performBlock:^(NSNumber *value) {
         label.lineBreakMode = (NSLineBreakMode) [value integerValue];
-        label.numberOfLines = 0;
     }];
     [attributes tttForKey:TTTAttributeNumberOfLines performBlock:^(NSNumber *value) {label.numberOfLines = [value integerValue];}];
 
@@ -174,15 +173,21 @@ static TTTTheme <TTTTheme> *_currentTheme;
 
 @implementation UIButton (TTTTheming)
 
-+ (id)tttButtonWithStyle:(TTTButtonStyle)buttonStyle
++ (UIButton *)tttButtonWithStyle:(TTTButtonStyle)buttonStyle
 {
     return [self tttButtonWithTitle:@"" buttonStyle:buttonStyle];
 }
 
-+ (id)tttButtonWithTitle:(NSString *)title buttonStyle:(TTTButtonStyle)buttonStyle
++ (UIButton *)tttButtonWithTitle:(NSString *)title buttonStyle:(TTTButtonStyle)buttonStyle
+{
+    return [self tttButtonWithTitle:title buttonStyle:buttonStyle iconImage:nil];
+}
+
++ (UIButton *)tttButtonWithTitle:(NSString *)title buttonStyle:(TTTButtonStyle)buttonStyle iconImage:(UIImage *)image
 {
     UIButton *button = [self buttonWithType:UIButtonTypeCustom];
     [button setTitle:title forState:UIControlStateNormal];
+    [button setImage:image forState:UIControlStateNormal];
     [button tttApplyButtonStyle:buttonStyle];
     [button tttResetIntrinsicContentFrame];
     return button;

@@ -82,9 +82,11 @@ typedef NSInteger TTTColorStyle;
 
 @interface UIButton (TTTTheming)
 
-+ (id)tttButtonWithStyle:(TTTButtonStyle)buttonStyle;
++ (UIButton *)tttButtonWithStyle:(TTTButtonStyle)buttonStyle;
 
-+ (id)tttButtonWithTitle:(NSString *)title buttonStyle:(TTTButtonStyle)buttonStyle;
++ (UIButton *)tttButtonWithTitle:(NSString *)title buttonStyle:(TTTButtonStyle)buttonStyle;
+
++ (UIButton *)tttButtonWithTitle:(NSString *)title buttonStyle:(TTTButtonStyle)buttonStyle iconImage:(UIImage *)image;
 
 - (void)tttApplyButtonStyle:(TTTButtonStyle)buttonStyle;
 
