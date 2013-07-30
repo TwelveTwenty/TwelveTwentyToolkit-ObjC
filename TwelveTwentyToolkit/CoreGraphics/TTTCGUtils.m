@@ -19,6 +19,7 @@
 // THE SOFTWARE.
 
 #import <CoreGraphics/CoreGraphics.h>
+#import <TwelveTwentyToolkit/TwelveTwentyToolkit.h>
 #import "TTTCGUtils.h"
 
 CGRect CGRectTrim(CGRect rect, CGFloat top, CGFloat left, CGFloat bottom, CGFloat right) {
@@ -163,8 +164,7 @@ CGRect CGRectAlignAndPositionNextToRect(CGRect rectA, CGRect rectB, CGPositionOp
 }
 
 CGRect CGRectRoundToDevicePixels(CGRect r) {
-    static CGFloat scale = 0;
-    if (!scale) scale = [UIScreen mainScreen].scale;
+    TTTStaticScreenScale();
 
     CGRect q = r;
     q.origin.x = roundf(q.origin.x * scale) / scale;
@@ -213,15 +213,15 @@ CGSize CGSizeScaleToFit(CGSize sizeA, CGSize sizeB) {
     return CGSizeMake(sizeA.width * minRatio, sizeA.height * minRatio);
 }
 
-CGPathRef CGPathCreatePill(CGRect rect) {
-    return CGPathCreateWithRoundedRect(rect, CGRectGetHeight(rect) / 2.0);
+CGPathRef TTTCGPathCreatePill(CGRect rect) {
+    return TTTCGPathCreateWithRoundedRect(rect, CGRectGetHeight(rect) / 2.0);
 }
 
-CGPathRef CGPathCreateWithRoundedRect(CGRect rect, CGFloat cornerRadius) {
-    return CGPathCreateByRoundingCornersInRect(rect, cornerRadius, cornerRadius, cornerRadius, cornerRadius);
+CGPathRef TTTCGPathCreateWithRoundedRect(CGRect rect, CGFloat cornerRadius) {
+    return TTTCGPathCreateByRoundingCornersInRect(rect, cornerRadius, cornerRadius, cornerRadius, cornerRadius);
 }
 
-CGPathRef CGPathCreateByRoundingCornersInRect(CGRect rect, CGFloat topLeftRadius, CGFloat topRightRadius, CGFloat bottomLeftRadius, CGFloat bottomRightRadius) {
+CGPathRef TTTCGPathCreateByRoundingCornersInRect(CGRect rect, CGFloat topLeftRadius, CGFloat topRightRadius, CGFloat bottomLeftRadius, CGFloat bottomRightRadius) {
     const CGPoint topLeft = rect.origin;
     const CGPoint topRight = CGPointMake(CGRectGetMaxX(rect), CGRectGetMinY(rect));
     const CGPoint bottomRight = CGPointMake(CGRectGetMaxX(rect), CGRectGetMaxY(rect));

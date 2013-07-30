@@ -29,6 +29,14 @@
 #define CGRectWithSize(WIDTH,HEIGHT)	({ __typeof__(WIDTH) __width = (WIDTH); __typeof__(HEIGHT) __height = (HEIGHT); CGRectMake(0, 0, __width, __height); })
 #endif
 
+#ifndef CGRectWithSquareSize
+#define CGRectWithSquareSize(SQUARE_SIZE)	({ __typeof__(SQUARE_SIZE) __size = (SQUARE_SIZE); CGRectMake(0, 0, __size, __size); })
+#endif
+
+#ifndef CGRectWithStructSize
+#define CGRectWithStructSize(STRUCT_SIZE)	({ __typeof__(STRUCT_SIZE) __size = (STRUCT_SIZE); (CGRect){{0, 0}, __size}; })
+#endif
+
 #define DEG2RAD (M_PI / 180.0)
 
 enum {
@@ -117,9 +125,9 @@ extern CGFloat CGPointLength(CGPoint p);
 extern CGSize CGSizeScaleToFit(CGSize sizeA, CGSize sizeB);
 
 /** Draw rounded pill rect */
-extern CGPathRef CGPathCreatePill(CGRect rect);
+extern CGPathRef TTTCGPathCreatePill(CGRect rect);
 
 /** Rounded rect methods by Alexsander Akers & Zachary Waldowski: https://github.com/zwaldowski/AZAppearanceKit */
-extern CGPathRef CGPathCreateWithRoundedRect(CGRect rect, CGFloat cornerRadius);
+extern CGPathRef TTTCGPathCreateWithRoundedRect(CGRect rect, CGFloat cornerRadius);
 
-extern CGPathRef CGPathCreateByRoundingCornersInRect(CGRect rect, CGFloat topLeftRadius, CGFloat topRightRadius, CGFloat bottomLeftRadius, CGFloat bottomRightRadius);
+extern CGPathRef TTTCGPathCreateByRoundingCornersInRect(CGRect rect, CGFloat topLeftRadius, CGFloat topRightRadius, CGFloat bottomLeftRadius, CGFloat bottomRightRadius);
