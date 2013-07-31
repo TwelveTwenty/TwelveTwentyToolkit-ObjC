@@ -7,13 +7,13 @@
 
 + (NSCache *)tttDrawingCache
 {
-    static NSCache *cache = nil;
+    static NSCache *_tttDrawingCache = nil;
     static dispatch_once_t predicate;
     dispatch_once(&predicate, ^{
-        cache = [[NSCache alloc] init];
-        [cache setTotalCostLimit:32 MB];
+        _tttDrawingCache = [[NSCache alloc] init];
+        [_tttDrawingCache setTotalCostLimit:32 MB];
     });
-    return cache;
+    return _tttDrawingCache;
 }
 
 + (void)tttSetDrawingCacheSize:(NSUInteger)bytes
