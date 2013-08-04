@@ -1,5 +1,5 @@
 #import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
+ #import <UIKit/UIKit.h>
 
 typedef void (^TTTDrawingBlock)(CGContextRef ctx, CGRect rect, CGFloat scale);
 
@@ -12,5 +12,9 @@ typedef void (^TTTDrawingBlock)(CGContextRef ctx, CGRect rect, CGFloat scale);
 + (UIImage *)tttImageWithSize:(CGSize)size drawing:(TTTDrawingBlock)drawing;
 
 + (UIImage *)tttImageWithIdentifier:(NSString *)identifier size:(CGSize)size drawing:(TTTDrawingBlock)drawing;
+
++ (UIImage *)tttImageWithIdentifier:(NSString *)identifier size:(CGSize)size drawing:(TTTDrawingBlock)drawing capInsets:(UIEdgeInsets)capInsets;
+
++ (UIImage *)tttImageWithIdentifier:(NSString *)identifier size:(CGSize)size drawing:(TTTDrawingBlock)drawing capInsets:(UIEdgeInsets)capInsets resizingMode:(UIImageResizingMode)resizingMode;
 
 @end

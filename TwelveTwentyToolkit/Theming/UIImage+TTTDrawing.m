@@ -45,14 +45,34 @@
 
 + (UIImage *)tttImageWithIdentifier:(NSString *)identifier size:(CGSize)size drawing:(TTTDrawingBlock)drawing
 {
+    return [self tttImageWithIdentifier:identifier size:size drawing:drawing capInsets:UIEdgeInsetsZero];
+}
+
++ (UIImage *)tttImageWithIdentifier:(NSString *)identifier size:(CGSize)size drawing:(TTTDrawingBlock)drawing capInsets:(UIEdgeInsets)capInsets
+{
+    return [self tttImageWithIdentifier:identifier size:size drawing:drawing capInsets:capInsets resizingMode:UIImageResizingModeStretch];
+}
+
++ (UIImage *)tttImageWithIdentifier:(NSString *)identifier size:(CGSize)size drawing:(TTTDrawingBlock)drawing capInsets:(UIEdgeInsets)capInsets resizingMode:(UIImageResizingMode)resizingMode
+{
     NSString *key = [NSString stringWithFormat:@"%@-%fx%f", identifier, size.width, size.height];
     UIImage *cachedImage = [[self tttDrawingCache] objectForKey:key];
 
-    if (cachedImage == nil && (cachedImage = [self tttImageWithSize:size drawing:drawing]))
+    if (cachedImage == nil)
     {
-        NSUInteger bytesPerPixel = 32;
-        NSUInteger byteCost = (NSUInteger) (size.width * size.height * bytesPerPixel);
-        [[self tttDrawingCache] setObject:cachedImage forKey:key cost:byteCost];
+        cachedImage = [self tttImageWithSize:size drawing:drawing];
+
+        if (cachedImage)
+        {
+            if (!UIEdgeInsetsEqualToEdgeInsets(capInsets, UIEdgeInsetsZero))
+            {
+                cachedImage = [cachedImage resizableImageWithCapInsets:capInsets resizingMode:resizingMode];
+            }
+
+            NSUInteger bytesPerPixel = 32;
+            NSUInteger byteCost = (NSUInteger) (size.width * size.height * bytesPerPixel);
+            [[self tttDrawingCache] setObject:cachedImage forKey:key cost:byteCost];
+        }
     }
 
     return cachedImage;
