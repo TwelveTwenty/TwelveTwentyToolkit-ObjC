@@ -40,7 +40,7 @@
 
 @implementation TTTInjectionMapping
 {
-    dispatch_once_t onceToken;
+    dispatch_once_t _onceToken;
     id _singleton;
 }
 
@@ -145,7 +145,7 @@
     }
     else if (IS_SINGLETON)
     {
-        dispatch_once(&onceToken, ^{_singleton = [[self.mappedClass alloc] init];});
+        dispatch_once(&_onceToken, ^{_singleton = [[self.mappedClass alloc] init];});
         return _singleton;
     }
     else

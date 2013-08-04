@@ -195,7 +195,7 @@ static TTTInjector *_sharedInjector;
 
 - (id)injectPropertiesIntoObject:(id)object withMapping:(TTTInjectionMapping *)mapping
 {
-    if (self.allowImplicitMapping && !mapping)
+    if (!mapping && self.allowImplicitMapping)
     {
         NSString *key = [[self class] keyForClass:[object class] withIdentifier:nil];
         mapping = [[TTTInjectionMapping alloc] initWithParent:self mappedClass:[object class] options:TTTerminationOptionNone];
