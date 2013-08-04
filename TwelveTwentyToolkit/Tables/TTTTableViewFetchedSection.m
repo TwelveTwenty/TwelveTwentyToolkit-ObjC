@@ -9,7 +9,7 @@
 
 @interface TTTTableViewFetchedSection () <NSFetchedResultsControllerDelegate>
 
-@property(nonatomic, strong) NSMutableDictionary *cachedItems;
+@property(nonatomic, strong) NSCache *cachedItems;
 
 @property(nonatomic, copy) TTTConfigureItemBlock configureBlock;
 @property(nonatomic, copy) TTTDidSelectItemBlock didSelectBlock;
@@ -34,14 +34,13 @@
     return self;
 }
 
-
 - (id)init
 {
     self = [super init];
 
     if (self)
     {
-        self.cachedItems = [NSMutableDictionary dictionary];
+        self.cachedItems = [[NSCache alloc] init];
     }
 
     return self;
@@ -51,7 +50,7 @@
 {
     [super setIndex:index];
 
-    self.cachedItems = [NSMutableDictionary dictionary];
+    [self.cachedItems removeAllObjects];
 }
 
 - (id <TTTTableViewFetchedSection>)fixedRowHeight:(CGFloat)fixedRowHeight
@@ -92,9 +91,16 @@
 
 - (NSUInteger)numberOfItems
 {
-    if ([self.fetchedResultsController tttNumberOfObjectsInFirstSection])
+    NSUInteger number = [self.fetchedResultsController tttNumberOfObjectsInFirstSection];
+
+    if (number)
     {
-        return [self.fetchedResultsController tttNumberOfObjectsInFirstSection];
+        if (self.fetchedResultsController.fetchRequest.fetchLimit)
+        {
+            return MIN(self.fetchedResultsController.fetchRequest.fetchLimit, number);
+        }
+
+        return number;
     }
 
     return [super numberOfItems];
@@ -109,7 +115,7 @@
 {
     if ([self.fetchedResultsController tttNumberOfObjectsInFirstSection])
     {
-        TTTTableViewFetchedItem *item = self.cachedItems[@(index)];
+        TTTTableViewFetchedItem *item = [self.cachedItems objectForKey:@(index)];
         if (!item)
         {
             item = [[TTTTableViewFetchedItem fetchedItemWithCellClass:[self cellClassForItemAtIndex:index] configure:self.configureBlock] asFetchedItem];
@@ -121,8 +127,8 @@
             NSArray *objects = [[self.fetchedResultsController tttFirstSection] objects];
             if (index < 0) return nil;
             if (index >= [objects count]) return nil;
-            item.fetchedEntity = objects[index];
-            self.cachedItems[@(index)] = item;
+            item.fetchedEntity = objects[(NSUInteger) index];
+            [self.cachedItems setObject:item forKey:@(index)];
         }
 
         return item;
@@ -135,20 +141,37 @@
 
 - (void)controllerWillChangeContent:(NSFetchedResultsController *)controller
 {
-    self.cachedItems = [NSMutableDictionary dictionary];
+    [self.cachedItems removeAllObjects];
 
     [self.itemController sectionWillBeginChanges:self];
 }
 
 - (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type newIndexPath:(NSIndexPath *)newIndexPath
 {
-    NSIndexPath *convertedIndexPath = [NSIndexPath indexPathForRow:indexPath.row inSection:self.index];
-    NSIndexPath *convertedNewIndexPath = [NSIndexPath indexPathForRow:newIndexPath.row inSection:self.index];
+    NSIndexPath *convertedIndexPath = indexPath ? [NSIndexPath indexPathForRow:indexPath.row inSection:self.index] : nil;
+    NSIndexPath *convertedNewIndexPath = newIndexPath ? [NSIndexPath indexPathForRow:newIndexPath.row inSection:self.index] : nil;
 
     switch (type)
     {
-
         case NSFetchedResultsChangeInsert:
+            if (self.fetchedResultsController.fetchRequest.fetchLimit)
+            {
+                NSUInteger numItems = [self numberOfItems];
+                if (numItems == self.fetchedResultsController.fetchRequest.fetchLimit)
+                {
+                    if (convertedNewIndexPath.row < numItems)
+                    {
+//                        [self.itemController sectionDidDeleteRowAtIndexPath:[NSIndexPath indexPathForRow:numItems - 1 inSection:convertedNewIndexPath.section]];
+                        // then continue to insert the new index path.
+                    }
+                    else
+                    {
+                        // insert would take place beyond fetch limit bounds, so it is ignored.
+                        break;
+                    }
+                }
+            }
+
             [self.itemController sectionDidInsertRowAtIndexPath:convertedNewIndexPath];
             break;
 

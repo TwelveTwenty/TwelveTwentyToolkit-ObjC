@@ -68,7 +68,7 @@ CGFloat const TTTUseDynamicHeight = 0;
     if (_height == TTTUseDynamicHeight && self.heightBlock)
     {
         NSAssert(self.indexPath, @"Can't call block without index path");
-        self.height = self.heightBlock(self, self.indexPath);
+        return self.heightBlock(self, self.indexPath);
     }
 
     return _height;
