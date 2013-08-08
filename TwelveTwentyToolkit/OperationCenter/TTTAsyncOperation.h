@@ -20,6 +20,7 @@ typedef void (^TTTRequestFailureBlock)(NSError *error);
 @property(nonatomic, copy) TTTFeedbackBlock feedbackBlock;
 @property(nonatomic, readonly) TTTRequestSuccessBlock defaultSuccessBlock;
 @property(nonatomic, readonly) TTTRequestFailureBlock defaultFailureBlock;
+@property(nonatomic) NSTimeInterval timeout;
 
 - (id)initWithFeedback:(TTTFeedbackBlock)feedbackBlock;
 

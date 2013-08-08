@@ -1,3 +1,4 @@
+#import <TwelveTwentyToolkit/TTTLog.h>
 #import "TTTInjector.h"
 #import "TTTOperation.h"
 #import "TTTOperationCenter.h"
@@ -38,6 +39,13 @@
 {
     // override
     [self doesNotRecognizeSelector:_cmd];
+}
+
+- (void)cancel
+{
+    WLog(@"Operation cancelled: %@", self);
+
+    [super cancel];
 }
 
 @end
