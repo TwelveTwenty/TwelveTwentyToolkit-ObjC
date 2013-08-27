@@ -4,7 +4,7 @@
 
 - (NSMutableArray *)tttMap:(id(^)(id obj, NSUInteger idx, BOOL *stop))mappingBlock
 {
-    NSMutableArray *map = [NSMutableArray array];
+    NSMutableArray *map = [NSMutableArray arrayWithCapacity:self.count];
 
     [self enumerateObjectsUsingBlock:^(id outerObj, NSUInteger outerIdx, BOOL *outerStop) {
         id mapped = mappingBlock(outerObj, outerIdx, outerStop);
@@ -23,7 +23,7 @@
 
 - (NSMutableDictionary *)tttMap:(id(^)(id *key, id obj))mappingBlock
 {
-    NSMutableDictionary *map = [NSMutableDictionary dictionary];
+    NSMutableDictionary *map = [NSMutableDictionary dictionaryWithCapacity:self.count];
 
     [self enumerateKeysAndObjectsUsingBlock:^(id innerKey, id innerObj, BOOL *stop) {
         id copiedKey = [innerKey copy];
