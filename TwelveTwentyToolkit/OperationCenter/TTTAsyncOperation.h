@@ -28,4 +28,6 @@ typedef void (^TTTRequestFailureBlock)(NSError *error);
 
 - (void)dispatchUnsuccessfulFeedbackWithError:(NSError *)error;
 
+- (id)inline UNAVAILABLE_ATTRIBUTE;
+
 @end

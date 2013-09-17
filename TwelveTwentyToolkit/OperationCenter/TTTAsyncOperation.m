@@ -43,6 +43,12 @@
     return self;
 }
 
+- (id)init
+{
+    self = [self initWithFeedback:nil];
+    return self;
+}
+
 - (BOOL)isConcurrent
 {
     return !self.requiresMainThread;
