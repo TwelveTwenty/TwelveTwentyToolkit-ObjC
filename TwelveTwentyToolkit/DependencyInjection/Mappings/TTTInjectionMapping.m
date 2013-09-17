@@ -33,6 +33,7 @@
 @property(nonatomic) TTTerminationOption options;
 @property(nonatomic, weak, readwrite) id <TTInjectionMappingParent> parent;
 @property(nonatomic, strong, readwrite) id targetObject;
+@property(nonatomic, strong, readwrite) TTTInjectionBlock targetBlock;
 @property(nonatomic, readonly) TTTInjectionMapping *endMapping;
 @property(nonatomic, strong) NSMutableDictionary *injectables;
 
@@ -74,6 +75,13 @@
 - (id <TTInjectionMappingEnd>)toObject:(id)object
 {
     self.targetObject = object;
+    [self assertIntegrity];
+    return self;
+}
+
+- (id <TTInjectionMappingEnd>)toBlock:(TTTInjectionBlock)block
+{
+    self.targetBlock = block;
     [self assertIntegrity];
     return self;
 }
@@ -147,6 +155,10 @@
     {
         dispatch_once(&_onceToken, ^{_singleton = [[self.mappedClass alloc] init];});
         return _singleton;
+    }
+    else if (_targetBlock != nil)
+    {
+        return _targetBlock();
     }
     else
     {

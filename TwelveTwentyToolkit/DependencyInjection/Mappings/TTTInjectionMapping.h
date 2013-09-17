@@ -42,6 +42,9 @@
 
 - (id <TTInjectionMappingEnd>)toObject:(id)object;
 
+typedef id (^TTTInjectionBlock)();
+- (id <TTInjectionMappingEnd>)toBlock:(TTTInjectionBlock)block;
+
 @end
 
 typedef enum

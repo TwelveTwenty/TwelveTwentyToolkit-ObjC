@@ -21,6 +21,7 @@
 #import <Foundation/Foundation.h>
 #import "TTTInjectionMapping.h"
 
+#define injectClass classWithInjector:[TTTInjector sharedInjector]
 #define injectAlloc allocWithInjector:[TTTInjector sharedInjector]
 #define injectObject objectFromInjector:[TTTInjector sharedInjector]
 #define injectObjectNamed(...) objectFromInjector:[TTTInjector sharedInjector] withIdentifier:[NSString stringWithFormat:__VA_ARGS__]
@@ -106,6 +107,8 @@
     @property (strong) NSArray <TTTInjectable>*plants;
  */
 @interface NSObject (TTTInjector)
+
++ (Class)classWithInjector:(TTTInjector *)injector;
 
 + (id)allocWithInjector:(TTTInjector *)injector;
 
