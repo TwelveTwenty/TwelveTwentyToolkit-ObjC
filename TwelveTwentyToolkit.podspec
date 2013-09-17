@@ -1,11 +1,11 @@
 Pod::Spec.new do |s|
   s.name         = 'TwelveTwentyToolkit'
-  s.version      = '0.1.3'
+  s.version      = '0.1.4'
   s.summary      = 'The Twelve Twenty Toolkit of reusable Objective-C classes.'
   s.homepage     = 'http://twelvetwenty.nl'
   s.license      = 'MIT'
   s.author       = { 'Eric-Paul Lecluse' => 'epologee@gmail.com', 'Jankees van Woezik' => 'jankeesvw@gmail.com' }
-  s.source       = { :git => 'https://github.com/TwelveTwenty/TwelveTwentyToolkit-ObjC.git', :tag => '0.1.3' }
+  s.source       = { :git => 'https://github.com/TwelveTwenty/TwelveTwentyToolkit-ObjC.git', :tag => s.version.to_s }
   s.ios.deployment_target = '6.0'
   s.osx.deployment_target = '10.8'
   s.requires_arc = true
@@ -35,6 +35,8 @@ Pod::Spec.new do |s|
     cg.ios.frameworks = 'UIKit','QuartzCore'
     cg.ios.dependency 'TwelveTwentyToolkit/Foundation'
     cg.ios.source_files = 'TwelveTwentyToolkit/CoreGraphics/*.{h,m}'
+    
+    cg.osx.dependency 'TwelveTwentyToolkit/Foundation'
   end
   
   s.subspec 'CoreData' do |cd|
@@ -55,12 +57,16 @@ Pod::Spec.new do |s|
     ps.ios.frameworks = 'CoreData'
     ps.ios.dependency 'TwelveTwentyToolkit/CoreData'
     ps.ios.source_files = 'TwelveTwentyToolkit/Persistence/*.{h,m}'
+
+    ps.osx.dependency 'TwelveTwentyToolkit/Foundation'
   end
   
   s.subspec 'AddressBook' do |ab|
     ab.ios.frameworks = 'AddressBook'
     ab.ios.dependency 'TwelveTwentyToolkit/CoreData'
     ab.ios.source_files = 'TwelveTwentyToolkit/AddressBook/**/*.{h,m}'
+
+    ab.osx.dependency 'TwelveTwentyToolkit/Foundation'
   end
   
   s.subspec 'DependencyInjection' do |di|
@@ -76,21 +82,29 @@ Pod::Spec.new do |s|
   s.subspec 'Tables' do |tb|
     tb.ios.dependency 'TwelveTwentyToolkit/Logging'
     tb.ios.source_files = 'TwelveTwentyToolkit/Tables/**/*.{h,m}'
+
+    tb.osx.dependency 'TwelveTwentyToolkit/Foundation'
   end
   
   s.subspec 'Layout' do |lo|
     lo.ios.dependency 'TwelveTwentyToolkit/Logging'
     lo.ios.source_files = 'TwelveTwentyToolkit/Layout/**/*.{h,m}'
+
+    lo.osx.dependency 'TwelveTwentyToolkit/Foundation'
   end
 
   s.subspec 'CoreAnimation' do |ca|
     ca.ios.dependency 'TwelveTwentyToolkit/Logging'
     ca.ios.source_files = 'TwelveTwentyToolkit/CoreAnimation/**/*.{h,m}'
+
+    ca.osx.dependency 'TwelveTwentyToolkit/Foundation'
   end
 
   s.subspec 'Theming' do |th|
     th.ios.dependency 'TwelveTwentyToolkit/Layout'
     th.ios.dependency 'TwelveTwentyToolkit/Foundation'
     th.ios.source_files = 'TwelveTwentyToolkit/Theming/**/*.{h,m}'
+
+    th.osx.dependency 'TwelveTwentyToolkit/Foundation'
   end
 end
