@@ -18,8 +18,6 @@
 #define TTTAttributeTextAlignment @"TTTAttributeTextAlignment"
 #define TTTAttributeTextColor NSForegroundColorAttributeName
 #define TTTAttributeTextColorHighlighted @"TTTAttributeTextColorHighlighted"
-#define TTTAttributeTextShadowColor UITextAttributeTextShadowColor
-#define TTTAttributeTextShadowOffset UITextAttributeTextShadowOffset
 #define TTTAttributeTextStyle @"TTTAttributeTextStyle"
 #define TTTAttributeTitleColor @"TTTAttributeTitleColor"
 #define TTTAttributeTitleEdgeInsets @"TTTAttributeTitleEdgeInsets"

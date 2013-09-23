@@ -55,8 +55,6 @@ static TTTTheme <TTTTheme> *_currentTheme;
     }];
 
     [attributes tttForKey:TTTAttributeTextColorHighlighted performBlock:^(UIColor *value) {label.highlightedTextColor = value;}];
-    [attributes tttForKey:TTTAttributeTextShadowColor performBlock:^(UIColor *value) {label.shadowColor = value;}];
-    [attributes tttForKey:TTTAttributeTextShadowOffset performBlock:^(NSValue *value) {label.shadowOffset = [self UIOffsetValueToCGSize:value];}];
     [attributes tttForKey:TTTAttributeTextAlignment performBlock:^(id value) {label.textAlignment = (NSTextAlignment) [value integerValue];}];
     [attributes tttForKey:TTTAttributeLineBreakMode performBlock:^(NSNumber *value) {
         label.lineBreakMode = (NSLineBreakMode) [value integerValue];
