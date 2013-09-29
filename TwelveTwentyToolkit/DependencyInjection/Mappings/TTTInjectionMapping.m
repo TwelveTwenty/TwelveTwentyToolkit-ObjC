@@ -185,7 +185,7 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"<%@: %p mapped='%@'>%@</%@>", [self class], &self, self.mappedClass, self.childMapping, [self class]];
+    return [NSString stringWithFormat:@"<%@: %p mapped='%@'>%@</%@>", [self class], &self, self.mappedClass, self.childMapping ?: @"no child mapping", [self class]];
 }
 
 @end

@@ -108,6 +108,7 @@ typedef enum
 						[chunks removeObjectAtIndex:0];
 
 						self.typeClass = [classDesignation length] ? NSClassFromString(classDesignation) : [NSObject class];
+                        NSParameterAssert(self.typeClass);
 
 						while ([chunks count])
 						{

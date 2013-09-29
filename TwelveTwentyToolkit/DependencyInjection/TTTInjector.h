@@ -21,11 +21,11 @@
 #import <Foundation/Foundation.h>
 #import "TTTInjectionMapping.h"
 
-#define injectClass classWithInjector:[TTTInjector sharedInjector]
-#define injectAlloc allocWithInjector:[TTTInjector sharedInjector]
-#define injectObject objectFromInjector:[TTTInjector sharedInjector]
-#define injectObjectNamed(...) objectFromInjector:[TTTInjector sharedInjector] withIdentifier:[NSString stringWithFormat:__VA_ARGS__]
-#define inject injectWithInjector:[TTTInjector sharedInjector]
+#define injectClass classWithInjector:[TTTInjector currentInjector]
+#define injectAlloc allocWithInjector:[TTTInjector currentInjector]
+#define injectObject objectFromInjector:[TTTInjector currentInjector]
+#define injectObjectNamed(...) objectFromInjector:[TTTInjector currentInjector] withIdentifier:[NSString stringWithFormat:__VA_ARGS__]
+#define inject injectWithInjector:[TTTInjector currentInjector]
 
 /**
  The TTTInjectable protocol is used to 'mark' properties to be injected automatically.
@@ -76,11 +76,17 @@
 
 @property(nonatomic) BOOL allowImplicitMapping;
 
-+ (TTTInjector *)sharedInjector;
++ (instancetype)currentInjector;
 
-+ (TTTInjector *)setSharedInjector;
++ (instancetype)defaultCurrentInjector;
 
-+ (TTTInjector *)setSharedInjector:(TTTInjector *)injector;
++ (instancetype)setCurrentInjector:(TTTInjector *)injector force:(BOOL)force;
+
++ (TTTInjector *)sharedInjector DEPRECATED_ATTRIBUTE; // Replaced by currentInjector
+
++ (TTTInjector *)setSharedInjector DEPRECATED_ATTRIBUTE; // Replaced by defaultCurrentInjector
+
++ (TTTInjector *)setSharedInjector:(TTTInjector *)injector DEPRECATED_ATTRIBUTE; // Replaced by setCurrentInjector:force:
 
 - (id <TTTInjectionMapper>)asMapper;
 
@@ -110,12 +116,12 @@
 
 + (Class)classWithInjector:(TTTInjector *)injector;
 
-+ (id)allocWithInjector:(TTTInjector *)injector;
++ (instancetype)allocWithInjector:(TTTInjector *)injector;
 
-+ (id)objectFromInjector:(TTTInjector *)injector;
++ (instancetype)objectFromInjector:(TTTInjector *)injector;
 
-+ (id)objectFromInjector:(TTTInjector *)injector withIdentifier:(NSString *)identifier;
++ (instancetype)objectFromInjector:(TTTInjector *)injector withIdentifier:(NSString *)identifier;
 
-- (id)injectWithInjector:(TTTInjector *)injector;
+- (instancetype)injectWithInjector:(TTTInjector *)injector;
 
 @end

@@ -21,7 +21,7 @@
 #import "TTTInjector.h"
 #import "TTTIntrospectProperty.h"
 
-static TTTInjector *_sharedInjector;
+static TTTInjector *_currentInjector;
 
 @interface TTTInjector () <TTInjectionMappingParent>
 
@@ -31,15 +31,33 @@ static TTTInjector *_sharedInjector;
 
 @implementation TTTInjector
 
-+ (TTTInjector *)sharedInjector
++ (instancetype)currentInjector
 {
-    NSAssert(_sharedInjector != nil, @"Use `setSharedInjector:` before accessing `sharedInjector`.");
-    return _sharedInjector;
+    return _currentInjector;
 }
 
-+ (id <TTTInjectionMapper>)sharedMappingInjector
++ (instancetype)defaultCurrentInjector
 {
-    return (id <TTTInjectionMapper>) [self sharedInjector];
+    return [self setCurrentInjector:[[self alloc] init] force:NO];
+}
+
++ (instancetype)setCurrentInjector:(TTTInjector *)injector force:(BOOL)force
+{
+    @synchronized (self)
+    {
+        if (!force && injector)
+        {
+            NSAssert(_currentInjector == nil, @"Won't setup the shared injector if there already is one.");
+        }
+
+        _currentInjector = injector;
+    }
+    return _currentInjector;
+}
+
++ (TTTInjector *)sharedInjector
+{
+    return [self currentInjector];
 }
 
 + (TTTInjector *)setSharedInjector
@@ -53,12 +71,12 @@ static TTTInjector *_sharedInjector;
     {
         if (injector)
         {
-            NSAssert(_sharedInjector == nil, @"Won't setup the shared injector if there already is one.");
+            NSAssert(_currentInjector == nil, @"Won't setup the shared injector if there already is one.");
         }
 
-        _sharedInjector = injector;
+        _currentInjector = injector;
     }
-    return _sharedInjector;
+    return _currentInjector;
 }
 
 + (NSString *)keyForClass:(Class)class withIdentifier:(NSString *)identifier
