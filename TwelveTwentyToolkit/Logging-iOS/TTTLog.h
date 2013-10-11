@@ -37,7 +37,7 @@ extern int kTTTLogLevel;
 void QuietLog (NSString *format, ...);
 
 #if TTT_LOG_DEBUG
-#   define DLog(...) if (kTTTLogLevel <= TTT_LOG_LEVEL_DEBUG) { QuietLog(@"\n%@ ⇨ %@(%d)", [NSString stringWithFormat:__VA_ARGS__], [NSString stringWithUTF8String:__PRETTY_FUNCTION__], __LINE__); }
+#   define DLog(...) if (kTTTLogLevel <= TTT_LOG_LEVEL_DEBUG) { QuietLog(@"\n%@ ⇨ %@(%d)", [NSString stringWithFormat:__VA_ARGS__], [NSString stringWithUTF8String:__FUNCTION__], __LINE__); }
 //#   define DLog(...) if (kTTTLogLevel <= TTT_LOG_LEVEL_DEBUG) { NSLog(@"[DEBUG]%s(%d)\n⇨ %@\n ", __PRETTY_FUNCTION__, __LINE__, [NSString stringWithFormat:__VA_ARGS__]); }
 #else
 #	define DLog(...)

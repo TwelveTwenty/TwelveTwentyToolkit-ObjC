@@ -108,7 +108,7 @@
     return [self tttDistributeViews:views asRowsInFrame:containerFrame withSpacing:spacing horizontalAlignment:alignment rowLimit:rowLimit containerAlignment:CGAlignNone];
 }
 
-- (CGRect)tttDistributeViews:(NSArray *)views asRowsInFrame:(CGRect)containerFrame withSpacing:(CGFloat)spacing horizontalAlignment:(TTTDistributeAlign)alignment rowLimit:(int)rowLimit containerAlignment:(CGAlignOption)containerAlignment
+- (CGRect)tttDistributeViews:(NSArray *)views asRowsInFrame:(CGRect)containerFrame withSpacing:(CGFloat)spacing horizontalAlignment:(TTTDistributeAlign)alignment rowLimit:(int)rowLimit containerAlignment:(TTTCGAlignOption)containerAlignment
 {
     __block CGRect result = CGRectZero;
     NSMutableArray *rows = [NSMutableArray array];

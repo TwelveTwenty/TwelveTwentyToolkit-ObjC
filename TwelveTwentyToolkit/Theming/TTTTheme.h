@@ -8,6 +8,7 @@
 #define TTTAttributeFont NSFontAttributeName
 #define TTTAttributeImage @"TTTAttributeImage"
 #define TTTAttributeImageEdgeInsets @"TTTAttributeImageEdgeInsets"
+#define TTTAttributeImageViewContentMode @"TTTAttributeImageViewContentMode"
 #define TTTAttributeLayerShadowColor @"TTTAttributeLayerShadowColor"
 #define TTTAttributeLayerShadowOffset @"TTTAttributeLayerShadowOffset"
 #define TTTAttributeLayerShadowOpacity @"TTTAttributeLayerShadowOpacity"
@@ -52,6 +53,8 @@ typedef NSInteger TTTColorStyle;
 
 - (void)applyTextStyle:(TTTTextStyle)style toLabel:(UILabel *)label forControlState:(UIControlState)controlState;
 
+- (void)applyTextAttributes:(NSDictionary *)attributes toLabel:(UILabel *)label forControlState:(UIControlState)controlState;
+
 - (void)applyTextStyle:(TTTTextStyle)style toTextField:(UITextField *)textField;
 
 - (void)applyTextStyle:(TTTTextStyle)style toTextView:(UITextView *)textView;
@@ -75,6 +78,8 @@ typedef NSInteger TTTColorStyle;
 + (UILabel *)tttLabelWithTextStyle:(TTTTextStyle)textStyle;
 
 - (void)tttApplyTextStyle:(TTTTextStyle)textStyle;
+
+- (void)tttApplyTextStyle:(TTTTextStyle)textStyle numberOfLines:(NSUInteger)numberOfLines lineBreakMode:(NSLineBreakMode)lineBreakMode;
 
 @end
 

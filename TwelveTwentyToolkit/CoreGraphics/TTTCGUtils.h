@@ -22,7 +22,7 @@
 #import <UIKit/UIKit.h>
 
 #ifndef LIMIT
-#define LIMIT(LEFT,VALUE,RIGHT)	({ __typeof__(LEFT) __left = (LEFT); __typeof__(RIGHT) __right = (RIGHT); __typeof__(VALUE) __value = (VALUE); MAX(__left, MIN(__value, __right)); })
+#define LIMIT(X, A, B) MAX(A, MIN(X, B))
 #endif
 
 #ifndef CGRectWithSize
@@ -54,7 +54,7 @@ enum
     CGAlignCenterVertically            = 1 << 5,
     CGAlignBottomEdge                  = 1 << 6,
 };
-typedef TTTCGOption CGAlignOption;
+typedef TTTCGOption TTTCGAlignOption;
 
 enum {
     CGPositionToTheLeft = 1 << 10,
@@ -62,7 +62,7 @@ enum {
     CGPositionAbove = 1 << 12,
     CGPositionBelow = 1 << 13,
 };
-typedef CGAlignOption CGPositionOption;
+typedef TTTCGAlignOption TTTCGPositionOption;
 
 enum
 {
@@ -72,7 +72,7 @@ enum
     CGTweakSizeWidth = 1 << 16,
     CGTweakSizeHeight = 1 << 17
 };
-typedef TTTCGOption CGTweakOption;
+typedef TTTCGOption TTTCGTweakOption;
 
 enum
 {
@@ -82,7 +82,7 @@ enum
     CGSubtractFromTheTop = CGPositionAbove,
     CGSubtractFromTheBottom = CGPositionBelow
 };
-typedef TTTCGOption CGSubtractOption;
+typedef TTTCGOption TTTCGSubtractOption;
 
 /** Trim a CGRect from the top, counter clockwise. */
 extern CGRect CGRectTrim(CGRect rect, CGFloat top, CGFloat left, CGFloat bottom, CGFloat right);
@@ -94,17 +94,17 @@ extern CGRect CGRectExpand(CGRect rect, CGFloat top, CGFloat left, CGFloat botto
 * Replace one or more properties of a rect with a tweaked value.
 * Example: CGRectWithTweak(rect, CGTweakSizeHeight, 0.5);
 */
-extern CGRect CGRectWithTweak(CGRect rect, CGTweakOption tweakOption, CGFloat tweakValue);
+extern CGRect CGRectWithTweak(CGRect rect, TTTCGTweakOption tweakOption, CGFloat tweakValue);
 
 extern CGRect CGRectTranslate(CGRect rect, CGFloat x, CGFloat y);
 
-extern CGRect CGRectSubtractRect(CGRect subject, CGRect operator, CGSubtractOption options);
+extern CGRect CGRectSubtractRect(CGRect subject, CGRect operator, TTTCGSubtractOption options);
 
 /** Align one rect to another one. Will round to device pixels unless flagged with CGAlignPreventDevicePixelRounding */
-extern CGRect CGRectAlignToRect(CGRect rectA, CGRect rectB, CGAlignOption options);
+extern CGRect CGRectAlignToRect(CGRect rectA, CGRect rectB, TTTCGAlignOption options);
 
 /** Align and (optionally) place a rect next to another one. Will round to device pixels unless flagged with CGAlignPreventDevicePixelRounding */
-extern CGRect CGRectAlignAndPositionNextToRect(CGRect rectA, CGRect rectB, CGPositionOption options, CGFloat spacing);
+extern CGRect CGRectAlignAndPositionNextToRect(CGRect rectA, CGRect rectB, TTTCGPositionOption options, CGFloat spacing);
 
 /** Round the position and with of a rect so it matches actual pixels on the current device. Retina displays supported. */
 extern CGRect CGRectRoundToDevicePixels(CGRect r);

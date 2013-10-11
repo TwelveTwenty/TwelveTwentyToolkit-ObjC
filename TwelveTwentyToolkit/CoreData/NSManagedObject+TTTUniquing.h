@@ -23,10 +23,10 @@
 
 @interface NSManagedObject (TTTUniquing)
 
-+ (id)tttExistingEntityWithValue:(id)value forKey:(NSString *)key inContext:(NSManagedObjectContext *)context;
++ (instancetype)tttExistingEntityWithValue:(id)value forKey:(NSString *)key inContext:(NSManagedObjectContext *)context;
 
-+ (id)tttUniqueEntityWithValue:(id)value forKey:(NSString *)key inContext:(NSManagedObjectContext *)context;
++ (instancetype)tttUniqueEntityWithValue:(id)value forKey:(NSString *)key inContext:(NSManagedObjectContext *)context;
 
-+ (id)tttUniqueEntityWithValue:(id)value forKey:(NSString *)key inContext:(NSManagedObjectContext *)context existed:(BOOL *)existed;
++ (instancetype)tttUniqueEntityWithValue:(id)value forKey:(NSString *)key inContext:(NSManagedObjectContext *)context existed:(BOOL *)existed;
 
 @end

@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   s.requires_arc = true
   
   s.subspec 'Core' do |c|
-    c.source_files = 'TwelveTwentyToolkit/TwelveTwentyToolkit.h'
+    c.source_files = 'TwelveTwentyToolkit/TwelveTwentyToolkit.{h,m}'
   end
   
   s.subspec 'Foundation' do |fn|
@@ -106,5 +106,10 @@ Pod::Spec.new do |s|
     th.ios.source_files = 'TwelveTwentyToolkit/Theming/**/*.{h,m}'
 
     th.osx.dependency 'TwelveTwentyToolkit/Foundation'
+  end
+  
+  s.subspec 'CyclicDelegateRetainer' do |th|
+    th.ios.dependency 'TwelveTwentyToolkit/Foundation'
+    th.ios.source_files = 'TwelveTwentyToolkit/CyclicDelegateRetainer/**/*.{h,m}'
   end
 end

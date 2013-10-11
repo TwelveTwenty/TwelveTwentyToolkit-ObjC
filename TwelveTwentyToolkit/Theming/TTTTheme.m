@@ -47,7 +47,11 @@ static TTTTheme <TTTTheme> *_currentTheme;
     label.opaque = NO;
 
     NSDictionary *attributes = [(id <TTTTheme>)self attributesForTextStyle:style forControlState:controlState];
+    [self applyTextAttributes:attributes toLabel:label forControlState:controlState];
+}
 
+- (void)applyTextAttributes:(NSDictionary *)attributes toLabel:(UILabel *)label forControlState:(UIControlState)controlState
+{
     [attributes tttForKey:TTTAttributeFont performBlock:^(id value) {label.font = value;}];
     [attributes tttForKey:TTTAttributeTextColor performBlock:^(UIColor *value) {
         label.textColor = value;
@@ -110,6 +114,9 @@ static TTTTheme <TTTTheme> *_currentTheme;
             [buttonAttributes tttForKey:TTTAttributeBackgroundColor performBlock:^(id value) {button.backgroundColor = value;}];
             [buttonAttributes tttForKey:TTTAttributeTitleEdgeInsets performBlock:^(id value) {[button setTitleEdgeInsets:[value UIEdgeInsetsValue]];}];
             [buttonAttributes tttForKey:TTTAttributeImageEdgeInsets performBlock:^(id value) {[button setImageEdgeInsets:[value UIEdgeInsetsValue]];}];
+            [buttonAttributes tttForKey:TTTAttributeImageViewContentMode performBlock:^(id value) {
+                [button.imageView setContentMode:[value integerValue]];
+            }];
             [buttonAttributes tttForKey:TTTAttributeContentHorizontalAlignment performBlock:^(id value) {[button setContentHorizontalAlignment:[value integerValue]];}];
             [buttonAttributes tttForKey:TTTAttributeContentEdgeInsets performBlock:^(id value) {[button setContentEdgeInsets:[value UIEdgeInsetsValue]];}];
 
@@ -157,6 +164,16 @@ static TTTTheme <TTTTheme> *_currentTheme;
 {
     [[TTTTheme currentTheme] applyTextStyle:textStyle toLabel:self];
 }
+
+- (void)tttApplyTextStyle:(TTTTextStyle)textStyle numberOfLines:(NSUInteger)numberOfLines lineBreakMode:(NSLineBreakMode)lineBreakMode
+{
+    TTTTheme <TTTTheme> *theme = [TTTTheme currentTheme];
+    NSMutableDictionary *attributes = [theme attributesForTextStyle:textStyle forControlState:UIControlStateNormal];
+    attributes[TTTAttributeNumberOfLines] = @(numberOfLines);
+    attributes[TTTAttributeNumberOfLines] = @(lineBreakMode);
+    [theme applyTextAttributes:attributes toLabel:self forControlState:UIControlStateNormal];
+}
+
 
 @end
 

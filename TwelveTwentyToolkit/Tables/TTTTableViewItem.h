@@ -30,6 +30,7 @@ extern CGFloat const TTTUseDynamicHeight;
 
 @interface TTTTableViewItem : NSObject <TTTTableViewItem>
 
+@property(nonatomic, strong) id context;
 @property(nonatomic) NSInteger tag;
 @property(nonatomic) CGFloat height;
 @property(nonatomic, strong) NSIndexPath *indexPath;

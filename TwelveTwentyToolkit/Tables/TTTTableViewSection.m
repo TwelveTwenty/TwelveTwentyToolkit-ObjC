@@ -90,6 +90,11 @@
     }
 }
 
+- (NSArray *)allItems
+{
+    return self.items;
+}
+
 - (CGFloat)headerHeight
 {
     if (!_headerHeight)

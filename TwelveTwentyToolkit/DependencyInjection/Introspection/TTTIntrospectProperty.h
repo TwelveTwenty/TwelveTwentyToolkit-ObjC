@@ -41,6 +41,8 @@
 
 + (NSArray *)propertiesOfClass:(Class)introspectClass;
 
+- (id)initWithProperty:(objc_property_t)prop;
+
 - (id)init NS_UNAVAILABLE;
 
 - (BOOL)implementsProtocol:(Protocol *)proto;

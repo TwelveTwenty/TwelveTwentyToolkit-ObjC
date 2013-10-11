@@ -121,7 +121,7 @@ typedef enum
 							else if ([protoName length])
 							{
                                 // Food for thought: should this throw an assertion exception, or not?
-								DLog(@"Protocol named %@ can't be found. The compiler needs at least one implementation for this to work. Are you sure you have a class that implements it?", protoName);
+//								DLog(@"Protocol named %@ can't be found. The compiler needs at least one implementation for this to work. Are you sure you have a class that implements it?", protoName);
 							}
 							[chunks removeLastObject];
 						}

@@ -61,6 +61,7 @@ CGFloat const TTTUseDynamicHeight = 0;
 - (CGFloat)resetHeight
 {
     self.height = TTTUseDynamicHeight;
+    return self.height;
 }
 
 - (CGFloat)height

@@ -4,6 +4,7 @@
 
 - (NSMutableArray *)tttMap:(id(^)(id obj, NSUInteger idx, BOOL *stop))mappingBlock;
 
+- (NSMutableArray *)tttMap:(id(^)(id obj, NSUInteger idx, BOOL *stop))mappingBlock options:(NSEnumerationOptions)options;
 @end
 
 @interface NSDictionary (TTTMapping)

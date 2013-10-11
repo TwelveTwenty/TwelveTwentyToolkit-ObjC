@@ -38,7 +38,7 @@ CGRect CGRectExpand(CGRect rect, CGFloat top, CGFloat left, CGFloat bottom, CGFl
     return CGRectTrim(rect, -top, -left, -bottom, -right);
 }
 
-CGRect CGRectWithTweak(CGRect rect, CGTweakOption tweakOption, CGFloat tweakValue) {
+CGRect CGRectWithTweak(CGRect rect, TTTCGTweakOption tweakOption, CGFloat tweakValue) {
     if (tweakOption & CGTweakOriginX)
         rect.origin.x = tweakValue;
 
@@ -61,7 +61,7 @@ CGRect CGRectTranslate(CGRect rect, CGFloat x, CGFloat y) {
     return rect;
 }
 
-CGRect CGRectSubtractRect(CGRect subject, CGRect operator, CGSubtractOption options) {
+CGRect CGRectSubtractRect(CGRect subject, CGRect operator, TTTCGSubtractOption options) {
     CGRect subtracted = subject;
 
     if (options & CGSubtractFromTheLeft)
@@ -93,7 +93,7 @@ CGRect CGRectSubtractRect(CGRect subject, CGRect operator, CGSubtractOption opti
     return subtracted;
 }
 
-CGRect CGRectAlignToRect(CGRect rectA, CGRect rectB, CGAlignOption options) {
+CGRect CGRectAlignToRect(CGRect rectA, CGRect rectB, TTTCGAlignOption options) {
     if (options & CGAlignLeftEdge)
     {
         rectA.origin.x = rectB.origin.x;
@@ -128,7 +128,7 @@ CGRect CGRectAlignToRect(CGRect rectA, CGRect rectB, CGAlignOption options) {
     return rectA;
 }
 
-CGRect CGRectAlignAndPositionNextToRect(CGRect rectA, CGRect rectB, CGPositionOption options, CGFloat spacing) {
+CGRect CGRectAlignAndPositionNextToRect(CGRect rectA, CGRect rectB, TTTCGPositionOption options, CGFloat spacing) {
     // Align
 
     rectA = CGRectAlignToRect(rectA, rectB, options);

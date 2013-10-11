@@ -44,6 +44,8 @@ typedef UIView *(^TTTSectionViewBlock)(TTTTableViewSection *section); // ^UIView
 
 - (void)addItems:(NSArray *)array;
 
+- (NSArray *)allItems;
+
 @end
 
 @protocol TTTTableViewSectionDelegate

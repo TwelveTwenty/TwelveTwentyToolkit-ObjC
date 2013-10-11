@@ -20,23 +20,9 @@
 
 #import <Foundation/Foundation.h>
 
-static void CFReleaseIfNotNULL (CFTypeRef ref)
-{
-	if (ref != NULL)
-	{
-		CFRelease (ref);
-	}
-}
+extern void CFReleaseIfNotNULL (CFTypeRef ref);
 
-static CFTypeRef CFRetainIfNotNULL (CFTypeRef ref)
-{
-	if (ref != NULL)
-	{
-		return CFRetain (ref);
-	}
-    
-    return ref;
-}
+extern CFTypeRef CFRetainIfNotNULL (CFTypeRef ref);
 
 // http://stackoverflow.com/a/7848772/432782
 // if (TTT_SYSTEM_VERSION_LESS_THAN(@"5.0")) {
