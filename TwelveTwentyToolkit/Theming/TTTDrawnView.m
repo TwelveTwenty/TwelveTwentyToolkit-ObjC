@@ -34,8 +34,11 @@
 
 - (void)drawRect:(CGRect)rect
 {
-    CGContextRef ctx = UIGraphicsGetCurrentContext();
-    self.drawBlock(ctx, self.bounds, self.scale);
+    if (!CGRectEqualToRect(self.bounds, CGRectZero))
+    {
+        CGContextRef ctx = UIGraphicsGetCurrentContext();
+        self.drawBlock(ctx, self.bounds, self.scale);
+    }
 }
 
 @end
