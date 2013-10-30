@@ -2,17 +2,42 @@
 
 @implementation NSArray (TTTMapping)
 
-- (NSMutableArray *)tttMap:(id(^)(id obj, NSUInteger idx, BOOL *stop))mappingBlock
+- (NSArray *)ttt_map:(id(^)(id obj, NSUInteger idx, BOOL *stop))mappingBlock
 {
-    return [self tttMap:mappingBlock options:0];
+    return [self ttt_map:mappingBlock options:0];
 }
 
-- (NSMutableArray *)tttMap:(id(^)(id obj, NSUInteger idx, BOOL *stop))mappingBlock options:(NSEnumerationOptions)options
+- (NSArray *)ttt_map:(id(^)(id obj, NSUInteger idx, BOOL *stop))mappingBlock
+             options:(NSEnumerationOptions)options
 {
     NSMutableArray *map = [NSMutableArray arrayWithCapacity:self.count];
 
-    [self enumerateObjectsWithOptions:options usingBlock:^(id outerObj, NSUInteger outerIdx, BOOL *outerStop) {
-        id mapped = mappingBlock(outerObj, outerIdx, outerStop);
+    [self enumerateObjectsWithOptions:options usingBlock:^(id innerObj, NSUInteger innerIdx, BOOL *innerStop) {
+        id mapped = mappingBlock(innerObj, innerIdx, innerStop);
+        if (mapped)
+        {
+            [map addObject:mapped];
+        }
+    }];
+
+    return map;
+}
+
+@end
+
+@implementation NSSet (TTTMapping)
+
+- (NSSet *)ttt_map:(id(^)(id obj, BOOL *stop))mappingBlock
+{
+    return [self ttt_map:mappingBlock options:0];
+}
+
+- (NSSet *)ttt_map:(id(^)(id obj, BOOL *stop))mappingBlock options:(NSEnumerationOptions)options
+{
+    NSMutableSet *map = [NSMutableSet setWithCapacity:self.count];
+
+    [self enumerateObjectsWithOptions:options usingBlock:^(id innerObj, BOOL *innerStop) {
+        id mapped = mappingBlock(innerObj, innerStop);
         if (mapped)
         {
             [map addObject:mapped];
@@ -26,11 +51,16 @@
 
 @implementation NSDictionary (TTTMapping)
 
-- (NSMutableDictionary *)tttMap:(id(^)(id *key, id obj))mappingBlock
+- (NSDictionary *)ttt_map:(id(^)(id *key, id obj))mappingBlock
+{
+    return [self ttt_map:mappingBlock options:0];
+}
+
+- (NSDictionary *)ttt_map:(id(^)(id *key, id obj))mappingBlock options:(NSEnumerationOptions)options
 {
     NSMutableDictionary *map = [NSMutableDictionary dictionaryWithCapacity:self.count];
 
-    [self enumerateKeysAndObjectsUsingBlock:^(id innerKey, id innerObj, BOOL *stop) {
+    [self enumerateKeysAndObjectsWithOptions:options usingBlock:^(id innerKey, id innerObj, BOOL *stop) {
         id copiedKey = [innerKey copy];
         id mapped = mappingBlock(&copiedKey, innerObj);
         if (mapped)
