@@ -2,8 +2,8 @@
 
 @interface NSString (TTTEmptiness)
 
-+ (BOOL)tttIsEmpty:(NSString *)string;
++ (BOOL)ttt_isEmpty:(NSString *)string;
 
-+ (BOOL)tttIsNotEmpty:(NSString *)string;
++ (BOOL)ttt_isNotEmpty:(NSString *)string;
 
 @end

@@ -230,8 +230,8 @@ void tt_handleABExternalChange(ABAddressBookRef addressBook, CFDictionaryRef inf
 
 	// Set the updated flag to NO for all linked cards.
 	NSError *error = nil;
-    [context tttDeleteAllEntitiesNamed:[TTTCDLinkedRecord entityName] error:&error];
-    [context tttDeleteAllEntitiesNamed:[TTTCDUnifiedRecord entityName] error:&error];
+    [context ttt_deleteAllEntitiesNamed:[TTTCDLinkedRecord entityName] error:&error];
+    [context ttt_deleteAllEntitiesNamed:[TTTCDUnifiedRecord entityName] error:&error];
 
 	ABRecordRef source = ABAddressBookCopyDefaultSource(addressBook);
 	NSArray *records = (__bridge_transfer NSArray *) ABAddressBookCopyArrayOfAllPeopleInSource(addressBook, source);

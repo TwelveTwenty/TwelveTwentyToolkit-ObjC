@@ -47,13 +47,15 @@ extern const struct TTTSyncStatusValues
 
 #pragma mark - Uniquing and batch manipulation
 
-+ (id)uniqueEntityWithIdentifier:(NSNumber *)identifier inContext:(NSManagedObjectContext *)context;
++ (instancetype)uniqueEntityWithIdentifier:(NSNumber *)identifier inContext:(NSManagedObjectContext *)context;
 
-+ (id)existingEntityWithIdentifier:(NSNumber *)identifier inContext:(NSManagedObjectContext *)context;
++ (instancetype)uniqueEntityWithValue:(id)value forKey:(NSString *)key inContext:(NSManagedObjectContext *)context;
 
-+ (id)existingEntityWithValue:(id)value forKey:(NSString *)key inContext:(NSManagedObjectContext *)context;
++ (instancetype)existingEntityWithIdentifier:(NSNumber *)identifier inContext:(NSManagedObjectContext *)context;
 
-+ (id)existingEntityWithValues:(NSArray *)values forKeys:(NSArray *)keys inContext:(NSManagedObjectContext *)context;
++ (instancetype)existingEntityWithValue:(id)value forKey:(NSString *)key inContext:(NSManagedObjectContext *)context;
+
++ (instancetype)existingEntityWithValues:(NSArray *)values forKeys:(NSArray *)keys inContext:(NSManagedObjectContext *)context;
 
 + (NSArray *)allEntitiesSortedByKey:(NSString *)sortKey ascending:(BOOL)ascending inContext:(NSManagedObjectContext *)context;
 

@@ -24,7 +24,7 @@
 
 @implementation NSManagedObjectContext (TTTConvenience)
 
-- (NSError *)tttSimpleSave
+- (NSError *)ttt_simpleSave
 {
     NSError *error = nil;
 
@@ -37,7 +37,7 @@
     return error;
 }
 
-- (void)tttPrintChanges
+- (void)ttt_printChanges
 {
     if (![self hasChanges])
     {

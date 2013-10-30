@@ -22,22 +22,24 @@
 #import <CoreData/CoreData.h>
 #import "NSManagedObject+TTTUniquing.h"
 #import "NSManagedObjectContext+TTTUniquing.h"
+#import "NSPredicate+TTTConvenience.h"
 
 @implementation NSManagedObject (TTTUniquing)
 
-+ (instancetype)tttExistingEntityWithValue:(id)value forKey:(NSString *)key inContext:(NSManagedObjectContext *)context
++ (instancetype)ttt_existingEntityWithValue:(id)value forKey:(NSString *)key inContext:(NSManagedObjectContext *)context
 {
-	return [context tttExistingEntityForName:[(id)self entityName] withValue:value forKey:key];
+    return [context ttt_existingEntityForName:[(id) self entityName] withValue:value forKey:key];
 }
 
-+ (instancetype)tttUniqueEntityWithValue:(id)value forKey:(NSString *)key inContext:(NSManagedObjectContext *)context
++ (instancetype)ttt_uniqueEntityWithValue:(id)value forKey:(NSString *)key inContext:(NSManagedObjectContext *)context
 {
-	return [context tttUniqueEntityForName:[(id)self entityName] withValue:value forKey:key];
+    return [context ttt_uniqueEntityForName:[(id) self entityName] withValue:value forKey:key];
 }
 
-+ (instancetype)tttUniqueEntityWithValue:(id)value forKey:(NSString *)key inContext:(NSManagedObjectContext *)context existed:(BOOL *)existed
++ (instancetype)ttt_uniqueEntityWithValue:(id)value forKey:(NSString *)key inContext:(NSManagedObjectContext *)context
+                                  existed:(BOOL *)existed
 {
-	return [context tttUniqueEntityForName:[(id)self entityName] withValue:value forKey:key existed:existed];
+    return [context ttt_uniqueEntityForName:[(id) self entityName] withValue:value forKey:key existed:existed];
 }
 
 @end

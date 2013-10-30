@@ -5,7 +5,7 @@
 
 #define MB * (1024 * 1024)
 
-+ (NSCache *)tttDrawingCache
++ (NSCache *)ttt_drawingCache
 {
     static NSCache *_tttDrawingCache = nil;
     static dispatch_once_t predicate;
@@ -16,17 +16,17 @@
     return _tttDrawingCache;
 }
 
-+ (void)tttSetDrawingCacheSize:(NSUInteger)bytes
++ (void)ttt_setDrawingCacheSize:(NSUInteger)bytes
 {
-    [[self tttDrawingCache] setTotalCostLimit:bytes];
+    [[self ttt_drawingCache] setTotalCostLimit:bytes];
 }
 
-+ (void)tttClearDrawingCache
++ (void)ttt_clearDrawingCache
 {
-    [[self tttDrawingCache] removeAllObjects];
+    [[self ttt_drawingCache] removeAllObjects];
 }
 
-+ (UIImage *)tttImageWithSize:(CGSize)size drawing:(TTTDrawingBlock)drawing
++ (UIImage *)ttt_imageWithSize:(CGSize)size drawing:(TTTDrawingBlock)drawing
 {
     TTTStaticScreenScale();
     UIGraphicsBeginImageContextWithOptions(size, NO, scale);
@@ -43,24 +43,31 @@
     return nil;
 }
 
-+ (UIImage *)tttImageWithIdentifier:(NSString *)identifier size:(CGSize)size drawing:(TTTDrawingBlock)drawing
++ (UIImage *)ttt_imageWithIdentifier:(NSString *)identifier size:(CGSize)size drawing:(TTTDrawingBlock)drawing
 {
-    return [self tttImageWithIdentifier:identifier size:size drawing:drawing capInsets:UIEdgeInsetsZero];
+    return [self ttt_imageWithIdentifier:identifier size:size drawing:drawing capInsets:UIEdgeInsetsZero];
 }
 
-+ (UIImage *)tttImageWithIdentifier:(NSString *)identifier size:(CGSize)size drawing:(TTTDrawingBlock)drawing capInsets:(UIEdgeInsets)capInsets
++ (UIImage *)ttt_imageWithIdentifier:(NSString *)identifier size:(CGSize)size drawing:(TTTDrawingBlock)drawing capInsets:(UIEdgeInsets)capInsets
 {
-    return [self tttImageWithIdentifier:identifier size:size drawing:drawing capInsets:capInsets resizingMode:UIImageResizingModeStretch];
+    return [self ttt_imageWithIdentifier:identifier size:size drawing:drawing capInsets:capInsets resizingMode:UIImageResizingModeStretch];
 }
 
-+ (UIImage *)tttImageWithIdentifier:(NSString *)identifier size:(CGSize)size drawing:(TTTDrawingBlock)drawing capInsets:(UIEdgeInsets)capInsets resizingMode:(UIImageResizingMode)resizingMode
++ (void)ttt_clearImageWithIdentifier:(NSString *)identifier size:(CGSize)size
 {
     NSString *key = [NSString stringWithFormat:@"%@-%fx%f", identifier, size.width, size.height];
-    UIImage *cachedImage = [[self tttDrawingCache] objectForKey:key];
+    [[self ttt_drawingCache] removeObjectForKey:key];
+}
+
++ (UIImage *)ttt_imageWithIdentifier:(NSString *)identifier size:(CGSize)size drawing:(TTTDrawingBlock)drawing
+                           capInsets:(UIEdgeInsets)capInsets resizingMode:(UIImageResizingMode)resizingMode
+{
+    NSString *key = [NSString stringWithFormat:@"%@-%fx%f", identifier, size.width, size.height];
+    UIImage *cachedImage = [[self ttt_drawingCache] objectForKey:key];
 
     if (cachedImage == nil)
     {
-        cachedImage = [self tttImageWithSize:size drawing:drawing];
+        cachedImage = [self ttt_imageWithSize:size drawing:drawing];
 
         if (cachedImage)
         {
@@ -71,7 +78,7 @@
 
             NSUInteger bytesPerPixel = 32;
             NSUInteger byteCost = (NSUInteger) (size.width * size.height * bytesPerPixel);
-            [[self tttDrawingCache] setObject:cachedImage forKey:key cost:byteCost];
+            [[self ttt_drawingCache] setObject:cachedImage forKey:key cost:byteCost];
         }
     }
 

@@ -279,26 +279,26 @@ static TTTInjector *_currentInjector;
 
 @implementation NSObject (TTTInjector)
 
-+ (Class)classWithInjector:(TTTInjector *)injector
++ (Class)ttt_classWithInjector:(TTTInjector *)injector
 {
     NSAssert(injector, @"Can't inject from nil injector.");
     return [injector classForMappedClass:self withIdentifier:nil];
 }
 
-+ (id)allocWithInjector:(TTTInjector *)injector
++ (id)ttt_allocWithInjector:(TTTInjector *)injector
 {
     NSAssert(injector, @"Can't inject from nil injector.");
     Class targetClass = [injector classForMappedClass:self withIdentifier:nil];
     return [targetClass alloc];
 }
 
-+ (instancetype)objectFromInjector:(TTTInjector *)injector
++ (instancetype)ttt_objectFromInjector:(TTTInjector *)injector
 {
     NSAssert(injector, @"Can't inject from nil injector.");
-    return [self objectFromInjector:injector withIdentifier:nil];
+    return [self ttt_objectFromInjector:injector withIdentifier:nil];
 }
 
-+ (instancetype)objectFromInjector:(TTTInjector *)injector withIdentifier:(NSString *)identifier
++ (instancetype)ttt_objectFromInjector:(TTTInjector *)injector withIdentifier:(NSString *)identifier
 {
     NSAssert(injector, @"Can't inject from nil injector.");
     id value = [injector objectForMappedClass:self withIdentifier:identifier];
@@ -306,7 +306,7 @@ static TTTInjector *_currentInjector;
     return value;
 }
 
-- (instancetype)injectWithInjector:(TTTInjector *)injector
+- (instancetype)ttt_injectWithInjector:(TTTInjector *)injector
 {
     NSAssert(injector, @"Can't inject from nil injector.");
     [injector injectPropertiesIntoObject:(id <TTTInjectable>) self withMapping:nil ];

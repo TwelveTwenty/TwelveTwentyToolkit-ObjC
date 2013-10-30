@@ -54,13 +54,13 @@
                 {
                     if ([attributeMapping isSimpleUnique])
                     {
-                        entity = [context tttUniqueEntityForName:self.entityName withValue:JSON forKey:mapping.entityKey];
+                        entity = [context ttt_uniqueEntityForName:self.entityName withValue:JSON forKey:mapping.entityKey];
                         *stop = YES;
                     }
                     else
                     {
                         id identifierValue = [TTTJSONAttributeMapping convertValue:JSON[attributeMapping.JSONKey] forObjectType:attributeMapping.objectType];
-                        entity = [context tttUniqueEntityForName:self.entityName withValue:identifierValue forKey:attributeMapping.entityKey];
+                        entity = [context ttt_uniqueEntityForName:self.entityName withValue:identifierValue forKey:attributeMapping.entityKey];
                         *stop = YES;
                     }
                 }

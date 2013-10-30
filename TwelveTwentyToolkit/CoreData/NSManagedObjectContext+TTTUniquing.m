@@ -23,21 +23,22 @@
 
 @implementation NSManagedObjectContext (TTTUniquing)
 
-- (id)tttUniqueEntityForName:(NSString *)name withValue:(id)value forKey:(NSString *)key
+- (id)ttt_uniqueEntityForName:(NSString *)name withValue:(id)value forKey:(NSString *)key
 {
     BOOL existed = NO;
-    NSManagedObject *result = [self tttUniqueEntityForName:name withValue:value forKey:key existed:&existed];
+    NSManagedObject *result = [self ttt_uniqueEntityForName:name withValue:value forKey:key existed:&existed];
     return result;
 }
 
-- (id)tttUniqueEntityForName:(NSString *)name withValue:(id)value forKey:(NSString *)key existed:(BOOL *)existed
+- (id)ttt_uniqueEntityForName:(NSString *)name withValue:(id)value forKey:(NSString *)key existed:(BOOL *)existed
 {
-    return [self tttUniqueEntityForName:name withValues:@[value] forKeys:@[key] existed:existed];
+    return [self ttt_uniqueEntityForName:name withValues:@[value] forKeys:@[key] existed:existed];
 }
 
-- (id)tttUniqueEntityForName:(NSString *)name withValues:(NSArray *)values forKeys:(NSArray *)keys existed:(BOOL *)existed
+- (id)ttt_uniqueEntityForName:(NSString *)name withValues:(NSArray *)values forKeys:(NSArray *)keys
+                      existed:(BOOL *)existed
 {
-    NSManagedObject *entity = [self tttExistingEntityForName:name withValues:values forKeys:keys];
+    NSManagedObject *entity = [self ttt_existingEntityForName:name withValues:values forKeys:keys];
 
     if (entity == nil)
     {
@@ -53,12 +54,12 @@
     return entity;
 }
 
-- (id)tttExistingEntityForName:(NSString *)name withValue:(id)value forKey:(NSString *)key
+- (id)ttt_existingEntityForName:(NSString *)name withValue:(id)value forKey:(NSString *)key
 {
-    return [self tttExistingEntityForName:name withValues:@[value] forKeys:@[key]];
+    return [self ttt_existingEntityForName:name withValues:@[value] forKeys:@[key]];
 }
 
-- (id)tttExistingEntityForName:(NSString *)entityName withValues:(NSArray *)values forKeys:(NSArray *)keys
+- (id)ttt_existingEntityForName:(NSString *)entityName withValues:(NSArray *)values forKeys:(NSArray *)keys
 {
     NSAssert([values count] == [keys count], @"Values and keys count don't match.");
     if (![values count]) return nil;
@@ -76,7 +77,7 @@
 
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:entityName];
     request.fetchLimit = 1;
-    
+
     request.predicate = [NSPredicate tttPredicateWithComplexFormat:joinedFormat innerArguments:keys outerArguments:values];
     NSError *error = nil;
     NSArray *results = [self executeFetchRequest:request error:&error];

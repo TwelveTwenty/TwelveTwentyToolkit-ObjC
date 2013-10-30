@@ -2,12 +2,12 @@
 
 @implementation NSString (TTTEmptiness)
 
-+ (BOOL)tttIsEmpty:(NSString *)string
++ (BOOL)ttt_isEmpty:(NSString *)string
 {
     return (string == nil) || [@"" isEqualToString:string];
 }
 
-+ (BOOL)tttIsNotEmpty:(NSString *)string
++ (BOOL)ttt_isNotEmpty:(NSString *)string
 {
     return (string != nil) && ![@"" isEqualToString:string];
 }

@@ -21,11 +21,11 @@
 #import <Foundation/Foundation.h>
 #import "TTTInjectionMapping.h"
 
-#define injectClass classWithInjector:[TTTInjector currentInjector]
-#define injectAlloc allocWithInjector:[TTTInjector currentInjector]
-#define injectObject objectFromInjector:[TTTInjector currentInjector]
-#define injectObjectNamed(...) objectFromInjector:[TTTInjector currentInjector] withIdentifier:[NSString stringWithFormat:__VA_ARGS__]
-#define inject injectWithInjector:[TTTInjector currentInjector]
+#define injectClass ttt_classWithInjector:[TTTInjector currentInjector]
+#define injectAlloc ttt_allocWithInjector:[TTTInjector currentInjector]
+#define injectObject ttt_objectFromInjector:[TTTInjector currentInjector]
+#define injectObjectNamed(name) ttt_objectFromInjector:[TTTInjector currentInjector] withIdentifier:name
+#define inject ttt_injectWithInjector:[TTTInjector currentInjector]
 
 /**
  The TTTInjectable protocol is used to 'mark' properties to be injected automatically.
@@ -98,7 +98,7 @@
  Retrieve mapped classes, objects or manually fire injection with these NSObject methods.
  Example:
  
-    [[CustomClass allocWithInjector:[TTTInjector sharedInjector]] initWithFrame:CGRectZero];
+    [[CustomClass ttt_allocWithInjector:[TTTInjector sharedInjector]] initWithFrame:CGRectZero];
  
  There's a shorthand macro for this above, so you if you use the sharedInjector, you may write:
  
@@ -106,7 +106,7 @@
  
  Or try identifier-based mappings:
  
-    [NSArray objectFromInjector:[TTTInjector sharedInjector] withIdentifier:@"plants"];
+    [NSArray ttt_objectFromInjector:[TTTInjector sharedInjector] withIdentifier:@"plants"];
  
  If objects are mapped with an identifier, properties that share that name will be automatically injected:
  
@@ -114,14 +114,14 @@
  */
 @interface NSObject (TTTInjector)
 
-+ (Class)classWithInjector:(TTTInjector *)injector;
++ (Class)ttt_classWithInjector:(TTTInjector *)injector;
 
-+ (instancetype)allocWithInjector:(TTTInjector *)injector;
++ (instancetype)ttt_allocWithInjector:(TTTInjector *)injector;
 
-+ (instancetype)objectFromInjector:(TTTInjector *)injector;
++ (instancetype)ttt_objectFromInjector:(TTTInjector *)injector;
 
-+ (instancetype)objectFromInjector:(TTTInjector *)injector withIdentifier:(NSString *)identifier;
++ (instancetype)ttt_objectFromInjector:(TTTInjector *)injector withIdentifier:(NSString *)identifier;
 
-- (instancetype)injectWithInjector:(TTTInjector *)injector;
+- (instancetype)ttt_injectWithInjector:(TTTInjector *)injector;
 
 @end

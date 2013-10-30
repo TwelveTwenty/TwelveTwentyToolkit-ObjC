@@ -26,11 +26,11 @@
 /**
  Saves the context and logs an error message when it fails.
  */
-- (NSError *)tttSimpleSave;
+- (NSError *)ttt_simpleSave;
 
 /**
  Outputs the state of changes to the console.
  */
-- (void)tttPrintChanges;
+- (void)ttt_printChanges;
 
 @end

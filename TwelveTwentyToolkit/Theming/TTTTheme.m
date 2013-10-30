@@ -143,29 +143,29 @@ static TTTTheme <TTTTheme> *_currentTheme;
 
 @implementation UILabel (TTTTheming)
 
-+ (UILabel *)tttLabelWithText:(NSString *)text textStyle:(TTTTextStyle)textStyle
++ (UILabel *)ttt_labelWithText:(NSString *)text textStyle:(TTTTextStyle)textStyle
 {
     UILabel *label = [[self alloc] init];
     label.text = text;
-    [label tttApplyTextStyle:textStyle];
+    [label ttt_applyTextStyle:textStyle];
     [label tttResetIntrinsicContentFrame];
     return label;
 }
 
-+ (UILabel *)tttLabelWithTextStyle:(TTTTextStyle)textStyle
++ (UILabel *)ttt_labelWithTextStyle:(TTTTextStyle)textStyle
 {
     UILabel *label = [[self alloc] init];
-    [label tttApplyTextStyle:textStyle];
+    [label ttt_applyTextStyle:textStyle];
     [label tttResetIntrinsicContentFrame];
     return label;
 }
 
-- (void)tttApplyTextStyle:(TTTTextStyle)textStyle
+- (void)ttt_applyTextStyle:(TTTTextStyle)textStyle
 {
     [[TTTTheme currentTheme] applyTextStyle:textStyle toLabel:self];
 }
 
-- (void)tttApplyTextStyle:(TTTTextStyle)textStyle numberOfLines:(NSUInteger)numberOfLines lineBreakMode:(NSLineBreakMode)lineBreakMode
+- (void)ttt_applyTextStyle:(TTTTextStyle)textStyle numberOfLines:(NSUInteger)numberOfLines lineBreakMode:(NSLineBreakMode)lineBreakMode
 {
     TTTTheme <TTTTheme> *theme = [TTTTheme currentTheme];
     NSMutableDictionary *attributes = [theme attributesForTextStyle:textStyle forControlState:UIControlStateNormal];
@@ -179,7 +179,7 @@ static TTTTheme <TTTTheme> *_currentTheme;
 
 @implementation UIColor (TTTTheming)
 
-+ (UIColor *)tttColorForStyle:(TTTColorStyle)colorStyle
++ (instancetype)ttt_colorForStyle:(TTTColorStyle)colorStyle
 {
     return [[TTTTheme currentTheme] colorForStyle:colorStyle];
 }
@@ -188,27 +188,27 @@ static TTTTheme <TTTTheme> *_currentTheme;
 
 @implementation UIButton (TTTTheming)
 
-+ (UIButton *)tttButtonWithStyle:(TTTButtonStyle)buttonStyle
++ (instancetype)ttt_buttonWithStyle:(TTTButtonStyle)buttonStyle
 {
-    return [self tttButtonWithTitle:@"" buttonStyle:buttonStyle];
+    return [self ttt_buttonWithTitle:@"" buttonStyle:buttonStyle];
 }
 
-+ (UIButton *)tttButtonWithTitle:(NSString *)title buttonStyle:(TTTButtonStyle)buttonStyle
++ (instancetype)ttt_buttonWithTitle:(NSString *)title buttonStyle:(TTTButtonStyle)buttonStyle
 {
-    return [self tttButtonWithTitle:title buttonStyle:buttonStyle iconImage:nil];
+    return [self ttt_buttonWithTitle:title buttonStyle:buttonStyle iconImage:nil];
 }
 
-+ (UIButton *)tttButtonWithTitle:(NSString *)title buttonStyle:(TTTButtonStyle)buttonStyle iconImage:(UIImage *)image
++ (instancetype)ttt_buttonWithTitle:(NSString *)title buttonStyle:(TTTButtonStyle)buttonStyle iconImage:(UIImage *)image
 {
     UIButton *button = [self buttonWithType:UIButtonTypeCustom];
     [button setTitle:title forState:UIControlStateNormal];
     [button setImage:image forState:UIControlStateNormal];
-    [button tttApplyButtonStyle:buttonStyle];
+    [button ttt_applyButtonStyle:buttonStyle];
     [button tttResetIntrinsicContentFrame];
     return button;
 }
 
-- (void)tttApplyButtonStyle:(TTTButtonStyle)buttonStyle
+- (void)ttt_applyButtonStyle:(TTTButtonStyle)buttonStyle
 {
     [[TTTTheme currentTheme] applyButtonStyle:buttonStyle toButton:self];
 }
@@ -217,15 +217,15 @@ static TTTTheme <TTTTheme> *_currentTheme;
 
 @implementation UITextField (TTTTheming)
 
-+ (id)tttTextFieldWithPlaceholder:(NSString *)placeholder textFieldStyle:(TTTTextStyle)textStyle
++ (instancetype)ttt_textFieldWithPlaceholder:(NSString *)placeholder textFieldStyle:(TTTTextStyle)textStyle
 {
     UITextField *textField = [[self alloc] initWithFrame:CGRectWithSize(256, 35)];
     [textField setPlaceholder:placeholder];
-    [textField tttApplyTextStyle:textStyle];
+    [textField ttt_applyTextStyle:textStyle];
     return textField;
 }
 
-- (void)tttApplyTextStyle:(TTTTextStyle)textStyle
+- (void)ttt_applyTextStyle:(TTTTextStyle)textStyle
 {
     [[TTTTheme currentTheme] applyTextStyle:textStyle toTextField:self];
 }
@@ -234,14 +234,14 @@ static TTTTheme <TTTTheme> *_currentTheme;
 
 @implementation UITextView (TTTTheming)
 
-+ (id)tttTextViewWithTextFieldStyle:(TTTTextStyle)textStyle
++ (instancetype)ttt_textViewWithTextFieldStyle:(TTTTextStyle)textStyle
 {
     UITextView *textField = [[self alloc] initWithFrame:CGRectWithSize(256, 35)];
-    [textField tttApplyTextStyle:textStyle];
+    [textField ttt_applyTextStyle:textStyle];
     return textField;
 }
 
-- (void)tttApplyTextStyle:(TTTTextStyle)textStyle
+- (void)ttt_applyTextStyle:(TTTTextStyle)textStyle
 {
     [[TTTTheme currentTheme] applyTextStyle:textStyle toTextView:self];
 }

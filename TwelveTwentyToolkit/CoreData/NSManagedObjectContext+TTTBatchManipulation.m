@@ -23,17 +23,18 @@
 
 @implementation NSManagedObjectContext (TTTBatchManipulation)
 
-- (NSArray *)tttAllEntitiesNamed:(NSString *)entityName sortedByKey:(NSString *)sortKey ascending:(BOOL)ascending
+- (NSArray *)ttt_allEntitiesNamed:(NSString *)entityName sortedByKey:(NSString *)sortKey ascending:(BOOL)ascending
 {
-    return [self tttAllEntitiesNamed:entityName withValues:nil forKeys:nil sortedByKey:sortKey ascending:ascending];
+    return [self ttt_allEntitiesNamed:entityName withValues:nil forKeys:nil sortedByKey:sortKey ascending:ascending];
 }
 
-- (NSArray *)tttAllEntitiesNamed:(NSString *)entityName withValues:(NSArray *)values forKeys:(NSArray *)keys
+- (NSArray *)ttt_allEntitiesNamed:(NSString *)entityName withValues:(NSArray *)values forKeys:(NSArray *)keys
 {
-    return [self tttAllEntitiesNamed:entityName withValues:values forKeys:keys sortedByKey:nil ascending:YES];
+    return [self ttt_allEntitiesNamed:entityName withValues:values forKeys:keys sortedByKey:nil ascending:YES];
 }
 
-- (NSArray *)tttAllEntitiesNamed:(NSString *)entityName withValues:(NSArray *)values forKeys:(NSArray *)keys sortedByKey:(NSString *)sortKey ascending:(BOOL)ascending
+- (NSArray *)ttt_allEntitiesNamed:(NSString *)entityName withValues:(NSArray *)values forKeys:(NSArray *)keys
+                      sortedByKey:(NSString *)sortKey ascending:(BOOL)ascending
 {
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:entityName];
 
@@ -80,12 +81,13 @@
     return YES;
 }
 
-- (TTTDeleteCount)tttDeleteEntitiesNamed:(NSString *)entityName withValue:(id)value forKey:(NSString *)key error:(NSError **)error
+- (TTTDeleteCount)ttt_deleteEntitiesNamed:(NSString *)entityName withValue:(id)value forKey:(NSString *)key error:(NSError **)error
 {
-    return [self tttDeleteEntitiesNamed:entityName withValues:@[value] forKeys:@[key] error:error];
+    return [self ttt_deleteEntitiesNamed:entityName withValues:@[value] forKeys:@[key] error:error];
 }
 
-- (TTTDeleteCount)tttDeleteEntitiesNamed:(NSString *)entityName withValues:(NSArray *)values forKeys:(NSArray *)keys error:(NSError **)error
+- (TTTDeleteCount)ttt_deleteEntitiesNamed:(NSString *)entityName withValues:(NSArray *)values forKeys:(NSArray *)keys
+                                    error:(NSError **)error
 {
     NSString *joinedFormat;
     {
@@ -115,7 +117,7 @@
     return count;
 }
 
-- (TTTDeleteCount)tttDeleteEntitiesNamed:(NSString *)entityName withNoRelationshipForKey:(NSString *)key error:(NSError **)error
+- (TTTDeleteCount)ttt_deleteEntitiesNamed:(NSString *)entityName withNoRelationshipForKey:(NSString *)key error:(NSError **)error
 {
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:entityName];
     NSEntityDescription *entityDescription = [NSEntityDescription entityForName:entityName inManagedObjectContext:self];
@@ -144,7 +146,7 @@
     return count;
 }
 
-- (TTTDeleteCount)tttDeleteAllEntitiesNamed:(NSString *)entityName error:(NSError **)error
+- (TTTDeleteCount)ttt_deleteAllEntitiesNamed:(NSString *)entityName error:(NSError **)error
 {
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:entityName];
     NSArray *results = [self executeFetchRequest:request error:error];

@@ -67,46 +67,46 @@ typedef NSInteger TTTColorStyle;
 
 @interface UIColor (TTTTheming)
 
-+ (UIColor *)tttColorForStyle:(TTTColorStyle)colorStyle;
++ (instancetype)ttt_colorForStyle:(TTTColorStyle)colorStyle;
 
 @end
 
 @interface UILabel (TTTTheming)
 
-+ (UILabel *)tttLabelWithText:(NSString *)text textStyle:(TTTTextStyle)textStyle;
++ (instancetype)ttt_labelWithText:(NSString *)text textStyle:(TTTTextStyle)textStyle;
 
-+ (UILabel *)tttLabelWithTextStyle:(TTTTextStyle)textStyle;
++ (instancetype)ttt_labelWithTextStyle:(TTTTextStyle)textStyle;
 
-- (void)tttApplyTextStyle:(TTTTextStyle)textStyle;
+- (void)ttt_applyTextStyle:(TTTTextStyle)textStyle;
 
-- (void)tttApplyTextStyle:(TTTTextStyle)textStyle numberOfLines:(NSUInteger)numberOfLines lineBreakMode:(NSLineBreakMode)lineBreakMode;
+- (void)ttt_applyTextStyle:(TTTTextStyle)textStyle numberOfLines:(NSUInteger)numberOfLines lineBreakMode:(NSLineBreakMode)lineBreakMode;
 
 @end
 
 @interface UIButton (TTTTheming)
 
-+ (UIButton *)tttButtonWithStyle:(TTTButtonStyle)buttonStyle;
++ (instancetype)ttt_buttonWithStyle:(TTTButtonStyle)buttonStyle;
 
-+ (UIButton *)tttButtonWithTitle:(NSString *)title buttonStyle:(TTTButtonStyle)buttonStyle;
++ (instancetype)ttt_buttonWithTitle:(NSString *)title buttonStyle:(TTTButtonStyle)buttonStyle;
 
-+ (UIButton *)tttButtonWithTitle:(NSString *)title buttonStyle:(TTTButtonStyle)buttonStyle iconImage:(UIImage *)image;
++ (instancetype)ttt_buttonWithTitle:(NSString *)title buttonStyle:(TTTButtonStyle)buttonStyle iconImage:(UIImage *)image;
 
-- (void)tttApplyButtonStyle:(TTTButtonStyle)buttonStyle;
+- (void)ttt_applyButtonStyle:(TTTButtonStyle)buttonStyle;
 
 @end
 
 @interface UITextField (TTTTheming)
 
-+ (id)tttTextFieldWithPlaceholder:(NSString *)placeholder textFieldStyle:(TTTTextStyle)textStyle;
++ (instancetype)ttt_textFieldWithPlaceholder:(NSString *)placeholder textFieldStyle:(TTTTextStyle)textStyle;
 
-- (void)tttApplyTextStyle:(TTTTextStyle)textStyle;
+- (void)ttt_applyTextStyle:(TTTTextStyle)textStyle;
 
 @end
 
 @interface UITextView (TTTTheming)
 
-+ (id)tttTextViewWithTextFieldStyle:(TTTTextStyle)textStyle;
++ (instancetype)ttt_textViewWithTextFieldStyle:(TTTTextStyle)textStyle;
 
-- (void)tttApplyTextStyle:(TTTTextStyle)textStyle;
+- (void)ttt_applyTextStyle:(TTTTextStyle)textStyle;
 
 @end

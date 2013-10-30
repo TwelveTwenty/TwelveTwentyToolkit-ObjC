@@ -29,11 +29,12 @@ enum TTTDeleteCount {TTTDeleteFailed = -1};
 /**
  * Fetches all entities of a certain name with a simple sort option.
  */
-- (NSArray *)tttAllEntitiesNamed:(NSString *)entityName sortedByKey:(NSString *)sortKey ascending:(BOOL)ascending;
+- (NSArray *)ttt_allEntitiesNamed:(NSString *)entityName sortedByKey:(NSString *)sortKey ascending:(BOOL)ascending;
 
-- (NSArray *)tttAllEntitiesNamed:(NSString *)entityName withValues:(NSArray *)values forKeys:(NSArray *)keys;
+- (NSArray *)ttt_allEntitiesNamed:(NSString *)entityName withValues:(NSArray *)values forKeys:(NSArray *)keys;
 
-- (NSArray *)tttAllEntitiesNamed:(NSString *)entityName withValues:(NSArray *)values forKeys:(NSArray *)keys sortedByKey:(NSString *)sortKey ascending:(BOOL)ascending;
+- (NSArray *)ttt_allEntitiesNamed:(NSString *)entityName withValues:(NSArray *)values forKeys:(NSArray *)keys
+                      sortedByKey:(NSString *)sortKey ascending:(BOOL)ascending;
 
 /**
  * Set one value on all entities of a certain entity.
@@ -45,12 +46,13 @@ enum TTTDeleteCount {TTTDeleteFailed = -1};
  * Delete all entities matching the value for key provided.
  * returns a count of 0 or higher records deleted, or
  */
-- (TTTDeleteCount)tttDeleteEntitiesNamed:(NSString *)entityName withValue:(id)value forKey:(NSString *)key error:(NSError **)error;
+- (TTTDeleteCount)ttt_deleteEntitiesNamed:(NSString *)entityName withValue:(id)value forKey:(NSString *)key error:(NSError **)error;
 
-- (TTTDeleteCount)tttDeleteEntitiesNamed:(NSString *)entityName withValues:(NSArray *)values forKeys:(NSArray *)keys error:(NSError **)error;
+- (TTTDeleteCount)ttt_deleteEntitiesNamed:(NSString *)entityName withValues:(NSArray *)values forKeys:(NSArray *)keys
+                                    error:(NSError **)error;
 
-- (TTTDeleteCount)tttDeleteEntitiesNamed:(NSString *)entityName withNoRelationshipForKey:(NSString *)key error:(NSError **)error;
+- (TTTDeleteCount)ttt_deleteEntitiesNamed:(NSString *)entityName withNoRelationshipForKey:(NSString *)key error:(NSError **)error;
 
-- (TTTDeleteCount)tttDeleteAllEntitiesNamed:(NSString *)entityName error:(NSError **)error;
+- (TTTDeleteCount)ttt_deleteAllEntitiesNamed:(NSString *)entityName error:(NSError **)error;
 
 @end

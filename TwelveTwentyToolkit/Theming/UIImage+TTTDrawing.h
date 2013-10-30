@@ -5,16 +5,19 @@ typedef void (^TTTDrawingBlock)(CGContextRef ctx, CGRect rect, CGFloat scale);
 
 @interface UIImage (TTTDrawing)
 
-+ (void)tttSetDrawingCacheSize:(NSUInteger)bytes;
++ (void)ttt_setDrawingCacheSize:(NSUInteger)bytes;
 
-+ (void)tttClearDrawingCache;
++ (void)ttt_clearDrawingCache;
 
-+ (UIImage *)tttImageWithSize:(CGSize)size drawing:(TTTDrawingBlock)drawing;
++ (UIImage *)ttt_imageWithSize:(CGSize)size drawing:(TTTDrawingBlock)drawing;
 
-+ (UIImage *)tttImageWithIdentifier:(NSString *)identifier size:(CGSize)size drawing:(TTTDrawingBlock)drawing;
++ (UIImage *)ttt_imageWithIdentifier:(NSString *)identifier size:(CGSize)size drawing:(TTTDrawingBlock)drawing;
 
-+ (UIImage *)tttImageWithIdentifier:(NSString *)identifier size:(CGSize)size drawing:(TTTDrawingBlock)drawing capInsets:(UIEdgeInsets)capInsets;
++ (UIImage *)ttt_imageWithIdentifier:(NSString *)identifier size:(CGSize)size drawing:(TTTDrawingBlock)drawing capInsets:(UIEdgeInsets)capInsets;
 
-+ (UIImage *)tttImageWithIdentifier:(NSString *)identifier size:(CGSize)size drawing:(TTTDrawingBlock)drawing capInsets:(UIEdgeInsets)capInsets resizingMode:(UIImageResizingMode)resizingMode;
++ (void)ttt_clearImageWithIdentifier:(NSString *)identifier size:(CGSize)size;
+
++ (UIImage *)ttt_imageWithIdentifier:(NSString *)identifier size:(CGSize)size drawing:(TTTDrawingBlock)drawing
+                           capInsets:(UIEdgeInsets)capInsets resizingMode:(UIImageResizingMode)resizingMode;
 
 @end
