@@ -1,7 +1,6 @@
 #import <Foundation/Foundation.h>
 #import "TwelveTwentyToolkit.h"
-
-@class TTTInjector;
+#import "TTTInjector.h"
 
 @interface TTTOperation : NSOperation
 
@@ -9,9 +8,9 @@
 
 @property(nonatomic) BOOL requiresMainThread;
 
-- (id)queue;
+- (instancetype)queue;
 
-- (id)inline;
+- (instancetype)inline;
 
 - (void)execute OVERRIDE_ATTRIBUTE;
 

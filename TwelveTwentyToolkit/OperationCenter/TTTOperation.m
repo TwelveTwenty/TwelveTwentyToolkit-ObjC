@@ -17,13 +17,13 @@
     return self;
 }
 
-- (id)queue
+- (instancetype)queue
 {
     [[TTTOperationCenter defaultCenter] queueOperation:self];
     return self;
 }
 
-- (id)inline
+- (instancetype)inline
 {
     [[TTTOperationCenter defaultCenter] inlineOperation:self];
     return self;

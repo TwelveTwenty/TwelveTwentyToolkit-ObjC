@@ -12,6 +12,8 @@
 
 @end
 
+NSTimeInterval const TTTNever = 0;
+
 @implementation TTTAsyncOperation
 
 - (void)dealloc
@@ -56,7 +58,7 @@
 
 - (void)setExecuting:(BOOL)isExecuting
 {
-    if (isExecuting)
+    if (isExecuting && self.timeout > TTTNever)
     {
         self.timeoutTimer = [NSTimer scheduledTimerWithTimeInterval:self.timeout target:self selector:@selector(didTimeout:) userInfo:nil repeats:NO];
     }

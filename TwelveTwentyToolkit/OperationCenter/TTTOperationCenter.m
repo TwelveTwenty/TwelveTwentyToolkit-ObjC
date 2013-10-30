@@ -49,7 +49,6 @@ static TTTOperationCenter *_defaultCenter = nil;
         self.injector = injector;
         self.backgroundCommandQueue = [[NSOperationQueue alloc] init];
         self.mainCommandQueue = [NSOperationQueue mainQueue];
-        self.maxConcurrentOperationCount = 4;
     }
 
     return self;

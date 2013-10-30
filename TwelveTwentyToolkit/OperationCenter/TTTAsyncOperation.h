@@ -15,6 +15,8 @@ typedef void (^TTTRequestSuccessBlock)(id jsonResult);
 
 typedef void (^TTTRequestFailureBlock)(NSError *error);
 
+extern NSTimeInterval const TTTNever;
+
 @interface TTTAsyncOperation : TTTOperation
 
 @property(nonatomic, copy) TTTFeedbackBlock feedbackBlock;
@@ -28,6 +30,6 @@ typedef void (^TTTRequestFailureBlock)(NSError *error);
 
 - (void)dispatchUnsuccessfulFeedbackWithError:(NSError *)error;
 
-- (id)inline UNAVAILABLE_ATTRIBUTE;
+- (instancetype)inline UNAVAILABLE_ATTRIBUTE;
 
 @end
