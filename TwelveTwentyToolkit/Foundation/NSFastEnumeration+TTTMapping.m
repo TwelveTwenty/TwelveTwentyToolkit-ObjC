@@ -1,4 +1,4 @@
-#import "NSArray+TTTMapping.h"
+#import "NSFastEnumeration+TTTMapping.h"
 
 @implementation NSArray (TTTMapping)
 
