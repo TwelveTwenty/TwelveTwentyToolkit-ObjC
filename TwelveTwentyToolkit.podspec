@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'TwelveTwentyToolkit'
-  s.version      = '0.2.0'
+  s.version      = '0.2.1'
   s.summary      = 'The Twelve Twenty Toolkit of reusable Objective-C classes.'
   s.homepage     = 'http://twelvetwenty.nl'
   s.license      = 'MIT'
