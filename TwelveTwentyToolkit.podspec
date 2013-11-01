@@ -109,7 +109,6 @@ Pod::Spec.new do |s|
   end
   
   s.subspec 'CyclicDelegateRetainer' do |tcdr|
-    tcdr.dependency 'TwelveTwentyToolkit/Foundation'
     tcdr.source_files = 'TwelveTwentyToolkit/CyclicDelegateRetainer/*.{h,m}'
   end
 end
