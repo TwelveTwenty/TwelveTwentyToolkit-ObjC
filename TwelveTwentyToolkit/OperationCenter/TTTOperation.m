@@ -19,13 +19,15 @@
 
 - (instancetype)queue
 {
-    [[TTTOperationCenter defaultCenter] queueOperation:self];
+    NSParameterAssert([TTTOperationCenter currentOperationCenter]);
+    [[TTTOperationCenter currentOperationCenter] queueOperation:self];
     return self;
 }
 
 - (instancetype)inline
 {
-    [[TTTOperationCenter defaultCenter] inlineOperation:self];
+    NSParameterAssert([TTTOperationCenter currentOperationCenter]);
+    [[TTTOperationCenter currentOperationCenter] inlineOperation:self];
     return self;
 }
 

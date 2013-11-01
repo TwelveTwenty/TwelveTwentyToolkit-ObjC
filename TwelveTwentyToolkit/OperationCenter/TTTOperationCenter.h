@@ -7,16 +7,14 @@
 
 @property NSInteger maxConcurrentOperationCount;
 
-+ (TTTOperationCenter *)defaultCenter;
++ (TTTOperationCenter *)currentOperationCenter;
 
-+ (TTTOperationCenter *)setDefaultCenterWithInjector:(TTTInjector *)injector;
-
-+ (TTTOperationCenter *)setDefaultCenter:(TTTOperationCenter *)defaultCenter;
++ (TTTOperationCenter *)setCurrentOperationCenter:(TTTOperationCenter *)defaultCenter;
 
 - (id)initWithInjector:(TTTInjector *)injector;
 
-- (void)queueOperation:(TTTOperation *)operation;
+- (id)queueOperation:(TTTOperation *)operation;
 
-- (void)inlineOperation:(TTTOperation *)operation;
+- (id)inlineOperation:(TTTOperation *)operation;
 
 @end

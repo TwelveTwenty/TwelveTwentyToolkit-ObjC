@@ -13,31 +13,21 @@
 
 @implementation TTTOperationCenter
 
-static TTTOperationCenter *_defaultCenter = nil;
+static TTTOperationCenter *_currentOperationCenter = nil;
 
-+ (TTTOperationCenter *)defaultCenter
++ (TTTOperationCenter *)currentOperationCenter
 {
-    return _defaultCenter;
+    return _currentOperationCenter;
 }
 
-+ (TTTOperationCenter *)setDefaultCenterWithInjector:(TTTInjector *)injector
-{
-    if (injector)
-    {
-        NSAssert(_defaultCenter == nil, @"Can't setup default center if it's already set up.");
-    }
-
-    return [self setDefaultCenter:[[self alloc] initWithInjector:injector]];
-}
-
-+ (TTTOperationCenter *)setDefaultCenter:(TTTOperationCenter *)defaultCenter
++ (TTTOperationCenter *)setCurrentOperationCenter:(TTTOperationCenter *)defaultCenter
 {
     @synchronized (self)
     {
-        _defaultCenter = defaultCenter;
+        _currentOperationCenter = defaultCenter;
     }
 
-    return _defaultCenter;
+    return _currentOperationCenter;
 }
 
 - (id)initWithInjector:(TTTInjector *)injector
@@ -64,7 +54,7 @@ static TTTOperationCenter *_defaultCenter = nil;
     self.backgroundCommandQueue.maxConcurrentOperationCount = maxConcurrentOperationCount;
 }
 
-- (void)queueOperation:(TTTOperation *)operation
+- (id)queueOperation:(TTTOperation *)operation
 {
     operation.injector = self.injector;
 
@@ -76,15 +66,19 @@ static TTTOperationCenter *_defaultCenter = nil;
     {
         [self.backgroundCommandQueue addOperation:operation];
     }
+
+    return operation;
 }
 
-- (void)inlineOperation:(TTTOperation *)operation
+- (id)inlineOperation:(TTTOperation *)operation
 {
     operation.injector = self.injector;
 
     NSAssert(operation.requiresMainThread == YES, @"Operations can only be executed in-line if they run on the main thread.");
 
     [operation start];
+
+    return operation;
 }
 
 @end
