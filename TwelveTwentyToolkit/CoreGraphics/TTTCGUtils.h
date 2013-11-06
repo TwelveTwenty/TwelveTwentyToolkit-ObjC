@@ -90,6 +90,9 @@ extern CGRect CGRectTrim(CGRect rect, CGFloat top, CGFloat left, CGFloat bottom,
 /** The opposite of CGRectTrim */
 extern CGRect CGRectExpand(CGRect rect, CGFloat top, CGFloat left, CGFloat bottom, CGFloat right);
 
+/** Trim a CGRect by using UIEdgeInsets. */
+extern CGRect TTTRectWithInsets(CGRect rect, UIEdgeInsets insets);
+
 /**
 * Replace one or more properties of a rect with a tweaked value.
 * Example: CGRectWithTweak(rect, CGTweakSizeHeight, 0.5);
