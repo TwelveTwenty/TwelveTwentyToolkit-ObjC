@@ -45,6 +45,9 @@ extern CFTypeRef CFRetainIfNotNULL (CFTypeRef ref);
 #define TTTStaticScreenScale() static CGFloat scale = 0; \
 if (!scale) scale = [UIScreen mainScreen].scale;
 
+#define TTTStaticMainScreenBounds() static CGRect mainScreenBounds = (CGRect){0,0,0,0}; \
+if (CGRectEqualToRect(mainScreenBounds, CGRectZero)) mainScreenBounds = [UIScreen mainScreen].bounds;
+
 #if !defined(NS_BLOCK_ASSERTIONS)
 
 #if !defined(TTTBlockAssert)
