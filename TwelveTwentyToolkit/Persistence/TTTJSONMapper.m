@@ -113,7 +113,7 @@
         if ([mapping isKindOfClass:[TTTJSONAttributeMapping class]])
         {
             TTTJSONAttributeMapping *attributeMapping = (TTTJSONAttributeMapping *) mapping;
-            [JSON tttForKey:attributeMapping.JSONKey performBlock:^(id value) {
+            [JSON ttt_forKey:attributeMapping.JSONKey performBlock:^(id value) {
                 value = [TTTJSONAttributeMapping convertValue:value forObjectType:attributeMapping.objectType];
                 [entity setValue:value forKey:attributeMapping.entityKey];
             }];

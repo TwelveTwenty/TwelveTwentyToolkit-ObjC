@@ -52,46 +52,46 @@ static TTTTheme <TTTTheme> *_currentTheme;
 
 - (void)applyTextAttributes:(NSDictionary *)attributes toLabel:(UILabel *)label forControlState:(UIControlState)controlState
 {
-    [attributes tttForKey:TTTAttributeFont performBlock:^(id value) {label.font = value;}];
-    [attributes tttForKey:TTTAttributeTextColor performBlock:^(UIColor *value) {
+    [attributes ttt_forKey:TTTAttributeFont performBlock:^(id value) {label.font = value;}];
+    [attributes ttt_forKey:TTTAttributeTextColor performBlock:^(UIColor *value) {
         label.textColor = value;
         label.highlightedTextColor = value;
     }];
 
-    [attributes tttForKey:TTTAttributeTextColorHighlighted performBlock:^(UIColor *value) {label.highlightedTextColor = value;}];
-    [attributes tttForKey:TTTAttributeTextAlignment performBlock:^(id value) {label.textAlignment = (NSTextAlignment) [value integerValue];}];
-    [attributes tttForKey:TTTAttributeLineBreakMode performBlock:^(NSNumber *value) {
+    [attributes ttt_forKey:TTTAttributeTextColorHighlighted performBlock:^(UIColor *value) {label.highlightedTextColor = value;}];
+    [attributes ttt_forKey:TTTAttributeTextAlignment performBlock:^(id value) {label.textAlignment = (NSTextAlignment) [value integerValue];}];
+    [attributes ttt_forKey:TTTAttributeLineBreakMode performBlock:^(NSNumber *value) {
         label.lineBreakMode = (NSLineBreakMode) [value integerValue];
     }];
-    [attributes tttForKey:TTTAttributeNumberOfLines performBlock:^(NSNumber *value) {label.numberOfLines = [value integerValue];}];
+    [attributes ttt_forKey:TTTAttributeNumberOfLines performBlock:^(NSNumber *value) {label.numberOfLines = [value integerValue];}];
 
-    [attributes tttForKey:TTTAttributeLayerShadowRadius performBlock:^(NSNumber *value) {
+    [attributes ttt_forKey:TTTAttributeLayerShadowRadius performBlock:^(NSNumber *value) {
         label.layer.shadowRadius = [value floatValue];
         label.clipsToBounds = NO;
     }];
-    [attributes tttForKey:TTTAttributeLayerShadowColor performBlock:^(UIColor *value) {label.layer.shadowColor = [value CGColor];}];
-    [attributes tttForKey:TTTAttributeLayerShadowOffset performBlock:^(NSValue *value) {label.layer.shadowOffset = [self UIOffsetValueToCGSize:value];}];
-    [attributes tttForKey:TTTAttributeLayerShadowOpacity performBlock:^(NSNumber *value) {label.layer.shadowOpacity = [value floatValue];}];
+    [attributes ttt_forKey:TTTAttributeLayerShadowColor performBlock:^(UIColor *value) {label.layer.shadowColor = [value CGColor];}];
+    [attributes ttt_forKey:TTTAttributeLayerShadowOffset performBlock:^(NSValue *value) {label.layer.shadowOffset = [self UIOffsetValueToCGSize:value];}];
+    [attributes ttt_forKey:TTTAttributeLayerShadowOpacity performBlock:^(NSNumber *value) {label.layer.shadowOpacity = [value floatValue];}];
 }
 
 - (void)applyTextStyle:(TTTTextStyle)style toTextField:(UITextField *)textField
 {
     NSDictionary *attributes = [(id <TTTTheme>)self attributesForTextStyle:style forControlState:UIControlStateNormal];
 
-    [attributes tttForKey:TTTAttributeFont  performBlock:^(UIFont *value) {textField.font = value;}];
-    [attributes tttForKey:TTTAttributeTextColor  performBlock:^(UIColor *value) {textField.textColor = value;}];
-    [attributes tttForKey:TTTAttributeTextAlignment performBlock:^(NSNumber *value) {textField.textAlignment = (NSTextAlignment) [value integerValue];}];
-    [attributes tttForKey:TTTAttributeBackgroundImage performBlock:^(UIImage *value) {textField.background = value;}];
+    [attributes ttt_forKey:TTTAttributeFont  performBlock:^(UIFont *value) {textField.font = value;}];
+    [attributes ttt_forKey:TTTAttributeTextColor  performBlock:^(UIColor *value) {textField.textColor = value;}];
+    [attributes ttt_forKey:TTTAttributeTextAlignment performBlock:^(NSNumber *value) {textField.textAlignment = (NSTextAlignment) [value integerValue];}];
+    [attributes ttt_forKey:TTTAttributeBackgroundImage performBlock:^(UIImage *value) {textField.background = value;}];
 }
 
 - (void)applyTextStyle:(TTTTextStyle)style toTextView:(UITextView *)textView
 {
     NSDictionary *attributes = [(id <TTTTheme>)self attributesForTextStyle:style forControlState:UIControlStateNormal];
 
-    [attributes tttForKey:TTTAttributeFont  performBlock:^(UIFont *value) {textView.font = value;}];
-    [attributes tttForKey:TTTAttributeTextColor  performBlock:^(UIColor *value) {textView.textColor = value;}];
-    [attributes tttForKey:TTTAttributeTextAlignment performBlock:^(NSNumber *value) {textView.textAlignment = (NSTextAlignment) [value integerValue];}];
-    [attributes tttForKey:TTTAttributeBackgroundColor performBlock:^(UIColor *value) {textView.backgroundColor = value;}];
+    [attributes ttt_forKey:TTTAttributeFont  performBlock:^(UIFont *value) {textView.font = value;}];
+    [attributes ttt_forKey:TTTAttributeTextColor  performBlock:^(UIColor *value) {textView.textColor = value;}];
+    [attributes ttt_forKey:TTTAttributeTextAlignment performBlock:^(NSNumber *value) {textView.textAlignment = (NSTextAlignment) [value integerValue];}];
+    [attributes ttt_forKey:TTTAttributeBackgroundColor performBlock:^(UIColor *value) {textView.backgroundColor = value;}];
 }
 
 - (void)applyButtonStyle:(TTTButtonStyle)style toButton:(UIButton *)button
@@ -103,27 +103,27 @@ static TTTTheme <TTTTheme> *_currentTheme;
         NSInteger controlState = [controlStateNumber integerValue];
         NSDictionary *buttonAttributes = [(id <TTTTheme>)self attributesForButtonStyle:style withControlState:(UIControlState) controlState];
 
-        [buttonAttributes tttForKey:TTTAttributeTextStyle performBlock:^(id value) {[self applyTextStyle:[value integerValue] toLabel:button.titleLabel forControlState:controlState];}];
-        [buttonAttributes tttForKey:TTTAttributeImage performBlock:^(id value) {[button setImage:value forState:(UIControlState) controlState];}];
-        [buttonAttributes tttForKey:TTTAttributeBackgroundImage performBlock:^(id value) {[button setBackgroundImage:value forState:(UIControlState) controlState];}];
-        [buttonAttributes tttForKey:TTTAttributeTitleColor performBlock:^(id value) {[button setTitleColor:value forState:(UIControlState) controlState];}];
+        [buttonAttributes ttt_forKey:TTTAttributeTextStyle performBlock:^(id value) {[self applyTextStyle:[value integerValue] toLabel:button.titleLabel forControlState:controlState];}];
+        [buttonAttributes ttt_forKey:TTTAttributeImage performBlock:^(id value) {[button setImage:value forState:(UIControlState) controlState];}];
+        [buttonAttributes ttt_forKey:TTTAttributeBackgroundImage performBlock:^(id value) {[button setBackgroundImage:value forState:(UIControlState) controlState];}];
+        [buttonAttributes ttt_forKey:TTTAttributeTitleColor performBlock:^(id value) {[button setTitleColor:value forState:(UIControlState) controlState];}];
 
         if (controlState == UIControlStateNormal)
         {
-            [buttonAttributes tttForKey:TTTAttributeShowsTouchWhenHighlighted performBlock:^(id value) {button.showsTouchWhenHighlighted = [value boolValue];}];
-            [buttonAttributes tttForKey:TTTAttributeBackgroundColor performBlock:^(id value) {button.backgroundColor = value;}];
-            [buttonAttributes tttForKey:TTTAttributeTitleEdgeInsets performBlock:^(id value) {[button setTitleEdgeInsets:[value UIEdgeInsetsValue]];}];
-            [buttonAttributes tttForKey:TTTAttributeImageEdgeInsets performBlock:^(id value) {[button setImageEdgeInsets:[value UIEdgeInsetsValue]];}];
-            [buttonAttributes tttForKey:TTTAttributeImageViewContentMode performBlock:^(id value) {
+            [buttonAttributes ttt_forKey:TTTAttributeShowsTouchWhenHighlighted performBlock:^(id value) {button.showsTouchWhenHighlighted = [value boolValue];}];
+            [buttonAttributes ttt_forKey:TTTAttributeBackgroundColor performBlock:^(id value) {button.backgroundColor = value;}];
+            [buttonAttributes ttt_forKey:TTTAttributeTitleEdgeInsets performBlock:^(id value) {[button setTitleEdgeInsets:[value UIEdgeInsetsValue]];}];
+            [buttonAttributes ttt_forKey:TTTAttributeImageEdgeInsets performBlock:^(id value) {[button setImageEdgeInsets:[value UIEdgeInsetsValue]];}];
+            [buttonAttributes ttt_forKey:TTTAttributeImageViewContentMode performBlock:^(id value) {
                 [button.imageView setContentMode:[value integerValue]];
             }];
-            [buttonAttributes tttForKey:TTTAttributeContentHorizontalAlignment performBlock:^(id value) {[button setContentHorizontalAlignment:[value integerValue]];}];
-            [buttonAttributes tttForKey:TTTAttributeContentEdgeInsets performBlock:^(id value) {[button setContentEdgeInsets:[value UIEdgeInsetsValue]];}];
+            [buttonAttributes ttt_forKey:TTTAttributeContentHorizontalAlignment performBlock:^(id value) {[button setContentHorizontalAlignment:[value integerValue]];}];
+            [buttonAttributes ttt_forKey:TTTAttributeContentEdgeInsets performBlock:^(id value) {[button setContentEdgeInsets:[value UIEdgeInsetsValue]];}];
 
-            [buttonAttributes tttForKey:TTTAttributeLayerShadowRadius performBlock:^(NSNumber *value) {button.layer.shadowRadius = [value floatValue];}];
-            [buttonAttributes tttForKey:TTTAttributeLayerShadowColor performBlock:^(UIColor *value) {button.layer.shadowColor = [value CGColor];}];
-            [buttonAttributes tttForKey:TTTAttributeLayerShadowOffset performBlock:^(NSValue *value) {button.layer.shadowOffset = [self UIOffsetValueToCGSize:value];}];
-            [buttonAttributes tttForKey:TTTAttributeLayerShadowOpacity performBlock:^(NSNumber *value) {button.layer.shadowOpacity = [value floatValue];}];
+            [buttonAttributes ttt_forKey:TTTAttributeLayerShadowRadius performBlock:^(NSNumber *value) {button.layer.shadowRadius = [value floatValue];}];
+            [buttonAttributes ttt_forKey:TTTAttributeLayerShadowColor performBlock:^(UIColor *value) {button.layer.shadowColor = [value CGColor];}];
+            [buttonAttributes ttt_forKey:TTTAttributeLayerShadowOffset performBlock:^(NSValue *value) {button.layer.shadowOffset = [self UIOffsetValueToCGSize:value];}];
+            [buttonAttributes ttt_forKey:TTTAttributeLayerShadowOpacity performBlock:^(NSNumber *value) {button.layer.shadowOpacity = [value floatValue];}];
         }
     }
 }
@@ -148,7 +148,7 @@ static TTTTheme <TTTTheme> *_currentTheme;
     UILabel *label = [[self alloc] init];
     label.text = text;
     [label ttt_applyTextStyle:textStyle];
-    [label tttResetIntrinsicContentFrame];
+    [label ttt_resetIntrinsicContentFrame];
     return label;
 }
 
@@ -156,7 +156,7 @@ static TTTTheme <TTTTheme> *_currentTheme;
 {
     UILabel *label = [[self alloc] init];
     [label ttt_applyTextStyle:textStyle];
-    [label tttResetIntrinsicContentFrame];
+    [label ttt_resetIntrinsicContentFrame];
     return label;
 }
 
@@ -204,7 +204,7 @@ static TTTTheme <TTTTheme> *_currentTheme;
     [button setTitle:title forState:UIControlStateNormal];
     [button setImage:image forState:UIControlStateNormal];
     [button ttt_applyButtonStyle:buttonStyle];
-    [button tttResetIntrinsicContentFrame];
+    [button ttt_resetIntrinsicContentFrame];
     return button;
 }
 

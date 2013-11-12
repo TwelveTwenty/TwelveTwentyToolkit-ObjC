@@ -78,7 +78,7 @@
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:entityName];
     request.fetchLimit = 1;
 
-    request.predicate = [NSPredicate tttPredicateWithComplexFormat:joinedFormat innerArguments:keys outerArguments:values];
+    request.predicate = [NSPredicate ttt_predicateWithComplexFormat:joinedFormat innerArguments:keys outerArguments:values];
     NSError *error = nil;
     NSArray *results = [self executeFetchRequest:request error:&error];
 

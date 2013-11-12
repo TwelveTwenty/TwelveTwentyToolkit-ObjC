@@ -9,25 +9,25 @@ typedef enum {
 
 @interface UIView (TTTLayout)
 
-@property (setter = tttSetOrigin:) CGPoint tttOrigin;
-@property (setter = tttSetSize:) CGSize tttSize;
+@property (setter = ttt_setOrigin:) CGPoint ttt_origin;
+@property (setter = ttt_setSize:) CGSize ttt_size;
 
-- (void)tttAddSubviews:(NSArray *)array;
+- (void)ttt_addSubviews:(NSArray *)array;
 
-- (CGRect)tttResetIntrinsicContentFrame;
+- (CGRect)ttt_resetIntrinsicContentFrame;
 
-- (CGRect)tttIntrinsicContentFrame;
+- (CGRect)ttt_intrinsicContentFrame;
 
-- (CGRect)tttFrameThatFitsWidth:(CGFloat)width;
+- (CGRect)ttt_frameThatFitsWidth:(CGFloat)width;
 
-- (CGRect)tttDistributeViewsHorizontally:(NSArray *)views inFrame:(CGRect)containerFrame withSpacing:(CGFloat)spacing;
+- (CGRect)ttt_distributeViewsHorizontally:(NSArray *)views inFrame:(CGRect)containerFrame withSpacing:(CGFloat)spacing;
 
-- (CGRect)tttDistributeViewsHorizontally:(NSArray *)views inFrame:(CGRect)containerFrame withSpacing:(CGFloat)spacing alignment:(TTTDistributeAlign)alignment;
+- (CGRect)ttt_distributeViewsHorizontally:(NSArray *)views inFrame:(CGRect)containerFrame withSpacing:(CGFloat)spacing alignment:(TTTDistributeAlign)alignment;
 
-- (CGRect)tttDistributeViews:(NSArray *)views asRowsInFrame:(CGRect)containerFrame withSpacing:(CGFloat)spacing horizontalAlignment:(TTTDistributeAlign)alignment rowLimit:(int)rowLimit;
+- (CGRect)ttt_distributeViews:(NSArray *)views asRowsInFrame:(CGRect)containerFrame withSpacing:(CGFloat)spacing horizontalAlignment:(TTTDistributeAlign)alignment rowLimit:(int)rowLimit;
 
-- (CGRect)tttDistributeViews:(NSArray *)views asRowsInFrame:(CGRect)containerFrame withSpacing:(CGFloat)spacing horizontalAlignment:(TTTDistributeAlign)alignment rowLimit:(int)rowLimit containerAlignment:(TTTCGAlignOption)containerAlignment;
+- (CGRect)ttt_distributeViews:(NSArray *)views asRowsInFrame:(CGRect)containerFrame withSpacing:(CGFloat)spacing horizontalAlignment:(TTTDistributeAlign)alignment rowLimit:(int)rowLimit containerAlignment:(TTTCGAlignOption)containerAlignment;
 
-- (NSString *)tttHierarchy:(NSString *)leading;
+- (NSString *)ttt_hierarchy:(NSString *)leading;
 
 @end

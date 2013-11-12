@@ -47,7 +47,7 @@
             [combinedFormat addObject:singleFormat];
         }
         NSString *joinedFormat = [combinedFormat componentsJoinedByString:@" AND "];
-        request.predicate = [NSPredicate tttPredicateWithComplexFormat:joinedFormat innerArguments:keys outerArguments:values];
+        request.predicate = [NSPredicate ttt_predicateWithComplexFormat:joinedFormat innerArguments:keys outerArguments:values];
     }
 
     if (sortKey != nil)
@@ -67,7 +67,7 @@
     return result;
 }
 
-- (BOOL)tttSetValue:(id)value forKey:(NSString *)key onEntitiesWithName:(NSString *)entityName error:(NSError **)error
+- (BOOL)ttt_setValue:(id)value forKey:(NSString *)key onEntitiesWithName:(NSString *)entityName error:(NSError **)error
 {
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:entityName];
     NSArray *results = [self executeFetchRequest:request error:error];
@@ -101,7 +101,7 @@
     }
 
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:entityName];
-    request.predicate = [NSPredicate tttPredicateWithComplexFormat:joinedFormat innerArguments:keys outerArguments:values];
+    request.predicate = [NSPredicate ttt_predicateWithComplexFormat:joinedFormat innerArguments:keys outerArguments:values];
     NSArray *results = [self executeFetchRequest:request error:error];
     if (!results)
     {
@@ -124,11 +124,11 @@
     NSRelationshipDescription *relationshipDescription = entityDescription.relationshipsByName[key];
     if (relationshipDescription.isToMany)
     {
-        request.predicate = [NSPredicate tttPredicateWithComplexFormat:@"%@ == nil || %@.@count == 0" innerArguments:@[key, key] outerArguments:nil];
+        request.predicate = [NSPredicate ttt_predicateWithComplexFormat:@"%@ == nil || %@.@count == 0" innerArguments:@[key, key] outerArguments:nil];
     }
     else
     {
-        request.predicate = [NSPredicate tttPredicateWithComplexFormat:@"%@ == nil" innerArguments:@[key] outerArguments:nil];
+        request.predicate = [NSPredicate ttt_predicateWithComplexFormat:@"%@ == nil" innerArguments:@[key] outerArguments:nil];
     }
 
     NSArray *results = [self executeFetchRequest:request error:error];

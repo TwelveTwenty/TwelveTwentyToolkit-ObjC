@@ -5,59 +5,59 @@
 
 @implementation UIView (TTTLayout)
 
-- (void)tttSetOrigin:(CGPoint)origin
+- (void)ttt_setOrigin:(CGPoint)origin
 {
     CGRect frame = self.frame;
     frame.origin = origin;
     self.frame = frame;
 }
 
-- (CGPoint)tttOrigin
+- (CGPoint)ttt_origin
 {
     return self.frame.origin;
 }
 
-- (void)tttSetSize:(CGSize)size
+- (void)ttt_setSize:(CGSize)size
 {
     CGRect frame = self.frame;
     frame.size = size;
     self.frame = frame;
 }
 
-- (CGSize)tttSize
+- (CGSize)ttt_size
 {
     return self.frame.size;
 }
 
-- (void)tttAddSubviews:(NSArray *)array
+- (void)ttt_addSubviews:(NSArray *)array
 {
     [array enumerateObjectsUsingBlock:^(UIView *view, NSUInteger idx, BOOL *stop) {
         [self addSubview:view];
     }];
 }
 
-- (CGRect)tttResetIntrinsicContentFrame
+- (CGRect)ttt_resetIntrinsicContentFrame
 {
-    self.frame = [self tttIntrinsicContentFrame];
+    self.frame = [self ttt_intrinsicContentFrame];
     return self.frame;
 }
 
-- (CGRect)tttIntrinsicContentFrame
+- (CGRect)ttt_intrinsicContentFrame
 {
     return (CGRect) {self.frame.origin, self.intrinsicContentSize};
 }
 
-- (CGRect)tttFrameThatFitsWidth:(CGFloat)width
+- (CGRect)ttt_frameThatFitsWidth:(CGFloat)width
 {
     return (CGRect){self.frame.origin, [self sizeThatFits:CGSizeMake(width, 0)]};
 }
 
-- (CGRect)tttDistributeViewsHorizontally:(NSArray *)views inFrame:(CGRect)containerFrame withSpacing:(CGFloat)spacing
+- (CGRect)ttt_distributeViewsHorizontally:(NSArray *)views inFrame:(CGRect)containerFrame withSpacing:(CGFloat)spacing
 {
-    return [self tttDistributeViewsHorizontally:views inFrame:containerFrame withSpacing:spacing alignment:TTTDistributeAlignCenter];
+    return [self ttt_distributeViewsHorizontally:views inFrame:containerFrame withSpacing:spacing alignment:TTTDistributeAlignCenter];
 }
 
-- (CGRect)tttDistributeViewsHorizontally:(NSArray *)views inFrame:(CGRect)containerFrame withSpacing:(CGFloat)spacing alignment:(TTTDistributeAlign)alignment
+- (CGRect)ttt_distributeViewsHorizontally:(NSArray *)views inFrame:(CGRect)containerFrame withSpacing:(CGFloat)spacing alignment:(TTTDistributeAlign)alignment
 {
     CGRect unionFrame = CGRectZero;
     {
@@ -103,12 +103,12 @@
     return unionFrame;
 }
 
-- (CGRect)tttDistributeViews:(NSArray *)views asRowsInFrame:(CGRect)containerFrame withSpacing:(CGFloat)spacing horizontalAlignment:(TTTDistributeAlign)alignment rowLimit:(int)rowLimit
+- (CGRect)ttt_distributeViews:(NSArray *)views asRowsInFrame:(CGRect)containerFrame withSpacing:(CGFloat)spacing horizontalAlignment:(TTTDistributeAlign)alignment rowLimit:(int)rowLimit
 {
-    return [self tttDistributeViews:views asRowsInFrame:containerFrame withSpacing:spacing horizontalAlignment:alignment rowLimit:rowLimit containerAlignment:CGAlignNone];
+    return [self ttt_distributeViews:views asRowsInFrame:containerFrame withSpacing:spacing horizontalAlignment:alignment rowLimit:rowLimit containerAlignment:CGAlignNone];
 }
 
-- (CGRect)tttDistributeViews:(NSArray *)views asRowsInFrame:(CGRect)containerFrame withSpacing:(CGFloat)spacing horizontalAlignment:(TTTDistributeAlign)alignment rowLimit:(int)rowLimit containerAlignment:(TTTCGAlignOption)containerAlignment
+- (CGRect)ttt_distributeViews:(NSArray *)views asRowsInFrame:(CGRect)containerFrame withSpacing:(CGFloat)spacing horizontalAlignment:(TTTDistributeAlign)alignment rowLimit:(int)rowLimit containerAlignment:(TTTCGAlignOption)containerAlignment
 {
     __block CGRect result = CGRectZero;
     NSMutableArray *rows = [NSMutableArray array];
@@ -226,7 +226,7 @@
     return result;
 }
 
-- (NSString *)tttHierarchy:(NSString *)leading
+- (NSString *)ttt_hierarchy:(NSString *)leading
 {
     NSMutableString *s = [NSMutableString string];
     if (!leading) leading = @"";
@@ -238,7 +238,7 @@
         for (UIView *subview in self.subviews)
         {
             NSString *l = [leading stringByAppendingString:@"  |"];
-            [s appendFormat:@"%@", [subview tttHierarchy:l]];
+            [s appendFormat:@"%@", [subview ttt_hierarchy:l]];
         }
         [s appendFormat:@"\n%@", leading];
     }

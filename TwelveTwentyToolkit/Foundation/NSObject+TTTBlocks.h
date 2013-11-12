@@ -2,8 +2,8 @@
 
 @interface NSObject (TTTBlocks)
 
-- (void)tttForKey:(id)key performBlock:(void (^)(id))block;
+- (void)ttt_forKey:(id)key performBlock:(void (^)(id))block;
 
-- (id)tttDo:(void (^)(id object))block;
+- (id)ttt_do:(void (^)(id object))block;
 
 @end

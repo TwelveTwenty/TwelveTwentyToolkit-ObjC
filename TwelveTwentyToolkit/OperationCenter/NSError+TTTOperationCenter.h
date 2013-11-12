@@ -10,8 +10,8 @@ typedef enum
 
 @interface NSError (TTTOperationCenter)
 
-+ (NSError *)tttOperationCenterErrorWithCode:(TTTOperationCenterErrorCode)code description:(NSString *)description;
++ (NSError *)ttt_operationCenterErrorWithCode:(TTTOperationCenterErrorCode)code description:(NSString *)description;
 
-- (BOOL)tttErrorIsOperationCancelled;
+- (BOOL)ttt_errorIsOperationCancelled;
 
 @end

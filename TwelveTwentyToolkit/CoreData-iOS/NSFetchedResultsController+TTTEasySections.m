@@ -3,31 +3,31 @@
 
 @implementation NSFetchedResultsController (TTTEasySections)
 
-- (id <NSFetchedResultsSectionInfo>)tttSectionAtIndex:(NSUInteger)sectionIndex
+- (id <NSFetchedResultsSectionInfo>)ttt_sectionAtIndex:(NSUInteger)sectionIndex
 {
     return [self.sections count] > sectionIndex ? self.sections[sectionIndex] : nil;
 }
 
-- (id <NSFetchedResultsSectionInfo>)tttFirstSection
+- (id <NSFetchedResultsSectionInfo>)ttt_firstSection
 {
-    return [self tttSectionAtIndex:0];
+    return [self ttt_sectionAtIndex:0];
 }
 
-- (NSUInteger)tttNumberOfObjectsInFirstSection
+- (NSUInteger)ttt_numberOfObjectsInFirstSection
 {
-    id <NSFetchedResultsSectionInfo> firstSection = [self tttFirstSection];
+    id <NSFetchedResultsSectionInfo> firstSection = [self ttt_firstSection];
     return [firstSection numberOfObjects];
 }
 
-- (NSArray *)tttObjects
+- (NSArray *)ttt_objects
 {
-    id <NSFetchedResultsSectionInfo> firstSection = [self tttFirstSection];
+    id <NSFetchedResultsSectionInfo> firstSection = [self ttt_firstSection];
     return [firstSection objects];
 }
 
-- (id)tttFirstObjectInFirstSection
+- (id)ttt_firstObjectInFirstSection
 {
-    NSArray *objects = [self tttObjects];
+    NSArray *objects = [self ttt_objects];
     return [objects count] > 0 ? objects[0] : nil;
 }
 
