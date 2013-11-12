@@ -7,6 +7,6 @@
 Call this method on your controller's view layer in `willAnimateRotationToInterfaceOrientation:duration:`
 Wrap layoutSubviews calls to fading views in `[UIView setAnimationsEnabled:NO]` ... `[UIView setAnimationsEnabled:YES]`
 */
-- (void)tttTransitionCrossfadeWithDuration:(CFTimeInterval)duration;
+- (void)ttt_transitionCrossfadeWithDuration:(CFTimeInterval)duration;
 
 @end
