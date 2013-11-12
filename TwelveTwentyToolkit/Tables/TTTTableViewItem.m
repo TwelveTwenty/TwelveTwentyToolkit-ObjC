@@ -113,4 +113,10 @@ CGFloat const TTTUseDynamicHeight = 0;
     return self;
 }
 
+- (id <TTTTableViewItem>)context:(id)context
+{
+    self.context = context;
+    return self;
+}
+
 @end

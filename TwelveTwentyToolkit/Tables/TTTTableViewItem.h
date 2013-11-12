@@ -24,6 +24,7 @@ extern CGFloat const TTTUseDynamicHeight;
 - (id<TTTTableViewItem>)handleWillDisplay:(TTTWillDisplayItemBlock)willDisplayBlock;
 - (id<TTTTableViewItem>)handleDidEndDisplaying:(TTTDidEndDisplayingItemBlock)didEndDisplayingBlock;
 - (id<TTTTableViewItem>)tag:(NSInteger)tag;
+- (id <TTTTableViewItem>)context:(id)context;
 - (TTTTableViewItem *)asItem;
 
 @end
