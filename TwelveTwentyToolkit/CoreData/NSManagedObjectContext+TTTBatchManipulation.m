@@ -19,7 +19,6 @@
 // THE SOFTWARE.
 
 #import "NSManagedObjectContext+TTTBatchManipulation.h"
-#import "NSPredicate+TTTConvenience.h"
 
 @implementation NSManagedObjectContext (TTTBatchManipulation)
 
@@ -42,12 +41,11 @@
     {
         NSString *singleFormat = @"%@ == %%@";
         NSMutableArray *combinedFormat = [NSMutableArray arrayWithCapacity:[values count]];
-        for (int i = 0; i < [values count]; ++i)
-        {
-            [combinedFormat addObject:singleFormat];
-        }
+        [keys enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+            [combinedFormat addObject:[NSString stringWithFormat:singleFormat, obj, nil]];
+        }];
         NSString *joinedFormat = [combinedFormat componentsJoinedByString:@" AND "];
-        request.predicate = [NSPredicate ttt_predicateWithComplexFormat:joinedFormat innerArguments:keys outerArguments:values];
+        request.predicate = [NSPredicate predicateWithFormat:joinedFormat argumentArray:values];
     }
 
     if (sortKey != nil)
@@ -93,15 +91,14 @@
     {
         NSString *singleFormat = @"%@ == %%@";
         NSMutableArray *combinedFormat = [NSMutableArray arrayWithCapacity:[values count]];
-        for (int i = 0; i < [values count]; ++i)
-        {
-            [combinedFormat addObject:singleFormat];
-        }
+        [keys enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+            [combinedFormat addObject:[NSString stringWithFormat:singleFormat, obj]];
+        }];
         joinedFormat = [combinedFormat componentsJoinedByString:@" AND "];
     }
 
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:entityName];
-    request.predicate = [NSPredicate ttt_predicateWithComplexFormat:joinedFormat innerArguments:keys outerArguments:values];
+    request.predicate = [NSPredicate predicateWithFormat:joinedFormat argumentArray:values];
     NSArray *results = [self executeFetchRequest:request error:error];
     if (!results)
     {
@@ -124,11 +121,11 @@
     NSRelationshipDescription *relationshipDescription = entityDescription.relationshipsByName[key];
     if (relationshipDescription.isToMany)
     {
-        request.predicate = [NSPredicate ttt_predicateWithComplexFormat:@"%@ == nil || %@.@count == 0" innerArguments:@[key, key] outerArguments:nil];
+        request.predicate = [NSPredicate predicateWithFormat:[NSString stringWithFormat:@"%@ == nil || %@.@count == 0", key, key]];
     }
     else
     {
-        request.predicate = [NSPredicate ttt_predicateWithComplexFormat:@"%@ == nil" innerArguments:@[key] outerArguments:nil];
+        request.predicate = [NSPredicate predicateWithFormat:[NSString stringWithFormat:@"%@ == nil", key]];
     }
 
     NSArray *results = [self executeFetchRequest:request error:error];
