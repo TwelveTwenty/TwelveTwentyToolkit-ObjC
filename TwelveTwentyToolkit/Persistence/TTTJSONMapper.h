@@ -5,6 +5,7 @@
 typedef void (^TTTJSONProcessingBlock)(id JSON, id entity);
 
 @class NSManagedObject;
+@class NSManagedObjectContext;
 @protocol TTTMogeneratorEntity;
 
 @interface TTTJSONMapper : NSObject

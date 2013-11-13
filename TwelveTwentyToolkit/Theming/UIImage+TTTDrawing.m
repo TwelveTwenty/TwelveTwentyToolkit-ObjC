@@ -1,4 +1,4 @@
-#import <TwelveTwentyToolkit/TwelveTwentyToolkit.h>
+#import "TwelveTwentyToolkit.h"
 #import "UIImage+TTTDrawing.h"
 
 @implementation UIImage (TTTDrawing)

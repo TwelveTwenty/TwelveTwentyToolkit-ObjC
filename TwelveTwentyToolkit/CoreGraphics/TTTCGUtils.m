@@ -18,7 +18,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <TwelveTwentyToolkit/TwelveTwentyToolkit.h>
+#import "TwelveTwentyToolkit.h"
 #import "TTTCGUtils.h"
 
 CGRect CGRectTrim(CGRect rect, CGFloat top, CGFloat left, CGFloat bottom, CGFloat right) {

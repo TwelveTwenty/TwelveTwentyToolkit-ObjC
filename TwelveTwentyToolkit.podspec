@@ -41,14 +41,18 @@ Pod::Spec.new do |s|
   
   s.subspec 'CoreData' do |cd|
     cd.frameworks = 'CoreData'
-    cd.dependency 'TwelveTwentyToolkit/Foundation'
-    cd.source_files = 'TwelveTwentyToolkit/CoreData/*.{h,m}'
 
     cd.subspec 'OSX' do |os|
+      os.dependency 'TwelveTwentyToolkit/Logging'
+      os.osx.dependency 'TwelveTwentyToolkit/Logging'
+      os.source_files = 'TwelveTwentyToolkit/CoreData/*.{h,m}'
       os.osx.source_files = 'TwelveTwentyToolkit/CoreData-OSX/*.{h,m}'
     end
 
     cd.subspec 'iOS' do |os|
+      os.dependency 'TwelveTwentyToolkit/Logging'
+      os.ios.dependency 'TwelveTwentyToolkit/Logging'
+      os.source_files = 'TwelveTwentyToolkit/CoreData/*.{h,m}'
       os.ios.source_files = 'TwelveTwentyToolkit/CoreData-iOS/*.{h,m}'
     end
   end
@@ -109,7 +113,7 @@ Pod::Spec.new do |s|
   end
   
   s.subspec 'CyclicDelegateRetainer' do |th|
-    th.ios.dependency 'TwelveTwentyToolkit/Foundation'
-    th.ios.source_files = 'TwelveTwentyToolkit/CyclicDelegateRetainer/**/*.{h,m}'
+    th.dependency 'TwelveTwentyToolkit/Foundation'
+    th.source_files = 'TwelveTwentyToolkit/CyclicDelegateRetainer/**/*.{h,m}'
   end
 end

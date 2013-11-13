@@ -1,6 +1,6 @@
-#import "TTTTableViewItem.h"
 #import <CoreData/CoreData.h>
-#import <TwelveTwentyToolkit/NSFetchedResultsController+TTTCacheControl.h>
+#import "TTTTableViewItem.h"
+#import "NSFetchedResultsController+TTTCacheControl.h"
 #import "TTTTableViewItemController.h"
 #import "TTTTableViewFetchedSection.h"
 #import "NSFetchedResultsController+TTTEasySections.h"

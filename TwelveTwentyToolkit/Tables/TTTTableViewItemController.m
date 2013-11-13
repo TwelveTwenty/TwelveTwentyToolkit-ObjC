@@ -1,5 +1,5 @@
-#import <TwelveTwentyToolkit/NSFetchedResultsController+TTTEasySections.h>
-#import <TwelveTwentyToolkit/TTTLog.h>
+#import "NSFetchedResultsController+TTTEasySections.h"
+#import "TTTLog.h"
 #import "TTTTableViewItemController.h"
 #import "TTTTableViewSection.h"
 #import "TTTTableViewFetchedItem.h"

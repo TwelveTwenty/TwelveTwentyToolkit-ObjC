@@ -1,6 +1,6 @@
 #import <QuartzCore/QuartzCore.h>
-#import <TwelveTwentyToolkit/NSObject+TTTBlocks.h>
-#import <TwelveTwentyToolkit/UIView+TTTLayout.h>
+#import "NSObject+TTTBlocks.h"
+#import "UIView+TTTLayout.h"
 #import "TTTTheme.h"
 
 static TTTTheme <TTTTheme> *_currentTheme;
