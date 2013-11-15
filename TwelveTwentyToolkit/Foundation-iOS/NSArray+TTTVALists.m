@@ -2,7 +2,7 @@
 
 @implementation NSArray (TTTVALists)
 
-- (va_list)tttToVAList
+- (va_list)ttt_toVAList
 {
     NSRange range = NSMakeRange(0, [self count]);
 

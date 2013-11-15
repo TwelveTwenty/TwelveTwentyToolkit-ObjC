@@ -2,7 +2,7 @@
                 
 @implementation NSObject (TTTUnless)
 
-- (void)tttUnlessAttributePresent:(id)attribute setValue:(id)value
+- (void)ttt_unlessAttributePresent:(id)attribute setValue:(id)value
 {
 	if ([self valueForKey:attribute] == nil)
 	{
@@ -10,7 +10,7 @@
 	}
 }
 
-- (void)tttUnlessAttributePresent:(id)attribute performBlock:(void (^)())block
+- (void)ttt_unlessAttributePresent:(id)attribute performBlock:(void (^)())block
 {
     if ([self valueForKey:attribute] == nil)
     {

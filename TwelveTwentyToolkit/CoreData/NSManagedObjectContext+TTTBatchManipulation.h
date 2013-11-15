@@ -40,7 +40,7 @@ enum TTTDeleteCount {TTTDeleteFailed = -1};
  * Set one value on all entities of a certain entity.
  * returns YES if successful, NO if not, provides the Core Data error.
  */
-- (BOOL)tttSetValue:(id)value forKey:(NSString *)key onEntitiesWithName:(NSString *)entityName error:(NSError **)error;
+- (BOOL)ttt_setValue:(id)value forKey:(NSString *)key onEntitiesWithName:(NSString *)entityName error:(NSError **)error;
 
 /**
  * Delete all entities matching the value for key provided.

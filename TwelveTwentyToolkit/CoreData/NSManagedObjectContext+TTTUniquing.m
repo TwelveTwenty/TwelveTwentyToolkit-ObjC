@@ -19,7 +19,6 @@
 // THE SOFTWARE.
 
 #import "NSManagedObjectContext+TTTUniquing.h"
-#import "NSPredicate+TTTConvenience.h"
 
 @implementation NSManagedObjectContext (TTTUniquing)
 
@@ -68,17 +67,16 @@
     {
         NSString *singleFormat = @"%@ == %%@";
         NSMutableArray *combinedFormat = [NSMutableArray arrayWithCapacity:[values count]];
-        for (int i = 0; i < [values count]; ++i)
-        {
-            [combinedFormat addObject:singleFormat];
-        }
+        [keys enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+            [combinedFormat addObject:[NSString stringWithFormat:singleFormat, obj, nil]];
+        }];
         joinedFormat = [combinedFormat componentsJoinedByString:@" AND "];
     }
 
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:entityName];
     request.fetchLimit = 1;
 
-    request.predicate = [NSPredicate tttPredicateWithComplexFormat:joinedFormat innerArguments:keys outerArguments:values];
+    request.predicate = [NSPredicate predicateWithFormat:joinedFormat argumentArray:values];
     NSError *error = nil;
     NSArray *results = [self executeFetchRequest:request error:&error];
 

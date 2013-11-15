@@ -18,8 +18,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <CoreGraphics/CoreGraphics.h>
-#import <TwelveTwentyToolkit/TwelveTwentyToolkit.h>
+#import "TwelveTwentyToolkit.h"
 #import "TTTCGUtils.h"
 
 CGRect CGRectTrim(CGRect rect, CGFloat top, CGFloat left, CGFloat bottom, CGFloat right) {
@@ -36,6 +35,10 @@ CGRect CGRectTrim(CGRect rect, CGFloat top, CGFloat left, CGFloat bottom, CGFloa
 
 CGRect CGRectExpand(CGRect rect, CGFloat top, CGFloat left, CGFloat bottom, CGFloat right) {
     return CGRectTrim(rect, -top, -left, -bottom, -right);
+}
+
+CGRect TTTRectWithInsets(CGRect rect, UIEdgeInsets insets) {
+    return CGRectTrim(rect, insets.top, insets.left, insets.bottom, insets.right);
 }
 
 CGRect CGRectWithTweak(CGRect rect, TTTCGTweakOption tweakOption, CGFloat tweakValue) {

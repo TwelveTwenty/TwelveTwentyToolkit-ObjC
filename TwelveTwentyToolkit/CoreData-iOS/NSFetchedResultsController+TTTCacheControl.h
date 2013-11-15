@@ -3,6 +3,6 @@
 
 @interface NSFetchedResultsController (TTTCacheControl)
 
-- (BOOL)tttPerformFetch:(NSError **)error deleteCache:(BOOL)deleteCache;
+- (BOOL)ttt_performFetch:(NSError **)error deleteCache:(BOOL)deleteCache;
 
 @end

@@ -3,7 +3,7 @@
 
 @implementation NSArray (TTTVALists)
 
-- (va_list)tttToVAList
+- (va_list)ttt_toVAList
 {
     NSRange range = NSMakeRange(0, [self count]);
 
@@ -18,11 +18,11 @@
 
 @implementation NSPredicate (TTTConvenience)
 
-+ (NSPredicate *)tttPredicateWithComplexFormat:(NSString *)complexFormat innerArguments:(NSArray *)innerArguments outerArguments:(NSArray *)outerArguments
++ (NSPredicate *)ttt_predicateWithComplexFormat:(NSString *)complexFormat innerArguments:(NSArray *)innerArguments outerArguments:(NSArray *)outerArguments
 {
-    NSString *simpleFormat = [[NSString alloc] initWithFormat:complexFormat arguments:[innerArguments tttToVAList]];
+    NSString *simpleFormat = [[NSString alloc] initWithFormat:complexFormat arguments:[innerArguments ttt_toVAList]];
 
-    return [self predicateWithFormat:simpleFormat arguments:[outerArguments tttToVAList]];
+    return [self predicateWithFormat:simpleFormat arguments:[outerArguments ttt_toVAList]];
 }
 
 @end

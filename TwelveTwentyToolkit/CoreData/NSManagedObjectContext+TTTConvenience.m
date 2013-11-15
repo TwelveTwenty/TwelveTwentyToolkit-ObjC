@@ -19,8 +19,6 @@
 // THE SOFTWARE.
 
 #import "NSManagedObjectContext+TTTConvenience.h"
-#import "TTTLog.h"
-
 
 @implementation NSManagedObjectContext (TTTConvenience)
 
@@ -29,11 +27,11 @@
     NSError *error = nil;
 
     if ([self save:&error]) {
-		DLog(@"Context saved.");
+		NSLog(@"Context saved.");
         return nil;
     }
 
-	ELog(@"Error saving context due to %li: \"%@\" with user info: %@", (long)error.code, [error.userInfo objectForKey:NSLocalizedDescriptionKey], error.userInfo);
+	NSLog(@"Error saving context due to %li: \"%@\" with user info: %@", (long)error.code, [error.userInfo objectForKey:NSLocalizedDescriptionKey], error.userInfo);
     return error;
 }
 
@@ -41,17 +39,17 @@
 {
     if (![self hasChanges])
     {
-		DLog(@"No changes on context %@", self);
+		NSLog(@"No changes on context %@", self);
         return;
     }
 
-	DLog(@"Changes on context %@", self);
+	NSLog(@"Changes on context %@", self);
     NSArray *keys = [NSArray arrayWithObjects:@"updatedObjects", @"insertedObjects", @"deletedObjects", @"registeredObjects", nil];
     for (NSString *key in keys) {
         NSSet *objects = [self valueForKey:key];
         if (![objects count]) continue;
 
-		DLog(@"%@:", [key uppercaseString]);
+		NSLog(@"%@:", [key uppercaseString]);
         for (NSManagedObject *object in [self updatedObjects]) {
             NSLog(@"\t%@: %@", [object class], [object changedValues]);
         }

@@ -22,7 +22,6 @@
 #import <CoreData/CoreData.h>
 #import "NSManagedObject+TTTUniquing.h"
 #import "NSManagedObjectContext+TTTUniquing.h"
-#import "NSPredicate+TTTConvenience.h"
 
 @implementation NSManagedObject (TTTUniquing)
 

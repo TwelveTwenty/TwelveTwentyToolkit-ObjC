@@ -23,49 +23,67 @@
 		95934FFD167B2D5F00E4ED39 /* TTTDIConcreteSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 95934FFC167B2D5F00E4ED39 /* TTTDIConcreteSingleton.m */; };
 		95935000167B2D7F00E4ED39 /* TTTDISimpleSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 95934FFF167B2D7F00E4ED39 /* TTTDISimpleSingleton.m */; };
 		95935003167B318200E4ED39 /* TTTDIInjectableObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 95935002167B318100E4ED39 /* TTTDIInjectableObject.m */; };
-		9594A4D2171C937700F75476 /* _TTTCDLinkedRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594A47C171C937700F75476 /* _TTTCDLinkedRecord.m */; };
-		9594A4D3171C937700F75476 /* _TTTCDUnifiedRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594A47E171C937700F75476 /* _TTTCDUnifiedRecord.m */; };
-		9594A4D4171C937700F75476 /* TTTCDLinkedRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594A480171C937700F75476 /* TTTCDLinkedRecord.m */; };
-		9594A4D5171C937700F75476 /* TTTCDUnifiedRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594A482171C937700F75476 /* TTTCDUnifiedRecord.m */; };
-		9594A4D6171C937700F75476 /* TTTUnifiedAddressBook.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594A485171C937700F75476 /* TTTUnifiedAddressBook.m */; };
-		9594A4D7171C937700F75476 /* TTTUnifiedCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594A487171C937700F75476 /* TTTUnifiedCard.m */; };
-		9594A4D8171C937700F75476 /* TTTUnifiedAddressBook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9594A488171C937700F75476 /* TTTUnifiedAddressBook.xcdatamodeld */; };
-		9594A4D9171C937700F75476 /* CALayer+TTTCrossfade.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594A48C171C937700F75476 /* CALayer+TTTCrossfade.m */; };
-		9594A4DA171C937700F75476 /* NSFetchedResultsController+TTTEasySections.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594A48F171C937700F75476 /* NSFetchedResultsController+TTTEasySections.m */; };
-		9594A4DB171C937700F75476 /* NSManagedObjectContext+TTTBatchManipulation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594A491171C937700F75476 /* NSManagedObjectContext+TTTBatchManipulation.m */; };
-		9594A4DC171C937700F75476 /* NSManagedObjectContext+TTTConvenience.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594A493171C937700F75476 /* NSManagedObjectContext+TTTConvenience.m */; };
-		9594A4DD171C937700F75476 /* NSManagedObjectContext+TTTUniquing.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594A495171C937700F75476 /* NSManagedObjectContext+TTTUniquing.m */; };
-		9594A4DE171C937700F75476 /* NSPredicate+TTTConvenience.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594A497171C937700F75476 /* NSPredicate+TTTConvenience.m */; };
-		9594A4DF171C937700F75476 /* TTTAbstractManagedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594A499171C937700F75476 /* TTTAbstractManagedObject.m */; };
-		9594A4E0171C937700F75476 /* TTCGUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594A49C171C937700F75476 /* TTCGUtils.m */; };
-		9594A4E1171C937700F75476 /* TTIntrospectProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594A4A0171C937700F75476 /* TTIntrospectProperty.m */; };
-		9594A4E2171C937700F75476 /* TTTInjectionMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594A4A3171C937700F75476 /* TTTInjectionMapping.m */; };
-		9594A4E3171C937700F75476 /* TTTInjector.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594A4A5171C937700F75476 /* TTTInjector.m */; };
-		9594A4E4171C937700F75476 /* NSArray+TTTMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594A4A8171C937700F75476 /* NSArray+TTTMapping.m */; };
-		9594A4E5171C937700F75476 /* NSArray+TTTVALists.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594A4AA171C937700F75476 /* NSArray+TTTVALists.m */; };
-		9594A4E6171C937700F75476 /* NSMutableDictionary+TTTUnless.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594A4AC171C937700F75476 /* NSMutableDictionary+TTTUnless.m */; };
-		9594A4E7171C937700F75476 /* NSObject+TTTBlocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594A4AE171C937700F75476 /* NSObject+TTTBlocks.m */; };
-		9594A4E8171C937700F75476 /* NSString+TTTEmptiness.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594A4B0171C937700F75476 /* NSString+TTTEmptiness.m */; };
-		9594A4E9171C937700F75476 /* NSString+TTTFormatting.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594A4B2171C937700F75476 /* NSString+TTTFormatting.m */; };
-		9594A4EA171C937700F75476 /* NSString+TTTURLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594A4B4171C937700F75476 /* NSString+TTTURLEncoding.m */; };
-		9594A4EB171C937700F75476 /* UIImage+TTTResizing.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594A4B7171C937700F75476 /* UIImage+TTTResizing.m */; };
-		9594A4EC171C937700F75476 /* UIView+TTTHitTesting.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594A4B9171C937700F75476 /* UIView+TTTHitTesting.m */; };
-		9594A4ED171C937700F75476 /* UIView+TTTLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594A4BB171C937700F75476 /* UIView+TTTLayout.m */; };
-		9594A4EE171C937700F75476 /* TTTLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594A4BE171C937700F75476 /* TTTLog.m */; };
-		9594A4EF171C937700F75476 /* TTTAsyncOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594A4C1171C937700F75476 /* TTTAsyncOperation.m */; };
-		9594A4F0171C937700F75476 /* TTTOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594A4C3171C937700F75476 /* TTTOperation.m */; };
-		9594A4F1171C937700F75476 /* TTTOperationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594A4C5171C937700F75476 /* TTTOperationCenter.m */; };
-		9594A4F2171C937700F75476 /* TTTAbstractPersistenceProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594A4C8171C937700F75476 /* TTTAbstractPersistenceProxy.m */; };
-		9594A4F3171C937700F75476 /* TTTTableViewItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594A4CB171C937700F75476 /* TTTTableViewItem.m */; };
-		9594A4F4171C937700F75476 /* TTTTableViewItemController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594A4CD171C937700F75476 /* TTTTableViewItemController.m */; };
-		9594A4F5171C937700F75476 /* TTTTableViewSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594A4CF171C937700F75476 /* TTTTableViewSection.m */; };
-		9594A4F6171C937700F75476 /* UITableViewCell+TTTCreation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594A4D1171C937700F75476 /* UITableViewCell+TTTCreation.m */; };
 		95DC8FB2167B26B200AF1428 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95DC8FB1167B26B200AF1428 /* Foundation.framework */; };
 		95DC8FB7167B26B200AF1428 /* TwelveTwentyToolkit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 95DC8FB6167B26B200AF1428 /* TwelveTwentyToolkit.h */; };
 		95DC8FC1167B26B200AF1428 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95DC8FC0167B26B200AF1428 /* SenTestingKit.framework */; };
 		95DC8FC4167B26B200AF1428 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95DC8FB1167B26B200AF1428 /* Foundation.framework */; };
 		95DC8FC7167B26B200AF1428 /* libTwelveTwentyToolkit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 95DC8FAE167B26B200AF1428 /* libTwelveTwentyToolkit.a */; };
 		95DC8FCD167B26B200AF1428 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 95DC8FCB167B26B200AF1428 /* InfoPlist.strings */; };
+		E4207030BDD0FB1D26C88693 /* _TTTCDUnifiedRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = E42079871EE4AA38FBF9D07C /* _TTTCDUnifiedRecord.m */; };
+		E420709B8DF71DD308AC0B23 /* TTTCDLinkedRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = E4207EE810C78353B85E6DC0 /* TTTCDLinkedRecord.m */; };
+		E42070AF556096D0F17594F0 /* TTTTableViewDelegateItemController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4207DBE635599AB6B4DB697 /* TTTTableViewDelegateItemController.m */; };
+		E42070F5BE2DC8E0DC7EACBB /* TTTIntrospectProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = E4207134D158D364ABF12420 /* TTTIntrospectProperty.m */; };
+		E420710076BFF07BB9A2AF6A /* UIView+TTTLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = E4207832E44AEEC7844832A2 /* UIView+TTTLayout.m */; };
+		E420715BCC43E9DB90ED7C45 /* NSString+TTTURLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = E4207C4D71344C3AF4BEB8D5 /* NSString+TTTURLEncoding.m */; };
+		E420716AFBEDF0DAA3170E77 /* TTTTableViewDataSourceItemController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4207E371DAA007FA9EA8CED /* TTTTableViewDataSourceItemController.m */; };
+		E42071A91C1C8F99ED394AE1 /* TTTJSONRelationshipMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = E42077EBE75475A789667CA4 /* TTTJSONRelationshipMapping.m */; };
+		E42072317C1C7C0F1AC1E59A /* TTTJSONAttributeMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = E4207CD13A98470EB992DC6C /* TTTJSONAttributeMapping.m */; };
+		E42073980EC153D068CA94BD /* TTTInjector.m in Sources */ = {isa = PBXBuildFile; fileRef = E420747D0D5CC69DDAA23486 /* TTTInjector.m */; };
+		E420740FA6F263A8849E6C92 /* TTTAsyncOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = E4207BD19B645DF5B7A78229 /* TTTAsyncOperation.m */; };
+		E4207442B0CBF546D2B86C0D /* TTTAbstractJSONMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = E420738F37A331BFECB7A72F /* TTTAbstractJSONMapping.m */; };
+		E4207455EBC13A8191C01993 /* TTTTableViewFetchedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E4207EA1091E0E703CCD1978 /* TTTTableViewFetchedItem.m */; };
+		E42074C2BD86B3A2FA2C51C5 /* NSManagedObjectContext+TTTConvenience.m in Sources */ = {isa = PBXBuildFile; fileRef = E420727438AF47588433AC5E /* NSManagedObjectContext+TTTConvenience.m */; };
+		E420755D0B13C96107468DD0 /* TTTOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = E4207230510499BF3BE0054D /* TTTOperation.m */; };
+		E420755F37966891BB98E596 /* UIImage+TTTResizing.m in Sources */ = {isa = PBXBuildFile; fileRef = E42071BD2628EE2307DC60F4 /* UIImage+TTTResizing.m */; };
+		E42075E91404F2B136DAB719 /* NSManagedObjectContext+TTTUniquing.m in Sources */ = {isa = PBXBuildFile; fileRef = E42073F888E3498EF35CF125 /* NSManagedObjectContext+TTTUniquing.m */; };
+		E420763312C3B9C91100781F /* TTTMappingPersistenceProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = E420737538A2C7211F565E6E /* TTTMappingPersistenceProxy.m */; };
+		E420764342B63B54FCEA1EF0 /* NSString+TTTEmptiness.m in Sources */ = {isa = PBXBuildFile; fileRef = E42075BE0859C3AE6C0C7816 /* NSString+TTTEmptiness.m */; };
+		E420768B73B0B0E8DCE749C0 /* NSFetchedResultsController+TTTCacheControl.m in Sources */ = {isa = PBXBuildFile; fileRef = E4207DB56DCB1F0C54C7792D /* NSFetchedResultsController+TTTCacheControl.m */; };
+		E42076B90CE00DAE7A407C52 /* TwelveTwentyToolkit.m in Sources */ = {isa = PBXBuildFile; fileRef = E4207AEA7969456BCD20B4E7 /* TwelveTwentyToolkit.m */; };
+		E42076CF685206428721504B /* NSObject+TTTBlocks.m in Sources */ = {isa = PBXBuildFile; fileRef = E4207C97E2D40726795B2E4E /* NSObject+TTTBlocks.m */; };
+		E420771AC375821C960F9CAB /* TTTUnifiedCard.m in Sources */ = {isa = PBXBuildFile; fileRef = E42076FE120F0BFBD5ADAC50 /* TTTUnifiedCard.m */; };
+		E4207791F0892A757832F1DA /* TTTOperationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = E4207720D19783761BB74D08 /* TTTOperationCenter.m */; };
+		E42077B6786C581AEBBF2243 /* NSError+TTTOperationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = E4207A65B8F5A8233226BCFD /* NSError+TTTOperationCenter.m */; };
+		E42077E88E8592163AA2B611 /* NSFetchedResultsController+TTTEasySections.m in Sources */ = {isa = PBXBuildFile; fileRef = E4207B7883699D464B8DE9D3 /* NSFetchedResultsController+TTTEasySections.m */; };
+		E4207804E3CB06A1AA1622D0 /* TTTAbstractPersistenceProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = E4207BCAEE4E8F45A12DBA8C /* TTTAbstractPersistenceProxy.m */; };
+		E420782602AE850AEEBBAF63 /* TTTUnifiedAddressBook.m in Sources */ = {isa = PBXBuildFile; fileRef = E4207A65C33DAE2B21A95997 /* TTTUnifiedAddressBook.m */; };
+		E42078C707C023CD607E2401 /* NSManagedObjectContext+TTTBatchManipulation.m in Sources */ = {isa = PBXBuildFile; fileRef = E420756AF4B4ECBA1B7732DC /* NSManagedObjectContext+TTTBatchManipulation.m */; };
+		E42078CF64E0437B4ED654DD /* TTTCDUnifiedRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = E4207B5043A017E1DD225FD3 /* TTTCDUnifiedRecord.m */; };
+		E42078F952144354890B12C7 /* UIImage+TTTDrawing.m in Sources */ = {isa = PBXBuildFile; fileRef = E4207B154B8D6BBF1B030479 /* UIImage+TTTDrawing.m */; };
+		E420790B4BC4E62657E6A75E /* NSObject+TTTUnless.m in Sources */ = {isa = PBXBuildFile; fileRef = E4207A3511C12FB8EAA69917 /* NSObject+TTTUnless.m */; };
+		E420796AE6A9EA270652E67D /* TTTTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = E4207DE345A4A6F3EE6ABE01 /* TTTTheme.m */; };
+		E42079A038C2C07B36F49B84 /* TTTTableViewItemController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4207B3CA1D68DB4A39841F0 /* TTTTableViewItemController.m */; };
+		E42079C08FB2CEF20FFA595D /* TTTCGUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = E4207388E1ECF7DD7DE340E9 /* TTTCGUtils.m */; };
+		E42079D602B7E705D0EAC810 /* TTTInjectionMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = E4207EAF7B5965849768D12B /* TTTInjectionMapping.m */; };
+		E4207A227000F075AA604467 /* UIView+TTTHitTesting.m in Sources */ = {isa = PBXBuildFile; fileRef = E42072F0D06E87D573AC15D7 /* UIView+TTTHitTesting.m */; };
+		E4207A4E478DB3198E953A35 /* _TTTCDLinkedRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = E42072C376048140EF519423 /* _TTTCDLinkedRecord.m */; };
+		E4207A5DF951D95A61D8E4CC /* TTTCyclicDelegateRetainer.m in Sources */ = {isa = PBXBuildFile; fileRef = E4207EAF636806CCDCB0AF63 /* TTTCyclicDelegateRetainer.m */; };
+		E4207A8AA2A08DCA5D6E40C1 /* TTTTableViewItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E420781E5C99146D272E2019 /* TTTTableViewItem.m */; };
+		E4207B1A4821E62470FB1B98 /* CALayer+TTTCrossfade.m in Sources */ = {isa = PBXBuildFile; fileRef = E42071F8B028AC28784EDDC4 /* CALayer+TTTCrossfade.m */; };
+		E4207B7D0E0D7A32A4F11920 /* TTTUnifiedAddressBook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E4207976C01CB10887238064 /* TTTUnifiedAddressBook.xcdatamodeld */; };
+		E4207BB3BE93C33BB1BB9001 /* UITableViewCell+TTTCreation.m in Sources */ = {isa = PBXBuildFile; fileRef = E42071FAA86B4AEDBCC62D43 /* UITableViewCell+TTTCreation.m */; };
+		E4207BD89972532341A1B9CA /* TTTJSONMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = E42077CB792CBE4BAC545745 /* TTTJSONMapper.m */; };
+		E4207BF06B455C48394D34BB /* TTTLog.m in Sources */ = {isa = PBXBuildFile; fileRef = E420734EB8062A7397530E9F /* TTTLog.m */; };
+		E4207C3D61F996B77AB82E03 /* NSFastEnumeration+TTTMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = E4207CAEF812C67CF2E1CB76 /* NSFastEnumeration+TTTMapping.m */; };
+		E4207D32588D132786768504 /* NSPredicate+TTTConvenience.m in Sources */ = {isa = PBXBuildFile; fileRef = E4207939DB9D7BAFC7EF023C /* NSPredicate+TTTConvenience.m */; };
+		E4207DB4EA2493316706F355 /* TTTAbstractManagedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = E4207D37E930439F02A9E665 /* TTTAbstractManagedObject.m */; };
+		E4207DBD175F29EDEC7D0E0D /* TTTTableViewFetchedSection.m in Sources */ = {isa = PBXBuildFile; fileRef = E42076B02FADD8E4CDC3E38E /* TTTTableViewFetchedSection.m */; };
+		E4207DFA819FDF28995DAF02 /* TTTLog.m in Sources */ = {isa = PBXBuildFile; fileRef = E4207BB6CDF9D5CBB2A312BD /* TTTLog.m */; };
+		E4207E1000DFE9A7E715BA18 /* NSManagedObject+TTTUniquing.m in Sources */ = {isa = PBXBuildFile; fileRef = E420779725ACFB6719F3B956 /* NSManagedObject+TTTUniquing.m */; };
+		E4207E31F5299F60BCEA6EDC /* TTTDrawnView.m in Sources */ = {isa = PBXBuildFile; fileRef = E420739F4B7D9D007335F355 /* TTTDrawnView.m */; };
+		E4207E9A3BBC111E18ABEB3F /* TTTTimestamped.m in Sources */ = {isa = PBXBuildFile; fileRef = E420773930154C0B008E6EAB /* TTTTimestamped.m */; };
+		E4207F848F73B7200D19169F /* NSArray+TTTVALists.m in Sources */ = {isa = PBXBuildFile; fileRef = E42074D0117727CB17ABF3D7 /* NSArray+TTTVALists.m */; };
+		E4207FFB2521D573CB478EAA /* TTTTableViewSection.m in Sources */ = {isa = PBXBuildFile; fileRef = E4207CFCE53D1FBE7D0906CE /* TTTTableViewSection.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +110,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9543AC261833CD6500F65E3A /* NSPredicate+TTTConvenience.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSPredicate+TTTConvenience.h"; sourceTree = "<group>"; };
+		9543AC271833CD6500F65E3A /* NSPredicate+TTTConvenience.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSPredicate+TTTConvenience.m"; sourceTree = "<group>"; };
 		95934FD7167B283E00E4ED39 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		95934FD9167B284800E4ED39 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		95934FDB167B285200E4ED39 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -115,79 +135,6 @@
 		95934FFF167B2D7F00E4ED39 /* TTTDISimpleSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTDISimpleSingleton.m; sourceTree = "<group>"; };
 		95935001167B318100E4ED39 /* TTTDIInjectableObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTDIInjectableObject.h; sourceTree = "<group>"; };
 		95935002167B318100E4ED39 /* TTTDIInjectableObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTDIInjectableObject.m; sourceTree = "<group>"; };
-		9594A47B171C937700F75476 /* _TTTCDLinkedRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _TTTCDLinkedRecord.h; sourceTree = "<group>"; };
-		9594A47C171C937700F75476 /* _TTTCDLinkedRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _TTTCDLinkedRecord.m; sourceTree = "<group>"; };
-		9594A47D171C937700F75476 /* _TTTCDUnifiedRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _TTTCDUnifiedRecord.h; sourceTree = "<group>"; };
-		9594A47E171C937700F75476 /* _TTTCDUnifiedRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _TTTCDUnifiedRecord.m; sourceTree = "<group>"; };
-		9594A47F171C937700F75476 /* TTTCDLinkedRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTCDLinkedRecord.h; sourceTree = "<group>"; };
-		9594A480171C937700F75476 /* TTTCDLinkedRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTCDLinkedRecord.m; sourceTree = "<group>"; };
-		9594A481171C937700F75476 /* TTTCDUnifiedRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTCDUnifiedRecord.h; sourceTree = "<group>"; };
-		9594A482171C937700F75476 /* TTTCDUnifiedRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTCDUnifiedRecord.m; sourceTree = "<group>"; };
-		9594A484171C937700F75476 /* TTTUnifiedAddressBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTUnifiedAddressBook.h; sourceTree = "<group>"; };
-		9594A485171C937700F75476 /* TTTUnifiedAddressBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTUnifiedAddressBook.m; sourceTree = "<group>"; };
-		9594A486171C937700F75476 /* TTTUnifiedCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTUnifiedCard.h; sourceTree = "<group>"; };
-		9594A487171C937700F75476 /* TTTUnifiedCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTUnifiedCard.m; sourceTree = "<group>"; };
-		9594A489171C937700F75476 /* TTTUnifiedAddressBook.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TTTUnifiedAddressBook.xcdatamodel; sourceTree = "<group>"; };
-		9594A48B171C937700F75476 /* CALayer+TTTCrossfade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+TTTCrossfade.h"; sourceTree = "<group>"; };
-		9594A48C171C937700F75476 /* CALayer+TTTCrossfade.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+TTTCrossfade.m"; sourceTree = "<group>"; };
-		9594A48E171C937700F75476 /* NSFetchedResultsController+TTTEasySections.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFetchedResultsController+TTTEasySections.h"; sourceTree = "<group>"; };
-		9594A48F171C937700F75476 /* NSFetchedResultsController+TTTEasySections.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFetchedResultsController+TTTEasySections.m"; sourceTree = "<group>"; };
-		9594A490171C937700F75476 /* NSManagedObjectContext+TTTBatchManipulation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+TTTBatchManipulation.h"; sourceTree = "<group>"; };
-		9594A491171C937700F75476 /* NSManagedObjectContext+TTTBatchManipulation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+TTTBatchManipulation.m"; sourceTree = "<group>"; };
-		9594A492171C937700F75476 /* NSManagedObjectContext+TTTConvenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+TTTConvenience.h"; sourceTree = "<group>"; };
-		9594A493171C937700F75476 /* NSManagedObjectContext+TTTConvenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+TTTConvenience.m"; sourceTree = "<group>"; };
-		9594A494171C937700F75476 /* NSManagedObjectContext+TTTUniquing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+TTTUniquing.h"; sourceTree = "<group>"; };
-		9594A495171C937700F75476 /* NSManagedObjectContext+TTTUniquing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+TTTUniquing.m"; sourceTree = "<group>"; };
-		9594A496171C937700F75476 /* NSPredicate+TTTConvenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSPredicate+TTTConvenience.h"; sourceTree = "<group>"; };
-		9594A497171C937700F75476 /* NSPredicate+TTTConvenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSPredicate+TTTConvenience.m"; sourceTree = "<group>"; };
-		9594A498171C937700F75476 /* TTTAbstractManagedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTAbstractManagedObject.h; sourceTree = "<group>"; };
-		9594A499171C937700F75476 /* TTTAbstractManagedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTAbstractManagedObject.m; sourceTree = "<group>"; };
-		9594A49B171C937700F75476 /* TTCGUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTCGUtils.h; sourceTree = "<group>"; };
-		9594A49C171C937700F75476 /* TTCGUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTCGUtils.m; sourceTree = "<group>"; };
-		9594A49F171C937700F75476 /* TTIntrospectProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTIntrospectProperty.h; sourceTree = "<group>"; };
-		9594A4A0171C937700F75476 /* TTIntrospectProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTIntrospectProperty.m; sourceTree = "<group>"; };
-		9594A4A2171C937700F75476 /* TTTInjectionMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTInjectionMapping.h; sourceTree = "<group>"; };
-		9594A4A3171C937700F75476 /* TTTInjectionMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTInjectionMapping.m; sourceTree = "<group>"; };
-		9594A4A4171C937700F75476 /* TTTInjector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTInjector.h; sourceTree = "<group>"; };
-		9594A4A5171C937700F75476 /* TTTInjector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTInjector.m; sourceTree = "<group>"; };
-		9594A4A7171C937700F75476 /* NSArray+TTTMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+TTTMapping.h"; sourceTree = "<group>"; };
-		9594A4A8171C937700F75476 /* NSArray+TTTMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+TTTMapping.m"; sourceTree = "<group>"; };
-		9594A4A9171C937700F75476 /* NSArray+TTTVALists.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+TTTVALists.h"; sourceTree = "<group>"; };
-		9594A4AA171C937700F75476 /* NSArray+TTTVALists.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+TTTVALists.m"; sourceTree = "<group>"; };
-		9594A4AB171C937700F75476 /* NSMutableDictionary+TTTUnless.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+TTTUnless.h"; sourceTree = "<group>"; };
-		9594A4AC171C937700F75476 /* NSMutableDictionary+TTTUnless.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+TTTUnless.m"; sourceTree = "<group>"; };
-		9594A4AD171C937700F75476 /* NSObject+TTTBlocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+TTTBlocks.h"; sourceTree = "<group>"; };
-		9594A4AE171C937700F75476 /* NSObject+TTTBlocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+TTTBlocks.m"; sourceTree = "<group>"; };
-		9594A4AF171C937700F75476 /* NSString+TTTEmptiness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+TTTEmptiness.h"; sourceTree = "<group>"; };
-		9594A4B0171C937700F75476 /* NSString+TTTEmptiness.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+TTTEmptiness.m"; sourceTree = "<group>"; };
-		9594A4B1171C937700F75476 /* NSString+TTTFormatting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+TTTFormatting.h"; sourceTree = "<group>"; };
-		9594A4B2171C937700F75476 /* NSString+TTTFormatting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+TTTFormatting.m"; sourceTree = "<group>"; };
-		9594A4B3171C937700F75476 /* NSString+TTTURLEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+TTTURLEncoding.h"; sourceTree = "<group>"; };
-		9594A4B4171C937700F75476 /* NSString+TTTURLEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+TTTURLEncoding.m"; sourceTree = "<group>"; };
-		9594A4B6171C937700F75476 /* UIImage+TTTResizing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+TTTResizing.h"; sourceTree = "<group>"; };
-		9594A4B7171C937700F75476 /* UIImage+TTTResizing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+TTTResizing.m"; sourceTree = "<group>"; };
-		9594A4B8171C937700F75476 /* UIView+TTTHitTesting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+TTTHitTesting.h"; sourceTree = "<group>"; };
-		9594A4B9171C937700F75476 /* UIView+TTTHitTesting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+TTTHitTesting.m"; sourceTree = "<group>"; };
-		9594A4BA171C937700F75476 /* UIView+TTTLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+TTTLayout.h"; sourceTree = "<group>"; };
-		9594A4BB171C937700F75476 /* UIView+TTTLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+TTTLayout.m"; sourceTree = "<group>"; };
-		9594A4BD171C937700F75476 /* TTTLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTLog.h; sourceTree = "<group>"; };
-		9594A4BE171C937700F75476 /* TTTLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTLog.m; sourceTree = "<group>"; };
-		9594A4C0171C937700F75476 /* TTTAsyncOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTAsyncOperation.h; sourceTree = "<group>"; };
-		9594A4C1171C937700F75476 /* TTTAsyncOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTAsyncOperation.m; sourceTree = "<group>"; };
-		9594A4C2171C937700F75476 /* TTTOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTOperation.h; sourceTree = "<group>"; };
-		9594A4C3171C937700F75476 /* TTTOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTOperation.m; sourceTree = "<group>"; };
-		9594A4C4171C937700F75476 /* TTTOperationCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTOperationCenter.h; sourceTree = "<group>"; };
-		9594A4C5171C937700F75476 /* TTTOperationCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTOperationCenter.m; sourceTree = "<group>"; };
-		9594A4C7171C937700F75476 /* TTTAbstractPersistenceProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTAbstractPersistenceProxy.h; sourceTree = "<group>"; };
-		9594A4C8171C937700F75476 /* TTTAbstractPersistenceProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTAbstractPersistenceProxy.m; sourceTree = "<group>"; };
-		9594A4CA171C937700F75476 /* TTTTableViewItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTTableViewItem.h; sourceTree = "<group>"; };
-		9594A4CB171C937700F75476 /* TTTTableViewItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTTableViewItem.m; sourceTree = "<group>"; };
-		9594A4CC171C937700F75476 /* TTTTableViewItemController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTTableViewItemController.h; sourceTree = "<group>"; };
-		9594A4CD171C937700F75476 /* TTTTableViewItemController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTTableViewItemController.m; sourceTree = "<group>"; };
-		9594A4CE171C937700F75476 /* TTTTableViewSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTTableViewSection.h; sourceTree = "<group>"; };
-		9594A4CF171C937700F75476 /* TTTTableViewSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTTableViewSection.m; sourceTree = "<group>"; };
-		9594A4D0171C937700F75476 /* UITableViewCell+TTTCreation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+TTTCreation.h"; sourceTree = "<group>"; };
-		9594A4D1171C937700F75476 /* UITableViewCell+TTTCreation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+TTTCreation.m"; sourceTree = "<group>"; };
 		95DC8FAE167B26B200AF1428 /* libTwelveTwentyToolkit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTwelveTwentyToolkit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		95DC8FB1167B26B200AF1428 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		95DC8FB5167B26B200AF1428 /* TwelveTwentyToolkit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TwelveTwentyToolkit-Prefix.pch"; sourceTree = "<group>"; };
@@ -196,6 +143,115 @@
 		95DC8FC0167B26B200AF1428 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		95DC8FCA167B26B200AF1428 /* TwelveTwentyToolkitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TwelveTwentyToolkitTests-Info.plist"; sourceTree = "<group>"; };
 		95DC8FCC167B26B200AF1428 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E4207079F3266A788FE3A7AE /* TTTAbstractJSONMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTAbstractJSONMapping.h; sourceTree = "<group>"; };
+		E42070F3E115CFDE36138E41 /* NSManagedObjectContext+TTTConvenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+TTTConvenience.h"; sourceTree = "<group>"; };
+		E4207134D158D364ABF12420 /* TTTIntrospectProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTIntrospectProperty.m; sourceTree = "<group>"; };
+		E420715E502FBF7DB0A2CDD4 /* TTTTableViewItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTTableViewItem.h; sourceTree = "<group>"; };
+		E42071B691C6F5BCB74DBF31 /* NSString+TTTEmptiness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+TTTEmptiness.h"; sourceTree = "<group>"; };
+		E42071BD2628EE2307DC60F4 /* UIImage+TTTResizing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+TTTResizing.m"; sourceTree = "<group>"; };
+		E42071E850509B6D779334EE /* TTTUnifiedAddressBook.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TTTUnifiedAddressBook.xcdatamodel; sourceTree = "<group>"; };
+		E42071F8B028AC28784EDDC4 /* CALayer+TTTCrossfade.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+TTTCrossfade.m"; sourceTree = "<group>"; };
+		E42071FAA86B4AEDBCC62D43 /* UITableViewCell+TTTCreation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+TTTCreation.m"; sourceTree = "<group>"; };
+		E42072008C37D0793FFAEC23 /* TTTTableViewDelegateItemController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTTableViewDelegateItemController.h; sourceTree = "<group>"; };
+		E420720CC216354C294F7632 /* TTTUnifiedCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTUnifiedCard.h; sourceTree = "<group>"; };
+		E4207230510499BF3BE0054D /* TTTOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTOperation.m; sourceTree = "<group>"; };
+		E420727438AF47588433AC5E /* NSManagedObjectContext+TTTConvenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+TTTConvenience.m"; sourceTree = "<group>"; };
+		E42072C376048140EF519423 /* _TTTCDLinkedRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _TTTCDLinkedRecord.m; sourceTree = "<group>"; };
+		E42072CED41876E0EF4483ED /* TTTJSONAttributeMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTJSONAttributeMapping.h; sourceTree = "<group>"; };
+		E42072F0D06E87D573AC15D7 /* UIView+TTTHitTesting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+TTTHitTesting.m"; sourceTree = "<group>"; };
+		E42072FD2F4103B32E2F5013 /* NSFastEnumeration+TTTMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFastEnumeration+TTTMapping.h"; sourceTree = "<group>"; };
+		E42073069BD0131E7BEFE70F /* TTTCDUnifiedRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTCDUnifiedRecord.h; sourceTree = "<group>"; };
+		E420730A55B3AB2CB4F20AA1 /* TTTLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTLog.h; sourceTree = "<group>"; };
+		E420730E886D6C2B5A735BC1 /* TTTLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTLog.h; sourceTree = "<group>"; };
+		E420732DEB13496D504F2D7D /* TTTUnifiedAddressBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTUnifiedAddressBook.h; sourceTree = "<group>"; };
+		E420734EB8062A7397530E9F /* TTTLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTLog.m; sourceTree = "<group>"; };
+		E4207363DE22C9315D20143D /* NSFetchedResultsController+TTTCacheControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFetchedResultsController+TTTCacheControl.h"; sourceTree = "<group>"; };
+		E420737538A2C7211F565E6E /* TTTMappingPersistenceProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTMappingPersistenceProxy.m; sourceTree = "<group>"; };
+		E4207388E1ECF7DD7DE340E9 /* TTTCGUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTCGUtils.m; sourceTree = "<group>"; };
+		E420738F37A331BFECB7A72F /* TTTAbstractJSONMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTAbstractJSONMapping.m; sourceTree = "<group>"; };
+		E420739F4B7D9D007335F355 /* TTTDrawnView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTDrawnView.m; sourceTree = "<group>"; };
+		E42073CAEC6B7E91C05E2546 /* TTTInjectionMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTInjectionMapping.h; sourceTree = "<group>"; };
+		E42073F888E3498EF35CF125 /* NSManagedObjectContext+TTTUniquing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+TTTUniquing.m"; sourceTree = "<group>"; };
+		E420747D0D5CC69DDAA23486 /* TTTInjector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTInjector.m; sourceTree = "<group>"; };
+		E420748E881A5FB8625D76C5 /* TTTTableViewDataSourceItemController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTTableViewDataSourceItemController.h; sourceTree = "<group>"; };
+		E42074AF703E4E8C31F4B202 /* TTTMappingPersistenceProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTMappingPersistenceProxy.h; sourceTree = "<group>"; };
+		E42074D0117727CB17ABF3D7 /* NSArray+TTTVALists.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+TTTVALists.m"; sourceTree = "<group>"; };
+		E42074DC04516CF260B0114F /* TTTOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTOperation.h; sourceTree = "<group>"; };
+		E420756AF4B4ECBA1B7732DC /* NSManagedObjectContext+TTTBatchManipulation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+TTTBatchManipulation.m"; sourceTree = "<group>"; };
+		E42075BE0859C3AE6C0C7816 /* NSString+TTTEmptiness.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+TTTEmptiness.m"; sourceTree = "<group>"; };
+		E42075FA669F15DAA8460289 /* TTTCyclicDelegateRetainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTCyclicDelegateRetainer.h; sourceTree = "<group>"; };
+		E4207619CA73906B82C86A3E /* UIImage+TTTDrawing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+TTTDrawing.h"; sourceTree = "<group>"; };
+		E420761B626257D0E7E2DBF2 /* TTTAbstractManagedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTAbstractManagedObject.h; sourceTree = "<group>"; };
+		E42076B02FADD8E4CDC3E38E /* TTTTableViewFetchedSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTTableViewFetchedSection.m; sourceTree = "<group>"; };
+		E42076DF3F144B7189B3B394 /* UITableViewCell+TTTCreation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+TTTCreation.h"; sourceTree = "<group>"; };
+		E42076FE120F0BFBD5ADAC50 /* TTTUnifiedCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTUnifiedCard.m; sourceTree = "<group>"; };
+		E4207720D19783761BB74D08 /* TTTOperationCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTOperationCenter.m; sourceTree = "<group>"; };
+		E420773930154C0B008E6EAB /* TTTTimestamped.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTTimestamped.m; sourceTree = "<group>"; };
+		E420776AF0CD04FE33C9FB93 /* NSArray+TTTVALists.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+TTTVALists.h"; sourceTree = "<group>"; };
+		E420779725ACFB6719F3B956 /* NSManagedObject+TTTUniquing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+TTTUniquing.m"; sourceTree = "<group>"; };
+		E42077CB792CBE4BAC545745 /* TTTJSONMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTJSONMapper.m; sourceTree = "<group>"; };
+		E42077EBE75475A789667CA4 /* TTTJSONRelationshipMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTJSONRelationshipMapping.m; sourceTree = "<group>"; };
+		E420780D10CFEC6BF04FAF82 /* NSManagedObject+TTTUniquing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+TTTUniquing.h"; sourceTree = "<group>"; };
+		E420781E5C99146D272E2019 /* TTTTableViewItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTTableViewItem.m; sourceTree = "<group>"; };
+		E4207823E7612995C967D4E8 /* TTTTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTTheme.h; sourceTree = "<group>"; };
+		E4207832E44AEEC7844832A2 /* UIView+TTTLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+TTTLayout.m"; sourceTree = "<group>"; };
+		E4207858CB65E92FA40A5952 /* NSManagedObjectContext+TTTBatchManipulation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+TTTBatchManipulation.h"; sourceTree = "<group>"; };
+		E42078D72191EAD55927249E /* NSObject+TTTUnless.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+TTTUnless.h"; sourceTree = "<group>"; };
+		E42078D9F70583AD5B9A2F1F /* TTTJSONMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTJSONMapper.h; sourceTree = "<group>"; };
+		E42078EBF7ACA9D899618A3D /* TTTDrawnView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTDrawnView.h; sourceTree = "<group>"; };
+		E4207939DB9D7BAFC7EF023C /* NSPredicate+TTTConvenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSPredicate+TTTConvenience.m"; sourceTree = "<group>"; };
+		E4207958E5C731DA2CD45CB5 /* generate_classes.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = generate_classes.sh; sourceTree = "<group>"; };
+		E420798029385BDF0395512B /* TTTCGUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTCGUtils.h; sourceTree = "<group>"; };
+		E42079871EE4AA38FBF9D07C /* _TTTCDUnifiedRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _TTTCDUnifiedRecord.m; sourceTree = "<group>"; };
+		E420798D84A1C9A986BDCFD8 /* TTTOperationCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTOperationCenter.h; sourceTree = "<group>"; };
+		E42079EAF0105DC16CE5DC89 /* TTTInjector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTInjector.h; sourceTree = "<group>"; };
+		E4207A3511C12FB8EAA69917 /* NSObject+TTTUnless.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+TTTUnless.m"; sourceTree = "<group>"; };
+		E4207A65B8F5A8233226BCFD /* NSError+TTTOperationCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+TTTOperationCenter.m"; sourceTree = "<group>"; };
+		E4207A65C33DAE2B21A95997 /* TTTUnifiedAddressBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTUnifiedAddressBook.m; sourceTree = "<group>"; };
+		E4207AB916A1DA559EBD18F6 /* UIImage+TTTResizing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+TTTResizing.h"; sourceTree = "<group>"; };
+		E4207AEA7969456BCD20B4E7 /* TwelveTwentyToolkit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwelveTwentyToolkit.m; sourceTree = "<group>"; };
+		E4207B0D01798B0469EE4A12 /* CALayer+TTTCrossfade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+TTTCrossfade.h"; sourceTree = "<group>"; };
+		E4207B154B8D6BBF1B030479 /* UIImage+TTTDrawing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+TTTDrawing.m"; sourceTree = "<group>"; };
+		E4207B3C441E93FF434D1BA9 /* TTTAbstractPersistenceProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTAbstractPersistenceProxy.h; sourceTree = "<group>"; };
+		E4207B3CA1D68DB4A39841F0 /* TTTTableViewItemController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTTableViewItemController.m; sourceTree = "<group>"; };
+		E4207B5043A017E1DD225FD3 /* TTTCDUnifiedRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTCDUnifiedRecord.m; sourceTree = "<group>"; };
+		E4207B5ED46EB865A2396520 /* TTTCDLinkedRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTCDLinkedRecord.h; sourceTree = "<group>"; };
+		E4207B66DBD1691967FC47A6 /* _TTTCDLinkedRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _TTTCDLinkedRecord.h; sourceTree = "<group>"; };
+		E4207B7883699D464B8DE9D3 /* NSFetchedResultsController+TTTEasySections.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFetchedResultsController+TTTEasySections.m"; sourceTree = "<group>"; };
+		E4207BB6CDF9D5CBB2A312BD /* TTTLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTLog.m; sourceTree = "<group>"; };
+		E4207BCAEE4E8F45A12DBA8C /* TTTAbstractPersistenceProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTAbstractPersistenceProxy.m; sourceTree = "<group>"; };
+		E4207BD19B645DF5B7A78229 /* TTTAsyncOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTAsyncOperation.m; sourceTree = "<group>"; };
+		E4207BF62695E30DAAFEFE32 /* UIView+TTTHitTesting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+TTTHitTesting.h"; sourceTree = "<group>"; };
+		E4207C128389F57554118E1B /* _TTTCDUnifiedRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _TTTCDUnifiedRecord.h; sourceTree = "<group>"; };
+		E4207C2E51AD6B2CF0C07597 /* TTTTableViewSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTTableViewSection.h; sourceTree = "<group>"; };
+		E4207C4D71344C3AF4BEB8D5 /* NSString+TTTURLEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+TTTURLEncoding.m"; sourceTree = "<group>"; };
+		E4207C4FE8748A88E9B38D42 /* NSFetchedResultsController+TTTEasySections.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFetchedResultsController+TTTEasySections.h"; sourceTree = "<group>"; };
+		E4207C97E2D40726795B2E4E /* NSObject+TTTBlocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+TTTBlocks.m"; sourceTree = "<group>"; };
+		E4207C9D5CFEE5BA92F0FA2D /* TTTJSONRelationshipMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTJSONRelationshipMapping.h; sourceTree = "<group>"; };
+		E4207CAEF812C67CF2E1CB76 /* NSFastEnumeration+TTTMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFastEnumeration+TTTMapping.m"; sourceTree = "<group>"; };
+		E4207CD13A98470EB992DC6C /* TTTJSONAttributeMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTJSONAttributeMapping.m; sourceTree = "<group>"; };
+		E4207CFCE53D1FBE7D0906CE /* TTTTableViewSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTTableViewSection.m; sourceTree = "<group>"; };
+		E4207D156F3D3EADDF8C1793 /* TTTAsyncOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTAsyncOperation.h; sourceTree = "<group>"; };
+		E4207D2AEAA2A12116EFA13C /* TTTIntrospectProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTIntrospectProperty.h; sourceTree = "<group>"; };
+		E4207D2C5758C0EF45EEDD8B /* TTTTableViewItemController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTTableViewItemController.h; sourceTree = "<group>"; };
+		E4207D37E930439F02A9E665 /* TTTAbstractManagedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTAbstractManagedObject.m; sourceTree = "<group>"; };
+		E4207D5C508A153F2FFFDB29 /* TTTTableViewFetchedSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTTableViewFetchedSection.h; sourceTree = "<group>"; };
+		E4207D856AB3D8AE5D985749 /* NSString+TTTURLEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+TTTURLEncoding.h"; sourceTree = "<group>"; };
+		E4207DB56DCB1F0C54C7792D /* NSFetchedResultsController+TTTCacheControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFetchedResultsController+TTTCacheControl.m"; sourceTree = "<group>"; };
+		E4207DBE635599AB6B4DB697 /* TTTTableViewDelegateItemController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTTableViewDelegateItemController.m; sourceTree = "<group>"; };
+		E4207DE2BE59FA286044AC94 /* NSManagedObjectContext+TTTUniquing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+TTTUniquing.h"; sourceTree = "<group>"; };
+		E4207DE345A4A6F3EE6ABE01 /* TTTTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTTheme.m; sourceTree = "<group>"; };
+		E4207E15E75E5894BAC0936E /* TTTTableViewFetchedItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTTableViewFetchedItem.h; sourceTree = "<group>"; };
+		E4207E2C5BE7001B706A12DC /* TTTTimestamped.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTTimestamped.h; sourceTree = "<group>"; };
+		E4207E371DAA007FA9EA8CED /* TTTTableViewDataSourceItemController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTTableViewDataSourceItemController.m; sourceTree = "<group>"; };
+		E4207E692F02B4A37FB91252 /* UIView+TTTLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+TTTLayout.h"; sourceTree = "<group>"; };
+		E4207EA1091E0E703CCD1978 /* TTTTableViewFetchedItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTTableViewFetchedItem.m; sourceTree = "<group>"; };
+		E4207EAEB8BC221B0A9094D6 /* NSObject+TTTBlocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+TTTBlocks.h"; sourceTree = "<group>"; };
+		E4207EAF636806CCDCB0AF63 /* TTTCyclicDelegateRetainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTCyclicDelegateRetainer.m; sourceTree = "<group>"; };
+		E4207EAF7B5965849768D12B /* TTTInjectionMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTInjectionMapping.m; sourceTree = "<group>"; };
+		E4207EE810C78353B85E6DC0 /* TTTCDLinkedRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTCDLinkedRecord.m; sourceTree = "<group>"; };
+		E4207F12280671E692515B1F /* NSError+TTTOperationCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+TTTOperationCenter.h"; sourceTree = "<group>"; };
+		E4207F29E532DB31ACA8490D /* NSPredicate+TTTConvenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSPredicate+TTTConvenience.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,6 +283,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9543AC251833CD6500F65E3A /* CoreData-OSX */ = {
+			isa = PBXGroup;
+			children = (
+				9543AC261833CD6500F65E3A /* NSPredicate+TTTConvenience.h */,
+				9543AC271833CD6500F65E3A /* NSPredicate+TTTConvenience.m */,
+			);
+			path = "CoreData-OSX";
+			sourceTree = "<group>";
+		};
 		95934FE3167B293A00E4ED39 /* CoreGraphics */ = {
 			isa = PBXGroup;
 			children = (
@@ -267,188 +332,6 @@
 			path = HelperClasses;
 			sourceTree = "<group>";
 		};
-		9594A478171C937700F75476 /* AddressBook */ = {
-			isa = PBXGroup;
-			children = (
-				9594A479171C937700F75476 /* Entities */,
-				9594A484171C937700F75476 /* TTTUnifiedAddressBook.h */,
-				9594A485171C937700F75476 /* TTTUnifiedAddressBook.m */,
-				9594A486171C937700F75476 /* TTTUnifiedCard.h */,
-				9594A487171C937700F75476 /* TTTUnifiedCard.m */,
-				9594A488171C937700F75476 /* TTTUnifiedAddressBook.xcdatamodeld */,
-			);
-			path = AddressBook;
-			sourceTree = "<group>";
-		};
-		9594A479171C937700F75476 /* Entities */ = {
-			isa = PBXGroup;
-			children = (
-				9594A47A171C937700F75476 /* Abstract */,
-				9594A47F171C937700F75476 /* TTTCDLinkedRecord.h */,
-				9594A480171C937700F75476 /* TTTCDLinkedRecord.m */,
-				9594A481171C937700F75476 /* TTTCDUnifiedRecord.h */,
-				9594A482171C937700F75476 /* TTTCDUnifiedRecord.m */,
-			);
-			path = Entities;
-			sourceTree = "<group>";
-		};
-		9594A47A171C937700F75476 /* Abstract */ = {
-			isa = PBXGroup;
-			children = (
-				9594A47B171C937700F75476 /* _TTTCDLinkedRecord.h */,
-				9594A47C171C937700F75476 /* _TTTCDLinkedRecord.m */,
-				9594A47D171C937700F75476 /* _TTTCDUnifiedRecord.h */,
-				9594A47E171C937700F75476 /* _TTTCDUnifiedRecord.m */,
-			);
-			path = Abstract;
-			sourceTree = "<group>";
-		};
-		9594A48A171C937700F75476 /* CoreAnimation */ = {
-			isa = PBXGroup;
-			children = (
-				9594A48B171C937700F75476 /* CALayer+TTTCrossfade.h */,
-				9594A48C171C937700F75476 /* CALayer+TTTCrossfade.m */,
-			);
-			path = CoreAnimation;
-			sourceTree = "<group>";
-		};
-		9594A48D171C937700F75476 /* CoreData */ = {
-			isa = PBXGroup;
-			children = (
-				9594A48E171C937700F75476 /* NSFetchedResultsController+TTTEasySections.h */,
-				9594A48F171C937700F75476 /* NSFetchedResultsController+TTTEasySections.m */,
-				9594A490171C937700F75476 /* NSManagedObjectContext+TTTBatchManipulation.h */,
-				9594A491171C937700F75476 /* NSManagedObjectContext+TTTBatchManipulation.m */,
-				9594A492171C937700F75476 /* NSManagedObjectContext+TTTConvenience.h */,
-				9594A493171C937700F75476 /* NSManagedObjectContext+TTTConvenience.m */,
-				9594A494171C937700F75476 /* NSManagedObjectContext+TTTUniquing.h */,
-				9594A495171C937700F75476 /* NSManagedObjectContext+TTTUniquing.m */,
-				9594A496171C937700F75476 /* NSPredicate+TTTConvenience.h */,
-				9594A497171C937700F75476 /* NSPredicate+TTTConvenience.m */,
-				9594A498171C937700F75476 /* TTTAbstractManagedObject.h */,
-				9594A499171C937700F75476 /* TTTAbstractManagedObject.m */,
-			);
-			path = CoreData;
-			sourceTree = "<group>";
-		};
-		9594A49A171C937700F75476 /* CoreGraphics */ = {
-			isa = PBXGroup;
-			children = (
-				9594A49B171C937700F75476 /* TTCGUtils.h */,
-				9594A49C171C937700F75476 /* TTCGUtils.m */,
-			);
-			path = CoreGraphics;
-			sourceTree = "<group>";
-		};
-		9594A49D171C937700F75476 /* DependencyInjection */ = {
-			isa = PBXGroup;
-			children = (
-				9594A49E171C937700F75476 /* Introspection */,
-				9594A4A1171C937700F75476 /* Mappings */,
-				9594A4A4171C937700F75476 /* TTTInjector.h */,
-				9594A4A5171C937700F75476 /* TTTInjector.m */,
-			);
-			path = DependencyInjection;
-			sourceTree = "<group>";
-		};
-		9594A49E171C937700F75476 /* Introspection */ = {
-			isa = PBXGroup;
-			children = (
-				9594A49F171C937700F75476 /* TTIntrospectProperty.h */,
-				9594A4A0171C937700F75476 /* TTIntrospectProperty.m */,
-			);
-			path = Introspection;
-			sourceTree = "<group>";
-		};
-		9594A4A1171C937700F75476 /* Mappings */ = {
-			isa = PBXGroup;
-			children = (
-				9594A4A2171C937700F75476 /* TTTInjectionMapping.h */,
-				9594A4A3171C937700F75476 /* TTTInjectionMapping.m */,
-			);
-			path = Mappings;
-			sourceTree = "<group>";
-		};
-		9594A4A6171C937700F75476 /* Foundation */ = {
-			isa = PBXGroup;
-			children = (
-				9594A4A7171C937700F75476 /* NSArray+TTTMapping.h */,
-				9594A4A8171C937700F75476 /* NSArray+TTTMapping.m */,
-				9594A4A9171C937700F75476 /* NSArray+TTTVALists.h */,
-				9594A4AA171C937700F75476 /* NSArray+TTTVALists.m */,
-				9594A4AB171C937700F75476 /* NSMutableDictionary+TTTUnless.h */,
-				9594A4AC171C937700F75476 /* NSMutableDictionary+TTTUnless.m */,
-				9594A4AD171C937700F75476 /* NSObject+TTTBlocks.h */,
-				9594A4AE171C937700F75476 /* NSObject+TTTBlocks.m */,
-				9594A4AF171C937700F75476 /* NSString+TTTEmptiness.h */,
-				9594A4B0171C937700F75476 /* NSString+TTTEmptiness.m */,
-				9594A4B1171C937700F75476 /* NSString+TTTFormatting.h */,
-				9594A4B2171C937700F75476 /* NSString+TTTFormatting.m */,
-				9594A4B3171C937700F75476 /* NSString+TTTURLEncoding.h */,
-				9594A4B4171C937700F75476 /* NSString+TTTURLEncoding.m */,
-			);
-			path = Foundation;
-			sourceTree = "<group>";
-		};
-		9594A4B5171C937700F75476 /* Layout */ = {
-			isa = PBXGroup;
-			children = (
-				9594A4B6171C937700F75476 /* UIImage+TTTResizing.h */,
-				9594A4B7171C937700F75476 /* UIImage+TTTResizing.m */,
-				9594A4B8171C937700F75476 /* UIView+TTTHitTesting.h */,
-				9594A4B9171C937700F75476 /* UIView+TTTHitTesting.m */,
-				9594A4BA171C937700F75476 /* UIView+TTTLayout.h */,
-				9594A4BB171C937700F75476 /* UIView+TTTLayout.m */,
-			);
-			path = Layout;
-			sourceTree = "<group>";
-		};
-		9594A4BC171C937700F75476 /* Logging */ = {
-			isa = PBXGroup;
-			children = (
-				9594A4BD171C937700F75476 /* TTTLog.h */,
-				9594A4BE171C937700F75476 /* TTTLog.m */,
-			);
-			path = Logging;
-			sourceTree = "<group>";
-		};
-		9594A4BF171C937700F75476 /* OperationCenter */ = {
-			isa = PBXGroup;
-			children = (
-				9594A4C0171C937700F75476 /* TTTAsyncOperation.h */,
-				9594A4C1171C937700F75476 /* TTTAsyncOperation.m */,
-				9594A4C2171C937700F75476 /* TTTOperation.h */,
-				9594A4C3171C937700F75476 /* TTTOperation.m */,
-				9594A4C4171C937700F75476 /* TTTOperationCenter.h */,
-				9594A4C5171C937700F75476 /* TTTOperationCenter.m */,
-			);
-			path = OperationCenter;
-			sourceTree = "<group>";
-		};
-		9594A4C6171C937700F75476 /* Persistence */ = {
-			isa = PBXGroup;
-			children = (
-				9594A4C7171C937700F75476 /* TTTAbstractPersistenceProxy.h */,
-				9594A4C8171C937700F75476 /* TTTAbstractPersistenceProxy.m */,
-			);
-			path = Persistence;
-			sourceTree = "<group>";
-		};
-		9594A4C9171C937700F75476 /* Tables */ = {
-			isa = PBXGroup;
-			children = (
-				9594A4CA171C937700F75476 /* TTTTableViewItem.h */,
-				9594A4CB171C937700F75476 /* TTTTableViewItem.m */,
-				9594A4CC171C937700F75476 /* TTTTableViewItemController.h */,
-				9594A4CD171C937700F75476 /* TTTTableViewItemController.m */,
-				9594A4CE171C937700F75476 /* TTTTableViewSection.h */,
-				9594A4CF171C937700F75476 /* TTTTableViewSection.m */,
-				9594A4D0171C937700F75476 /* UITableViewCell+TTTCreation.h */,
-				9594A4D1171C937700F75476 /* UITableViewCell+TTTCreation.m */,
-			);
-			path = Tables;
-			sourceTree = "<group>";
-		};
 		95DC8FA3167B26B200AF1428 = {
 			isa = PBXGroup;
 			children = (
@@ -485,19 +368,26 @@
 		95DC8FB3167B26B200AF1428 /* TwelveTwentyToolkit */ = {
 			isa = PBXGroup;
 			children = (
-				9594A478171C937700F75476 /* AddressBook */,
-				9594A48A171C937700F75476 /* CoreAnimation */,
-				9594A48D171C937700F75476 /* CoreData */,
-				9594A49A171C937700F75476 /* CoreGraphics */,
-				9594A49D171C937700F75476 /* DependencyInjection */,
-				9594A4A6171C937700F75476 /* Foundation */,
-				9594A4B5171C937700F75476 /* Layout */,
-				9594A4BC171C937700F75476 /* Logging */,
-				9594A4BF171C937700F75476 /* OperationCenter */,
-				9594A4C6171C937700F75476 /* Persistence */,
-				9594A4C9171C937700F75476 /* Tables */,
 				95DC8FB4167B26B200AF1428 /* Supporting Files */,
 				95DC8FB6167B26B200AF1428 /* TwelveTwentyToolkit.h */,
+				E4207AEA7969456BCD20B4E7 /* TwelveTwentyToolkit.m */,
+				E4207C12D4DD17E9604B9D6C /* Foundation-iOS */,
+				E4207E376976C53E2E3BD008 /* Tables */,
+				E42070DA28D88D030B9641C6 /* CoreAnimation */,
+				E4207B8BC7F286ABE5CA6029 /* Layout */,
+				E4207A8CF4EC46CADF9A0413 /* Theming */,
+				E42070227BC5D2457A3029E8 /* CoreData */,
+				E420780E77258E51886B6558 /* CoreData-iOS */,
+				9543AC251833CD6500F65E3A /* CoreData-OSX */,
+				E42072E53C133FB46792D7BC /* Logging */,
+				E4207B6DE650F920880252D8 /* Logging-iOS */,
+				E420789AE491E8A51689F3EB /* DependencyInjection */,
+				E420722964BE70DD1ABD00D7 /* CoreGraphics */,
+				E4207F9260D0365ACF819ABA /* CyclicDelegateRetainer */,
+				E4207A2A221233F2F91085A6 /* Foundation */,
+				E4207639D98C4C468D943972 /* AddressBook */,
+				E4207562BA2A790C62D9FA8B /* Persistence */,
+				E4207F3D066574CC6DF78BDA /* OperationCenter */,
 			);
 			path = TwelveTwentyToolkit;
 			sourceTree = "<group>";
@@ -527,6 +417,258 @@
 				95DC8FCB167B26B200AF1428 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E42070227BC5D2457A3029E8 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				E4207E2C5BE7001B706A12DC /* TTTTimestamped.h */,
+				E420773930154C0B008E6EAB /* TTTTimestamped.m */,
+				E420780D10CFEC6BF04FAF82 /* NSManagedObject+TTTUniquing.h */,
+				E420779725ACFB6719F3B956 /* NSManagedObject+TTTUniquing.m */,
+				E4207DE2BE59FA286044AC94 /* NSManagedObjectContext+TTTUniquing.h */,
+				E42073F888E3498EF35CF125 /* NSManagedObjectContext+TTTUniquing.m */,
+				E42070F3E115CFDE36138E41 /* NSManagedObjectContext+TTTConvenience.h */,
+				E420727438AF47588433AC5E /* NSManagedObjectContext+TTTConvenience.m */,
+				E4207858CB65E92FA40A5952 /* NSManagedObjectContext+TTTBatchManipulation.h */,
+				E420756AF4B4ECBA1B7732DC /* NSManagedObjectContext+TTTBatchManipulation.m */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		E42070DA28D88D030B9641C6 /* CoreAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				E4207B0D01798B0469EE4A12 /* CALayer+TTTCrossfade.h */,
+				E42071F8B028AC28784EDDC4 /* CALayer+TTTCrossfade.m */,
+			);
+			path = CoreAnimation;
+			sourceTree = "<group>";
+		};
+		E420722964BE70DD1ABD00D7 /* CoreGraphics */ = {
+			isa = PBXGroup;
+			children = (
+				E420798029385BDF0395512B /* TTTCGUtils.h */,
+				E4207388E1ECF7DD7DE340E9 /* TTTCGUtils.m */,
+			);
+			path = CoreGraphics;
+			sourceTree = "<group>";
+		};
+		E42072E53C133FB46792D7BC /* Logging */ = {
+			isa = PBXGroup;
+			children = (
+				E420730E886D6C2B5A735BC1 /* TTTLog.h */,
+				E4207BB6CDF9D5CBB2A312BD /* TTTLog.m */,
+			);
+			path = Logging;
+			sourceTree = "<group>";
+		};
+		E4207394248C93FBBB567995 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				E42075B1F226B5A99479F2C0 /* Abstract */,
+				E4207B5ED46EB865A2396520 /* TTTCDLinkedRecord.h */,
+				E4207EE810C78353B85E6DC0 /* TTTCDLinkedRecord.m */,
+				E42073069BD0131E7BEFE70F /* TTTCDUnifiedRecord.h */,
+				E4207B5043A017E1DD225FD3 /* TTTCDUnifiedRecord.m */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		E42074B00405644D67DAC3CB /* Introspection */ = {
+			isa = PBXGroup;
+			children = (
+				E4207D2AEAA2A12116EFA13C /* TTTIntrospectProperty.h */,
+				E4207134D158D364ABF12420 /* TTTIntrospectProperty.m */,
+			);
+			path = Introspection;
+			sourceTree = "<group>";
+		};
+		E4207562BA2A790C62D9FA8B /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				E42078D9F70583AD5B9A2F1F /* TTTJSONMapper.h */,
+				E42077CB792CBE4BAC545745 /* TTTJSONMapper.m */,
+				E4207079F3266A788FE3A7AE /* TTTAbstractJSONMapping.h */,
+				E420738F37A331BFECB7A72F /* TTTAbstractJSONMapping.m */,
+				E42072CED41876E0EF4483ED /* TTTJSONAttributeMapping.h */,
+				E4207CD13A98470EB992DC6C /* TTTJSONAttributeMapping.m */,
+				E4207C9D5CFEE5BA92F0FA2D /* TTTJSONRelationshipMapping.h */,
+				E42077EBE75475A789667CA4 /* TTTJSONRelationshipMapping.m */,
+				E42074AF703E4E8C31F4B202 /* TTTMappingPersistenceProxy.h */,
+				E420737538A2C7211F565E6E /* TTTMappingPersistenceProxy.m */,
+				E4207B3C441E93FF434D1BA9 /* TTTAbstractPersistenceProxy.h */,
+				E4207BCAEE4E8F45A12DBA8C /* TTTAbstractPersistenceProxy.m */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		E42075B1F226B5A99479F2C0 /* Abstract */ = {
+			isa = PBXGroup;
+			children = (
+				E4207B66DBD1691967FC47A6 /* _TTTCDLinkedRecord.h */,
+				E42072C376048140EF519423 /* _TTTCDLinkedRecord.m */,
+				E4207C128389F57554118E1B /* _TTTCDUnifiedRecord.h */,
+				E42079871EE4AA38FBF9D07C /* _TTTCDUnifiedRecord.m */,
+			);
+			path = Abstract;
+			sourceTree = "<group>";
+		};
+		E4207639D98C4C468D943972 /* AddressBook */ = {
+			isa = PBXGroup;
+			children = (
+				E4207394248C93FBBB567995 /* Entities */,
+				E420720CC216354C294F7632 /* TTTUnifiedCard.h */,
+				E42076FE120F0BFBD5ADAC50 /* TTTUnifiedCard.m */,
+				E4207958E5C731DA2CD45CB5 /* generate_classes.sh */,
+				E420732DEB13496D504F2D7D /* TTTUnifiedAddressBook.h */,
+				E4207A65C33DAE2B21A95997 /* TTTUnifiedAddressBook.m */,
+				E4207976C01CB10887238064 /* TTTUnifiedAddressBook.xcdatamodeld */,
+			);
+			path = AddressBook;
+			sourceTree = "<group>";
+		};
+		E420780E77258E51886B6558 /* CoreData-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				E420761B626257D0E7E2DBF2 /* TTTAbstractManagedObject.h */,
+				E4207D37E930439F02A9E665 /* TTTAbstractManagedObject.m */,
+				E4207F29E532DB31ACA8490D /* NSPredicate+TTTConvenience.h */,
+				E4207939DB9D7BAFC7EF023C /* NSPredicate+TTTConvenience.m */,
+				E4207363DE22C9315D20143D /* NSFetchedResultsController+TTTCacheControl.h */,
+				E4207DB56DCB1F0C54C7792D /* NSFetchedResultsController+TTTCacheControl.m */,
+				E4207C4FE8748A88E9B38D42 /* NSFetchedResultsController+TTTEasySections.h */,
+				E4207B7883699D464B8DE9D3 /* NSFetchedResultsController+TTTEasySections.m */,
+			);
+			path = "CoreData-iOS";
+			sourceTree = "<group>";
+		};
+		E420789AE491E8A51689F3EB /* DependencyInjection */ = {
+			isa = PBXGroup;
+			children = (
+				E4207D97E3338D1B149BE3ED /* Mappings */,
+				E42074B00405644D67DAC3CB /* Introspection */,
+				E42079EAF0105DC16CE5DC89 /* TTTInjector.h */,
+				E420747D0D5CC69DDAA23486 /* TTTInjector.m */,
+			);
+			path = DependencyInjection;
+			sourceTree = "<group>";
+		};
+		E4207A2A221233F2F91085A6 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				E4207EAEB8BC221B0A9094D6 /* NSObject+TTTBlocks.h */,
+				E4207C97E2D40726795B2E4E /* NSObject+TTTBlocks.m */,
+				E42078D72191EAD55927249E /* NSObject+TTTUnless.h */,
+				E4207A3511C12FB8EAA69917 /* NSObject+TTTUnless.m */,
+				E42071B691C6F5BCB74DBF31 /* NSString+TTTEmptiness.h */,
+				E42075BE0859C3AE6C0C7816 /* NSString+TTTEmptiness.m */,
+				E4207D856AB3D8AE5D985749 /* NSString+TTTURLEncoding.h */,
+				E4207C4D71344C3AF4BEB8D5 /* NSString+TTTURLEncoding.m */,
+				E42072FD2F4103B32E2F5013 /* NSFastEnumeration+TTTMapping.h */,
+				E4207CAEF812C67CF2E1CB76 /* NSFastEnumeration+TTTMapping.m */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		E4207A8CF4EC46CADF9A0413 /* Theming */ = {
+			isa = PBXGroup;
+			children = (
+				E4207823E7612995C967D4E8 /* TTTTheme.h */,
+				E4207DE345A4A6F3EE6ABE01 /* TTTTheme.m */,
+				E42078EBF7ACA9D899618A3D /* TTTDrawnView.h */,
+				E420739F4B7D9D007335F355 /* TTTDrawnView.m */,
+				E4207619CA73906B82C86A3E /* UIImage+TTTDrawing.h */,
+				E4207B154B8D6BBF1B030479 /* UIImage+TTTDrawing.m */,
+			);
+			path = Theming;
+			sourceTree = "<group>";
+		};
+		E4207B6DE650F920880252D8 /* Logging-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				E420730A55B3AB2CB4F20AA1 /* TTTLog.h */,
+				E420734EB8062A7397530E9F /* TTTLog.m */,
+			);
+			path = "Logging-iOS";
+			sourceTree = "<group>";
+		};
+		E4207B8BC7F286ABE5CA6029 /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				E4207E692F02B4A37FB91252 /* UIView+TTTLayout.h */,
+				E4207832E44AEEC7844832A2 /* UIView+TTTLayout.m */,
+				E4207AB916A1DA559EBD18F6 /* UIImage+TTTResizing.h */,
+				E42071BD2628EE2307DC60F4 /* UIImage+TTTResizing.m */,
+				E4207BF62695E30DAAFEFE32 /* UIView+TTTHitTesting.h */,
+				E42072F0D06E87D573AC15D7 /* UIView+TTTHitTesting.m */,
+			);
+			path = Layout;
+			sourceTree = "<group>";
+		};
+		E4207C12D4DD17E9604B9D6C /* Foundation-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				E420776AF0CD04FE33C9FB93 /* NSArray+TTTVALists.h */,
+				E42074D0117727CB17ABF3D7 /* NSArray+TTTVALists.m */,
+			);
+			path = "Foundation-iOS";
+			sourceTree = "<group>";
+		};
+		E4207D97E3338D1B149BE3ED /* Mappings */ = {
+			isa = PBXGroup;
+			children = (
+				E42073CAEC6B7E91C05E2546 /* TTTInjectionMapping.h */,
+				E4207EAF7B5965849768D12B /* TTTInjectionMapping.m */,
+			);
+			path = Mappings;
+			sourceTree = "<group>";
+		};
+		E4207E376976C53E2E3BD008 /* Tables */ = {
+			isa = PBXGroup;
+			children = (
+				E420715E502FBF7DB0A2CDD4 /* TTTTableViewItem.h */,
+				E420781E5C99146D272E2019 /* TTTTableViewItem.m */,
+				E4207C2E51AD6B2CF0C07597 /* TTTTableViewSection.h */,
+				E4207CFCE53D1FBE7D0906CE /* TTTTableViewSection.m */,
+				E4207E15E75E5894BAC0936E /* TTTTableViewFetchedItem.h */,
+				E4207EA1091E0E703CCD1978 /* TTTTableViewFetchedItem.m */,
+				E4207D5C508A153F2FFFDB29 /* TTTTableViewFetchedSection.h */,
+				E42076B02FADD8E4CDC3E38E /* TTTTableViewFetchedSection.m */,
+				E4207D2C5758C0EF45EEDD8B /* TTTTableViewItemController.h */,
+				E4207B3CA1D68DB4A39841F0 /* TTTTableViewItemController.m */,
+				E42076DF3F144B7189B3B394 /* UITableViewCell+TTTCreation.h */,
+				E42071FAA86B4AEDBCC62D43 /* UITableViewCell+TTTCreation.m */,
+				E42072008C37D0793FFAEC23 /* TTTTableViewDelegateItemController.h */,
+				E4207DBE635599AB6B4DB697 /* TTTTableViewDelegateItemController.m */,
+				E420748E881A5FB8625D76C5 /* TTTTableViewDataSourceItemController.h */,
+				E4207E371DAA007FA9EA8CED /* TTTTableViewDataSourceItemController.m */,
+			);
+			path = Tables;
+			sourceTree = "<group>";
+		};
+		E4207F3D066574CC6DF78BDA /* OperationCenter */ = {
+			isa = PBXGroup;
+			children = (
+				E42074DC04516CF260B0114F /* TTTOperation.h */,
+				E4207230510499BF3BE0054D /* TTTOperation.m */,
+				E4207D156F3D3EADDF8C1793 /* TTTAsyncOperation.h */,
+				E4207BD19B645DF5B7A78229 /* TTTAsyncOperation.m */,
+				E420798D84A1C9A986BDCFD8 /* TTTOperationCenter.h */,
+				E4207720D19783761BB74D08 /* TTTOperationCenter.m */,
+				E4207F12280671E692515B1F /* NSError+TTTOperationCenter.h */,
+				E4207A65B8F5A8233226BCFD /* NSError+TTTOperationCenter.m */,
+			);
+			path = OperationCenter;
+			sourceTree = "<group>";
+		};
+		E4207F9260D0365ACF819ABA /* CyclicDelegateRetainer */ = {
+			isa = PBXGroup;
+			children = (
+				E42075FA669F15DAA8460289 /* TTTCyclicDelegateRetainer.h */,
+				E4207EAF636806CCDCB0AF63 /* TTTCyclicDelegateRetainer.m */,
+			);
+			path = CyclicDelegateRetainer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -627,43 +769,61 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9594A4D2171C937700F75476 /* _TTTCDLinkedRecord.m in Sources */,
-				9594A4D3171C937700F75476 /* _TTTCDUnifiedRecord.m in Sources */,
-				9594A4D4171C937700F75476 /* TTTCDLinkedRecord.m in Sources */,
-				9594A4D5171C937700F75476 /* TTTCDUnifiedRecord.m in Sources */,
-				9594A4D6171C937700F75476 /* TTTUnifiedAddressBook.m in Sources */,
-				9594A4D7171C937700F75476 /* TTTUnifiedCard.m in Sources */,
-				9594A4D8171C937700F75476 /* TTTUnifiedAddressBook.xcdatamodeld in Sources */,
-				9594A4D9171C937700F75476 /* CALayer+TTTCrossfade.m in Sources */,
-				9594A4DA171C937700F75476 /* NSFetchedResultsController+TTTEasySections.m in Sources */,
-				9594A4DB171C937700F75476 /* NSManagedObjectContext+TTTBatchManipulation.m in Sources */,
-				9594A4DC171C937700F75476 /* NSManagedObjectContext+TTTConvenience.m in Sources */,
-				9594A4DD171C937700F75476 /* NSManagedObjectContext+TTTUniquing.m in Sources */,
-				9594A4DE171C937700F75476 /* NSPredicate+TTTConvenience.m in Sources */,
-				9594A4DF171C937700F75476 /* TTTAbstractManagedObject.m in Sources */,
-				9594A4E0171C937700F75476 /* TTCGUtils.m in Sources */,
-				9594A4E1171C937700F75476 /* TTIntrospectProperty.m in Sources */,
-				9594A4E2171C937700F75476 /* TTTInjectionMapping.m in Sources */,
-				9594A4E3171C937700F75476 /* TTTInjector.m in Sources */,
-				9594A4E4171C937700F75476 /* NSArray+TTTMapping.m in Sources */,
-				9594A4E5171C937700F75476 /* NSArray+TTTVALists.m in Sources */,
-				9594A4E6171C937700F75476 /* NSMutableDictionary+TTTUnless.m in Sources */,
-				9594A4E7171C937700F75476 /* NSObject+TTTBlocks.m in Sources */,
-				9594A4E8171C937700F75476 /* NSString+TTTEmptiness.m in Sources */,
-				9594A4E9171C937700F75476 /* NSString+TTTFormatting.m in Sources */,
-				9594A4EA171C937700F75476 /* NSString+TTTURLEncoding.m in Sources */,
-				9594A4EB171C937700F75476 /* UIImage+TTTResizing.m in Sources */,
-				9594A4EC171C937700F75476 /* UIView+TTTHitTesting.m in Sources */,
-				9594A4ED171C937700F75476 /* UIView+TTTLayout.m in Sources */,
-				9594A4EE171C937700F75476 /* TTTLog.m in Sources */,
-				9594A4EF171C937700F75476 /* TTTAsyncOperation.m in Sources */,
-				9594A4F0171C937700F75476 /* TTTOperation.m in Sources */,
-				9594A4F1171C937700F75476 /* TTTOperationCenter.m in Sources */,
-				9594A4F2171C937700F75476 /* TTTAbstractPersistenceProxy.m in Sources */,
-				9594A4F3171C937700F75476 /* TTTTableViewItem.m in Sources */,
-				9594A4F4171C937700F75476 /* TTTTableViewItemController.m in Sources */,
-				9594A4F5171C937700F75476 /* TTTTableViewSection.m in Sources */,
-				9594A4F6171C937700F75476 /* UITableViewCell+TTTCreation.m in Sources */,
+				E42076B90CE00DAE7A407C52 /* TwelveTwentyToolkit.m in Sources */,
+				E4207F848F73B7200D19169F /* NSArray+TTTVALists.m in Sources */,
+				E4207A8AA2A08DCA5D6E40C1 /* TTTTableViewItem.m in Sources */,
+				E4207FFB2521D573CB478EAA /* TTTTableViewSection.m in Sources */,
+				E4207455EBC13A8191C01993 /* TTTTableViewFetchedItem.m in Sources */,
+				E4207DBD175F29EDEC7D0E0D /* TTTTableViewFetchedSection.m in Sources */,
+				E42079A038C2C07B36F49B84 /* TTTTableViewItemController.m in Sources */,
+				E4207BB3BE93C33BB1BB9001 /* UITableViewCell+TTTCreation.m in Sources */,
+				E42070AF556096D0F17594F0 /* TTTTableViewDelegateItemController.m in Sources */,
+				E420716AFBEDF0DAA3170E77 /* TTTTableViewDataSourceItemController.m in Sources */,
+				E4207B1A4821E62470FB1B98 /* CALayer+TTTCrossfade.m in Sources */,
+				E420710076BFF07BB9A2AF6A /* UIView+TTTLayout.m in Sources */,
+				E420755F37966891BB98E596 /* UIImage+TTTResizing.m in Sources */,
+				E4207A227000F075AA604467 /* UIView+TTTHitTesting.m in Sources */,
+				E420796AE6A9EA270652E67D /* TTTTheme.m in Sources */,
+				E4207E31F5299F60BCEA6EDC /* TTTDrawnView.m in Sources */,
+				E42078F952144354890B12C7 /* UIImage+TTTDrawing.m in Sources */,
+				E4207DB4EA2493316706F355 /* TTTAbstractManagedObject.m in Sources */,
+				E4207D32588D132786768504 /* NSPredicate+TTTConvenience.m in Sources */,
+				E420768B73B0B0E8DCE749C0 /* NSFetchedResultsController+TTTCacheControl.m in Sources */,
+				E42077E88E8592163AA2B611 /* NSFetchedResultsController+TTTEasySections.m in Sources */,
+				E4207DFA819FDF28995DAF02 /* TTTLog.m in Sources */,
+				E42079D602B7E705D0EAC810 /* TTTInjectionMapping.m in Sources */,
+				E42070F5BE2DC8E0DC7EACBB /* TTTIntrospectProperty.m in Sources */,
+				E42073980EC153D068CA94BD /* TTTInjector.m in Sources */,
+				E42079C08FB2CEF20FFA595D /* TTTCGUtils.m in Sources */,
+				E4207A5DF951D95A61D8E4CC /* TTTCyclicDelegateRetainer.m in Sources */,
+				E42076CF685206428721504B /* NSObject+TTTBlocks.m in Sources */,
+				E420790B4BC4E62657E6A75E /* NSObject+TTTUnless.m in Sources */,
+				E420764342B63B54FCEA1EF0 /* NSString+TTTEmptiness.m in Sources */,
+				E420715BCC43E9DB90ED7C45 /* NSString+TTTURLEncoding.m in Sources */,
+				E4207C3D61F996B77AB82E03 /* NSFastEnumeration+TTTMapping.m in Sources */,
+				E4207A4E478DB3198E953A35 /* _TTTCDLinkedRecord.m in Sources */,
+				E4207030BDD0FB1D26C88693 /* _TTTCDUnifiedRecord.m in Sources */,
+				E420709B8DF71DD308AC0B23 /* TTTCDLinkedRecord.m in Sources */,
+				E42078CF64E0437B4ED654DD /* TTTCDUnifiedRecord.m in Sources */,
+				E420771AC375821C960F9CAB /* TTTUnifiedCard.m in Sources */,
+				E420782602AE850AEEBBAF63 /* TTTUnifiedAddressBook.m in Sources */,
+				E4207B7D0E0D7A32A4F11920 /* TTTUnifiedAddressBook.xcdatamodeld in Sources */,
+				E4207BD89972532341A1B9CA /* TTTJSONMapper.m in Sources */,
+				E4207442B0CBF546D2B86C0D /* TTTAbstractJSONMapping.m in Sources */,
+				E42072317C1C7C0F1AC1E59A /* TTTJSONAttributeMapping.m in Sources */,
+				E42071A91C1C8F99ED394AE1 /* TTTJSONRelationshipMapping.m in Sources */,
+				E420763312C3B9C91100781F /* TTTMappingPersistenceProxy.m in Sources */,
+				E4207804E3CB06A1AA1622D0 /* TTTAbstractPersistenceProxy.m in Sources */,
+				E4207E9A3BBC111E18ABEB3F /* TTTTimestamped.m in Sources */,
+				E4207E1000DFE9A7E715BA18 /* NSManagedObject+TTTUniquing.m in Sources */,
+				E42075E91404F2B136DAB719 /* NSManagedObjectContext+TTTUniquing.m in Sources */,
+				E42074C2BD86B3A2FA2C51C5 /* NSManagedObjectContext+TTTConvenience.m in Sources */,
+				E42078C707C023CD607E2401 /* NSManagedObjectContext+TTTBatchManipulation.m in Sources */,
+				E420755D0B13C96107468DD0 /* TTTOperation.m in Sources */,
+				E420740FA6F263A8849E6C92 /* TTTAsyncOperation.m in Sources */,
+				E4207791F0892A757832F1DA /* TTTOperationCenter.m in Sources */,
+				E42077B6786C581AEBBF2243 /* NSError+TTTOperationCenter.m in Sources */,
+				E4207BF06B455C48394D34BB /* TTTLog.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -839,12 +999,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		9594A488171C937700F75476 /* TTTUnifiedAddressBook.xcdatamodeld */ = {
+		E4207976C01CB10887238064 /* TTTUnifiedAddressBook.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				9594A489171C937700F75476 /* TTTUnifiedAddressBook.xcdatamodel */,
+				E42071E850509B6D779334EE /* TTTUnifiedAddressBook.xcdatamodel */,
 			);
-			currentVersion = 9594A489171C937700F75476 /* TTTUnifiedAddressBook.xcdatamodel */;
+			currentVersion = E42071E850509B6D779334EE /* TTTUnifiedAddressBook.xcdatamodel */;
 			path = TTTUnifiedAddressBook.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

@@ -1,6 +1,7 @@
 #import "TwelveTwentyToolkit.h"
 #import "TTTAbstractPersistenceProxy.h"
 #import "TTTLog.h"
+#import <UIKit/UIKit.h>
 
 #define TT_PERSISTENCE_THRESHOLD_KEY @"TT_PERSISTENCE_THRESHOLD"
 

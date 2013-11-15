@@ -109,10 +109,7 @@
 
 - (NSNumber *)numberForProperty:(ABPropertyID)propertyID
 {
-    BOOL isInteger = ABPersonGetTypeOfProperty(propertyID) == kABIntegerPropertyType;
-    BOOL isReal = ABPersonGetTypeOfProperty(propertyID) == kABRealPropertyType;
-
-    NSAssert(isInteger || isReal, @"Property `%i` will not result in a NSNumber value", propertyID);
+    NSAssert(ABPersonGetTypeOfProperty(propertyID) == kABIntegerPropertyType || ABPersonGetTypeOfProperty(propertyID) == kABRealPropertyType, @"Property `%i` will not result in a NSNumber value", propertyID);
     return [self valueForProperty:propertyID];
 }
 

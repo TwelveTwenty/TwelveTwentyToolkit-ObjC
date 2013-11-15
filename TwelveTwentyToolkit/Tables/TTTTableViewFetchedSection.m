@@ -1,6 +1,6 @@
-#import "TTTTableViewItem.h"
 #import <CoreData/CoreData.h>
-#import <TwelveTwentyToolkit/NSFetchedResultsController+TTTCacheControl.h>
+#import "TTTTableViewItem.h"
+#import "NSFetchedResultsController+TTTCacheControl.h"
 #import "TTTTableViewItemController.h"
 #import "TTTTableViewFetchedSection.h"
 #import "NSFetchedResultsController+TTTEasySections.h"
@@ -82,7 +82,7 @@
 {
     _fetchedResultsController = fetchedResultsController;
 
-    [fetchedResultsController tttPerformFetch:NULL deleteCache:YES];
+    [fetchedResultsController ttt_performFetch:NULL deleteCache:YES];
 
     [self.itemController sectionDidReload:self];
 
@@ -91,7 +91,7 @@
 
 - (NSUInteger)numberOfItems
 {
-    NSUInteger number = [self.fetchedResultsController tttNumberOfObjectsInFirstSection];
+    NSUInteger number = [self.fetchedResultsController ttt_numberOfObjectsInFirstSection];
 
     if (number)
     {
@@ -113,7 +113,7 @@
 
 - (TTTTableViewItem *)itemAtIndex:(NSInteger)index
 {
-    if ([self.fetchedResultsController tttNumberOfObjectsInFirstSection])
+    if ([self.fetchedResultsController ttt_numberOfObjectsInFirstSection])
     {
         TTTTableViewFetchedItem *item = [self.cachedItems objectForKey:@(index)];
         if (!item)
@@ -124,7 +124,7 @@
             [item dynamicHeight:self.dynamicHeightBlock];
             [item handleDidSelect:self.didSelectBlock];
 
-            NSArray *objects = [[self.fetchedResultsController tttFirstSection] objects];
+            NSArray *objects = [[self.fetchedResultsController ttt_firstSection] objects];
             if (index < 0) return nil;
             if (index >= [objects count]) return nil;
             item.fetchedEntity = objects[(NSUInteger) index];

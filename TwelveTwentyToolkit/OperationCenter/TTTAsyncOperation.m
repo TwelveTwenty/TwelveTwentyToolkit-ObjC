@@ -95,7 +95,7 @@ NSTimeInterval const TTTNever = 0;
 {
     if (self.isCancelled)
     {
-        NSError *error = [NSError tttOperationCenterErrorWithCode:TTTOperationCenterErrorCodeCancelled description:@"Async operation was cancelled before it started."];
+        NSError *error = [NSError ttt_operationCenterErrorWithCode:TTTOperationCenterErrorCodeCancelled description:@"Async operation was cancelled before it started."];
         [self dispatchUnsuccessfulFeedbackWithError:error];
         return;
     }
@@ -138,7 +138,7 @@ NSTimeInterval const TTTNever = 0;
 {
     if (self.isCancelled)
     {
-        error = [NSError tttOperationCenterErrorWithCode:TTTOperationCenterErrorCodeCancelled description:@"Async operation was cancelled during execution."];
+        error = [NSError ttt_operationCenterErrorWithCode:TTTOperationCenterErrorCodeCancelled description:@"Async operation was cancelled during execution."];
         success = NO;
     }
 

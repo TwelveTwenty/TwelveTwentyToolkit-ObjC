@@ -1,4 +1,4 @@
-#import <TwelveTwentyToolkit/UITableViewCell+TTTCreation.h>
+#import "UITableViewCell+TTTCreation.h"
 #import "TTTTableViewDataSourceItemController.h"
 #import "TTTTableViewItem.h"
 #import "TTTTableViewSection.h"

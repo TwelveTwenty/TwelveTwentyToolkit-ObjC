@@ -2,17 +2,17 @@
 
 @implementation UIView (TTTHitTesting)
 
-- (BOOL)tttPointInsideSubviews:(CGPoint)point withEvent:(UIEvent *)event
+- (BOOL)ttt_pointInsideSubviews:(CGPoint)point withEvent:(UIEvent *)event
 {
-    return [self tttPointInsideSubviews:point withEvent:event skipHiddenViews:NO];
+    return [self ttt_pointInsideSubviews:point withEvent:event skipHiddenViews:NO];
 }
 
-- (BOOL)tttPointInsideSubviews:(CGPoint)point withEvent:(UIEvent *)event skipHiddenViews:(BOOL)skipHidden
+- (BOOL)ttt_pointInsideSubviews:(CGPoint)point withEvent:(UIEvent *)event skipHiddenViews:(BOOL)skipHidden
 {
-    return [self tttPointInsideSubviews:point withEvent:event skipHiddenViews:skipHidden skipViewInSet:nil];
+    return [self ttt_pointInsideSubviews:point withEvent:event skipHiddenViews:skipHidden skipViewInSet:nil];
 }
 
-- (BOOL)tttPointInsideSubviews:(CGPoint)point withEvent:(UIEvent *)event skipHiddenViews:(BOOL)skipHidden skipViewInSet:(NSSet *)skipSet
+- (BOOL)ttt_pointInsideSubviews:(CGPoint)point withEvent:(UIEvent *)event skipHiddenViews:(BOOL)skipHidden skipViewInSet:(NSSet *)skipSet
 {
     NSMutableSet *subviews = [NSMutableSet setWithArray:self.subviews];
 
