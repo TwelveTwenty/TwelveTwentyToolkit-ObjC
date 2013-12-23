@@ -1,7 +1,5 @@
 #import "TTTOperation.h"
 #import "TTTOperationCenter.h"
-#import "TTTInjector.h"
-#import "TTTOperation.h"
 
 @interface TTTOperationCenter ()
 
@@ -38,6 +36,7 @@ static TTTOperationCenter *_currentOperationCenter = nil;
     {
         self.injector = injector;
         self.backgroundCommandQueue = [[NSOperationQueue alloc] init];
+        self.backgroundCommandQueue.name = [[[NSBundle mainBundle] bundleIdentifier] stringByAppendingString:@".backgroundCommandQueue"];
         self.mainCommandQueue = [NSOperationQueue mainQueue];
     }
 
@@ -62,9 +61,21 @@ static TTTOperationCenter *_currentOperationCenter = nil;
     {
         [self.mainCommandQueue addOperation:operation];
     }
-    else
+    else if ([[NSThread currentThread] isMainThread])
     {
         [self.backgroundCommandQueue addOperation:operation];
+    }
+    else
+    {
+        NSString *key = @"extraCommandQueue";
+        NSMutableDictionary *threadDictionary = [[NSThread currentThread] threadDictionary];
+        NSOperationQueue *extraQueue = threadDictionary[key];
+        if (!extraQueue)
+        {
+            extraQueue = threadDictionary[key] = [[NSOperationQueue alloc] init];
+            extraQueue.name = [[[NSBundle mainBundle] bundleIdentifier] stringByAppendingString:[[NSThread currentThread] name]];
+        }
+        [extraQueue addOperation:operation];
     }
 
     return operation;
