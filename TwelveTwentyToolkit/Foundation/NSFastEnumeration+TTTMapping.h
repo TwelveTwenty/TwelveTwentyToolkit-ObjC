@@ -6,13 +6,15 @@
 
 - (NSArray *)ttt_map:(id(^)(id obj, NSUInteger idx, BOOL *stop))mappingBlock options:(NSEnumerationOptions)options;
 
+- (NSMutableSet *)ttt_mapToSet:(id(^)(id obj, NSUInteger idx, BOOL *stop))mappingBlock;
+
 @end
 
 @interface NSSet (TTTMapping)
 
-- (NSSet *)ttt_map:(id(^)(id obj, BOOL *stop))mappingBlock;
+- (NSMutableSet *)ttt_map:(id(^)(id obj, BOOL *stop))mappingBlock;
 
-- (NSSet *)ttt_map:(id(^)(id obj, BOOL *stop))mappingBlock options:(NSEnumerationOptions)options;
+- (NSMutableSet *)ttt_map:(id(^)(id obj, BOOL *stop))mappingBlock options:(NSEnumerationOptions)options;
 
 @end
 
