@@ -107,9 +107,9 @@ const struct TTTSyncStatusValues TTTSyncStatusValues = {
         }
 
         NSMutableArray *sortDescriptors = [NSMutableArray array];
-        [arrayOfSortingKeysWithAscendingFlag enumerateObjectsUsingBlock:^(NSDictionary *sortingKeysWithAscendingFlag, NSUInteger idx, BOOL *stop) {
-            NSAssert([sortingKeysWithAscendingFlag isKindOfClass:[NSDictionary class]], @"Only supports one level of nested dictionaries. Not %@", sortingKeysWithAscendingFlag);
-            [sortingKeysWithAscendingFlag enumerateKeysAndObjectsUsingBlock:^(NSString *key, NSNumber *ascending, BOOL *stop) {
+        [arrayOfSortingKeysWithAscendingFlag enumerateObjectsUsingBlock:^(NSDictionary *ascendingFlagBySortingKey, NSUInteger idx, BOOL *stop) {
+            NSAssert([ascendingFlagBySortingKey isKindOfClass:[NSDictionary class]], @"Only supports one level of nested dictionaries. Not %@", ascendingFlagBySortingKey);
+            [ascendingFlagBySortingKey enumerateKeysAndObjectsUsingBlock:^(NSString *key, NSNumber *ascending, BOOL *stop) {
                 [sortDescriptors addObject:[NSSortDescriptor sortDescriptorWithKey:key ascending:[ascending boolValue]]];
             }];
         }];
