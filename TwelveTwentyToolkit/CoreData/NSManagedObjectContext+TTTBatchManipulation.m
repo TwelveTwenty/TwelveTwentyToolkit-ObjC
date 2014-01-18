@@ -19,6 +19,7 @@
 // THE SOFTWARE.
 
 #import "NSManagedObjectContext+TTTBatchManipulation.h"
+#import "NSFetchRequest+TTTRequestConfiguration.h"
 
 @implementation NSManagedObjectContext (TTTBatchManipulation)
 
@@ -37,22 +38,8 @@
 {
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:entityName];
 
-    if (values && keys)
-    {
-        NSString *singleFormat = @"%@ == %%@";
-        NSMutableArray *combinedFormat = [NSMutableArray arrayWithCapacity:[values count]];
-        [keys enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-            [combinedFormat addObject:[NSString stringWithFormat:singleFormat, obj, nil]];
-        }];
-        NSString *joinedFormat = [combinedFormat componentsJoinedByString:@" AND "];
-        request.predicate = [NSPredicate predicateWithFormat:joinedFormat argumentArray:values];
-    }
-
-    if (sortKey != nil)
-    {
-        NSSortDescriptor *sortByKey = [NSSortDescriptor sortDescriptorWithKey:sortKey ascending:ascending];
-        [request setSortDescriptors:[NSArray arrayWithObject:sortByKey]];
-    }
+    [request ttt_setPredicateWithValues:values forKeys:keys];
+    [request ttt_sortResultsByKey:sortKey ascending:ascending];
 
     NSError *error = nil;
     NSArray *result = [self executeFetchRequest:request error:&error];

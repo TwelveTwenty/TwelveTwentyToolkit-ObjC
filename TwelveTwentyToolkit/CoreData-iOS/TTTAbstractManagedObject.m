@@ -2,6 +2,7 @@
 #import "TTTAbstractManagedObject.h"
 #import "NSManagedObject+TTTUniquing.h"
 #import "NSManagedObjectContext+TTTUniquing.h"
+#import "NSFetchRequest+TTTRequestConfiguration.h"
 
 const struct TTTIdentifiableAttributes TTTIdentifiableAttributes = {
         .identifier = @"identifier",
@@ -19,6 +20,40 @@ const struct TTTSyncStatusValues TTTSyncStatusValues = {
 };
 
 @implementation TTTAbstractManagedObject
+
++ (NSFetchRequest *)fetchRequestWithSortingKeys:(id)sortingKeysWithAscendingFlag
+{
+    NSFetchRequest *request = [self fetchRequest];
+
+    [request ttt_sortResultsByKeysAscending:sortingKeysWithAscendingFlag];
+
+    request.fetchBatchSize = 100;
+    request.returnsObjectsAsFaults = NO;
+    request.includesPendingChanges = YES;
+
+    return request;
+}
+
++ (NSFetchRequest *)fetchRequest
+{
+    return [NSFetchRequest fetchRequestWithEntityName:[self entityName]];
+}
+
++ (instancetype)singleEntityInContext:(NSManagedObjectContext *)context existed:(BOOL *)existed
+{
+    NSFetchRequest *request = [self fetchRequest];
+    request.fetchLimit = 2;
+    NSArray *results = [context executeFetchRequest:request error:NULL];
+    NSParameterAssert(results.count < 2);
+    if ([results count] == 0)
+    {
+        if (existed) *existed = NO;
+        return [self insertInManagedObjectContext:context];
+    }
+
+    if (existed) *existed = YES;
+    return [results lastObject];
+}
 
 + (instancetype)uniqueEntityWithIdentifier:(NSNumber *)identifier inContext:(NSManagedObjectContext *)context
 {
@@ -91,36 +126,6 @@ const struct TTTSyncStatusValues TTTSyncStatusValues = {
 + (TTTDeleteCount)deleteAllEntitiesInContext:(NSManagedObjectContext *)context error:(NSError **)error
 {
     return [context ttt_deleteAllEntitiesNamed:[self entityName] error:error];
-}
-
-+ (NSFetchRequest *)fetchRequestWithSortingKeys:(id)sortingKeysWithAscendingFlag
-{
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:[(id) self entityName]];
-    request.fetchBatchSize = 100;
-
-    if (sortingKeysWithAscendingFlag)
-    {
-        NSArray *arrayOfSortingKeysWithAscendingFlag = sortingKeysWithAscendingFlag;
-        if (![arrayOfSortingKeysWithAscendingFlag isKindOfClass:[NSArray class]])
-        {
-            arrayOfSortingKeysWithAscendingFlag = @[sortingKeysWithAscendingFlag];
-        }
-
-        NSMutableArray *sortDescriptors = [NSMutableArray array];
-        [arrayOfSortingKeysWithAscendingFlag enumerateObjectsUsingBlock:^(NSDictionary *ascendingFlagBySortingKey, NSUInteger idx, BOOL *stop) {
-            NSAssert([ascendingFlagBySortingKey isKindOfClass:[NSDictionary class]], @"Only supports one level of nested dictionaries. Not %@", ascendingFlagBySortingKey);
-            [ascendingFlagBySortingKey enumerateKeysAndObjectsUsingBlock:^(NSString *key, NSNumber *ascending, BOOL *stop) {
-                [sortDescriptors addObject:[NSSortDescriptor sortDescriptorWithKey:key ascending:[ascending boolValue]]];
-            }];
-        }];
-
-        request.sortDescriptors = sortDescriptors;
-    }
-
-    request.returnsObjectsAsFaults = NO;
-    request.includesPendingChanges = YES;
-
-    return request;
 }
 
 + (NSFetchedResultsController *)fetchedResultsControllerWithSortingKeys:(id)sortingKeysWithAscendingFlag
