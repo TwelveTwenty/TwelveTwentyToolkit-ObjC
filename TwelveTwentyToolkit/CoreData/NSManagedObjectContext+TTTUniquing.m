@@ -18,6 +18,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+#import "NSString+TTTEmptiness.h"
 #import "NSManagedObjectContext+TTTUniquing.h"
 
 @implementation NSManagedObjectContext (TTTUniquing)
@@ -55,6 +56,7 @@
 
 - (id)ttt_existingEntityForName:(NSString *)name withValue:(id)value forKey:(NSString *)key
 {
+    if ([NSString ttt_isEmpty:name] || !value || !key) return nil;
     return [self ttt_existingEntityForName:name withValues:@[value] forKeys:@[key]];
 }
 
