@@ -215,9 +215,19 @@ static TTTInjector *_currentInjector;
 {
     if (!mapping && self.allowImplicitMapping)
     {
-        NSString *key = [[self class] keyForClass:[object class] withIdentifier:nil];
-        mapping = [[TTTInjectionMapping alloc] initWithParent:self mappedClass:[object class] options:TTTerminationOptionNone];
-        self.classMappings[key] = mapping;
+        // Multiple injection calls on the same object-kind could cause multiple mappings
+        // to be created implicitly, overwriting each other as values in the classMappings
+        // dictionary. This @synchronized block prevents this to cause race conditions and
+        // over-released mapping objects.
+        @synchronized (object)
+        {
+            if (!mapping && self.allowImplicitMapping)
+            {
+                NSString *key = [[self class] keyForClass:[object class] withIdentifier:nil];
+                mapping = [[TTTInjectionMapping alloc] initWithParent:self mappedClass:[object class] options:TTTerminationOptionNone];
+                self.classMappings[key] = mapping;
+            }
+        }
     }
     BOOL previouslyInjected = [self performInjectionOnObject:object withMapping:mapping];
 
