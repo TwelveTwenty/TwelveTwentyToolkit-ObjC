@@ -23,7 +23,7 @@
 
 @interface NSFetchRequest (TTTRequestConfiguration)
 
-- (void)ttt_setPredicateWithValues:(NSArray *)values forKeys:(NSArray *)keys;
+- (void)ttt_setPredicateWithMatchingValues:(NSArray *)values forKeys:(NSArray *)keys;
 
 - (void)ttt_sortResultsByKey:(NSString *)sortKey ascending:(BOOL)ascending;
 

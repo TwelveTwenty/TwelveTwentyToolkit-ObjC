@@ -38,7 +38,7 @@
 {
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:entityName];
 
-    [request ttt_setPredicateWithValues:values forKeys:keys];
+    [request ttt_setPredicateWithMatchingValues:values forKeys:keys];
     [request ttt_sortResultsByKey:sortKey ascending:ascending];
 
     NSError *error = nil;
