@@ -1,10 +1,10 @@
 #import <Foundation/Foundation.h>
 #import "TwelveTwentyToolkit.h"
-#import "TTTInjector.h"
+#import "EEEInjector.h"
 
 @interface TTTOperation : NSOperation
 
-@property (nonatomic, strong) TTTInjector *injector;
+@property (nonatomic, strong) EEEInjector *injector;
 
 @property(nonatomic) BOOL requiresMainThread;
 

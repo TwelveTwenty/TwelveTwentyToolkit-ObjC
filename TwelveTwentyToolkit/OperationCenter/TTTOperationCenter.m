@@ -3,7 +3,7 @@
 
 @interface TTTOperationCenter ()
 
-@property(nonatomic, strong) TTTInjector *injector;
+@property(nonatomic, strong) EEEInjector *injector;
 @property(nonatomic, strong) NSOperationQueue *backgroundCommandQueue;
 @property(nonatomic, strong) NSOperationQueue *mainCommandQueue;
 
@@ -28,7 +28,7 @@ static TTTOperationCenter *_currentOperationCenter = nil;
     return _currentOperationCenter;
 }
 
-- (id)initWithInjector:(TTTInjector *)injector
+- (id)initWithInjector:(EEEInjector *)injector
 {
     self = [super init];
 

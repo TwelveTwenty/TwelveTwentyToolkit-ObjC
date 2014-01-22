@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 
-@class TTTInjector;
+@class EEEInjector;
 @class TTTOperation;
 
 @interface TTTOperationCenter : NSObject
@@ -11,7 +11,7 @@
 
 + (TTTOperationCenter *)setCurrentOperationCenter:(TTTOperationCenter *)defaultCenter;
 
-- (id)initWithInjector:(TTTInjector *)injector;
+- (id)initWithInjector:(EEEInjector *)injector;
 
 - (id)queueOperation:(TTTOperation *)operation;
 

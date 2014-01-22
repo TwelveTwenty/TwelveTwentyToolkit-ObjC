@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'TwelveTwentyToolkit'
-  s.version      = '0.2.1'
+  s.version      = '0.3.0'
   s.summary      = 'The Twelve Twenty Toolkit of reusable Objective-C classes.'
   s.homepage     = 'http://twelvetwenty.nl'
   s.license      = 'MIT'
@@ -73,13 +73,8 @@ Pod::Spec.new do |s|
     ab.osx.dependency 'TwelveTwentyToolkit/Foundation'
   end
   
-  s.subspec 'DependencyInjection' do |di|
-    di.dependency 'TwelveTwentyToolkit/Logging'
-    di.source_files = 'TwelveTwentyToolkit/DependencyInjection/**/*.{h,m}'
-  end
-  
   s.subspec 'OperationCenter' do |di|
-    di.dependency 'TwelveTwentyToolkit/DependencyInjection'
+    di.dependency 'EEEInjector'
     di.source_files = 'TwelveTwentyToolkit/OperationCenter/**/*.{h,m}'
   end
   
