@@ -1,5 +1,6 @@
 #import "TTTAsyncOperation.h"
 #import "NSError+TTTOperationCenter.h"
+#import "TTTOperationCenter.h"
 
 @interface TTTAsyncOperation ()
 
@@ -91,6 +92,13 @@ NSTimeInterval const TTTNever = 0;
     [self didChangeValueForKey:@"isFinished"];
 }
 
+- (instancetype)inline
+{
+    NSParameterAssert([TTTOperationCenter currentOperationCenter]);
+    [[TTTOperationCenter currentOperationCenter] inlineOperation:self withTimeout:self.timeout];
+    return self;
+}
+
 - (void)start
 {
     if (self.isCancelled)
@@ -146,7 +154,7 @@ NSTimeInterval const TTTNever = 0;
 
     if (feedback != nil)
     {
-        if ([[NSThread currentThread] isMainThread])
+        if (self.isInline)
         {
             feedback(success, context, error);
         }
@@ -161,8 +169,8 @@ NSTimeInterval const TTTNever = 0;
     self.defaultSuccessBlock = nil;
     self.defaultFailureBlock = nil;
 
-    self.executing = NO;
     self.finished = YES;
+    self.executing = NO;
 }
 
 @end

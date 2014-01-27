@@ -1,5 +1,5 @@
-#import "TTTOperation.h"
 #import "TTTOperationCenter.h"
+#import "TTTAsyncOperation.h"
 
 @interface TTTOperationCenter ()
 
@@ -81,15 +81,34 @@ static TTTOperationCenter *_currentOperationCenter = nil;
     return operation;
 }
 
-- (id)inlineOperation:(TTTOperation *)operation
+- (id)inlineOperation:(TTTOperation *)operation withTimeout:(NSTimeInterval)seconds
 {
     operation.injector = self.injector;
+    operation.isInline = YES;
 
-    NSAssert(operation.requiresMainThread == YES, @"Operations can only be executed in-line if they run on the main thread.");
+    NSDate *timeoutDate = [NSDate dateWithTimeIntervalSinceNow:seconds];
 
     [operation start];
 
+    while (operation.isExecuting)
+        if ([self timeoutReached:timeoutDate])
+        {
+            [operation cancel];
+            break;
+        }
+
     return operation;
+}
+
+- (BOOL)timeoutReached:(NSDate *)timeoutDate
+{
+    [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate dateWithTimeIntervalSinceNow:0.1]];
+    NSTimeInterval timePassed = [timeoutDate timeIntervalSinceNow];
+    if (timePassed < 0.0)
+    {
+        return YES;
+    }
+    return NO;
 }
 
 @end

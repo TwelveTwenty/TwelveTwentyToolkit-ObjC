@@ -15,6 +15,6 @@
 
 - (id)queueOperation:(TTTOperation *)operation;
 
-- (id)inlineOperation:(TTTOperation *)operation;
+- (id)inlineOperation:(TTTOperation *)operation withTimeout:(NSTimeInterval)seconds;
 
 @end

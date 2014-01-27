@@ -30,6 +30,4 @@ extern NSTimeInterval const TTTNever;
 
 - (void)dispatchUnsuccessfulFeedbackWithError:(NSError *)error;
 
-- (instancetype)inline UNAVAILABLE_ATTRIBUTE;
-
 @end

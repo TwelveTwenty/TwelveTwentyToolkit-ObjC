@@ -27,7 +27,7 @@
 - (instancetype)inline
 {
     NSParameterAssert([TTTOperationCenter currentOperationCenter]);
-    [[TTTOperationCenter currentOperationCenter] inlineOperation:self];
+    [[TTTOperationCenter currentOperationCenter] inlineOperation:self withTimeout:0];
     return self;
 }
 

@@ -8,6 +8,8 @@
 
 @property(nonatomic) BOOL requiresMainThread;
 
+@property(nonatomic) BOOL isInline;
+
 - (instancetype)queue;
 
 - (instancetype)inline;
