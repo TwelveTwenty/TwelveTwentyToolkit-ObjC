@@ -18,6 +18,16 @@
 
 @end
 
+@interface NSOrderedSet (TTTMapping)
+
+- (NSMutableSet *)ttt_map:(id(^)(id obj, NSUInteger idx, BOOL *stop))mappingBlock;
+
+- (NSMutableSet *)ttt_map:(id(^)(id obj, NSUInteger idx, BOOL *stop))mappingBlock options:(NSEnumerationOptions)options;
+
+- (void)ttt_mapOntoMutableObject:(id)object withMappingBlock:(id (^)(id obj, NSUInteger idx, BOOL *stop))mappingBlock options:(NSEnumerationOptions)options;
+
+@end
+
 @interface NSDictionary (TTTMapping)
 
 - (NSDictionary *)ttt_map:(id(^)(id *key, id obj))mappingBlock;

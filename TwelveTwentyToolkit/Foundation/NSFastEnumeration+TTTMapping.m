@@ -74,6 +74,36 @@
 
 @end
 
+@implementation NSOrderedSet (TTTMapping)
+
+- (NSMutableSet *)ttt_map:(id(^)(id obj, NSUInteger idx, BOOL *stop))mappingBlock
+{
+    return [self ttt_map:mappingBlock options:0];
+}
+
+- (NSMutableSet *)ttt_map:(id(^)(id obj, NSUInteger idx, BOOL *stop))mappingBlock options:(NSEnumerationOptions)options
+{
+    NSMutableSet *map = [NSMutableSet set];
+
+    [self ttt_mapOntoMutableObject:map withMappingBlock:mappingBlock options:options];
+
+    return map;
+}
+
+- (void)ttt_mapOntoMutableObject:(id)object withMappingBlock:(id (^)(id obj, NSUInteger idx, BOOL *stop))mappingBlock options:(NSEnumerationOptions)options
+{
+    NSParameterAssert([(NSObject *) object respondsToSelector:@selector(addObject:)]);
+    [self enumerateObjectsWithOptions:options usingBlock:^(id innerObj, NSUInteger innerIdx, BOOL *innerStop) {
+        id mapped = mappingBlock(innerObj, innerIdx, innerStop);
+        if (mapped)
+        {
+            [object addObject:mapped];
+        }
+    }];
+}
+
+@end
+
 @implementation NSDictionary (TTTMapping)
 
 - (NSDictionary *)ttt_map:(id(^)(id *key, id obj))mappingBlock
@@ -81,7 +111,9 @@
     return [self ttt_map:mappingBlock options:0];
 }
 
-- (NSDictionary *)ttt_map:(id(^)(id *key, id obj))mappingBlock options:(NSEnumerationOptions)options
+- (NSDictionary *)ttt_map:(id(^)(id *key, id obj))mappingBlock
+                  options:
+                          (NSEnumerationOptions)options
 {
     NSMutableDictionary *map = [NSMutableDictionary dictionaryWithCapacity:self.count];
 
@@ -90,7 +122,11 @@
     return map;
 }
 
-- (void)ttt_mapOntoMutableDictionary:(NSMutableDictionary *)object withMappingBlock:(id (^)(id *key, id obj))mappingBlock options:(NSEnumerationOptions)options
+- (void)ttt_mapOntoMutableDictionary:(NSMutableDictionary *)object
+                    withMappingBlock:
+                            (id (^)(id *key, id obj))mappingBlock
+                             options:
+                                     (NSEnumerationOptions)options
 {
     [self enumerateKeysAndObjectsWithOptions:options usingBlock:^(id innerKey, id innerObj, BOOL *stop) {
         id copiedKey = [innerKey copy];
