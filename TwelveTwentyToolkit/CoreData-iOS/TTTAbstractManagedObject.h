@@ -49,8 +49,6 @@ extern const struct TTTSyncStatusValues
 
 + (NSFetchRequest *)fetchRequest;
 
-+ (instancetype)singleEntityInContext:(NSManagedObjectContext *)context existed:(BOOL *)existed;
-
 + (instancetype)uniqueEntityWithIdentifier:(NSNumber *)identifier inContext:(NSManagedObjectContext *)context;
 
 + (instancetype)uniqueEntityWithValue:(id)value forKey:(NSString *)key inContext:(NSManagedObjectContext *)context;

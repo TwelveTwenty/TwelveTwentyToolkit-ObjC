@@ -39,22 +39,6 @@ const struct TTTSyncStatusValues TTTSyncStatusValues = {
     return [NSFetchRequest fetchRequestWithEntityName:[self entityName]];
 }
 
-+ (instancetype)singleEntityInContext:(NSManagedObjectContext *)context existed:(BOOL *)existed
-{
-    NSFetchRequest *request = [self fetchRequest];
-    request.fetchLimit = 2;
-    NSArray *results = [context executeFetchRequest:request error:NULL];
-    NSParameterAssert(results.count < 2);
-    if ([results count] == 0)
-    {
-        if (existed) *existed = NO;
-        return [self insertInManagedObjectContext:context];
-    }
-
-    if (existed) *existed = YES;
-    return [results lastObject];
-}
-
 + (instancetype)uniqueEntityWithIdentifier:(NSNumber *)identifier inContext:(NSManagedObjectContext *)context
 {
     NSParameterAssert([self conformsToProtocol:@protocol(TTTIdentifiable)]);
