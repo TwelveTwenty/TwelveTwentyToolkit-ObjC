@@ -91,7 +91,7 @@ static TTTOperationCenter *_currentOperationCenter = nil;
     [operation start];
 
     while (operation.isExecuting)
-        if ([self timeoutReached:timeoutDate])
+        if (seconds > TTTNever && [self timeoutReached:timeoutDate])
         {
             [operation cancel];
             break;
