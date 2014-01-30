@@ -101,12 +101,7 @@ NSTimeInterval const TTTNever = 0;
 
 - (void)start
 {
-    if (self.isCancelled)
-    {
-        NSError *error = [NSError ttt_operationCenterErrorWithCode:TTTOperationCenterErrorCodeCancelled description:@"Async operation was cancelled before it started."];
-        [self dispatchUnsuccessfulFeedbackWithError:error];
-        return;
-    }
+    ttt_returnAfterDispatchIfCancelled;
 
     self.executing = YES;
 

@@ -1,6 +1,18 @@
 #import <Foundation/Foundation.h>
 #import "TTTOperation.h"
 
+#define ttt_returnAfterDispatchIfCancelled { \
+    if (self.isCancelled) \
+    { \
+        [self dispatchUnsuccessfulFeedbackWithError: \
+                [NSError ttt_operationCenterErrorWithCode:TTTOperationCenterErrorCodeCancelled \
+                                              description:[NSString stringWithFormat:@"Operation cancelled during execution %@.m:%i", \
+                                                                                     NSStringFromClass([self class]), \
+                                                                                     __LINE__]]]; \
+        return; \
+    } \
+}
+
 /**
  * If `success` is YES, consider the completion to be flawless.
  *
