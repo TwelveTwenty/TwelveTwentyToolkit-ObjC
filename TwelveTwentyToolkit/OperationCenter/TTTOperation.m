@@ -45,7 +45,7 @@
 
 - (void)cancel
 {
-    WLog(@"Operation cancelled: %@", self);
+    WLog(@"Cancel operation: %@\n%@", self, [NSThread callStackSymbols]);
 
     [super cancel];
 }
