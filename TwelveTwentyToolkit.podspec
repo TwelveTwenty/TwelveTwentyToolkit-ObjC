@@ -73,11 +73,6 @@ Pod::Spec.new do |s|
     ab.osx.dependency 'TwelveTwentyToolkit/Foundation'
   end
   
-  s.subspec 'OperationCenter' do |di|
-    di.dependency 'EEEInjector'
-    di.source_files = 'TwelveTwentyToolkit/OperationCenter/**/*.{h,m}'
-  end
-  
   s.subspec 'Tables' do |tb|
     tb.ios.dependency 'TwelveTwentyToolkit/Logging'
     tb.ios.source_files = 'TwelveTwentyToolkit/Tables/**/*.{h,m}'
