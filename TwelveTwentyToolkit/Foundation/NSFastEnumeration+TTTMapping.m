@@ -112,8 +112,7 @@
 }
 
 - (NSDictionary *)ttt_map:(id(^)(id *key, id obj))mappingBlock
-                  options:
-                          (NSEnumerationOptions)options
+                  options:(NSEnumerationOptions)options
 {
     NSMutableDictionary *map = [NSMutableDictionary dictionaryWithCapacity:self.count];
 
@@ -123,10 +122,8 @@
 }
 
 - (void)ttt_mapOntoMutableDictionary:(NSMutableDictionary *)object
-                    withMappingBlock:
-                            (id (^)(id *key, id obj))mappingBlock
-                             options:
-                                     (NSEnumerationOptions)options
+                    withMappingBlock:(id (^)(id *key, id obj))mappingBlock
+                             options:(NSEnumerationOptions)options
 {
     [self enumerateKeysAndObjectsWithOptions:options usingBlock:^(id innerKey, id innerObj, BOOL *stop) {
         id copiedKey = [innerKey copy];
