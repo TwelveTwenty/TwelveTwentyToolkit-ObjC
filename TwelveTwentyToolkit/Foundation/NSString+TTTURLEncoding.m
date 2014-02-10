@@ -3,7 +3,7 @@
 @implementation NSString (TTTURLEncoding)
 
 // http://madebymany.com/blog/url-encoding-an-nsstring-on-ios
-- (NSString *)tttURLEncode
+- (NSString *)ttt_URLEncode
 {
     CFStringRef escapedRef = CFURLCreateStringByAddingPercentEscapes(
             kCFAllocatorDefault,

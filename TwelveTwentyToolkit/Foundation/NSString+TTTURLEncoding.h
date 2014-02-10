@@ -2,6 +2,6 @@
 
 @interface NSString (TTTURLEncoding)
 
-- (NSString *)tttURLEncode;
+- (NSString *)ttt_URLEncode;
 
 @end
