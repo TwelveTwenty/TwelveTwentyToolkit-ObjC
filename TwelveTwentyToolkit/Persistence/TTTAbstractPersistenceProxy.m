@@ -120,37 +120,45 @@
 {
     if (_mainContext == nil)
     {
-        @synchronized (self)
-        {
-            if (_mainContext == nil)
-            {
-                NSAssert([[NSThread currentThread] isMainThread], @"The first main context access should take place on the main thread. Only a MOC's init/release/retain methods are thread safe.");
-                [self checkResetThreshold:self.resetThreshold];
-
-                self.mainContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
-                _mainContext.mergePolicy = NSOverwriteMergePolicy;
-                _mainContext.undoManager = nil;
-
-                if (self.nestContexts)
-                {
-                    _mainContext.parentContext = self.diskContext;
-                }
-                else
-                {
-                    _mainContext.persistentStoreCoordinator = self.persistentStoreCoordinator;
-                }
-
-                if (self.requiresDatabaseSeed)
-                {
-                    [self seedDatabase];
-                }
-            }
-        }
+        [self createMainContext];
     }
 
     return _mainContext;
 }
 
+/**
+ Offloaded the creation of the main thread's managed object context to
+ a separate method, to prevent the need for thread locking at every access.
+ */
+- (void)createMainContext
+{
+    @synchronized (self)
+    {
+        if (_mainContext == nil)
+        {
+            NSAssert([[NSThread currentThread] isMainThread], @"The first main context access should take place on the main thread. Only a MOC's init/release/retain methods are thread safe.");
+            [self checkResetThreshold:self.resetThreshold];
+
+            self.mainContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
+            _mainContext.mergePolicy = NSOverwriteMergePolicy;
+            _mainContext.undoManager = nil;
+
+            if (self.nestContexts)
+            {
+                _mainContext.parentContext = self.diskContext;
+            }
+            else
+            {
+                _mainContext.persistentStoreCoordinator = self.persistentStoreCoordinator;
+            }
+
+            if (self.requiresDatabaseSeed)
+            {
+                [self seedDatabase];
+            }
+        }
+    }
+}
 - (NSManagedObjectContext *)diskContext
 {
     NSAssert(self.nestContexts, @"Disk context only available when nestContexts is on.");
