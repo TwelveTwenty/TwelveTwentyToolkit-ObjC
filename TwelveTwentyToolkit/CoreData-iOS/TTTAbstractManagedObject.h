@@ -49,7 +49,7 @@ extern const struct TTTSyncStatusValues
 
 + (NSFetchRequest *)fetchRequest;
 
-+ (instancetype)uniqueEntityWithIdentifier:(NSNumber *)identifier inContext:(NSManagedObjectContext *)context;
++ (instancetype)uniqueEntityWithIdentifier:(id)identifier inContext:(NSManagedObjectContext *)context;
 
 + (instancetype)uniqueEntityWithValue:(id)value forKey:(NSString *)key inContext:(NSManagedObjectContext *)context;
 
