@@ -275,7 +275,7 @@ void tt_handleABExternalChange(ABAddressBookRef addressBook, CFDictionaryRef inf
 		return NO;
 	} else
 	{
-		NSLog(@"Unified %i records", idx);
+		NSLog(@"Unified %lu records", (unsigned long)idx);
 	}
 
 	return YES;

@@ -18,7 +18,7 @@ extern const struct TTTIdentifiableAttributes
 
 @protocol TTTIdentifiable <TTTMogeneratorEntity>
 
-@property(nonatomic, strong) NSNumber *identifier;
+- (id)identifier;
 
 @end
 

@@ -36,7 +36,7 @@
 
 - (void)setRowAnimation:(UITableViewRowAnimation)animation forSection:(NSInteger)section
 {
-    NSString *key = [NSString stringWithFormat:@"%i", section];
+    NSString *key = [NSString stringWithFormat:@"%li", (long)section];
     self.sectionAnimations[key] = @(animation);
 }
 
@@ -54,14 +54,14 @@
 
 - (void)sectionDidInsertRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString *key = [NSString stringWithFormat:@"%i", indexPath.section];
+    NSString *key = [NSString stringWithFormat:@"%li", (long)indexPath.section];
     UITableViewRowAnimation animation = (UITableViewRowAnimation) [self.sectionAnimations[key] integerValue];
     [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:animation];
 }
 
 - (void)sectionDidDeleteRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString *key = [NSString stringWithFormat:@"%i", indexPath.section];
+    NSString *key = [NSString stringWithFormat:@"%li", (long)indexPath.section];
     UITableViewRowAnimation animation = (UITableViewRowAnimation) [self.sectionAnimations[key] integerValue];
     [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:animation];
 }
