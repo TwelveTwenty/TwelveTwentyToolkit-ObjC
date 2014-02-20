@@ -3,7 +3,7 @@
 #import "TTTLog.h"
 #import <UIKit/UIKit.h>
 
-#define TT_PERSISTENCE_THRESHOLD_KEY @"TT_PERSISTENCE_THRESHOLD"
+#define TTT_PERSISTENCE_THRESHOLD_KEY @"TTT_PERSISTENCE_THRESHOLD"
 
 @interface TTTAbstractPersistenceProxy ()
 
@@ -60,7 +60,7 @@
     }
 
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSString *key = [NSString stringWithFormat:@"%@-%@", TT_PERSISTENCE_THRESHOLD_KEY, self.storeURL.lastPathComponent];
+    NSString *key = [NSString stringWithFormat:@"%@-%@", TTT_PERSISTENCE_THRESHOLD_KEY, self.storeURL.lastPathComponent];
     BOOL reset = (resetThreshold != [defaults integerForKey:key]);
     if (reset)
     {
@@ -77,7 +77,7 @@
         {
             ILog(@"Reset store %@", self.storeURL);
             NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-            NSString *key = [NSString stringWithFormat:@"%@-%@", TT_PERSISTENCE_THRESHOLD_KEY, self.storeURL.lastPathComponent];
+            NSString *key = [NSString stringWithFormat:@"%@-%@", TTT_PERSISTENCE_THRESHOLD_KEY, self.storeURL.lastPathComponent];
             [defaults setInteger:resetThreshold forKey:key];
             [defaults synchronize];
         }
@@ -320,7 +320,7 @@
 */
 - (void)forceReset
 {
-    NSString *key = [NSString stringWithFormat:@"%@-%@", TT_PERSISTENCE_THRESHOLD_KEY, self.storeURL.lastPathComponent];
+    NSString *key = [NSString stringWithFormat:@"%@-%@", TTT_PERSISTENCE_THRESHOLD_KEY, self.storeURL.lastPathComponent];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults removeObjectForKey:key];
     [defaults synchronize];
