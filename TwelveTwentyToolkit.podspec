@@ -17,17 +17,12 @@ Pod::Spec.new do |s|
   s.subspec 'Foundation' do |fn|
     fn.dependency 'TwelveTwentyToolkit/Core'
     fn.source_files = 'TwelveTwentyToolkit/Foundation/**/*.{h,m}'
-    
-    fn.subspec 'iOS' do |os|
-      os.ios.source_files = 'TwelveTwentyToolkit/Foundation-iOS/**/*.{h,m}'
-    end
   end
 
   s.subspec 'Logging' do |lg|
-    lg.osx.dependency 'TwelveTwentyToolkit/Foundation'
+    lg.dependency 'TwelveTwentyToolkit/Foundation'
     lg.osx.source_files = 'TwelveTwentyToolkit/Logging/**/*.{h,m}'
 
-    lg.ios.dependency 'TwelveTwentyToolkit/Foundation/iOS'
     lg.ios.source_files = 'TwelveTwentyToolkit/Logging-iOS/**/*.{h,m}'
   end
   
@@ -82,6 +77,7 @@ Pod::Spec.new do |s|
   
   s.subspec 'Layout' do |lo|
     lo.ios.dependency 'TwelveTwentyToolkit/Logging'
+    lo.ios.dependency 'TwelveTwentyToolkit/CoreData'
     lo.ios.source_files = 'TwelveTwentyToolkit/Layout/**/*.{h,m}'
 
     lo.osx.dependency 'TwelveTwentyToolkit/Foundation'
