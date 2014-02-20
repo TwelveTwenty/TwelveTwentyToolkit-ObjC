@@ -7,6 +7,55 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		95695D5618B6155800CA2307 /* _TTTCDLinkedRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 95695CE718B6155800CA2307 /* _TTTCDLinkedRecord.m */; };
+		95695D5718B6155800CA2307 /* _TTTCDUnifiedRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 95695CE918B6155800CA2307 /* _TTTCDUnifiedRecord.m */; };
+		95695D5818B6155800CA2307 /* TTTCDLinkedRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 95695CEB18B6155800CA2307 /* TTTCDLinkedRecord.m */; };
+		95695D5918B6155800CA2307 /* TTTCDUnifiedRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 95695CED18B6155800CA2307 /* TTTCDUnifiedRecord.m */; };
+		95695D5A18B6155800CA2307 /* TTTUnifiedAddressBook.m in Sources */ = {isa = PBXBuildFile; fileRef = 95695CF018B6155800CA2307 /* TTTUnifiedAddressBook.m */; };
+		95695D5B18B6155900CA2307 /* TTTUnifiedAddressBook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 95695CF118B6155800CA2307 /* TTTUnifiedAddressBook.xcdatamodeld */; };
+		95695D5C18B6155900CA2307 /* TTTUnifiedCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 95695CF418B6155800CA2307 /* TTTUnifiedCard.m */; };
+		95695D5D18B6155900CA2307 /* CALayer+TTTCrossfade.m in Sources */ = {isa = PBXBuildFile; fileRef = 95695CF718B6155800CA2307 /* CALayer+TTTCrossfade.m */; };
+		95695D5E18B6155900CA2307 /* NSFetchRequest+TTTRequestConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 95695CFA18B6155800CA2307 /* NSFetchRequest+TTTRequestConfiguration.m */; };
+		95695D5F18B6155900CA2307 /* NSManagedObject+TTTUniquing.m in Sources */ = {isa = PBXBuildFile; fileRef = 95695CFC18B6155800CA2307 /* NSManagedObject+TTTUniquing.m */; };
+		95695D6018B6155900CA2307 /* NSManagedObjectContext+TTTBatchManipulation.m in Sources */ = {isa = PBXBuildFile; fileRef = 95695CFE18B6155800CA2307 /* NSManagedObjectContext+TTTBatchManipulation.m */; };
+		95695D6118B6155900CA2307 /* NSManagedObjectContext+TTTConvenience.m in Sources */ = {isa = PBXBuildFile; fileRef = 95695D0018B6155800CA2307 /* NSManagedObjectContext+TTTConvenience.m */; };
+		95695D6218B6155900CA2307 /* NSManagedObjectContext+TTTUniquing.m in Sources */ = {isa = PBXBuildFile; fileRef = 95695D0218B6155800CA2307 /* NSManagedObjectContext+TTTUniquing.m */; };
+		95695D6318B6155900CA2307 /* TTTTimestamped.m in Sources */ = {isa = PBXBuildFile; fileRef = 95695D0418B6155800CA2307 /* TTTTimestamped.m */; };
+		95695D6418B6155900CA2307 /* NSFetchedResultsController+TTTCacheControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 95695D0718B6155800CA2307 /* NSFetchedResultsController+TTTCacheControl.m */; };
+		95695D6518B6155900CA2307 /* NSFetchedResultsController+TTTEasySections.m in Sources */ = {isa = PBXBuildFile; fileRef = 95695D0918B6155800CA2307 /* NSFetchedResultsController+TTTEasySections.m */; };
+		95695D6618B6155900CA2307 /* NSPredicate+TTTConvenience.m in Sources */ = {isa = PBXBuildFile; fileRef = 95695D0B18B6155800CA2307 /* NSPredicate+TTTConvenience.m */; };
+		95695D6718B6155900CA2307 /* TTTAbstractManagedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 95695D0D18B6155800CA2307 /* TTTAbstractManagedObject.m */; };
+		95695D6818B6155900CA2307 /* NSPredicate+TTTConvenience.m in Sources */ = {isa = PBXBuildFile; fileRef = 95695D1018B6155800CA2307 /* NSPredicate+TTTConvenience.m */; };
+		95695D6918B6155900CA2307 /* TTTCGUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 95695D1318B6155800CA2307 /* TTTCGUtils.m */; };
+		95695D6A18B6155900CA2307 /* TTTCyclicDelegateRetainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 95695D1618B6155800CA2307 /* TTTCyclicDelegateRetainer.m */; };
+		95695D6B18B6155900CA2307 /* NSFastEnumeration+TTTMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 95695D1918B6155800CA2307 /* NSFastEnumeration+TTTMapping.m */; };
+		95695D6C18B6155900CA2307 /* NSObject+TTTBlocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 95695D1B18B6155800CA2307 /* NSObject+TTTBlocks.m */; };
+		95695D6D18B6155900CA2307 /* NSObject+TTTUnless.m in Sources */ = {isa = PBXBuildFile; fileRef = 95695D1D18B6155800CA2307 /* NSObject+TTTUnless.m */; };
+		95695D6E18B6155900CA2307 /* NSString+TTTEmptiness.m in Sources */ = {isa = PBXBuildFile; fileRef = 95695D1F18B6155800CA2307 /* NSString+TTTEmptiness.m */; };
+		95695D6F18B6155900CA2307 /* NSString+TTTURLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 95695D2118B6155800CA2307 /* NSString+TTTURLEncoding.m */; };
+		95695D7018B6155900CA2307 /* UIImage+TTTResizing.m in Sources */ = {isa = PBXBuildFile; fileRef = 95695D2418B6155800CA2307 /* UIImage+TTTResizing.m */; };
+		95695D7118B6155900CA2307 /* UIView+TTTHitTesting.m in Sources */ = {isa = PBXBuildFile; fileRef = 95695D2618B6155800CA2307 /* UIView+TTTHitTesting.m */; };
+		95695D7218B6155900CA2307 /* UIView+TTTLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 95695D2818B6155800CA2307 /* UIView+TTTLayout.m */; };
+		95695D7318B6155900CA2307 /* TTTLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 95695D2B18B6155800CA2307 /* TTTLog.m */; };
+		95695D7418B6155900CA2307 /* TTTLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 95695D2E18B6155800CA2307 /* TTTLog.m */; };
+		95695D7518B6155900CA2307 /* TTTAbstractJSONMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 95695D3118B6155800CA2307 /* TTTAbstractJSONMapping.m */; };
+		95695D7618B6155900CA2307 /* TTTAbstractPersistenceProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 95695D3318B6155800CA2307 /* TTTAbstractPersistenceProxy.m */; };
+		95695D7718B6155900CA2307 /* TTTJSONAttributeMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 95695D3518B6155800CA2307 /* TTTJSONAttributeMapping.m */; };
+		95695D7818B6155900CA2307 /* TTTJSONMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 95695D3718B6155800CA2307 /* TTTJSONMapper.m */; };
+		95695D7918B6155900CA2307 /* TTTJSONRelationshipMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 95695D3918B6155800CA2307 /* TTTJSONRelationshipMapping.m */; };
+		95695D7A18B6155900CA2307 /* TTTMappingPersistenceProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 95695D3B18B6155800CA2307 /* TTTMappingPersistenceProxy.m */; };
+		95695D7B18B6155900CA2307 /* TTTTableViewDataSourceItemController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95695D3E18B6155800CA2307 /* TTTTableViewDataSourceItemController.m */; };
+		95695D7C18B6155900CA2307 /* TTTTableViewDelegateItemController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95695D4018B6155800CA2307 /* TTTTableViewDelegateItemController.m */; };
+		95695D7D18B6155900CA2307 /* TTTTableViewFetchedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 95695D4218B6155800CA2307 /* TTTTableViewFetchedItem.m */; };
+		95695D7E18B6155900CA2307 /* TTTTableViewFetchedSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 95695D4418B6155800CA2307 /* TTTTableViewFetchedSection.m */; };
+		95695D7F18B6155900CA2307 /* TTTTableViewItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 95695D4618B6155800CA2307 /* TTTTableViewItem.m */; };
+		95695D8018B6155900CA2307 /* TTTTableViewItemController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95695D4818B6155800CA2307 /* TTTTableViewItemController.m */; };
+		95695D8118B6155900CA2307 /* TTTTableViewSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 95695D4A18B6155800CA2307 /* TTTTableViewSection.m */; };
+		95695D8218B6155900CA2307 /* UITableViewCell+TTTCreation.m in Sources */ = {isa = PBXBuildFile; fileRef = 95695D4C18B6155800CA2307 /* UITableViewCell+TTTCreation.m */; };
+		95695D8318B6155900CA2307 /* TTTDrawnView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95695D4F18B6155800CA2307 /* TTTDrawnView.m */; };
+		95695D8418B6155900CA2307 /* TTTTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 95695D5118B6155800CA2307 /* TTTTheme.m */; };
+		95695D8518B6155900CA2307 /* UIImage+TTTDrawing.m in Sources */ = {isa = PBXBuildFile; fileRef = 95695D5318B6155800CA2307 /* UIImage+TTTDrawing.m */; };
+		95695D8618B6155900CA2307 /* TwelveTwentyToolkit.m in Sources */ = {isa = PBXBuildFile; fileRef = 95695D5518B6155800CA2307 /* TwelveTwentyToolkit.m */; };
 		95934FD8167B283E00E4ED39 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95934FD7167B283E00E4ED39 /* AddressBook.framework */; };
 		95934FDA167B284800E4ED39 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95934FD9167B284800E4ED39 /* CoreData.framework */; };
 		95934FDC167B285200E4ED39 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95934FDB167B285200E4ED39 /* QuartzCore.framework */; };
@@ -24,60 +73,10 @@
 		95935000167B2D7F00E4ED39 /* TTTDISimpleSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 95934FFF167B2D7F00E4ED39 /* TTTDISimpleSingleton.m */; };
 		95935003167B318200E4ED39 /* TTTDIInjectableObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 95935002167B318100E4ED39 /* TTTDIInjectableObject.m */; };
 		95DC8FB2167B26B200AF1428 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95DC8FB1167B26B200AF1428 /* Foundation.framework */; };
-		95DC8FB7167B26B200AF1428 /* TwelveTwentyToolkit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 95DC8FB6167B26B200AF1428 /* TwelveTwentyToolkit.h */; };
 		95DC8FC1167B26B200AF1428 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95DC8FC0167B26B200AF1428 /* SenTestingKit.framework */; };
 		95DC8FC4167B26B200AF1428 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95DC8FB1167B26B200AF1428 /* Foundation.framework */; };
 		95DC8FC7167B26B200AF1428 /* libTwelveTwentyToolkit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 95DC8FAE167B26B200AF1428 /* libTwelveTwentyToolkit.a */; };
 		95DC8FCD167B26B200AF1428 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 95DC8FCB167B26B200AF1428 /* InfoPlist.strings */; };
-		E4207030BDD0FB1D26C88693 /* _TTTCDUnifiedRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = E42079871EE4AA38FBF9D07C /* _TTTCDUnifiedRecord.m */; };
-		E420709B8DF71DD308AC0B23 /* TTTCDLinkedRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = E4207EE810C78353B85E6DC0 /* TTTCDLinkedRecord.m */; };
-		E42070AF556096D0F17594F0 /* TTTTableViewDelegateItemController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4207DBE635599AB6B4DB697 /* TTTTableViewDelegateItemController.m */; };
-		E420710076BFF07BB9A2AF6A /* UIView+TTTLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = E4207832E44AEEC7844832A2 /* UIView+TTTLayout.m */; };
-		E420715BCC43E9DB90ED7C45 /* NSString+TTTURLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = E4207C4D71344C3AF4BEB8D5 /* NSString+TTTURLEncoding.m */; };
-		E420716AFBEDF0DAA3170E77 /* TTTTableViewDataSourceItemController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4207E371DAA007FA9EA8CED /* TTTTableViewDataSourceItemController.m */; };
-		E42071A91C1C8F99ED394AE1 /* TTTJSONRelationshipMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = E42077EBE75475A789667CA4 /* TTTJSONRelationshipMapping.m */; };
-		E42072317C1C7C0F1AC1E59A /* TTTJSONAttributeMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = E4207CD13A98470EB992DC6C /* TTTJSONAttributeMapping.m */; };
-		E4207442B0CBF546D2B86C0D /* TTTAbstractJSONMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = E420738F37A331BFECB7A72F /* TTTAbstractJSONMapping.m */; };
-		E4207455EBC13A8191C01993 /* TTTTableViewFetchedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E4207EA1091E0E703CCD1978 /* TTTTableViewFetchedItem.m */; };
-		E42074C2BD86B3A2FA2C51C5 /* NSManagedObjectContext+TTTConvenience.m in Sources */ = {isa = PBXBuildFile; fileRef = E420727438AF47588433AC5E /* NSManagedObjectContext+TTTConvenience.m */; };
-		E420755F37966891BB98E596 /* UIImage+TTTResizing.m in Sources */ = {isa = PBXBuildFile; fileRef = E42071BD2628EE2307DC60F4 /* UIImage+TTTResizing.m */; };
-		E42075E91404F2B136DAB719 /* NSManagedObjectContext+TTTUniquing.m in Sources */ = {isa = PBXBuildFile; fileRef = E42073F888E3498EF35CF125 /* NSManagedObjectContext+TTTUniquing.m */; };
-		E420763312C3B9C91100781F /* TTTMappingPersistenceProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = E420737538A2C7211F565E6E /* TTTMappingPersistenceProxy.m */; };
-		E420764342B63B54FCEA1EF0 /* NSString+TTTEmptiness.m in Sources */ = {isa = PBXBuildFile; fileRef = E42075BE0859C3AE6C0C7816 /* NSString+TTTEmptiness.m */; };
-		E420768B73B0B0E8DCE749C0 /* NSFetchedResultsController+TTTCacheControl.m in Sources */ = {isa = PBXBuildFile; fileRef = E4207DB56DCB1F0C54C7792D /* NSFetchedResultsController+TTTCacheControl.m */; };
-		E42076B90CE00DAE7A407C52 /* TwelveTwentyToolkit.m in Sources */ = {isa = PBXBuildFile; fileRef = E4207AEA7969456BCD20B4E7 /* TwelveTwentyToolkit.m */; };
-		E42076CF685206428721504B /* NSObject+TTTBlocks.m in Sources */ = {isa = PBXBuildFile; fileRef = E4207C97E2D40726795B2E4E /* NSObject+TTTBlocks.m */; };
-		E420771AC375821C960F9CAB /* TTTUnifiedCard.m in Sources */ = {isa = PBXBuildFile; fileRef = E42076FE120F0BFBD5ADAC50 /* TTTUnifiedCard.m */; };
-		E42077E88E8592163AA2B611 /* NSFetchedResultsController+TTTEasySections.m in Sources */ = {isa = PBXBuildFile; fileRef = E4207B7883699D464B8DE9D3 /* NSFetchedResultsController+TTTEasySections.m */; };
-		E4207804E3CB06A1AA1622D0 /* TTTAbstractPersistenceProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = E4207BCAEE4E8F45A12DBA8C /* TTTAbstractPersistenceProxy.m */; };
-		E420782602AE850AEEBBAF63 /* TTTUnifiedAddressBook.m in Sources */ = {isa = PBXBuildFile; fileRef = E4207A65C33DAE2B21A95997 /* TTTUnifiedAddressBook.m */; };
-		E42078C707C023CD607E2401 /* NSManagedObjectContext+TTTBatchManipulation.m in Sources */ = {isa = PBXBuildFile; fileRef = E420756AF4B4ECBA1B7732DC /* NSManagedObjectContext+TTTBatchManipulation.m */; };
-		E42078CF64E0437B4ED654DD /* TTTCDUnifiedRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = E4207B5043A017E1DD225FD3 /* TTTCDUnifiedRecord.m */; };
-		E42078F952144354890B12C7 /* UIImage+TTTDrawing.m in Sources */ = {isa = PBXBuildFile; fileRef = E4207B154B8D6BBF1B030479 /* UIImage+TTTDrawing.m */; };
-		E420790B4BC4E62657E6A75E /* NSObject+TTTUnless.m in Sources */ = {isa = PBXBuildFile; fileRef = E4207A3511C12FB8EAA69917 /* NSObject+TTTUnless.m */; };
-		E420796AE6A9EA270652E67D /* TTTTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = E4207DE345A4A6F3EE6ABE01 /* TTTTheme.m */; };
-		E42079A038C2C07B36F49B84 /* TTTTableViewItemController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4207B3CA1D68DB4A39841F0 /* TTTTableViewItemController.m */; };
-		E42079C08FB2CEF20FFA595D /* TTTCGUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = E4207388E1ECF7DD7DE340E9 /* TTTCGUtils.m */; };
-		E4207A227000F075AA604467 /* UIView+TTTHitTesting.m in Sources */ = {isa = PBXBuildFile; fileRef = E42072F0D06E87D573AC15D7 /* UIView+TTTHitTesting.m */; };
-		E4207A4E478DB3198E953A35 /* _TTTCDLinkedRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = E42072C376048140EF519423 /* _TTTCDLinkedRecord.m */; };
-		E4207A5DF951D95A61D8E4CC /* TTTCyclicDelegateRetainer.m in Sources */ = {isa = PBXBuildFile; fileRef = E4207EAF636806CCDCB0AF63 /* TTTCyclicDelegateRetainer.m */; };
-		E4207A8AA2A08DCA5D6E40C1 /* TTTTableViewItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E420781E5C99146D272E2019 /* TTTTableViewItem.m */; };
-		E4207B1A4821E62470FB1B98 /* CALayer+TTTCrossfade.m in Sources */ = {isa = PBXBuildFile; fileRef = E42071F8B028AC28784EDDC4 /* CALayer+TTTCrossfade.m */; };
-		E4207B7D0E0D7A32A4F11920 /* TTTUnifiedAddressBook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E4207976C01CB10887238064 /* TTTUnifiedAddressBook.xcdatamodeld */; };
-		E4207BB3BE93C33BB1BB9001 /* UITableViewCell+TTTCreation.m in Sources */ = {isa = PBXBuildFile; fileRef = E42071FAA86B4AEDBCC62D43 /* UITableViewCell+TTTCreation.m */; };
-		E4207BD89972532341A1B9CA /* TTTJSONMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = E42077CB792CBE4BAC545745 /* TTTJSONMapper.m */; };
-		E4207BF06B455C48394D34BB /* TTTLog.m in Sources */ = {isa = PBXBuildFile; fileRef = E420734EB8062A7397530E9F /* TTTLog.m */; };
-		E4207C3D61F996B77AB82E03 /* NSFastEnumeration+TTTMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = E4207CAEF812C67CF2E1CB76 /* NSFastEnumeration+TTTMapping.m */; };
-		E4207D32588D132786768504 /* NSPredicate+TTTConvenience.m in Sources */ = {isa = PBXBuildFile; fileRef = E4207939DB9D7BAFC7EF023C /* NSPredicate+TTTConvenience.m */; };
-		E4207DB4EA2493316706F355 /* TTTAbstractManagedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = E4207D37E930439F02A9E665 /* TTTAbstractManagedObject.m */; };
-		E4207DBD175F29EDEC7D0E0D /* TTTTableViewFetchedSection.m in Sources */ = {isa = PBXBuildFile; fileRef = E42076B02FADD8E4CDC3E38E /* TTTTableViewFetchedSection.m */; };
-		E4207DFA819FDF28995DAF02 /* TTTLog.m in Sources */ = {isa = PBXBuildFile; fileRef = E4207BB6CDF9D5CBB2A312BD /* TTTLog.m */; };
-		E4207E1000DFE9A7E715BA18 /* NSManagedObject+TTTUniquing.m in Sources */ = {isa = PBXBuildFile; fileRef = E420779725ACFB6719F3B956 /* NSManagedObject+TTTUniquing.m */; };
-		E4207E31F5299F60BCEA6EDC /* TTTDrawnView.m in Sources */ = {isa = PBXBuildFile; fileRef = E420739F4B7D9D007335F355 /* TTTDrawnView.m */; };
-		E4207E3768069EB58C343BA4 /* NSFetchRequest+TTTRequestConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = E4207761EEFA72C3B87E6C8A /* NSFetchRequest+TTTRequestConfiguration.m */; };
-		E4207E9A3BBC111E18ABEB3F /* TTTTimestamped.m in Sources */ = {isa = PBXBuildFile; fileRef = E420773930154C0B008E6EAB /* TTTTimestamped.m */; };
-		E4207F848F73B7200D19169F /* NSArray+TTTVALists.m in Sources */ = {isa = PBXBuildFile; fileRef = E42074D0117727CB17ABF3D7 /* NSArray+TTTVALists.m */; };
-		E4207FFB2521D573CB478EAA /* TTTTableViewSection.m in Sources */ = {isa = PBXBuildFile; fileRef = E4207CFCE53D1FBE7D0906CE /* TTTTableViewSection.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,15 +96,110 @@
 			dstPath = "include/${PRODUCT_NAME}";
 			dstSubfolderSpec = 16;
 			files = (
-				95DC8FB7167B26B200AF1428 /* TwelveTwentyToolkit.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		9543AC261833CD6500F65E3A /* NSPredicate+TTTConvenience.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSPredicate+TTTConvenience.h"; sourceTree = "<group>"; };
-		9543AC271833CD6500F65E3A /* NSPredicate+TTTConvenience.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSPredicate+TTTConvenience.m"; sourceTree = "<group>"; };
+		95695CE618B6155800CA2307 /* _TTTCDLinkedRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _TTTCDLinkedRecord.h; sourceTree = "<group>"; };
+		95695CE718B6155800CA2307 /* _TTTCDLinkedRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _TTTCDLinkedRecord.m; sourceTree = "<group>"; };
+		95695CE818B6155800CA2307 /* _TTTCDUnifiedRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _TTTCDUnifiedRecord.h; sourceTree = "<group>"; };
+		95695CE918B6155800CA2307 /* _TTTCDUnifiedRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _TTTCDUnifiedRecord.m; sourceTree = "<group>"; };
+		95695CEA18B6155800CA2307 /* TTTCDLinkedRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTCDLinkedRecord.h; sourceTree = "<group>"; };
+		95695CEB18B6155800CA2307 /* TTTCDLinkedRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTCDLinkedRecord.m; sourceTree = "<group>"; };
+		95695CEC18B6155800CA2307 /* TTTCDUnifiedRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTCDUnifiedRecord.h; sourceTree = "<group>"; };
+		95695CED18B6155800CA2307 /* TTTCDUnifiedRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTCDUnifiedRecord.m; sourceTree = "<group>"; };
+		95695CEE18B6155800CA2307 /* generate_classes.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = generate_classes.sh; sourceTree = "<group>"; };
+		95695CEF18B6155800CA2307 /* TTTUnifiedAddressBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTUnifiedAddressBook.h; sourceTree = "<group>"; };
+		95695CF018B6155800CA2307 /* TTTUnifiedAddressBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTUnifiedAddressBook.m; sourceTree = "<group>"; };
+		95695CF218B6155800CA2307 /* TTTUnifiedAddressBook.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TTTUnifiedAddressBook.xcdatamodel; sourceTree = "<group>"; };
+		95695CF318B6155800CA2307 /* TTTUnifiedCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTUnifiedCard.h; sourceTree = "<group>"; };
+		95695CF418B6155800CA2307 /* TTTUnifiedCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTUnifiedCard.m; sourceTree = "<group>"; };
+		95695CF618B6155800CA2307 /* CALayer+TTTCrossfade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+TTTCrossfade.h"; sourceTree = "<group>"; };
+		95695CF718B6155800CA2307 /* CALayer+TTTCrossfade.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+TTTCrossfade.m"; sourceTree = "<group>"; };
+		95695CF918B6155800CA2307 /* NSFetchRequest+TTTRequestConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFetchRequest+TTTRequestConfiguration.h"; sourceTree = "<group>"; };
+		95695CFA18B6155800CA2307 /* NSFetchRequest+TTTRequestConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFetchRequest+TTTRequestConfiguration.m"; sourceTree = "<group>"; };
+		95695CFB18B6155800CA2307 /* NSManagedObject+TTTUniquing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+TTTUniquing.h"; sourceTree = "<group>"; };
+		95695CFC18B6155800CA2307 /* NSManagedObject+TTTUniquing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+TTTUniquing.m"; sourceTree = "<group>"; };
+		95695CFD18B6155800CA2307 /* NSManagedObjectContext+TTTBatchManipulation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+TTTBatchManipulation.h"; sourceTree = "<group>"; };
+		95695CFE18B6155800CA2307 /* NSManagedObjectContext+TTTBatchManipulation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+TTTBatchManipulation.m"; sourceTree = "<group>"; };
+		95695CFF18B6155800CA2307 /* NSManagedObjectContext+TTTConvenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+TTTConvenience.h"; sourceTree = "<group>"; };
+		95695D0018B6155800CA2307 /* NSManagedObjectContext+TTTConvenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+TTTConvenience.m"; sourceTree = "<group>"; };
+		95695D0118B6155800CA2307 /* NSManagedObjectContext+TTTUniquing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+TTTUniquing.h"; sourceTree = "<group>"; };
+		95695D0218B6155800CA2307 /* NSManagedObjectContext+TTTUniquing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+TTTUniquing.m"; sourceTree = "<group>"; };
+		95695D0318B6155800CA2307 /* TTTTimestamped.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTTimestamped.h; sourceTree = "<group>"; };
+		95695D0418B6155800CA2307 /* TTTTimestamped.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTTimestamped.m; sourceTree = "<group>"; };
+		95695D0618B6155800CA2307 /* NSFetchedResultsController+TTTCacheControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFetchedResultsController+TTTCacheControl.h"; sourceTree = "<group>"; };
+		95695D0718B6155800CA2307 /* NSFetchedResultsController+TTTCacheControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFetchedResultsController+TTTCacheControl.m"; sourceTree = "<group>"; };
+		95695D0818B6155800CA2307 /* NSFetchedResultsController+TTTEasySections.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFetchedResultsController+TTTEasySections.h"; sourceTree = "<group>"; };
+		95695D0918B6155800CA2307 /* NSFetchedResultsController+TTTEasySections.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFetchedResultsController+TTTEasySections.m"; sourceTree = "<group>"; };
+		95695D0A18B6155800CA2307 /* NSPredicate+TTTConvenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSPredicate+TTTConvenience.h"; sourceTree = "<group>"; };
+		95695D0B18B6155800CA2307 /* NSPredicate+TTTConvenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSPredicate+TTTConvenience.m"; sourceTree = "<group>"; };
+		95695D0C18B6155800CA2307 /* TTTAbstractManagedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTAbstractManagedObject.h; sourceTree = "<group>"; };
+		95695D0D18B6155800CA2307 /* TTTAbstractManagedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTAbstractManagedObject.m; sourceTree = "<group>"; };
+		95695D0F18B6155800CA2307 /* NSPredicate+TTTConvenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSPredicate+TTTConvenience.h"; sourceTree = "<group>"; };
+		95695D1018B6155800CA2307 /* NSPredicate+TTTConvenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSPredicate+TTTConvenience.m"; sourceTree = "<group>"; };
+		95695D1218B6155800CA2307 /* TTTCGUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTCGUtils.h; sourceTree = "<group>"; };
+		95695D1318B6155800CA2307 /* TTTCGUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTCGUtils.m; sourceTree = "<group>"; };
+		95695D1518B6155800CA2307 /* TTTCyclicDelegateRetainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTCyclicDelegateRetainer.h; sourceTree = "<group>"; };
+		95695D1618B6155800CA2307 /* TTTCyclicDelegateRetainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTCyclicDelegateRetainer.m; sourceTree = "<group>"; };
+		95695D1818B6155800CA2307 /* NSFastEnumeration+TTTMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFastEnumeration+TTTMapping.h"; sourceTree = "<group>"; };
+		95695D1918B6155800CA2307 /* NSFastEnumeration+TTTMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFastEnumeration+TTTMapping.m"; sourceTree = "<group>"; };
+		95695D1A18B6155800CA2307 /* NSObject+TTTBlocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+TTTBlocks.h"; sourceTree = "<group>"; };
+		95695D1B18B6155800CA2307 /* NSObject+TTTBlocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+TTTBlocks.m"; sourceTree = "<group>"; };
+		95695D1C18B6155800CA2307 /* NSObject+TTTUnless.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+TTTUnless.h"; sourceTree = "<group>"; };
+		95695D1D18B6155800CA2307 /* NSObject+TTTUnless.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+TTTUnless.m"; sourceTree = "<group>"; };
+		95695D1E18B6155800CA2307 /* NSString+TTTEmptiness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+TTTEmptiness.h"; sourceTree = "<group>"; };
+		95695D1F18B6155800CA2307 /* NSString+TTTEmptiness.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+TTTEmptiness.m"; sourceTree = "<group>"; };
+		95695D2018B6155800CA2307 /* NSString+TTTURLEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+TTTURLEncoding.h"; sourceTree = "<group>"; };
+		95695D2118B6155800CA2307 /* NSString+TTTURLEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+TTTURLEncoding.m"; sourceTree = "<group>"; };
+		95695D2318B6155800CA2307 /* UIImage+TTTResizing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+TTTResizing.h"; sourceTree = "<group>"; };
+		95695D2418B6155800CA2307 /* UIImage+TTTResizing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+TTTResizing.m"; sourceTree = "<group>"; };
+		95695D2518B6155800CA2307 /* UIView+TTTHitTesting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+TTTHitTesting.h"; sourceTree = "<group>"; };
+		95695D2618B6155800CA2307 /* UIView+TTTHitTesting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+TTTHitTesting.m"; sourceTree = "<group>"; };
+		95695D2718B6155800CA2307 /* UIView+TTTLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+TTTLayout.h"; sourceTree = "<group>"; };
+		95695D2818B6155800CA2307 /* UIView+TTTLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+TTTLayout.m"; sourceTree = "<group>"; };
+		95695D2A18B6155800CA2307 /* TTTLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTLog.h; sourceTree = "<group>"; };
+		95695D2B18B6155800CA2307 /* TTTLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTLog.m; sourceTree = "<group>"; };
+		95695D2D18B6155800CA2307 /* TTTLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTLog.h; sourceTree = "<group>"; };
+		95695D2E18B6155800CA2307 /* TTTLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTLog.m; sourceTree = "<group>"; };
+		95695D3018B6155800CA2307 /* TTTAbstractJSONMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTAbstractJSONMapping.h; sourceTree = "<group>"; };
+		95695D3118B6155800CA2307 /* TTTAbstractJSONMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTAbstractJSONMapping.m; sourceTree = "<group>"; };
+		95695D3218B6155800CA2307 /* TTTAbstractPersistenceProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTAbstractPersistenceProxy.h; sourceTree = "<group>"; };
+		95695D3318B6155800CA2307 /* TTTAbstractPersistenceProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTAbstractPersistenceProxy.m; sourceTree = "<group>"; };
+		95695D3418B6155800CA2307 /* TTTJSONAttributeMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTJSONAttributeMapping.h; sourceTree = "<group>"; };
+		95695D3518B6155800CA2307 /* TTTJSONAttributeMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTJSONAttributeMapping.m; sourceTree = "<group>"; };
+		95695D3618B6155800CA2307 /* TTTJSONMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTJSONMapper.h; sourceTree = "<group>"; };
+		95695D3718B6155800CA2307 /* TTTJSONMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTJSONMapper.m; sourceTree = "<group>"; };
+		95695D3818B6155800CA2307 /* TTTJSONRelationshipMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTJSONRelationshipMapping.h; sourceTree = "<group>"; };
+		95695D3918B6155800CA2307 /* TTTJSONRelationshipMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTJSONRelationshipMapping.m; sourceTree = "<group>"; };
+		95695D3A18B6155800CA2307 /* TTTMappingPersistenceProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTMappingPersistenceProxy.h; sourceTree = "<group>"; };
+		95695D3B18B6155800CA2307 /* TTTMappingPersistenceProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTMappingPersistenceProxy.m; sourceTree = "<group>"; };
+		95695D3D18B6155800CA2307 /* TTTTableViewDataSourceItemController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTTableViewDataSourceItemController.h; sourceTree = "<group>"; };
+		95695D3E18B6155800CA2307 /* TTTTableViewDataSourceItemController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTTableViewDataSourceItemController.m; sourceTree = "<group>"; };
+		95695D3F18B6155800CA2307 /* TTTTableViewDelegateItemController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTTableViewDelegateItemController.h; sourceTree = "<group>"; };
+		95695D4018B6155800CA2307 /* TTTTableViewDelegateItemController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTTableViewDelegateItemController.m; sourceTree = "<group>"; };
+		95695D4118B6155800CA2307 /* TTTTableViewFetchedItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTTableViewFetchedItem.h; sourceTree = "<group>"; };
+		95695D4218B6155800CA2307 /* TTTTableViewFetchedItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTTableViewFetchedItem.m; sourceTree = "<group>"; };
+		95695D4318B6155800CA2307 /* TTTTableViewFetchedSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTTableViewFetchedSection.h; sourceTree = "<group>"; };
+		95695D4418B6155800CA2307 /* TTTTableViewFetchedSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTTableViewFetchedSection.m; sourceTree = "<group>"; };
+		95695D4518B6155800CA2307 /* TTTTableViewItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTTableViewItem.h; sourceTree = "<group>"; };
+		95695D4618B6155800CA2307 /* TTTTableViewItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTTableViewItem.m; sourceTree = "<group>"; };
+		95695D4718B6155800CA2307 /* TTTTableViewItemController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTTableViewItemController.h; sourceTree = "<group>"; };
+		95695D4818B6155800CA2307 /* TTTTableViewItemController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTTableViewItemController.m; sourceTree = "<group>"; };
+		95695D4918B6155800CA2307 /* TTTTableViewSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTTableViewSection.h; sourceTree = "<group>"; };
+		95695D4A18B6155800CA2307 /* TTTTableViewSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTTableViewSection.m; sourceTree = "<group>"; };
+		95695D4B18B6155800CA2307 /* UITableViewCell+TTTCreation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+TTTCreation.h"; sourceTree = "<group>"; };
+		95695D4C18B6155800CA2307 /* UITableViewCell+TTTCreation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+TTTCreation.m"; sourceTree = "<group>"; };
+		95695D4E18B6155800CA2307 /* TTTDrawnView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTDrawnView.h; sourceTree = "<group>"; };
+		95695D4F18B6155800CA2307 /* TTTDrawnView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTDrawnView.m; sourceTree = "<group>"; };
+		95695D5018B6155800CA2307 /* TTTTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTTheme.h; sourceTree = "<group>"; };
+		95695D5118B6155800CA2307 /* TTTTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTTheme.m; sourceTree = "<group>"; };
+		95695D5218B6155800CA2307 /* UIImage+TTTDrawing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+TTTDrawing.h"; sourceTree = "<group>"; };
+		95695D5318B6155800CA2307 /* UIImage+TTTDrawing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+TTTDrawing.m"; sourceTree = "<group>"; };
+		95695D5418B6155800CA2307 /* TwelveTwentyToolkit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwelveTwentyToolkit.h; sourceTree = "<group>"; };
+		95695D5518B6155800CA2307 /* TwelveTwentyToolkit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwelveTwentyToolkit.m; sourceTree = "<group>"; };
 		95934FD7167B283E00E4ED39 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		95934FD9167B284800E4ED39 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		95934FDB167B285200E4ED39 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -132,108 +226,10 @@
 		95DC8FAE167B26B200AF1428 /* libTwelveTwentyToolkit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTwelveTwentyToolkit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		95DC8FB1167B26B200AF1428 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		95DC8FB5167B26B200AF1428 /* TwelveTwentyToolkit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TwelveTwentyToolkit-Prefix.pch"; sourceTree = "<group>"; };
-		95DC8FB6167B26B200AF1428 /* TwelveTwentyToolkit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TwelveTwentyToolkit.h; sourceTree = "<group>"; };
 		95DC8FBF167B26B200AF1428 /* TwelveTwentyToolkitTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TwelveTwentyToolkitTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		95DC8FC0167B26B200AF1428 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		95DC8FCA167B26B200AF1428 /* TwelveTwentyToolkitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TwelveTwentyToolkitTests-Info.plist"; sourceTree = "<group>"; };
 		95DC8FCC167B26B200AF1428 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		E4207079F3266A788FE3A7AE /* TTTAbstractJSONMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTAbstractJSONMapping.h; sourceTree = "<group>"; };
-		E42070F3E115CFDE36138E41 /* NSManagedObjectContext+TTTConvenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+TTTConvenience.h"; sourceTree = "<group>"; };
-		E420715E502FBF7DB0A2CDD4 /* TTTTableViewItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTTableViewItem.h; sourceTree = "<group>"; };
-		E42071B691C6F5BCB74DBF31 /* NSString+TTTEmptiness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+TTTEmptiness.h"; sourceTree = "<group>"; };
-		E42071BD2628EE2307DC60F4 /* UIImage+TTTResizing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+TTTResizing.m"; sourceTree = "<group>"; };
-		E42071E850509B6D779334EE /* TTTUnifiedAddressBook.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TTTUnifiedAddressBook.xcdatamodel; sourceTree = "<group>"; };
-		E42071F8B028AC28784EDDC4 /* CALayer+TTTCrossfade.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+TTTCrossfade.m"; sourceTree = "<group>"; };
-		E42071FAA86B4AEDBCC62D43 /* UITableViewCell+TTTCreation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+TTTCreation.m"; sourceTree = "<group>"; };
-		E42072008C37D0793FFAEC23 /* TTTTableViewDelegateItemController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTTableViewDelegateItemController.h; sourceTree = "<group>"; };
-		E420720CC216354C294F7632 /* TTTUnifiedCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTUnifiedCard.h; sourceTree = "<group>"; };
-		E420727438AF47588433AC5E /* NSManagedObjectContext+TTTConvenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+TTTConvenience.m"; sourceTree = "<group>"; };
-		E42072C376048140EF519423 /* _TTTCDLinkedRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _TTTCDLinkedRecord.m; sourceTree = "<group>"; };
-		E42072CED41876E0EF4483ED /* TTTJSONAttributeMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTJSONAttributeMapping.h; sourceTree = "<group>"; };
-		E42072F0D06E87D573AC15D7 /* UIView+TTTHitTesting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+TTTHitTesting.m"; sourceTree = "<group>"; };
-		E42072FD2F4103B32E2F5013 /* NSFastEnumeration+TTTMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFastEnumeration+TTTMapping.h"; sourceTree = "<group>"; };
-		E42073069BD0131E7BEFE70F /* TTTCDUnifiedRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTCDUnifiedRecord.h; sourceTree = "<group>"; };
-		E420730A55B3AB2CB4F20AA1 /* TTTLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTLog.h; sourceTree = "<group>"; };
-		E420730E886D6C2B5A735BC1 /* TTTLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTLog.h; sourceTree = "<group>"; };
-		E420732DEB13496D504F2D7D /* TTTUnifiedAddressBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTUnifiedAddressBook.h; sourceTree = "<group>"; };
-		E420734EB8062A7397530E9F /* TTTLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTLog.m; sourceTree = "<group>"; };
-		E4207363DE22C9315D20143D /* NSFetchedResultsController+TTTCacheControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFetchedResultsController+TTTCacheControl.h"; sourceTree = "<group>"; };
-		E420737538A2C7211F565E6E /* TTTMappingPersistenceProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTMappingPersistenceProxy.m; sourceTree = "<group>"; };
-		E4207388E1ECF7DD7DE340E9 /* TTTCGUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTCGUtils.m; sourceTree = "<group>"; };
-		E420738F37A331BFECB7A72F /* TTTAbstractJSONMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTAbstractJSONMapping.m; sourceTree = "<group>"; };
-		E420739F4B7D9D007335F355 /* TTTDrawnView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTDrawnView.m; sourceTree = "<group>"; };
-		E42073F888E3498EF35CF125 /* NSManagedObjectContext+TTTUniquing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+TTTUniquing.m"; sourceTree = "<group>"; };
-		E420748E881A5FB8625D76C5 /* TTTTableViewDataSourceItemController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTTableViewDataSourceItemController.h; sourceTree = "<group>"; };
-		E42074AF703E4E8C31F4B202 /* TTTMappingPersistenceProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTMappingPersistenceProxy.h; sourceTree = "<group>"; };
-		E42074D0117727CB17ABF3D7 /* NSArray+TTTVALists.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+TTTVALists.m"; sourceTree = "<group>"; };
-		E420756AF4B4ECBA1B7732DC /* NSManagedObjectContext+TTTBatchManipulation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+TTTBatchManipulation.m"; sourceTree = "<group>"; };
-		E42075BE0859C3AE6C0C7816 /* NSString+TTTEmptiness.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+TTTEmptiness.m"; sourceTree = "<group>"; };
-		E42075FA669F15DAA8460289 /* TTTCyclicDelegateRetainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTCyclicDelegateRetainer.h; sourceTree = "<group>"; };
-		E4207619CA73906B82C86A3E /* UIImage+TTTDrawing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+TTTDrawing.h"; sourceTree = "<group>"; };
-		E420761B626257D0E7E2DBF2 /* TTTAbstractManagedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTAbstractManagedObject.h; sourceTree = "<group>"; };
-		E42076B02FADD8E4CDC3E38E /* TTTTableViewFetchedSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTTableViewFetchedSection.m; sourceTree = "<group>"; };
-		E42076DF3F144B7189B3B394 /* UITableViewCell+TTTCreation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+TTTCreation.h"; sourceTree = "<group>"; };
-		E42076FE120F0BFBD5ADAC50 /* TTTUnifiedCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTUnifiedCard.m; sourceTree = "<group>"; };
-		E420773930154C0B008E6EAB /* TTTTimestamped.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTTimestamped.m; sourceTree = "<group>"; };
-		E4207761EEFA72C3B87E6C8A /* NSFetchRequest+TTTRequestConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFetchRequest+TTTRequestConfiguration.m"; sourceTree = "<group>"; };
-		E420776AF0CD04FE33C9FB93 /* NSArray+TTTVALists.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+TTTVALists.h"; sourceTree = "<group>"; };
-		E420779725ACFB6719F3B956 /* NSManagedObject+TTTUniquing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+TTTUniquing.m"; sourceTree = "<group>"; };
-		E42077CB792CBE4BAC545745 /* TTTJSONMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTJSONMapper.m; sourceTree = "<group>"; };
-		E42077EBE75475A789667CA4 /* TTTJSONRelationshipMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTJSONRelationshipMapping.m; sourceTree = "<group>"; };
-		E420780D10CFEC6BF04FAF82 /* NSManagedObject+TTTUniquing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+TTTUniquing.h"; sourceTree = "<group>"; };
-		E420781E5C99146D272E2019 /* TTTTableViewItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTTableViewItem.m; sourceTree = "<group>"; };
-		E4207823E7612995C967D4E8 /* TTTTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTTheme.h; sourceTree = "<group>"; };
-		E4207832E44AEEC7844832A2 /* UIView+TTTLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+TTTLayout.m"; sourceTree = "<group>"; };
-		E4207858CB65E92FA40A5952 /* NSManagedObjectContext+TTTBatchManipulation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+TTTBatchManipulation.h"; sourceTree = "<group>"; };
-		E42078D72191EAD55927249E /* NSObject+TTTUnless.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+TTTUnless.h"; sourceTree = "<group>"; };
-		E42078D9F70583AD5B9A2F1F /* TTTJSONMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTJSONMapper.h; sourceTree = "<group>"; };
-		E42078EBF7ACA9D899618A3D /* TTTDrawnView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTDrawnView.h; sourceTree = "<group>"; };
-		E4207939DB9D7BAFC7EF023C /* NSPredicate+TTTConvenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSPredicate+TTTConvenience.m"; sourceTree = "<group>"; };
-		E4207958E5C731DA2CD45CB5 /* generate_classes.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = generate_classes.sh; sourceTree = "<group>"; };
-		E420798029385BDF0395512B /* TTTCGUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTCGUtils.h; sourceTree = "<group>"; };
-		E42079871EE4AA38FBF9D07C /* _TTTCDUnifiedRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _TTTCDUnifiedRecord.m; sourceTree = "<group>"; };
-		E4207A3511C12FB8EAA69917 /* NSObject+TTTUnless.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+TTTUnless.m"; sourceTree = "<group>"; };
-		E4207A65C33DAE2B21A95997 /* TTTUnifiedAddressBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTUnifiedAddressBook.m; sourceTree = "<group>"; };
-		E4207A81C315F11C764BF36F /* NSFetchRequest+TTTRequestConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFetchRequest+TTTRequestConfiguration.h"; sourceTree = "<group>"; };
-		E4207AB916A1DA559EBD18F6 /* UIImage+TTTResizing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+TTTResizing.h"; sourceTree = "<group>"; };
-		E4207AEA7969456BCD20B4E7 /* TwelveTwentyToolkit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwelveTwentyToolkit.m; sourceTree = "<group>"; };
-		E4207B0D01798B0469EE4A12 /* CALayer+TTTCrossfade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+TTTCrossfade.h"; sourceTree = "<group>"; };
-		E4207B154B8D6BBF1B030479 /* UIImage+TTTDrawing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+TTTDrawing.m"; sourceTree = "<group>"; };
-		E4207B3C441E93FF434D1BA9 /* TTTAbstractPersistenceProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTAbstractPersistenceProxy.h; sourceTree = "<group>"; };
-		E4207B3CA1D68DB4A39841F0 /* TTTTableViewItemController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTTableViewItemController.m; sourceTree = "<group>"; };
-		E4207B5043A017E1DD225FD3 /* TTTCDUnifiedRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTCDUnifiedRecord.m; sourceTree = "<group>"; };
-		E4207B5ED46EB865A2396520 /* TTTCDLinkedRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTCDLinkedRecord.h; sourceTree = "<group>"; };
-		E4207B66DBD1691967FC47A6 /* _TTTCDLinkedRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _TTTCDLinkedRecord.h; sourceTree = "<group>"; };
-		E4207B7883699D464B8DE9D3 /* NSFetchedResultsController+TTTEasySections.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFetchedResultsController+TTTEasySections.m"; sourceTree = "<group>"; };
-		E4207BB6CDF9D5CBB2A312BD /* TTTLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTLog.m; sourceTree = "<group>"; };
-		E4207BCAEE4E8F45A12DBA8C /* TTTAbstractPersistenceProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTAbstractPersistenceProxy.m; sourceTree = "<group>"; };
-		E4207BF62695E30DAAFEFE32 /* UIView+TTTHitTesting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+TTTHitTesting.h"; sourceTree = "<group>"; };
-		E4207C128389F57554118E1B /* _TTTCDUnifiedRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _TTTCDUnifiedRecord.h; sourceTree = "<group>"; };
-		E4207C2E51AD6B2CF0C07597 /* TTTTableViewSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTTableViewSection.h; sourceTree = "<group>"; };
-		E4207C4D71344C3AF4BEB8D5 /* NSString+TTTURLEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+TTTURLEncoding.m"; sourceTree = "<group>"; };
-		E4207C4FE8748A88E9B38D42 /* NSFetchedResultsController+TTTEasySections.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFetchedResultsController+TTTEasySections.h"; sourceTree = "<group>"; };
-		E4207C97E2D40726795B2E4E /* NSObject+TTTBlocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+TTTBlocks.m"; sourceTree = "<group>"; };
-		E4207C9D5CFEE5BA92F0FA2D /* TTTJSONRelationshipMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTJSONRelationshipMapping.h; sourceTree = "<group>"; };
-		E4207CAEF812C67CF2E1CB76 /* NSFastEnumeration+TTTMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFastEnumeration+TTTMapping.m"; sourceTree = "<group>"; };
-		E4207CD13A98470EB992DC6C /* TTTJSONAttributeMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTJSONAttributeMapping.m; sourceTree = "<group>"; };
-		E4207CFCE53D1FBE7D0906CE /* TTTTableViewSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTTableViewSection.m; sourceTree = "<group>"; };
-		E4207D2C5758C0EF45EEDD8B /* TTTTableViewItemController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTTableViewItemController.h; sourceTree = "<group>"; };
-		E4207D37E930439F02A9E665 /* TTTAbstractManagedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTAbstractManagedObject.m; sourceTree = "<group>"; };
-		E4207D5C508A153F2FFFDB29 /* TTTTableViewFetchedSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTTableViewFetchedSection.h; sourceTree = "<group>"; };
-		E4207D856AB3D8AE5D985749 /* NSString+TTTURLEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+TTTURLEncoding.h"; sourceTree = "<group>"; };
-		E4207DB56DCB1F0C54C7792D /* NSFetchedResultsController+TTTCacheControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFetchedResultsController+TTTCacheControl.m"; sourceTree = "<group>"; };
-		E4207DBE635599AB6B4DB697 /* TTTTableViewDelegateItemController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTTableViewDelegateItemController.m; sourceTree = "<group>"; };
-		E4207DE2BE59FA286044AC94 /* NSManagedObjectContext+TTTUniquing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+TTTUniquing.h"; sourceTree = "<group>"; };
-		E4207DE345A4A6F3EE6ABE01 /* TTTTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTTheme.m; sourceTree = "<group>"; };
-		E4207E15E75E5894BAC0936E /* TTTTableViewFetchedItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTTableViewFetchedItem.h; sourceTree = "<group>"; };
-		E4207E2C5BE7001B706A12DC /* TTTTimestamped.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTTimestamped.h; sourceTree = "<group>"; };
-		E4207E371DAA007FA9EA8CED /* TTTTableViewDataSourceItemController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTTableViewDataSourceItemController.m; sourceTree = "<group>"; };
-		E4207E692F02B4A37FB91252 /* UIView+TTTLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+TTTLayout.h"; sourceTree = "<group>"; };
-		E4207EA1091E0E703CCD1978 /* TTTTableViewFetchedItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTTableViewFetchedItem.m; sourceTree = "<group>"; };
-		E4207EAEB8BC221B0A9094D6 /* NSObject+TTTBlocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+TTTBlocks.h"; sourceTree = "<group>"; };
-		E4207EAF636806CCDCB0AF63 /* TTTCyclicDelegateRetainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTCyclicDelegateRetainer.m; sourceTree = "<group>"; };
-		E4207EE810C78353B85E6DC0 /* TTTCDLinkedRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTCDLinkedRecord.m; sourceTree = "<group>"; };
-		E4207F29E532DB31ACA8490D /* NSPredicate+TTTConvenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSPredicate+TTTConvenience.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -265,13 +261,214 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9543AC251833CD6500F65E3A /* CoreData-OSX */ = {
+		95695CE318B6155800CA2307 /* AddressBook */ = {
 			isa = PBXGroup;
 			children = (
-				9543AC261833CD6500F65E3A /* NSPredicate+TTTConvenience.h */,
-				9543AC271833CD6500F65E3A /* NSPredicate+TTTConvenience.m */,
+				95695CE418B6155800CA2307 /* Entities */,
+				95695CEE18B6155800CA2307 /* generate_classes.sh */,
+				95695CEF18B6155800CA2307 /* TTTUnifiedAddressBook.h */,
+				95695CF018B6155800CA2307 /* TTTUnifiedAddressBook.m */,
+				95695CF118B6155800CA2307 /* TTTUnifiedAddressBook.xcdatamodeld */,
+				95695CF318B6155800CA2307 /* TTTUnifiedCard.h */,
+				95695CF418B6155800CA2307 /* TTTUnifiedCard.m */,
+			);
+			path = AddressBook;
+			sourceTree = "<group>";
+		};
+		95695CE418B6155800CA2307 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				95695CE518B6155800CA2307 /* Abstract */,
+				95695CEA18B6155800CA2307 /* TTTCDLinkedRecord.h */,
+				95695CEB18B6155800CA2307 /* TTTCDLinkedRecord.m */,
+				95695CEC18B6155800CA2307 /* TTTCDUnifiedRecord.h */,
+				95695CED18B6155800CA2307 /* TTTCDUnifiedRecord.m */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		95695CE518B6155800CA2307 /* Abstract */ = {
+			isa = PBXGroup;
+			children = (
+				95695CE618B6155800CA2307 /* _TTTCDLinkedRecord.h */,
+				95695CE718B6155800CA2307 /* _TTTCDLinkedRecord.m */,
+				95695CE818B6155800CA2307 /* _TTTCDUnifiedRecord.h */,
+				95695CE918B6155800CA2307 /* _TTTCDUnifiedRecord.m */,
+			);
+			path = Abstract;
+			sourceTree = "<group>";
+		};
+		95695CF518B6155800CA2307 /* CoreAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				95695CF618B6155800CA2307 /* CALayer+TTTCrossfade.h */,
+				95695CF718B6155800CA2307 /* CALayer+TTTCrossfade.m */,
+			);
+			path = CoreAnimation;
+			sourceTree = "<group>";
+		};
+		95695CF818B6155800CA2307 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				95695CF918B6155800CA2307 /* NSFetchRequest+TTTRequestConfiguration.h */,
+				95695CFA18B6155800CA2307 /* NSFetchRequest+TTTRequestConfiguration.m */,
+				95695CFB18B6155800CA2307 /* NSManagedObject+TTTUniquing.h */,
+				95695CFC18B6155800CA2307 /* NSManagedObject+TTTUniquing.m */,
+				95695CFD18B6155800CA2307 /* NSManagedObjectContext+TTTBatchManipulation.h */,
+				95695CFE18B6155800CA2307 /* NSManagedObjectContext+TTTBatchManipulation.m */,
+				95695CFF18B6155800CA2307 /* NSManagedObjectContext+TTTConvenience.h */,
+				95695D0018B6155800CA2307 /* NSManagedObjectContext+TTTConvenience.m */,
+				95695D0118B6155800CA2307 /* NSManagedObjectContext+TTTUniquing.h */,
+				95695D0218B6155800CA2307 /* NSManagedObjectContext+TTTUniquing.m */,
+				95695D0318B6155800CA2307 /* TTTTimestamped.h */,
+				95695D0418B6155800CA2307 /* TTTTimestamped.m */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		95695D0518B6155800CA2307 /* CoreData-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				95695D0618B6155800CA2307 /* NSFetchedResultsController+TTTCacheControl.h */,
+				95695D0718B6155800CA2307 /* NSFetchedResultsController+TTTCacheControl.m */,
+				95695D0818B6155800CA2307 /* NSFetchedResultsController+TTTEasySections.h */,
+				95695D0918B6155800CA2307 /* NSFetchedResultsController+TTTEasySections.m */,
+				95695D0A18B6155800CA2307 /* NSPredicate+TTTConvenience.h */,
+				95695D0B18B6155800CA2307 /* NSPredicate+TTTConvenience.m */,
+				95695D0C18B6155800CA2307 /* TTTAbstractManagedObject.h */,
+				95695D0D18B6155800CA2307 /* TTTAbstractManagedObject.m */,
+			);
+			path = "CoreData-iOS";
+			sourceTree = "<group>";
+		};
+		95695D0E18B6155800CA2307 /* CoreData-OSX */ = {
+			isa = PBXGroup;
+			children = (
+				95695D0F18B6155800CA2307 /* NSPredicate+TTTConvenience.h */,
+				95695D1018B6155800CA2307 /* NSPredicate+TTTConvenience.m */,
 			);
 			path = "CoreData-OSX";
+			sourceTree = "<group>";
+		};
+		95695D1118B6155800CA2307 /* CoreGraphics */ = {
+			isa = PBXGroup;
+			children = (
+				95695D1218B6155800CA2307 /* TTTCGUtils.h */,
+				95695D1318B6155800CA2307 /* TTTCGUtils.m */,
+			);
+			path = CoreGraphics;
+			sourceTree = "<group>";
+		};
+		95695D1418B6155800CA2307 /* CyclicDelegateRetainer */ = {
+			isa = PBXGroup;
+			children = (
+				95695D1518B6155800CA2307 /* TTTCyclicDelegateRetainer.h */,
+				95695D1618B6155800CA2307 /* TTTCyclicDelegateRetainer.m */,
+			);
+			path = CyclicDelegateRetainer;
+			sourceTree = "<group>";
+		};
+		95695D1718B6155800CA2307 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				95695D1818B6155800CA2307 /* NSFastEnumeration+TTTMapping.h */,
+				95695D1918B6155800CA2307 /* NSFastEnumeration+TTTMapping.m */,
+				95695D1A18B6155800CA2307 /* NSObject+TTTBlocks.h */,
+				95695D1B18B6155800CA2307 /* NSObject+TTTBlocks.m */,
+				95695D1C18B6155800CA2307 /* NSObject+TTTUnless.h */,
+				95695D1D18B6155800CA2307 /* NSObject+TTTUnless.m */,
+				95695D1E18B6155800CA2307 /* NSString+TTTEmptiness.h */,
+				95695D1F18B6155800CA2307 /* NSString+TTTEmptiness.m */,
+				95695D2018B6155800CA2307 /* NSString+TTTURLEncoding.h */,
+				95695D2118B6155800CA2307 /* NSString+TTTURLEncoding.m */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		95695D2218B6155800CA2307 /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				95695D2318B6155800CA2307 /* UIImage+TTTResizing.h */,
+				95695D2418B6155800CA2307 /* UIImage+TTTResizing.m */,
+				95695D2518B6155800CA2307 /* UIView+TTTHitTesting.h */,
+				95695D2618B6155800CA2307 /* UIView+TTTHitTesting.m */,
+				95695D2718B6155800CA2307 /* UIView+TTTLayout.h */,
+				95695D2818B6155800CA2307 /* UIView+TTTLayout.m */,
+			);
+			path = Layout;
+			sourceTree = "<group>";
+		};
+		95695D2918B6155800CA2307 /* Logging */ = {
+			isa = PBXGroup;
+			children = (
+				95695D2A18B6155800CA2307 /* TTTLog.h */,
+				95695D2B18B6155800CA2307 /* TTTLog.m */,
+			);
+			path = Logging;
+			sourceTree = "<group>";
+		};
+		95695D2C18B6155800CA2307 /* Logging-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				95695D2D18B6155800CA2307 /* TTTLog.h */,
+				95695D2E18B6155800CA2307 /* TTTLog.m */,
+			);
+			path = "Logging-iOS";
+			sourceTree = "<group>";
+		};
+		95695D2F18B6155800CA2307 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				95695D3018B6155800CA2307 /* TTTAbstractJSONMapping.h */,
+				95695D3118B6155800CA2307 /* TTTAbstractJSONMapping.m */,
+				95695D3218B6155800CA2307 /* TTTAbstractPersistenceProxy.h */,
+				95695D3318B6155800CA2307 /* TTTAbstractPersistenceProxy.m */,
+				95695D3418B6155800CA2307 /* TTTJSONAttributeMapping.h */,
+				95695D3518B6155800CA2307 /* TTTJSONAttributeMapping.m */,
+				95695D3618B6155800CA2307 /* TTTJSONMapper.h */,
+				95695D3718B6155800CA2307 /* TTTJSONMapper.m */,
+				95695D3818B6155800CA2307 /* TTTJSONRelationshipMapping.h */,
+				95695D3918B6155800CA2307 /* TTTJSONRelationshipMapping.m */,
+				95695D3A18B6155800CA2307 /* TTTMappingPersistenceProxy.h */,
+				95695D3B18B6155800CA2307 /* TTTMappingPersistenceProxy.m */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		95695D3C18B6155800CA2307 /* Tables */ = {
+			isa = PBXGroup;
+			children = (
+				95695D3D18B6155800CA2307 /* TTTTableViewDataSourceItemController.h */,
+				95695D3E18B6155800CA2307 /* TTTTableViewDataSourceItemController.m */,
+				95695D3F18B6155800CA2307 /* TTTTableViewDelegateItemController.h */,
+				95695D4018B6155800CA2307 /* TTTTableViewDelegateItemController.m */,
+				95695D4118B6155800CA2307 /* TTTTableViewFetchedItem.h */,
+				95695D4218B6155800CA2307 /* TTTTableViewFetchedItem.m */,
+				95695D4318B6155800CA2307 /* TTTTableViewFetchedSection.h */,
+				95695D4418B6155800CA2307 /* TTTTableViewFetchedSection.m */,
+				95695D4518B6155800CA2307 /* TTTTableViewItem.h */,
+				95695D4618B6155800CA2307 /* TTTTableViewItem.m */,
+				95695D4718B6155800CA2307 /* TTTTableViewItemController.h */,
+				95695D4818B6155800CA2307 /* TTTTableViewItemController.m */,
+				95695D4918B6155800CA2307 /* TTTTableViewSection.h */,
+				95695D4A18B6155800CA2307 /* TTTTableViewSection.m */,
+				95695D4B18B6155800CA2307 /* UITableViewCell+TTTCreation.h */,
+				95695D4C18B6155800CA2307 /* UITableViewCell+TTTCreation.m */,
+			);
+			path = Tables;
+			sourceTree = "<group>";
+		};
+		95695D4D18B6155800CA2307 /* Theming */ = {
+			isa = PBXGroup;
+			children = (
+				95695D4E18B6155800CA2307 /* TTTDrawnView.h */,
+				95695D4F18B6155800CA2307 /* TTTDrawnView.m */,
+				95695D5018B6155800CA2307 /* TTTTheme.h */,
+				95695D5118B6155800CA2307 /* TTTTheme.m */,
+				95695D5218B6155800CA2307 /* UIImage+TTTDrawing.h */,
+				95695D5318B6155800CA2307 /* UIImage+TTTDrawing.m */,
+			);
+			path = Theming;
 			sourceTree = "<group>";
 		};
 		95934FE3167B293A00E4ED39 /* CoreGraphics */ = {
@@ -350,24 +547,23 @@
 		95DC8FB3167B26B200AF1428 /* TwelveTwentyToolkit */ = {
 			isa = PBXGroup;
 			children = (
+				95695CE318B6155800CA2307 /* AddressBook */,
+				95695CF518B6155800CA2307 /* CoreAnimation */,
+				95695CF818B6155800CA2307 /* CoreData */,
+				95695D0518B6155800CA2307 /* CoreData-iOS */,
+				95695D0E18B6155800CA2307 /* CoreData-OSX */,
+				95695D1118B6155800CA2307 /* CoreGraphics */,
+				95695D1418B6155800CA2307 /* CyclicDelegateRetainer */,
+				95695D1718B6155800CA2307 /* Foundation */,
+				95695D2218B6155800CA2307 /* Layout */,
+				95695D2918B6155800CA2307 /* Logging */,
+				95695D2C18B6155800CA2307 /* Logging-iOS */,
+				95695D2F18B6155800CA2307 /* Persistence */,
+				95695D3C18B6155800CA2307 /* Tables */,
+				95695D4D18B6155800CA2307 /* Theming */,
+				95695D5418B6155800CA2307 /* TwelveTwentyToolkit.h */,
+				95695D5518B6155800CA2307 /* TwelveTwentyToolkit.m */,
 				95DC8FB4167B26B200AF1428 /* Supporting Files */,
-				95DC8FB6167B26B200AF1428 /* TwelveTwentyToolkit.h */,
-				E4207AEA7969456BCD20B4E7 /* TwelveTwentyToolkit.m */,
-				E4207C12D4DD17E9604B9D6C /* Foundation-iOS */,
-				E4207E376976C53E2E3BD008 /* Tables */,
-				E42070DA28D88D030B9641C6 /* CoreAnimation */,
-				E4207B8BC7F286ABE5CA6029 /* Layout */,
-				E4207A8CF4EC46CADF9A0413 /* Theming */,
-				E42070227BC5D2457A3029E8 /* CoreData */,
-				E420780E77258E51886B6558 /* CoreData-iOS */,
-				9543AC251833CD6500F65E3A /* CoreData-OSX */,
-				E42072E53C133FB46792D7BC /* Logging */,
-				E4207B6DE650F920880252D8 /* Logging-iOS */,
-				E420722964BE70DD1ABD00D7 /* CoreGraphics */,
-				E4207F9260D0365ACF819ABA /* CyclicDelegateRetainer */,
-				E4207A2A221233F2F91085A6 /* Foundation */,
-				E4207639D98C4C468D943972 /* AddressBook */,
-				E4207562BA2A790C62D9FA8B /* Persistence */,
 			);
 			path = TwelveTwentyToolkit;
 			sourceTree = "<group>";
@@ -397,216 +593,6 @@
 				95DC8FCB167B26B200AF1428 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		E42070227BC5D2457A3029E8 /* CoreData */ = {
-			isa = PBXGroup;
-			children = (
-				E4207E2C5BE7001B706A12DC /* TTTTimestamped.h */,
-				E420773930154C0B008E6EAB /* TTTTimestamped.m */,
-				E420780D10CFEC6BF04FAF82 /* NSManagedObject+TTTUniquing.h */,
-				E420779725ACFB6719F3B956 /* NSManagedObject+TTTUniquing.m */,
-				E4207DE2BE59FA286044AC94 /* NSManagedObjectContext+TTTUniquing.h */,
-				E42073F888E3498EF35CF125 /* NSManagedObjectContext+TTTUniquing.m */,
-				E42070F3E115CFDE36138E41 /* NSManagedObjectContext+TTTConvenience.h */,
-				E420727438AF47588433AC5E /* NSManagedObjectContext+TTTConvenience.m */,
-				E4207858CB65E92FA40A5952 /* NSManagedObjectContext+TTTBatchManipulation.h */,
-				E420756AF4B4ECBA1B7732DC /* NSManagedObjectContext+TTTBatchManipulation.m */,
-				E4207A81C315F11C764BF36F /* NSFetchRequest+TTTRequestConfiguration.h */,
-				E4207761EEFA72C3B87E6C8A /* NSFetchRequest+TTTRequestConfiguration.m */,
-			);
-			path = CoreData;
-			sourceTree = "<group>";
-		};
-		E42070DA28D88D030B9641C6 /* CoreAnimation */ = {
-			isa = PBXGroup;
-			children = (
-				E4207B0D01798B0469EE4A12 /* CALayer+TTTCrossfade.h */,
-				E42071F8B028AC28784EDDC4 /* CALayer+TTTCrossfade.m */,
-			);
-			path = CoreAnimation;
-			sourceTree = "<group>";
-		};
-		E420722964BE70DD1ABD00D7 /* CoreGraphics */ = {
-			isa = PBXGroup;
-			children = (
-				E420798029385BDF0395512B /* TTTCGUtils.h */,
-				E4207388E1ECF7DD7DE340E9 /* TTTCGUtils.m */,
-			);
-			path = CoreGraphics;
-			sourceTree = "<group>";
-		};
-		E42072E53C133FB46792D7BC /* Logging */ = {
-			isa = PBXGroup;
-			children = (
-				E420730E886D6C2B5A735BC1 /* TTTLog.h */,
-				E4207BB6CDF9D5CBB2A312BD /* TTTLog.m */,
-			);
-			path = Logging;
-			sourceTree = "<group>";
-		};
-		E4207394248C93FBBB567995 /* Entities */ = {
-			isa = PBXGroup;
-			children = (
-				E42075B1F226B5A99479F2C0 /* Abstract */,
-				E4207B5ED46EB865A2396520 /* TTTCDLinkedRecord.h */,
-				E4207EE810C78353B85E6DC0 /* TTTCDLinkedRecord.m */,
-				E42073069BD0131E7BEFE70F /* TTTCDUnifiedRecord.h */,
-				E4207B5043A017E1DD225FD3 /* TTTCDUnifiedRecord.m */,
-			);
-			path = Entities;
-			sourceTree = "<group>";
-		};
-		E4207562BA2A790C62D9FA8B /* Persistence */ = {
-			isa = PBXGroup;
-			children = (
-				E42078D9F70583AD5B9A2F1F /* TTTJSONMapper.h */,
-				E42077CB792CBE4BAC545745 /* TTTJSONMapper.m */,
-				E4207079F3266A788FE3A7AE /* TTTAbstractJSONMapping.h */,
-				E420738F37A331BFECB7A72F /* TTTAbstractJSONMapping.m */,
-				E42072CED41876E0EF4483ED /* TTTJSONAttributeMapping.h */,
-				E4207CD13A98470EB992DC6C /* TTTJSONAttributeMapping.m */,
-				E4207C9D5CFEE5BA92F0FA2D /* TTTJSONRelationshipMapping.h */,
-				E42077EBE75475A789667CA4 /* TTTJSONRelationshipMapping.m */,
-				E42074AF703E4E8C31F4B202 /* TTTMappingPersistenceProxy.h */,
-				E420737538A2C7211F565E6E /* TTTMappingPersistenceProxy.m */,
-				E4207B3C441E93FF434D1BA9 /* TTTAbstractPersistenceProxy.h */,
-				E4207BCAEE4E8F45A12DBA8C /* TTTAbstractPersistenceProxy.m */,
-			);
-			path = Persistence;
-			sourceTree = "<group>";
-		};
-		E42075B1F226B5A99479F2C0 /* Abstract */ = {
-			isa = PBXGroup;
-			children = (
-				E4207B66DBD1691967FC47A6 /* _TTTCDLinkedRecord.h */,
-				E42072C376048140EF519423 /* _TTTCDLinkedRecord.m */,
-				E4207C128389F57554118E1B /* _TTTCDUnifiedRecord.h */,
-				E42079871EE4AA38FBF9D07C /* _TTTCDUnifiedRecord.m */,
-			);
-			path = Abstract;
-			sourceTree = "<group>";
-		};
-		E4207639D98C4C468D943972 /* AddressBook */ = {
-			isa = PBXGroup;
-			children = (
-				E4207394248C93FBBB567995 /* Entities */,
-				E420720CC216354C294F7632 /* TTTUnifiedCard.h */,
-				E42076FE120F0BFBD5ADAC50 /* TTTUnifiedCard.m */,
-				E4207958E5C731DA2CD45CB5 /* generate_classes.sh */,
-				E420732DEB13496D504F2D7D /* TTTUnifiedAddressBook.h */,
-				E4207A65C33DAE2B21A95997 /* TTTUnifiedAddressBook.m */,
-				E4207976C01CB10887238064 /* TTTUnifiedAddressBook.xcdatamodeld */,
-			);
-			path = AddressBook;
-			sourceTree = "<group>";
-		};
-		E420780E77258E51886B6558 /* CoreData-iOS */ = {
-			isa = PBXGroup;
-			children = (
-				E420761B626257D0E7E2DBF2 /* TTTAbstractManagedObject.h */,
-				E4207D37E930439F02A9E665 /* TTTAbstractManagedObject.m */,
-				E4207F29E532DB31ACA8490D /* NSPredicate+TTTConvenience.h */,
-				E4207939DB9D7BAFC7EF023C /* NSPredicate+TTTConvenience.m */,
-				E4207363DE22C9315D20143D /* NSFetchedResultsController+TTTCacheControl.h */,
-				E4207DB56DCB1F0C54C7792D /* NSFetchedResultsController+TTTCacheControl.m */,
-				E4207C4FE8748A88E9B38D42 /* NSFetchedResultsController+TTTEasySections.h */,
-				E4207B7883699D464B8DE9D3 /* NSFetchedResultsController+TTTEasySections.m */,
-			);
-			path = "CoreData-iOS";
-			sourceTree = "<group>";
-		};
-		E4207A2A221233F2F91085A6 /* Foundation */ = {
-			isa = PBXGroup;
-			children = (
-				E4207EAEB8BC221B0A9094D6 /* NSObject+TTTBlocks.h */,
-				E4207C97E2D40726795B2E4E /* NSObject+TTTBlocks.m */,
-				E42078D72191EAD55927249E /* NSObject+TTTUnless.h */,
-				E4207A3511C12FB8EAA69917 /* NSObject+TTTUnless.m */,
-				E42071B691C6F5BCB74DBF31 /* NSString+TTTEmptiness.h */,
-				E42075BE0859C3AE6C0C7816 /* NSString+TTTEmptiness.m */,
-				E4207D856AB3D8AE5D985749 /* NSString+TTTURLEncoding.h */,
-				E4207C4D71344C3AF4BEB8D5 /* NSString+TTTURLEncoding.m */,
-				E42072FD2F4103B32E2F5013 /* NSFastEnumeration+TTTMapping.h */,
-				E4207CAEF812C67CF2E1CB76 /* NSFastEnumeration+TTTMapping.m */,
-			);
-			path = Foundation;
-			sourceTree = "<group>";
-		};
-		E4207A8CF4EC46CADF9A0413 /* Theming */ = {
-			isa = PBXGroup;
-			children = (
-				E4207823E7612995C967D4E8 /* TTTTheme.h */,
-				E4207DE345A4A6F3EE6ABE01 /* TTTTheme.m */,
-				E42078EBF7ACA9D899618A3D /* TTTDrawnView.h */,
-				E420739F4B7D9D007335F355 /* TTTDrawnView.m */,
-				E4207619CA73906B82C86A3E /* UIImage+TTTDrawing.h */,
-				E4207B154B8D6BBF1B030479 /* UIImage+TTTDrawing.m */,
-			);
-			path = Theming;
-			sourceTree = "<group>";
-		};
-		E4207B6DE650F920880252D8 /* Logging-iOS */ = {
-			isa = PBXGroup;
-			children = (
-				E420730A55B3AB2CB4F20AA1 /* TTTLog.h */,
-				E420734EB8062A7397530E9F /* TTTLog.m */,
-			);
-			path = "Logging-iOS";
-			sourceTree = "<group>";
-		};
-		E4207B8BC7F286ABE5CA6029 /* Layout */ = {
-			isa = PBXGroup;
-			children = (
-				E4207E692F02B4A37FB91252 /* UIView+TTTLayout.h */,
-				E4207832E44AEEC7844832A2 /* UIView+TTTLayout.m */,
-				E4207AB916A1DA559EBD18F6 /* UIImage+TTTResizing.h */,
-				E42071BD2628EE2307DC60F4 /* UIImage+TTTResizing.m */,
-				E4207BF62695E30DAAFEFE32 /* UIView+TTTHitTesting.h */,
-				E42072F0D06E87D573AC15D7 /* UIView+TTTHitTesting.m */,
-			);
-			path = Layout;
-			sourceTree = "<group>";
-		};
-		E4207C12D4DD17E9604B9D6C /* Foundation-iOS */ = {
-			isa = PBXGroup;
-			children = (
-				E420776AF0CD04FE33C9FB93 /* NSArray+TTTVALists.h */,
-				E42074D0117727CB17ABF3D7 /* NSArray+TTTVALists.m */,
-			);
-			path = "Foundation-iOS";
-			sourceTree = "<group>";
-		};
-		E4207E376976C53E2E3BD008 /* Tables */ = {
-			isa = PBXGroup;
-			children = (
-				E420715E502FBF7DB0A2CDD4 /* TTTTableViewItem.h */,
-				E420781E5C99146D272E2019 /* TTTTableViewItem.m */,
-				E4207C2E51AD6B2CF0C07597 /* TTTTableViewSection.h */,
-				E4207CFCE53D1FBE7D0906CE /* TTTTableViewSection.m */,
-				E4207E15E75E5894BAC0936E /* TTTTableViewFetchedItem.h */,
-				E4207EA1091E0E703CCD1978 /* TTTTableViewFetchedItem.m */,
-				E4207D5C508A153F2FFFDB29 /* TTTTableViewFetchedSection.h */,
-				E42076B02FADD8E4CDC3E38E /* TTTTableViewFetchedSection.m */,
-				E4207D2C5758C0EF45EEDD8B /* TTTTableViewItemController.h */,
-				E4207B3CA1D68DB4A39841F0 /* TTTTableViewItemController.m */,
-				E42076DF3F144B7189B3B394 /* UITableViewCell+TTTCreation.h */,
-				E42071FAA86B4AEDBCC62D43 /* UITableViewCell+TTTCreation.m */,
-				E42072008C37D0793FFAEC23 /* TTTTableViewDelegateItemController.h */,
-				E4207DBE635599AB6B4DB697 /* TTTTableViewDelegateItemController.m */,
-				E420748E881A5FB8625D76C5 /* TTTTableViewDataSourceItemController.h */,
-				E4207E371DAA007FA9EA8CED /* TTTTableViewDataSourceItemController.m */,
-			);
-			path = Tables;
-			sourceTree = "<group>";
-		};
-		E4207F9260D0365ACF819ABA /* CyclicDelegateRetainer */ = {
-			isa = PBXGroup;
-			children = (
-				E42075FA669F15DAA8460289 /* TTTCyclicDelegateRetainer.h */,
-				E4207EAF636806CCDCB0AF63 /* TTTCyclicDelegateRetainer.m */,
-			);
-			path = CyclicDelegateRetainer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -707,55 +693,55 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E42076B90CE00DAE7A407C52 /* TwelveTwentyToolkit.m in Sources */,
-				E4207F848F73B7200D19169F /* NSArray+TTTVALists.m in Sources */,
-				E4207A8AA2A08DCA5D6E40C1 /* TTTTableViewItem.m in Sources */,
-				E4207FFB2521D573CB478EAA /* TTTTableViewSection.m in Sources */,
-				E4207455EBC13A8191C01993 /* TTTTableViewFetchedItem.m in Sources */,
-				E4207DBD175F29EDEC7D0E0D /* TTTTableViewFetchedSection.m in Sources */,
-				E42079A038C2C07B36F49B84 /* TTTTableViewItemController.m in Sources */,
-				E4207BB3BE93C33BB1BB9001 /* UITableViewCell+TTTCreation.m in Sources */,
-				E42070AF556096D0F17594F0 /* TTTTableViewDelegateItemController.m in Sources */,
-				E420716AFBEDF0DAA3170E77 /* TTTTableViewDataSourceItemController.m in Sources */,
-				E4207B1A4821E62470FB1B98 /* CALayer+TTTCrossfade.m in Sources */,
-				E420710076BFF07BB9A2AF6A /* UIView+TTTLayout.m in Sources */,
-				E420755F37966891BB98E596 /* UIImage+TTTResizing.m in Sources */,
-				E4207A227000F075AA604467 /* UIView+TTTHitTesting.m in Sources */,
-				E420796AE6A9EA270652E67D /* TTTTheme.m in Sources */,
-				E4207E31F5299F60BCEA6EDC /* TTTDrawnView.m in Sources */,
-				E42078F952144354890B12C7 /* UIImage+TTTDrawing.m in Sources */,
-				E4207DB4EA2493316706F355 /* TTTAbstractManagedObject.m in Sources */,
-				E4207D32588D132786768504 /* NSPredicate+TTTConvenience.m in Sources */,
-				E420768B73B0B0E8DCE749C0 /* NSFetchedResultsController+TTTCacheControl.m in Sources */,
-				E42077E88E8592163AA2B611 /* NSFetchedResultsController+TTTEasySections.m in Sources */,
-				E4207DFA819FDF28995DAF02 /* TTTLog.m in Sources */,
-				E42079C08FB2CEF20FFA595D /* TTTCGUtils.m in Sources */,
-				E4207A5DF951D95A61D8E4CC /* TTTCyclicDelegateRetainer.m in Sources */,
-				E42076CF685206428721504B /* NSObject+TTTBlocks.m in Sources */,
-				E420790B4BC4E62657E6A75E /* NSObject+TTTUnless.m in Sources */,
-				E420764342B63B54FCEA1EF0 /* NSString+TTTEmptiness.m in Sources */,
-				E420715BCC43E9DB90ED7C45 /* NSString+TTTURLEncoding.m in Sources */,
-				E4207C3D61F996B77AB82E03 /* NSFastEnumeration+TTTMapping.m in Sources */,
-				E4207A4E478DB3198E953A35 /* _TTTCDLinkedRecord.m in Sources */,
-				E4207030BDD0FB1D26C88693 /* _TTTCDUnifiedRecord.m in Sources */,
-				E420709B8DF71DD308AC0B23 /* TTTCDLinkedRecord.m in Sources */,
-				E42078CF64E0437B4ED654DD /* TTTCDUnifiedRecord.m in Sources */,
-				E420771AC375821C960F9CAB /* TTTUnifiedCard.m in Sources */,
-				E420782602AE850AEEBBAF63 /* TTTUnifiedAddressBook.m in Sources */,
-				E4207B7D0E0D7A32A4F11920 /* TTTUnifiedAddressBook.xcdatamodeld in Sources */,
-				E4207BD89972532341A1B9CA /* TTTJSONMapper.m in Sources */,
-				E4207442B0CBF546D2B86C0D /* TTTAbstractJSONMapping.m in Sources */,
-				E42072317C1C7C0F1AC1E59A /* TTTJSONAttributeMapping.m in Sources */,
-				E42071A91C1C8F99ED394AE1 /* TTTJSONRelationshipMapping.m in Sources */,
-				E420763312C3B9C91100781F /* TTTMappingPersistenceProxy.m in Sources */,
-				E4207804E3CB06A1AA1622D0 /* TTTAbstractPersistenceProxy.m in Sources */,
-				E4207E9A3BBC111E18ABEB3F /* TTTTimestamped.m in Sources */,
-				E4207E1000DFE9A7E715BA18 /* NSManagedObject+TTTUniquing.m in Sources */,
-				E42075E91404F2B136DAB719 /* NSManagedObjectContext+TTTUniquing.m in Sources */,
-				E42074C2BD86B3A2FA2C51C5 /* NSManagedObjectContext+TTTConvenience.m in Sources */,
-				E42078C707C023CD607E2401 /* NSManagedObjectContext+TTTBatchManipulation.m in Sources */,
-				E4207BF06B455C48394D34BB /* TTTLog.m in Sources */,
-				E4207E3768069EB58C343BA4 /* NSFetchRequest+TTTRequestConfiguration.m in Sources */,
+				95695D7118B6155900CA2307 /* UIView+TTTHitTesting.m in Sources */,
+				95695D7318B6155900CA2307 /* TTTLog.m in Sources */,
+				95695D6D18B6155900CA2307 /* NSObject+TTTUnless.m in Sources */,
+				95695D6318B6155900CA2307 /* TTTTimestamped.m in Sources */,
+				95695D5618B6155800CA2307 /* _TTTCDLinkedRecord.m in Sources */,
+				95695D6818B6155900CA2307 /* NSPredicate+TTTConvenience.m in Sources */,
+				95695D6C18B6155900CA2307 /* NSObject+TTTBlocks.m in Sources */,
+				95695D7418B6155900CA2307 /* TTTLog.m in Sources */,
+				95695D8218B6155900CA2307 /* UITableViewCell+TTTCreation.m in Sources */,
+				95695D7B18B6155900CA2307 /* TTTTableViewDataSourceItemController.m in Sources */,
+				95695D7618B6155900CA2307 /* TTTAbstractPersistenceProxy.m in Sources */,
+				95695D6518B6155900CA2307 /* NSFetchedResultsController+TTTEasySections.m in Sources */,
+				95695D7518B6155900CA2307 /* TTTAbstractJSONMapping.m in Sources */,
+				95695D6B18B6155900CA2307 /* NSFastEnumeration+TTTMapping.m in Sources */,
+				95695D8418B6155900CA2307 /* TTTTheme.m in Sources */,
+				95695D6418B6155900CA2307 /* NSFetchedResultsController+TTTCacheControl.m in Sources */,
+				95695D7018B6155900CA2307 /* UIImage+TTTResizing.m in Sources */,
+				95695D6E18B6155900CA2307 /* NSString+TTTEmptiness.m in Sources */,
+				95695D6218B6155900CA2307 /* NSManagedObjectContext+TTTUniquing.m in Sources */,
+				95695D5B18B6155900CA2307 /* TTTUnifiedAddressBook.xcdatamodeld in Sources */,
+				95695D5918B6155800CA2307 /* TTTCDUnifiedRecord.m in Sources */,
+				95695D7218B6155900CA2307 /* UIView+TTTLayout.m in Sources */,
+				95695D5E18B6155900CA2307 /* NSFetchRequest+TTTRequestConfiguration.m in Sources */,
+				95695D5D18B6155900CA2307 /* CALayer+TTTCrossfade.m in Sources */,
+				95695D5C18B6155900CA2307 /* TTTUnifiedCard.m in Sources */,
+				95695D7718B6155900CA2307 /* TTTJSONAttributeMapping.m in Sources */,
+				95695D6018B6155900CA2307 /* NSManagedObjectContext+TTTBatchManipulation.m in Sources */,
+				95695D5818B6155800CA2307 /* TTTCDLinkedRecord.m in Sources */,
+				95695D7A18B6155900CA2307 /* TTTMappingPersistenceProxy.m in Sources */,
+				95695D7818B6155900CA2307 /* TTTJSONMapper.m in Sources */,
+				95695D7C18B6155900CA2307 /* TTTTableViewDelegateItemController.m in Sources */,
+				95695D6118B6155900CA2307 /* NSManagedObjectContext+TTTConvenience.m in Sources */,
+				95695D6918B6155900CA2307 /* TTTCGUtils.m in Sources */,
+				95695D6A18B6155900CA2307 /* TTTCyclicDelegateRetainer.m in Sources */,
+				95695D8618B6155900CA2307 /* TwelveTwentyToolkit.m in Sources */,
+				95695D5A18B6155800CA2307 /* TTTUnifiedAddressBook.m in Sources */,
+				95695D8518B6155900CA2307 /* UIImage+TTTDrawing.m in Sources */,
+				95695D6F18B6155900CA2307 /* NSString+TTTURLEncoding.m in Sources */,
+				95695D7918B6155900CA2307 /* TTTJSONRelationshipMapping.m in Sources */,
+				95695D7F18B6155900CA2307 /* TTTTableViewItem.m in Sources */,
+				95695D6618B6155900CA2307 /* NSPredicate+TTTConvenience.m in Sources */,
+				95695D7E18B6155900CA2307 /* TTTTableViewFetchedSection.m in Sources */,
+				95695D6718B6155900CA2307 /* TTTAbstractManagedObject.m in Sources */,
+				95695D8318B6155900CA2307 /* TTTDrawnView.m in Sources */,
+				95695D7D18B6155900CA2307 /* TTTTableViewFetchedItem.m in Sources */,
+				95695D8118B6155900CA2307 /* TTTTableViewSection.m in Sources */,
+				95695D8018B6155900CA2307 /* TTTTableViewItemController.m in Sources */,
+				95695D5F18B6155900CA2307 /* NSManagedObject+TTTUniquing.m in Sources */,
+				95695D5718B6155800CA2307 /* _TTTCDUnifiedRecord.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -931,12 +917,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		E4207976C01CB10887238064 /* TTTUnifiedAddressBook.xcdatamodeld */ = {
+		95695CF118B6155800CA2307 /* TTTUnifiedAddressBook.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				E42071E850509B6D779334EE /* TTTUnifiedAddressBook.xcdatamodel */,
+				95695CF218B6155800CA2307 /* TTTUnifiedAddressBook.xcdatamodel */,
 			);
-			currentVersion = E42071E850509B6D779334EE /* TTTUnifiedAddressBook.xcdatamodel */;
+			currentVersion = 95695CF218B6155800CA2307 /* TTTUnifiedAddressBook.xcdatamodel */;
 			path = TTTUnifiedAddressBook.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
