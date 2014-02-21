@@ -1,7 +1,6 @@
 #import "TwelveTwentyToolkit.h"
 #import "TTTAbstractPersistenceProxy.h"
 #import "TTTLog.h"
-#import <UIKit/UIKit.h>
 
 #define TTT_PERSISTENCE_THRESHOLD_KEY @"TTT_PERSISTENCE_THRESHOLD"
 
@@ -159,6 +158,7 @@
         }
     }
 }
+
 - (NSManagedObjectContext *)diskContext
 {
     NSAssert(self.nestContexts, @"Disk context only available when nestContexts is on.");
@@ -205,6 +205,11 @@
 
 - (BOOL)savePrivateContext:(NSManagedObjectContext *)context
 {
+    return [self savePrivateContext:context error:NULL];
+}
+
+- (BOOL)savePrivateContext:(NSManagedObjectContext *)context error:(NSError **)error
+{
     if (context == self.mainContext)
     {
         [self saveToDisk];
@@ -214,15 +219,19 @@
     __block BOOL success = NO;
 
     [context performBlockAndWait:^{
-        NSError *error = nil;
-        if ([context save:&error])
+        NSError *saveError = nil;
+        if ([context save:&saveError])
         {
             [self saveToDisk];
             success = YES;
         }
+        else if (error)
+        {
+            *error = saveError;
+        }
         else
         {
-            ELog(@"Failed to save context: %@", error);
+            ELog(@"Failed to save context: %@", saveError);
         }
     }];
 
