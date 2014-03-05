@@ -39,7 +39,7 @@ const struct TTTSyncStatusValues TTTSyncStatusValues = {
     return [NSFetchRequest fetchRequestWithEntityName:[self entityName]];
 }
 
-+ (instancetype)uniqueEntityWithIdentifier:(NSNumber *)identifier inContext:(NSManagedObjectContext *)context
++ (instancetype)uniqueEntityWithIdentifier:(id)identifier inContext:(NSManagedObjectContext *)context
 {
     NSParameterAssert([self conformsToProtocol:@protocol(TTTIdentifiable)]);
     return [self ttt_uniqueEntityWithValue:identifier forKey:TTTIdentifiableAttributes.identifier inContext:context];

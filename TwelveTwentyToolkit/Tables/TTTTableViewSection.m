@@ -142,7 +142,7 @@
 {
     NSMutableString *description = [NSMutableString stringWithFormat:@"<%@:", NSStringFromClass([self class])];
 
-    [description appendFormat:@" index=\"%i\" rows=\"%i\" title=\"%@\"", self.index, self.numberOfItems, self.title];
+    [description appendFormat:@" index=\"%li\" rows=\"%lu\" title=\"%@\"", (long)self.index, (unsigned long)self.numberOfItems, self.title];
 
     [description appendFormat:@" %p>", &self];
     return description;

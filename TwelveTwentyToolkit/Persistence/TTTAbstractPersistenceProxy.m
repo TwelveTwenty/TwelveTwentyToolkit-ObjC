@@ -1,9 +1,8 @@
 #import "TwelveTwentyToolkit.h"
 #import "TTTAbstractPersistenceProxy.h"
 #import "TTTLog.h"
-#import <UIKit/UIKit.h>
 
-#define TT_PERSISTENCE_THRESHOLD_KEY @"TT_PERSISTENCE_THRESHOLD"
+#define TTT_PERSISTENCE_THRESHOLD_KEY @"TTT_PERSISTENCE_THRESHOLD"
 
 @interface TTTAbstractPersistenceProxy ()
 
@@ -60,7 +59,7 @@
     }
 
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSString *key = [NSString stringWithFormat:@"%@-%@", TT_PERSISTENCE_THRESHOLD_KEY, self.storeURL.lastPathComponent];
+    NSString *key = [NSString stringWithFormat:@"%@-%@", TTT_PERSISTENCE_THRESHOLD_KEY, self.storeURL.lastPathComponent];
     BOOL reset = (resetThreshold != [defaults integerForKey:key]);
     if (reset)
     {
@@ -77,7 +76,7 @@
         {
             ILog(@"Reset store %@", self.storeURL);
             NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-            NSString *key = [NSString stringWithFormat:@"%@-%@", TT_PERSISTENCE_THRESHOLD_KEY, self.storeURL.lastPathComponent];
+            NSString *key = [NSString stringWithFormat:@"%@-%@", TTT_PERSISTENCE_THRESHOLD_KEY, self.storeURL.lastPathComponent];
             [defaults setInteger:resetThreshold forKey:key];
             [defaults synchronize];
         }
@@ -120,35 +119,44 @@
 {
     if (_mainContext == nil)
     {
-        @synchronized (self)
-        {
-            if (_mainContext == nil)
-            {
-                NSAssert([[NSThread currentThread] isMainThread], @"The first main context access should take place on the main thread. Only a MOC's init/release/retain methods are thread safe.");
-                [self checkResetThreshold:self.resetThreshold];
-
-                self.mainContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
-                _mainContext.mergePolicy = NSOverwriteMergePolicy;
-                _mainContext.undoManager = nil;
-
-                if (self.nestContexts)
-                {
-                    _mainContext.parentContext = self.diskContext;
-                }
-                else
-                {
-                    _mainContext.persistentStoreCoordinator = self.persistentStoreCoordinator;
-                }
-
-                if (self.requiresDatabaseSeed)
-                {
-                    [self seedDatabase];
-                }
-            }
-        }
+        [self createMainContext];
     }
 
     return _mainContext;
+}
+
+/**
+ Offloaded the creation of the main thread's managed object context to
+ a separate method, to prevent the need for thread locking at every access.
+ */
+- (void)createMainContext
+{
+    @synchronized (self)
+    {
+        if (_mainContext == nil)
+        {
+            NSAssert([[NSThread currentThread] isMainThread], @"The first main context access should take place on the main thread. Only a MOC's init/release/retain methods are thread safe.");
+            [self checkResetThreshold:self.resetThreshold];
+
+            self.mainContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
+            _mainContext.mergePolicy = NSOverwriteMergePolicy;
+            _mainContext.undoManager = nil;
+
+            if (self.nestContexts)
+            {
+                _mainContext.parentContext = self.diskContext;
+            }
+            else
+            {
+                _mainContext.persistentStoreCoordinator = self.persistentStoreCoordinator;
+            }
+
+            if (self.requiresDatabaseSeed)
+            {
+                [self seedDatabase];
+            }
+        }
+    }
 }
 
 - (NSManagedObjectContext *)diskContext
@@ -197,6 +205,11 @@
 
 - (BOOL)savePrivateContext:(NSManagedObjectContext *)context
 {
+    return [self savePrivateContext:context error:NULL];
+}
+
+- (BOOL)savePrivateContext:(NSManagedObjectContext *)context error:(NSError **)error
+{
     if (context == self.mainContext)
     {
         [self saveToDisk];
@@ -206,15 +219,19 @@
     __block BOOL success = NO;
 
     [context performBlockAndWait:^{
-        NSError *error = nil;
-        if ([context save:&error])
+        NSError *saveError = nil;
+        if ([context save:&saveError])
         {
             [self saveToDisk];
             success = YES;
         }
+        else if (error)
+        {
+            *error = saveError;
+        }
         else
         {
-            ELog(@"Failed to save context: %@", error);
+            ELog(@"Failed to save context: %@", saveError);
         }
     }];
 
@@ -312,7 +329,7 @@
 */
 - (void)forceReset
 {
-    NSString *key = [NSString stringWithFormat:@"%@-%@", TT_PERSISTENCE_THRESHOLD_KEY, self.storeURL.lastPathComponent];
+    NSString *key = [NSString stringWithFormat:@"%@-%@", TTT_PERSISTENCE_THRESHOLD_KEY, self.storeURL.lastPathComponent];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults removeObjectForKey:key];
     [defaults synchronize];

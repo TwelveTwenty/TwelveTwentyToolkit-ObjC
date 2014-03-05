@@ -29,7 +29,11 @@
 
 - (NSManagedObjectContext *)newPrivateContext;
 
+- (void)createMainContext;
+
 - (BOOL)savePrivateContext:(NSManagedObjectContext *)context;
+
+- (BOOL)savePrivateContext:(NSManagedObjectContext *)context error:(NSError **)error;
 
 - (void)saveToDisk;
 

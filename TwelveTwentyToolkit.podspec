@@ -1,11 +1,17 @@
 Pod::Spec.new do |s|
   s.name         = 'TwelveTwentyToolkit'
-  s.version      = '0.3.0'
+  s.version      = '0.4.0'
   s.summary      = 'The Twelve Twenty Toolkit of reusable Objective-C classes.'
   s.homepage     = 'http://twelvetwenty.nl'
   s.license      = 'MIT'
-  s.author       = { 'Eric-Paul Lecluse' => 'epologee@gmail.com', 'Jankees van Woezik' => 'jankeesvw@gmail.com' }
-  s.source       = { :git => 'https://github.com/TwelveTwenty/TwelveTwentyToolkit-ObjC.git', :tag => s.version.to_s }
+  s.author       = { 
+    'Eric-Paul Lecluse' => 'epologee@gmail.com', 
+    'Jankees van Woezik' => 'jankeesvw@gmail.com' 
+  }
+  s.source       = { 
+    :git => 'https://github.com/TwelveTwenty/TwelveTwentyToolkit-ObjC.git', 
+    :tag => s.version.to_s 
+  }
   s.ios.deployment_target = '7.0'
   s.osx.deployment_target = '10.8'
   s.requires_arc = true
@@ -17,17 +23,12 @@ Pod::Spec.new do |s|
   s.subspec 'Foundation' do |fn|
     fn.dependency 'TwelveTwentyToolkit/Core'
     fn.source_files = 'TwelveTwentyToolkit/Foundation/**/*.{h,m}'
-    
-    fn.subspec 'iOS' do |os|
-      os.ios.source_files = 'TwelveTwentyToolkit/Foundation-iOS/**/*.{h,m}'
-    end
   end
 
   s.subspec 'Logging' do |lg|
-    lg.osx.dependency 'TwelveTwentyToolkit/Foundation'
+    lg.dependency 'TwelveTwentyToolkit/Foundation'
     lg.osx.source_files = 'TwelveTwentyToolkit/Logging/**/*.{h,m}'
 
-    lg.ios.dependency 'TwelveTwentyToolkit/Foundation/iOS'
     lg.ios.source_files = 'TwelveTwentyToolkit/Logging-iOS/**/*.{h,m}'
   end
   
@@ -82,6 +83,7 @@ Pod::Spec.new do |s|
   
   s.subspec 'Layout' do |lo|
     lo.ios.dependency 'TwelveTwentyToolkit/Logging'
+    lo.ios.dependency 'TwelveTwentyToolkit/CoreData'
     lo.ios.source_files = 'TwelveTwentyToolkit/Layout/**/*.{h,m}'
 
     lo.osx.dependency 'TwelveTwentyToolkit/Foundation'

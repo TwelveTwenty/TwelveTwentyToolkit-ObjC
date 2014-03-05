@@ -1,28 +1,18 @@
 #import "NSPredicate+TTTConvenience.h"
-#import "NSArray+TTTVALists.h"
-
-@implementation NSArray (TTTVALists)
-
-- (va_list)ttt_toVAList
-{
-    NSRange range = NSMakeRange(0, [self count]);
-
-    NSMutableData* data = [NSMutableData dataWithLength: sizeof(id) * [self count]];
-
-    [self getObjects: (__unsafe_unretained id *)data.mutableBytes range:range];
-
-    return data.mutableBytes;
-}
-
-@end
 
 @implementation NSPredicate (TTTConvenience)
 
 + (NSPredicate *)ttt_predicateWithComplexFormat:(NSString *)complexFormat innerArguments:(NSArray *)innerArguments outerArguments:(NSArray *)outerArguments
 {
-    NSString *simpleFormat = [[NSString alloc] initWithFormat:complexFormat arguments:[innerArguments ttt_toVAList]];
+    NSString *(^stringWithFormatArray)(NSString *, NSArray *) = ^(NSString *format, NSArray *array) {
+        NSRange range = NSMakeRange(0, [array count]);
+        NSMutableData *data = [NSMutableData dataWithLength:sizeof(id) * [array count]];
+        [array getObjects:(__unsafe_unretained id *) data.mutableBytes range:range];
+        return [[NSString alloc] initWithFormat:format arguments:data.mutableBytes];
+    };
 
-    return [self predicateWithFormat:simpleFormat arguments:[outerArguments ttt_toVAList]];
+    NSString *simpleFormat = stringWithFormatArray(complexFormat, innerArguments);
+    return [self predicateWithFormat:simpleFormat argumentArray:outerArguments ?: @[]];
 }
 
 @end
