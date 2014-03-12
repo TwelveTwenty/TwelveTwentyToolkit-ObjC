@@ -42,20 +42,11 @@ Pod::Spec.new do |s|
   
   s.subspec 'CoreData' do |cd|
     cd.frameworks = 'CoreData'
+    cd.dependency 'TwelveTwentyToolkit/Logging'
 
-    cd.subspec 'OSX' do |os|
-      os.dependency 'TwelveTwentyToolkit/Logging'
-      os.osx.dependency 'TwelveTwentyToolkit/Logging'
-      os.source_files = 'TwelveTwentyToolkit/CoreData/*.{h,m}'
-      os.osx.source_files = 'TwelveTwentyToolkit/CoreData-OSX/*.{h,m}'
-    end
-
-    cd.subspec 'iOS' do |os|
-      os.dependency 'TwelveTwentyToolkit/Logging'
-      os.ios.dependency 'TwelveTwentyToolkit/Logging'
-      os.source_files = 'TwelveTwentyToolkit/CoreData/*.{h,m}'
-      os.ios.source_files = 'TwelveTwentyToolkit/CoreData-iOS/*.{h,m}'
-    end
+    cd.source_files = 'TwelveTwentyToolkit/CoreData/**/*.{h,m}'
+    cd.ios.exclude_files = 'CoreData/osx'
+    cd.osx.exclude_files = 'CoreData/ios'
   end
   
   s.subspec 'Persistence' do |ps|
