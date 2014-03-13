@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6ECBFC10BF9F4C3FB05B7818 /* libPods-TwelveTwentyToolkitTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 99AFD03D82B343DE859A01E4 /* libPods-TwelveTwentyToolkitTests.a */; };
 		9519FD1D18D0DEB700BC8441 /* _TTTCDLinkedRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 9519FCBD18D0DEB700BC8441 /* _TTTCDLinkedRecord.m */; };
 		9519FD1E18D0DEB700BC8441 /* _TTTCDUnifiedRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 9519FCBF18D0DEB700BC8441 /* _TTTCDUnifiedRecord.m */; };
 		9519FD1F18D0DEB700BC8441 /* TTTCDLinkedRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 9519FCC118D0DEB700BC8441 /* TTTCDLinkedRecord.m */; };
@@ -96,6 +97,7 @@
 		95DC8FC4167B26B200AF1428 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95DC8FB1167B26B200AF1428 /* Foundation.framework */; };
 		95DC8FC7167B26B200AF1428 /* libTwelveTwentyToolkit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 95DC8FAE167B26B200AF1428 /* libTwelveTwentyToolkit.a */; };
 		95DC8FCD167B26B200AF1428 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 95DC8FCB167B26B200AF1428 /* InfoPlist.strings */; };
+		D06AA87241624C899D40FB19 /* libPods-TwelveTwentyToolkit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F4C92D40DE0479486C960AA /* libPods-TwelveTwentyToolkit.a */; };
 		E42071A1CD9F9FEB57DF00FE /* TTTAbstractManagedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = E4207C97DF56C5BA2E0C84C2 /* TTTAbstractManagedObject.m */; };
 		E4207BC0EFAF35ABDFFDC22B /* NSPredicate+TTTConvenience.m in Sources */ = {isa = PBXBuildFile; fileRef = E4207928B156D0BDF50F2D2A /* NSPredicate+TTTConvenience.m */; };
 /* End PBXBuildFile section */
@@ -132,6 +134,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		00FB31A860A14C4D8A8DCA20 /* Pods-TwelveTwentyToolkitTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwelveTwentyToolkitTests.xcconfig"; path = "Pods/Pods-TwelveTwentyToolkitTests.xcconfig"; sourceTree = "<group>"; };
+		4275B5F9193D48CDA0F2EB91 /* Pods-TwelveTwentyToolkit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwelveTwentyToolkit.xcconfig"; path = "Pods/Pods-TwelveTwentyToolkit.xcconfig"; sourceTree = "<group>"; };
+		6F4C92D40DE0479486C960AA /* libPods-TwelveTwentyToolkit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TwelveTwentyToolkit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9519FCBC18D0DEB700BC8441 /* _TTTCDLinkedRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _TTTCDLinkedRecord.h; sourceTree = "<group>"; };
 		9519FCBD18D0DEB700BC8441 /* _TTTCDLinkedRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _TTTCDLinkedRecord.m; sourceTree = "<group>"; };
 		9519FCBE18D0DEB700BC8441 /* _TTTCDUnifiedRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _TTTCDUnifiedRecord.h; sourceTree = "<group>"; };
@@ -251,6 +256,7 @@
 		95DC8FC0167B26B200AF1428 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		95DC8FCA167B26B200AF1428 /* TwelveTwentyToolkitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TwelveTwentyToolkitTests-Info.plist"; sourceTree = "<group>"; };
 		95DC8FCC167B26B200AF1428 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		99AFD03D82B343DE859A01E4 /* libPods-TwelveTwentyToolkitTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TwelveTwentyToolkitTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E42074FF8DA8895692E8CAF2 /* NSPredicate+TTTConvenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSPredicate+TTTConvenience.h"; sourceTree = "<group>"; };
 		E4207928B156D0BDF50F2D2A /* NSPredicate+TTTConvenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSPredicate+TTTConvenience.m"; sourceTree = "<group>"; };
 		E420798BC4284DF7E10A472F /* TTTAbstractManagedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTAbstractManagedObject.h; sourceTree = "<group>"; };
@@ -277,6 +283,7 @@
 				95934FDA167B284800E4ED39 /* CoreData.framework in Frameworks */,
 				95934FD8167B283E00E4ED39 /* AddressBook.framework in Frameworks */,
 				95DC8FB2167B26B200AF1428 /* Foundation.framework in Frameworks */,
+				D06AA87241624C899D40FB19 /* libPods-TwelveTwentyToolkit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,6 +298,7 @@
 				95DC8FC1167B26B200AF1428 /* SenTestingKit.framework in Frameworks */,
 				95DC8FC4167B26B200AF1428 /* Foundation.framework in Frameworks */,
 				95DC8FC7167B26B200AF1428 /* libTwelveTwentyToolkit.a in Frameworks */,
+				6ECBFC10BF9F4C3FB05B7818 /* libPods-TwelveTwentyToolkitTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -541,6 +549,8 @@
 				95DC8FC8167B26B200AF1428 /* TwelveTwentyToolkitTests */,
 				95DC8FB0167B26B200AF1428 /* Frameworks */,
 				95DC8FAF167B26B200AF1428 /* Products */,
+				4275B5F9193D48CDA0F2EB91 /* Pods-TwelveTwentyToolkit.xcconfig */,
+				00FB31A860A14C4D8A8DCA20 /* Pods-TwelveTwentyToolkitTests.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -564,6 +574,8 @@
 				95934FD7167B283E00E4ED39 /* AddressBook.framework */,
 				95DC8FB1167B26B200AF1428 /* Foundation.framework */,
 				95DC8FC0167B26B200AF1428 /* SenTestingKit.framework */,
+				6F4C92D40DE0479486C960AA /* libPods-TwelveTwentyToolkit.a */,
+				99AFD03D82B343DE859A01E4 /* libPods-TwelveTwentyToolkitTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -650,9 +662,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 95DC8FD3167B26B200AF1428 /* Build configuration list for PBXNativeTarget "TwelveTwentyToolkit" */;
 			buildPhases = (
+				C6AE6EFB9BA04FB8B50F633D /* Check Pods Manifest.lock */,
 				95DC8FAA167B26B200AF1428 /* Sources */,
 				95DC8FAB167B26B200AF1428 /* Frameworks */,
 				95DC8FAC167B26B200AF1428 /* CopyFiles */,
+				0DD465F456F346F3AAB246EB /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -667,10 +681,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 95DC8FD6167B26B200AF1428 /* Build configuration list for PBXNativeTarget "TwelveTwentyToolkitTests" */;
 			buildPhases = (
+				62F2D1F4BF8F4DACBE0E524D /* Check Pods Manifest.lock */,
 				95DC8FBA167B26B200AF1428 /* Sources */,
 				95DC8FBB167B26B200AF1428 /* Frameworks */,
 				95DC8FBC167B26B200AF1428 /* Resources */,
 				95DC8FBD167B26B200AF1428 /* ShellScript */,
+				DC63A421645644B3A4BFDA41 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -701,6 +717,8 @@
 			mainGroup = 95DC8FA3167B26B200AF1428;
 			productRefGroup = 95DC8FAF167B26B200AF1428 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+			);
 			projectRoot = "";
 			targets = (
 				95DC8FAD167B26B200AF1428 /* TwelveTwentyToolkit */,
@@ -722,6 +740,36 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0DD465F456F346F3AAB246EB /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-TwelveTwentyToolkit-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		62F2D1F4BF8F4DACBE0E524D /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		95DC8FBD167B26B200AF1428 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -734,6 +782,36 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+		C6AE6EFB9BA04FB8B50F633D /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		DC63A421645644B3A4BFDA41 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-TwelveTwentyToolkitTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -931,6 +1009,7 @@
 		};
 		95DC8FD4167B26B200AF1428 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4275B5F9193D48CDA0F2EB91 /* Pods-TwelveTwentyToolkit.xcconfig */;
 			buildSettings = {
 				DSTROOT = /tmp/TwelveTwentyToolkit.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -943,6 +1022,7 @@
 		};
 		95DC8FD5167B26B200AF1428 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4275B5F9193D48CDA0F2EB91 /* Pods-TwelveTwentyToolkit.xcconfig */;
 			buildSettings = {
 				DSTROOT = /tmp/TwelveTwentyToolkit.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -955,6 +1035,7 @@
 		};
 		95DC8FD7167B26B200AF1428 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 00FB31A860A14C4D8A8DCA20 /* Pods-TwelveTwentyToolkitTests.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
@@ -970,6 +1051,7 @@
 		};
 		95DC8FD8167B26B200AF1428 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 00FB31A860A14C4D8A8DCA20 /* Pods-TwelveTwentyToolkitTests.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
