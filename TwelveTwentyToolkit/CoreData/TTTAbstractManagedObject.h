@@ -1,7 +1,10 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 #import "TTTTimestamped.h"
+
+#if TARGET_OS_IPHONE
 #import "NSManagedObjectContext+TTTBatchManipulation.h"
+#endif
 
 @protocol TTTMogeneratorEntity
 

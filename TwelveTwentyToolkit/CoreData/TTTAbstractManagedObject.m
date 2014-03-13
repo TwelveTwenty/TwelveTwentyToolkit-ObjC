@@ -1,4 +1,3 @@
-#import "TTTTimestamped.h"
 #import "TTTAbstractManagedObject.h"
 #import "NSManagedObject+TTTUniquing.h"
 #import "NSManagedObjectContext+TTTUniquing.h"
@@ -146,6 +145,8 @@ const struct TTTSyncStatusValues TTTSyncStatusValues = {
     return controller;
 }
 
+#endif
+
 + (id)insertInManagedObjectContext:(NSManagedObjectContext *)moc
 {
     NSAssert(NO, @"This method should be overridden by a mogenerator generated entity class.");
@@ -171,7 +172,5 @@ const struct TTTSyncStatusValues TTTSyncStatusValues = {
         [self setValue:now forKey:TTTTimestampedAttributes.updatedAt];
     }
 }
-
-#endif
 
 @end
