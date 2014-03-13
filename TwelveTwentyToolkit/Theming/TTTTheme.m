@@ -1,6 +1,6 @@
 #import <QuartzCore/QuartzCore.h>
 #import "NSObject+TTTBlocks.h"
-#import "UIView+TTTLayout.h"
+#import "UIView+EEEManualLayout.h"
 #import "TTTTheme.h"
 
 static TTTTheme <TTTTheme> *_currentTheme;
@@ -148,7 +148,7 @@ static TTTTheme <TTTTheme> *_currentTheme;
     UILabel *label = [[self alloc] init];
     label.text = text;
     [label ttt_applyTextStyle:textStyle];
-    [label ttt_resetIntrinsicContentFrame];
+    [label eee_resetIntrinsicContentFrame];
     return label;
 }
 
@@ -156,7 +156,7 @@ static TTTTheme <TTTTheme> *_currentTheme;
 {
     UILabel *label = [[self alloc] init];
     [label ttt_applyTextStyle:textStyle];
-    [label ttt_resetIntrinsicContentFrame];
+    [label eee_resetIntrinsicContentFrame];
     return label;
 }
 
@@ -204,7 +204,7 @@ static TTTTheme <TTTTheme> *_currentTheme;
     [button setTitle:title forState:UIControlStateNormal];
     [button setImage:image forState:UIControlStateNormal];
     [button ttt_applyButtonStyle:buttonStyle];
-    [button ttt_resetIntrinsicContentFrame];
+    [button eee_resetIntrinsicContentFrame];
     return button;
 }
 
@@ -219,7 +219,7 @@ static TTTTheme <TTTTheme> *_currentTheme;
 
 + (instancetype)ttt_textFieldWithPlaceholder:(NSString *)placeholder textFieldStyle:(TTTTextStyle)textStyle
 {
-    UITextField *textField = [[self alloc] initWithFrame:CGRectWithSize(256, 35)];
+    UITextField *textField = [[self alloc] initWithFrame:EEECGRectWithSize(256, 35)];
     [textField setPlaceholder:placeholder];
     [textField ttt_applyTextStyle:textStyle];
     return textField;
@@ -236,7 +236,7 @@ static TTTTheme <TTTTheme> *_currentTheme;
 
 + (instancetype)ttt_textViewWithTextFieldStyle:(TTTTextStyle)textStyle
 {
-    UITextView *textField = [[self alloc] initWithFrame:CGRectWithSize(256, 35)];
+    UITextView *textField = [[self alloc] initWithFrame:EEECGRectWithSize(256, 35)];
     [textField ttt_applyTextStyle:textStyle];
     return textField;
 }

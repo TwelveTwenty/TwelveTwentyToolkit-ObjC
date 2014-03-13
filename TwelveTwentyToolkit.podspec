@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'TwelveTwentyToolkit'
-  s.version      = '0.4.0'
+  s.version      = '0.5.1'
   s.summary      = 'The Twelve Twenty Toolkit of reusable Objective-C classes.'
   s.homepage     = 'http://twelvetwenty.nl'
   s.license      = 'MIT'
@@ -32,30 +32,13 @@ Pod::Spec.new do |s|
     lg.ios.source_files = 'TwelveTwentyToolkit/Logging-iOS/**/*.{h,m}'
   end
   
-  s.subspec 'CoreGraphics' do |cg|
-    cg.ios.frameworks = 'UIKit','QuartzCore'
-    cg.ios.dependency 'TwelveTwentyToolkit/Foundation'
-    cg.ios.source_files = 'TwelveTwentyToolkit/CoreGraphics/*.{h,m}'
-    
-    cg.osx.dependency 'TwelveTwentyToolkit/Foundation'
-  end
-  
   s.subspec 'CoreData' do |cd|
     cd.frameworks = 'CoreData'
+    cd.dependency 'TwelveTwentyToolkit/Logging'
 
-    cd.subspec 'OSX' do |os|
-      os.dependency 'TwelveTwentyToolkit/Logging'
-      os.osx.dependency 'TwelveTwentyToolkit/Logging'
-      os.source_files = 'TwelveTwentyToolkit/CoreData/*.{h,m}'
-      os.osx.source_files = 'TwelveTwentyToolkit/CoreData-OSX/*.{h,m}'
-    end
-
-    cd.subspec 'iOS' do |os|
-      os.dependency 'TwelveTwentyToolkit/Logging'
-      os.ios.dependency 'TwelveTwentyToolkit/Logging'
-      os.source_files = 'TwelveTwentyToolkit/CoreData/*.{h,m}'
-      os.ios.source_files = 'TwelveTwentyToolkit/CoreData-iOS/*.{h,m}'
-    end
+    cd.source_files = 'TwelveTwentyToolkit/CoreData/*.{h,m}'
+    cd.ios.source_files = 'TwelveTwentyToolkit/CoreData/ios/*.{h,m}'
+    cd.osx.source_files = 'TwelveTwentyToolkit/CoreData/osx/*.{h,m}'
   end
   
   s.subspec 'Persistence' do |ps|
@@ -75,18 +58,15 @@ Pod::Spec.new do |s|
   end
   
   s.subspec 'Tables' do |tb|
-    tb.ios.dependency 'TwelveTwentyToolkit/Logging'
+    tb.dependency 'TwelveTwentyToolkit/CoreData'
     tb.ios.source_files = 'TwelveTwentyToolkit/Tables/**/*.{h,m}'
-
-    tb.osx.dependency 'TwelveTwentyToolkit/Foundation'
   end
   
   s.subspec 'Layout' do |lo|
-    lo.ios.dependency 'TwelveTwentyToolkit/Logging'
+    lo.dependency 'TwelveTwentyToolkit/Logging'
     lo.ios.dependency 'TwelveTwentyToolkit/CoreData'
+    lo.ios.dependency 'EEEManualLayout'
     lo.ios.source_files = 'TwelveTwentyToolkit/Layout/**/*.{h,m}'
-
-    lo.osx.dependency 'TwelveTwentyToolkit/Foundation'
   end
 
   s.subspec 'CoreAnimation' do |ca|
