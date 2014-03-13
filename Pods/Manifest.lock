@@ -1,0 +1,24 @@
+PODS:
+  - EEEInjector (0.1.0)
+  - EEEManualLayout (0.1.0)
+  - EEEOperationCenter (0.1.0):
+    - EEEInjector (~> 0.1)
+  - Kiwi/ARC (2.2.3)
+  - Kiwi/NonARC (2.2.3)
+  - Kiwi/XCTest (2.2.3):
+    - Kiwi/ARC
+    - Kiwi/NonARC
+
+DEPENDENCIES:
+  - EEEInjector
+  - EEEManualLayout
+  - EEEOperationCenter
+  - Kiwi/XCTest
+
+SPEC CHECKSUMS:
+  EEEInjector: f987b9ee00affd1775e968a7d7862259a4d114e9
+  EEEManualLayout: 969156ed0adbbadf8257a7cab36de1d3f6969cd1
+  EEEOperationCenter: 7527182ab56d85931820504785ba609ee9f3467a
+  Kiwi: 04c51e880831d291748ec702d42c4101f7eb95c9
+
+COCOAPODS: 0.29.0
