@@ -21,6 +21,7 @@ const struct TTTSyncStatusValues TTTSyncStatusValues = {
 
 @implementation TTTAbstractManagedObject
 
+#if TARGET_OS_IPHONE
 + (NSFetchRequest *)fetchRequestWithSortingKeys:(id)sortingKeysWithAscendingFlag
 {
     NSFetchRequest *request = [self fetchRequest];
@@ -170,5 +171,7 @@ const struct TTTSyncStatusValues TTTSyncStatusValues = {
         [self setValue:now forKey:TTTTimestampedAttributes.updatedAt];
     }
 }
+
+#endif
 
 @end

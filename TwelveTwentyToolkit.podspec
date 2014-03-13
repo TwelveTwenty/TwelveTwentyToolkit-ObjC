@@ -32,14 +32,6 @@ Pod::Spec.new do |s|
     lg.ios.source_files = 'TwelveTwentyToolkit/Logging-iOS/**/*.{h,m}'
   end
   
-  s.subspec 'CoreGraphics' do |cg|
-    cg.ios.frameworks = 'UIKit','QuartzCore'
-    cg.ios.dependency 'TwelveTwentyToolkit/Foundation'
-    cg.ios.source_files = 'TwelveTwentyToolkit/CoreGraphics/*.{h,m}'
-    
-    cg.osx.dependency 'TwelveTwentyToolkit/Foundation'
-  end
-  
   s.subspec 'CoreData' do |cd|
     cd.frameworks = 'CoreData'
     cd.dependency 'TwelveTwentyToolkit/Logging'

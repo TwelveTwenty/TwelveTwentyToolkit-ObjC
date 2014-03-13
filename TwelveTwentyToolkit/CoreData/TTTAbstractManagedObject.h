@@ -45,6 +45,7 @@ extern const struct TTTSyncStatusValues
 
 @interface TTTAbstractManagedObject : NSManagedObject <TTTMogeneratorEntity>
 
+#if TARGET_OS_IPHONE
 #pragma mark - Uniquing and batch manipulation
 
 + (NSFetchRequest *)fetchRequest;
@@ -97,4 +98,5 @@ extern const struct TTTSyncStatusValues
                                                      sectionNameKeyPath:(NSString *)sectionNameKeyPath
                                                               cacheName:(NSString *)cacheName;
 
+#endif
 @end
