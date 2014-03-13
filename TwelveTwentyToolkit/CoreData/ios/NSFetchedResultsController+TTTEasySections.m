@@ -1,5 +1,4 @@
 #import "NSFetchedResultsController+TTTEasySections.h"
-#import <CoreData/CoreData.h>
 
 @implementation NSFetchedResultsController (TTTEasySections)
 
