@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'TwelveTwentyToolkit'
-  s.version      = '0.4.0'
+  s.version      = '0.5.0'
   s.summary      = 'The Twelve Twenty Toolkit of reusable Objective-C classes.'
   s.homepage     = 'http://twelvetwenty.nl'
   s.license      = 'MIT'
@@ -36,9 +36,9 @@ Pod::Spec.new do |s|
     cd.frameworks = 'CoreData'
     cd.dependency 'TwelveTwentyToolkit/Logging'
 
-    cd.source_files = 'TwelveTwentyToolkit/CoreData/**/*.{h,m}'
-    cd.ios.exclude_files = 'CoreData/osx'
-    cd.osx.exclude_files = 'CoreData/ios'
+    cd.source_files = 'TwelveTwentyToolkit/CoreData/*.{h,m}'
+    cd.ios.source_files = 'TwelveTwentyToolkit/CoreData/ios/*.{h,m}'
+    cd.osx.source_files = 'TwelveTwentyToolkit/CoreData/osx/*.{h,m}'
   end
   
   s.subspec 'Persistence' do |ps|
@@ -65,11 +65,10 @@ Pod::Spec.new do |s|
   end
   
   s.subspec 'Layout' do |lo|
-    lo.ios.dependency 'TwelveTwentyToolkit/Logging'
+    lo.dependency 'TwelveTwentyToolkit/Logging'
     lo.ios.dependency 'TwelveTwentyToolkit/CoreData'
+    lo.ios.dependency 'EEEManualLayout'
     lo.ios.source_files = 'TwelveTwentyToolkit/Layout/**/*.{h,m}'
-
-    lo.osx.dependency 'TwelveTwentyToolkit/Foundation'
   end
 
   s.subspec 'CoreAnimation' do |ca|
