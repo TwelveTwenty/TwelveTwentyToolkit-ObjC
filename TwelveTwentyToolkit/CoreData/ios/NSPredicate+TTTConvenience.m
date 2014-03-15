@@ -4,14 +4,32 @@
 
 + (NSPredicate *)ttt_predicateWithComplexFormat:(NSString *)complexFormat innerArguments:(NSArray *)innerArguments outerArguments:(NSArray *)outerArguments
 {
-    NSString *(^stringWithFormatArray)(NSString *, NSArray *) = ^(NSString *format, NSArray *array) {
-        NSRange range = NSMakeRange(0, [array count]);
-        NSMutableData *data = [NSMutableData dataWithLength:sizeof(id) * [array count]];
-        [array getObjects:(__unsafe_unretained id *) data.mutableBytes range:range];
-        return [[NSString alloc] initWithFormat:format arguments:data.mutableBytes];
-    };
+    NSString *simpleFormat = nil;
+    switch ([innerArguments count])
+    {
+        case 0:
+            simpleFormat = [NSString stringWithFormat:complexFormat, nil];
+            break;
+        case 1:
+            simpleFormat = [NSString stringWithFormat:complexFormat, innerArguments[0]];
+            break;
+        case 2:
+            simpleFormat = [NSString stringWithFormat:complexFormat, innerArguments[0], innerArguments[1]];
+            break;
+        case 3:
+            simpleFormat = [NSString stringWithFormat:complexFormat, innerArguments[0], innerArguments[1], innerArguments[2]];
+            break;
+        case 4:
+            simpleFormat = [NSString stringWithFormat:complexFormat, innerArguments[0], innerArguments[1], innerArguments[2], innerArguments[3]];
+            break;
+        case 5:
+            simpleFormat = [NSString stringWithFormat:complexFormat, innerArguments[0], innerArguments[1], innerArguments[2], innerArguments[3], innerArguments[4]];
+            break;
+        default:
+            NSParameterAssert(simpleFormat);
+            return nil;
+    }
 
-    NSString *simpleFormat = stringWithFormatArray(complexFormat, innerArguments);
     return [self predicateWithFormat:simpleFormat argumentArray:outerArguments ?: @[]];
 }
 
