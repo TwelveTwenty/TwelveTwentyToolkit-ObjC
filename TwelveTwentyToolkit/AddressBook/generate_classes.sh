@@ -1,2 +1,0 @@
-# Call this shell script from the terminal: ./generate_classes.sh
-mogenerator --template-var arc=true  -m ./TTUnifiedAddressBook.xcdatamodeld/TTUnifiedAddressBook.xcdatamodel --machine-dir ./Entities/Abstract --human-dir ./Entities
