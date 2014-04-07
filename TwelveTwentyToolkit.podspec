@@ -17,15 +17,18 @@ Pod::Spec.new do |s|
   s.requires_arc = true
   
   s.subspec 'Core' do |c|
+    c.requires_arc = true
     c.source_files = 'TwelveTwentyToolkit/TwelveTwentyToolkit.{h,m}'
   end
   
   s.subspec 'Foundation' do |fn|
+    fn.requires_arc = true
     fn.dependency 'TwelveTwentyToolkit/Core'
     fn.source_files = 'TwelveTwentyToolkit/Foundation/**/*.{h,m}'
   end
 
   s.subspec 'Logging' do |lg|
+    lg.requires_arc = true
     lg.dependency 'TwelveTwentyToolkit/Foundation'
     lg.osx.source_files = 'TwelveTwentyToolkit/Logging/**/*.{h,m}'
 
@@ -33,6 +36,7 @@ Pod::Spec.new do |s|
   end
   
   s.subspec 'CoreData' do |cd|
+    cd.requires_arc = true
     cd.frameworks = 'CoreData'
     cd.dependency 'TwelveTwentyToolkit/Logging'
 
@@ -42,6 +46,7 @@ Pod::Spec.new do |s|
   end
   
   s.subspec 'Persistence' do |ps|
+    ps.requires_arc = true
     ps.ios.frameworks = 'CoreData'
     ps.ios.dependency 'TwelveTwentyToolkit/CoreData'
     ps.ios.source_files = 'TwelveTwentyToolkit/Persistence/*.{h,m}'
@@ -50,11 +55,13 @@ Pod::Spec.new do |s|
   end
   
   s.subspec 'Tables' do |tb|
+    tb.requires_arc = true
     tb.dependency 'TwelveTwentyToolkit/CoreData'
     tb.ios.source_files = 'TwelveTwentyToolkit/Tables/**/*.{h,m}'
   end
   
   s.subspec 'Layout' do |lo|
+    lo.requires_arc = true
     lo.dependency 'TwelveTwentyToolkit/Logging'
     lo.ios.dependency 'TwelveTwentyToolkit/CoreData'
     lo.ios.dependency 'EEEManualLayout'
@@ -62,6 +69,7 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'CoreAnimation' do |ca|
+    ca.requires_arc = true
     ca.ios.dependency 'TwelveTwentyToolkit/Logging'
     ca.ios.source_files = 'TwelveTwentyToolkit/CoreAnimation/**/*.{h,m}'
 
@@ -69,6 +77,7 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'Theming' do |th|
+    th.requires_arc = true
     th.ios.dependency 'TwelveTwentyToolkit/Layout'
     th.ios.dependency 'TwelveTwentyToolkit/Foundation'
     th.ios.source_files = 'TwelveTwentyToolkit/Theming/**/*.{h,m}'
@@ -77,6 +86,7 @@ Pod::Spec.new do |s|
   end
   
   s.subspec 'CyclicDelegateRetainer' do |tcdr|
+    tcdr.requires_arc = true
     tcdr.source_files = 'TwelveTwentyToolkit/CyclicDelegateRetainer/*.{h,m}'
   end
 end
