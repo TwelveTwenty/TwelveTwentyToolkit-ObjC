@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'TwelveTwentyToolkit'
-  s.version      = '0.5.2'
+  s.version      = '0.6.0'
   s.summary      = 'The Twelve Twenty Toolkit of reusable Objective-C classes.'
   s.homepage     = 'http://twelvetwenty.nl'
   s.license      = 'MIT'
@@ -47,14 +47,6 @@ Pod::Spec.new do |s|
     ps.ios.source_files = 'TwelveTwentyToolkit/Persistence/*.{h,m}'
 
     ps.osx.dependency 'TwelveTwentyToolkit/Foundation'
-  end
-  
-  s.subspec 'AddressBook' do |ab|
-    ab.ios.frameworks = 'AddressBook'
-    ab.ios.dependency 'TwelveTwentyToolkit/CoreData'
-    ab.ios.source_files = 'TwelveTwentyToolkit/AddressBook/**/*.{h,m}'
-
-    ab.osx.dependency 'TwelveTwentyToolkit/Foundation'
   end
   
   s.subspec 'Tables' do |tb|
