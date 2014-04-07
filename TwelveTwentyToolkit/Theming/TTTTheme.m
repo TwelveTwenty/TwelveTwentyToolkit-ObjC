@@ -1,9 +1,17 @@
-#import <QuartzCore/QuartzCore.h>
 #import "NSObject+TTTBlocks.h"
 #import "UIView+EEEManualLayout.h"
 #import "TTTTheme.h"
 
 static TTTTheme <TTTTheme> *_currentTheme;
+
+CGFloat TTTCGFloatValueForNumber(NSNumber *number) {
+#if CGFLOAT_IS_DOUBLE
+    return [number doubleValue];
+#else
+    return [number floatValue];
+#endif
+}
+
 
 @implementation TTTTheme
 
@@ -66,7 +74,7 @@ static TTTTheme <TTTTheme> *_currentTheme;
     [attributes ttt_forKey:TTTAttributeNumberOfLines performBlock:^(NSNumber *value) {label.numberOfLines = [value integerValue];}];
 
     [attributes ttt_forKey:TTTAttributeLayerShadowRadius performBlock:^(NSNumber *value) {
-        label.layer.shadowRadius = [value floatValue];
+        label.layer.shadowRadius = TTTCGFloatValueForNumber(value);
         label.clipsToBounds = NO;
     }];
     [attributes ttt_forKey:TTTAttributeLayerShadowColor performBlock:^(UIColor *value) {label.layer.shadowColor = [value CGColor];}];
@@ -120,7 +128,7 @@ static TTTTheme <TTTTheme> *_currentTheme;
             [buttonAttributes ttt_forKey:TTTAttributeContentHorizontalAlignment performBlock:^(id value) {[button setContentHorizontalAlignment:[value integerValue]];}];
             [buttonAttributes ttt_forKey:TTTAttributeContentEdgeInsets performBlock:^(id value) {[button setContentEdgeInsets:[value UIEdgeInsetsValue]];}];
 
-            [buttonAttributes ttt_forKey:TTTAttributeLayerShadowRadius performBlock:^(NSNumber *value) {button.layer.shadowRadius = [value floatValue];}];
+            [buttonAttributes ttt_forKey:TTTAttributeLayerShadowRadius performBlock:^(NSNumber *value) {button.layer.shadowRadius = TTTCGFloatValueForNumber(value);}];
             [buttonAttributes ttt_forKey:TTTAttributeLayerShadowColor performBlock:^(UIColor *value) {button.layer.shadowColor = [value CGColor];}];
             [buttonAttributes ttt_forKey:TTTAttributeLayerShadowOffset performBlock:^(NSValue *value) {button.layer.shadowOffset = [self UIOffsetValueToCGSize:value];}];
             [buttonAttributes ttt_forKey:TTTAttributeLayerShadowOpacity performBlock:^(NSNumber *value) {button.layer.shadowOpacity = [value floatValue];}];
