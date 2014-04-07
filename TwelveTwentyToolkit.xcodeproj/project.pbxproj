@@ -8,13 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		6ECBFC10BF9F4C3FB05B7818 /* libPods-TwelveTwentyToolkitTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 99AFD03D82B343DE859A01E4 /* libPods-TwelveTwentyToolkitTests.a */; };
-		9519FD1D18D0DEB700BC8441 /* _TTTCDLinkedRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 9519FCBD18D0DEB700BC8441 /* _TTTCDLinkedRecord.m */; };
-		9519FD1E18D0DEB700BC8441 /* _TTTCDUnifiedRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 9519FCBF18D0DEB700BC8441 /* _TTTCDUnifiedRecord.m */; };
-		9519FD1F18D0DEB700BC8441 /* TTTCDLinkedRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 9519FCC118D0DEB700BC8441 /* TTTCDLinkedRecord.m */; };
-		9519FD2018D0DEB700BC8441 /* TTTCDUnifiedRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 9519FCC318D0DEB700BC8441 /* TTTCDUnifiedRecord.m */; };
-		9519FD2118D0DEB700BC8441 /* TTTUnifiedAddressBook.m in Sources */ = {isa = PBXBuildFile; fileRef = 9519FCC618D0DEB700BC8441 /* TTTUnifiedAddressBook.m */; };
-		9519FD2218D0DEB700BC8441 /* TTTUnifiedAddressBook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9519FCC718D0DEB700BC8441 /* TTTUnifiedAddressBook.xcdatamodeld */; };
-		9519FD2318D0DEB700BC8441 /* TTTUnifiedCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 9519FCCA18D0DEB700BC8441 /* TTTUnifiedCard.m */; };
 		9519FD2418D0DEB700BC8441 /* TTTAbstractJSONMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 9519FCCD18D0DEB700BC8441 /* TTTAbstractJSONMapping.m */; };
 		9519FD2518D0DEB700BC8441 /* TTTAbstractPersistenceProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9519FCCF18D0DEB700BC8441 /* TTTAbstractPersistenceProxy.m */; };
 		9519FD2618D0DEB700BC8441 /* TTTJSONAttributeMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 9519FCD118D0DEB700BC8441 /* TTTJSONAttributeMapping.m */; };
@@ -83,15 +76,6 @@
 		95934FDE167B288400E4ED39 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95934FD7167B283E00E4ED39 /* AddressBook.framework */; };
 		95934FE0167B28B500E4ED39 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95934FDF167B28B500E4ED39 /* CoreGraphics.framework */; };
 		95934FE2167B28C800E4ED39 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95934FE1167B28C800E4ED39 /* UIKit.framework */; };
-		95934FE6167B293A00E4ED39 /* TTTCoreGraphicsTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 95934FE5167B293A00E4ED39 /* TTTCoreGraphicsTestCase.m */; };
-		95934FEA167B296600E4ED39 /* TTTDependencyInjectionTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 95934FE9167B296600E4ED39 /* TTTDependencyInjectionTestCase.m */; };
-		95934FEE167B2A0900E4ED39 /* TTTDISimpleObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 95934FED167B2A0900E4ED39 /* TTTDISimpleObject.m */; };
-		95934FF1167B2A4900E4ED39 /* TTTDIBaseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 95934FF0167B2A4900E4ED39 /* TTTDIBaseObject.m */; };
-		95934FF4167B2A5F00E4ED39 /* TTTDIConcreteObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 95934FF3167B2A5F00E4ED39 /* TTTDIConcreteObject.m */; };
-		95934FFA167B2D4D00E4ED39 /* TTTDIBaseSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 95934FF9167B2D4D00E4ED39 /* TTTDIBaseSingleton.m */; };
-		95934FFD167B2D5F00E4ED39 /* TTTDIConcreteSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 95934FFC167B2D5F00E4ED39 /* TTTDIConcreteSingleton.m */; };
-		95935000167B2D7F00E4ED39 /* TTTDISimpleSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 95934FFF167B2D7F00E4ED39 /* TTTDISimpleSingleton.m */; };
-		95935003167B318200E4ED39 /* TTTDIInjectableObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 95935002167B318100E4ED39 /* TTTDIInjectableObject.m */; };
 		95DC8FB2167B26B200AF1428 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95DC8FB1167B26B200AF1428 /* Foundation.framework */; };
 		95DC8FC1167B26B200AF1428 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95DC8FC0167B26B200AF1428 /* SenTestingKit.framework */; };
 		95DC8FC4167B26B200AF1428 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95DC8FB1167B26B200AF1428 /* Foundation.framework */; };
@@ -137,20 +121,6 @@
 		00FB31A860A14C4D8A8DCA20 /* Pods-TwelveTwentyToolkitTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwelveTwentyToolkitTests.xcconfig"; path = "Pods/Pods-TwelveTwentyToolkitTests.xcconfig"; sourceTree = "<group>"; };
 		4275B5F9193D48CDA0F2EB91 /* Pods-TwelveTwentyToolkit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwelveTwentyToolkit.xcconfig"; path = "Pods/Pods-TwelveTwentyToolkit.xcconfig"; sourceTree = "<group>"; };
 		6F4C92D40DE0479486C960AA /* libPods-TwelveTwentyToolkit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TwelveTwentyToolkit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9519FCBC18D0DEB700BC8441 /* _TTTCDLinkedRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _TTTCDLinkedRecord.h; sourceTree = "<group>"; };
-		9519FCBD18D0DEB700BC8441 /* _TTTCDLinkedRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _TTTCDLinkedRecord.m; sourceTree = "<group>"; };
-		9519FCBE18D0DEB700BC8441 /* _TTTCDUnifiedRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _TTTCDUnifiedRecord.h; sourceTree = "<group>"; };
-		9519FCBF18D0DEB700BC8441 /* _TTTCDUnifiedRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _TTTCDUnifiedRecord.m; sourceTree = "<group>"; };
-		9519FCC018D0DEB700BC8441 /* TTTCDLinkedRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTCDLinkedRecord.h; sourceTree = "<group>"; };
-		9519FCC118D0DEB700BC8441 /* TTTCDLinkedRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTCDLinkedRecord.m; sourceTree = "<group>"; };
-		9519FCC218D0DEB700BC8441 /* TTTCDUnifiedRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTCDUnifiedRecord.h; sourceTree = "<group>"; };
-		9519FCC318D0DEB700BC8441 /* TTTCDUnifiedRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTCDUnifiedRecord.m; sourceTree = "<group>"; };
-		9519FCC418D0DEB700BC8441 /* generate_classes.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = generate_classes.sh; sourceTree = "<group>"; };
-		9519FCC518D0DEB700BC8441 /* TTTUnifiedAddressBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTUnifiedAddressBook.h; sourceTree = "<group>"; };
-		9519FCC618D0DEB700BC8441 /* TTTUnifiedAddressBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTUnifiedAddressBook.m; sourceTree = "<group>"; };
-		9519FCC818D0DEB700BC8441 /* TTTUnifiedAddressBook.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TTTUnifiedAddressBook.xcdatamodel; sourceTree = "<group>"; };
-		9519FCC918D0DEB700BC8441 /* TTTUnifiedCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTUnifiedCard.h; sourceTree = "<group>"; };
-		9519FCCA18D0DEB700BC8441 /* TTTUnifiedCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTUnifiedCard.m; sourceTree = "<group>"; };
 		9519FCCC18D0DEB700BC8441 /* TTTAbstractJSONMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTAbstractJSONMapping.h; sourceTree = "<group>"; };
 		9519FCCD18D0DEB700BC8441 /* TTTAbstractJSONMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTAbstractJSONMapping.m; sourceTree = "<group>"; };
 		9519FCCE18D0DEB700BC8441 /* TTTAbstractPersistenceProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTAbstractPersistenceProxy.h; sourceTree = "<group>"; };
@@ -231,24 +201,6 @@
 		95934FDB167B285200E4ED39 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		95934FDF167B28B500E4ED39 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		95934FE1167B28C800E4ED39 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		95934FE4167B293A00E4ED39 /* TTTCoreGraphicsTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTCoreGraphicsTestCase.h; sourceTree = "<group>"; };
-		95934FE5167B293A00E4ED39 /* TTTCoreGraphicsTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTCoreGraphicsTestCase.m; sourceTree = "<group>"; };
-		95934FE8167B296600E4ED39 /* TTTDependencyInjectionTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTDependencyInjectionTestCase.h; sourceTree = "<group>"; };
-		95934FE9167B296600E4ED39 /* TTTDependencyInjectionTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTDependencyInjectionTestCase.m; sourceTree = "<group>"; };
-		95934FEC167B2A0900E4ED39 /* TTTDISimpleObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTDISimpleObject.h; sourceTree = "<group>"; };
-		95934FED167B2A0900E4ED39 /* TTTDISimpleObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTDISimpleObject.m; sourceTree = "<group>"; };
-		95934FEF167B2A4900E4ED39 /* TTTDIBaseObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTDIBaseObject.h; sourceTree = "<group>"; };
-		95934FF0167B2A4900E4ED39 /* TTTDIBaseObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTDIBaseObject.m; sourceTree = "<group>"; };
-		95934FF2167B2A5F00E4ED39 /* TTTDIConcreteObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTDIConcreteObject.h; sourceTree = "<group>"; };
-		95934FF3167B2A5F00E4ED39 /* TTTDIConcreteObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTDIConcreteObject.m; sourceTree = "<group>"; };
-		95934FF8167B2D4D00E4ED39 /* TTTDIBaseSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTDIBaseSingleton.h; sourceTree = "<group>"; };
-		95934FF9167B2D4D00E4ED39 /* TTTDIBaseSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTDIBaseSingleton.m; sourceTree = "<group>"; };
-		95934FFB167B2D5E00E4ED39 /* TTTDIConcreteSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTDIConcreteSingleton.h; sourceTree = "<group>"; };
-		95934FFC167B2D5F00E4ED39 /* TTTDIConcreteSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTDIConcreteSingleton.m; sourceTree = "<group>"; };
-		95934FFE167B2D7F00E4ED39 /* TTTDISimpleSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTDISimpleSingleton.h; sourceTree = "<group>"; };
-		95934FFF167B2D7F00E4ED39 /* TTTDISimpleSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTDISimpleSingleton.m; sourceTree = "<group>"; };
-		95935001167B318100E4ED39 /* TTTDIInjectableObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTDIInjectableObject.h; sourceTree = "<group>"; };
-		95935002167B318100E4ED39 /* TTTDIInjectableObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTDIInjectableObject.m; sourceTree = "<group>"; };
 		95DC8FAE167B26B200AF1428 /* libTwelveTwentyToolkit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTwelveTwentyToolkit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		95DC8FB1167B26B200AF1428 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		95DC8FB5167B26B200AF1428 /* TwelveTwentyToolkit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TwelveTwentyToolkit-Prefix.pch"; sourceTree = "<group>"; };
@@ -305,43 +257,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9519FCB918D0DEB700BC8441 /* AddressBook */ = {
-			isa = PBXGroup;
-			children = (
-				9519FCBA18D0DEB700BC8441 /* Entities */,
-				9519FCC418D0DEB700BC8441 /* generate_classes.sh */,
-				9519FCC518D0DEB700BC8441 /* TTTUnifiedAddressBook.h */,
-				9519FCC618D0DEB700BC8441 /* TTTUnifiedAddressBook.m */,
-				9519FCC718D0DEB700BC8441 /* TTTUnifiedAddressBook.xcdatamodeld */,
-				9519FCC918D0DEB700BC8441 /* TTTUnifiedCard.h */,
-				9519FCCA18D0DEB700BC8441 /* TTTUnifiedCard.m */,
-			);
-			path = AddressBook;
-			sourceTree = "<group>";
-		};
-		9519FCBA18D0DEB700BC8441 /* Entities */ = {
-			isa = PBXGroup;
-			children = (
-				9519FCBB18D0DEB700BC8441 /* Abstract */,
-				9519FCC018D0DEB700BC8441 /* TTTCDLinkedRecord.h */,
-				9519FCC118D0DEB700BC8441 /* TTTCDLinkedRecord.m */,
-				9519FCC218D0DEB700BC8441 /* TTTCDUnifiedRecord.h */,
-				9519FCC318D0DEB700BC8441 /* TTTCDUnifiedRecord.m */,
-			);
-			path = Entities;
-			sourceTree = "<group>";
-		};
-		9519FCBB18D0DEB700BC8441 /* Abstract */ = {
-			isa = PBXGroup;
-			children = (
-				9519FCBC18D0DEB700BC8441 /* _TTTCDLinkedRecord.h */,
-				9519FCBD18D0DEB700BC8441 /* _TTTCDLinkedRecord.m */,
-				9519FCBE18D0DEB700BC8441 /* _TTTCDUnifiedRecord.h */,
-				9519FCBF18D0DEB700BC8441 /* _TTTCDUnifiedRecord.m */,
-			);
-			path = Abstract;
-			sourceTree = "<group>";
-		};
 		9519FCCB18D0DEB700BC8441 /* Persistence */ = {
 			isa = PBXGroup;
 			children = (
@@ -502,46 +417,6 @@
 			path = ios;
 			sourceTree = "<group>";
 		};
-		95934FE3167B293A00E4ED39 /* CoreGraphics */ = {
-			isa = PBXGroup;
-			children = (
-				95934FE4167B293A00E4ED39 /* TTTCoreGraphicsTestCase.h */,
-				95934FE5167B293A00E4ED39 /* TTTCoreGraphicsTestCase.m */,
-			);
-			path = CoreGraphics;
-			sourceTree = "<group>";
-		};
-		95934FE7167B294E00E4ED39 /* DependencyInjection */ = {
-			isa = PBXGroup;
-			children = (
-				95934FEB167B29EF00E4ED39 /* HelperClasses */,
-				95934FE8167B296600E4ED39 /* TTTDependencyInjectionTestCase.h */,
-				95934FE9167B296600E4ED39 /* TTTDependencyInjectionTestCase.m */,
-			);
-			path = DependencyInjection;
-			sourceTree = "<group>";
-		};
-		95934FEB167B29EF00E4ED39 /* HelperClasses */ = {
-			isa = PBXGroup;
-			children = (
-				95934FF8167B2D4D00E4ED39 /* TTTDIBaseSingleton.h */,
-				95934FF9167B2D4D00E4ED39 /* TTTDIBaseSingleton.m */,
-				95934FEC167B2A0900E4ED39 /* TTTDISimpleObject.h */,
-				95934FED167B2A0900E4ED39 /* TTTDISimpleObject.m */,
-				95934FEF167B2A4900E4ED39 /* TTTDIBaseObject.h */,
-				95934FF0167B2A4900E4ED39 /* TTTDIBaseObject.m */,
-				95934FF2167B2A5F00E4ED39 /* TTTDIConcreteObject.h */,
-				95934FF3167B2A5F00E4ED39 /* TTTDIConcreteObject.m */,
-				95934FFB167B2D5E00E4ED39 /* TTTDIConcreteSingleton.h */,
-				95934FFC167B2D5F00E4ED39 /* TTTDIConcreteSingleton.m */,
-				95934FFE167B2D7F00E4ED39 /* TTTDISimpleSingleton.h */,
-				95934FFF167B2D7F00E4ED39 /* TTTDISimpleSingleton.m */,
-				95935001167B318100E4ED39 /* TTTDIInjectableObject.h */,
-				95935002167B318100E4ED39 /* TTTDIInjectableObject.m */,
-			);
-			path = HelperClasses;
-			sourceTree = "<group>";
-		};
 		95DC8FA3167B26B200AF1428 = {
 			isa = PBXGroup;
 			children = (
@@ -584,7 +459,6 @@
 			isa = PBXGroup;
 			children = (
 				9519FD7F18D0E08000BC8441 /* CoreData */,
-				9519FCB918D0DEB700BC8441 /* AddressBook */,
 				9519FCCB18D0DEB700BC8441 /* Persistence */,
 				9519FCD818D0DEB700BC8441 /* Tables */,
 				9519FCE918D0DEB700BC8441 /* Foundation */,
@@ -613,8 +487,6 @@
 		95DC8FC8167B26B200AF1428 /* TwelveTwentyToolkitTests */ = {
 			isa = PBXGroup;
 			children = (
-				95934FE3167B293A00E4ED39 /* CoreGraphics */,
-				95934FE7167B294E00E4ED39 /* DependencyInjection */,
 				95DC8FC9167B26B200AF1428 /* Supporting Files */,
 			);
 			path = TwelveTwentyToolkitTests;
@@ -717,8 +589,6 @@
 			mainGroup = 95DC8FA3167B26B200AF1428;
 			productRefGroup = 95DC8FAF167B26B200AF1428 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-			);
 			projectRoot = "";
 			targets = (
 				95DC8FAD167B26B200AF1428 /* TwelveTwentyToolkit */,
@@ -853,9 +723,7 @@
 				9519FD3218D0DEB700BC8441 /* NSFastEnumeration+TTTMapping.m in Sources */,
 				9519FD3818D0DEB700BC8441 /* TTTTheme.m in Sources */,
 				95695D8618B6155900CA2307 /* TwelveTwentyToolkit.m in Sources */,
-				9519FD2318D0DEB700BC8441 /* TTTUnifiedCard.m in Sources */,
 				9519FD3718D0DEB700BC8441 /* TTTDrawnView.m in Sources */,
-				9519FD1F18D0DEB700BC8441 /* TTTCDLinkedRecord.m in Sources */,
 				9519FD3D18D0DEB700BC8441 /* TTTCyclicDelegateRetainer.m in Sources */,
 				9519FD2F18D0DEB700BC8441 /* TTTTableViewItemController.m in Sources */,
 				9519FD9618D0E08000BC8441 /* NSFetchedResultsController+TTTEasySections.m in Sources */,
@@ -869,29 +737,24 @@
 				9519FD9418D0E08000BC8441 /* NSFetchedResultsController+TTTCacheControl.m in Sources */,
 				9519FD9818D0E08000BC8441 /* NSManagedObjectContext+TTTBatchManipulation.m in Sources */,
 				9519FD3018D0DEB700BC8441 /* TTTTableViewSection.m in Sources */,
-				9519FD2218D0DEB700BC8441 /* TTTUnifiedAddressBook.xcdatamodeld in Sources */,
 				9519FD2618D0DEB700BC8441 /* TTTJSONAttributeMapping.m in Sources */,
 				9519FD2718D0DEB700BC8441 /* TTTJSONMapper.m in Sources */,
-				9519FD2118D0DEB700BC8441 /* TTTUnifiedAddressBook.m in Sources */,
 				9519FD3B18D0DEB700BC8441 /* CALayer+TTTCrossfade.m in Sources */,
 				9519FDA018D0E08000BC8441 /* NSManagedObject+TTTUniquing.m in Sources */,
 				9519FD4118D0DEB700BC8441 /* TTTLog.m in Sources */,
 				9519FD3F18D0DEB700BC8441 /* UIView+TTTHitTesting.m in Sources */,
 				9519FD2D18D0DEB700BC8441 /* TTTTableViewFetchedSection.m in Sources */,
 				9519FD9E18D0E08000BC8441 /* NSFetchRequest+TTTRequestConfiguration.m in Sources */,
-				9519FD1D18D0DEB700BC8441 /* _TTTCDLinkedRecord.m in Sources */,
 				9519FD3318D0DEB700BC8441 /* NSObject+TTTBlocks.m in Sources */,
 				9519FD3618D0DEB700BC8441 /* NSString+TTTURLEncoding.m in Sources */,
 				9519FD2C18D0DEB700BC8441 /* TTTTableViewFetchedItem.m in Sources */,
 				9519FD3418D0DEB700BC8441 /* NSObject+TTTUnless.m in Sources */,
 				9519FDA418D0E08000BC8441 /* TTTTimestamped.m in Sources */,
 				9519FD3E18D0DEB700BC8441 /* UIImage+TTTResizing.m in Sources */,
-				9519FD1E18D0DEB700BC8441 /* _TTTCDUnifiedRecord.m in Sources */,
 				9519FD2418D0DEB700BC8441 /* TTTAbstractJSONMapping.m in Sources */,
 				9519FD3118D0DEB700BC8441 /* UITableViewCell+TTTCreation.m in Sources */,
 				9519FD2918D0DEB700BC8441 /* TTTMappingPersistenceProxy.m in Sources */,
 				9519FD3518D0DEB700BC8441 /* NSString+TTTEmptiness.m in Sources */,
-				9519FD2018D0DEB700BC8441 /* TTTCDUnifiedRecord.m in Sources */,
 				E42071A1CD9F9FEB57DF00FE /* TTTAbstractManagedObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -900,15 +763,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95934FE6167B293A00E4ED39 /* TTTCoreGraphicsTestCase.m in Sources */,
-				95934FEA167B296600E4ED39 /* TTTDependencyInjectionTestCase.m in Sources */,
-				95934FEE167B2A0900E4ED39 /* TTTDISimpleObject.m in Sources */,
-				95934FF1167B2A4900E4ED39 /* TTTDIBaseObject.m in Sources */,
-				95934FF4167B2A5F00E4ED39 /* TTTDIConcreteObject.m in Sources */,
-				95934FFA167B2D4D00E4ED39 /* TTTDIBaseSingleton.m in Sources */,
-				95934FFD167B2D5F00E4ED39 /* TTTDIConcreteSingleton.m in Sources */,
-				95935000167B2D7F00E4ED39 /* TTTDISimpleSingleton.m in Sources */,
-				95935003167B318200E4ED39 /* TTTDIInjectableObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1105,19 +959,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		9519FCC718D0DEB700BC8441 /* TTTUnifiedAddressBook.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				9519FCC818D0DEB700BC8441 /* TTTUnifiedAddressBook.xcdatamodel */,
-			);
-			currentVersion = 9519FCC818D0DEB700BC8441 /* TTTUnifiedAddressBook.xcdatamodel */;
-			path = TTTUnifiedAddressBook.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 95DC8FA5167B26B200AF1428 /* Project object */;
 }
