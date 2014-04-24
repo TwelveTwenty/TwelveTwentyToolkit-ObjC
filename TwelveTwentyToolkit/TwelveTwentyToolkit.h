@@ -20,15 +20,6 @@
 
 #import <Foundation/Foundation.h>
 
-extern void CFReleaseIfNotNULL (CFTypeRef ref);
-
-extern CFTypeRef CFRetainIfNotNULL (CFTypeRef ref);
-
-// http://stackoverflow.com/a/7848772/432782
-// if (TTT_SYSTEM_VERSION_LESS_THAN(@"5.0")) {
-//  ...
-// }
-
 #ifndef OVERRIDE_ATTRIBUTE
     #define OVERRIDE_ATTRIBUTE
 #endif
